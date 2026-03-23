@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Heading";
+  src: url("/fonts/font.woff2") format("woff2"),
+       url("/fonts/font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-lato), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Heading", serif;
+    font-weight: normal;
+  }
+}
