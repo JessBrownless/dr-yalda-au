@@ -11,16 +11,17 @@ const logos = [
 
 export default function LogoQuilt() {
   return (
-    <section className="bg-parchment py-20 px-12">
-      <div className="max-w-screen-xl mx-auto">
+    <section className="bg-parchment py-20">
+      <div className="pg-container">
 
-        <p className="text-zinc-400 text-[10px] font-light tracking-[0.45em] uppercase mb-16 text-center">
+        <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-16 text-center">
           As seen in &amp; partnered with
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-10">
+        {/* 6 logos × 2 cols each = 12 cols */}
+        <div className="grid grid-cols-12 gap-6 md:gap-8 items-center">
           {logos.map(({ src, alt }) => (
-            <div key={alt} className="flex items-center justify-center">
+            <div key={alt} className="col-span-4 md:col-span-2 flex items-center justify-center">
               <Image
                 src={src}
                 alt={alt}

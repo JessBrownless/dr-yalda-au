@@ -13,48 +13,43 @@ export default function TestimonialSection() {
   const { quote, logo, brand } = testimonials[0];
 
   return (
-    <section className="bg-cream py-24 md:py-56 px-6 md:px-12">
-      <div className="max-w-screen-xl mx-auto">
+    <section className="bg-cream py-24 md:py-48">
+      <div className="pg-container">
 
-        {/* Top dash */}
-        <div className="w-6 h-px bg-zinc-300 mb-12 md:mb-16" />
+        <div className="w-6 h-px bg-neutral-300 mb-12 md:mb-16" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+        <div className="grid grid-cols-12 gap-6 md:gap-8">
 
-          {/* Left — label (desktop only) */}
-          <div className="hidden md:flex flex-col justify-start pt-1">
-            <p className="text-zinc-400 text-[10px] font-light tracking-[0.45em] uppercase">
+          {/* Label — cols 1–3 */}
+          <div className="hidden md:block col-span-3 pt-1">
+            <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase">
               Partner testimonial
             </p>
           </div>
 
-          {/* Right — quote content */}
-          <div className="flex flex-col gap-8 md:gap-10">
-
+          {/* Quote — cols 5–12 */}
+          <div className="col-span-12 md:col-span-8 md:col-start-5 flex flex-col gap-8 md:gap-10">
             <blockquote
-              className="text-zinc-800 font-normal leading-relaxed [font-family:'Heading',serif]"
+              className="text-neutral-800 font-normal leading-relaxed [font-family:'Heading',serif]"
               style={{ fontSize: "clamp(1rem, 1.8vw, 1.4rem)" }}
             >
               &ldquo;{quote}&rdquo;
             </blockquote>
 
-            <div className="flex items-end justify-between gap-6 flex-wrap">
-              <div className="border-b border-zinc-800 pb-1">
-                <Image
-                  src={logo}
-                  alt={brand}
-                  width={120}
-                  height={40}
-                  className="h-7 w-auto object-contain"
-                />
-              </div>
+            <div className="border-b border-neutral-800 pb-1 self-start">
+              <Image
+                src={logo}
+                alt={brand}
+                width={120}
+                height={40}
+                className="h-7 w-auto object-contain"
+              />
             </div>
-
           </div>
+
         </div>
 
-        {/* Bottom dash */}
-        <div className="w-6 h-px bg-zinc-300 mt-12 md:mt-16" />
+        <div className="w-6 h-px bg-neutral-300 mt-12 md:mt-16" />
 
       </div>
     </section>

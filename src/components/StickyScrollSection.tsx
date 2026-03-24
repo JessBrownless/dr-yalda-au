@@ -73,12 +73,12 @@ export default function StickyScrollSection() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-zinc-950/50" />
+              <div className="absolute inset-0 bg-brand-black/50" />
 
               {/* Text */}
               <div className="absolute inset-0 flex items-center px-12 z-10">
                 <div className="flex flex-col gap-5 max-w-lg">
-                  <p className="text-zinc-400 text-[10px] font-light tracking-[0.45em] uppercase">
+                  <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase">
                     0{i + 1}
                   </p>
                   <h2
@@ -87,8 +87,8 @@ export default function StickyScrollSection() {
                   >
                     {item.title}
                   </h2>
-                  <div className="w-8 h-px bg-zinc-500" />
-                  <p className="text-zinc-300 text-sm font-light leading-relaxed max-w-sm">
+                  <div className="w-8 h-px bg-neutral-500" />
+                  <p className="text-neutral-300 text-sm font-light leading-relaxed max-w-sm">
                     {item.description}
                   </p>
                 </div>

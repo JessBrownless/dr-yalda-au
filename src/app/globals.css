@@ -2,6 +2,347 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Brand colour tokens ─────────────────────────────────────────────── */
+:root {
+  /* Primary */
+  --brand-black:      #2D2C2A;
+  --brand-white:      #F6F2EF;
+  /* Secondary */
+  --brand-grey:       #B6B4B2;
+  --brand-warm-light: #E5DCD7;
+  --brand-blue:       #9BB9CB;
+  --brand-blue-light: #B9D3DF;
+}
+
+/* ─── Hero noise overlay ─────────────────────────────────────────────── */
+/*
+  SVG feTurbulence generates a genuine film-grain noise without
+  needing an external texture file. Tile size and opacity control subtlety.
+*/
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ─── Page grid system ───────────────────────────────────────────────── */
+/*
+  All contained sections share this container.
+  Full-bleed sections (hero, SplitSection, StickyScroll) intentionally
+  break out of it — that contrast is part of the design language.
+*/
+.pg-container {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* ─── Media Teaser ───────────────────────────────────────────────────── */
+
+.media-teaser {
+  /* Two-tone split: cream top third, dark bottom two-thirds */
+  background: linear-gradient(to bottom, #F6F6F3 38%, #2D2C2A 38%);
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem);
+}
+
+.media-teaser__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Text spans cols 1–6, phone spans cols 8–11 */
+.media-teaser__text {
+  grid-column: 1 / 7;
+}
+
+.media-teaser__phone-wrap {
+  grid-column: 8 / 12;
+}
+
+/* ── Text side ── */
+.media-teaser__eyebrow {
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #a3a3a3; /* zinc-400 */
+  margin: 0 0 1.25rem;
+}
+
+.media-teaser__heading {
+  font-family: "Heading", serif;
+  font-weight: normal;
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin: 0 0 1.5rem;
+}
+
+.media-teaser__body {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #737373; /* zinc-500 */
+  max-width: 36ch;
+  margin: 0 0 2rem;
+}
+
+.media-teaser__label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: #525252; /* zinc-600 */
+  margin: 0 0 1rem;
+}
+
+.media-teaser__links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.media-teaser__pill {
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid #404040; /* zinc-700 */
+  color: #a3a3a3;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.media-teaser__pill:hover {
+  border-color: #a3a3a3;
+  color: #fff;
+}
+
+.media-teaser__pill--active {
+  background: #fff;
+  color: #2D2C2A;
+  border-color: #fff;
+}
+
+.media-teaser__pill--active:hover {
+  background: #e4e4e7;
+  border-color: #e4e4e7;
+  color: #2D2C2A;
+}
+
+/* ── Phone mockup ── */
+.media-teaser__phone-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-teaser__phone {
+  width: 240px;
+  background: #111;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 40px 100px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+  position: relative;
+}
+
+.media-teaser__phone-notch {
+  width: 90px;
+  height: 24px;
+  background: #111;
+  border-radius: 0 0 16px 16px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.media-teaser__phone-img {
+  width: 100%;
+  aspect-ratio: 9 / 19;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 32px;
+  display: block;
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .media-teaser {
+    background: linear-gradient(to bottom, #F6F6F3 28%, #2D2C2A 28%);
+  }
+
+  .media-teaser__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .media-teaser__text,
+  .media-teaser__phone-wrap {
+    grid-column: 1 / -1;
+  }
+
+  .media-teaser__phone-wrap {
+    order: -1;
+  }
+}
+
+/* ─── Parallax Hero ──────────────────────────────────────────────────── */
+
+.parallax-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.parallax-hero__preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.parallax-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.parallax-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+  z-index: 1;
+}
+
+/* Content — full height flex column: display text → rule → body */
+.parallax-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  color: #fff;
+  text-align: center;
+}
+
+/* ── Big display text ── */
+.parallax-hero__display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.parallax-hero__display-line1 {
+  font-family: "Heading", serif;
+  font-weight: normal;
+  font-size: clamp(3rem, 9vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.parallax-hero__display-line2 {
+  font-family: "Heading", serif;
+  font-weight: normal;
+  font-size: clamp(2.5rem, 7.5vw, 7rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+/* "meets" is italic/script, "ARTISTRY." is upright caps */
+.parallax-hero__display-line2 em {
+  font-style: italic;
+  letter-spacing: 0.01em;
+  margin-right: 0.15em;
+}
+
+.parallax-hero__display-line3 {
+  font-family: "Heading", serif;
+  font-weight: normal;
+  font-size: clamp(1.5rem, 4vw, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0.4em 0 0;
+}
+
+/* ── Vertical rule ── */
+.parallax-hero__rule {
+  width: 1px;
+  height: clamp(60px, 10vw, 120px);
+  background: rgba(255, 255, 255, 0.3);
+  margin: clamp(2rem, 5vw, 4rem) auto;
+  flex-shrink: 0;
+}
+
+/* ── Body text ── */
+.parallax-hero__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.parallax-hero__eyebrow {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.parallax-hero__quote {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 38ch;
+  margin: 0;
+}
+
+/* ─── Mobile / touch fallback ────────────────────────────────────────── */
+@media (hover: none), (pointer: coarse) {
+  .parallax-hero__bg {
+    background-attachment: scroll;
+  }
+}
+
 @font-face {
   font-family: "Heading";
   src: url("/fonts/font.woff2") format("woff2"),
