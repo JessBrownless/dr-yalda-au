@@ -1,0 +1,585 @@
+import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+
+const socials = [
+  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
+  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
+];
+
+const features = [
+  {
+    outlet: "Vogue Australia",
+    type: "Feature",
+    title: "The doctor redefining natural beauty in Sydney",
+    year: "2024",
+    href: "#",
+  },
+  {
+    outlet: "Body + Soul",
+    type: "Interview",
+    title: "Why less is always more in cosmetic medicine",
+    year: "2024",
+    href: "#",
+  },
+  {
+    outlet: "The Sydney Morning Herald",
+    type: "Expert Opinion",
+    title: "What to know before your first cosmetic appointment",
+    year: "2023",
+    href: "#",
+  },
+  {
+    outlet: "Gritty Pretty",
+    type: "Feature",
+    title: "Honest answers to your biggest filler questions",
+    year: "2023",
+    href: "#",
+  },
+  {
+    outlet: "Marie Claire",
+    type: "Roundtable",
+    title: "The future of ethical aesthetics",
+    year: "2023",
+    href: "#",
+  },
+  {
+    outlet: "Clinique",
+    type: "Brand Partnership",
+    title: "Science-backed skincare with Dr. Yalda Jamali",
+    year: "2024",
+    href: "#",
+  },
+];
+
+export default function MediaPage() {
+  return (
+    <main>
+
+      {/* Hero */}
+      <section className="bg-parchment relative grid grid-cols-12 overflow-hidden" style={{ minHeight: "100vh" }}>
+
+        {/* Left image — full bleed from top, no padding */}
+        <div className="hidden md:block col-span-4 relative">
+          <img
+            src="/assets/IMG_0031.avif"
+            alt="Dr. Yalda Jamali"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "65% top" }}
+          />
+        </div>
+
+        {/* Centre — vertically centred content */}
+        <div className="col-span-12 md:col-span-4 flex flex-col items-center justify-center text-center gap-6 px-8 py-32 md:py-0">
+          <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+            Media &amp; Press
+          </p>
+          <h1
+            className="text-brand-black font-normal leading-[1.0]"
+            style={{ fontSize: "clamp(3rem, 5.5vw, 5.5rem)", letterSpacing: "-0.01em" }}
+          >
+            AS SEEN<br /><em>in press.</em>
+          </h1>
+          <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-[28ch]">
+            Features, interviews, and brand collaborations with some of Australia&rsquo;s most trusted publications.
+          </p>
+          <a
+            href="#features"
+            className="mt-2 px-10 py-4 border border-brand-black/30 text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-brand-black hover:text-white transition-all duration-300"
+          >
+            View Features
+          </a>
+        </div>
+
+        {/* Right — two overlapping images */}
+        <div className="hidden md:flex col-span-4 flex-col justify-center pr-10 pl-4 py-24">
+          <div className="relative">
+            {/* Larger portrait — behind */}
+            <div className="self-start" style={{ width: "78%", aspectRatio: "3/4" }}>
+              <img
+                src="/assets/IMG_0041.avif"
+                alt="Dr. Yalda Jamali"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            {/* Smaller image — overlaps top-right of large image */}
+            <div
+              className="absolute"
+              style={{ width: "55%", aspectRatio: "4/3", top: "-8%", right: 0, zIndex: 10 }}
+            >
+              <img
+                src="/assets/IMG_0038.avif"
+                alt="Dr. Yalda Jamali"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* Intro section */}
+      <section className="bg-cream py-24 md:py-36">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-8">
+
+            {/* Left — heading + body */}
+            <div className="col-span-12 md:col-span-8 flex flex-col gap-12">
+
+              {/* Heading block */}
+              <div className="flex flex-col gap-3">
+                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                  Dr. Yalda in the media
+                </p>
+                <h2
+                  className="text-brand-black font-normal leading-[1.05]"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+                >
+                  A TRUSTED VOICE<br />IN COSMETIC<br /><em>MEDICINE.</em>
+                </h2>
+              </div>
+
+              {/* Body text with left rule */}
+              <div className="flex gap-6 md:gap-10">
+                <div className="w-px bg-neutral-300 flex-shrink-0 self-stretch" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                  <p className="text-neutral-500 text-sm font-light leading-relaxed">
+                    Beyond the clinic, Dr. Yalda contributes expert commentary to leading publications, appears across broadcast and digital media, and partners with brands aligned with honest, evidence-based care.
+                  </p>
+                  <p className="text-neutral-500 text-sm font-light leading-relaxed">
+                    Her approach is always the same — whether speaking to a journalist or a patient: honest, considered, and grounded in science. No hype. No hyperbole.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right — As featured in */}
+            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-8 md:pt-1">
+              <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                As featured in
+              </p>
+              <div className="flex flex-col gap-5">
+                {["Vogue Australia", "Body + Soul", "Sydney Morning Herald", "Gritty Pretty", "Marie Claire", "Clinique"].map((name) => (
+                  <p
+                    key={name}
+                    className="text-brand-black font-normal leading-none"
+                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.95rem, 1.4vw, 1.15rem)", letterSpacing: "0.02em" }}
+                  >
+                    {name}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* How we can work together */}
+      <section className="bg-[#232121] py-24 md:py-36">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-16 items-center">
+
+            {/* Left — layered image composition */}
+            <div className="hidden md:block col-span-5 relative" style={{ aspectRatio: "3/4" }}>
+              {/* Background: full-bleed portrait as texture */}
+              <img
+                src="/assets/IMG_0031.avif"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ objectPosition: "65% top" }}
+              />
+              {/* Foreground: smaller portrait, inset and offset */}
+              <div
+                className="absolute"
+                style={{ width: "62%", top: "14%", left: "22%", bottom: "10%" }}
+              >
+                <img
+                  src="/assets/IMG_0028.avif"
+                  alt="Dr. Yalda Jamali"
+                  className="w-full h-full object-cover object-top"
+                  style={{
+                    boxShadow: "0 24px 80px rgba(0,0,0,0.7)",
+                    border: "6px solid #232121",
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Right — numbered list */}
+            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col">
+
+              <p className="text-neutral-600 text-[9px] font-light tracking-[0.5em] uppercase mb-12">
+                How we can work together
+              </p>
+
+              {[
+                {
+                  num: "01",
+                  title: "Press & Editorial",
+                  description: "Expert commentary, interviews, and features for print and digital publications.",
+                },
+                {
+                  num: "02",
+                  title: "Podcast & Broadcast",
+                  description: "Guest appearances on podcasts, TV segments, and digital media platforms.",
+                },
+                {
+                  num: "03",
+                  title: "Brand Partnerships",
+                  description: "Collaborative campaigns with brands aligned with evidence-based, ethical aesthetics.",
+                },
+              ].map(({ num, title, description }) => (
+                <div key={num} className="flex flex-col gap-4 py-8 border-b border-neutral-800 first:border-t first:border-neutral-800">
+                  <p
+                    className="text-white font-normal leading-none"
+                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)" }}
+                  >
+                    <span className="text-neutral-700 font-light" style={{ fontSize: "0.55em", letterSpacing: "0.05em", marginRight: "0.4em" }}>
+                      {num} /
+                    </span>
+                    {title.toUpperCase()}
+                  </p>
+                  <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-[38ch]">
+                    {description}
+                  </p>
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Press features list */}
+      <section className="bg-parchment py-24 md:py-32" id="features">
+        <div className="pg-container">
+
+          <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-16">
+            Features &amp; Appearances
+          </p>
+
+          <div className="flex flex-col divide-y divide-neutral-200">
+            {features.map(({ outlet, type, title, year, href }) => (
+              <a
+                key={title}
+                href={href}
+                className="group py-8 grid grid-cols-12 gap-4 md:gap-8 items-center hover:bg-neutral-100/50 transition-colors duration-300 -mx-4 px-4"
+              >
+                <div className="col-span-12 md:col-span-3 flex flex-col gap-1">
+                  <p className="text-brand-black text-sm font-normal" style={{ fontFamily: "'Heading', serif" }}>
+                    {outlet}
+                  </p>
+                  <p className="text-neutral-400 text-[9px] font-light tracking-[0.3em] uppercase">
+                    {type}
+                  </p>
+                </div>
+                <div className="col-span-10 md:col-span-7">
+                  <p className="text-neutral-600 text-base font-light leading-snug group-hover:text-brand-black transition-colors duration-300">
+                    {title}
+                  </p>
+                </div>
+                <div className="col-span-2 flex items-center justify-end gap-4">
+                  <span className="text-neutral-400 text-[10px] font-light tracking-[0.2em]">
+                    {year}
+                  </span>
+                  <span className="text-neutral-300 text-sm group-hover:text-brand-black group-hover:translate-x-1 transition-all duration-300">
+                    →
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+
+
+      {/* Testimonial — Clinique */}
+      <section className="bg-cream py-24 md:py-36">
+        <div className="pg-container">
+
+          {/* Top row — eyebrow + logo */}
+          <div className="flex items-center justify-between mb-10">
+            <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+              Partner testimonial
+            </p>
+            <img
+              src="/assets/logo-clinique.svg"
+              alt="Clinique"
+              className="h-6 w-auto object-contain opacity-50"
+            />
+          </div>
+
+          <div className="w-full h-px bg-neutral-200 mb-16" />
+
+          {/* Main grid — quote + image */}
+          <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
+
+            {/* Quote — left */}
+            <div className="col-span-12 md:col-span-7 flex flex-col gap-12">
+              <blockquote
+                className="text-brand-black font-normal leading-relaxed"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.2rem, 2vw, 1.65rem)" }}
+              >
+                &ldquo;Working with Dr. Yalda has been an absolute pleasure. As a brand, we value authenticity, and Dr. Yalda perfectly aligns with our mission to provide skincare solutions backed by science and expertise. Her content not only showcases her deep knowledge as a cosmetic doctor but also resonates with a wide audience who trusts her insights. Dr. Yalda has been a key partner in helping us reach the right audience — she&rsquo;s been instrumental in highlighting the value of our products.&rdquo;
+              </blockquote>
+
+              {/* Attribution */}
+              <div className="flex flex-col gap-3">
+                <div className="w-8 h-px bg-neutral-300" />
+                <p className="text-neutral-400 text-[9px] font-light tracking-[0.4em] uppercase">
+                  Clinique Australia &nbsp;·&nbsp; Brand Partnership
+                </p>
+              </div>
+            </div>
+
+            {/* Image — right, contained */}
+            <div className="hidden md:block col-span-4 col-start-9">
+              <div style={{ aspectRatio: "3/4" }}>
+                <img
+                  src="/assets/IMG_0038.avif"
+                  alt="Dr. Yalda Jamali"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <p className="text-neutral-400 text-[9px] font-light tracking-[0.3em] uppercase mt-4">
+                Dr. Yalda Jamali &nbsp;·&nbsp; 2024
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* Podcast section */}
+      <section className="bg-parchment py-24 md:py-36">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-8 items-center">
+
+            {/* Left — episode list */}
+            <div className="col-span-12 md:col-span-6 flex flex-col gap-10">
+              <div className="flex flex-col gap-4">
+                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                  Podcast appearances
+                </p>
+                <h2
+                  className="text-brand-black font-normal leading-tight"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+                >
+                  LISTEN TO<br /><em>Dr. Yalda.</em>
+                </h2>
+              </div>
+
+              <div className="flex flex-col divide-y divide-neutral-200">
+                {[
+                  { show: "The Glow Up Podcast", episode: "The truth about filler — what no one tells you", duration: "42 min" },
+                  { show: "Skin Deep with Sarah",  episode: "Evidence-based aesthetics and why it matters", duration: "35 min" },
+                  { show: "The Beauty Edit",       episode: "Natural results: redefining cosmetic medicine", duration: "28 min" },
+                ].map(({ show, episode, duration }, i) => (
+                  <div key={i} className="group flex items-start justify-between gap-6 py-6 cursor-pointer">
+                    <div className="flex items-start gap-4">
+                      {/* Play button */}
+                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center group-hover:border-brand-black transition-colors duration-300">
+                        <span className="text-neutral-400 group-hover:text-brand-black transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
+                      </button>
+                      <div className="flex flex-col gap-1">
+                        <p className="text-neutral-400 text-[9px] font-light tracking-[0.3em] uppercase">{show}</p>
+                        <p className="text-neutral-600 text-sm font-light leading-snug group-hover:text-brand-black transition-colors duration-300">{episode}</p>
+                      </div>
+                    </div>
+                    <span className="flex-shrink-0 text-neutral-400 text-[10px] font-light tracking-[0.2em] mt-1">{duration}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#"
+                className="self-start text-neutral-400 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-300 pb-1 hover:border-neutral-500 hover:text-neutral-500 transition-colors duration-300"
+              >
+                All episodes
+              </a>
+            </div>
+
+            {/* Right — phone mockup with podcast player */}
+            <div className="hidden md:flex col-span-5 col-start-8 justify-center">
+              <div
+                style={{
+                  width: 240,
+                  background: "#111",
+                  borderRadius: 40,
+                  padding: 10,
+                  boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04)",
+                  position: "relative",
+                }}
+              >
+                {/* Notch */}
+                <div style={{ width: 90, height: 24, background: "#111", borderRadius: "0 0 16px 16px", position: "absolute", top: 10, left: "50%", transform: "translateX(-50%)", zIndex: 2 }} />
+
+                {/* Screen */}
+                <div style={{ background: "#1a1a1a", borderRadius: 32, overflow: "hidden", paddingBottom: 24 }}>
+
+                  {/* Artwork */}
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "1/1" }}>
+                    <img
+                      src="/assets/IMG_0028.avif"
+                      alt="Podcast episode"
+                      style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+                    />
+                    {/* Gradient over artwork */}
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, #1a1a1a 100%)" }} />
+                  </div>
+
+                  {/* Player UI */}
+                  <div style={{ padding: "0 20px" }}>
+                    {/* Show + episode */}
+                    <p style={{ color: "#525252", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>The Glow Up Podcast</p>
+                    <p style={{ color: "#fff", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>The truth about filler — what no one tells you</p>
+
+                    {/* Progress bar */}
+                    <div style={{ height: 2, background: "#333", borderRadius: 2, marginBottom: 6, position: "relative" }}>
+                      <div style={{ height: "100%", width: "38%", background: "#fff", borderRadius: 2 }} />
+                      <div style={{ width: 8, height: 8, background: "#fff", borderRadius: "50%", position: "absolute", top: -3, left: "38%", transform: "translateX(-50%)" }} />
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
+                      <span style={{ color: "#525252", fontSize: 9 }}>16:04</span>
+                      <span style={{ color: "#525252", fontSize: 9 }}>42:18</span>
+                    </div>
+
+                    {/* Controls */}
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 28 }}>
+                      <span style={{ color: "#525252", fontSize: 16 }}>⏮</span>
+                      <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <span style={{ color: "#111", fontSize: 14, paddingLeft: 3 }}>▶</span>
+                      </div>
+                      <span style={{ color: "#525252", fontSize: 16 }}>⏭</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Media enquiries — echoes press list row pattern */}
+      <section className="bg-[#232121] py-24 md:py-32">
+        <div className="pg-container">
+
+          <p className="text-neutral-600 text-[9px] font-light tracking-[0.5em] uppercase mb-16">
+            Work with Dr. Yalda
+          </p>
+
+          <div className="w-full h-px bg-neutral-800" />
+
+          <div className="py-10 grid grid-cols-12 gap-4 md:gap-8 items-center">
+
+            {/* Outlet col */}
+            <div className="col-span-12 md:col-span-3 flex flex-col gap-1">
+              <p className="text-white text-sm font-normal" style={{ fontFamily: "'Heading', serif" }}>
+                Brand &amp; Media
+              </p>
+              <p className="text-neutral-600 text-[9px] font-light tracking-[0.3em] uppercase">
+                Enquiries
+              </p>
+            </div>
+
+            {/* Email — centre, large */}
+            <div className="col-span-12 md:col-span-5">
+              <a
+                href="mailto:media@dryalda.com.au"
+                className="text-white font-light hover:text-neutral-400 transition-colors duration-300"
+                style={{ fontSize: "clamp(1rem, 1.8vw, 1.4rem)", fontFamily: "'Heading', serif" }}
+              >
+                media@dryalda.com.au
+              </a>
+              <p className="text-neutral-500 text-sm font-light leading-relaxed mt-3 max-w-sm">
+                Dr. Yalda is open to editorial features, podcast appearances, and brand partnerships aligned with ethical, evidence-based aesthetics.
+              </p>
+            </div>
+
+            {/* CTA — right */}
+            <div className="col-span-12 md:col-span-4 flex justify-end">
+              <a
+                href="/contact"
+                className="px-10 py-4 bg-white text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-200 transition-colors duration-300"
+              >
+                Get in touch
+              </a>
+            </div>
+
+          </div>
+
+          <div className="w-full h-px bg-neutral-800" />
+
+        </div>
+      </section>
+
+      {/* Instagram feed */}
+      <section className="bg-parchment py-16 md:py-20">
+        <div className="pg-container">
+
+          <div className="flex items-center justify-between mb-10">
+            <div className="flex items-center gap-4">
+              <FaInstagram size={16} className="text-neutral-400" />
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
+                @dryaldajamali
+              </p>
+            </div>
+            <a
+              href="https://instagram.com/dryaldajamali"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-400 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-300 pb-1 hover:border-neutral-500 hover:text-neutral-600 transition-colors duration-300"
+            >
+              Follow
+            </a>
+          </div>
+
+          {/* 6-col grid of square images */}
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-1">
+            {[
+              { src: "/assets/IMG_0028.avif", pos: "object-center" },
+              { src: "/assets/IMG_0031.avif", pos: "object-top" },
+              { src: "/assets/IMG_0012.avif", pos: "object-top" },
+              { src: "/assets/IMG_0038.avif", pos: "object-center" },
+              { src: "/assets/IMG_0041.avif", pos: "object-top" },
+              { src: "/assets/IMG_0030.avif", pos: "object-top" },
+              { src: "/assets/IMG_0041.avif", pos: "object-center" },
+              { src: "/assets/IMG_0028.avif", pos: "object-top" },
+              { src: "/assets/IMG_0031.avif", pos: "object-center" },
+              { src: "/assets/IMG_0012.avif", pos: "object-center" },
+              { src: "/assets/IMG_0030.avif", pos: "object-center" },
+              { src: "/assets/IMG_0038.avif", pos: "object-top" },
+            ].map(({ src, pos }, i) => (
+              <a
+                key={i}
+                href="https://instagram.com/dryaldajamali"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block aspect-square overflow-hidden group"
+              >
+                <img
+                  src={src}
+                  alt=""
+                  aria-hidden="true"
+                  className={`w-full h-full object-cover ${pos} transition-transform duration-700 group-hover:scale-105`}
+                />
+                <div className="absolute inset-0 bg-brand-black/0 group-hover:bg-brand-black/20 transition-colors duration-300" />
+              </a>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  );
+}

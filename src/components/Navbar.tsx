@@ -21,7 +21,7 @@ const socials = [
 ];
 
 // Pages where the hero background is light (navbar starts dark)
-const LIGHT_HERO_PAGES = ["/about"];
+const LIGHT_HERO_PAGES = ["/about", "/media", "/appointments"];
 
 export default function Navbar() {
   const pathname = usePathname();

@@ -9,8 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Legacy
         cream: "#F6F6F3",
         parchment: "#EEEDE7",
+        // Brand — primary
+        "brand-black":  "#2D2C2A",
+        "brand-white":  "#F6F2EF",
+        // Brand — secondary
+        "brand-grey":       "#B6B4B2",
+        "brand-warm-light": "#E5DCD7",
+        "brand-blue":       "#9BB9CB",
+        "brand-blue-light": "#B9D3DF",
       },
       fontFamily: {
         lato: ["var(--font-lato)", "sans-serif"],
