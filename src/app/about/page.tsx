@@ -35,7 +35,7 @@ export default function AboutPage() {
               className="w-full h-auto pr-16"
               style={{ filter: "invert(1) brightness(0)" }}
             />
-            <p className="text-neutral-500 text-lg font-light leading-relaxed mt-6">
+            <p className="text-neutral-600 text-lg font-light leading-relaxed mt-6">
               Natural results, refined technique, and a practice built entirely on trust. Dr. Yalda brings eight years of London-trained expertise to every consultation — combining a master's in dermatology with a deeply personal approach to aesthetic medicine.
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
       {/* Bio section — statement */}
       <section className="bg-cream py-32 md:py-52 flex flex-col items-center justify-center text-center">
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
-          <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-12">
+          <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-12">
             Her story
           </p>
           <h2
@@ -84,7 +84,7 @@ export default function AboutPage() {
               >
                 {stat}
               </p>
-              <p className="text-neutral-400 text-[10px] font-light tracking-[0.35em] uppercase">
+              <p className="text-neutral-500 text-[10px] font-light tracking-[0.35em] uppercase">
                 {label}
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function AboutPage() {
 
           {/* Left — numbered items */}
           <div>
-            <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-12">
+            <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-12">
               In the clinic
             </p>
 
@@ -145,7 +145,7 @@ export default function AboutPage() {
                       {title}
                     </h3>
                   </div>
-                  <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-md pl-14">
+                  <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-md pl-14">
                     {body}
                   </p>
                 </div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
 
           {/* Top-right scattered text */}
           <div className="flex justify-end">
-            <p className="text-neutral-400 text-xs font-light leading-relaxed max-w-[180px] text-right">
+            <p className="text-neutral-500 text-xs font-light leading-relaxed max-w-[180px] text-right">
               Sydney-based cosmetic doctor specialising in facial aesthetics.
             </p>
           </div>

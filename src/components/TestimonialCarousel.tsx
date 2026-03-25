@@ -43,7 +43,7 @@ export default function TestimonialCarousel() {
 
         {/* Top row — eyebrow + logo + arrows */}
         <div className="flex items-center justify-between mb-10">
-          <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
             Partner testimonial
           </p>
           <div className="flex items-center gap-6">
@@ -55,7 +55,7 @@ export default function TestimonialCarousel() {
               />
             )}
             {/* Counter */}
-            <span className="text-neutral-400 text-[9px] font-light tracking-[0.3em]">
+            <span className="text-neutral-500 text-[9px] font-light tracking-[0.3em]">
               {String(current + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
             </span>
             {/* Arrows */}
@@ -99,7 +99,7 @@ export default function TestimonialCarousel() {
 
             <div className="flex flex-col gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              <p className="text-neutral-400 text-[9px] font-light tracking-[0.4em] uppercase">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
                 {t.attribution}
               </p>
             </div>
@@ -114,7 +114,7 @@ export default function TestimonialCarousel() {
                 className="w-full h-full object-cover object-top"
               />
             </div>
-            <p className="text-neutral-400 text-[9px] font-light tracking-[0.3em] uppercase mt-4">
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase mt-4">
               {t.imageCaption}
             </p>
           </div>

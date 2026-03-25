@@ -11,7 +11,6 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Media", href: "/media" },
-  { label: "Blog", href: "/blog" },
 ];
 
 const socials = [
@@ -52,7 +51,11 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`text-[8px] font-light tracking-[0.35em] uppercase transition-colors duration-300 ${dark ? "text-brand-black hover:text-neutral-500" : "text-white/60 hover:text-white"}`}
+                className={`text-[10px] font-light tracking-[0.35em] uppercase transition-colors duration-300 ${
+                  pathname === href
+                    ? dark ? "text-brand-black" : "text-white"
+                    : dark ? "text-neutral-600 hover:text-brand-black" : "text-white/50 hover:text-white"
+                }`}
               >
                 {label}
               </Link>
@@ -67,25 +70,29 @@ export default function Navbar() {
               width={200}
               height={40}
               style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1)" }}
-              className="h-6 w-auto transition-all duration-500 p-0.5"
+              className="h-6 w-auto transition-all duration-500 px-0.5 py-1"
             />
           </Link>
 
           {/* Right — links + CTA + hamburger */}
           <div className="flex items-center gap-8">
             <div className="hidden md:flex items-center gap-8">
-              {[{ label: "Media", href: "/media" }, { label: "Blog", href: "/blog" }].map(({ label, href }) => (
+              {[{ label: "Media", href: "/media" }].map(({ label, href }) => (
                 <Link
                   key={href}
                   href={href}
-                  className={`text-[8px] font-light tracking-[0.35em] uppercase transition-colors duration-300 ${dark ? "text-brand-black hover:text-neutral-500" : "text-white/60 hover:text-white"}`}
+                  className={`text-[10px] font-light tracking-[0.35em] uppercase transition-colors duration-300 ${
+                    pathname === href
+                      ? dark ? "text-brand-black" : "text-white"
+                      : dark ? "text-neutral-600 hover:text-brand-black" : "text-white/50 hover:text-white"
+                  }`}
                 >
                   {label}
                 </Link>
               ))}
               <Link
                 href="/appointments"
-                className={`px-6 py-2.5 text-[8px] font-light tracking-[0.4em] uppercase border transition-all duration-300 ${
+                className={`px-6 py-2.5 text-[10px] font-light tracking-[0.4em] uppercase border transition-all duration-300 ${
                   dark ? "border-brand-black text-brand-black hover:bg-brand-black hover:text-white" : "border-white/40 text-white/80 hover:border-white hover:text-white"
                 }`}
               >

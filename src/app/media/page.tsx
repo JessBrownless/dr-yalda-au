@@ -72,7 +72,7 @@ export default function MediaPage() {
 
         {/* Centre — vertically centred content */}
         <div className="col-span-12 md:col-span-4 flex flex-col items-center justify-center text-center gap-6 px-8 py-32 md:py-0">
-          <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
             Media &amp; Press
           </p>
           <h1
@@ -81,7 +81,7 @@ export default function MediaPage() {
           >
             AS SEEN<br /><em>in press.</em>
           </h1>
-          <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-[28ch]">
+          <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[28ch]">
             Features, interviews, and brand collaborations with some of Australia&rsquo;s most trusted publications.
           </p>
           <a
@@ -129,7 +129,7 @@ export default function MediaPage() {
 
               {/* Heading block */}
               <div className="flex flex-col gap-3">
-                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
                   Dr. Yalda in the media
                 </p>
                 <h2
@@ -145,10 +145,10 @@ export default function MediaPage() {
                 <div className="w-px bg-neutral-300 flex-shrink-0 self-stretch" />
                 <div className="flex flex-col gap-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-                    <p className="text-neutral-500 text-sm font-light leading-relaxed">
+                    <p className="text-neutral-600 text-sm font-light leading-relaxed">
                       Beyond the clinic, Dr. Yalda contributes expert commentary to leading publications, appears across broadcast and digital media, and partners with brands aligned with honest, evidence-based care.
                     </p>
-                    <p className="text-neutral-500 text-sm font-light leading-relaxed">
+                    <p className="text-neutral-600 text-sm font-light leading-relaxed">
                       Her approach is always the same — whether speaking to a journalist or a patient: honest, considered, and grounded in science. No hype. No hyperbole.
                     </p>
                   </div>
@@ -171,7 +171,7 @@ export default function MediaPage() {
 
             {/* Right — As featured in */}
             <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-8 md:pt-1">
-              <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
                 As featured in
               </p>
               <div className="flex flex-col gap-5">
@@ -192,41 +192,49 @@ export default function MediaPage() {
       </section>
 
       {/* How we can work together */}
-      <section className="bg-parchment py-24 md:py-36">
+      <section className="bg-parchment py-16 md:py-28">
         <div className="pg-container">
-          <div className="grid grid-cols-12 gap-6 md:gap-16 items-center">
+          <div className="grid grid-cols-12 gap-2 md:gap-16 items-center">
 
-            {/* Left — layered image composition */}
-            <div className="hidden md:block col-span-5 relative" style={{ aspectRatio: "3/4" }}>
-              {/* Background: full-bleed portrait as texture */}
-              <img
-                src="/assets/IMG_0031.avif"
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ objectPosition: "65% top" }}
-              />
-              {/* Foreground: smaller portrait, inset and offset */}
-              <div
-                className="absolute"
-                style={{ width: "62%", top: "14%", left: "22%", bottom: "10%" }}
-              >
+            {/* Left — layered image composition (desktop) / single image (mobile) */}
+            <div className="col-span-12 md:col-span-5 md:relative md:[aspect-ratio:3/4]">
+              {/* Mobile: square crop via reusable class */}
+              <div className="site-portrait md:hidden">
                 <img
                   src="/assets/IMG_0028.avif"
                   alt="Dr. Yalda Jamali"
-                  className="w-full h-full object-cover object-top"
-                  style={{
-                    boxShadow: "0 24px 80px rgba(0,0,0,0.4)",
-                    border: "6px solid #EEEDE7",
-                  }}
                 />
+              </div>
+              {/* Desktop: layered composition */}
+              <div className="hidden md:block absolute inset-0">
+                <img
+                  src="/assets/IMG_0031.avif"
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: "65% top" }}
+                />
+                <div
+                  className="absolute"
+                  style={{ width: "62%", top: "14%", left: "22%", bottom: "10%" }}
+                >
+                  <img
+                    src="/assets/IMG_0028.avif"
+                    alt="Dr. Yalda Jamali"
+                    className="w-full h-full object-cover object-top"
+                    style={{
+                      boxShadow: "0 24px 80px rgba(0,0,0,0.4)",
+                      border: "6px solid #EEEDE7",
+                    }}
+                  />
+                </div>
               </div>
             </div>
 
             {/* Right — numbered list */}
-            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col">
+            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col pt-6 md:pt-0">
 
-              <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-12">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-0 md:mb-12">
                 How we can work together
               </p>
 
@@ -257,7 +265,7 @@ export default function MediaPage() {
                     </span>
                     {title.toUpperCase()}
                   </p>
-                  <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-[38ch]">
+                  <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[38ch]">
                     {description}
                   </p>
                 </div>
@@ -432,7 +440,7 @@ export default function MediaPage() {
       <section className="bg-parchment py-24 md:py-32">
         <div className="pg-container">
 
-          <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
             Work with Dr. Yalda
           </p>
 
@@ -445,7 +453,7 @@ export default function MediaPage() {
               >
                 BRAND &amp; MEDIA<br /><em>enquiries.</em>
               </h2>
-              <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-[42ch]">
+              <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[42ch]">
                 Dr. Yalda is open to editorial features, podcast appearances, and brand partnerships aligned with ethical, evidence-based aesthetics.
               </p>
             </div>
@@ -478,7 +486,7 @@ export default function MediaPage() {
           <div className="flex items-center justify-between mb-10">
             <div className="flex items-center gap-4">
               <FaInstagram size={16} className="text-neutral-400" />
-              <p className="text-neutral-400 text-[9px] font-light tracking-[0.4em] uppercase">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
                 @dryaldajamali
               </p>
             </div>
@@ -486,7 +494,7 @@ export default function MediaPage() {
               href="https://instagram.com/dryaldajamali"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-200 pb-1 hover:border-neutral-400 hover:text-neutral-500 transition-colors duration-300"
+              className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-200 pb-1 hover:border-neutral-400 hover:text-neutral-500 transition-colors duration-300"
             >
               Follow
             </a>

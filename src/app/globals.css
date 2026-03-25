@@ -95,7 +95,7 @@
   font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.75;
-  color: #737373; /* zinc-500 */
+  color: #525252; /* neutral-600 */
   max-width: 36ch;
   margin: 0 0 2rem;
 }
@@ -361,5 +361,32 @@
     font-family: "Heading", serif;
     font-weight: normal;
     letter-spacing: 0.04em;
+  }
+}
+
+/* ─── Reusable portrait image block ─────────────────────────────────────── */
+/*
+  Mobile: square crop with bottom margin.
+  Desktop (md+): portrait 3/4 ratio, no bottom margin.
+  Use on any image wrapper that needs this responsive behaviour.
+*/
+.site-portrait {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.site-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media (min-width: 768px) {
+  .site-portrait {
+    aspect-ratio: 3 / 4;
+    margin-bottom: 0;
   }
 }

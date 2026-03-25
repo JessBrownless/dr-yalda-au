@@ -45,7 +45,7 @@ export default function AppointmentsPage() {
       <section className="bg-parchment pt-48 pb-24 md:pt-56 md:pb-32">
         <div className="pg-container">
           <div className="max-w-2xl">
-            <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-8">
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8">
               Appointments
             </p>
             <h1
@@ -65,7 +65,7 @@ export default function AppointmentsPage() {
       <section className="bg-cream py-24 md:py-32">
         <div className="pg-container">
 
-          <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-16">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-16">
             Choose a location
           </p>
 
@@ -80,10 +80,10 @@ export default function AppointmentsPage() {
                     {name.toUpperCase()}
                   </h2>
                   <div className="flex flex-col gap-1">
-                    <p className="text-neutral-500 text-sm font-light">
+                    <p className="text-neutral-600 text-sm font-light">
                       📍 {address}
                     </p>
-                    <p className="text-neutral-400 text-[10px] font-light tracking-[0.2em] uppercase">
+                    <p className="text-neutral-500 text-[10px] font-light tracking-[0.2em] uppercase">
                       {hours}
                     </p>
                   </div>
@@ -107,7 +107,7 @@ export default function AppointmentsPage() {
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 
             <div className="col-span-12 md:col-span-4">
-              <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
                 What to expect
               </p>
               <h2
@@ -134,7 +134,7 @@ export default function AppointmentsPage() {
                     >
                       {title.toUpperCase()}
                     </h3>
-                    <p className="text-neutral-500 text-sm font-light leading-relaxed">
+                    <p className="text-neutral-600 text-sm font-light leading-relaxed">
                       {body}
                     </p>
                   </div>
@@ -150,7 +150,7 @@ export default function AppointmentsPage() {
       <section className="bg-cream py-24 md:py-40">
         <div className="pg-container">
           <div className="max-w-2xl mx-auto text-center flex flex-col items-center gap-8">
-            <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
               A note from Dr. Yalda
             </p>
             <blockquote
@@ -159,7 +159,7 @@ export default function AppointmentsPage() {
             >
               &ldquo;I believe every patient deserves honesty above all else. My consultations are a space for you to ask anything — I&rsquo;ll always tell you what I genuinely think, even if that means doing nothing at all.&rdquo;
             </blockquote>
-            <p className="text-neutral-400 text-[9px] font-light tracking-[0.35em] uppercase">
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.35em] uppercase">
               Dr. Yalda Jamali — MBChB · MSc Dermatology · FACCSM
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function AppointmentsPage() {
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 
             <div className="col-span-12 md:col-span-4">
-              <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
                 FAQs
               </p>
               <h2
@@ -209,7 +209,7 @@ export default function AppointmentsPage() {
                   >
                     {q.toUpperCase()}
                   </h3>
-                  <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-lg">
+                  <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-lg">
                     {a}
                   </p>
                 </div>

@@ -78,7 +78,7 @@ export default function StickyScrollSection() {
               {/* Text */}
               <div className="absolute inset-0 flex items-center px-12 z-10">
                 <div className="flex flex-col gap-5 max-w-lg">
-                  <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase">
+                  <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase">
                     0{i + 1}
                   </p>
                   <h2

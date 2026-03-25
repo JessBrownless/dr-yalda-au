@@ -15,7 +15,7 @@ export default function Home() {
         <div className="pg-container">
           <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-10">
 
-            <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
               Enhancing
             </p>
 
@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       <SplitSection imageSrc="/assets/yalda-1.jpg" imageAlt="Dr. Yalda Jamali" imagePosition="left">
-        <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-8">
+        <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-8">
           Her approach
         </p>
         <h2
@@ -56,7 +56,7 @@ export default function Home() {
         <p className="text-neutral-600 text-base font-light leading-relaxed mb-4 max-w-sm">
           I&rsquo;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to enhance and harmonise features with natural, refined results.
         </p>
-        <p className="text-neutral-400 text-sm font-light leading-relaxed mb-8 max-w-sm">
+        <p className="text-neutral-500 text-sm font-light leading-relaxed mb-8 max-w-sm">
           My aim is always to boost your confidence and deliver outcomes that reflect your unique beauty.
         </p>
         <a
