@@ -20,7 +20,7 @@ const socials = [
 ];
 
 // Pages where the hero background is light (navbar starts dark)
-const LIGHT_HERO_PAGES = ["/about", "/media", "/appointments"];
+const LIGHT_HERO_PAGES = ["/about", "/media", "/appointments", "/services"];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -43,7 +43,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50">
-        <div className="px-10 h-20 flex items-center justify-between relative">
+        <div className="h-24 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
           <div className="hidden md:flex items-center gap-8">
@@ -51,10 +51,10 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`text-[10px] font-light tracking-[0.35em] uppercase transition-colors duration-300 ${
+                className={`text-[11px] font-normal tracking-[0.35em] uppercase transition-colors duration-300 ${
                   pathname === href
                     ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-neutral-600 hover:text-brand-black" : "text-white/50 hover:text-white"
+                    : dark ? "text-neutral-400 hover:text-brand-black" : "text-[#888888] hover:text-white"
                 }`}
               >
                 {label}
@@ -70,7 +70,7 @@ export default function Navbar() {
               width={200}
               height={40}
               style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1)" }}
-              className="h-6 w-auto transition-all duration-500 px-0.5 py-1"
+              className="h-6 w-auto transition-all duration-500 py-0.5"
             />
           </Link>
 
@@ -81,10 +81,10 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`text-[10px] font-light tracking-[0.35em] uppercase transition-colors duration-300 ${
+                  className={`text-[10px] font-normal tracking-[0.35em] uppercase transition-colors duration-300 ${
                     pathname === href
                       ? dark ? "text-brand-black" : "text-white"
-                      : dark ? "text-neutral-600 hover:text-brand-black" : "text-white/50 hover:text-white"
+                      : dark ? "text-neutral-600 hover:text-brand-black" : "text-[#888888] hover:text-white"
                   }`}
                 >
                   {label}
@@ -92,8 +92,8 @@ export default function Navbar() {
               ))}
               <Link
                 href="/appointments"
-                className={`px-6 py-2.5 text-[10px] font-light tracking-[0.4em] uppercase border transition-all duration-300 ${
-                  dark ? "border-brand-black text-brand-black hover:bg-brand-black hover:text-white" : "border-white/40 text-white/80 hover:border-white hover:text-white"
+                className={`px-6 py-2.5 text-[10px] font-normal tracking-[0.4em] uppercase border transition-all duration-300 ${
+                  dark ? "border-brand-black text-brand-black hover:bg-brand-black hover:text-white" : "border-[#888888] text-[#cccccc] hover:border-white hover:text-white"
                 }`}
               >
                 Book Now
@@ -116,11 +116,11 @@ export default function Navbar() {
 
       {/* Full-screen overlay menu */}
       <div
-        className={`fixed inset-0 z-40 bg-brand-black flex flex-col justify-between px-10 md:px-16 py-24 transition-all duration-700 ease-in-out ${
+        className={`fixed inset-0 z-40 bg-brand-black flex flex-col justify-between py-24 transition-all duration-700 ease-in-out ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-16 mt-12 flex-1">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-16 mt-12 flex-1" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
 
           {/* Left — primary nav links */}
           <ul className="flex flex-col gap-6">
@@ -183,7 +183,7 @@ export default function Navbar() {
         </div>
 
         {/* Bottom — socials */}
-        <div className="flex items-center gap-6 pt-10">
+        <div className="flex items-center gap-6 pt-10" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
           {socials.map(({ icon: Icon, href, label }) => (
             <a
               key={label}

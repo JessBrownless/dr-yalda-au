@@ -129,9 +129,6 @@ export default function MediaPage() {
 
               {/* Heading block */}
               <div className="flex flex-col gap-3">
-                <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
-                  Dr. Yalda in the media
-                </p>
                 <h2
                   className="text-brand-black font-normal leading-[1.05]"
                   style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
@@ -152,18 +149,7 @@ export default function MediaPage() {
                       Her approach is always the same — whether speaking to a journalist or a patient: honest, considered, and grounded in science. No hype. No hyperbole.
                     </p>
                   </div>
-                  <p
-                    className="text-neutral-400 font-normal leading-snug"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1.2vw, 1rem)", fontStyle: "italic" }}
-                  >
-                    &ldquo;The doctor redefining natural beauty in Sydney.&rdquo;
-                    <span
-                      className="not-italic text-neutral-400 ml-3"
-                      style={{ fontFamily: "var(--font-lato)", fontSize: "0.65rem", letterSpacing: "0.3em", textTransform: "uppercase", fontStyle: "normal" }}
-                    >
-                      — Vogue Australia
-                    </span>
-                  </p>
+
                 </div>
               </div>
 
@@ -172,10 +158,10 @@ export default function MediaPage() {
             {/* Right — As featured in */}
             <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-8 md:pt-1">
               <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
-                As featured in
+                Collaborations
               </p>
               <div className="flex flex-col gap-5">
-                {["Vogue Australia", "Body + Soul", "Sydney Morning Herald", "Gritty Pretty", "Marie Claire", "Clinique"].map((name) => (
+                {["Caudalie", "No7", "Medik8", "Clinique", "Mammamia"].map((name) => (
                   <p
                     key={name}
                     className="text-brand-black font-normal leading-none"
@@ -192,16 +178,16 @@ export default function MediaPage() {
       </section>
 
       {/* How we can work together */}
-      <section className="bg-parchment py-16 md:py-28">
+      <section className="bg-parchment pt-0 pb-16 md:pb-28">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-2 md:gap-16 items-center">
 
             {/* Left — layered image composition (desktop) / single image (mobile) */}
-            <div className="col-span-12 md:col-span-5 md:relative md:[aspect-ratio:3/4]">
+            <div className="col-span-12 md:col-span-5 md:relative md:[aspect-ratio:3/4] relative z-10 md:-mt-40">
               {/* Mobile: square crop via reusable class */}
               <div className="site-portrait md:hidden">
                 <img
-                  src="/assets/IMG_0028.avif"
+                  src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif"
                   alt="Dr. Yalda Jamali"
                 />
               </div>
@@ -216,15 +202,14 @@ export default function MediaPage() {
                 />
                 <div
                   className="absolute"
-                  style={{ width: "62%", top: "14%", left: "22%", bottom: "10%" }}
+                  style={{ width: "72%", top: "8%", left: "14%", bottom: "6%" }}
                 >
                   <img
-                    src="/assets/IMG_0028.avif"
+                    src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif"
                     alt="Dr. Yalda Jamali"
                     className="w-full h-full object-cover object-top"
                     style={{
                       boxShadow: "0 24px 80px rgba(0,0,0,0.4)",
-                      border: "6px solid #EEEDE7",
                     }}
                   />
                 </div>
