@@ -22,10 +22,10 @@ export default function HeroExperiment() {
   return (
     <>
       {/* ── MOBILE layout ── */}
-      <section className="md:hidden flex flex-col bg-[#EFEDE8] overflow-x-hidden">
+      <section className="md:hidden flex flex-col bg-[#EFEDE8] overflow-hidden">
 
         {/* Top parchment — nav offset + descriptor */}
-        <div className="px-8 pt-24 pb-6">
+        <div className="px-6 pt-24 pb-16">
           <p
             className="text-neutral-500 font-normal uppercase leading-snug"
             style={{ fontSize: "0.65rem", letterSpacing: "0.14em" }}
@@ -34,46 +34,45 @@ export default function HeroExperiment() {
           </p>
         </div>
 
-        {/* Full-width cycling image */}
-        <div className="relative w-full overflow-visible" style={{ aspectRatio: "1/1" }}>
-          {images.map((src, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={src}
-              src={src}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[3000ms] ease-in-out"
-              style={{ opacity: i === current ? 1 : 0 }}
-            />
-          ))}
-
-          {/* Small portrait — centred, overlapping bottom edge */}
-          <div
-            className="absolute left-1/2 z-10 overflow-hidden"
-            style={{
-              width: "52%",
-              aspectRatio: "3/4",
-              bottom: 0,
-              transform: "translate(-50%, 45%)",
-            }}
-          >
+        {/* Side-by-side images — portrait Yalda left, cycling right, 8px gap */}
+        <div className="flex w-full gap-2">
+          {/* Portrait — 2/3 ratio */}
+          <div className="relative overflow-hidden" style={{ aspectRatio: "2/3", flex: "0 0 40%" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/Yalda-17.avif"
               alt="Dr. Yalda Jamali"
-              className="w-full h-full object-cover object-top"
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
+          </div>
+
+          {/* Cycling image — fills remaining width, naturally wider crop */}
+          <div className="relative flex-1 overflow-hidden">
+            {images.map((src, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={src}
+                src={src}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[3000ms] ease-in-out"
+                style={{ opacity: i === current ? 1 : 0 }}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Bottom parchment — large name + tagline */}
-        <div className="px-8 pb-16 flex flex-col gap-2" style={{ paddingTop: "calc(52vw * 0.75 * 0.45 + 2rem)" }}>
-          <h1
-            className="text-brand-black font-normal leading-none"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 16vw, 5rem)", letterSpacing: "0.04em" }}
-          >
-            DR•YALDA
+        {/* Bottom parchment — logo + tagline */}
+        <div className="px-6 pt-10 pb-16 flex flex-col gap-16">
+          <h1 className="leading-none">
+            <Image
+              src="/assets/dr-yalda-logo-long.svg"
+              alt="Dr. Yalda Jamali"
+              width={600}
+              height={80}
+              className="h-10 w-auto"
+              style={{ filter: "brightness(0)" }}
+            />
           </h1>
           <p
             className="text-neutral-400 font-normal self-end"
