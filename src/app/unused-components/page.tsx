@@ -1,4 +1,5 @@
 import HeroExperiment from "@/components/HeroExperiment";
+import HeroSplit from "@/components/HeroSplit";
 
 export default function UnusedComponentsPage() {
   return (
@@ -6,6 +7,7 @@ export default function UnusedComponentsPage() {
 
       {/* ─── HERO EXPERIMENT ─────────────────────────────────────────────── */}
       <HeroExperiment />
+      <HeroSplit />
 
       {/* ─── FULL-WIDTH CTA — Let's begin ────────────────────────────────── */}
       <section className="bg-cream overflow-hidden">

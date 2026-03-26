@@ -47,7 +47,7 @@ export default function Navbar() {
                 className={`text-[11px] font-normal tracking-[0.35em] uppercase transition-colors duration-300 ${
                   pathname === href
                     ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-neutral-400 hover:text-brand-black" : "text-[#888888] hover:text-white"
+                    : dark ? "text-brand-black hover:text-neutral-500" : "text-[#888888] hover:text-white"
                 }`}
               >
                 {label}
@@ -77,12 +77,18 @@ export default function Navbar() {
                   className={`text-[10px] font-normal tracking-[0.35em] uppercase transition-colors duration-300 ${
                     pathname === href
                       ? dark ? "text-brand-black" : "text-white"
-                      : dark ? "text-neutral-600 hover:text-brand-black" : "text-[#888888] hover:text-white"
+                      : dark ? "text-brand-black hover:text-neutral-500" : "text-[#888888] hover:text-white"
                   }`}
                 >
                   {label}
                 </Link>
               ))}
+              <Link
+                href="/appointments"
+                className="px-6 py-2.5 text-[10px] font-normal tracking-[0.4em] uppercase border border-brand-black text-brand-black hover:bg-brand-black hover:text-white transition-all duration-300"
+              >
+                Book Now
+              </Link>
             </div>
 
             <button

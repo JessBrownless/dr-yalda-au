@@ -3,12 +3,13 @@ import TestimonialSection from "@/components/TestimonialSection";
 import LogoQuilt from "@/components/LogoQuilt";
 import SplitSection from "@/components/SplitSection";
 import MediaTeaser from "@/components/MediaTeaser";
+import HeroExperiment from "@/components/HeroExperiment";
 import HeroSplit from "@/components/HeroSplit";
 
 export default function Home() {
   return (
     <main>
-      <HeroSplit />
+      <HeroExperiment />
 
       {/* Intro section */}
       <section className="bg-cream py-32 md:py-56">

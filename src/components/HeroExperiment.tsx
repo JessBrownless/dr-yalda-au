@@ -22,7 +22,33 @@ export default function HeroExperiment() {
   return (
     <section className="min-h-screen grid grid-cols-1 md:grid-cols-2">
 
-      {/* Left — cream panel */}
+      {/* Left — large cycling image */}
+      <div className="relative overflow-hidden min-h-[70vw] md:min-h-0">
+        {images.map((src, i) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={src}
+            src={src}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[3000ms] ease-in-out"
+            style={{ opacity: i === current ? 1 : 0 }}
+          />
+        ))}
+        {/* Dots */}
+        <div className="absolute bottom-8 right-8 z-10 flex gap-2">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-4 h-px transition-all duration-300 ${i === current ? "bg-white/70" : "bg-white/20"}`}
+              aria-label={`Image ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Right — cream panel */}
       <div className="relative flex flex-col justify-between bg-[#EFEDE8] px-12 md:px-16 pt-32 pb-12 min-h-[80vw] md:min-h-0">
 
         {/* Top — descriptor */}
@@ -74,31 +100,6 @@ export default function HeroExperiment() {
 
       </div>
 
-      {/* Right — large cycling image */}
-      <div className="relative overflow-hidden min-h-[70vw] md:min-h-0">
-        {images.map((src, i) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            key={src}
-            src={src}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[3000ms] ease-in-out"
-            style={{ opacity: i === current ? 1 : 0 }}
-          />
-        ))}
-        {/* Dots */}
-        <div className="absolute bottom-8 left-8 z-10 flex gap-2">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-4 h-px transition-all duration-300 ${i === current ? "bg-white/70" : "bg-white/20"}`}
-              aria-label={`Image ${i + 1}`}
-            />
-          ))}
-        </div>
-      </div>
 
     </section>
   );
