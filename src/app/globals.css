@@ -47,8 +47,7 @@
 /* ─── Media Teaser ───────────────────────────────────────────────────── */
 
 .media-teaser {
-  /* Two-tone split: cream top third, dark bottom two-thirds */
-  background: linear-gradient(to bottom, #F6F6F3 38%, #2D2C2A 38%);
+  background: #2D2C2A;
   padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 7rem);
 }
 
@@ -95,7 +94,7 @@
   font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.75;
-  color: #525252; /* neutral-600 */
+  color: #a3a3a3;
   max-width: 36ch;
   margin: 0 0 2rem;
 }
@@ -104,7 +103,7 @@
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.35em;
-  color: #525252; /* zinc-600 */
+  color: #737373;
   margin: 0 0 1rem;
 }
 
@@ -187,7 +186,7 @@
 /* ── Mobile ── */
 @media (max-width: 767px) {
   .media-teaser {
-    background: linear-gradient(to bottom, #F6F6F3 28%, #2D2C2A 28%);
+    background: #2D2C2A;
   }
 
   .media-teaser__inner {

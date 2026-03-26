@@ -58,26 +58,54 @@ export default function MediaPage() {
     <main>
 
       {/* Hero */}
-      <section className="bg-parchment relative grid grid-cols-12 overflow-hidden" style={{ minHeight: "100vh" }}>
+      <section className="bg-parchment overflow-hidden relative" style={{ minHeight: "90vh" }}>
+        <div className="flex h-full absolute inset-0">
 
-        {/* Left image — full bleed from top, no padding */}
-        <div className="hidden md:block col-span-4 relative">
-          <img
-            src="/assets/IMG_0031.avif"
-            alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "65% top" }}
-          />
+          {/* Left sliver */}
+          <div className="hidden md:block flex-shrink-0 overflow-hidden" style={{ width: "9vw" }}>
+            <img
+              src="/assets/IMG_0041.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+
+          {/* Centre — large portrait */}
+          <div className="flex-shrink-0 overflow-hidden" style={{ width: "52vw" }}>
+            <img
+              src="/assets/IMG_0017.avif"
+              alt="Dr. Yalda Jamali"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
+          {/* Right sliver */}
+          <div className="flex-1 overflow-hidden">
+            <img
+              src="/assets/IMG_0038.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+
         </div>
 
-        {/* Centre — vertically centred content */}
-        <div className="col-span-12 md:col-span-4 flex flex-col items-center justify-center text-center gap-6 px-8 py-32 md:py-0">
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+        {/* Overlapping parchment card */}
+        <div
+          className="hidden md:flex absolute flex-col justify-center gap-6 bg-parchment px-10 py-12"
+          style={{ top: "15%", left: "46%", width: "32%", minHeight: "55%" }}
+        >
+          <p
+            className="text-neutral-400 font-normal uppercase"
+            style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "sans-serif" }}
+          >
             Media &amp; Press
           </p>
           <h1
-            className="text-brand-black font-normal leading-[1.0]"
-            style={{ fontSize: "clamp(3rem, 5.5vw, 5.5rem)", letterSpacing: "-0.01em" }}
+            className="text-brand-black font-normal leading-[1.05]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 4vw, 4.5rem)", letterSpacing: "0.01em" }}
           >
             AS SEEN<br /><em>in press.</em>
           </h1>
@@ -86,34 +114,23 @@ export default function MediaPage() {
           </p>
           <a
             href="#features"
-            className="mt-2 px-10 py-4 border border-brand-black/30 text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-brand-black hover:text-white transition-all duration-300"
+            className="self-start mt-2 text-brand-black text-[9px] font-normal tracking-[0.4em] uppercase border-b border-brand-black/30 pb-1 hover:border-brand-black transition-colors duration-300"
           >
             View Features
           </a>
         </div>
 
-        {/* Right — two overlapping images */}
-        <div className="hidden md:flex col-span-4 flex-col justify-center pr-10 pl-4 py-24">
-          <div className="relative">
-            {/* Larger portrait — behind */}
-            <div className="self-start" style={{ width: "78%", aspectRatio: "3/4" }}>
-              <img
-                src="/assets/IMG_0041.avif"
-                alt="Dr. Yalda Jamali"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            {/* Smaller image — overlaps top-right of large image */}
-            <div
-              className="absolute"
-              style={{ width: "55%", aspectRatio: "4/3", top: "-8%", right: 0, zIndex: 10 }}
-            >
-              <img
-                src="/assets/IMG_0038.avif"
-                alt="Dr. Yalda Jamali"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
+        {/* Mobile fallback */}
+        <div className="md:hidden relative flex flex-col items-center justify-end text-center gap-5 px-8 pb-16 h-full" style={{ minHeight: "90vh" }}>
+          <div className="absolute inset-0">
+            <img src="/assets/IMG_0017.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+            <div className="absolute inset-0 bg-cream/60" />
+          </div>
+          <div className="relative flex flex-col items-center gap-4">
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">Media &amp; Press</p>
+            <h1 className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 12vw, 5rem)" }}>
+              AS SEEN<br /><em>in press.</em>
+            </h1>
           </div>
         </div>
 

@@ -4,51 +4,32 @@ export default function AboutPage() {
   return (
     <main>
 
-      {/* 50/50 Hero */}
-      <section
-        className="grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: "calc(100vh - clamp(48px, 5vw, 80px))" }}
-      >
+      {/* Hero */}
+      <section className="grid grid-cols-1 md:grid-cols-2 min-h-screen">
 
-        {/* Left — text */}
-        <div className="bg-parchment relative flex flex-col gap-10 md:gap-0 md:justify-between px-8 pt-28 pb-12 md:p-28 overflow-hidden">
-
-          {/* Top-right scattered text */}
-          <div className="flex justify-end opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <p className="text-neutral-500 text-base font-light leading-relaxed max-w-[220px] text-right">
-              Sydney-based cosmetic doctor specialising in facial aesthetics.
-            </p>
-          </div>
-
-          {/* Mid — credentials */}
-          <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <p className="text-neutral-300 text-[10px] font-light tracking-[0.4em] uppercase">
-              MBChB · MSc Dermatology · FACCSM
-            </p>
-          </div>
-
-          {/* Bottom — logo + subtitle */}
-          <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.8s" }}>
-            <img
-              src="/assets/dr-yalda-logo-long.svg"
-              alt="Dr. Yalda Jamali"
-              className="w-full h-auto pr-8 md:pr-16"
-              style={{ filter: "invert(1) brightness(0)" }}
-            />
-            <p className="text-neutral-600 text-base md:text-lg font-light leading-relaxed mt-6">
-              Natural results, refined technique, and a practice built entirely on trust. Dr. Yalda brings eight years of London-trained expertise to every consultation — combining a master's in dermatology with a deeply personal approach to aesthetic medicine.
-            </p>
-          </div>
-
-        </div>
-
-        {/* Right — image */}
-        <div className="relative aspect-square md:aspect-auto md:min-h-0">
+        {/* Left — square image */}
+        <div className="relative aspect-square md:aspect-auto md:min-h-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
           <img
             src="/assets/Yalda-17.avif"
             alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
+        </div>
+
+        {/* Right — cream, heading + body */}
+        <div className="bg-parchment flex flex-col justify-center px-12 md:px-20 py-20 md:py-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h1
+            className="text-brand-black font-normal leading-[0.9] mb-12"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(4rem, 8vw, 7rem)", letterSpacing: "0.02em" }}
+          >
+            About.
+          </h1>
+          <p
+            className="text-neutral-600 font-light"
+            style={{ fontSize: "16px", lineHeight: "1.7", fontFamily: "sans-serif", maxWidth: "42ch" }}
+          >
+            Natural results, refined technique, and a practice built entirely on trust. Dr. Yalda brings eight years of London-trained expertise to every consultation — combining a master's in dermatology with a deeply personal approach to aesthetic medicine.
+          </p>
         </div>
 
       </section>

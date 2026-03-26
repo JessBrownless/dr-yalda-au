@@ -24,18 +24,25 @@ const socials = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  // Parchment nav background is always light, so elements always dark (except when menu is open)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Elements always dark (light hero behind), except when menu is open
   const dark = !open;
 
   return (
     <>
-      <nav className={`absolute top-0 left-0 right-0 md:fixed z-50 transition-colors duration-300 ${open ? "bg-transparent" : "bg-[#EFEDE8]"}`}>
+      <nav className={`absolute top-0 left-0 right-0 md:fixed z-50 transition-colors duration-500 ${open ? "bg-transparent" : scrolled ? "bg-transparent" : "bg-parchment"}`}>
         <div className="h-14 md:h-16 py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}

@@ -22,7 +22,7 @@ export default function HeroExperiment() {
   return (
     <>
       {/* ── MOBILE layout — single image editorial ── */}
-      <section className="md:hidden flex flex-col bg-[#EFEDE8] overflow-hidden h-screen">
+      <section className="md:hidden flex flex-col bg-parchment overflow-hidden h-screen">
 
         {/* Masthead row — logo flush left, descriptor flush right, baselines aligned */}
         <div className="px-6 pt-[128px] mb-8 flex items-end justify-between gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.15s" }}>
@@ -72,8 +72,8 @@ export default function HeroExperiment() {
       {/* ── DESKTOP layout ── */}
       <section className="hidden md:grid md:grid-cols-2 min-h-screen">
 
-        {/* Left — cream panel */}
-        <div className="relative flex flex-col justify-between bg-[#EFEDE8] px-16 pt-32 pb-12">
+        {/* Cream panel — left on desktop */}
+        <div className="relative flex flex-col justify-between bg-parchment px-16 pt-32 pb-12 order-1">
           <p
             className="text-neutral-500 font-normal leading-snug uppercase opacity-0 animate-fade-in"
             style={{ fontSize: "clamp(0.65rem, 0.9vw, 0.8rem)", letterSpacing: "0.12em", animationDelay: "0.2s", maxWidth: "18ch" }}
@@ -111,8 +111,8 @@ export default function HeroExperiment() {
           </p>
         </div>
 
-        {/* Right — cycling image */}
-        <div className="relative overflow-hidden">
+        {/* Cycling image — right on desktop */}
+        <div className="relative overflow-hidden order-2">
           {images.map((src, i) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img

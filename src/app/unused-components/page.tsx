@@ -1,6 +1,8 @@
 import HeroExperiment from "@/components/HeroExperiment";
 import HeroExperimentSaved from "@/components/HeroExperimentSaved";
 import HeroSplit from "@/components/HeroSplit";
+import SplitSection from "@/components/SplitSection";
+import StickyScrollSection from "@/components/StickyScrollSection";
 
 export default function UnusedComponentsPage() {
   return (
@@ -10,6 +12,60 @@ export default function UnusedComponentsPage() {
       <HeroExperimentSaved />
       <HeroExperiment />
       <HeroSplit />
+
+      {/* ─── MEDIA PAGE HERO (old) ───────────────────────────────────────── */}
+      <section className="bg-parchment relative grid grid-cols-12 overflow-hidden" style={{ minHeight: "100vh" }}>
+        <div className="hidden md:block col-span-4 relative">
+          <img src="/assets/IMG_0031.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "65% top" }} />
+        </div>
+        <div className="col-span-12 md:col-span-4 flex flex-col items-center justify-center text-center gap-6 px-8 py-32 md:py-0">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">Media &amp; Press</p>
+          <h1 className="text-brand-black font-normal leading-[1.0]" style={{ fontSize: "clamp(3rem, 5.5vw, 5.5rem)", letterSpacing: "-0.01em" }}>
+            AS SEEN<br /><em>in press.</em>
+          </h1>
+          <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[28ch]">Features, interviews, and brand collaborations with some of Australia&rsquo;s most trusted publications.</p>
+          <a href="#features" className="mt-2 px-10 py-4 border border-brand-black/30 text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-brand-black hover:text-white transition-all duration-300">View Features</a>
+        </div>
+        <div className="hidden md:flex col-span-4 flex-col justify-center pr-10 pl-4 py-24">
+          <div className="relative">
+            <div className="self-start" style={{ width: "78%", aspectRatio: "3/4" }}>
+              <img src="/assets/IMG_0041.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-top" />
+            </div>
+            <div className="absolute" style={{ width: "55%", aspectRatio: "4/3", top: "-8%", right: 0, zIndex: 10 }}>
+              <img src="/assets/IMG_0038.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── STICKY SCROLL — Collaborator / Cosmetic Doctor / Educator ────── */}
+      <StickyScrollSection />
+
+      {/* ─── HER APPROACH — SplitSection ─────────────────────────────────── */}
+      <SplitSection imageSrc="/assets/Yalda-1.avif" imageAlt="Dr. Yalda Jamali" imagePosition="left">
+        <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-8">
+          Her approach
+        </p>
+        <h2
+          className="text-brand-black font-normal leading-tight mb-8"
+          style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}
+        >
+          Natural results,<br />always.
+        </h2>
+        <div className="w-8 h-px bg-neutral-400 mb-8" />
+        <p className="text-neutral-600 text-base font-light leading-relaxed mb-4 max-w-sm">
+          I&rsquo;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to enhance and harmonise features with natural, refined results.
+        </p>
+        <p className="text-neutral-500 text-sm font-light leading-relaxed mb-8 max-w-sm">
+          My aim is always to boost your confidence and deliver outcomes that reflect your unique beauty.
+        </p>
+        <a
+          href="/about"
+          className="self-start text-brand-black text-[10px] font-light tracking-[0.35em] uppercase border-b border-neutral-400 pb-1 hover:border-brand-black transition-colors duration-300"
+        >
+          About Dr. Yalda
+        </a>
+      </SplitSection>
 
       {/* ─── FULL-WIDTH CTA — Let's begin ────────────────────────────────── */}
       <section className="bg-cream overflow-hidden">

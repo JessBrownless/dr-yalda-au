@@ -13,7 +13,7 @@ export default function TestimonialSection() {
   const { quote, logo, brand } = testimonials[0];
 
   return (
-    <section className="bg-cream py-24 md:py-48">
+    <section className="bg-parchment py-24 md:py-48">
       <div className="pg-container">
 
         <div className="w-6 h-px bg-neutral-300 mb-12 md:mb-16" />

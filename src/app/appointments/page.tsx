@@ -42,23 +42,33 @@ export default function AppointmentsPage() {
     <main>
 
       {/* Hero */}
-      <section className="bg-parchment pt-48 pb-24 md:pt-56 md:pb-32">
-        <div className="pg-container">
-          <div className="max-w-2xl">
-            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8">
-              Appointments
-            </p>
-            <h1
-              className="text-brand-black font-normal leading-[1.1]"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
-            >
-              BOOK A<br /><em>consultation.</em>
-            </h1>
-            <p className="text-neutral-600 text-base font-light leading-relaxed mt-8 max-w-md">
-              Every treatment begins with a conversation. Dr. Yalda takes time to understand your goals before recommending anything — no pressure, no rush.
-            </p>
-          </div>
+      <section className="bg-parchment relative flex items-center justify-center overflow-hidden py-48 md:py-64">
+
+        {/* Portrait — centered behind the text */}
+        <div
+          className="absolute"
+          style={{ width: "clamp(180px, 22vw, 340px)", aspectRatio: "3/4", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
+        >
+          <img
+            src="/assets/Yalda-17.avif"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-top"
+          />
         </div>
+
+        {/* Heading — sits over the portrait */}
+        <h1
+          className="relative z-10 text-brand-black font-normal text-center leading-none select-none w-full px-4 whitespace-nowrap"
+          style={{
+            fontFamily: "'Heading', serif",
+            fontSize: "clamp(4rem, 14vw, 14rem)",
+            letterSpacing: "0.05em",
+          }}
+        >
+          BOOK NOW
+        </h1>
+
       </section>
 
       {/* Clinic locations */}
