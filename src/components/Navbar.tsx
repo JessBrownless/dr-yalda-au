@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <>
       <nav className={`absolute top-0 left-0 right-0 md:fixed z-50 transition-colors duration-300 ${open ? "bg-transparent" : "bg-[#EFEDE8]"}`}>
-        <div className="h-14 md:h-16 py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
+        <div className="h-14 md:h-16 py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
           <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
