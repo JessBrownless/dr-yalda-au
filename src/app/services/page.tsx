@@ -66,9 +66,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Mobile — stacked */}
-      <section className="md:hidden bg-parchment pt-32 pb-0">
-        <div className="px-8 mb-8">
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
+      <section className="md:hidden bg-parchment pt-44 pb-0">
+        <div className="px-8 mb-20">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
             Services
           </p>
           <h1
@@ -84,12 +84,12 @@ export default function ServicesPage() {
             alt="Dr. Yalda Jamali"
             className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
           />
-        </div>
-        <div className="flex gap-4 px-8 py-6">
-          <div className="w-px bg-neutral-300 flex-shrink-0" />
-          <p className="text-neutral-600 text-sm font-light leading-relaxed">
-            Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
-          </p>
+          <div className="absolute bottom-0 left-0 right-0 flex gap-4 px-6 py-5 backdrop-blur-md bg-white/10">
+            <div className="w-px bg-white/50 flex-shrink-0" />
+            <p className="text-white text-[0.8rem] font-light leading-relaxed">
+              Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
+            </p>
+          </div>
         </div>
       </section>
 
