@@ -80,10 +80,16 @@ export default function ServicesPage() {
         </div>
         <div className="relative overflow-hidden" style={{ aspectRatio: "4/5" }}>
           <img
-            src="/assets/yalda-17.jpg"
+            src="/assets/dr-yalda-treatment.avif"
             alt="Dr. Yalda Jamali"
             className="absolute inset-0 w-full h-full object-cover object-top"
           />
+        </div>
+        <div className="flex gap-4 px-8 py-6">
+          <div className="w-px bg-neutral-300 flex-shrink-0" />
+          <p className="text-neutral-600 text-sm font-light leading-relaxed">
+            Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
+          </p>
         </div>
       </section>
 
