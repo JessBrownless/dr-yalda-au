@@ -11,10 +11,10 @@ export default function AboutPage() {
       >
 
         {/* Left — text */}
-        <div className="bg-parchment relative flex flex-col justify-between p-24 md:p-28 overflow-hidden">
+        <div className="bg-parchment relative flex flex-col gap-10 md:gap-0 md:justify-between px-8 pt-40 pb-12 md:p-28 overflow-hidden">
 
           {/* Top-right scattered text */}
-          <div className="flex justify-end mt-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="flex justify-end opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <p className="text-neutral-500 text-base font-light leading-relaxed max-w-[220px] text-right">
               Sydney-based cosmetic doctor specialising in facial aesthetics.
             </p>
@@ -32,10 +32,10 @@ export default function AboutPage() {
             <img
               src="/assets/dr-yalda-logo-long.svg"
               alt="Dr. Yalda Jamali"
-              className="w-full h-auto pr-16"
+              className="w-full h-auto pr-8 md:pr-16"
               style={{ filter: "invert(1) brightness(0)" }}
             />
-            <p className="text-neutral-600 text-lg font-light leading-relaxed mt-6">
+            <p className="text-neutral-600 text-base md:text-lg font-light leading-relaxed mt-6">
               Natural results, refined technique, and a practice built entirely on trust. Dr. Yalda brings eight years of London-trained expertise to every consultation — combining a master's in dermatology with a deeply personal approach to aesthetic medicine.
             </p>
           </div>
@@ -43,11 +43,11 @@ export default function AboutPage() {
         </div>
 
         {/* Right — image */}
-        <div className="relative min-h-[60vw] md:min-h-0">
+        <div className="relative aspect-square md:aspect-auto md:min-h-0">
           <img
             src="/assets/yalda-17.jpg"
             alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
           />
         </div>
 
