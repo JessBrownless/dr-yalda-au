@@ -24,32 +24,30 @@ export default function HeroExperiment() {
       {/* ── MOBILE layout — single image editorial ── */}
       <section className="md:hidden flex flex-col bg-[#EFEDE8] overflow-hidden h-screen">
 
-        {/* Descriptor — small, flush right */}
-        <div className="px-6 pt-[128px] pb-8 flex justify-end opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+        {/* Masthead row — logo flush left, descriptor flush right, baselines aligned */}
+        <div className="px-6 pt-[128px] mb-8 flex items-end justify-between gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.15s" }}>
+          <h1 className="leading-none flex-shrink-0">
+            <Image
+              src="/assets/dr-yalda-logo-long.svg"
+              alt="Dr. Yalda Jamali"
+              width={600}
+              height={80}
+              className="h-6 w-auto"
+              style={{ filter: "brightness(0)" }}
+            />
+          </h1>
           <p
-            className="text-neutral-500 font-normal uppercase text-right leading-snug"
+            className="text-neutral-500 font-normal uppercase text-right leading-snug flex-shrink-0"
             style={{ fontSize: "10px", letterSpacing: "0.15em" }}
           >
             Cosmetic Doctor<br />Practising in<br />Sydney
           </p>
         </div>
 
-        {/* DR•YALDA — SVG logo, large typographic anchor, flush left */}
-        <h1 className="px-6 mb-8 leading-none opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          <Image
-            src="/assets/dr-yalda-logo-long.svg"
-            alt="Dr. Yalda Jamali"
-            width={600}
-            height={80}
-            className="w-2/3 h-auto"
-            style={{ filter: "brightness(0)" }}
-          />
-        </h1>
-
         {/* Image — left-inset matching text margin, flush right, 48px below heading */}
         <div
           className="relative overflow-hidden opacity-0 animate-fade-in flex-1 min-h-0"
-          style={{ marginTop: "24px", marginLeft: "1.5rem", animationDelay: "0.3s" }}
+          style={{ marginLeft: "1.5rem", animationDelay: "0.3s" }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
