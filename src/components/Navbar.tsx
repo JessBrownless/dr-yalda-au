@@ -38,6 +38,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [startsLight]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   // When menu is open, always use white (dark overlay behind)
   const dark = isLight && !open;
 
@@ -64,7 +69,7 @@ export default function Navbar() {
           </div>
 
           {/* Logo — centered */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 opacity-90 hover:opacity-100 transition-opacity duration-300">
+          <Link href="/" className={`absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-90 hover:opacity-100"}`}>
             <Image
               src="/assets/dr-yalda-logo-long.svg"
               alt="Dr. Yalda Jamali"
@@ -108,98 +113,64 @@ export default function Navbar() {
       </nav>
 
       {/* Full-screen overlay menu */}
-      <div
-        className={`fixed inset-0 z-40 bg-brand-black flex flex-col justify-between py-24 transition-all duration-700 ease-in-out ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
-      >
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-16 mt-12 flex-1" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
+      <div className={`fixed inset-0 z-40 flex ${open ? "pointer-events-auto" : "pointer-events-none"}`}>
 
-          {/* Left — primary nav links */}
-          <ul className="flex flex-col gap-6">
-            {links.map(({ label, href }, i) => (
-              <li
-                key={href}
-                className="overflow-hidden"
-                style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
-              >
+        {/* Left — image panel, reveals from bottom */}
+        <div
+          className="w-[32%] relative overflow-hidden transition-all duration-700 ease-in-out"
+          style={{ clipPath: open ? "inset(0 0 0 0)" : "inset(100% 0 0 0)" }}
+        >
+          <Image
+            src="/assets/IMG_0017.avif"
+            alt=""
+            fill
+            className="object-cover md:object-center"
+            style={{ objectPosition: "calc(50% + 48px) center" }}
+          />
+        </div>
+
+        {/* Right — nav panel, slides in from top */}
+        <div
+          className="flex-1 bg-brand-black flex flex-col transition-all duration-700 ease-in-out"
+          style={{ clipPath: open ? "inset(0 0 0 0)" : "inset(0 0 100% 0)", padding: "clamp(1.5rem, 4vw, 2.5rem)" }}
+        >
+
+          {/* Nav links */}
+          <div className="flex flex-col justify-center flex-1 mt-6">
+            {[...links, { label: "Book Now", href: "/appointments" }].map(({ label, href }, i) => (
+              <div key={href}>
+                {i > 0 && <div className="w-full h-px bg-white/20" />}
                 <Link
                   href={href}
                   onClick={() => setOpen(false)}
-                  className={`block text-white font-normal leading-none tracking-tight transition-all duration-500 hover:text-neutral-400 ${
-                    open ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+                  className={`block py-5 text-white text-sm tracking-[0.35em] uppercase transition-all duration-500 hover:text-neutral-400 ${
+                    open ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-3"
                   }`}
-                  style={{ fontSize: "clamp(2rem, 5vw, 4rem)", fontFamily: "'Heading', serif", letterSpacing: "0.04em" }}
+                  style={{ transitionDelay: open ? `${i * 60 + 200}ms` : "0ms", fontFamily: "'Heading', serif" }}
                 >
                   {label}
                 </Link>
-              </li>
-            ))}
-            {/* Book — mobile only */}
-            <li className="overflow-hidden md:hidden" style={{ transitionDelay: open ? `${links.length * 60}ms` : "0ms" }}>
-              <Link
-                href="/appointments"
-                onClick={() => setOpen(false)}
-                className={`block text-white font-normal leading-none tracking-tight transition-all duration-500 hover:text-neutral-400 ${open ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}
-                style={{ fontSize: "clamp(2rem, 5vw, 4rem)", fontFamily: "'Heading', serif", letterSpacing: "0.04em" }}
-              >
-                Book
-              </Link>
-            </li>
-          </ul>
-
-          {/* Right — clinic locations (desktop only) */}
-          <div className="hidden md:flex flex-col md:w-[420px] md:pt-2">
-            <p className="text-neutral-500 text-[9px] font-light tracking-[0.45em] uppercase mb-8">
-              Clinic Locations
-            </p>
-            {[
-              { name: "Epios Cosmetic Clinic", address: "18 William St, Paddington, 2021", href: "#" },
-              { name: "Northern Sydney Dermatology & Laser", address: "1/29 Baringa Rd, Northbridge, 2063", href: "#" },
-              { name: "Austin Clinic", address: "5/67 Wanganella St, Balgowlah, 2093", href: "#" },
-            ].map(({ name, address, href: bookHref }, i) => (
-              <div key={name}>
-                {i > 0 && <div className="w-full h-px bg-neutral-800 my-6" />}
-                <div className="flex items-start justify-between gap-6">
-                  <div className="flex flex-col gap-2">
-                    <h3
-                      className="text-white font-normal leading-tight"
-                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.5vw, 1.25rem)", letterSpacing: "0.04em" }}
-                    >
-                      {name.toUpperCase()}
-                    </h3>
-                    <p className="text-neutral-500 text-sm font-light flex items-center gap-2">
-                      <span className="text-[10px]">📍</span>
-                      {address}
-                    </p>
-                  </div>
-                  <a
-                    href={bookHref}
-                    className="flex-shrink-0 px-5 py-2.5 bg-white text-brand-black text-[9px] font-light tracking-[0.35em] uppercase hover:bg-neutral-200 transition-colors duration-300"
-                  >
-                    Book
-                  </a>
-                </div>
               </div>
+            ))}
+            <div className="w-full h-px bg-white/20" />
+          </div>
+
+          {/* Socials */}
+          <div className="flex items-center gap-6 mt-8">
+            {socials.map(({ icon: Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="text-neutral-400 hover:text-white transition-colors duration-300"
+              >
+                <Icon size={13} />
+              </a>
             ))}
           </div>
 
-        </div>
-
-        {/* Bottom — socials */}
-        <div className="flex items-center gap-6 pt-10" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
-          {socials.map(({ icon: Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="text-neutral-500 hover:text-white transition-colors duration-300"
-            >
-              <Icon size={14} />
-            </a>
-          ))}
         </div>
       </div>
     </>
