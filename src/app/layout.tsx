@@ -22,6 +22,7 @@ const marcellus = Marcellus({
 export const metadata: Metadata = {
   title: "Dr. Yalda",
   description: "",
+  themeColor: "#EEEDE7",
 };
 
 export default function RootLayout({

@@ -78,11 +78,11 @@ export default function ServicesPage() {
             Evidence <em>led</em> practice
           </h1>
         </div>
-        <div className="relative overflow-hidden" style={{ aspectRatio: "4/5" }}>
+        <div className="relative overflow-hidden aspect-square">
           <img
             src="/assets/dr-yalda-treatment.avif"
             alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
           />
         </div>
         <div className="flex gap-4 px-8 py-6">
@@ -95,7 +95,7 @@ export default function ServicesPage() {
 
 
       {/* ─── CONNECTOR ────────────────────────────────────────────────────── */}
-      <div className="bg-cream flex justify-center">
+      <div className="bg-cream hidden md:flex justify-center">
         <div className="w-px bg-neutral-200" style={{ height: "100px" }} />
       </div>
 
@@ -131,11 +131,11 @@ export default function ServicesPage() {
             {/* Left — image */}
             <div className="col-span-12 md:col-span-5 relative">
               <FadeIn up={false}>
-                <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
+                <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                   <img
                     src="/assets/dr-yalda-treatment-03.avif"
                     alt="Dr. Yalda Jamali"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-center md:object-top"
                   />
                 </div>
               </FadeIn>
@@ -203,15 +203,15 @@ export default function ServicesPage() {
       </section>
 
       {/* ─── PHILOSOPHY STATEMENT ─────────────────────────────────────────── */}
-      <section className="bg-cream py-32 md:py-48 flex items-center justify-center relative overflow-hidden">
-        <img src="/assets/logo-circle.svg" alt="" aria-hidden="true" className="absolute w-[280px] h-[280px] opacity-[0.04] pointer-events-none select-none" />
-        <FadeIn className="relative max-w-4xl mx-auto px-8 text-center flex flex-col items-center gap-6">
-          <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+      <section className="bg-cream py-28 md:py-48 flex items-center justify-center relative overflow-hidden">
+        <img src="/assets/logo-circle.svg" alt="" aria-hidden="true" className="absolute w-[160px] h-[160px] md:w-[280px] md:h-[280px] opacity-[0.04] pointer-events-none select-none" />
+        <FadeIn className="relative max-w-[640px] mx-auto px-10 md:px-8 text-center flex flex-col items-center gap-8 md:gap-6">
+          <p className="text-neutral-400 text-[8px] font-light tracking-[0.45em] uppercase">
             The philosophy
           </p>
           <p
-            className="text-brand-black font-normal leading-relaxed"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.4rem)", letterSpacing: "0.01em" }}
+            className="text-brand-black font-normal leading-[1.05]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)", letterSpacing: "-0.01em" }}
           >
             Balanced, <em>natural results</em> — with patient safety and education at the centre of every decision.
           </p>
@@ -226,7 +226,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-12 gap-8 items-start">
 
             {/* Left — numbered list */}
-            <div className="col-span-12 md:col-span-6 flex flex-col">
+            <div className="col-span-12 md:col-span-6 flex flex-col order-2 md:order-1">
               <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-12">
                 The Dr. Yalda approach
               </p>
@@ -260,8 +260,8 @@ export default function ServicesPage() {
             </div>
 
             {/* Right — portrait */}
-            <FadeIn up={false} className="col-span-12 md:col-span-5 md:col-start-8">
-              <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
+            <FadeIn up={false} className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2">
+              <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img
                   src="/assets/Yalda-1.jpg"
                   alt="Dr. Yalda Jamali"
