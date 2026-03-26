@@ -58,7 +58,7 @@ export default function Navbar() {
           {/* Logo — centered */}
           <Link href="/" className={`absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-90 hover:opacity-100"}`}>
             <Image
-              src="/assets/dr-yalda-logo-long.svg"
+              src="/assets/dr-yalda-logo-icon.svg"
               alt="Dr. Yalda Jamali"
               width={200}
               height={40}
