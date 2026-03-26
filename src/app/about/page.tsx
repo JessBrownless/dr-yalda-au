@@ -4,11 +4,22 @@ export default function AboutPage() {
   return (
     <main>
 
-      {/* Hero */}
-      <section className="grid grid-cols-1 md:grid-cols-2 min-h-screen">
+      {/* Hero — mobile */}
+      <section className="md:hidden bg-parchment flex flex-col items-center pt-32 pb-16 overflow-hidden">
 
-        {/* Left — square image */}
-        <div className="relative aspect-square md:aspect-auto md:min-h-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+        {/* "Meet" — above image */}
+        <h1
+          className="text-brand-black font-normal leading-none w-full text-center opacity-0 animate-fade-in"
+          style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 16vw, 6rem)", letterSpacing: "0.02em", animationDelay: "0.1s" }}
+        >
+          Meet
+        </h1>
+
+        {/* Portrait — centred, overlaps "the Doctor." below */}
+        <div
+          className="relative z-10 w-1/2 opacity-0 animate-fade-in"
+          style={{ aspectRatio: "3/4", marginTop: "-0.5rem", animationDelay: "0.25s" }}
+        >
           <img
             src="/assets/Yalda-17.avif"
             alt="Dr. Yalda Jamali"
@@ -16,13 +27,35 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* Right — cream, heading + body */}
-        <div className="bg-parchment flex flex-col justify-center px-12 md:px-20 py-20 md:py-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+        {/* "the Doctor." — in front of image */}
+        <h1
+          className="relative z-20 text-brand-black font-normal leading-none w-full text-center opacity-0 animate-fade-in"
+          style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 16vw, 6rem)", letterSpacing: "0.02em", marginTop: "-1.5rem", animationDelay: "0.4s" }}
+        >
+          <em>the Doctor.</em>
+        </h1>
+
+      </section>
+
+      {/* Hero — desktop */}
+      <section className="hidden md:grid md:grid-cols-2 min-h-screen">
+
+        {/* Left — full-bleed image */}
+        <div className="relative opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <img
+            src="/assets/Yalda-17.avif"
+            alt="Dr. Yalda Jamali"
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
+        </div>
+
+        {/* Right — parchment, heading + body */}
+        <div className="bg-parchment flex flex-col justify-center px-12 md:px-20 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <h1
             className="text-brand-black font-normal leading-[0.9] mb-12"
             style={{ fontFamily: "'Heading', serif", fontSize: "clamp(4rem, 8vw, 7rem)", letterSpacing: "0.02em" }}
           >
-            About.
+            Meet the<br />Doctor.
           </h1>
           <p
             className="text-neutral-600 font-light"
