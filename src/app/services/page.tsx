@@ -164,8 +164,7 @@ export default function ServicesPage() {
                   "Skin laxity",
                   "Uneven skin tone",
                   "Facial balancing & contouring",
-                  "Changes in volume",
-                  "Collagen loss",
+                  "Volume & collagen loss",
                 ].map((item, i) => (
                   <div key={item} className="flex items-baseline gap-4 py-3 border-t border-neutral-200 last:border-b">
                     <span
