@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="relative md:fixed md:top-0 md:left-0 md:right-0 z-50">
+      <nav className="absolute top-0 left-0 right-0 md:fixed z-50">
         <div className="h-24 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}

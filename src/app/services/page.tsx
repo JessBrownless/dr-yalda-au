@@ -66,7 +66,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Mobile — stacked */}
-      <section className="md:hidden bg-parchment pt-16 pb-0">
+      <section className="md:hidden bg-parchment pt-24 pb-0">
         <div className="px-8 mb-20">
           <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
             Services
