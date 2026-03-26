@@ -9,7 +9,8 @@ const images = [
   "/assets/IMG_0030.avif",
 ];
 
-export default function HeroExperiment() {
+// Frozen snapshot of the layered-overlap mobile experiment
+export default function HeroExperimentSaved() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -21,49 +22,72 @@ export default function HeroExperiment() {
 
   return (
     <>
-      {/* ── MOBILE layout — single image editorial ── */}
-      <section className="md:hidden flex flex-col bg-[#EFEDE8] overflow-hidden h-screen">
+      {/* ── MOBILE layout ── */}
+      <section className="md:hidden flex flex-col bg-[#EFEDE8] overflow-x-hidden">
 
-        {/* Descriptor — small, flush right */}
-        <div className="px-6 pt-[128px] pb-8 flex justify-end opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+        {/* Top parchment — nav offset + descriptor */}
+        <div className="px-6 pt-24 pb-16">
           <p
-            className="text-neutral-500 font-normal uppercase text-right leading-snug"
-            style={{ fontSize: "10px", letterSpacing: "0.15em" }}
+            className="text-neutral-500 font-normal uppercase leading-snug opacity-0 animate-fade-in"
+            style={{ fontSize: "0.65rem", letterSpacing: "0.14em", animationDelay: "0.1s" }}
           >
             Cosmetic Doctor<br />Practising in<br />Sydney
           </p>
         </div>
 
-        {/* DR•YALDA — SVG logo, large typographic anchor, flush left */}
-        <h1 className="px-6 mb-8 leading-none opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          <Image
-            src="/assets/dr-yalda-logo-long.svg"
-            alt="Dr. Yalda Jamali"
-            width={600}
-            height={80}
-            className="w-2/3 h-auto"
-            style={{ filter: "brightness(0)" }}
-          />
-        </h1>
+        {/* Image composition — A in flow, B absolute over bottom-right of A */}
+        <div className="relative w-full opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
 
-        {/* Image — left-inset matching text margin, flush right, 48px below heading */}
-        <div
-          className="relative overflow-hidden opacity-0 animate-fade-in flex-1 min-h-0"
-          style={{ marginTop: "24px", marginLeft: "1.5rem", animationDelay: "0.3s" }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/Yalda-17.avif"
-            alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover object-top"
-          />
+          {/* Image A — hero portrait 4:5, 90% wide, flush left */}
+          <div className="relative overflow-hidden" style={{ width: "90%", aspectRatio: "4/5", zIndex: 10 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/Yalda-17.avif"
+              alt="Dr. Yalda Jamali"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
+          </div>
+
+          {/* Image B — delicate accent 3:4, 38% wide, collarbone-level offset */}
+          <div
+            className="absolute overflow-hidden"
+            style={{
+              width: "38%",
+              aspectRatio: "3/4",
+              right: 0,
+              top: "84%",
+              zIndex: 20,
+            }}
+          >
+            {images.map((src, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={src}
+                src={src}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[3000ms] ease-in-out"
+                style={{ opacity: i === current ? 1 : 0 }}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* cosmetic & skin — flush left, space below image */}
-        <div className="px-6 pt-4 pb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+        {/* Logo block */}
+        <div className="relative px-6 pb-16 flex flex-col opacity-0 animate-fade-in" style={{ marginTop: "-2px", zIndex: 30, animationDelay: "0.55s" }}>
+          <h1 className="leading-none">
+            <Image
+              src="/assets/dr-yalda-logo-long.svg"
+              alt="Dr. Yalda Jamali"
+              width={600}
+              height={80}
+              className="h-[34px] w-auto"
+              style={{ filter: "brightness(0)" }}
+            />
+          </h1>
           <p
             className="text-neutral-400 font-normal"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 5vw, 1.5rem)", fontStyle: "italic", letterSpacing: "0.02em", marginLeft: "-1px" }}
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 5vw, 1.5rem)", fontStyle: "italic", letterSpacing: "0.02em", marginTop: "28px" }}
           >
             cosmetic &amp; skin
           </p>

@@ -1,4 +1,5 @@
 import HeroExperiment from "@/components/HeroExperiment";
+import HeroExperimentSaved from "@/components/HeroExperimentSaved";
 import HeroSplit from "@/components/HeroSplit";
 
 export default function UnusedComponentsPage() {
@@ -6,6 +7,7 @@ export default function UnusedComponentsPage() {
     <main>
 
       {/* ─── HERO EXPERIMENT ─────────────────────────────────────────────── */}
+      <HeroExperimentSaved />
       <HeroExperiment />
       <HeroSplit />
 
