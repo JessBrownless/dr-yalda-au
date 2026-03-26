@@ -45,7 +45,7 @@ export default function AboutPage() {
         {/* Right — image */}
         <div className="relative aspect-square md:aspect-auto md:min-h-0">
           <img
-            src="/assets/yalda-17.jpg"
+            src="/assets/Yalda-17.avif"
             alt="Dr. Yalda Jamali"
             className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
           />
@@ -150,7 +150,7 @@ export default function AboutPage() {
         {/* Right — image */}
         <div className="relative min-h-[60vw] md:min-h-0">
           <img
-            src="/assets/yalda-17.jpg"
+            src="/assets/Yalda-17.avif"
             alt="Dr. Yalda Jamali"
             className="absolute inset-0 w-full h-full object-cover object-top"
           />

@@ -27,7 +27,7 @@ export default function MediaTeaser() {
             <div className="media-teaser__phone-notch" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/assets/Yalda-17.jpg"
+              src="/assets/Yalda-17.avif"
               alt="Dr. Yalda Jamali"
               className="media-teaser__phone-img"
             />

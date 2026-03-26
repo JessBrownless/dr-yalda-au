@@ -255,7 +255,7 @@ export default function ServicesPage() {
             <FadeIn up={false} className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2">
               <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img
-                  src="/assets/Yalda-1.jpg"
+                  src="/assets/Yalda-1.avif"
                   alt="Dr. Yalda Jamali"
                   className="w-full h-full object-cover object-top"
                 />

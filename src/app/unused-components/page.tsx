@@ -17,7 +17,7 @@ export default function UnusedComponentsPage() {
             <a href="/appointments" className="mt-2 px-10 py-4 bg-brand-black text-white text-[9px] font-normal tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300">Book Now</a>
           </div>
           <div className="relative overflow-hidden">
-            <img src="/assets/Yalda-1.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+            <img src="/assets/Yalda-1.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
           </div>
         </div>
       </section>
@@ -94,7 +94,7 @@ export default function UnusedComponentsPage() {
             <div className="col-span-12 md:col-span-5 md:col-start-8">
               <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
                 <img
-                  src="/assets/Yalda-1.jpg"
+                  src="/assets/Yalda-1.avif"
                   alt="Dr. Yalda Jamali"
                   className="w-full h-full object-cover object-top"
                 />
@@ -114,7 +114,7 @@ export default function UnusedComponentsPage() {
             <div className="col-span-12 md:col-span-5">
               <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
                 <img
-                  src="/assets/Yalda-1.jpg"
+                  src="/assets/Yalda-1.avif"
                   alt="Dr. Yalda Jamali"
                   className="w-full h-full object-cover object-top"
                 />
@@ -278,7 +278,7 @@ export default function UnusedComponentsPage() {
             ))}
           </div>
           <div className="relative">
-            <img src="/assets/yalda-17.jpg" alt="Dr. Yalda Jamali in clinic" className="w-full aspect-[3/4] object-cover object-top" />
+            <img src="/assets/Yalda-17.avif" alt="Dr. Yalda Jamali in clinic" className="w-full aspect-[3/4] object-cover object-top" />
           </div>
         </div>
       </section>

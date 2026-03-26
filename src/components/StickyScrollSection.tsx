@@ -7,19 +7,19 @@ const items = [
     title: "Collaborator",
     description:
       "Placeholder — a short line about Dr. Yalda's collaborative approach with patients and peers.",
-    image: "/assets/big-scroll-01.jpg",
+    image: "/assets/big-scroll-01.avif",
   },
   {
     title: "Cosmetic Doctor",
     description:
       "Placeholder — a short line about her clinical expertise and commitment to natural results.",
-    image: "/assets/big-scroll-02.jpg",
+    image: "/assets/big-scroll-02.avif",
   },
   {
     title: "Educator",
     description:
       "Placeholder — a short line about her role in training and advancing the field.",
-    image: "/assets/big-scroll-03.jpg",
+    image: "/assets/big-scroll-03.avif",
   },
 ];
 

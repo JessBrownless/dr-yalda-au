@@ -31,7 +31,7 @@ export default function HeroSplit() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/Yalda-17.jpg"
+            src="/assets/Yalda-17.avif"
             alt="Dr. Yalda Jamali"
             className="w-full h-full object-cover object-top"
           />

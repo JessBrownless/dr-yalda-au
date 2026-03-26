@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SplitSection imageSrc="/assets/yalda-1.jpg" imageAlt="Dr. Yalda Jamali" imagePosition="left">
+      <SplitSection imageSrc="/assets/Yalda-1.avif" imageAlt="Dr. Yalda Jamali" imagePosition="left">
         <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-8">
           Her approach
         </p>
