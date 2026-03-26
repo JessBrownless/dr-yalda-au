@@ -137,7 +137,7 @@ export default function Navbar() {
                   className={`block text-white font-normal leading-none tracking-tight transition-all duration-500 hover:text-neutral-400 ${
                     open ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
                   }`}
-                  style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+                  style={{ fontSize: "clamp(2rem, 5vw, 4rem)", fontFamily: "'Heading', serif", letterSpacing: "0.04em" }}
                 >
                   {label}
                 </Link>
