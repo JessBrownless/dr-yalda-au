@@ -23,7 +23,7 @@ export default function HeroExperiment() {
     <section className="min-h-screen grid grid-cols-1 md:grid-cols-2">
 
       {/* Left — large cycling image */}
-      <div className="relative overflow-hidden min-h-[70vw] md:min-h-0">
+      <div className="relative overflow-hidden aspect-square md:aspect-auto md:min-h-0">
         {images.map((src, i) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img
