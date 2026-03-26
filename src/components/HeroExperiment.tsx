@@ -27,15 +27,15 @@ export default function HeroExperiment() {
         {/* Top parchment — nav offset + descriptor */}
         <div className="px-6 pt-24 pb-16">
           <p
-            className="text-neutral-500 font-normal uppercase leading-snug"
-            style={{ fontSize: "0.65rem", letterSpacing: "0.14em" }}
+            className="text-neutral-500 font-normal uppercase leading-snug opacity-0 animate-fade-in"
+            style={{ fontSize: "0.65rem", letterSpacing: "0.14em", animationDelay: "0.1s" }}
           >
             Cosmetic Doctor<br />Practising in<br />Sydney
           </p>
         </div>
 
         {/* Side-by-side images — portrait Yalda left, cycling right, 8px gap */}
-        <div className="flex w-full gap-2">
+        <div className="flex w-full gap-2 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           {/* Portrait — 2/3 ratio */}
           <div className="relative overflow-hidden" style={{ aspectRatio: "2/3", flex: "0 0 40%" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -63,7 +63,7 @@ export default function HeroExperiment() {
         </div>
 
         {/* Bottom parchment — logo + tagline */}
-        <div className="px-6 pt-10 pb-16 flex flex-col gap-16">
+        <div className="px-6 pt-10 pb-16 flex flex-col gap-16 opacity-0 animate-fade-in" style={{ animationDelay: "0.55s" }}>
           <h1 className="leading-none">
             <Image
               src="/assets/dr-yalda-logo-long.svg"
@@ -97,7 +97,7 @@ export default function HeroExperiment() {
           </p>
           <div
             className="flex flex-col items-center opacity-0 animate-fade-in self-center"
-            style={{ animationDelay: "0.4s", width: "clamp(150px, 38%, 280px)" }}
+            style={{ animationDelay: "0.4s", width: "clamp(130px, 28%, 220px)" }}
           >
             <div className="w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
