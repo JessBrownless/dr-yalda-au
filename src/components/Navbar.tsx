@@ -20,39 +20,26 @@ const socials = [
   { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
 ];
 
-// Pages where the hero background is light (navbar starts dark)
-const LIGHT_HERO_PAGES = ["/about", "/media", "/appointments", "/services"];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const startsLight = LIGHT_HERO_PAGES.includes(pathname);
   const [open, setOpen] = useState(false);
-  const [isLight, setIsLight] = useState(startsLight);
-
-  useEffect(() => {
-    setIsLight(startsLight || window.scrollY > window.innerHeight * 0.85);
-    const handleScroll = () => {
-      setIsLight(startsLight || window.scrollY > window.innerHeight * 0.85);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [startsLight]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  // When menu is open, always use white (dark overlay behind)
-  const dark = isLight && !open;
+  // Parchment nav background is always light, so elements always dark (except when menu is open)
+  const dark = !open;
 
   return (
     <>
-      <nav className="absolute top-0 left-0 right-0 md:fixed z-50">
-        <div className="h-14 md:h-24 py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
+      <nav className={`absolute top-0 left-0 right-0 md:fixed z-50 transition-colors duration-300 ${open ? "bg-transparent" : "bg-[#EFEDE8]"}`}>
+        <div className="h-14 md:h-16 py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             {[{ label: "Home", href: "/" }, { label: "About", href: "/about" }, { label: "Services", href: "/services" }].map(({ label, href }) => (
               <Link
                 key={href}
@@ -82,7 +69,7 @@ export default function Navbar() {
 
           {/* Right — links + hamburger */}
           <div className="flex items-center gap-8 ml-auto md:ml-0">
-            <div className="hidden md:flex items-center gap-8">
+            <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
               {[{ label: "Media", href: "/media" }].map(({ label, href }) => (
                 <Link
                   key={href}

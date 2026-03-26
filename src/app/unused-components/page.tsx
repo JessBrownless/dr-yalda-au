@@ -1,6 +1,11 @@
+import HeroExperiment from "@/components/HeroExperiment";
+
 export default function UnusedComponentsPage() {
   return (
     <main>
+
+      {/* ─── HERO EXPERIMENT ─────────────────────────────────────────────── */}
+      <HeroExperiment />
 
       {/* ─── FULL-WIDTH CTA — Let's begin ────────────────────────────────── */}
       <section className="bg-cream overflow-hidden">
