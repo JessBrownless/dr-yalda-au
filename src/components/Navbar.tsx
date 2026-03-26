@@ -44,7 +44,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="absolute top-0 left-0 right-0 md:fixed z-50">
-        <div className="h-24 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
+        <div className="h-14 md:h-24 py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
           <div className="hidden md:flex items-center gap-8">
@@ -64,19 +64,19 @@ export default function Navbar() {
           </div>
 
           {/* Logo — centered */}
-          <Link href="/" className="md:absolute md:left-1/2 md:-translate-x-1/2 opacity-90 hover:opacity-100 transition-opacity duration-300">
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 opacity-90 hover:opacity-100 transition-opacity duration-300">
             <Image
               src="/assets/dr-yalda-logo-long.svg"
               alt="Dr. Yalda Jamali"
               width={200}
               height={40}
-              style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1)" }}
-              className="h-6 w-auto transition-all duration-500 py-0.5"
+              style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1)", paddingTop: "3px", paddingBottom: "3px" }}
+              className="h-6 w-auto transition-all duration-500"
             />
           </Link>
 
-          {/* Right — links + CTA + hamburger */}
-          <div className="flex items-center gap-8">
+          {/* Right — links + hamburger */}
+          <div className="flex items-center gap-8 ml-auto md:ml-0">
             <div className="hidden md:flex items-center gap-8">
               {[{ label: "Media", href: "/media" }].map(({ label, href }) => (
                 <Link
@@ -91,14 +91,6 @@ export default function Navbar() {
                   {label}
                 </Link>
               ))}
-              <Link
-                href="/appointments"
-                className={`px-6 py-2.5 text-[10px] font-normal tracking-[0.4em] uppercase border transition-all duration-300 ${
-                  dark ? "border-brand-black text-brand-black hover:bg-brand-black hover:text-white" : "border-[#888888] text-[#cccccc] hover:border-white hover:text-white"
-                }`}
-              >
-                Book Now
-              </Link>
             </div>
 
             <button
@@ -143,10 +135,21 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            {/* Book — mobile only */}
+            <li className="overflow-hidden md:hidden" style={{ transitionDelay: open ? `${links.length * 60}ms` : "0ms" }}>
+              <Link
+                href="/appointments"
+                onClick={() => setOpen(false)}
+                className={`block text-white font-normal leading-none tracking-tight transition-all duration-500 hover:text-neutral-400 ${open ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}
+                style={{ fontSize: "clamp(2rem, 5vw, 4rem)", fontFamily: "'Heading', serif", letterSpacing: "0.04em" }}
+              >
+                Book
+              </Link>
+            </li>
           </ul>
 
-          {/* Right — clinic locations */}
-          <div className="flex flex-col md:w-[420px] md:pt-2">
+          {/* Right — clinic locations (desktop only) */}
+          <div className="hidden md:flex flex-col md:w-[420px] md:pt-2">
             <p className="text-neutral-500 text-[9px] font-light tracking-[0.45em] uppercase mb-8">
               Clinic Locations
             </p>
