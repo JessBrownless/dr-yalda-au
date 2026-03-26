@@ -36,7 +36,7 @@ export default function FadeIn({ children, delay = 0, className = "", up = true 
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : `translateY(${translateY}px)`,
-        transition: `opacity 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}ms, transform 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}ms`,
+        transition: `opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
       }}
     >
       {children}

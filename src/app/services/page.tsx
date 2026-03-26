@@ -8,7 +8,7 @@ export default function ServicesPage() {
 
       {/* Desktop — editorial stagger */}
       <section
-        className="hidden md:block bg-cream overflow-hidden"
+        className="hidden md:block bg-parchment overflow-hidden"
         style={{ height: "100svh" }}
       >
         <div style={{ height: "96px" }} />
@@ -17,22 +17,22 @@ export default function ServicesPage() {
 
           {/* Staggered heading — on top of the image */}
           <div className="absolute" style={{ top: "calc(14% + 32px)", left: "5.5%", zIndex: 20 }}>
-            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "400ms" }}>
               Services
             </p>
             <h1
               className="text-brand-black font-normal leading-[0.88] opacity-0 animate-fade-in-up"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(4rem, 9vw, 11rem)", letterSpacing: "0.02em", animationDelay: "400ms" }}
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.75rem, 8.5vw, 10.5rem)", letterSpacing: "0.04em", animationDelay: "600ms" }}
             >
               <span className="block">Evidence</span>
-              <span className="block" style={{ paddingLeft: "calc(6vw - 16px)" }}><em style={{ letterSpacing: "-0.01em" }}>led</em> practice</span>
+              <span className="block" style={{ paddingLeft: "calc(6vw - 18px)" }}><em style={{ letterSpacing: "-0.01em" }}>led</em> practice</span>
             </h1>
           </div>
 
           {/* Right image */}
           <div
             className="absolute overflow-hidden opacity-0 animate-fade-in"
-            style={{ right: 0, top: 0, width: "42%", height: "95%", zIndex: 10, animationDelay: "100ms" }}
+            style={{ right: 0, top: 0, width: "43%", height: "95%", zIndex: 10, animationDelay: "0ms" }}
           >
             <img
               src="/assets/dr-yalda-treatment.avif"
@@ -44,10 +44,10 @@ export default function ServicesPage() {
           {/* Bottom-left — small secondary image */}
           <div
             className="absolute overflow-hidden opacity-0 animate-fade-in"
-            style={{ left: "clamp(1.25rem, 4vw, 2.5rem)", bottom: "5%", width: "17%", aspectRatio: "1/1", zIndex: 5, animationDelay: "700ms" }}
+            style={{ left: "clamp(1.25rem, 4vw, 2.5rem)", bottom: "5%", width: "17%", aspectRatio: "1/1", zIndex: 5, animationDelay: "1100ms" }}
           >
             <img
-              src="/assets/dr-yalda-treatment-02.jpg"
+              src="/assets/IMG_00372.avif"
               alt=""
               aria-hidden="true"
               className="w-full h-full object-cover object-center"
@@ -58,7 +58,7 @@ export default function ServicesPage() {
           <div className="absolute flex gap-4 opacity-0 animate-fade-in" style={{ left: "calc(17% + clamp(2.5rem, 8vw, 5rem))", bottom: "8%", maxWidth: "300px", zIndex: 5, animationDelay: "900ms" }}>
             <div className="w-px bg-neutral-300 self-stretch flex-shrink-0" />
             <p className="text-neutral-600 text-sm font-light leading-relaxed">
-              Consultation-led, always. Over a decade of experience in cosmetic medicine.
+              Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Mobile — stacked */}
-      <section className="md:hidden bg-cream pt-32 pb-0">
+      <section className="md:hidden bg-parchment pt-32 pb-0">
         <div className="px-8 mb-8">
           <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
             Services
@@ -87,46 +87,35 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ─── 2. EDITORIAL INTRO ───────────────────────────────────────────── */}
-      <section className="bg-cream py-24 md:py-44">
-        <div className="pg-container flex flex-col gap-10 md:gap-14">
 
-          {/* Eyebrow */}
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
-            Dr Yalda Jamali
-          </p>
+      {/* ─── CONNECTOR ────────────────────────────────────────────────────── */}
+      <div className="bg-cream flex justify-center">
+        <div className="w-px bg-neutral-200" style={{ height: "100px" }} />
+      </div>
 
-          {/* Large heading */}
-          <h2
-            className="text-brand-black font-normal leading-[1.0] uppercase"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 4.5vw, 4.5rem)", letterSpacing: "0.02em", maxWidth: "16ch" }}
-          >
-            Over a decade of experience in aesthetic medicine.
-          </h2>
+      {/* ─── INTRO STATEMENT ─────────────────────────────────────────────── */}
+      <section className="bg-cream py-28 md:py-44 flex items-center justify-center">
+        <FadeIn className="max-w-[640px] mx-auto px-8 flex flex-col items-center gap-8 text-center">
 
-          {/* Italic subtitle */}
+          {/* Headline */}
           <p
-            className="text-brand-black font-normal"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.1rem, 1.8vw, 1.6rem)", fontStyle: "italic", letterSpacing: "0.01em" }}
+            className="text-brand-black font-normal leading-[1.05]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)", letterSpacing: "-0.01em" }}
           >
-            The philosophy is subtle and measured
+            Over a decade of clinical expertise in aesthetic medicine.
           </p>
 
-          {/* Two-column body text with left rule */}
-          <div className="border-l border-neutral-300 pl-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <p className="text-neutral-600 text-sm font-light leading-relaxed">
-              Her work is grounded in evidence-based practice, with a focus on skin quality, facial harmony, and long-term skin health. Every treatment plan is considered and individualised — shaped by the understanding that no two faces, or ageing patterns, are the same. Her approach is consultation-led rather than treatment-led. In keeping with Australian guidelines, specific treatments are not listed here and are instead discussed in detail during a clinical consultation, where suitability, risks, and alternatives can be properly explored.
-            </p>
-            <p className="text-neutral-600 text-sm font-light leading-relaxed">
-              By combining different approaches thoughtfully and conservatively, the aim is always balanced, natural results — with patient safety and education at the centre of every decision. Not all treatments are intended to change how someone looks. Many are designed to support skin quality, encourage collagen production, and maintain healthy, resilient skin over time. The intention is not to create a different face, but to help patients look like the best version of themselves at their current stage.
-            </p>
-          </div>
 
-        </div>
+          {/* Disciplined paragraph */}
+          <p className="text-neutral-500 text-[0.92rem] font-light leading-[1.85] tracking-[0.03em]">
+            In accordance with Australian guidelines, specific treatments are discussed only during a clinical consultation. Our evidence-based practice prioritises your skin quality, facial harmony, and long-term health.
+          </p>
+
+        </FadeIn>
       </section>
 
       {/* ─── 3. CONSULTATION APPROACH ─────────────────────────────────────── */}
-      <section className="bg-cream py-24 md:py-36 overflow-hidden relative">
+      <section className="bg-cream overflow-hidden relative flex items-center" style={{ minHeight: "100vh" }}>
         {/* Parchment box — left page edge to col-4 boundary (~⅔ behind the image) */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
 
@@ -138,7 +127,7 @@ export default function ServicesPage() {
               <FadeIn up={false}>
                 <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
                   <img
-                    src="/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif"
+                    src="/assets/dr-yalda-treatment-03.avif"
                     alt="Dr. Yalda Jamali"
                     className="w-full h-full object-cover object-top"
                   />
@@ -147,126 +136,145 @@ export default function ServicesPage() {
             </div>
 
             {/* Right — text */}
-            <FadeIn delay={150} className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8">
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
-                The approach
-              </p>
-              <h2
-                className="text-brand-black font-normal leading-[1.0] uppercase"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.03em" }}
-              >
-                The consultation approach
-              </h2>
-              <p className="text-neutral-600 text-sm font-light leading-relaxed">
-                Her approach is consultation-led rather than treatment-led. In keeping with Australian guidelines, specific treatments are not listed here and are instead discussed in detail during a clinical consultation, where suitability, risks, and alternatives can be properly explored.
-              </p>
-              <div className="flex flex-col gap-3 pt-2">
+            <FadeIn delay={150} className="col-span-12 md:col-span-5 md:col-start-7 flex flex-col gap-8">
+
+              {/* Eyebrow + heading */}
+              <div className="flex flex-col gap-3">
+                <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+                  Specialism
+                </p>
+                <h2
+                  className="text-brand-black font-normal leading-[1.0] uppercase"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.03em" }}
+                >
+                  Clinical Focus
+                </h2>
+              </div>
+
+              {/* Numbered index */}
+              <div className="flex flex-col">
                 {[
-                  "Evaluation of anatomy and goals.",
-                  "Transparent guidance on what is — and isn't — indicated.",
-                  "A considered approach with no pressure to proceed.",
-                  "Ongoing support and professional follow-up.",
-                ].map((point) => (
-                  <p key={point} className="text-neutral-600 text-sm font-light leading-relaxed">{point}</p>
+                  "Fine lines & wrinkles",
+                  "Skin laxity",
+                  "Uneven skin tone",
+                  "Facial balancing & contouring",
+                  "Changes in volume",
+                  "Collagen loss",
+                ].map((item, i) => (
+                  <div key={item} className="flex items-baseline gap-4 py-3 border-t border-neutral-200 last:border-b">
+                    <span
+                      className="text-neutral-300 flex-shrink-0 leading-none"
+                      style={{ fontFamily: "'Heading', serif", fontSize: "0.6rem", letterSpacing: "0.15em" }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="text-brand-black text-sm font-light tracking-wide">{item}</p>
+                  </div>
                 ))}
               </div>
+
+              {/* Device row */}
+              <div className="flex flex-col gap-3">
+                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                  Advanced Modalities
+                </p>
+                <p className="text-brand-black text-sm font-light tracking-[0.2em]">
+                  BBL &nbsp;·&nbsp; MOXI &nbsp;·&nbsp; Morpheus8
+                </p>
+              </div>
+
+              {/* Legal fine print */}
+              <div className="border-t border-neutral-200 pt-4">
+                <p className="text-neutral-400 text-[10px] font-light leading-relaxed italic">
+                  In accordance with Australian regulatory guidelines, specific treatments are not listed here. Our approach ensures that clinical decisions are made only after a thorough medical assessment.
+                </p>
+              </div>
+
             </FadeIn>
 
           </div>
         </div>
       </section>
 
-      {/* ─── 4. FLIPPED SECTION ───────────────────────────────────────────── */}
-      <section className="bg-cream py-24 md:py-36 overflow-hidden relative">
-        {/* Parchment box — right page edge to col-9 boundary */}
+      {/* ─── PHILOSOPHY STATEMENT ─────────────────────────────────────────── */}
+      <section className="bg-cream py-32 md:py-48 flex items-center justify-center relative overflow-hidden">
+        <img src="/assets/logo-circle.svg" alt="" aria-hidden="true" className="absolute w-[280px] h-[280px] opacity-[0.04] pointer-events-none select-none" />
+        <FadeIn className="relative max-w-4xl mx-auto px-8 text-center flex flex-col items-center gap-6">
+          <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+            The philosophy
+          </p>
+          <p
+            className="text-brand-black font-normal leading-relaxed"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.4rem)", letterSpacing: "0.01em" }}
+          >
+            Balanced, <em>natural results</em> — with patient safety and education at the centre of every decision.
+          </p>
+        </FadeIn>
+      </section>
+
+      {/* ─── APPROACH — numbered list + image ────────────────────────────── */}
+      <section className="bg-cream overflow-hidden relative flex items-center" style={{ minHeight: "100vh" }}>
+        {/* Parchment box — right page edge, behind image */}
         <div className="absolute hidden md:block right-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
-
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-12 gap-8 items-start">
 
-            {/* Left — text */}
-            <FadeIn delay={150} className="col-span-12 md:col-span-5 flex flex-col gap-8">
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
-                What we address
+            {/* Left — numbered list */}
+            <div className="col-span-12 md:col-span-6 flex flex-col">
+              <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-12">
+                The Dr. Yalda approach
               </p>
-              <h2
-                className="text-brand-black font-normal leading-[1.0] uppercase"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.03em" }}
-              >
-                The philosophy
-              </h2>
-              <p className="text-neutral-600 text-sm font-light leading-relaxed">
-                Not all treatments are intended to change how someone looks. Many are designed to support skin quality, encourage collagen production, and maintain healthy, resilient skin over time. The intention is not to create a different face, but to help patients look like the best version of themselves at their current stage.
-              </p>
-              <div className="flex flex-col gap-3 pt-2">
-                {[
-                  "Fine lines & natural expression.",
-                  "Skin laxity & firming.",
-                  "Tone, texture & pigmentation.",
-                  "Facial harmony & structural balance.",
-                  "Collagen support & skin quality.",
-                  "Energy-based devices — BBL, MOXI & Morpheus8.",
-                ].map((point) => (
-                  <p key={point} className="text-neutral-600 text-sm font-light leading-relaxed">{point}</p>
-                ))}
-              </div>
-            </FadeIn>
-
-            {/* Right — image */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8">
-              <FadeIn up={false}>
-                <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
-                  <img
-                    src="/assets/Yalda-1.jpg"
-                    alt="Dr. Yalda Jamali"
-                    className="w-full h-full object-cover object-top"
-                  />
+              {[
+                { num: "01", label: "Consultation-Led", body: "Suitability, risks, and alternatives are discussed in detail during a clinical consultation before any treatment is considered." },
+                { num: "02", label: "Identity Preservation", body: "The intention is not to create a different face, but to help patients look like the best version of themselves at their current stage." },
+                { num: "03", label: "Individualised Care", body: "Every treatment plan is considered and individualised, shaped by the understanding that no two faces—or ageing patterns—are the same." },
+              ].map(({ num, label, body }, i) => (
+                <div key={num}>
+                  {i > 0 && <div className="w-full h-px bg-neutral-200 my-8" />}
+                  <div className="flex items-baseline gap-5">
+                    <span
+                      className="font-normal leading-none flex-shrink-0 select-none"
+                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", color: "rgba(45,44,42,0.06)", letterSpacing: "0.02em" }}
+                      aria-hidden="true"
+                    >
+                      {num}
+                    </span>
+                    <div className="flex flex-col gap-2">
+                      <p
+                        className="text-brand-black font-normal leading-tight"
+                        style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.1rem, 1.6vw, 1.4rem)", fontStyle: "italic", letterSpacing: "0.01em" }}
+                      >
+                        {label}
+                      </p>
+                      <p className="text-neutral-500 text-sm font-light leading-relaxed">{body}</p>
+                    </div>
+                  </div>
                 </div>
-              </FadeIn>
+              ))}
             </div>
 
+            {/* Right — portrait */}
+            <FadeIn up={false} className="col-span-12 md:col-span-5 md:col-start-8">
+              <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
+                <img
+                  src="/assets/Yalda-1.jpg"
+                  alt="Dr. Yalda Jamali"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </FadeIn>
+
           </div>
         </div>
       </section>
 
-
-
-
-      {/* ─── FULL-WIDTH PARALLAX STATEMENT ───────────────────────────────── */}
-      <section className="relative overflow-hidden py-24 md:py-40">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('/assets/dr-yalda-treatment-02.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center 30%",
-            backgroundAttachment: "fixed",
-          }}
-        />
-        <div className="absolute inset-0 z-10 bg-brand-black/55" />
-        <div className="relative z-20">
-          <p
-            className="text-white font-normal leading-[1.0] whitespace-nowrap px-[clamp(1.25rem,4vw,2.5rem)]"
-            style={{
-              fontFamily: "'Heading', serif",
-              fontSize: "clamp(2rem, 5.6vw, 6.5rem)",
-              letterSpacing: "0.02em",
-            }}
-          >
-            A focus on skin quality,
-          </p>
-          <p
-            className="text-white font-normal leading-[1.0] whitespace-nowrap px-[clamp(1.25rem,4vw,2.5rem)]"
-            style={{
-              fontFamily: "'Heading', serif",
-              fontSize: "clamp(2rem, 5.6vw, 6.5rem)",
-              letterSpacing: "0.02em",
-            }}
-          >
-            <em>facial harmony</em> &amp; long-term skin health.
-          </p>
-        </div>
-      </section>
+      {/* ─── FOOTER SIGNATURE ─────────────────────────────────────────────── */}
+      <div className="bg-cream border-t border-neutral-100 py-16 flex flex-col items-center gap-4">
+        <img src="/assets/logo-circle.svg" alt="" aria-hidden="true" className="w-5 h-5 opacity-20" />
+        <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+          Dr. Yalda Jamali · Sydney
+        </p>
+      </div>
 
     </main>
   );

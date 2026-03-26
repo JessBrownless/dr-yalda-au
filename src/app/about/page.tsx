@@ -102,69 +102,6 @@ export default function AboutPage() {
       </section>
 
 
-      {/* Numbered list + image */}
-      <section className="bg-cream py-24 md:py-32">
-        <div className="max-w-5xl mx-auto w-full px-8 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-
-          {/* Left — numbered items */}
-          <div>
-            <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-12">
-              In the clinic
-            </p>
-
-            {[
-              {
-                num: "01",
-                title: "Facial Balancing & Contouring",
-                body: "A personalised, meticulous approach to enhance and harmonise your features with natural, refined results.",
-              },
-              {
-                num: "02",
-                title: "Anti-Wrinkle Treatments",
-                body: "Precision muscle relaxant injections tailored to soften expression lines while preserving your natural movement.",
-              },
-              {
-                num: "03",
-                title: "Skin Health & Dermal Therapy",
-                body: "Evidence-based skin treatments combining her MSc in dermatology with a deep understanding of long-term skin wellbeing.",
-              },
-            ].map(({ num, title, body }, i, arr) => (
-              <div key={num}>
-                <div className="py-8">
-                  <div className="flex items-baseline gap-5 mb-3">
-                    <span
-                      className="text-neutral-300 leading-none"
-                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3vw, 2.5rem)" }}
-                    >
-                      {num}
-                    </span>
-                    <h3
-                      className="text-brand-black font-normal leading-tight italic"
-                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.1rem, 1.8vw, 1.5rem)" }}
-                    >
-                      {title}
-                    </h3>
-                  </div>
-                  <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-md pl-14">
-                    {body}
-                  </p>
-                </div>
-                {i < arr.length - 1 && <div className="w-full h-px bg-neutral-200" />}
-              </div>
-            ))}
-          </div>
-
-          {/* Right — image */}
-          <div className="relative">
-            <img
-              src="/assets/yalda-17.jpg"
-              alt="Dr. Yalda Jamali in clinic"
-              className="w-full aspect-[3/4] object-cover object-top"
-            />
-          </div>
-
-        </div>
-      </section>
 
       {/* 50/50 — duplicate hero at bottom */}
       <section className="min-h-[90vh] grid grid-cols-1 md:grid-cols-2">

@@ -3,6 +3,7 @@ import { Lato, Marcellus } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lato.variable} ${marcellus.variable}`}>
       <body>
+        <CustomCursor />
         <Navbar />
         {children}
         <Footer />
