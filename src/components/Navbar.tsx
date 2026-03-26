@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50">
+      <nav className="relative md:fixed md:top-0 md:left-0 md:right-0 z-50">
         <div className="h-24 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.25rem, 4vw, 2.5rem)", paddingRight: "clamp(1.25rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
@@ -64,7 +64,7 @@ export default function Navbar() {
           </div>
 
           {/* Logo — centered */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 opacity-90 hover:opacity-100 transition-opacity duration-300">
+          <Link href="/" className="md:absolute md:left-1/2 md:-translate-x-1/2 opacity-90 hover:opacity-100 transition-opacity duration-300">
             <Image
               src="/assets/dr-yalda-logo-long.svg"
               alt="Dr. Yalda Jamali"

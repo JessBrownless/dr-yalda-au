@@ -11,7 +11,7 @@ export default function AboutPage() {
       >
 
         {/* Left — text */}
-        <div className="bg-parchment relative flex flex-col gap-10 md:gap-0 md:justify-between px-8 pt-40 pb-12 md:p-28 overflow-hidden">
+        <div className="bg-parchment relative flex flex-col gap-10 md:gap-0 md:justify-between px-8 pt-12 pb-12 md:p-28 overflow-hidden">
 
           {/* Top-right scattered text */}
           <div className="flex justify-end opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
