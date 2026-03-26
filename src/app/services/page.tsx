@@ -189,13 +189,6 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              {/* Legal fine print */}
-              <div className="border-t border-neutral-200 pt-4">
-                <p className="text-neutral-400 text-[10px] font-light leading-relaxed italic">
-                  In accordance with Australian regulatory guidelines, specific treatments are not listed here. Our approach ensures that clinical decisions are made only after a thorough medical assessment.
-                </p>
-              </div>
-
             </FadeIn>
 
           </div>
