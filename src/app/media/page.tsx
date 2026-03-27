@@ -1,5 +1,7 @@
+import DrQuote from "@/components/DrQuote";
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import TwoPanelHero from "@/components/TwoPanelHero";
 
 const socials = [
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
@@ -56,6 +58,7 @@ const features = [
 export default function MediaPage() {
   return (
     <main>
+      <TwoPanelHero />
 
       {/* Hero */}
       <section className="bg-parchment overflow-hidden relative" style={{ minHeight: "90vh" }}>
@@ -438,49 +441,6 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Media enquiries */}
-      <section className="bg-parchment py-24 md:py-32">
-        <div className="pg-container">
-
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
-            Work with Dr. Yalda
-          </p>
-
-          <div className="grid grid-cols-12 gap-6 md:gap-8 items-end">
-
-            <div className="col-span-12 md:col-span-7 flex flex-col gap-6">
-              <h2
-                className="text-brand-black font-normal leading-tight"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-              >
-                BRAND &amp; MEDIA<br /><em>enquiries.</em>
-              </h2>
-              <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[42ch]">
-                Dr. Yalda is open to editorial features, podcast appearances, and brand partnerships aligned with ethical, evidence-based aesthetics.
-              </p>
-            </div>
-
-            <div className="col-span-12 md:col-span-5 flex flex-col md:items-end gap-5">
-              <a
-                href="mailto:media@dryalda.com.au"
-                className="text-brand-black font-light hover:text-neutral-500 transition-colors duration-300"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.9rem, 1.4vw, 1.15rem)" }}
-              >
-                media@dryalda.com.au
-              </a>
-              <a
-                href="/contact"
-                className="px-10 py-4 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
-              >
-                Get in touch
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
       {/* Instagram feed */}
       <section className="bg-white py-16 md:py-20">
         <div className="pg-container">
@@ -503,7 +463,7 @@ export default function MediaPage() {
           </div>
 
           {/* 6-col grid of square images */}
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-1">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {[
               { src: "/assets/IMG_0028.avif", pos: "object-center" },
               { src: "/assets/IMG_0031.avif", pos: "object-top" },
@@ -511,12 +471,6 @@ export default function MediaPage() {
               { src: "/assets/IMG_0038.avif", pos: "object-center" },
               { src: "/assets/IMG_0041.avif", pos: "object-top" },
               { src: "/assets/IMG_0030.avif", pos: "object-top" },
-              { src: "/assets/IMG_0041.avif", pos: "object-center" },
-              { src: "/assets/IMG_0028.avif", pos: "object-top" },
-              { src: "/assets/IMG_0031.avif", pos: "object-center" },
-              { src: "/assets/IMG_0012.avif", pos: "object-center" },
-              { src: "/assets/IMG_0030.avif", pos: "object-center" },
-              { src: "/assets/IMG_0038.avif", pos: "object-top" },
             ].map(({ src, pos }, i) => (
               <a
                 key={i}
@@ -539,6 +493,7 @@ export default function MediaPage() {
         </div>
       </section>
 
+      <DrQuote />
     </main>
   );
 }

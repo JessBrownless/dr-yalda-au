@@ -3,10 +3,52 @@ import HeroExperimentSaved from "@/components/HeroExperimentSaved";
 import HeroSplit from "@/components/HeroSplit";
 import SplitSection from "@/components/SplitSection";
 import StickyScrollSection from "@/components/StickyScrollSection";
+import ParallaxHero from "@/components/ParallaxHero";
 
 export default function UnusedComponentsPage() {
   return (
     <main>
+
+      {/* ─── ABOUT PAGE HERO ─────────────────────────────────────────────── */}
+
+      {/* Two-panel hero — stacks on mobile, side-by-side on desktop */}
+      <section className="grid grid-cols-1 md:grid-cols-2 relative" style={{ minHeight: "100svh" }}>
+
+        {/* Left — parchment with centred portrait */}
+        <div className="relative flex items-center justify-center opacity-0 animate-fade-in aspect-[3/4] md:aspect-auto" style={{ background: "#E0DDD5", animationDelay: "0.1s" }}>
+          <div className="relative" style={{ width: "50%", aspectRatio: "3/4" }}>
+            <div className="overflow-hidden w-full h-full">
+              <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+            </div>
+            {/* Round logo — hangs off bottom-right of portrait */}
+            <img
+              src="/assets/logo-circle.svg"
+              alt="Dr. Yalda Jamali"
+              className="absolute z-10"
+              style={{ width: "64px", bottom: "-2.25rem", right: "-2.25rem" }}
+            />
+          </div>
+        </div>
+
+        {/* Right — full-bleed image */}
+        <div className="relative opacity-0 animate-fade-in aspect-[3/4] md:aspect-auto" style={{ animationDelay: "0.3s" }}>
+          <img src="/assets/IMG_0002.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" />
+        </div>
+
+      </section>
+
+      {/* ─── HER STORY ───────────────────────────────────────────────────── */}
+      <section className="bg-cream py-32 md:py-52 flex flex-col items-center justify-center text-center">
+        <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
+          <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-12">Her story</p>
+          <h2
+            className="text-brand-black font-normal leading-[1.1]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.02em", maxWidth: "18ch" }}
+          >
+            A doctor who listens first, treats with precision, and always puts your natural beauty above everything else.
+          </h2>
+        </div>
+      </section>
 
       {/* ─── HERO EXPERIMENT ─────────────────────────────────────────────── */}
       <HeroExperimentSaved />
@@ -286,9 +328,74 @@ export default function UnusedComponentsPage() {
         </div>
       </section>
 
+      {/* ─── ABOUT PAGE — Bio statement ──────────────────────────────────── */}
+      <section className="bg-cream py-32 md:py-52 flex flex-col items-center justify-center text-center">
+        <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
+          <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-12">Her story</p>
+          <h2 className="text-brand-black" style={{ fontSize: "clamp(1.5rem, 3vw, 3rem)", maxWidth: "20ch", lineHeight: "1.05", letterSpacing: "-0.02em" }}>
+            A doctor who listens first, treats with precision, and always puts your natural beauty above everything else.
+          </h2>
+        </div>
+      </section>
+
+      {/* ─── ABOUT PAGE — Credentials bar ────────────────────────────────── */}
+      <section className="bg-parchment py-16">
+        <div className="max-w-5xl mx-auto w-full px-8 md:px-16 grid grid-cols-2 md:grid-cols-4 gap-10">
+          {[
+            { stat: "8+", label: "Years of experience" },
+            { stat: "MBChB", label: "Medical degree" },
+            { stat: "MSc", label: "Dermatology" },
+            { stat: "FACCSM", label: "Cosmetic physician" },
+          ].map(({ stat, label }) => (
+            <div key={label} className="flex flex-col gap-2">
+              <p className="text-brand-black leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3vw, 2.75rem)" }}>{stat}</p>
+              <p className="text-neutral-500 text-[10px] font-light tracking-[0.35em] uppercase">{label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── ABOUT PAGE — ParallaxHero ───────────────────────────────────── */}
+      <ParallaxHero />
+
+      {/* ─── ABOUT PAGE — 50/50 bottom hero ─────────────────────────────── */}
+      <section className="min-h-[90vh] grid grid-cols-1 md:grid-cols-2">
+        <div className="bg-parchment relative flex flex-col justify-between px-12 md:px-16 pt-36 pb-0 overflow-hidden">
+          <div className="flex justify-end">
+            <p className="text-neutral-500 text-xs font-light leading-relaxed max-w-[180px] text-right">Sydney-based cosmetic doctor specialising in facial aesthetics.</p>
+          </div>
+          <div className="flex flex-col gap-6">
+            <p className="text-neutral-300 text-[10px] font-light tracking-[0.4em] uppercase">MBChB · MSc Dermatology · FACCSM</p>
+            <img src="/assets/dr-yalda-logo-long.svg" alt="Dr. Yalda Jamali" className="w-full h-auto" style={{ filter: "invert(1) brightness(0)" }} />
+          </div>
+          <div className="relative overflow-hidden mt-6 mb-0">
+            <div className="flex animate-marquee whitespace-nowrap py-6">
+              {[...Array(6)].map((_, i) => (<img key={`a-${i}`} src="/assets/logo-clinique.svg" alt="Clinique" className="mx-8 opacity-40 flex-shrink-0" style={{ height: "40px", width: "142px" }} />))}
+              {[...Array(6)].map((_, i) => (<img key={`b-${i}`} src="/assets/logo-clinique.svg" alt="Clinique" className="mx-8 opacity-40 flex-shrink-0" style={{ height: "40px", width: "142px" }} />))}
+            </div>
+          </div>
+        </div>
+        <div className="relative min-h-[60vw] md:min-h-0">
+          <img src="/assets/Yalda-17.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" />
+        </div>
+      </section>
+
       {/* ─── EDITORIAL INTRO ─────────────────────────────────────────────── */}
-      <section className="bg-cream py-24 md:py-44">
+      <section className="bg-cream pt-24 pb-24 md:pt-36 md:pb-44">
         <div className="pg-container flex flex-col gap-10 md:gap-14">
+
+          {/* Three-image composition */}
+          <div className="flex items-end justify-center gap-4 md:gap-6 mb-4">
+            <div className="overflow-hidden flex-shrink-0" style={{ width: "clamp(100px, 18vw, 240px)", aspectRatio: "3/4" }}>
+              <img src="/assets/IMG_0028.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
+            </div>
+            <div className="overflow-hidden flex-shrink-0" style={{ width: "clamp(140px, 24vw, 320px)", aspectRatio: "2/3" }}>
+              <img src="/assets/Yalda-17.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+            </div>
+            <div className="overflow-hidden flex-shrink-0" style={{ width: "clamp(100px, 18vw, 240px)", aspectRatio: "3/4" }}>
+              <img src="/assets/IMG_0012.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
+            </div>
+          </div>
 
           <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
             Dr Yalda Jamali

@@ -40,8 +40,8 @@
   max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1.25rem, 4vw, 2.5rem);
-  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  padding-left: clamp(2rem, 4vw, 2.5rem);
+  padding-right: clamp(2rem, 4vw, 2.5rem);
 }
 
 /* ─── Media Teaser ───────────────────────────────────────────────────── */

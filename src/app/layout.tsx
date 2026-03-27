@@ -34,7 +34,22 @@ export default function RootLayout({
     <html lang="en" className={`${lato.variable} ${marcellus.variable}`}>
       <body>
         <CustomCursor />
-        <Navbar />
+        <div className="sticky top-0 z-[60]">
+          <div className="bg-brand-black text-white flex items-center justify-center gap-3 px-6 py-2.5 text-center">
+            <p style={{ fontSize: "10px", letterSpacing: "0.35em", fontFamily: "sans-serif" }} className="font-light uppercase">
+              Limited phone consultations available
+            </p>
+            <span className="text-white/30 text-[8px]">—</span>
+            <a
+              href="/appointments"
+              style={{ fontSize: "10px", letterSpacing: "0.35em", fontFamily: "sans-serif" }}
+              className="font-normal uppercase border-b border-white/30 pb-px hover:border-white transition-colors duration-300 whitespace-nowrap"
+            >
+              Book Now
+            </a>
+          </div>
+          <Navbar />
+        </div>
         {children}
         <Footer />
       </body>

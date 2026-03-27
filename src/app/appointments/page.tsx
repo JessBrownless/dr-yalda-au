@@ -1,3 +1,5 @@
+import DrQuote from "@/components/DrQuote";
+
 const clinics = [
   {
     name: "Epios Cosmetic Clinic",
@@ -40,34 +42,36 @@ const steps = [
 export default function AppointmentsPage() {
   return (
     <main>
-
       {/* Hero */}
       <section className="bg-parchment relative flex items-center justify-center overflow-hidden py-48 md:py-64">
 
-        {/* Portrait — centered behind the text */}
+        {/* Portrait — centered */}
         <div
           className="absolute"
           style={{ width: "clamp(180px, 22vw, 340px)", aspectRatio: "3/4", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
         >
           <img
             src="/assets/Yalda-17.avif"
-            alt=""
-            aria-hidden="true"
+            alt="Dr. Yalda Jamali"
             className="w-full h-full object-cover object-top"
           />
         </div>
 
-        {/* Heading — sits over the portrait */}
-        <h1
-          className="relative z-10 text-brand-black font-normal text-center leading-none select-none w-full px-4 whitespace-nowrap"
-          style={{
-            fontFamily: "'Heading', serif",
-            fontSize: "clamp(4rem, 14vw, 14rem)",
-            letterSpacing: "0.05em",
-          }}
-        >
-          BOOK NOW
-        </h1>
+        {/* "BOOK" — left edge, "NOW" — right edge */}
+        <div className="relative z-10 w-full flex items-center justify-between px-[clamp(1.5rem,4vw,3rem)]">
+          <span
+            className="text-brand-black font-normal leading-none"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em" }}
+          >
+            BOOK
+          </span>
+          <span
+            className="text-brand-black font-normal leading-none"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em" }}
+          >
+            NOW
+          </span>
+        </div>
 
       </section>
 
@@ -176,60 +180,7 @@ export default function AppointmentsPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-parchment py-24 md:py-40">
-        <div className="pg-container">
-          <div className="grid grid-cols-12 gap-6 md:gap-8">
-
-            <div className="col-span-12 md:col-span-4">
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
-                FAQs
-              </p>
-              <h2
-                className="text-brand-black font-normal leading-tight"
-                style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
-              >
-                COMMON<br /><em>questions.</em>
-              </h2>
-            </div>
-
-            <div className="col-span-12 md:col-span-7 md:col-start-6 flex flex-col divide-y divide-neutral-200">
-              {[
-                {
-                  q: "Do I need a referral?",
-                  a: "No referral is needed. You can book directly through any of the clinic links above.",
-                },
-                {
-                  q: "How long is a consultation?",
-                  a: "Initial consultations are typically 30–45 minutes. Dr. Yalda takes the time needed — she won't rush you.",
-                },
-                {
-                  q: "Can treatment happen on the same day?",
-                  a: "In some cases yes, but Dr. Yalda always recommends a separate consultation first so you can make an informed, unhurried decision.",
-                },
-                {
-                  q: "What should I bring?",
-                  a: "Just yourself. If you have any previous treatment records or skincare you're currently using, feel free to bring those along.",
-                },
-              ].map(({ q, a }) => (
-                <div key={q} className="py-8 flex flex-col gap-3">
-                  <h3
-                    className="text-brand-black font-normal"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)", letterSpacing: "0.02em" }}
-                  >
-                    {q.toUpperCase()}
-                  </h3>
-                  <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-lg">
-                    {a}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
+      <DrQuote />
     </main>
   );
 }

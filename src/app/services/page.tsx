@@ -1,14 +1,15 @@
+import DrQuote from "@/components/DrQuote";
 import FadeIn from "@/components/FadeIn";
+import TwoPanelHero from "@/components/TwoPanelHero";
 
 export default function ServicesPage() {
   return (
     <main>
-
       {/* ─── 1. HERO ──────────────────────────────────────────────────────── */}
 
       {/* Desktop — editorial stagger */}
       <section
-        className="hidden md:block bg-parchment overflow-hidden"
+        className="hidden md:block bg-cream overflow-hidden"
         style={{ height: "100svh" }}
       >
         <div style={{ height: "96px" }} />
@@ -39,6 +40,7 @@ export default function ServicesPage() {
               alt="Dr. Yalda Jamali"
               className="w-full h-full object-cover object-top"
             />
+            <div className="hero-noise" />
           </div>
 
           {/* Bottom-left — small secondary image */}
@@ -52,12 +54,13 @@ export default function ServicesPage() {
               aria-hidden="true"
               className="w-full h-full object-cover object-center"
             />
+            <div className="hero-noise" />
           </div>
 
           {/* Bottom — descriptor text with left rule */}
           <div className="absolute flex gap-4 opacity-0 animate-fade-in" style={{ left: "calc(17% + clamp(2.5rem, 8vw, 5rem))", bottom: "8%", maxWidth: "300px", zIndex: 5, animationDelay: "900ms" }}>
             <div className="w-px bg-neutral-300 self-stretch flex-shrink-0" />
-            <p className="text-neutral-600 text-sm font-light leading-relaxed">
+            <p className="text-neutral-600 font-light leading-relaxed" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>
               Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
             </p>
           </div>
@@ -66,7 +69,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Mobile — stacked */}
-      <section className="md:hidden bg-parchment pt-24 pb-0">
+      <section className="md:hidden bg-cream pt-24 pb-0">
         <div className="px-8 mb-20">
           <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
             Services
@@ -84,6 +87,7 @@ export default function ServicesPage() {
             alt="Dr. Yalda Jamali"
             className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
           />
+          <div className="hero-noise" />
           <div className="absolute bottom-0 left-0 right-0 flex gap-4 px-6 py-5 backdrop-blur-md bg-white/10">
             <div className="w-px bg-white/50 flex-shrink-0" />
             <p className="text-white text-[0.8rem] font-light leading-relaxed">
@@ -113,7 +117,7 @@ export default function ServicesPage() {
 
 
           {/* Disciplined paragraph */}
-          <p className="text-neutral-500 text-[0.92rem] font-light leading-[1.85] tracking-[0.03em]">
+          <p className="text-neutral-500 font-light leading-[1.85] tracking-[0.03em]" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>
             In accordance with Australian guidelines, specific treatments are discussed only during a clinical consultation. Our evidence-based practice prioritises your skin quality, facial harmony, and long-term health.
           </p>
 
@@ -122,7 +126,7 @@ export default function ServicesPage() {
 
       {/* ─── 3. CONSULTATION APPROACH ─────────────────────────────────────── */}
       <section className="bg-cream overflow-hidden relative flex items-center" style={{ minHeight: "100vh" }}>
-        {/* Parchment box — left page edge to col-4 boundary (~⅔ behind the image) */}
+        {/* Cream box — left page edge to col-4 boundary (~⅔ behind the image) */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
 
         <div className="pg-container relative">
@@ -173,7 +177,7 @@ export default function ServicesPage() {
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-brand-black text-sm font-light tracking-wide">{item}</p>
+                    <p className="text-brand-black font-light tracking-wide" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>{item}</p>
                   </div>
                 ))}
               </div>
@@ -183,7 +187,7 @@ export default function ServicesPage() {
                 <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
                   Advanced Modalities
                 </p>
-                <p className="text-brand-black text-sm font-light tracking-[0.2em]">
+                <p className="text-brand-black font-light tracking-[0.2em]" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>
                   BBL &nbsp;·&nbsp; MOXI &nbsp;·&nbsp; Morpheus8
                 </p>
               </div>
@@ -194,25 +198,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ─── PHILOSOPHY STATEMENT ─────────────────────────────────────────── */}
-      <section className="bg-cream py-28 md:py-48 flex items-center justify-center relative overflow-hidden">
-        <img src="/assets/logo-circle.svg" alt="" aria-hidden="true" className="absolute w-[160px] h-[160px] md:w-[280px] md:h-[280px] opacity-[0.04] pointer-events-none select-none" />
-        <FadeIn className="relative max-w-[640px] mx-auto px-10 md:px-8 text-center flex flex-col items-center gap-8 md:gap-6">
-          <p className="text-neutral-400 text-[8px] font-light tracking-[0.45em] uppercase">
-            The philosophy
-          </p>
-          <p
-            className="text-brand-black font-normal leading-[1.05]"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)", letterSpacing: "-0.01em" }}
-          >
-            Balanced, <em>natural results</em> — with patient safety and education at the centre of every decision.
-          </p>
-        </FadeIn>
-      </section>
-
       {/* ─── APPROACH — numbered list + image ────────────────────────────── */}
       <section className="bg-cream overflow-hidden relative flex items-center" style={{ minHeight: "100vh" }}>
-        {/* Parchment box — right page edge, behind image */}
+        {/* Cream box — right page edge, behind image */}
         <div className="absolute hidden md:block right-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-8 items-start">
@@ -244,7 +232,7 @@ export default function ServicesPage() {
                       >
                         {label}
                       </p>
-                      <p className="text-neutral-500 text-sm font-light leading-relaxed">{body}</p>
+                      <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>{body}</p>
                     </div>
                   </div>
                 </div>
@@ -266,14 +254,49 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ─── FOOTER SIGNATURE ─────────────────────────────────────────────── */}
-      <div className="bg-cream border-t border-neutral-100 py-16 flex flex-col items-center gap-4">
-        <img src="/assets/logo-circle.svg" alt="" aria-hidden="true" className="w-5 h-5 opacity-20" />
-        <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
-          Dr. Yalda Jamali · Sydney
-        </p>
-      </div>
+      <TwoPanelHero />
 
+      {/* FAQ */}
+      <section className="bg-cream py-24 md:py-40">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-8">
+
+            <div className="col-span-12 md:col-span-4">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
+                FAQs
+              </p>
+              <h2
+                className="text-brand-black font-normal leading-tight"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+              >
+                COMMON<br /><em>questions.</em>
+              </h2>
+            </div>
+
+            <div className="col-span-12 md:col-span-7 md:col-start-6 flex flex-col divide-y divide-neutral-200">
+              {[
+                { q: "Do I need a referral?", a: "No referral is needed. You can book directly through any of the clinic links above." },
+                { q: "How long is a consultation?", a: "Initial consultations are typically 30–45 minutes. Dr. Yalda takes the time needed — she won't rush you." },
+                { q: "Can treatment happen on the same day?", a: "In some cases yes, but Dr. Yalda always recommends a separate consultation first so you can make an informed, unhurried decision." },
+                { q: "What should I bring?", a: "Just yourself. If you have any previous treatment records or skincare you're currently using, feel free to bring those along." },
+              ].map(({ q, a }) => (
+                <div key={q} className="py-8 flex flex-col gap-3">
+                  <h3
+                    className="text-brand-black font-normal"
+                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)", letterSpacing: "0.02em" }}
+                  >
+                    {q.toUpperCase()}
+                  </h3>
+                  <p className="text-neutral-600 font-light leading-relaxed max-w-lg" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>{a}</p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <DrQuote />
     </main>
   );
 }

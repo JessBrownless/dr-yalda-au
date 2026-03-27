@@ -1,8 +1,10 @@
+import DrQuote from "@/components/DrQuote";
 import TestimonialSection from "@/components/TestimonialSection";
 import LogoQuilt from "@/components/LogoQuilt";
 import MediaTeaser from "@/components/MediaTeaser";
 import HeroExperiment from "@/components/HeroExperiment";
 import HeroSplit from "@/components/HeroSplit";
+import TwoPanelHero from "@/components/TwoPanelHero";
 
 export default function Home() {
   return (
@@ -81,66 +83,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Her Approach section — parchment-backed image right, text left */}
-      <section className="bg-cream overflow-hidden relative py-32 md:py-56">
+      <TwoPanelHero />
 
-        {/* Parchment strip — right edge, behind the image */}
-        <div className="absolute hidden md:block right-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
-
-        <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-8 items-center">
-
-            {/* Left — text */}
-            <div className="col-span-12 md:col-span-5 flex flex-col gap-8">
-
-              <p
-                className="text-neutral-400 font-normal uppercase"
-                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "sans-serif" }}
-              >
-                Her Approach
-              </p>
-
-              <p
-                className="text-brand-black font-normal"
-                style={{
-                  fontFamily: "'Heading', serif",
-                  fontSize: "clamp(1.5rem, 2.8vw, 3rem)",
-                  lineHeight: "1.5",
-                  letterSpacing: "0",
-                }}
-              >
-                Natural results, always. A personalised, meticulous approach to enhance and harmonise your features.
-              </p>
-
-              <a
-                href="/about"
-                className="flex items-center gap-3 text-brand-black font-normal uppercase transition-opacity duration-300 hover:opacity-60 mt-4"
-                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "sans-serif" }}
-              >
-                About Dr. Yalda <span aria-hidden="true" style={{ letterSpacing: 0 }}>→</span>
-              </a>
-
-            </div>
-
-            {/* Right — image over parchment */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8">
-              <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/assets/Yalda-1.avif"
-                  alt="Dr. Yalda Jamali"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       <TestimonialSection />
       <MediaTeaser />
       <LogoQuilt />
+      <DrQuote />
     </main>
   );
 }

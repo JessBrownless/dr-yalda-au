@@ -42,8 +42,8 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`absolute top-0 left-0 right-0 md:fixed z-50 transition-colors duration-500 ${open ? "bg-transparent" : scrolled ? "bg-transparent" : "bg-parchment"}`}>
-        <div className="h-14 md:h-16 py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
+      <nav className={`relative z-50 transition-colors duration-500 ${open ? "bg-transparent" : scrolled ? "bg-transparent" : "bg-parchment"}`}>
+        <div className="h-10 md:h-12 py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
           <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
@@ -51,7 +51,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`text-[11px] font-normal tracking-[0.35em] uppercase transition-colors duration-300 ${
+                className={`text-[11px] font-normal tracking-[0.15em] uppercase transition-colors duration-300 ${
                   pathname === href
                     ? dark ? "text-brand-black" : "text-white"
                     : dark ? "text-brand-black hover:text-neutral-500" : "text-[#888888] hover:text-white"
@@ -81,7 +81,7 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`text-[10px] font-normal tracking-[0.35em] uppercase transition-colors duration-300 ${
+                  className={`text-[10px] font-normal tracking-[0.15em] uppercase transition-colors duration-300 ${
                     pathname === href
                       ? dark ? "text-brand-black" : "text-white"
                       : dark ? "text-brand-black hover:text-neutral-500" : "text-[#888888] hover:text-white"
@@ -92,7 +92,11 @@ export default function Navbar() {
               ))}
               <Link
                 href="/appointments"
-                className="px-6 py-2.5 text-[10px] font-normal tracking-[0.4em] uppercase border border-brand-black text-brand-black hover:bg-brand-black hover:text-white transition-all duration-300"
+                className={`text-[10px] font-normal tracking-[0.15em] uppercase transition-colors duration-300 ${
+                  pathname === "/appointments"
+                    ? dark ? "text-brand-black" : "text-white"
+                    : dark ? "text-brand-black hover:text-neutral-500" : "text-[#888888] hover:text-white"
+                }`}
               >
                 Book Now
               </Link>
@@ -103,9 +107,9 @@ export default function Navbar() {
               aria-label="Toggle menu"
               className="flex flex-col gap-[7px] p-2 group"
             >
-              <span className={`block h-[0.5px] transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-white" : "w-6"}`} />
-              <span className={`block h-[0.5px] transition-all duration-300 ${dark ? "bg-brand-black" : "bg-white"} ${open ? "opacity-0 w-6 !bg-white" : "w-4 group-hover:w-6"}`} />
-              <span className={`block h-[0.5px] transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-white" : "w-6"}`} />
+              <span className={`block h-[1.5px] transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-white" : "w-6"}`} />
+              <span className={`block h-[1.5px] transition-all duration-300 ${dark ? "bg-brand-black" : "bg-white"} ${open ? "opacity-0 w-6 !bg-white" : "w-4 group-hover:w-6"}`} />
+              <span className={`block h-[1.5px] transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-white" : "w-6"}`} />
             </button>
           </div>
 
@@ -143,7 +147,7 @@ export default function Navbar() {
                 <Link
                   href={href}
                   onClick={() => setOpen(false)}
-                  className={`block py-5 text-white text-sm tracking-[0.35em] uppercase transition-all duration-500 hover:text-neutral-400 ${
+                  className={`block py-5 text-white text-sm tracking-[0.15em] uppercase transition-all duration-500 hover:text-neutral-400 ${
                     open ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-3"
                   }`}
                   style={{ transitionDelay: open ? `${i * 60 + 200}ms` : "0ms", fontFamily: "'Heading', serif" }}
