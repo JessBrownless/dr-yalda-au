@@ -6,7 +6,7 @@ const clinics = [
     address: "18 William St, Paddington, 2021",
     hours: "Wednesday – Friday",
     href: "#",
-    logo: null,
+    logo: "/assets/clinic-logo-epios.png",
   },
   {
     name: "Northern Sydney Dermatology & Laser",
@@ -80,70 +80,74 @@ export default function AppointmentsPage() {
       {/* Clinic locations */}
       <section className="bg-cream py-24 md:py-32 overflow-hidden">
         <div className="pg-container">
-          <div className="grid grid-cols-12 gap-8 md:gap-12 items-start [&>*]:order-none">
+          <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
 
-            {/* Small image — top on mobile, bottom of left col on desktop */}
-            <div className="col-span-6 md:hidden order-1 overflow-hidden" style={{ aspectRatio: "3/4" }}>
-              <img
-                src="/assets/Yalda-17.avif"
-                alt="Dr. Yalda Jamali"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
+            {/* Left — image + intro text */}
+            <div className="col-span-12 md:col-span-5 flex flex-col gap-8">
 
-            {/* Left — intro text (cols 1–5) */}
-            <div className="col-span-12 md:col-span-5 flex flex-col gap-6 order-2">
-              <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
-                Schedule
-              </p>
-              <h2
-                className="text-brand-black font-normal leading-tight"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 3rem)", letterSpacing: "0.02em" }}
-              >
-                IN-PERSON<br />CONSULTATION
-              </h2>
-              <p className="text-neutral-600 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", maxWidth: "36ch" }}>
-                Dr. Yalda works across Paddington on Wednesday – Friday, Northbridge on Mondays and Balgowlah on Tuesdays.
-              </p>
-
-              {/* Small image — desktop only */}
-              <div className="hidden md:block overflow-hidden mt-4" style={{ width: "clamp(140px, 40%, 220px)", aspectRatio: "3/4" }}>
+              {/* Square image */}
+              <div className="overflow-hidden w-full" style={{ aspectRatio: "1/1" }}>
                 <img
                   src="/assets/dr-yalda-treatment-02.avif"
                   alt="Dr. Yalda Jamali"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
+
+              {/* Text */}
+              <div className="flex flex-col gap-4">
+                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                  Schedule
+                </p>
+                <h2
+                  className="text-brand-black font-normal leading-tight"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 3rem)", letterSpacing: "0.02em" }}
+                >
+                  IN-PERSON CONSULTATION
+                </h2>
+                <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "'Heading', serif" }}>
+                  Dr. Yalda works across Paddington on Wednesday – Friday, Northbridge on Mondays and Balgowlah on Tuesdays.
+                </p>
+              </div>
+
             </div>
 
-            {/* Right — clinic list (cols 7–12) */}
-            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col divide-y divide-neutral-200 md:pt-16">
-              {clinics.map(({ name, address, hours, href, logo }) => (
-                <div key={name} className="py-8 flex flex-col gap-3">
-                  {/* Clinic logo */}
-                  <div className="h-8 flex items-center">
-                    {logo ? (
-                      <img src={logo} alt={name} className="h-full w-auto object-contain" />
-                    ) : (
-                      <div className="h-6 w-24 bg-neutral-200 rounded-sm" />
-                    )}
+            {/* Right — clinic list */}
+            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col divide-y divide-neutral-100 md:pt-4">
+              {clinics.map(({ name, address, hours, href }, i) => (
+                <div key={name} className="py-8 flex gap-6 items-start">
+
+                  {/* Pin */}
+                  <div className="flex-shrink-0 mt-1">
+                    <svg width="16" height="21" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1C5.58 1 2 4.58 2 9c0 6 8 16 8 16s8-10 8-16c0-4.42-3.58-8-8-8z" fill="#1a1a1a"/>
+                      <text x="10" y="10.5" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="11" fontFamily="sans-serif" fontWeight="200">{i + 1}</text>
+                    </svg>
                   </div>
-                  <h3
-                    className="text-brand-black font-normal leading-tight"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.5vw, 1.4rem)", letterSpacing: "0.04em" }}
-                  >
-                    {name.toUpperCase()}
-                  </h3>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-neutral-500 text-sm font-light">{address}</p>
-                    <p className="text-neutral-400 text-[10px] font-light tracking-[0.2em] uppercase">{hours}</p>
+
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col gap-1.5">
+                    <h3
+                      className="text-brand-black font-normal leading-tight"
+                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.5vw, 1.4rem)", letterSpacing: "0.04em" }}
+                    >
+                      {name.toUpperCase()}
+                    </h3>
+                    <div className="flex items-baseline gap-4">
+                      <p className="text-neutral-500 font-light tracking-[0.12em] uppercase" style={{ fontSize: "10px" }}>{hours}</p>
+                      <span className="text-neutral-300 text-[8px]">·</span>
+                      <p className="text-neutral-400 font-light" style={{ fontSize: "12px" }}>{address}</p>
+                    </div>
                   </div>
+
+                  {/* CTA */}
                   <a
                     href={href}
-                    className="self-start mt-2 px-8 py-3 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
+                    className="flex-shrink-0 self-center text-brand-black text-[9px] font-light tracking-[0.3em] uppercase border-b border-brand-black/30 pb-px hover:border-brand-black transition-colors duration-300"
                   >
-                    Book Now
+                    Book
                   </a>
+
                 </div>
               ))}
             </div>
