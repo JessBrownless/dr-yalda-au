@@ -6,18 +6,21 @@ const clinics = [
     address: "18 William St, Paddington, 2021",
     hours: "Wednesday – Friday",
     href: "#",
+    logo: null,
   },
   {
     name: "Northern Sydney Dermatology & Laser",
     address: "1/29 Baringa Rd, Northbridge, 2063",
     hours: "Mondays",
     href: "#",
+    logo: null,
   },
   {
     name: "Austin Clinic",
     address: "5/67 Wanganella St, Balgowlah, 2093",
     hours: "Tuesdays",
     href: "#",
+    logo: null,
   },
 ];
 
@@ -115,8 +118,16 @@ export default function AppointmentsPage() {
 
             {/* Right — clinic list (cols 7–12) */}
             <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col divide-y divide-neutral-200 md:pt-16">
-              {clinics.map(({ name, address, hours, href }) => (
+              {clinics.map(({ name, address, hours, href, logo }) => (
                 <div key={name} className="py-8 flex flex-col gap-3">
+                  {/* Clinic logo */}
+                  <div className="h-8 flex items-center">
+                    {logo ? (
+                      <img src={logo} alt={name} className="h-full w-auto object-contain" />
+                    ) : (
+                      <div className="h-6 w-24 bg-neutral-200 rounded-sm" />
+                    )}
+                  </div>
                   <h3
                     className="text-brand-black font-normal leading-tight"
                     style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.5vw, 1.4rem)", letterSpacing: "0.04em" }}
