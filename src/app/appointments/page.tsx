@@ -81,21 +81,25 @@ export default function AppointmentsPage() {
       </section>
 
       {/* Clinic locations */}
-      <section className="bg-parchment py-24 md:py-32 overflow-hidden">
+      <section className="bg-parchment py-24 md:py-32 relative overflow-hidden">
+
+        {/* Desktop bleed images */}
+        <div className="hidden md:block">
+          {/* Left — full height portrait bleeding off left edge */}
+          <div className="absolute overflow-hidden" style={{ left: "-2%", top: 0, bottom: 0, width: "16%" }}>
+            <img src="/assets/IMG_0005.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-top" />
+          </div>
+          {/* Right — smaller, bleeding off bottom right */}
+          <div className="absolute overflow-hidden" style={{ right: "-2%", bottom: "0", width: "11%", height: "45%" }}>
+            <img src="/assets/IMG_0029.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
+          </div>
+        </div>
+
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-4 md:gap-16 items-start">
 
             {/* Left — image + intro text */}
             <div className="col-span-12 md:col-span-5 flex flex-col gap-8">
-
-              {/* Square image */}
-              <div className="overflow-hidden w-full" style={{ aspectRatio: "1/1" }}>
-                <img
-                  src="/assets/dr-yalda-treatment-02.avif"
-                  alt="Dr. Yalda Jamali"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
 
               {/* Text */}
               <div className="flex flex-col gap-4">
@@ -103,13 +107,13 @@ export default function AppointmentsPage() {
                   Schedule an
                 </p>
                 <h2
-                  className="text-brand-black font-normal leading-tight"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 3rem)", letterSpacing: "0.02em" }}
+                  className="text-brand-black font-normal leading-[1.0]"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0" }}
                 >
-                  IN-PERSON CONSULTATION
+                  IN-PERSON<br /><em>consultation.</em>
                 </h2>
-                <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "'Heading', serif" }}>
-                  Dr. Yalda works across Northbridge on Mondays, Balgowlah on Tuesdays and Paddington on Wednesday – Friday.
+                <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", maxWidth: "38ch" }}>
+                  Dr. Yalda receives patients by appointment across three Sydney clinics — Northbridge on Mondays, Balgowlah on Tuesdays, and Paddington Wednesday through Friday.
                 </p>
               </div>
 
@@ -124,25 +128,28 @@ export default function AppointmentsPage() {
                   <div className="flex-1 flex flex-col gap-4">
                     <h3
                       className="text-brand-black font-normal leading-tight"
-                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.3rem, 2vw, 1.8rem)", letterSpacing: "0.1em" }}
+                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.1vw, 1.15rem)", letterSpacing: "0.1em" }}
                     >
                       {name.toUpperCase()}
                     </h3>
                     <div className="flex flex-col gap-2">
                       <div className="flex items-center gap-2.5">
+                        {/* Sharp calendar */}
                         <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                          <rect x="1" y="2" width="10" height="9" rx="1" stroke="#525252" strokeWidth="0.75"/>
-                          <path d="M1 5h10" stroke="#525252" strokeWidth="0.75"/>
-                          <path d="M4 1v2M8 1v2" stroke="#525252" strokeWidth="0.75" strokeLinecap="round"/>
+                          <rect x="0.5" y="1.5" width="11" height="10" stroke="#525252" strokeWidth="0.6"/>
+                          <line x1="0.5" y1="4.5" x2="11.5" y2="4.5" stroke="#525252" strokeWidth="0.6"/>
+                          <line x1="4" y1="0" x2="4" y2="3" stroke="#525252" strokeWidth="0.6"/>
+                          <line x1="8" y1="0" x2="8" y2="3" stroke="#525252" strokeWidth="0.6"/>
                         </svg>
-                        <p className="text-neutral-600 font-light" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 200, color: "#888" }}>{hours}</p>
+                        <p className="text-neutral-600 font-light" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 100, color: "#888" }}>{hours}</p>
                       </div>
                       <div className="flex items-center gap-2.5">
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                          <path d="M6 1C3.79 1 2 2.79 2 5c0 3 4 7 4 7s4-4 4-7c0-2.21-1.79-4-4-4z" stroke="#525252" strokeWidth="0.75" fill="none"/>
-                          <circle cx="6" cy="5" r="1.25" stroke="#525252" strokeWidth="0.75"/>
+                        {/* Sharp pin */}
+                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                          <path d="M4.5 0C2.015 0 0 2.015 0 4.5C0 7.875 4.5 13 4.5 13C4.5 13 9 7.875 9 4.5C9 2.015 6.985 0 4.5 0Z" stroke="#525252" strokeWidth="0.6" fill="none"/>
+                          <rect x="3.25" y="3.25" width="2.5" height="2.5" stroke="#525252" strokeWidth="0.6"/>
                         </svg>
-                        <p className="text-neutral-600 font-light" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 200, color: "#888" }}>{address}</p>
+                        <p className="text-neutral-600 font-light" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 100, color: "#888" }}>{address}</p>
                       </div>
                     </div>
 
@@ -153,9 +160,10 @@ export default function AppointmentsPage() {
                         className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
                       >
                         <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                          <rect x="1" y="2" width="10" height="9" rx="1" stroke="white" strokeWidth="0.75"/>
-                          <path d="M1 5h10" stroke="white" strokeWidth="0.75"/>
-                          <path d="M4 1v2M8 1v2" stroke="white" strokeWidth="0.75" strokeLinecap="round"/>
+                          <rect x="0.5" y="1.5" width="11" height="10" stroke="white" strokeWidth="0.6"/>
+                          <line x1="0.5" y1="4.5" x2="11.5" y2="4.5" stroke="white" strokeWidth="0.6"/>
+                          <line x1="4" y1="0" x2="4" y2="3" stroke="white" strokeWidth="0.6"/>
+                          <line x1="8" y1="0" x2="8" y2="3" stroke="white" strokeWidth="0.6"/>
                         </svg>
                         Book Now
                       </a>
@@ -163,12 +171,12 @@ export default function AppointmentsPage() {
                         href={maps}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-8 py-3.5 border border-neutral-400 text-neutral-600 text-[9px] font-light tracking-[0.4em] uppercase hover:border-brand-black hover:text-brand-black transition-colors duration-300"
+                        className="inline-flex items-center gap-2 text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase hover:text-brand-black transition-colors duration-300 ml-4"
                         style={{ fontFamily: "sans-serif", fontWeight: 300 }}
                       >
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                          <path d="M6 1C3.79 1 2 2.79 2 5c0 3 4 7 4 7s4-4 4-7c0-2.21-1.79-4-4-4z" stroke="currentColor" strokeWidth="0.75" fill="none"/>
-                          <circle cx="6" cy="5" r="1.25" stroke="currentColor" strokeWidth="0.75"/>
+                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                          <path d="M4.5 0C2.015 0 0 2.015 0 4.5C0 7.875 4.5 13 4.5 13C4.5 13 9 7.875 9 4.5C9 2.015 6.985 0 4.5 0Z" stroke="currentColor" strokeWidth="0.6" fill="none"/>
+                          <rect x="3.25" y="3.25" width="2.5" height="2.5" stroke="currentColor" strokeWidth="0.6"/>
                         </svg>
                         Plan Journey
                       </a>

@@ -21,50 +21,53 @@ export default function HeroExperiment() {
 
   return (
     <>
-      {/* ── MOBILE layout — single image editorial ── */}
-      <section className="md:hidden flex flex-col bg-parchment overflow-hidden h-screen">
+      {/* ── MOBILE layout — two offset portrait images ── */}
+      <section className="md:hidden relative bg-parchment overflow-hidden h-screen flex flex-col">
 
-        {/* Masthead row — logo flush left, descriptor flush right, baselines aligned */}
-        <div className="px-6 pt-[128px] mb-8 flex items-end justify-between gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.15s" }}>
-          <h1 className="leading-none flex-shrink-0">
-            <Image
-              src="/assets/dr-yalda-logo-long.svg"
-              alt="Dr. Yalda Jamali"
-              width={600}
-              height={80}
-              className="h-6 w-auto"
-              style={{ filter: "brightness(0)" }}
-            />
+        {/* Title block */}
+        <div className="px-6 pt-[120px] pb-6 opacity-0 animate-fade-in z-10 relative" style={{ animationDelay: "0.15s" }}>
+          <h1
+            className="text-brand-black font-normal leading-none"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 14vw, 5rem)", letterSpacing: "0.04em" }}
+          >
+            DR. YALDA
           </h1>
           <p
-            className="text-neutral-500 font-normal uppercase text-right leading-snug flex-shrink-0"
-            style={{ fontSize: "10px", letterSpacing: "0.15em" }}
-          >
-            Cosmetic Doctor<br />Practising in<br />Sydney
-          </p>
-        </div>
-
-        {/* Image — left-inset matching text margin, flush right, 48px below heading */}
-        <div
-          className="relative overflow-hidden opacity-0 animate-fade-in flex-1 min-h-0"
-          style={{ marginLeft: "1.5rem", animationDelay: "0.3s" }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/Yalda-17.avif"
-            alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover object-top"
-          />
-        </div>
-
-        {/* cosmetic & skin — flush left, space below image */}
-        <div className="px-6 pt-4 pb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          <p
             className="text-neutral-400 font-normal"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 5vw, 1.5rem)", fontStyle: "italic", letterSpacing: "0.02em", marginLeft: "-1px" }}
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.2rem, 5.5vw, 1.8rem)", fontStyle: "italic", letterSpacing: "0.02em" }}
           >
             cosmetic &amp; skin
           </p>
+        </div>
+
+        {/* Two portrait images — offset vertically */}
+        <div className="relative flex-1 min-h-0">
+
+          {/* Left image — starts higher, bleeds left */}
+          <div
+            className="absolute overflow-hidden opacity-0 animate-fade-in"
+            style={{ left: 0, top: 0, width: "47%", bottom: "8%", animationDelay: "0.3s" }}
+          >
+            <img
+              src="/assets/Yalda-17.avif"
+              alt="Dr. Yalda Jamali"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
+          {/* Right image — starts lower, bleeds right */}
+          <div
+            className="absolute overflow-hidden opacity-0 animate-fade-in"
+            style={{ right: 0, top: "12%", width: "47%", bottom: 0, animationDelay: "0.45s" }}
+          >
+            <img
+              src="/assets/IMG_0012.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
         </div>
 
       </section>
