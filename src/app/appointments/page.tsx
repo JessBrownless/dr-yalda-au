@@ -7,6 +7,7 @@ const clinics = [
     hours: "Wednesday – Friday",
     href: "#",
     logo: "/assets/clinic-logo-epios.png",
+    maps: "https://www.google.com/maps/dir/?api=1&destination=18+William+St+Paddington+NSW+2021",
   },
   {
     name: "Northern Sydney Dermatology & Laser",
@@ -14,6 +15,7 @@ const clinics = [
     hours: "Mondays",
     href: "#",
     logo: null,
+    maps: "https://www.google.com/maps/dir/?api=1&destination=1%2F29+Baringa+Rd+Northbridge+NSW+2063",
   },
   {
     name: "Austin Clinic",
@@ -21,6 +23,7 @@ const clinics = [
     hours: "Tuesdays",
     href: "#",
     logo: null,
+    maps: "https://www.google.com/maps/dir/?api=1&destination=5%2F67+Wanganella+St+Balgowlah+NSW+2093",
   },
 ];
 
@@ -78,9 +81,9 @@ export default function AppointmentsPage() {
       </section>
 
       {/* Clinic locations */}
-      <section className="bg-cream py-24 md:py-32 overflow-hidden">
+      <section className="bg-parchment py-24 md:py-32 overflow-hidden">
         <div className="pg-container">
-          <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
+          <div className="grid grid-cols-12 gap-4 md:gap-16 items-start">
 
             {/* Left — image + intro text */}
             <div className="col-span-12 md:col-span-5 flex flex-col gap-8">
@@ -97,7 +100,7 @@ export default function AppointmentsPage() {
               {/* Text */}
               <div className="flex flex-col gap-4">
                 <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
-                  Schedule
+                  Schedule an
                 </p>
                 <h2
                   className="text-brand-black font-normal leading-tight"
@@ -106,47 +109,73 @@ export default function AppointmentsPage() {
                   IN-PERSON CONSULTATION
                 </h2>
                 <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "'Heading', serif" }}>
-                  Dr. Yalda works across Paddington on Wednesday – Friday, Northbridge on Mondays and Balgowlah on Tuesdays.
+                  Dr. Yalda works across Northbridge on Mondays, Balgowlah on Tuesdays and Paddington on Wednesday – Friday.
                 </p>
               </div>
 
             </div>
 
             {/* Right — clinic list */}
-            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col divide-y divide-neutral-100 md:pt-4">
-              {clinics.map(({ name, address, hours, href }, i) => (
-                <div key={name} className="py-8 flex gap-6 items-start">
+            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col divide-y divide-neutral-400">
+              {clinics.map(({ name, address, hours, href, maps }) => (
+                <div key={name} className="py-8 flex gap-5 items-start">
 
-                  {/* Pin */}
-                  <div className="flex-shrink-0 mt-1">
-                    <svg width="16" height="21" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10 1C5.58 1 2 4.58 2 9c0 6 8 16 8 16s8-10 8-16c0-4.42-3.58-8-8-8z" fill="#1a1a1a"/>
-                      <text x="10" y="10.5" textAnchor="middle" dominantBaseline="middle" fill="white" fontSize="11" fontFamily="sans-serif" fontWeight="200">{i + 1}</text>
-                    </svg>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 flex flex-col gap-1.5">
+{/* Info + buttons */}
+                  <div className="flex-1 flex flex-col gap-4">
                     <h3
                       className="text-brand-black font-normal leading-tight"
-                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.5vw, 1.4rem)", letterSpacing: "0.04em" }}
+                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.1rem, 1.6vw, 1.4rem)", letterSpacing: "0.1em" }}
                     >
                       {name.toUpperCase()}
                     </h3>
-                    <div className="flex items-baseline gap-4">
-                      <p className="text-neutral-500 font-light tracking-[0.12em] uppercase" style={{ fontSize: "10px" }}>{hours}</p>
-                      <span className="text-neutral-300 text-[8px]">·</span>
-                      <p className="text-neutral-400 font-light" style={{ fontSize: "12px" }}>{address}</p>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2.5">
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                          <rect x="1" y="2" width="10" height="9" rx="1" stroke="#525252" strokeWidth="0.75"/>
+                          <path d="M1 5h10" stroke="#525252" strokeWidth="0.75"/>
+                          <path d="M4 1v2M8 1v2" stroke="#525252" strokeWidth="0.75" strokeLinecap="round"/>
+                        </svg>
+                        <p className="text-neutral-600 font-light" style={{ fontSize: "12px", fontFamily: "sans-serif", fontWeight: 300 }}>{hours}</p>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                          <path d="M6 1C3.79 1 2 2.79 2 5c0 3 4 7 4 7s4-4 4-7c0-2.21-1.79-4-4-4z" stroke="#525252" strokeWidth="0.75" fill="none"/>
+                          <circle cx="6" cy="5" r="1.25" stroke="#525252" strokeWidth="0.75"/>
+                        </svg>
+                        <p className="text-neutral-600 font-light" style={{ fontSize: "12px", fontFamily: "sans-serif", fontWeight: 300 }}>{address}</p>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* CTA */}
-                  <a
-                    href={href}
-                    className="flex-shrink-0 self-center text-brand-black text-[9px] font-light tracking-[0.3em] uppercase border-b border-brand-black/30 pb-px hover:border-brand-black transition-colors duration-300"
-                  >
-                    Book
-                  </a>
+                    {/* Buttons — own row, left-aligned with accent */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-4 h-px bg-neutral-300 flex-shrink-0" />
+                      <a
+                        href={href}
+                        className="inline-flex items-center gap-2.5 px-6 py-2.5 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
+                      >
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                          <rect x="1" y="2" width="10" height="9" rx="1" stroke="white" strokeWidth="0.75"/>
+                          <path d="M1 5h10" stroke="white" strokeWidth="0.75"/>
+                          <path d="M4 1v2M8 1v2" stroke="white" strokeWidth="0.75" strokeLinecap="round"/>
+                        </svg>
+                        Book Now
+                      </a>
+                      <a
+                        href={maps}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2.5 px-6 py-2.5 border border-neutral-400 text-neutral-600 text-[9px] font-light tracking-[0.4em] uppercase hover:border-brand-black hover:text-brand-black transition-colors duration-300"
+                        style={{ fontFamily: "sans-serif", fontWeight: 300 }}
+                      >
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                          <path d="M6 1C3.79 1 2 2.79 2 5c0 3 4 7 4 7s4-4 4-7c0-2.21-1.79-4-4-4z" stroke="currentColor" strokeWidth="0.75" fill="none"/>
+                          <circle cx="6" cy="5" r="1.25" stroke="currentColor" strokeWidth="0.75"/>
+                        </svg>
+                        Navigate
+                      </a>
+                    </div>
+
+                  </div>
 
                 </div>
               ))}
