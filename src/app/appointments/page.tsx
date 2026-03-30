@@ -3,6 +3,7 @@ import DrQuote from "@/components/DrQuote";
 const clinics = [
   {
     name: "Epios Cosmetic Clinic",
+    suburb: "Paddington",
     address: "18 William St, Paddington, 2021",
     hours: "Wednesday – Friday",
     href: "#",
@@ -11,6 +12,7 @@ const clinics = [
   },
   {
     name: "Northern Sydney Dermatology & Laser",
+    suburb: "Northbridge",
     address: "1/29 Baringa Rd, Northbridge, 2063",
     hours: "Mondays",
     href: "#",
@@ -19,6 +21,7 @@ const clinics = [
   },
   {
     name: "Austin Clinic",
+    suburb: "Balgowlah",
     address: "5/67 Wanganella St, Balgowlah, 2093",
     hours: "Tuesdays",
     href: "#",
@@ -55,23 +58,23 @@ export default function AppointmentsPage() {
         <div className="relative flex items-center justify-center">
 
           <span
-            className="relative z-0 text-brand-black font-normal leading-none"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em", marginRight: "-10px", alignSelf: "flex-start", marginTop: "-8%" }}
+            className="relative z-0 text-brand-black font-normal leading-none opacity-0 animate-fade-in"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em", marginRight: "-10px", alignSelf: "flex-start", marginTop: "-8%", animationDelay: "0.1s" }}
           >
             BOOK
           </span>
 
-          <div className="relative z-10 flex-shrink-0 overflow-hidden" style={{ width: "clamp(160px, 30vw, 300px)", aspectRatio: "3/4" }}>
+          <div className="relative z-10 flex-shrink-0 overflow-hidden opacity-0 animate-fade-in" style={{ width: "clamp(160px, 30vw, 300px)", aspectRatio: "3/4", animationDelay: "0.35s" }}>
             <img
-              src="/assets/Yalda-17.avif"
+              src="/assets/dr-yalda-treatment-03.avif"
               alt="Dr. Yalda Jamali"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-center"
             />
           </div>
 
           <span
-            className="relative z-20 text-brand-black font-normal leading-none"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em", marginLeft: "-10px", alignSelf: "flex-end", marginBottom: "-8%" }}
+            className="relative z-20 text-brand-black font-normal leading-none opacity-0 animate-fade-in"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em", marginLeft: "-10px", alignSelf: "flex-end", marginBottom: "-8%", animationDelay: "0.1s" }}
           >
             NOW
           </span>
@@ -83,32 +86,19 @@ export default function AppointmentsPage() {
       {/* Clinic locations */}
       <section className="bg-parchment py-24 md:py-32 relative overflow-hidden">
 
-        {/* Desktop bleed images */}
-        <div className="hidden md:block">
-          {/* Left — full height portrait bleeding off left edge */}
-          <div className="absolute overflow-hidden" style={{ left: "-2%", top: 0, bottom: 0, width: "16%" }}>
-            <img src="/assets/IMG_0005.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-top" />
-          </div>
-          {/* Right — smaller, bleeding off bottom right */}
-          <div className="absolute overflow-hidden" style={{ right: "-2%", bottom: "0", width: "11%", height: "45%" }}>
-            <img src="/assets/IMG_0029.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
-          </div>
-        </div>
 
-        <div className="pg-container">
-          <div className="grid grid-cols-12 gap-4 md:gap-16 items-start">
+<div className="pg-container">
+          <div className="grid grid-cols-12 gap-4 md:gap-16 items-stretch">
 
-            {/* Left — image + intro text */}
-            <div className="col-span-12 md:col-span-5 flex flex-col gap-8">
-
-              {/* Text */}
+            {/* Left — intro text + cropped image */}
+            <div className="col-span-12 md:col-span-5 flex flex-col justify-between gap-8 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               <div className="flex flex-col gap-4">
                 <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
                   Schedule an
                 </p>
                 <h2
-                  className="text-brand-black font-normal leading-[1.0]"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0" }}
+                  className="text-brand-black font-normal leading-[1.0] -mt-2"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 2.8vw, 2.8rem)", letterSpacing: "0" }}
                 >
                   IN-PERSON<br /><em>consultation.</em>
                 </h2>
@@ -117,71 +107,36 @@ export default function AppointmentsPage() {
                 </p>
               </div>
 
+              {/* Image */}
+              <div className="overflow-hidden mt-2 w-full aspect-[16/9] md:w-[180px] md:aspect-square">
+                <img src="/assets/dr-yalda-treatment-03.avif" alt="" aria-hidden="true" className="w-full h-full object-cover md:object-center" style={{ objectPosition: "center 35%" }} />
+              </div>
+
             </div>
 
             {/* Right — clinic list */}
-            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col divide-y divide-neutral-400">
-              {clinics.map(({ name, address, hours, href, maps }) => (
-                <div key={name} className="py-8 flex gap-5 items-start">
+            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col divide-y divide-neutral-300 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+              {clinics.map(({ name, suburb, hours, href, maps, address }) => (
+                <div key={name} className="py-8 flex flex-col gap-1.5">
 
-{/* Info + buttons */}
-                  <div className="flex-1 flex flex-col gap-4">
-                    <h3
-                      className="text-brand-black font-normal leading-tight"
-                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.1vw, 1.15rem)", letterSpacing: "0.1em" }}
+                  <h3
+                    className="text-brand-black font-normal leading-tight"
+                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.2vw, 1.25rem)", letterSpacing: "0.08em", maxWidth: "60%" }}
+                  >
+                    {name.toUpperCase()}
+                  </h3>
+                  <p className="text-neutral-500 font-light" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1vw, 1rem)", fontStyle: "italic" }}>{suburb}</p>
+                  <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 200, color: "#777" }}>{hours}</p>
+
+                  {/* Address row + Book Now baseline-aligned */}
+                  <div className="flex items-baseline justify-between gap-8 mt-1">
+                    <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 100, color: "#aaa" }}>{address}</p>
+                    <a
+                      href={href}
+                      className="flex-shrink-0 self-start px-6 py-2 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
                     >
-                      {name.toUpperCase()}
-                    </h3>
-                    <div className="flex flex-col gap-2">
-                      <div className="flex items-center gap-2.5">
-                        {/* Sharp calendar */}
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                          <rect x="0.5" y="1.5" width="11" height="10" stroke="#525252" strokeWidth="0.6"/>
-                          <line x1="0.5" y1="4.5" x2="11.5" y2="4.5" stroke="#525252" strokeWidth="0.6"/>
-                          <line x1="4" y1="0" x2="4" y2="3" stroke="#525252" strokeWidth="0.6"/>
-                          <line x1="8" y1="0" x2="8" y2="3" stroke="#525252" strokeWidth="0.6"/>
-                        </svg>
-                        <p className="text-neutral-600 font-light" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 100, color: "#888" }}>{hours}</p>
-                      </div>
-                      <div className="flex items-center gap-2.5">
-                        {/* Sharp pin */}
-                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                          <path d="M4.5 0C2.015 0 0 2.015 0 4.5C0 7.875 4.5 13 4.5 13C4.5 13 9 7.875 9 4.5C9 2.015 6.985 0 4.5 0Z" stroke="#525252" strokeWidth="0.6" fill="none"/>
-                          <rect x="3.25" y="3.25" width="2.5" height="2.5" stroke="#525252" strokeWidth="0.6"/>
-                        </svg>
-                        <p className="text-neutral-600 font-light" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 100, color: "#888" }}>{address}</p>
-                      </div>
-                    </div>
-
-                    {/* Buttons */}
-                    <div className="flex items-center gap-3 pt-1">
-                      <a
-                        href={href}
-                        className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
-                      >
-                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                          <rect x="0.5" y="1.5" width="11" height="10" stroke="white" strokeWidth="0.6"/>
-                          <line x1="0.5" y1="4.5" x2="11.5" y2="4.5" stroke="white" strokeWidth="0.6"/>
-                          <line x1="4" y1="0" x2="4" y2="3" stroke="white" strokeWidth="0.6"/>
-                          <line x1="8" y1="0" x2="8" y2="3" stroke="white" strokeWidth="0.6"/>
-                        </svg>
-                        Book Now
-                      </a>
-                      <a
-                        href={maps}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase hover:text-brand-black transition-colors duration-300 ml-4"
-                        style={{ fontFamily: "sans-serif", fontWeight: 300 }}
-                      >
-                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                          <path d="M4.5 0C2.015 0 0 2.015 0 4.5C0 7.875 4.5 13 4.5 13C4.5 13 9 7.875 9 4.5C9 2.015 6.985 0 4.5 0Z" stroke="currentColor" strokeWidth="0.6" fill="none"/>
-                          <rect x="3.25" y="3.25" width="2.5" height="2.5" stroke="currentColor" strokeWidth="0.6"/>
-                        </svg>
-                        Plan Journey
-                      </a>
-                    </div>
-
+                      Book Now
+                    </a>
                   </div>
 
                 </div>
@@ -193,7 +148,7 @@ export default function AppointmentsPage() {
       </section>
 
       {/* Telephone consultations */}
-      <section className="bg-parchment py-24 md:py-40 overflow-hidden">
+      <section className="bg-brand-black py-24 md:py-40 overflow-hidden">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-8 items-center">
 
@@ -201,22 +156,22 @@ export default function AppointmentsPage() {
             <div className="col-span-12 md:col-span-6 flex flex-col gap-8 order-2 md:order-1">
 
               <div className="flex flex-col gap-3">
-                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
                   Now offering
                 </p>
                 <h2
-                  className="text-brand-black font-normal leading-[1.0]"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0" }}
+                  className="text-white font-normal leading-[1.0]"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.75rem, 3.5vw, 3.5rem)", letterSpacing: "0" }}
                 >
                   TELEPHONE<br /><em>consultations.</em>
                 </h2>
               </div>
 
-              <p className="text-neutral-600 font-light leading-[1.8]" style={{ fontSize: "15px", fontFamily: "'Heading', serif", maxWidth: "38ch" }}>
+              <p className="text-neutral-400 font-light leading-[1.8]" style={{ fontSize: "15px", fontFamily: "'Heading', serif", maxWidth: "38ch" }}>
                 For those who can't make it in person, Dr. Yalda now offers a limited number of telephone consultations each week.
               </p>
 
-              <div className="flex flex-col divide-y divide-neutral-200">
+              <div className="flex flex-col divide-y divide-neutral-800">
                 {[
                   "30 minutes per session",
                   "Limited availability — book well in advance",
@@ -224,15 +179,15 @@ export default function AppointmentsPage() {
                   "No prescriptions or referrals issued via phone",
                 ].map((rule) => (
                   <div key={rule} className="flex items-baseline gap-4 py-4">
-                    <span className="text-neutral-300 flex-shrink-0 text-[9px] tracking-[0.1em]">—</span>
-                    <p className="text-brand-black font-light" style={{ fontSize: "14px", fontFamily: "'Heading', serif", letterSpacing: "0.02em" }}>{rule}</p>
+                    <span className="text-neutral-600 flex-shrink-0 text-[9px] tracking-[0.1em]">—</span>
+                    <p className="text-neutral-300 font-light" style={{ fontSize: "14px", fontFamily: "'Heading', serif", letterSpacing: "0.02em" }}>{rule}</p>
                   </div>
                 ))}
               </div>
 
               <a
                 href="#"
-                className="self-start text-brand-black text-[10px] font-normal tracking-[0.35em] uppercase border-b border-brand-black pb-px hover:opacity-50 transition-opacity duration-300 mt-2"
+                className="self-start text-white text-[10px] font-normal tracking-[0.35em] uppercase border-b border-white/40 pb-px hover:opacity-50 transition-opacity duration-300 mt-2"
                 style={{ fontFamily: "sans-serif" }}
               >
                 Book a Phone Consultation
@@ -241,7 +196,7 @@ export default function AppointmentsPage() {
             </div>
 
             {/* Right — phone mockup */}
-            <div className="col-span-12 md:col-span-4 md:col-start-9 flex justify-center order-1 md:order-2">
+            <div className="col-span-12 md:col-span-4 md:col-start-9 flex justify-center order-1 md:order-2 -mt-40 md:mt-0">
               <div className="media-teaser__phone" style={{ width: "200px" }}>
                 <div className="media-teaser__phone-notch" style={{ width: "70px", height: "20px" }} />
                 <img
@@ -267,13 +222,13 @@ export default function AppointmentsPage() {
               </p>
               <h2
                 className="text-brand-black font-normal leading-tight"
-                style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+                style={{ fontSize: "clamp(2.25rem, 3vw, 2.5rem)" }}
               >
                 YOUR FIRST<br /><em>visit.</em>
               </h2>
             </div>
 
-            <div className="col-span-12 md:col-span-7 md:col-start-6 flex flex-col divide-y divide-neutral-200">
+            <div className="col-span-12 md:col-span-7 md:col-start-6 flex flex-col divide-y divide-neutral-300">
               {steps.map(({ num, title, body }) => (
                 <div key={num} className="py-8 flex gap-8 items-start">
                   <span
@@ -310,7 +265,7 @@ export default function AppointmentsPage() {
             </p>
             <blockquote
               className="text-brand-black font-normal leading-relaxed"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.3rem, 2vw, 1.5rem)" }}
             >
               &ldquo;I believe every patient deserves honesty above all else. My consultations are a space for you to ask anything — I&rsquo;ll always tell you what I genuinely think, even if that means doing nothing at all.&rdquo;
             </blockquote>
