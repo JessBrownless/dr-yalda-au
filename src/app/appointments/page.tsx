@@ -124,7 +124,7 @@ export default function AppointmentsPage() {
                   <div className="flex-1 flex flex-col gap-4">
                     <h3
                       className="text-brand-black font-normal leading-tight"
-                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.1rem, 1.6vw, 1.4rem)", letterSpacing: "0.1em" }}
+                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.3rem, 2vw, 1.8rem)", letterSpacing: "0.1em" }}
                     >
                       {name.toUpperCase()}
                     </h3>
@@ -135,23 +135,22 @@ export default function AppointmentsPage() {
                           <path d="M1 5h10" stroke="#525252" strokeWidth="0.75"/>
                           <path d="M4 1v2M8 1v2" stroke="#525252" strokeWidth="0.75" strokeLinecap="round"/>
                         </svg>
-                        <p className="text-neutral-600 font-light" style={{ fontSize: "12px", fontFamily: "sans-serif", fontWeight: 300 }}>{hours}</p>
+                        <p className="text-neutral-600 font-light" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 200, color: "#888" }}>{hours}</p>
                       </div>
                       <div className="flex items-center gap-2.5">
                         <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                           <path d="M6 1C3.79 1 2 2.79 2 5c0 3 4 7 4 7s4-4 4-7c0-2.21-1.79-4-4-4z" stroke="#525252" strokeWidth="0.75" fill="none"/>
                           <circle cx="6" cy="5" r="1.25" stroke="#525252" strokeWidth="0.75"/>
                         </svg>
-                        <p className="text-neutral-600 font-light" style={{ fontSize: "12px", fontFamily: "sans-serif", fontWeight: 300 }}>{address}</p>
+                        <p className="text-neutral-600 font-light" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 200, color: "#888" }}>{address}</p>
                       </div>
                     </div>
 
-                    {/* Buttons — own row, left-aligned with accent */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-px bg-neutral-300 flex-shrink-0" />
+                    {/* Buttons */}
+                    <div className="flex items-center gap-3 pt-1">
                       <a
                         href={href}
-                        className="inline-flex items-center gap-2.5 px-6 py-2.5 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
+                        className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
                       >
                         <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                           <rect x="1" y="2" width="10" height="9" rx="1" stroke="white" strokeWidth="0.75"/>
@@ -164,14 +163,14 @@ export default function AppointmentsPage() {
                         href={maps}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-6 py-2.5 border border-neutral-400 text-neutral-600 text-[9px] font-light tracking-[0.4em] uppercase hover:border-brand-black hover:text-brand-black transition-colors duration-300"
+                        className="inline-flex items-center gap-2.5 px-8 py-3.5 border border-neutral-400 text-neutral-600 text-[9px] font-light tracking-[0.4em] uppercase hover:border-brand-black hover:text-brand-black transition-colors duration-300"
                         style={{ fontFamily: "sans-serif", fontWeight: 300 }}
                       >
                         <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                           <path d="M6 1C3.79 1 2 2.79 2 5c0 3 4 7 4 7s4-4 4-7c0-2.21-1.79-4-4-4z" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                           <circle cx="6" cy="5" r="1.25" stroke="currentColor" strokeWidth="0.75"/>
                         </svg>
-                        Navigate
+                        Plan Journey
                       </a>
                     </div>
 

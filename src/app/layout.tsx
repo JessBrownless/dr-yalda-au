@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lato.variable} ${marcellus.variable}`}>
-      <body>
+      <body className="overflow-x-hidden">
         <CustomCursor />
         <div className="sticky top-0 z-[60]">
           <div className="bg-brand-black text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center">
