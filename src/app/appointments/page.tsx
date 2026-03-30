@@ -4,19 +4,19 @@ const clinics = [
   {
     name: "Epios Cosmetic Clinic",
     address: "18 William St, Paddington, 2021",
-    hours: "Mon – Fri: 9am – 5pm",
+    hours: "Wednesday – Friday",
     href: "#",
   },
   {
     name: "Northern Sydney Dermatology & Laser",
     address: "1/29 Baringa Rd, Northbridge, 2063",
-    hours: "Mon – Fri: 9am – 5pm",
+    hours: "Mondays",
     href: "#",
   },
   {
     name: "Austin Clinic",
     address: "5/67 Wanganella St, Balgowlah, 2093",
-    hours: "Mon – Fri: 9am – 5pm",
+    hours: "Tuesdays",
     href: "#",
   },
 ];
@@ -43,75 +43,165 @@ export default function AppointmentsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-parchment relative flex items-center justify-center overflow-hidden py-48 md:py-64">
+      <section className="bg-parchment relative flex items-center justify-center py-48 md:py-64">
 
-        {/* Portrait — centered */}
-        <div
-          className="absolute"
-          style={{ width: "clamp(180px, 22vw, 340px)", aspectRatio: "3/4", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
-        >
-          <img
-            src="/assets/Yalda-17.avif"
-            alt="Dr. Yalda Jamali"
-            className="w-full h-full object-cover object-top"
-          />
-        </div>
+        {/* BOOK | image | NOW — centred flex row, words pinned to image edges */}
+        <div className="relative flex items-center justify-center">
 
-        {/* "BOOK" — left edge, "NOW" — right edge */}
-        <div className="relative z-10 w-full flex items-center justify-between px-[clamp(1.5rem,4vw,3rem)]">
           <span
-            className="text-brand-black font-normal leading-none"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em" }}
+            className="relative z-0 text-brand-black font-normal leading-none"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em", marginRight: "-10px", alignSelf: "flex-start", marginTop: "-8%" }}
           >
             BOOK
           </span>
+
+          <div className="relative z-10 flex-shrink-0 overflow-hidden" style={{ width: "clamp(160px, 30vw, 300px)", aspectRatio: "3/4" }}>
+            <img
+              src="/assets/Yalda-17.avif"
+              alt="Dr. Yalda Jamali"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
           <span
-            className="text-brand-black font-normal leading-none"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em" }}
+            className="relative z-20 text-brand-black font-normal leading-none"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em", marginLeft: "-10px", alignSelf: "flex-end", marginBottom: "-8%" }}
           >
             NOW
           </span>
+
         </div>
 
       </section>
 
       {/* Clinic locations */}
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-cream py-24 md:py-32 overflow-hidden">
         <div className="pg-container">
+          <div className="grid grid-cols-12 gap-8 md:gap-12 items-start [&>*]:order-none">
 
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-16">
-            Choose a location
-          </p>
+            {/* Small image — top on mobile, bottom of left col on desktop */}
+            <div className="col-span-6 md:hidden order-1 overflow-hidden" style={{ aspectRatio: "3/4" }}>
+              <img
+                src="/assets/Yalda-17.avif"
+                alt="Dr. Yalda Jamali"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
 
-          <div className="flex flex-col divide-y divide-neutral-200">
-            {clinics.map(({ name, address, hours, href }) => (
-              <div key={name} className="py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                <div className="flex flex-col gap-3">
-                  <h2
+            {/* Left — intro text (cols 1–5) */}
+            <div className="col-span-12 md:col-span-5 flex flex-col gap-6 order-2">
+              <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                Schedule
+              </p>
+              <h2
+                className="text-brand-black font-normal leading-tight"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 3rem)", letterSpacing: "0.02em" }}
+              >
+                IN-PERSON<br />CONSULTATION
+              </h2>
+              <p className="text-neutral-600 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", maxWidth: "36ch" }}>
+                Dr. Yalda works across Paddington on Wednesday – Friday, Northbridge on Mondays and Balgowlah on Tuesdays.
+              </p>
+
+              {/* Small image — desktop only */}
+              <div className="hidden md:block overflow-hidden mt-4" style={{ width: "clamp(140px, 40%, 220px)", aspectRatio: "3/4" }}>
+                <img
+                  src="/assets/dr-yalda-treatment-02.avif"
+                  alt="Dr. Yalda Jamali"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+
+            {/* Right — clinic list (cols 7–12) */}
+            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col divide-y divide-neutral-200 md:pt-16">
+              {clinics.map(({ name, address, hours, href }) => (
+                <div key={name} className="py-8 flex flex-col gap-3">
+                  <h3
                     className="text-brand-black font-normal leading-tight"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.25rem, 2vw, 1.75rem)", letterSpacing: "0.04em" }}
+                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.5vw, 1.4rem)", letterSpacing: "0.04em" }}
                   >
                     {name.toUpperCase()}
-                  </h2>
+                  </h3>
                   <div className="flex flex-col gap-1">
-                    <p className="text-neutral-600 text-sm font-light">
-                      📍 {address}
-                    </p>
-                    <p className="text-neutral-500 text-[10px] font-light tracking-[0.2em] uppercase">
-                      {hours}
-                    </p>
+                    <p className="text-neutral-500 text-sm font-light">{address}</p>
+                    <p className="text-neutral-400 text-[10px] font-light tracking-[0.2em] uppercase">{hours}</p>
                   </div>
+                  <a
+                    href={href}
+                    className="self-start mt-2 px-8 py-3 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
+                  >
+                    Book Now
+                  </a>
                 </div>
-                <a
-                  href={href}
-                  className="self-start md:self-center flex-shrink-0 px-10 py-4 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
-                >
-                  Book Now
-                </a>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Telephone consultations */}
+      <section className="bg-parchment py-24 md:py-40 overflow-hidden">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-8 items-center">
+
+            {/* Left — text */}
+            <div className="col-span-12 md:col-span-6 flex flex-col gap-8 order-2 md:order-1">
+
+              <div className="flex flex-col gap-3">
+                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+                  Now offering
+                </p>
+                <h2
+                  className="text-brand-black font-normal leading-[1.0]"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0" }}
+                >
+                  TELEPHONE<br /><em>consultations.</em>
+                </h2>
+              </div>
+
+              <p className="text-neutral-600 font-light leading-[1.8]" style={{ fontSize: "15px", fontFamily: "'Heading', serif", maxWidth: "38ch" }}>
+                For those who can't make it in person, Dr. Yalda now offers a limited number of telephone consultations each week.
+              </p>
+
+              <div className="flex flex-col divide-y divide-neutral-200">
+                {[
+                  "30 minutes per session",
+                  "Limited availability — book well in advance",
+                  "Suitable for new enquiries and existing patients",
+                  "No prescriptions or referrals issued via phone",
+                ].map((rule) => (
+                  <div key={rule} className="flex items-baseline gap-4 py-4">
+                    <span className="text-neutral-300 flex-shrink-0 text-[9px] tracking-[0.1em]">—</span>
+                    <p className="text-brand-black font-light" style={{ fontSize: "14px", fontFamily: "'Heading', serif", letterSpacing: "0.02em" }}>{rule}</p>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#"
+                className="self-start text-brand-black text-[10px] font-normal tracking-[0.35em] uppercase border-b border-brand-black pb-px hover:opacity-50 transition-opacity duration-300 mt-2"
+                style={{ fontFamily: "sans-serif" }}
+              >
+                Book a Phone Consultation
+              </a>
+
+            </div>
+
+            {/* Right — phone mockup */}
+            <div className="col-span-12 md:col-span-4 md:col-start-9 flex justify-center order-1 md:order-2">
+              <div className="media-teaser__phone" style={{ width: "200px" }}>
+                <div className="media-teaser__phone-notch" style={{ width: "70px", height: "20px" }} />
+                <img
+                  src="/assets/Yalda-17.avif"
+                  alt="Dr. Yalda Jamali"
+                  className="media-teaser__phone-img"
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 

@@ -4,35 +4,71 @@ import HeroSplit from "@/components/HeroSplit";
 import SplitSection from "@/components/SplitSection";
 import StickyScrollSection from "@/components/StickyScrollSection";
 import ParallaxHero from "@/components/ParallaxHero";
+import TwoPanelHero from "@/components/TwoPanelHero";
 
 export default function UnusedComponentsPage() {
   return (
     <main>
 
+      {/* ─── 50/50 SPLIT (TwoPanelHero) ──────────────────────────────────── */}
+      <TwoPanelHero />
+
       {/* ─── ABOUT PAGE HERO ─────────────────────────────────────────────── */}
 
-      {/* Two-panel hero — stacks on mobile, side-by-side on desktop */}
-      <section className="grid grid-cols-1 md:grid-cols-2 relative" style={{ minHeight: "100svh" }}>
+      {/* Hero — mobile */}
+      <section className="md:hidden bg-parchment flex flex-col pt-32 pb-8">
 
-        {/* Left — parchment with centred portrait */}
-        <div className="relative flex items-center justify-center opacity-0 animate-fade-in aspect-[3/4] md:aspect-auto" style={{ background: "#E0DDD5", animationDelay: "0.1s" }}>
-          <div className="relative" style={{ width: "50%", aspectRatio: "3/4" }}>
-            <div className="overflow-hidden w-full h-full">
-              <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
-            </div>
-            {/* Round logo — hangs off bottom-right of portrait */}
-            <img
-              src="/assets/logo-circle.svg"
-              alt="Dr. Yalda Jamali"
-              className="absolute z-10"
-              style={{ width: "64px", bottom: "-2.25rem", right: "-2.25rem" }}
-            />
+        <div className="flex flex-col items-start text-left px-8 pb-20 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="text-neutral-400 text-[10px] font-light tracking-[0.4em] uppercase mb-4">
+            About
+          </p>
+          <h1
+            className="text-brand-black font-normal leading-[1.05]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 10vw, 4.5rem)", letterSpacing: "0.15em" }}
+          >
+            Dr. Yalda Jamali
+          </h1>
+        </div>
+
+        <div className="flex gap-8 px-8 pb-6">
+          <div className="relative flex-1 overflow-hidden opacity-0 animate-fade-in" style={{ aspectRatio: "1/2", animationDelay: "0.25s" }}>
+            <img src="/assets/Yalda-17.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+            <div className="hero-noise" />
+          </div>
+          <div className="relative flex-1 overflow-hidden opacity-0 animate-fade-in" style={{ aspectRatio: "1/2", animationDelay: "0.4s" }}>
+            <img src="/assets/IMG_0012.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-top" />
+            <div className="hero-noise" />
           </div>
         </div>
 
-        {/* Right — full-bleed image */}
-        <div className="relative opacity-0 animate-fade-in aspect-[3/4] md:aspect-auto" style={{ animationDelay: "0.3s" }}>
-          <img src="/assets/IMG_0002.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" />
+      </section>
+
+      {/* Hero — desktop */}
+      <section className="hidden md:grid md:grid-cols-2 relative" style={{ height: "75vh" }}>
+
+        <div className="relative overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <img
+            src="/assets/Yalda-17.avif"
+            alt="Dr. Yalda Jamali"
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
+          <div className="hero-noise" />
+        </div>
+
+        <h1
+          className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-normal leading-none pointer-events-none"
+          style={{ fontFamily: "'Heading', serif", fontSize: "clamp(4rem, 8vw, 8rem)", letterSpacing: "0.15em" }}
+        >
+          About
+        </h1>
+
+        <div className="relative overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <img
+            src="/assets/IMG_0012.avif"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
+          <div className="hero-noise" />
         </div>
 
       </section>

@@ -35,17 +35,20 @@ export default function RootLayout({
       <body>
         <CustomCursor />
         <div className="sticky top-0 z-[60]">
-          <div className="bg-brand-black text-white flex items-center justify-center gap-3 px-6 py-2.5 text-center">
-            <p style={{ fontSize: "10px", letterSpacing: "0.35em", fontFamily: "sans-serif" }} className="font-light uppercase">
-              Limited phone consultations available
+          <div className="bg-brand-black text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center">
+            <p style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "sans-serif" }} className="font-light uppercase">
+              Limited phone consultations.
             </p>
-            <span className="text-white/30 text-[8px]">—</span>
             <a
               href="/appointments"
-              style={{ fontSize: "10px", letterSpacing: "0.35em", fontFamily: "sans-serif" }}
-              className="font-normal uppercase border-b border-white/30 pb-px hover:border-white transition-colors duration-300 whitespace-nowrap"
+              style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "sans-serif", paddingBottom: "2px", marginBottom: "-2px", paddingLeft: "2px", paddingRight: "2px" }}
+              className="font-light uppercase whitespace-nowrap inline-flex items-center gap-0.5 border-b border-white/30 hover:border-white hover:text-white transition-all duration-700"
             >
               Book Now
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                <line x1="0" y1="4" x2="12" y2="4" stroke="currentColor" strokeWidth="0.4"/>
+                <polyline points="9,1 13,4 9,7" fill="none" stroke="currentColor" strokeWidth="0.4" strokeLinejoin="round"/>
+              </svg>
             </a>
           </div>
           <Navbar />

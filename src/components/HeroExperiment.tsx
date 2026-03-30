@@ -73,7 +73,7 @@ export default function HeroExperiment() {
       <section className="hidden md:grid md:grid-cols-2 min-h-screen">
 
         {/* Cream panel — left on desktop */}
-        <div className="relative flex flex-col justify-between bg-parchment px-16 pt-32 pb-12 order-1">
+        <div className="relative flex flex-col justify-between bg-parchment px-8 pt-10 pb-12 order-1">
           <p
             className="text-neutral-500 font-normal leading-snug uppercase opacity-0 animate-fade-in"
             style={{ fontSize: "clamp(0.65rem, 0.9vw, 0.8rem)", letterSpacing: "0.12em", animationDelay: "0.2s", maxWidth: "18ch" }}
@@ -82,7 +82,7 @@ export default function HeroExperiment() {
           </p>
           <div
             className="flex flex-col items-center opacity-0 animate-fade-in self-center"
-            style={{ animationDelay: "0.4s", width: "clamp(130px, 28%, 220px)" }}
+            style={{ animationDelay: "0.4s", width: "clamp(180px, 55%, 380px)" }}
           >
             <div className="w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -120,7 +120,7 @@ export default function HeroExperiment() {
               src={src}
               alt=""
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 top-16 w-full h-[calc(100%-4rem)] object-cover object-center transition-opacity duration-[3000ms] ease-in-out"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[3000ms] ease-in-out"
               style={{ opacity: i === current ? 1 : 0 }}
             />
           ))}

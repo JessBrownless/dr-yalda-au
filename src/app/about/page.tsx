@@ -27,7 +27,7 @@ export default function AboutPage() {
             <div className="hero-noise" />
           </div>
           <div className="relative flex-1 overflow-hidden opacity-0 animate-fade-in" style={{ aspectRatio: "1/2", animationDelay: "0.4s" }}>
-            <img src="/assets/IMG_0012.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-top" />
+            <img src="/assets/IMG_0012.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "50% 20%" }} />
             <div className="hero-noise" />
           </div>
         </div>
@@ -60,7 +60,8 @@ export default function AboutPage() {
           <img
             src="/assets/IMG_0012.avif"
             alt=""
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "50% 20%" }}
           />
           <div className="hero-noise" />
         </div>
