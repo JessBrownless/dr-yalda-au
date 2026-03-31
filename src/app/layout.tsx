@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className="overflow-x-hidden">
         <CustomCursor />
         <div className="sticky top-0 z-[60]">
-          <div className="bg-brand-black text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center">
+          <div className="text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center" style={{ backgroundColor: "#141312" }}>
             <p style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "sans-serif" }} className="font-light uppercase">
               Limited phone consultations.
             </p>

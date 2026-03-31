@@ -42,7 +42,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`relative z-50 transition-colors duration-500 ${open ? "bg-transparent" : scrolled ? "bg-transparent" : pathname === "/media" ? "" : "bg-parchment"}`} style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#1C1B1A" } : {}}>
+      <nav className={`relative z-50 transition-colors duration-500 ${open ? "bg-transparent" : scrolled ? "bg-transparent" : pathname === "/media" ? "" : "bg-parchment"}`} style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#1C1C1C" } : {}}>
         <div className="h-14 md:h-12 py-2 md:py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}

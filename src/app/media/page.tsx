@@ -59,49 +59,49 @@ export default function MediaPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: "90vh", backgroundColor: "#1C1B1A" }}>
+      <section className="relative overflow-hidden" style={{ minHeight: "100vh", backgroundColor: "#1C1C1C" }}>
 
 {/* ── Desktop ── */}
         <div className="hidden md:block absolute inset-0">
 
           {/* Texture — behind portrait, peeks out top-left */}
-          <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#141312" }} />
+          <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#242424" }} />
 
-          {/* Left — portrait, shifted right so texture peeks from behind on left */}
-          <div className="absolute overflow-hidden" style={{ left: "48px", top: "48px", width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", bottom: "3%", zIndex: 1 }}>
+          {/* Left — portrait */}
+          <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ left: "48px", top: "48px", width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", bottom: "8%", zIndex: 1, animationDelay: "0.1s" }}>
             <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
           </div>
 
-          {/* Right — portrait, bleeds off right edge, starts lower */}
-          <div className="absolute overflow-hidden" style={{ right: 0, top: "32%", width: "calc((100% - 11 * 16px) / 6 + 16px)", height: "calc(((100vw - 11 * 16px) / 6 + 16px) * 16 / 9)" }}>
-            <img src="/assets/img_0041.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
+          {/* Right — portrait */}
+          <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ right: "32px", top: "32%", width: "calc((100% - 11 * 16px) / 6 + 16px)", height: "calc(((100vw - 11 * 16px) / 6 + 16px) * 4 / 3)", animationDelay: "0.4s" }}>
+            <img src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
           </div>
 
-          {/* Centre — text, spanning cols 6–9 */}
-          <div className="absolute flex flex-col justify-center gap-4" style={{ left: "calc(5 * (100% - 11 * 16px) / 12 + 5 * 16px)", right: "calc(3 * (100% - 11 * 16px) / 12 + 3 * 16px)", top: 0, bottom: 0, padding: "24px" }}>
+          {/* Centre — text */}
+          <div className="absolute flex flex-col justify-center gap-4 opacity-0 animate-fade-in-up" style={{ left: "calc(5 * (100% - 11 * 16px) / 12 + 5 * 16px)", right: "calc(3 * (100% - 11 * 16px) / 12 + 3 * 16px)", top: 0, bottom: 0, padding: "24px", animationDelay: "0.7s" }}>
 
             {/* Eyebrow */}
-            <p className="text-neutral-400 font-light tracking-[0.5em] uppercase" style={{ fontSize: "10px" }}>
-              Dr Yalda
+            <p className="font-light tracking-[0.5em] uppercase" style={{ fontSize: "10px", color: "#B8B4AC" }}>
+              In the
             </p>
 
             {/* Heading */}
             <h1
-              className="text-white font-normal leading-[1.0]"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 6vw, 8rem)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: "0.85" }}
+              className="font-normal leading-[1.0]"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 6vw, 8rem)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: "0.85", color: "#FFFFFF" }}
             >
               MEDIA<br />&amp; PRESS
             </h1>
 
             {/* Body + CTA */}
             <div className="flex flex-col gap-6">
-              <p className="text-neutral-400 font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif" }}>
-                Dr. Yalda is available for features, interviews, expert commentary and brand collaborations. She has worked with global publications and leading cosmetic brands, and welcomes enquiries from media and industry partners.
+              <p className="font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif", color: "#B8B4AC" }}>
+                Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
               </p>
               <a
                 href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
-                className="self-start px-8 py-4 bg-brand-black text-white text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-neutral-800 transition-colors duration-300"
-                style={{ fontFamily: "sans-serif" }}
+                className="self-start px-8 py-4 border text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-300"
+                style={{ fontFamily: "sans-serif", borderColor: "#EEEDE7", color: "#EEEDE7" }}
               >
                 Work Together
               </a>
@@ -116,35 +116,35 @@ export default function MediaPage() {
           {/* Images — container height driven by right image 3:4 at 62vw width */}
           <div className="relative" style={{ height: "120vw" }}>
 
-            {/* Right image — 3:4 portrait, full container height, right 78% */}
-            <div className="absolute overflow-hidden" style={{ right: 0, top: 0, bottom: 0, width: "78%", zIndex: 0 }}>
+            {/* Right image */}
+            <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ right: 0, top: 0, bottom: 0, width: "78%", zIndex: 0, animationDelay: "0.1s" }}>
               <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
             </div>
 
-            {/* Left image — 3:4 portrait, starts 43% down, fills to bottom, 36% wide, on top */}
-            <div className="absolute overflow-hidden" style={{ left: 0, top: "28%", bottom: "28%", width: "36%", zIndex: 1 }}>
-              <img src="/assets/img_0041.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
+            {/* Left image */}
+            <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ left: 0, top: "28%", bottom: "28%", width: "36%", zIndex: 1, animationDelay: "0.4s" }}>
+              <img src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
             </div>
 
           </div>
 
           {/* Text — immediately below images */}
-          <div className="px-6 pt-10 pb-12 flex flex-col gap-5">
+          <div className="px-8 pt-16 pb-12 flex flex-col gap-5 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
             <div className="flex flex-col gap-2">
-              <p className="text-neutral-500 font-light tracking-[0.5em] uppercase" style={{ fontSize: "9px" }}>Dr Yalda</p>
+              <p className="text-neutral-500 font-light tracking-[0.5em] uppercase" style={{ fontSize: "9px" }}>In the</p>
               <h1
                 className="text-white font-normal leading-[0.85]"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 16vw, 5.5rem)", letterSpacing: "0.06em", textTransform: "uppercase" }}
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.8rem, 13vw, 4.5rem)", letterSpacing: "0.06em", textTransform: "uppercase" }}
               >
                 MEDIA<br />&amp; PRESS
               </h1>
             </div>
-            <p className="text-neutral-400 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif" }}>
-              Dr. Yalda is available for features, interviews, expert commentary and brand collaborations. She has worked with global publications and leading cosmetic brands, and welcomes enquiries from media and industry partners.
+            <p className="text-neutral-400 font-light leading-relaxed" style={{ fontSize: "18px", fontFamily: "'Heading', serif" }}>
+              Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
             </p>
             <a
               href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
-              className="self-start px-8 py-4 bg-white text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-neutral-200 transition-colors duration-300"
+              className="self-start px-8 py-4 border border-white text-white text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-white hover:text-brand-black transition-colors duration-300"
               style={{ fontFamily: "sans-serif" }}
             >
               Work Together
@@ -155,47 +155,17 @@ export default function MediaPage() {
 
       </section>
 
-      {/* Brand logo quilt */}
-      <section className="border-t border-neutral-800 py-10 md:py-12" style={{ backgroundColor: "#1C1B1A" }}>
-        <div className="pg-container">
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16">
-
-            <span className="text-neutral-400 font-light" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1.4vw, 1.1rem)", letterSpacing: "0.25em" }}>
-              CAUDALIE
-            </span>
-
-            <span className="text-neutral-300 hidden md:block select-none">·</span>
-
-            <span className="text-neutral-400 font-light" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 1rem)", letterSpacing: "0.2em" }}>
-              N<sup style={{ fontSize: "0.6em", verticalAlign: "super" }}>o</sup>7
-            </span>
-
-            <span className="text-neutral-300 hidden md:block select-none">·</span>
-
-            <span className="text-neutral-400 font-light" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 1rem)", letterSpacing: "0.2em" }}>
-              MEDIK8
-            </span>
-
-            <span className="text-neutral-300 hidden md:block select-none">·</span>
-
-            <img
-              src="/assets/logo-clinique.svg"
-              alt="Clinique"
-              className="h-4 opacity-35"
-            />
-
-            <span className="text-neutral-300 hidden md:block select-none">·</span>
-
-            <span className="text-neutral-400 font-light" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1.4vw, 1.1rem)", letterSpacing: "0.15em" }}>
-              MAMMA MIA
-            </span>
-
-          </div>
-        </div>
-      </section>
-
       {/* Intro section */}
-      <section className="bg-cream py-24 md:py-36">
+      <section className="bg-cream py-24 md:py-36 relative">
+
+        {/* Bridging image — desktop only, bleeds up into hero */}
+        <div
+          className="absolute hidden md:block overflow-hidden"
+          style={{ left: "62%", top: "-90px", width: "clamp(160px, 16vw, 240px)", aspectRatio: "4/3", zIndex: 10 }}
+        >
+          <img src="/assets/IMG_0041.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-top" />
+        </div>
+
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 
@@ -204,23 +174,26 @@ export default function MediaPage() {
 
               {/* Heading block */}
               <div className="flex flex-col gap-3">
+                <p className="text-neutral-400 text-[10px] font-light tracking-[0.5em] uppercase">
+                  Beyond the clinic
+                </p>
                 <h2
                   className="text-brand-black font-normal leading-[1.05]"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", textTransform: "uppercase" }}
                 >
-                  A TRUSTED VOICE<br />IN COSMETIC<br /><em>MEDICINE.</em>
+                  A Trusted Voice<br />In Cosmetic<br /><em>medicine.</em>
                 </h2>
               </div>
 
               {/* Body text with left rule */}
               <div className="flex gap-6 md:gap-10">
-                <div className="w-px bg-neutral-300 flex-shrink-0 self-stretch" />
+                <div className="hidden md:block w-px bg-neutral-300 flex-shrink-0 self-stretch" />
                 <div className="flex flex-col gap-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-                    <p className="text-neutral-600 text-sm font-light leading-relaxed">
+                    <p className="text-neutral-600 text-base font-light leading-relaxed" style={{ fontFamily: "'Heading', serif" }}>
                       Beyond the clinic, Dr. Yalda contributes expert commentary to leading publications, appears across broadcast and digital media, and partners with brands aligned with honest, evidence-based care.
                     </p>
-                    <p className="text-neutral-600 text-sm font-light leading-relaxed">
+                    <p className="text-neutral-600 text-base font-light leading-relaxed" style={{ fontFamily: "'Heading', serif" }}>
                       Her approach is always the same — whether speaking to a journalist or a patient: honest, considered, and grounded in science. No hype. No hyperbole.
                     </p>
                   </div>
@@ -325,7 +298,7 @@ export default function MediaPage() {
                     </span>
                     {title.toUpperCase()}
                   </p>
-                  <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[38ch]">
+                  <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[38ch]" style={{ fontFamily: "'Heading', serif" }}>
                     {description}
                   </p>
                 </div>
@@ -397,9 +370,9 @@ export default function MediaPage() {
                 </p>
                 <h2
                   className="text-white font-normal leading-tight"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", textTransform: "uppercase" }}
                 >
-                  LISTEN TO<br /><em>Dr. Yalda.</em>
+                  Listen To<br /><em>dr. yalda.</em>
                 </h2>
               </div>
 
@@ -417,7 +390,7 @@ export default function MediaPage() {
                       </button>
                       <div className="flex flex-col gap-1">
                         <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase">{show}</p>
-                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-white transition-colors duration-300">{episode}</p>
+                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-white transition-colors duration-300" style={{ fontFamily: "'Heading', serif" }}>{episode}</p>
                       </div>
                     </div>
                     <span className="flex-shrink-0 text-neutral-600 text-[10px] font-light tracking-[0.2em] mt-1">{duration}</span>
@@ -545,6 +518,45 @@ export default function MediaPage() {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* Brand logo quilt */}
+      <section className="border-t border-neutral-800 py-10 md:py-12" style={{ backgroundColor: "#1C1B1A" }}>
+        <div className="pg-container">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16">
+
+            <span className="text-neutral-400 font-light" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1.4vw, 1.1rem)", letterSpacing: "0.25em" }}>
+              CAUDALIE
+            </span>
+
+            <span className="text-neutral-300 hidden md:block select-none">·</span>
+
+            <span className="text-neutral-400 font-light" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 1rem)", letterSpacing: "0.2em" }}>
+              N<sup style={{ fontSize: "0.6em", verticalAlign: "super" }}>o</sup>7
+            </span>
+
+            <span className="text-neutral-300 hidden md:block select-none">·</span>
+
+            <span className="text-neutral-400 font-light" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 1rem)", letterSpacing: "0.2em" }}>
+              MEDIK8
+            </span>
+
+            <span className="text-neutral-300 hidden md:block select-none">·</span>
+
+            <img
+              src="/assets/logo-clinique.svg"
+              alt="Clinique"
+              className="h-4 opacity-35"
+            />
+
+            <span className="text-neutral-300 hidden md:block select-none">·</span>
+
+            <span className="text-neutral-400 font-light" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1.4vw, 1.1rem)", letterSpacing: "0.15em" }}>
+              MAMMA MIA
+            </span>
+
+          </div>
         </div>
       </section>
 
