@@ -535,6 +535,95 @@ export default function UnusedComponentsPage() {
         </div>
       </section>
 
+      {/* What to expect */}
+      <section className="bg-parchment py-24 md:py-40">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-8">
+
+            <div className="col-span-12 md:col-span-4">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
+                What to expect
+              </p>
+              <h2
+                className="text-brand-black font-normal leading-tight"
+                style={{ fontSize: "clamp(2.25rem, 3vw, 2.5rem)" }}
+              >
+                YOUR FIRST<br /><em>visit.</em>
+              </h2>
+            </div>
+
+            <div className="col-span-12 md:col-span-7 md:col-start-6 flex flex-col divide-y divide-neutral-300">
+              {[
+                { num: "01", title: "Choose your clinic", body: "Select the location most convenient for you. Dr. Yalda consults across three Sydney clinics." },
+                { num: "02", title: "Book your consultation", body: "All new patients begin with a thorough consultation. This is your time to ask questions and explore your options without pressure." },
+                { num: "03", title: "Your treatment plan", body: "Dr. Yalda will develop a personalised plan tailored to your goals, anatomy, and what naturally suits you." },
+              ].map(({ num, title, body }) => (
+                <div key={num} className="py-8 flex gap-8 items-start">
+                  <span
+                    className="text-neutral-300 leading-none flex-shrink-0"
+                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}
+                  >
+                    {num}
+                  </span>
+                  <div className="flex flex-col gap-2">
+                    <h3
+                      className="text-brand-black font-normal"
+                      style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.5vw, 1.2rem)", letterSpacing: "0.03em" }}
+                    >
+                      {title.toUpperCase()}
+                    </h3>
+                    <p className="text-neutral-600 text-sm font-light leading-relaxed">
+                      {body}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Quote variant 1 — honesty */}
+      <section className="bg-cream py-24 md:py-40">
+        <div className="pg-container">
+          <div className="max-w-2xl mx-auto text-center flex flex-col items-center gap-8">
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+              A note from Dr. Yalda
+            </p>
+            <blockquote
+              className="text-brand-black font-normal leading-relaxed"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.3rem, 2vw, 1.5rem)" }}
+            >
+              &ldquo;I believe every patient deserves honesty above all else. My consultations are a space for you to ask anything — I&rsquo;ll always tell you what I genuinely think, even if that means doing nothing at all.&rdquo;
+            </blockquote>
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.35em] uppercase">
+              Dr. Yalda Jamali — MBChB · MSc Dermatology · FACCSM
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote variant 2 — natural results */}
+      <section className="bg-parchment py-24 md:py-40">
+        <div className="pg-container">
+          <div className="max-w-2xl mx-auto text-center flex flex-col items-center gap-8">
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+              A note from Dr. Yalda
+            </p>
+            <blockquote
+              className="text-brand-black font-normal leading-relaxed"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.3rem, 2vw, 1.5rem)" }}
+            >
+              &ldquo;I believe the most beautiful results are the ones no one can quite put their finger on. My approach is always to enhance what&rsquo;s already there — to help you look like yourself, only more rested, more confident, more you.&rdquo;
+            </blockquote>
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.35em] uppercase">
+              Dr. Yalda Jamali
+            </p>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }

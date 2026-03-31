@@ -12,7 +12,6 @@ const links = [
 
 const clinics = [
   { name: "Epios Cosmetic Clinic", address: "18 William St, Paddington" },
-  { name: "Northern Sydney Dermatology & Laser", address: "1/29 Baringa Rd, Northbridge" },
   { name: "Austin Clinic", address: "5/67 Wanganella St, Balgowlah" },
 ];
 
@@ -25,6 +24,53 @@ const socials = [
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: "#232121" }}>
+
+      {/* Instagram feed placeholder */}
+      <div className="border-b border-neutral-800">
+        <div className="pg-container pt-16 pb-4">
+          <div className="flex items-baseline justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <FaInstagram size={13} className="text-neutral-500" />
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.45em] uppercase">@dryaldajamali</p>
+            </div>
+            <a
+              href="https://instagram.com/dryaldajamali"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-600 text-[9px] font-light tracking-[0.3em] uppercase hover:text-white transition-colors duration-300"
+            >
+              Follow
+            </a>
+          </div>
+        </div>
+        <div className="grid grid-cols-4 md:grid-cols-8 gap-1">
+            {[
+              "/assets/IMG_0005.avif",
+              "/assets/dr-yalda-treatment-03.avif",
+              "/assets/IMG_0029.avif",
+              "/assets/IMG_0012.avif",
+              "/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif",
+              "/assets/IMG_0028.avif",
+              "/assets/dr-yalda-treatment.avif",
+              "/assets/IMG_0030.avif",
+            ].map((src, i) => (
+              <a
+                key={i}
+                href="https://instagram.com/dryaldajamali"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative overflow-hidden aspect-square group"
+              >
+                <img
+                  src={src}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-70"
+                />
+              </a>
+            ))}
+        </div>
+      </div>
 
       {/* Social strip */}
       <div className="border-b border-neutral-800">
