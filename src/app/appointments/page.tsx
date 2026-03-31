@@ -97,12 +97,13 @@ export default function AppointmentsPage() {
                   <p className="text-neutral-500 font-light" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1vw, 1rem)", fontStyle: "italic" }}>{suburb}</p>
                   <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 200, color: "#777" }}>{hours}</p>
 
-                  {/* Address row + Book Now baseline-aligned */}
-                  <div className="flex items-baseline justify-between gap-8 mt-1">
-                    <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 100, color: "#aaa" }}>{address}</p>
+                  <p className="mt-1" style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 100, color: "#aaa" }}>{address}</p>
+
+                  {/* Book Now — centered on mobile, left-aligned on desktop */}
+                  <div className="flex justify-start mt-3">
                     <a
                       href={href}
-                      className="flex-shrink-0 self-start px-6 py-2 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
+                      className="px-10 py-3 bg-brand-black text-white text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
                     >
                       Book Now
                     </a>

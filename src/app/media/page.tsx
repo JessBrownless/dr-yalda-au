@@ -59,35 +59,35 @@ export default function MediaPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: "90vh", backgroundColor: "#F2ECE4" }}>
+      <section className="relative overflow-hidden" style={{ minHeight: "90vh", backgroundColor: "#1C1B1A" }}>
 
 {/* ── Desktop ── */}
         <div className="hidden md:block absolute inset-0">
 
           {/* Texture — behind portrait, peeks out top-left */}
-          <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#CFC9C2" }} />
+          <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#141312" }} />
 
           {/* Left — portrait, shifted right so texture peeks from behind on left */}
           <div className="absolute overflow-hidden" style={{ left: "48px", top: "48px", width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", bottom: "3%", zIndex: 1 }}>
-            <img src="/assets/IMG_0002.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+            <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
           </div>
 
           {/* Right — portrait, bleeds off right edge, starts lower */}
           <div className="absolute overflow-hidden" style={{ right: 0, top: "32%", width: "calc((100% - 11 * 16px) / 6 + 16px)", height: "calc(((100vw - 11 * 16px) / 6 + 16px) * 16 / 9)" }}>
-            <img src="/assets/IMG_0029.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
+            <img src="/assets/img_0041.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
           </div>
 
           {/* Centre — text, spanning cols 6–9 */}
           <div className="absolute flex flex-col justify-center gap-4" style={{ left: "calc(5 * (100% - 11 * 16px) / 12 + 5 * 16px)", right: "calc(3 * (100% - 11 * 16px) / 12 + 3 * 16px)", top: 0, bottom: 0, padding: "24px" }}>
 
             {/* Eyebrow */}
-            <p className="text-neutral-500 font-light tracking-[0.5em] uppercase" style={{ fontSize: "10px" }}>
+            <p className="text-neutral-400 font-light tracking-[0.5em] uppercase" style={{ fontSize: "10px" }}>
               Dr Yalda
             </p>
 
             {/* Heading */}
             <h1
-              className="text-neutral-700 font-normal leading-[1.0]"
+              className="text-white font-normal leading-[1.0]"
               style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 6vw, 8rem)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: "0.85" }}
             >
               MEDIA<br />&amp; PRESS
@@ -95,11 +95,11 @@ export default function MediaPage() {
 
             {/* Body + CTA */}
             <div className="flex flex-col gap-6">
-              <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif" }}>
-                Features, interviews and brand collaborations with global publications and cosmetic brands.
+              <p className="text-neutral-400 font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif" }}>
+                Dr. Yalda is available for features, interviews, expert commentary and brand collaborations. She has worked with global publications and leading cosmetic brands, and welcomes enquiries from media and industry partners.
               </p>
               <a
-                href="/appointments"
+                href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
                 className="self-start px-8 py-4 bg-brand-black text-white text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-neutral-800 transition-colors duration-300"
                 style={{ fontFamily: "sans-serif" }}
               >
@@ -111,20 +111,52 @@ export default function MediaPage() {
         </div>
 
         {/* ── Mobile ── */}
-        <div className="md:hidden relative flex flex-col items-center justify-end text-center gap-5 px-8 pb-16" style={{ minHeight: "90vh" }}>
-          <div className="absolute inset-0 bg-neutral-300" />
-          <div className="relative flex flex-col items-center gap-4">
-            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">Dr Yalda</p>
-            <h1 className="text-neutral-700 font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 12vw, 5rem)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              MEDIA<br />&amp; PRESS
-            </h1>
+        <div className="md:hidden" style={{ backgroundColor: "#1C1B1A" }}>
+
+          {/* Images — container height driven by right image 3:4 at 62vw width */}
+          <div className="relative" style={{ height: "120vw" }}>
+
+            {/* Right image — 3:4 portrait, full container height, right 78% */}
+            <div className="absolute overflow-hidden" style={{ right: 0, top: 0, bottom: 0, width: "78%", zIndex: 0 }}>
+              <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+            </div>
+
+            {/* Left image — 3:4 portrait, starts 43% down, fills to bottom, 36% wide, on top */}
+            <div className="absolute overflow-hidden" style={{ left: 0, top: "28%", bottom: "28%", width: "36%", zIndex: 1 }}>
+              <img src="/assets/img_0041.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
+            </div>
+
           </div>
+
+          {/* Text — immediately below images */}
+          <div className="px-6 pt-10 pb-12 flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
+              <p className="text-neutral-500 font-light tracking-[0.5em] uppercase" style={{ fontSize: "9px" }}>Dr Yalda</p>
+              <h1
+                className="text-white font-normal leading-[0.85]"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 16vw, 5.5rem)", letterSpacing: "0.06em", textTransform: "uppercase" }}
+              >
+                MEDIA<br />&amp; PRESS
+              </h1>
+            </div>
+            <p className="text-neutral-400 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif" }}>
+              Dr. Yalda is available for features, interviews, expert commentary and brand collaborations. She has worked with global publications and leading cosmetic brands, and welcomes enquiries from media and industry partners.
+            </p>
+            <a
+              href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
+              className="self-start px-8 py-4 bg-white text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-neutral-200 transition-colors duration-300"
+              style={{ fontFamily: "sans-serif" }}
+            >
+              Work Together
+            </a>
+          </div>
+
         </div>
 
       </section>
 
       {/* Brand logo quilt */}
-      <section className="border-t border-neutral-200 py-10 md:py-12" style={{ backgroundColor: "#F2ECE4" }}>
+      <section className="border-t border-neutral-800 py-10 md:py-12" style={{ backgroundColor: "#1C1B1A" }}>
         <div className="pg-container">
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16">
 
@@ -417,7 +449,7 @@ export default function MediaPage() {
                 <div style={{ width: 90, height: 24, background: "#111", borderRadius: "0 0 16px 16px", position: "absolute", top: 10, left: "50%", transform: "translateX(-50%)", zIndex: 2 }} />
 
                 {/* Screen */}
-                <div style={{ background: "#1a1a1a", borderRadius: 32, overflow: "hidden", paddingBottom: 24 }}>
+                <div style={{ background: "#1C1B1A", borderRadius: 32, overflow: "hidden", paddingBottom: 24 }}>
 
                   {/* Artwork */}
                   <div style={{ position: "relative", width: "100%", aspectRatio: "1/1" }}>
@@ -427,7 +459,7 @@ export default function MediaPage() {
                       style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
                     />
                     {/* Gradient over artwork */}
-                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, #1a1a1a 100%)" }} />
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, #1C1B1A 100%)" }} />
                   </div>
 
                   {/* Player UI */}
