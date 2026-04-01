@@ -59,13 +59,13 @@ export default function MediaPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: "100vh", backgroundColor: "#1C1C1C" }}>
+      <section className="relative overflow-hidden" style={{ minHeight: "100vh", backgroundColor: "#EEEDE7" }}>
 
 {/* ── Desktop ── */}
         <div className="hidden md:block absolute inset-0">
 
           {/* Texture — behind portrait, peeks out top-left */}
-          <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#242424" }} />
+          <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#E0DED8" }} />
 
           {/* Left — portrait */}
           <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ left: "48px", top: "48px", width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", bottom: "8%", zIndex: 1, animationDelay: "0.1s" }}>
@@ -81,27 +81,27 @@ export default function MediaPage() {
           <div className="absolute flex flex-col justify-center gap-4 opacity-0 animate-fade-in-up" style={{ left: "calc(5 * (100% - 11 * 16px) / 12 + 5 * 16px)", right: "calc(3 * (100% - 11 * 16px) / 12 + 3 * 16px)", top: 0, bottom: 0, padding: "24px", animationDelay: "0.7s" }}>
 
             {/* Eyebrow */}
-            <p className="font-light tracking-[0.5em] uppercase" style={{ fontSize: "10px", color: "#B8B4AC" }}>
+            <p className="text-neutral-400 font-light tracking-[0.5em] uppercase" style={{ fontSize: "10px" }}>
               In the
             </p>
 
             {/* Heading */}
             <h1
-              className="font-normal leading-[1.0]"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 6vw, 8rem)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: "0.85", color: "#FFFFFF" }}
+              className="text-brand-black font-normal leading-[1.0]"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 6vw, 8rem)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: "0.85" }}
             >
               MEDIA<br />&amp; PRESS
             </h1>
 
             {/* Body + CTA */}
             <div className="flex flex-col gap-6">
-              <p className="font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif", color: "#B8B4AC" }}>
+              <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif" }}>
                 Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
               </p>
               <a
                 href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
-                className="self-start px-8 py-4 border text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-300"
-                style={{ fontFamily: "sans-serif", borderColor: "#EEEDE7", color: "#EEEDE7" }}
+                className="self-start px-8 py-4 border border-brand-black text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-brand-black hover:text-white transition-colors duration-300"
+                style={{ fontFamily: "sans-serif" }}
               >
                 Work Together
               </a>
@@ -111,7 +111,7 @@ export default function MediaPage() {
         </div>
 
         {/* ── Mobile ── */}
-        <div className="md:hidden" style={{ backgroundColor: "#1C1B1A" }}>
+        <div className="md:hidden bg-parchment">
 
           {/* Images — container height driven by right image 3:4 at 62vw width */}
           <div className="relative" style={{ height: "120vw" }}>
@@ -131,20 +131,20 @@ export default function MediaPage() {
           {/* Text — immediately below images */}
           <div className="px-8 pt-16 pb-12 flex flex-col gap-5 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
             <div className="flex flex-col gap-2">
-              <p className="text-neutral-500 font-light tracking-[0.5em] uppercase" style={{ fontSize: "9px" }}>In the</p>
+              <p className="text-neutral-400 font-light tracking-[0.5em] uppercase" style={{ fontSize: "9px" }}>In the</p>
               <h1
-                className="text-white font-normal leading-[0.85]"
+                className="text-brand-black font-normal leading-[0.85]"
                 style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.8rem, 13vw, 4.5rem)", letterSpacing: "0.06em", textTransform: "uppercase" }}
               >
                 MEDIA<br />&amp; PRESS
               </h1>
             </div>
-            <p className="text-neutral-400 font-light leading-relaxed" style={{ fontSize: "18px", fontFamily: "'Heading', serif" }}>
+            <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "18px", fontFamily: "'Heading', serif" }}>
               Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
             </p>
             <a
               href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
-              className="self-start px-8 py-4 border border-white text-white text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-white hover:text-brand-black transition-colors duration-300"
+              className="self-start px-8 py-4 border border-brand-black text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-brand-black hover:text-white transition-colors duration-300"
               style={{ fontFamily: "sans-serif" }}
             >
               Work Together

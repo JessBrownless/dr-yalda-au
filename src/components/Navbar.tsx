@@ -37,12 +37,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Elements always dark (light hero behind), except when menu is open or on media page
-  const dark = !open && pathname !== "/media";
+  // Elements always dark (light hero behind), except when menu is open
+  const dark = !open;
 
   return (
     <>
-      <nav className={`relative z-50 transition-colors duration-500 ${open ? "bg-transparent" : scrolled ? "bg-transparent" : pathname === "/media" ? "" : "bg-parchment"}`} style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#1C1C1C" } : {}}>
+      <nav className={`relative z-50 transition-colors duration-500 ${open ? "bg-transparent" : scrolled ? "bg-transparent" : "bg-parchment"}`}>
         <div className="h-14 md:h-12 py-2 md:py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
