@@ -37,13 +37,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Elements always dark (light hero behind), except when menu is open, on media, or on about
-  const dark = !open && pathname !== "/media" && pathname !== "/about";
+  // White text on dark-hero pages (home + media); dark text on all other pages
+  const darkHeroPages = ["/", "/media"];
+  const dark = !open && !darkHeroPages.includes(pathname);
 
   return (
     <>
-      <nav className={`relative z-[60] transition-colors duration-500 ${open ? "bg-transparent" : ""}`} style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#121110" } : {}}>
-        <div className="h-14 md:h-12 py-2 md:py-[2px] flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
+      <nav
+        className={`relative z-[60] transition-colors duration-500`}
+        style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#121110" } : {}}
+      >
+        <div className="h-16 md:h-14 py-4 md:py-3 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
           <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
@@ -51,10 +55,10 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`text-[11px] font-normal tracking-[0.15em] uppercase transition-colors duration-300 font-hanken ${
+                className={`text-[12px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                   pathname === href
                     ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-brand-black hover:text-neutral-500" : "text-[#888888] hover:text-white"
+                    : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
                 }`}
               >
                 {label}
@@ -65,12 +69,12 @@ export default function Navbar() {
           {/* Logo — centered */}
           <Link href="/" className={`absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-90 hover:opacity-100"}`}>
             <Image
-              src="/assets/dr-yalda-logo-long.svg"
+              src="/assets/dr-yalda-logo-icon.svg"
               alt="Dr. Yalda Jamali"
-              width={320}
+              width={40}
               height={40}
-              style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1)", paddingTop: "3px", paddingBottom: "3px" }}
-              className="h-5 w-auto transition-all duration-500"
+              style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)" }}
+              className="h-4 w-auto transition-all duration-500"
             />
           </Link>
 
@@ -81,10 +85,10 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`text-[10px] font-normal tracking-[0.15em] uppercase transition-colors duration-300 font-hanken ${
+                  className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                     pathname === href
                       ? dark ? "text-brand-black" : "text-white"
-                      : dark ? "text-brand-black hover:text-neutral-500" : "text-[#888888] hover:text-white"
+                      : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
                   }`}
                 >
                   {label}
@@ -92,10 +96,10 @@ export default function Navbar() {
               ))}
               <Link
                 href="/appointments"
-                className={`text-[10px] font-normal tracking-[0.15em] uppercase transition-colors duration-300 font-hanken ${
+                className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                   pathname === "/appointments"
                     ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-brand-black hover:text-neutral-500" : "text-[#888888] hover:text-white"
+                    : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
                 }`}
               >
                 Book Now
