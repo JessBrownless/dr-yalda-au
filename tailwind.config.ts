@@ -24,6 +24,7 @@ const config: Config = {
       fontFamily: {
         lato: ["var(--font-lato)", "sans-serif"],
         marcellus: ["var(--font-marcellus)", "serif"],
+        hanken: ["var(--font-hanken)", "sans-serif"],
       },
       keyframes: {
         fadeInUp: {

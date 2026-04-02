@@ -1,5 +1,4 @@
 import DrQuote from "@/components/DrQuote";
-import FadeIn from "@/components/FadeIn";
 import TwoPanelHero from "@/components/TwoPanelHero";
 
 export default function ServicesPage() {
@@ -105,7 +104,7 @@ export default function ServicesPage() {
 
       {/* ─── INTRO STATEMENT ─────────────────────────────────────────────── */}
       <section className="bg-cream py-28 md:py-44 flex items-center justify-center">
-        <FadeIn className="max-w-[640px] mx-auto px-8 flex flex-col items-center gap-8 text-center">
+        <div className="max-w-[640px] mx-auto px-8 flex flex-col items-center gap-8 text-center">
 
           {/* Headline */}
           <p
@@ -121,7 +120,7 @@ export default function ServicesPage() {
             In accordance with Australian guidelines, specific treatments are discussed only during a clinical consultation. Our evidence-based practice prioritises your skin quality, facial harmony, and long-term health.
           </p>
 
-        </FadeIn>
+        </div>
       </section>
 
       {/* ─── 3. CONSULTATION APPROACH ─────────────────────────────────────── */}
@@ -134,7 +133,7 @@ export default function ServicesPage() {
 
             {/* Left — image */}
             <div className="col-span-12 md:col-span-5 relative">
-              <FadeIn up={false}>
+              <div>
                 <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                   <img
                     src="/assets/dr-yalda-treatment-03.avif"
@@ -142,11 +141,11 @@ export default function ServicesPage() {
                     className="w-full h-full object-cover object-center md:object-top"
                   />
                 </div>
-              </FadeIn>
+              </div>
             </div>
 
             {/* Right — text */}
-            <FadeIn delay={150} className="col-span-12 md:col-span-5 md:col-start-7 flex flex-col gap-8">
+            <div className="col-span-12 md:col-span-5 md:col-start-7 flex flex-col gap-8">
 
               {/* Eyebrow + heading */}
               <div className="flex flex-col gap-3">
@@ -192,7 +191,7 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-            </FadeIn>
+            </div>
 
           </div>
         </div>
@@ -240,7 +239,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Right — portrait */}
-            <FadeIn up={false} className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2">
+            <div className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2">
               <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img
                   src="/assets/Yalda-1.avif"
@@ -248,7 +247,7 @@ export default function ServicesPage() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-            </FadeIn>
+            </div>
 
           </div>
         </div>

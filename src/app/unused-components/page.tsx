@@ -10,6 +10,36 @@ export default function UnusedComponentsPage() {
   return (
     <main>
 
+      {/* ─── THREE-COLUMN DARK EDITORIAL ─────────────────────────────────── */}
+      <section className="bg-brand-black py-24 md:py-36">
+        <div className="pg-container">
+          <h2
+            className="text-center font-normal mb-16 md:mb-20"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 6vw, 6rem)", letterSpacing: "0.05em", color: "#F4F1EE" }}
+          >
+            THE PRACTICE
+          </h2>
+          <div className="grid grid-cols-12 gap-px border-t border-white/10">
+            {[
+              { num: "01", title: "Cosmetic Doctor",  body: "Over a decade of clinical experience in aesthetic medicine across London and Sydney. Specialising in facial balancing, contouring, and skin health." },
+              { num: "02", title: "Educator",          body: "Committed to advancing the field through education — sharing evidence-based technique and clinical knowledge with fellow practitioners." },
+              { num: "03", title: "Collaborator",      body: "Partnering with global brands whose values align with a science-led, integrity-first approach to beauty and skin care." },
+            ].map(({ num, title, body }) => (
+              <div key={num} className="col-span-12 md:col-span-4 border-b md:border-b-0 md:border-r border-white/10 last:border-r-0 flex flex-col gap-8 px-0 md:px-8 py-12 first:pl-0 last:pr-0">
+                <span className="font-normal leading-none text-white/20 select-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.04em" }}>{num}</span>
+                <div className="flex flex-col gap-4">
+                  <p className="font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.2rem, 1.8vw, 1.8rem)", color: "#F4F1EE", lineHeight: "1.1" }}>{title}</p>
+                  <p className="font-light leading-relaxed" style={{ fontSize: "13px", fontFamily: "var(--font-hanken)", color: "rgba(244,241,238,0.5)" }}>{body}</p>
+                </div>
+                <a href="/about" className="flex items-center gap-2 uppercase transition-opacity duration-300 hover:opacity-60 mt-auto" style={{ fontSize: "10px", letterSpacing: "0.35em", fontFamily: "var(--font-hanken)", color: "rgba(244,241,238,0.4)" }}>
+                  Learn more <span style={{ letterSpacing: 0 }}>→</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── 50/50 SPLIT (TwoPanelHero) ──────────────────────────────────── */}
       <TwoPanelHero />
 

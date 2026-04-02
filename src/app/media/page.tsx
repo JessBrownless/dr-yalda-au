@@ -111,41 +111,40 @@ export default function MediaPage() {
         </div>
 
         {/* ── Mobile ── */}
-        <div className="md:hidden bg-parchment">
+        <div className="md:hidden relative" style={{ backgroundColor: "#121110" }}>
 
-          {/* Images — container height driven by right image 3:4 at 62vw width */}
-          <div className="relative" style={{ height: "120vw" }}>
-
-            {/* Right image */}
-            <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ right: 0, top: 0, bottom: 0, width: "78%", zIndex: 0, animationDelay: "0.1s" }}>
-              <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
-            </div>
-
-            {/* Left image */}
-            <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ left: 0, top: "28%", bottom: "28%", width: "36%", zIndex: 1, animationDelay: "0.4s" }}>
-              <img src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
-            </div>
-
+          {/* Image — 90% wide, pinned to right edge */}
+          <div
+            className="overflow-hidden opacity-0 animate-fade-in ml-auto"
+            style={{ width: "90%", aspectRatio: "3/4", animationDelay: "0.1s" }}
+          >
+            <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
           </div>
 
-          {/* Text — immediately below images */}
-          <div className="px-8 pt-16 pb-12 flex flex-col gap-5 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
-            <div className="flex flex-col gap-2">
-              <p className="text-neutral-400 font-light tracking-[0.5em] uppercase" style={{ fontSize: "9px" }}>In the</p>
-              <h1
-                className="text-brand-black font-normal leading-[0.85]"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.8rem, 13vw, 4.5rem)", letterSpacing: "0.06em", textTransform: "uppercase" }}
-              >
-                MEDIA<br />&amp; PRESS
-              </h1>
-            </div>
-            <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "18px", fontFamily: "'Heading', serif" }}>
+          {/* Text block — overlaps image by exactly 48px */}
+          <div
+            className="relative px-8 pb-12 flex flex-col opacity-0 animate-fade-in-up"
+            style={{ marginTop: "-48px", zIndex: 10, animationDelay: "0.4s" }}
+          >
+            <span
+              className="font-light uppercase"
+              style={{ fontSize: "12px", letterSpacing: "0.2em", marginBottom: "16px", color: "#F4F1EE", fontFamily: "sans-serif", opacity: 0.6 }}
+            >
+              In the
+            </span>
+            <h1
+              className="font-normal"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(40px, 10vw, 56px)", lineHeight: "0.95", letterSpacing: "-0.03em", textTransform: "uppercase", color: "#F4F1EE" }}
+            >
+              MEDIA<br />&amp; PRESS
+            </h1>
+            <p className="font-light leading-relaxed mt-6" style={{ fontSize: "16px", fontFamily: "'Heading', serif", color: "#F4F1EE", opacity: 0.6 }}>
               Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
             </p>
             <a
               href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
-              className="self-start px-8 py-4 border border-brand-black text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-brand-black hover:text-white transition-colors duration-300"
-              style={{ fontFamily: "sans-serif" }}
+              className="self-start mt-8 px-8 py-4 text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-300"
+              style={{ fontFamily: "sans-serif", border: "1px solid #F4F1EE", color: "#F4F1EE" }}
             >
               Work Together
             </a>

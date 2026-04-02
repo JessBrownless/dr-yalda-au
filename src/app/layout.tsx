@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Lato, Marcellus } from "next/font/google";
+import { Lato, Marcellus, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -19,6 +18,13 @@ const marcellus = Marcellus({
   display: "swap",
 });
 
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-hanken",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Dr. Yalda",
   description: "",
@@ -31,17 +37,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${lato.variable} ${marcellus.variable}`}>
+    <html lang="en" className={`${lato.variable} ${marcellus.variable} ${hankenGrotesk.variable}`}>
       <body className="overflow-x-hidden">
-        <CustomCursor />
-        <div className="sticky top-0 z-[60]">
-          <div className="text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center" style={{ backgroundColor: "#141312" }}>
-            <p style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "sans-serif" }} className="font-light uppercase">
+<div className="sticky top-0">
+          <div className="relative z-[60] text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center" style={{ backgroundColor: "#141312" }}>
+            <p style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-hanken)" }} className="font-light uppercase">
               Limited phone consultations.
             </p>
             <a
               href="/appointments"
-              style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "sans-serif", paddingBottom: "2px", marginBottom: "-2px", paddingLeft: "2px", paddingRight: "2px" }}
+              style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-hanken)", paddingBottom: "2px", marginBottom: "-2px", paddingLeft: "2px", paddingRight: "2px" }}
               className="font-light uppercase whitespace-nowrap inline-flex items-center gap-0.5 border-b border-white/30 hover:border-white hover:text-white transition-all duration-700"
             >
               Book Now

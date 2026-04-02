@@ -35,40 +35,105 @@ export default function AboutPage() {
       </section>
 
       {/* Hero — desktop */}
-      <section className="hidden md:grid md:grid-cols-2 relative" style={{ height: "75vh" }}>
+      <section
+        className="hidden md:block relative overflow-hidden opacity-0 animate-fade-in"
+        style={{ height: "100vh", marginTop: "-48px", animationDelay: "0.1s" }}
+      >
 
-        {/* Left — full-bleed image */}
-        <div className="relative overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          <img
-            src="/assets/Yalda-17.avif"
-            alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover object-top"
-            />
-          <div className="hero-noise" />
-        </div>
+        {/* Layer 0: Full-bleed photo */}
+        <img
+          src="/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif"
+          alt="Dr. Yalda Jamali"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "65% 10%", zIndex: 0 }}
+        />
 
-        {/* Centred "About" overlay */}
-        <h1
-          className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-normal leading-none pointer-events-none"
-          style={{ fontFamily: "'Heading', serif", fontSize: "clamp(4rem, 8vw, 8rem)", letterSpacing: "0.15em" }}
+        {/* Layer 1: Rich bottom vignette — anchors the text */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to top, rgba(8,6,4,0.85) 0%, rgba(8,6,4,0.4) 35%, rgba(8,6,4,0.05) 65%, transparent 100%)",
+            zIndex: 2,
+          }}
+        />
+
+        {/* Layer 2: Left edge darkening — carves out text space */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to right, rgba(8,6,4,0.55) 0%, rgba(8,6,4,0.15) 45%, transparent 70%)",
+            zIndex: 2,
+          }}
+        />
+
+        {/* Layer 3: Logo emblem — colossal, bottom-left, bleeds off screen as brand texture */}
+        <img
+          src="/assets/dr-yalda-logo-icon.svg"
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "-18vw",
+            bottom: "-20vh",
+            width: "clamp(600px, 85vw, 1200px)",
+            opacity: 0.06,
+            zIndex: 3,
+            filter: "brightness(0) invert(1)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Layer 4: Wordmark — top-center, delicate brand identifier */}
+        <div
+          className="absolute"
+          style={{ top: "80px", left: "50%", transform: "translateX(-50%)", zIndex: 4 }}
         >
-          About
-        </h1>
-
-        {/* Right — image */}
-        <div className="relative overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <img
-            src="/assets/IMG_0012.avif"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "50% 20%" }}
+            src="/assets/dr-yalda-logo-long.svg"
+            alt="Dr. Yalda Jamali"
+            style={{ height: "18px", width: "auto", opacity: 0.35, filter: "brightness(0) invert(1)" }}
           />
-          <div className="hero-noise" />
         </div>
+
+        {/* Layer 5: Text cluster — bottom-left editorial stamp */}
+        <div
+          className="absolute flex flex-col"
+          style={{ left: "8vw", bottom: "9vh", zIndex: 5 }}
+        >
+          <p
+            className="font-light tracking-[0.4em] uppercase"
+            style={{ fontSize: "10px", fontFamily: "sans-serif", color: "#F4F1EE", opacity: 0.5, marginBottom: "14px" }}
+          >
+            Dr. Yalda Jamali
+          </p>
+          <h1
+            className="font-normal"
+            style={{
+              fontFamily: "'Heading', serif",
+              fontSize: "clamp(8rem, 13vw, 16rem)",
+              lineHeight: "0.82",
+              letterSpacing: "-0.05em",
+              textTransform: "uppercase",
+              color: "#F4F1EE",
+            }}
+          >
+            ABOUT
+          </h1>
+          <div style={{ width: "64px", height: "1px", background: "rgba(244,241,238,0.3)", margin: "28px 0" }} />
+          <p
+            className="font-light"
+            style={{ fontSize: "13px", fontFamily: "'Heading', serif", color: "#F4F1EE", opacity: 0.45, maxWidth: "26ch", lineHeight: "1.8", letterSpacing: "0.02em" }}
+          >
+            Cosmetic doctor, educator, and brand collaborator — consulting across Sydney.
+          </p>
+        </div>
+
+        {/* Layer 6: Noise grain */}
+        <div className="hero-noise absolute inset-0" style={{ zIndex: 6 }} />
 
       </section>
 
-      <div className="bg-parchment pt-10 overflow-hidden">
+      <div className="bg-parchment pt-24 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(6)].map((_, i) => (
             <span
