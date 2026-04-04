@@ -344,6 +344,21 @@
 }
 
 
+.phone-mockup-height {
+  height: 500px;
+}
+.phone-artwork-ratio {
+  aspect-ratio: 1/1;
+}
+@media (min-width: 768px) {
+  .phone-mockup-height {
+    height: 700px;
+  }
+  .phone-artwork-ratio {
+    aspect-ratio: 3/4;
+  }
+}
+
 @font-face {
   font-family: "Heading";
   src: url("/fonts/font.woff2") format("woff2"),
@@ -360,6 +375,7 @@
 
   body {
     font-family: var(--font-lato), sans-serif;
+    background-color: #141312;
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -112,27 +112,10 @@ export default function HeroHome() {
 
         {/* Centred content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-10" style={{ zIndex: 5 }}>
-          <p
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-            style={{
-              fontSize: "11px",
-              letterSpacing: "0.25em",
-              fontFamily: "var(--font-hanken)",
-              color: "rgba(244,241,238,0.3)",
-              textTransform: "uppercase",
-              fontWeight: 200,
-              textAlign: "center",
-            }}
-          >
-            Cosmetic Doctor · Sydney
-          </p>
-
           <img
             data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="400"
+            data-aos-duration="1400"
+            data-aos-delay="300"
             src="/assets/dr-yalda-logo-long.svg"
             alt="Dr. Yalda Jamali"
             style={{
@@ -143,24 +126,31 @@ export default function HeroHome() {
             }}
           />
 
-          <div
+          <p
             data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="600"
-            style={{ width: "1px", height: "clamp(40px, 6vh, 70px)", background: "rgba(244,241,238,0.2)" }}
-          />
+            data-aos-duration="1200"
+            data-aos-delay="500"
+            style={{
+              fontFamily: "var(--font-hanken)",
+              fontSize: "13px",
+              fontWeight: 200,
+              letterSpacing: "0.04em",
+              color: "rgba(244,241,238,0.45)",
+              textAlign: "center",
+              lineHeight: 1.8,
+              maxWidth: "36ch",
+            }}
+          >
+            Cosmetic doctor and educator practising in Sydney. Natural results, every time.
+          </p>
 
           <a
             data-aos="fade-up"
             data-aos-duration="1000"
-            data-aos-delay="750"
+            data-aos-delay="600"
             href="/appointments"
             className="transition-all duration-500"
             style={{
-              marginTop: "0rem",
-              fontSize: "9px",
-              letterSpacing: "0.4em",
-              fontFamily: "var(--font-hanken)",
               fontSize: "11px",
               letterSpacing: "0.25em",
               fontFamily: "var(--font-hanken)",

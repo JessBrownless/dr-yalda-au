@@ -10,6 +10,100 @@ export default function UnusedComponentsPage() {
   return (
     <main>
 
+      {/* ─── PODCAST SECTION (cropped phone variant) ─────────────────────── */}
+      <section className="bg-[#232121] overflow-hidden" style={{ paddingTop: "clamp(4rem, 8vw, 9rem)" }}>
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
+
+            {/* Left — episode list */}
+            <div className="col-span-12 md:col-span-6 flex flex-col gap-10 pb-16 md:pb-24">
+              <div className="flex flex-col gap-4">
+                <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+                  Podcast appearances
+                </p>
+                <h2
+                  className="text-white font-normal leading-tight"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", textTransform: "uppercase" }}
+                >
+                  Listen To<br /><em>dr. yalda.</em>
+                </h2>
+              </div>
+
+              <div className="flex flex-col divide-y divide-neutral-800">
+                {[
+                  { show: "The Glow Up Podcast", episode: "The truth about filler — what no one tells you", duration: "42 min" },
+                  { show: "Skin Deep with Sarah",  episode: "Evidence-based aesthetics and why it matters", duration: "35 min" },
+                  { show: "The Beauty Edit",       episode: "Natural results: redefining cosmetic medicine", duration: "28 min" },
+                ].map(({ show, episode, duration }, i) => (
+                  <div key={i} className="group flex items-start justify-between gap-6 py-6 cursor-pointer">
+                    <div className="flex items-start gap-4">
+                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center group-hover:border-white transition-colors duration-300">
+                        <span className="text-neutral-500 group-hover:text-white transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
+                      </button>
+                      <div className="flex flex-col gap-1">
+                        <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase">{show}</p>
+                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-white transition-colors duration-300" style={{ fontFamily: "'Heading', serif" }}>{episode}</p>
+                      </div>
+                    </div>
+                    <span className="flex-shrink-0 text-neutral-600 text-[10px] font-light tracking-[0.2em] mt-1">{duration}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#"
+                className="self-start text-neutral-400 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-700 pb-1 hover:border-neutral-400 transition-colors duration-300"
+              >
+                All episodes
+              </a>
+            </div>
+
+            {/* Right — phone mockup, crops at bottom */}
+            <div className="hidden md:flex col-span-5 col-start-8 justify-center">
+              <div
+                style={{
+                  width: 240,
+                  background: "#111",
+                  borderRadius: 40,
+                  padding: 10,
+                  boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04)",
+                  position: "relative",
+                  marginBottom: "-160px",
+                }}
+              >
+                <div style={{ width: 90, height: 24, background: "#111", borderRadius: "0 0 16px 16px", position: "absolute", top: 10, left: "50%", transform: "translateX(-50%)", zIndex: 2 }} />
+                <div style={{ background: "#1C1B1A", borderRadius: 32, overflow: "hidden", paddingBottom: 24 }}>
+                  <div style={{ position: "relative", width: "100%", aspectRatio: "1/1" }}>
+                    <img src="/assets/IMG_0028.avif" alt="Podcast episode" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, #1C1B1A 100%)" }} />
+                  </div>
+                  <div style={{ padding: "0 20px" }}>
+                    <p style={{ color: "#525252", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>The Glow Up Podcast</p>
+                    <p style={{ color: "#fff", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>The truth about filler — what no one tells you</p>
+                    <div style={{ height: 2, background: "#333", borderRadius: 2, marginBottom: 6, position: "relative" }}>
+                      <div style={{ height: "100%", width: "38%", background: "#fff", borderRadius: 2 }} />
+                      <div style={{ width: 8, height: 8, background: "#fff", borderRadius: "50%", position: "absolute", top: -3, left: "38%", transform: "translateX(-50%)" }} />
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
+                      <span style={{ color: "#525252", fontSize: 9 }}>16:04</span>
+                      <span style={{ color: "#525252", fontSize: 9 }}>42:18</span>
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 28 }}>
+                      <span style={{ color: "#525252", fontSize: 16 }}>⏮</span>
+                      <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <span style={{ color: "#111", fontSize: 14, paddingLeft: 3 }}>▶</span>
+                      </div>
+                      <span style={{ color: "#525252", fontSize: 16 }}>⏭</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ─── THREE-COLUMN DARK EDITORIAL ─────────────────────────────────── */}
       <section className="bg-brand-black py-24 md:py-36">
         <div className="pg-container">
