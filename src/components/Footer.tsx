@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 
+
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -27,50 +28,42 @@ export default function Footer() {
     <footer style={{ backgroundColor: "#232121" }}>
 
       {/* Instagram feed */}
-      <div className="border-b border-neutral-800">
+      <div className="border-b border-neutral-200 py-12 md:py-16 bg-brand-white">
+        <div className="pg-container">
 
-        {/* Mobile — 2×2 grid with logo overlapping centre bottom */}
-        <div className="relative md:hidden">
-          <div className="grid grid-cols-2 pt-8 px-8" style={{ gap: "16px" }}>
-            {[
-              "/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif",
-              "/assets/IMG_0030.avif",
-              "/assets/IMG_0029.avif",
-              "/assets/IMG_0028.avif",
-            ].map((src, i) => (
-              <a key={i} href="https://instagram.com/dryaldajamali" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden aspect-square group">
-                <img src={src} alt="" aria-hidden="true" className="w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-70" style={i === 3 ? { filter: "grayscale(100%)" } : {}} />
-              </a>
-            ))}
-          </div>
-          {/* Logo badge */}
-          <div className="flex justify-center" style={{ marginTop: "-60px", position: "relative", zIndex: 10 }}>
-            <div className="flex items-center justify-center rounded-full bg-[#232121]" style={{ width: "120px", height: "120px" }}>
-              <Image src="/assets/logo-circle.svg" alt="Dr. Yalda Jamali" width={90} height={90} style={{ filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }} />
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-4">
+              <FaInstagram size={14} className="text-neutral-400" />
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
+                @dryaldajamali
+              </p>
             </div>
+            <a
+              href="https://instagram.com/dryaldajamali"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-300 pb-1 hover:text-neutral-700 hover:border-neutral-500 transition-colors duration-300"
+            >
+              Follow
+            </a>
           </div>
-        </div>
 
-        {/* Desktop — full 8-image row */}
-        <div className="hidden md:block" style={{ paddingTop: "24px" }}>
-          <div className="grid grid-cols-8" style={{ gap: "12px" }}>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
             {[
-              "/assets/IMG_0037_color.avif",
-              "/assets/IMG_0005.avif",
-              "/assets/IMG_0029.avif",
-              "/assets/IMG_0012.avif",
-              "/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif",
-              "/assets/IMG_0028.avif",
-              "/assets/dr-yalda-treatment.avif",
-              "/assets/IMG_0030.avif",
-            ].map((src, i) => (
-              <a key={i} href="https://instagram.com/dryaldajamali" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden aspect-square group">
-                <img src={src} alt="" aria-hidden="true" className="w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-70" />
+              { src: "/assets/IMG_0037_color.avif", pos: "object-center" },
+              { src: "/assets/IMG_0029.avif",        pos: "object-top" },
+              { src: "/assets/IMG_0028.avif",        pos: "object-center" },
+              { src: "/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif", pos: "object-top" },
+              { src: "/assets/IMG_0030.avif",        pos: "object-top" },
+              { src: "/assets/dr-yalda-treatment.avif", pos: "object-center" },
+            ].map(({ src, pos }, i) => (
+              <a key={i} href="https://instagram.com/dryaldajamali" target="_blank" rel="noopener noreferrer" className="relative block aspect-square overflow-hidden group">
+                <img src={src} alt="" aria-hidden="true" className={`w-full h-full object-cover ${pos} transition-opacity duration-500 group-hover:opacity-70`} />
               </a>
             ))}
           </div>
-        </div>
 
+        </div>
       </div>
 
       {/* Social strip */}

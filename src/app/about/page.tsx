@@ -26,7 +26,7 @@ export default function AboutPage() {
       </div>
 
       {/* Editorial intro */}
-      <section className="bg-white pt-20 pb-20 md:pt-36 md:pb-44">
+      <section className="bg-brand-white pt-20 pb-20 md:pt-36 md:pb-44">
         <div className="pg-container flex flex-col gap-10 md:gap-14 items-start text-left">
 
           <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
@@ -128,7 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values — quote layout */}
-      <section className="bg-parchment py-24 md:py-48">
+      <section className="bg-brand-white py-24 md:py-48">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
             <div className="hidden md:block col-span-3 pt-9">
@@ -158,16 +158,16 @@ export default function AboutPage() {
       </section>
 
       {/* CTA — collage layout */}
-      <div className="bg-brand-black py-16 md:py-24">
-      <section className="relative overflow-hidden bg-brand-black" style={{ minHeight: "clamp(500px, 68vh, 820px)" }}>
+      <div className="bg-parchment py-16 md:py-24">
+      <section className="relative overflow-hidden bg-parchment" style={{ minHeight: "clamp(500px, 68vh, 820px)" }}>
 
-        {/* Left image — bleeds off left edge */}
-        <div className="absolute left-0 top-0 bottom-0 hidden md:block" style={{ width: "44%" }}>
+        {/* Left image — square, anchored to top */}
+        <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "54%", height: "54vw" }}>
           <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-center" />
         </div>
 
-        {/* Right image — bleeds off right edge */}
-        <div className="absolute right-0 top-0 bottom-0 hidden md:block" style={{ width: "34%" }}>
+        {/* Right image — rectangle, starts lower, bleeds past bottom */}
+        <div className="absolute right-0 bottom-0 hidden md:block overflow-hidden" style={{ width: "34%", top: "18%" }}>
           <img src="/assets/IMG_0031.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
         </div>
 
@@ -179,7 +179,7 @@ export default function AboutPage() {
             top: "50%",
             transform: "translateY(-50%)",
             width: "38%",
-            background: "#E8E4DF",
+            background: "#F6F2EF",
             padding: "clamp(2rem, 3.5vw, 4rem)",
           }}
         >
@@ -203,7 +203,7 @@ export default function AboutPage() {
           <div className="aspect-[4/3] overflow-hidden">
             <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
           </div>
-          <div className="flex flex-col gap-6 p-8" style={{ background: "#E8E4DF", color: "#2D2C2A" }}>
+          <div className="flex flex-col gap-6 p-8" style={{ background: "#F6F2EF", color: "#2D2C2A" }}>
             <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Book a consultation</p>
             <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 6vw, 2.5rem)", letterSpacing: "0" }}>
               Let's begin with a conversation

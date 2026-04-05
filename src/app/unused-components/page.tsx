@@ -767,7 +767,7 @@ export default function UnusedComponentsPage() {
       </section>
 
       {/* Instagram feed */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-brand-white py-16 md:py-20">
         <div className="pg-container">
 
           <div className="flex items-center justify-between mb-10">
