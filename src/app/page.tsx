@@ -1,4 +1,5 @@
 import TestimonialSection from "@/components/TestimonialSection";
+import OverflowDebug from "@/components/OverflowDebug";
 import LogoQuilt from "@/components/LogoQuilt";
 import LogoStripDark from "@/components/LogoStripDark";
 import HeroHome from "@/components/HeroHome";
@@ -8,6 +9,7 @@ import StickyScrollSection from "@/components/StickyScrollSection";
 export default function Home() {
   return (
     <main>
+      <OverflowDebug />
       <HeroHome />
 
       {/* Her Story — statement block */}
