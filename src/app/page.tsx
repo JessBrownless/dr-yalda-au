@@ -37,14 +37,6 @@ export default function Home() {
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
 
         <div className="pg-container relative">
-          {/* Circular emblem — desktop top right */}
-          <img
-            src="/assets/logo-stacked-white.svg"
-            alt=""
-            aria-hidden="true"
-            className="absolute hidden md:block"
-            style={{ top: "2rem", right: "clamp(1.5rem, 4vw, 2.5rem)", width: "72px", height: "auto", filter: "brightness(0)", opacity: 0.4, zIndex: 10 }}
-          />
           <div className="grid grid-cols-12 gap-8 items-center">
 
             {/* Left — image over parchment */}
@@ -203,7 +195,14 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
 
             {/* Image */}
-            <div className="md:col-span-5">
+            <div className="md:col-span-5 relative">
+              <img
+                src="/assets/logo-stacked-white.svg"
+                alt=""
+                aria-hidden="true"
+                className="absolute hidden md:block"
+                style={{ top: "1.25rem", left: "1.25rem", width: "64px", height: "auto", filter: "brightness(0)", opacity: 0.4, zIndex: 10 }}
+              />
               <div className="aspect-square md:aspect-[4/5] overflow-hidden">
                 <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 30%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
               </div>
