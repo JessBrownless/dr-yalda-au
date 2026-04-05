@@ -5,7 +5,7 @@ export default function TwoPanelHero() {
 
       {/* Left — full-bleed image */}
       <div className="relative opacity-0 animate-fade-in aspect-[3/4] md:aspect-auto" style={{ animationDelay: "0.1s" }}>
-        <img src="/assets/IMG_0002.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" />
+        <img src="/assets/IMG_0027.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" style={{ filter: "grayscale(100%)" }} />
       </div>
 
       {/* Right — parchment with centred portrait (desktop only) */}

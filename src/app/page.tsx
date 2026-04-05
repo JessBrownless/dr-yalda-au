@@ -200,11 +200,11 @@ export default function Home() {
                 <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 30%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
               </div>
               {/* Stamp emblem — bleeds into text column */}
-              <img src="/assets/logo-stacked-white.svg" alt="" aria-hidden="true" className="absolute hidden md:block" style={{ top: "-1rem", right: "-4rem", width: "120px", height: "auto", filter: "brightness(0)", opacity: 0.85, zIndex: 10 }} />
+              <img src="/assets/logo-stacked-white.svg" alt="" aria-hidden="true" className="absolute hidden" style={{ top: "-3.5rem", right: "-3.75rem", width: "120px", height: "auto", filter: "brightness(0)", opacity: 0.85, zIndex: 10 }} />
             </div>
 
             {/* Text */}
-            <div className="md:col-span-5 md:col-start-8 flex flex-col gap-8">
+            <div className="md:col-span-5 md:col-start-7 flex flex-col gap-8">
               <h2 className="text-brand-black font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.4vw, 3rem)", lineHeight: 1.05, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                 Let's begin with a conversation
               </h2>

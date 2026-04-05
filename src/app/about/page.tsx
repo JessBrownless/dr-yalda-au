@@ -12,10 +12,15 @@ export default function AboutPage() {
           {[...Array(6)].map((_, i) => (
             <span
               key={i}
-              className="text-brand-black font-normal leading-[1.1] flex-shrink-0"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.02em" }}
+              className="text-brand-black font-normal leading-[1.1] flex-shrink-0 inline-flex items-center gap-6"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.04em", textTransform: "uppercase" }}
             >
-              Cosmetic Doctor&nbsp;&nbsp;/&nbsp;&nbsp;Brand Collaborator&nbsp;&nbsp;/&nbsp;&nbsp;Educator&nbsp;&nbsp;/&nbsp;&nbsp;
+              Cosmetic Doctor
+              <img src="/assets/key-visual-sky.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
+              Brand Collaborator
+              <img src="/assets/key-visual-sky.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
+              Educator
+              <img src="/assets/key-visual-sky.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
             </span>
           ))}
         </div>
@@ -37,10 +42,10 @@ export default function AboutPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-sm" style={{ fontFamily: "'Heading', serif" }}>
+            <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
               With 8 years of experience as a cosmetic doctor, my journey began in London, where I spent the first four years working alongside world-renowned specialists. I hold a master's degree in dermatology, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term well-being of your skin.
             </p>
-            <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-sm" style={{ fontFamily: "'Heading', serif" }}>
+            <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
               I'm recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to enhance and harmonise features with natural, refined results. My aim is always to boost your confidence and deliver outcomes that reflect your unique beauty.
             </p>
           </div>
