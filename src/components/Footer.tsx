@@ -25,25 +25,43 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: "#232121" }}>
 
-      {/* Instagram feed placeholder */}
+      {/* Instagram feed */}
       <div className="border-b border-neutral-800">
-        <div className="pg-container pt-16 pb-4">
-          <div className="flex items-baseline justify-between mb-6">
-            <div className="flex items-center gap-3">
-              <FaInstagram size={13} className="text-neutral-500" />
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.45em] uppercase">@dryaldajamali</p>
+
+        {/* Mobile — 2×2 grid with logo overlapping centre bottom */}
+        <div className="relative md:hidden">
+          <div className="grid grid-cols-2 pt-8 px-8" style={{ gap: "16px" }}>
+            {[
+              "/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif",
+              "/assets/IMG_0030.avif",
+              "/assets/IMG_0029.avif",
+              "/assets/IMG_0028.avif",
+            ].map((src, i) => (
+              <a key={i} href="https://instagram.com/dryaldajamali" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden aspect-square group">
+                <img src={src} alt="" aria-hidden="true" className="w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-70" style={i === 3 ? { filter: "grayscale(100%)" } : {}} />
+              </a>
+            ))}
+          </div>
+          {/* Logo badge */}
+          <div className="flex justify-center" style={{ marginTop: "-60px", position: "relative", zIndex: 10 }}>
+            <div className="flex items-center justify-center rounded-full bg-[#232121]" style={{ width: "120px", height: "120px" }}>
+              <Image src="/assets/logo-circle.svg" alt="Dr. Yalda Jamali" width={90} height={90} style={{ filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }} />
             </div>
-            <a
-              href="https://instagram.com/dryaldajamali"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-600 text-[9px] font-light tracking-[0.3em] uppercase hover:text-white transition-colors duration-300"
-            >
-              Follow
-            </a>
           </div>
         </div>
-        <div className="grid grid-cols-4 md:grid-cols-8 gap-1">
+
+        {/* Desktop — full 8-image row */}
+        <div className="hidden md:block">
+          <div className="pg-container pt-16 pb-4">
+            <div className="flex items-baseline justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <FaInstagram size={13} className="text-neutral-500" />
+                <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase">@dryaldajamali</p>
+              </div>
+              <a href="https://instagram.com/dryaldajamali" target="_blank" rel="noopener noreferrer" className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase hover:text-white transition-colors duration-300">Follow</a>
+            </div>
+          </div>
+          <div className="grid grid-cols-8 gap-1">
             {[
               "/assets/IMG_0005.avif",
               "/assets/dr-yalda-treatment-03.avif",
@@ -54,53 +72,30 @@ export default function Footer() {
               "/assets/dr-yalda-treatment.avif",
               "/assets/IMG_0030.avif",
             ].map((src, i) => (
-              <a
-                key={i}
-                href="https://instagram.com/dryaldajamali"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative overflow-hidden aspect-square group"
-              >
-                <img
-                  src={src}
-                  alt=""
-                  aria-hidden="true"
-                  className="w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-70"
-                />
+              <a key={i} href="https://instagram.com/dryaldajamali" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden aspect-square group">
+                <img src={src} alt="" aria-hidden="true" className="w-full h-full object-cover object-top transition-opacity duration-500 group-hover:opacity-70" />
               </a>
             ))}
+          </div>
         </div>
+
       </div>
 
       {/* Social strip */}
       <div className="border-b border-neutral-800">
-        <div className="pg-container py-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-800">
+        <div className="pg-container">
+          <div className="grid grid-cols-3 divide-x divide-neutral-800">
             {socials.map(({ icon: Icon, platform, handle, href }) => (
-              <a
-                key={platform}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-5 py-6 md:py-0 md:px-10 first:md:pl-0 last:md:pr-0 hover:opacity-100 transition-opacity duration-300"
-              >
-                <div className="w-10 h-10 border border-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:border-neutral-500 transition-colors duration-300">
-                  <Icon size={14} className="text-neutral-500 group-hover:text-white transition-colors duration-300" />
+              <a key={platform} href={href} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center justify-center gap-3 py-8 px-4 transition-colors duration-300">
+                <div className="w-9 h-9 border border-neutral-700 flex items-center justify-center group-hover:border-neutral-500 transition-colors duration-300">
+                  <Icon size={13} className="text-neutral-500 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <div className="flex flex-col gap-0.5">
-                  <p
-                    className="text-white font-normal leading-none"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)", letterSpacing: "0.04em" }}
-                  >
-                    {platform.toUpperCase()}
-                  </p>
-                  <p className="text-neutral-600 text-[10px] font-light tracking-[0.2em]">
-                    {handle}
-                  </p>
+                <div className="flex flex-col items-center gap-1 text-center">
+                  {/* High emphasis — platform name */}
+                  <p className="text-neutral-300 text-[9px] font-light tracking-[0.3em] uppercase group-hover:text-white transition-colors duration-300">{platform}</p>
+                  {/* Medium emphasis — handle */}
+                  <p className="text-neutral-500 text-[9px] font-light tracking-[0.15em] group-hover:text-neutral-300 transition-colors duration-300">{handle}</p>
                 </div>
-                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-auto text-neutral-700 group-hover:text-neutral-400 group-hover:translate-x-1 transition-all duration-300">
-                  <path d="M9.5 1L13 5M13 5L9.5 9M13 5H1" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
               </a>
             ))}
           </div>
@@ -108,65 +103,52 @@ export default function Footer() {
       </div>
 
       {/* Main footer body */}
-      <div className="pg-container py-20 md:py-24">
-        <div className="grid grid-cols-12 gap-6 md:gap-8">
+      <div className="border-t border-neutral-700">
+        {/* Logo — full bleed */}
+        <div className="px-0 pt-8 pb-0 border-b border-neutral-800">
+          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={800} height={80} className="w-full h-auto" style={{ opacity: 0.9 }} />
+        </div>
+        <div className="pg-container pt-8 pb-12 md:pt-10 md:pb-20">
+          <div className="grid grid-cols-12 gap-8">
 
-          {/* Logo + tagline */}
-          <div className="col-span-12 md:col-span-4 flex flex-col gap-8">
-            <Image
-              src="/assets/dr-yalda-logo-long.svg"
-              alt="Dr. Yalda Jamali"
-              width={180}
-              height={36}
-              className="h-5 w-auto"
-              style={{ filter: "brightness(0) invert(1)", opacity: 0.9 }}
-            />
-            <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-[28ch]">
-              Cosmetic medicine grounded in science, honesty, and artistry. Consulting across Sydney.
-            </p>
+            {/* Nav links */}
+            <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4">
+              {/* Faint — section label */}
+              <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-1">Navigate</p>
+              {links.map(({ label, href }) => (
+                <Link key={href} href={href} className="text-neutral-300 text-sm font-light hover:text-white transition-colors duration-300">{label}</Link>
+              ))}
+            </div>
+
+            {/* Clinics */}
+            <div className="col-span-6 md:col-span-4 md:col-start-9 flex flex-col gap-5">
+              {/* Faint — section label */}
+              <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-1">Clinic Locations</p>
+              {clinics.map(({ name, address }) => (
+                <div key={name} className="flex flex-col gap-1">
+                  <div className="flex items-center gap-2">
+                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 text-neutral-500">
+                      <path d="M4 0C1.791 0 0 1.791 0 4C0 7 4 12 4 12C4 12 8 7 8 4C8 1.791 6.209 0 4 0Z" stroke="currentColor" strokeWidth="0.75" fill="none"/>
+                      <circle cx="4" cy="4" r="1.25" stroke="currentColor" strokeWidth="0.75" fill="none"/>
+                    </svg>
+                    {/* High emphasis — clinic name */}
+                    <p className="text-neutral-300 text-sm font-light">{name}</p>
+                  </div>
+                  {/* Medium emphasis — address */}
+                  <p className="text-neutral-500 text-xs font-light" style={{ paddingLeft: "17px" }}>{address}</p>
+                </div>
+              ))}
+            </div>
+
           </div>
-
-          {/* Nav links */}
-          <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4">
-            <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-2">
-              Navigate
-            </p>
-            {links.map(({ label, href }) => (
-              <Link
-                key={href}
-                href={href}
-                className="text-neutral-400 text-sm font-light hover:text-white transition-colors duration-300"
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Clinics */}
-          <div className="col-span-6 md:col-span-4 md:col-start-9 flex flex-col gap-6">
-            <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-2">
-              Clinic Locations
-            </p>
-            {clinics.map(({ name, address }) => (
-              <div key={name} className="flex flex-col gap-1">
-                <p className="text-neutral-300 text-sm font-light">{name}</p>
-                <p className="text-neutral-600 text-xs font-light">{address}</p>
-              </div>
-            ))}
-          </div>
-
         </div>
       </div>
 
-      {/* Bottom bar */}
+      {/* Bottom bar — faint */}
       <div className="border-t border-neutral-800">
-        <div className="pg-container py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-neutral-700 text-[10px] font-light tracking-[0.2em]">
-            © {new Date().getFullYear()} Dr. Yalda Jamali. All rights reserved.
-          </p>
-          <p className="text-neutral-700 text-[10px] font-light tracking-[0.2em]">
-            MBChB · MSc Dermatology · FACCSM
-          </p>
+        <div className="pg-container py-5 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="text-neutral-600 text-[10px] font-light tracking-[0.2em]">© {new Date().getFullYear()} Dr. Yalda Jamali. All rights reserved.</p>
+          <p className="text-neutral-600 text-[10px] font-light tracking-[0.2em]">MBChB · MSc Dermatology · FACCSM</p>
         </div>
       </div>
 
