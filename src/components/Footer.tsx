@@ -53,9 +53,9 @@ export default function Footer() {
 
         {/* Desktop — full 8-image row */}
         <div className="hidden md:block" style={{ paddingTop: "24px" }}>
-          <div className="grid grid-cols-8" style={{ gap: "2px" }}>
+          <div className="grid grid-cols-8" style={{ gap: "12px" }}>
             {[
-              "/assets/IMG_0005.avif",
+              "/assets/IMG_0037_color.avif",
               "/assets/IMG_0005.avif",
               "/assets/IMG_0029.avif",
               "/assets/IMG_0012.avif",

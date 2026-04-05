@@ -6,19 +6,19 @@ const items = [
   {
     title: "Collaborator",
     description:
-      "Placeholder — a short line about Dr. Yalda's collaborative approach with patients and peers.",
+      "Placeholder, a short line about Dr. Yalda's collaborative approach with patients and peers.",
     image: "/assets/big-scroll-01.avif",
   },
   {
     title: "Cosmetic Doctor",
     description:
-      "Placeholder — a short line about her clinical expertise and commitment to natural results.",
+      "Placeholder, a short line about her clinical expertise and commitment to natural results.",
     image: "/assets/profile-image.avif",
   },
   {
     title: "Educator",
     description:
-      "Placeholder — a short line about her role in training and advancing the field.",
+      "Placeholder, a short line about her role in training and advancing the field.",
     image: "/assets/big-scroll-03.avif",
   },
 ];
@@ -93,7 +93,6 @@ export default function StickyScrollSection() {
                 >
                   {item.title}
                 </h2>
-                <div className="w-8 h-px bg-neutral-500" />
                 <p className="text-neutral-300 text-sm font-light leading-relaxed max-w-sm">
                   {item.description}
                 </p>

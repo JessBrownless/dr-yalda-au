@@ -36,6 +36,15 @@ export default function Home() {
         {/* Parchment strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
 
+        {/* Circular emblem — desktop top right */}
+        <img
+          src="/assets/logo-stacked-white.svg"
+          alt=""
+          aria-hidden="true"
+          className="absolute hidden md:block"
+          style={{ top: "clamp(1.5rem, 3vw, 2rem)", right: "clamp(1.5rem, 4vw, 2.5rem)", width: "72px", height: "auto", filter: "brightness(0)", opacity: 0.35, zIndex: 10 }}
+        />
+
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-8 items-center">
 
@@ -107,10 +116,11 @@ export default function Home() {
 
               <a
                 href="/about"
-                className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
+                className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
                 style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
               >
                 About Dr Yalda
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
 
             </div>
@@ -162,10 +172,11 @@ export default function Home() {
 
               <a
                 href="/services"
-                className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
+                className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
                 style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
               >
                 Services
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
 
             </div>
@@ -207,8 +218,9 @@ export default function Home() {
               <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
                 Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
               </p>
-              <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
+              <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
                 Book a consultation
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
             </div>
 
