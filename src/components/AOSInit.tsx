@@ -22,14 +22,18 @@ export default function AOSInit() {
 
     lenis.on("scroll", AOS.refresh);
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
   }, []);
 
   return null;

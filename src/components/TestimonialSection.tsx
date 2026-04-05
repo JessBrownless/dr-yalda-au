@@ -98,7 +98,7 @@ export default function TestimonialSection() {
                     style={{
                       width: i === index ? "28px" : "12px",
                       height: "1px",
-                      background: i === index ? "var(--color-brand-black, #141312)" : "#d4d0cc",
+                      background: i === index ? "var(--brand-black)" : "#d4d0cc",
                     }}
                   />
                 ))}
