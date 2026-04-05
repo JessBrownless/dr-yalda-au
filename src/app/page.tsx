@@ -195,11 +195,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
 
             {/* Image */}
-            <div className="md:col-span-5">
-              <div className="aspect-square md:aspect-[4/5] overflow-hidden relative">
+            <div className="md:col-span-5 relative">
+              <div className="aspect-square md:aspect-[4/5] overflow-hidden">
                 <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 30%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
-                <img src="/assets/logo-stacked-dark.svg" alt="" aria-hidden="true" className="absolute hidden md:block" style={{ top: "1.25rem", left: "1.25rem", width: "64px", height: "auto", opacity: 0.7, zIndex: 10 }} />
               </div>
+              {/* Stamp emblem — bleeds into text column */}
+              <img src="/assets/logo-stacked-dark.svg" alt="" aria-hidden="true" className="absolute hidden md:block" style={{ top: "1.5rem", right: "-3.5rem", width: "80px", height: "auto", opacity: 0.5, zIndex: 10 }} />
             </div>
 
             {/* Text */}
