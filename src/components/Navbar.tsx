@@ -74,7 +74,7 @@ export default function Navbar() {
               width={40}
               height={40}
               style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)" }}
-              className="h-4 w-auto transition-all duration-500"
+              className="h-6 md:h-4 w-auto transition-all duration-500"
             />
           </Link>
 
@@ -111,9 +111,9 @@ export default function Navbar() {
               aria-label="Toggle menu"
               className="flex flex-col gap-[7px] p-2 group"
             >
-              <span className={`block h-[1.5px] transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-white" : "w-6"}`} />
-              <span className={`block h-[1.5px] transition-all duration-300 ${dark ? "bg-brand-black" : "bg-white"} ${open ? "opacity-0 w-6 !bg-white" : "w-4 group-hover:w-6"}`} />
-              <span className={`block h-[1.5px] transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-white" : "w-6"}`} />
+              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-white" : "w-6"}`} />
+              <span className={`block h-px transition-all duration-300 ${dark ? "bg-brand-black" : "bg-white"} ${open ? "opacity-0 w-6 !bg-white" : "w-4 group-hover:w-6"}`} />
+              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-white" : "w-6"}`} />
             </button>
           </div>
 
