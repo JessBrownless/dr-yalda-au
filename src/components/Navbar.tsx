@@ -31,15 +31,32 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  const [overDark, setOverDark] = useState(true);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const sentinel = document.getElementById("hero-end");
+    if (!sentinel) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // overDark = true while sentinel is visible or below viewport (still in hero zone)
+        setOverDark(entry.isIntersecting || entry.boundingClientRect.top > 0);
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [pathname]);
+
   // White text on dark-hero pages (home + media); dark text on all other pages
   const darkHeroPages = ["/", "/media"];
-  const dark = !open && !darkHeroPages.includes(pathname);
+  const dark = !open && (darkHeroPages.includes(pathname) ? !overDark : true);
 
   return (
     <>
@@ -74,7 +91,7 @@ export default function Navbar() {
               width={20}
               height={20}
               className="w-auto transition-all duration-500"
-              style={{ height: "20px", filter: dark ? "brightness(0)" : "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)" }}
+              style={{ height: "20px", filter: dark ? "brightness(0)" : "brightness(0) invert(1)" }}
             />
           </Link>
 

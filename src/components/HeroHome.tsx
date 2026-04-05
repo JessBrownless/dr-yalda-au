@@ -183,6 +183,9 @@ export default function HeroHome() {
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
       </section>
+
+      {/* Sentinel — Navbar watches this to switch logo colour */}
+      <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />
     </>
   );
 }
