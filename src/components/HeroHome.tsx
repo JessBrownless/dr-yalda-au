@@ -75,8 +75,8 @@ export default function HeroHome() {
 
       {/* ── DESKTOP ── */}
       <section
-        className="hidden md:block relative overflow-hidden"
-        style={{ height: "90vh", marginTop: "-72px" }}
+        className="hidden md:block relative overflow-hidden opacity-0 animate-fade-in"
+        style={{ height: "90vh", marginTop: "-72px", animationDelay: "0.1s", animationDuration: "1s" }}
       >
         {/* Photo — oversized so parallax doesn't show gaps */}
         <img
@@ -115,20 +115,24 @@ export default function HeroHome() {
         />
 
         {/* Centred content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ zIndex: 5 }}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-6" style={{ zIndex: 5 }}>
           <img
             className="opacity-0 animate-fade-in"
             src="/assets/dr-yalda-logo-long.svg"
             alt="Dr. Yalda Jamali"
             style={{
-              width: "clamp(280px, 38vw, 600px)",
-              height: "auto",
+              height: "64px",
+              width: "auto",
+              maxWidth: "420px",
               filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)",
               opacity: 0,
               animationDelay: "1s",
               animationDuration: "1.4s",
             }}
           />
+          <p className="opacity-0 animate-fade-in" style={{ fontSize: "17px", fontFamily: "var(--font-lato)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8, maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
+            Cosmetic doctor, speaker, and brand collaborator based in Sydney — combining medical expertise with industry innovation
+          </p>
         </div>
 
         {/* Scroll indicator */}

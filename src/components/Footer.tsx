@@ -51,20 +51,11 @@ export default function Footer() {
         </div>
 
         {/* Desktop — full 8-image row */}
-        <div className="hidden md:block">
-          <div className="pg-container pt-16 pb-4">
-            <div className="flex items-baseline justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <FaInstagram size={13} className="text-neutral-500" />
-                <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase">@dryaldajamali</p>
-              </div>
-              <a href="https://instagram.com/dryaldajamali" target="_blank" rel="noopener noreferrer" className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase hover:text-white transition-colors duration-300">Follow</a>
-            </div>
-          </div>
+        <div className="hidden md:block" style={{ paddingTop: "24px" }}>
           <div className="grid grid-cols-8 gap-1">
             {[
               "/assets/IMG_0005.avif",
-              "/assets/dr-yalda-treatment-03.avif",
+              "/assets/IMG_0005.avif",
               "/assets/IMG_0029.avif",
               "/assets/IMG_0012.avif",
               "/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif",
@@ -104,16 +95,20 @@ export default function Footer() {
 
       {/* Main footer body */}
       <div className="border-t border-neutral-700">
-        {/* Logo — full bleed */}
-        <div className="px-0 pt-8 pb-0 border-b border-neutral-800">
+        {/* Logo — full bleed, mobile only */}
+        <div className="md:hidden px-0 pt-8 pb-0 border-b border-neutral-800">
           <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={800} height={80} className="w-full h-auto" style={{ opacity: 0.9 }} />
         </div>
-        <div className="pg-container pt-8 pb-12 md:pt-10 md:pb-20">
+        <div className="pg-container pt-8 pb-12 md:pt-16 md:pb-20">
           <div className="grid grid-cols-12 gap-8">
+
+            {/* Logo — desktop first column */}
+            <div className="hidden md:flex col-span-4 flex-col justify-start items-start">
+              <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={64} className="w-auto" style={{ height: "64px", opacity: 0.9 }} />
+            </div>
 
             {/* Nav links */}
             <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4">
-              {/* Faint — section label */}
               <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-1">Navigate</p>
               {links.map(({ label, href }) => (
                 <Link key={href} href={href} className="text-neutral-300 text-sm font-light hover:text-white transition-colors duration-300">{label}</Link>
@@ -122,7 +117,6 @@ export default function Footer() {
 
             {/* Clinics */}
             <div className="col-span-6 md:col-span-4 md:col-start-9 flex flex-col gap-5">
-              {/* Faint — section label */}
               <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-1">Clinic Locations</p>
               {clinics.map(({ name, address }) => (
                 <div key={name} className="flex flex-col gap-1">
@@ -131,10 +125,8 @@ export default function Footer() {
                       <path d="M4 0C1.791 0 0 1.791 0 4C0 7 4 12 4 12C4 12 8 7 8 4C8 1.791 6.209 0 4 0Z" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                       <circle cx="4" cy="4" r="1.25" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                     </svg>
-                    {/* High emphasis — clinic name */}
                     <p className="text-neutral-300 text-sm font-light">{name}</p>
                   </div>
-                  {/* Medium emphasis — address */}
                   <p className="text-neutral-500 text-xs font-light" style={{ paddingLeft: "17px" }}>{address}</p>
                 </div>
               ))}

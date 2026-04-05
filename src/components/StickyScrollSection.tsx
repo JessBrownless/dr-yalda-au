@@ -13,7 +13,7 @@ const items = [
     title: "Cosmetic Doctor",
     description:
       "Placeholder — a short line about her clinical expertise and commitment to natural results.",
-    image: "/assets/big-scroll-02.avif",
+    image: "/assets/IMG_0012.avif",
   },
   {
     title: "Educator",
@@ -80,7 +80,8 @@ export default function StickyScrollSection() {
             <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.5)" }} />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 40%)" }} />
 
-            <div className="absolute inset-0 flex items-center px-12 z-10">
+            <div className="absolute inset-0 flex items-center z-10">
+              <div className="pg-container w-full">
               <div className="flex flex-col gap-5 max-w-lg">
                 <p className="text-[10px] font-light tracking-[0.45em] uppercase" style={{ color: "rgba(244,241,238,0.4)" }}>
                   0{i + 1}
@@ -95,6 +96,7 @@ export default function StickyScrollSection() {
                 <p className="text-neutral-300 text-sm font-light leading-relaxed max-w-sm">
                   {item.description}
                 </p>
+              </div>
               </div>
             </div>
           </div>

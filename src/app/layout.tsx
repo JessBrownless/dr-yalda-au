@@ -45,7 +45,7 @@ export default function RootLayout({
         <SmoothScroll />
         <AOSInit />
         <AnnouncementBar />
-        <div className="sticky top-0 z-[60]">
+        <div className="sticky top-0 z-[60] opacity-0 animate-fade-in" style={{ animationDelay: "0.3s", animationDuration: "1.8s" }}>
           <Navbar />
         </div>
         {children}

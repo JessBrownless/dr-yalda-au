@@ -32,7 +32,7 @@ export default function TestimonialSection() {
   const next = () => setIndex((i) => (i + 1) % testimonials.length);
 
   return (
-    <section className="bg-parchment flex items-center" style={{ minHeight: "50vh" }}>
+    <section className="bg-parchment py-24 md:py-52">
       <div className="pg-container">
 
         <div className="grid grid-cols-12 gap-6 md:gap-8">
@@ -44,67 +44,50 @@ export default function TestimonialSection() {
             </p>
           </div>
 
-          {/* Quote — cols 5–12 */}
-          <div className="col-span-12 md:col-span-8 md:col-start-5 flex flex-col gap-8 md:gap-10">
+          {/* Quote — cols 5–11 */}
+          <div className="col-span-12 md:col-span-7 md:col-start-5 flex flex-col gap-8 md:gap-10">
 
-            {/* Nav buttons */}
-            <div className="flex justify-end">
+            {/* Nav buttons — mobile only */}
+            <div className="flex justify-end md:hidden">
               <div className="flex items-center gap-3">
-                <button
-                  onClick={prev}
-                  aria-label="Previous testimonial"
-                  className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300"
-                >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/>
-                  </svg>
+                <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
                 </button>
-                <button
-                  onClick={next}
-                  aria-label="Next testimonial"
-                  className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300"
-                >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/>
-                  </svg>
+                <button onClick={next} aria-label="Next testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
                 </button>
               </div>
             </div>
 
             <blockquote
               className="text-neutral-800 font-normal leading-relaxed [font-family:'Heading',serif]"
-              style={{ fontSize: "clamp(1rem, 1.8vw, 1.4rem)" }}
+              style={{ fontSize: "clamp(1.2rem, 1.4vw, 1.35rem)" }}
             >
               &ldquo;{quote}&rdquo;
             </blockquote>
 
             {/* Logo + progress dots */}
             <div className="flex items-center justify-between">
-              <Image
-                src={logo}
-                alt={brand}
-                width={120}
-                height={40}
-                className="h-5 w-auto object-contain"
-              />
-
+              <Image src={logo} alt={brand} width={120} height={40} className="h-5 w-auto object-contain" />
               <div className="flex items-center gap-2">
                 {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setIndex(i)}
-                    aria-label={`Go to testimonial ${i + 1}`}
-                    className="transition-all duration-300"
-                    style={{
-                      width: i === index ? "28px" : "12px",
-                      height: "1px",
-                      background: i === index ? "var(--brand-black)" : "#d4d0cc",
-                    }}
+                  <button key={i} onClick={() => setIndex(i)} aria-label={`Go to testimonial ${i + 1}`} className="transition-all duration-300"
+                    style={{ width: i === index ? "28px" : "12px", height: "1px", background: i === index ? "var(--brand-black)" : "#d4d0cc" }}
                   />
                 ))}
               </div>
             </div>
 
+          </div>
+
+          {/* Nav buttons — desktop right column */}
+          <div className="hidden md:flex col-span-1 col-start-12 flex-row items-start justify-end gap-3 pt-1">
+            <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
+            </button>
+            <button onClick={next} aria-label="Next testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
+            </button>
           </div>
 
         </div>

@@ -10,7 +10,8 @@ export default function Home() {
       <HeroHome />
 
       {/* Her Story — statement block */}
-      <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center">
+      <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px bg-neutral-300 h-20 md:h-28" />
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <p
             data-aos="fade"
@@ -21,8 +22,8 @@ export default function Home() {
           <h2
             data-aos="fade"
             data-aos-delay="120"
-            className="text-brand-black"
-            style={{ fontSize: "clamp(2rem, 3.5vw, 4rem)", maxWidth: "20ch", lineHeight: "0.95", letterSpacing: "-0.02em", textTransform: "uppercase" }}
+            className="text-neutral-700"
+            style={{ fontSize: "clamp(1.75rem, 3vw, 3.75rem)", maxWidth: "22ch", lineHeight: "0.95", letterSpacing: "0" }}
           >
             A doctor who listens first, treats with precision, and always puts your natural beauty above everything else.
           </h2>
@@ -33,20 +34,20 @@ export default function Home() {
       <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Parchment strip — left edge, behind the image */}
-        <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
+        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
 
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-8 items-center">
 
             {/* Left — image over parchment */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4] md:[transform:scale(1.05)] md:[transform-origin:center_center]">
-                <img src="/assets/IMG_0005.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" style={{ objectPosition: "50% -100px" }} />
+              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]">
+                <img src="/assets/profile-image.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
               </div>
             </div>
 
             {/* Right — introduction text */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8 pt-4 md:pt-0" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
 
               <p
                 className="text-neutral-400 font-normal uppercase"
@@ -60,7 +61,7 @@ export default function Home() {
                   className="text-brand-black font-normal"
                   style={{
                     fontFamily: "'Heading', serif",
-                    fontSize: "clamp(2rem, 3.5vw, 4rem)",
+                    fontSize: "clamp(1.75rem, 2.4vw, 3rem)",
                     lineHeight: "1.2",
                     letterSpacing: "0.04em",
                     textTransform: "uppercase",
@@ -103,32 +104,32 @@ export default function Home() {
       <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Parchment strip — right edge, behind the image */}
-        <div className="absolute hidden md:block right-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
+        <div className="absolute hidden md:block right-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
 
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-8 items-center">
 
             {/* Left — text */}
-            <div className="col-span-12 md:col-span-5 flex flex-col gap-8 order-2 md:order-1" data-aos="fade" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-5 flex flex-col gap-8 order-2 md:order-1 pt-4 md:pt-0" data-aos="fade" data-aos-duration="1000">
 
               <p
                 className="text-neutral-400 font-normal uppercase"
                 style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}
               >
-                Our services
+                Services
               </p>
 
               <p
                 className="text-brand-black font-normal"
                 style={{
                   fontFamily: "'Heading', serif",
-                  fontSize: "clamp(2rem, 3.5vw, 4rem)",
+                  fontSize: "clamp(1.75rem, 2.4vw, 3rem)",
                   lineHeight: "1.2",
                   letterSpacing: "0.04em",
                   textTransform: "uppercase",
                 }}
               >
-                Clinical excellence meets an artist's eye.
+                Consultation-led care at two Sydney clinics
               </p>
 
               <p
@@ -143,7 +144,7 @@ export default function Home() {
                 className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
                 style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
               >
-                Our Services
+                Services
               </a>
 
             </div>
@@ -165,43 +166,34 @@ export default function Home() {
 
       <ParallaxQuote />
 
-      {/* CTA — image inset top+right, card overlaps bottom-right */}
-      <section className="bg-parchment overflow-hidden pt-10 md:pt-16">
+      {/* CTA */}
+      <section className="bg-parchment py-24 md:py-32">
+        <div className="pg-container">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
 
-        {/* Image — right margin reveals parchment strip on right */}
-        <div className="relative mr-8 md:mr-16 aspect-[3/4] md:aspect-[16/10]">
-          <img
-            src="/assets/IMG_0005.avif"
-            alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "50% 20%" }}
-          />
+            {/* Image */}
+            <div className="md:col-span-5">
+              <div className="aspect-[4/5] overflow-hidden">
+                <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 50%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="md:col-span-6 md:col-start-7 flex flex-col gap-8">
+              <h2 className="text-brand-black font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.4vw, 3rem)", lineHeight: 1.05, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                Begin with a conversation.
+              </h2>
+              <div className="w-16 h-px bg-neutral-400" />
+              <p className="text-neutral-400 font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
+                Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
+              </p>
+              <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
+                Book a consultation
+              </a>
+            </div>
+
+          </div>
         </div>
-
-        {/* Card — left-offset so it reads as a right-aligned block */}
-        <div className="relative bg-parchment -mt-16 md:-mt-24 ml-8 md:ml-20 lg:ml-32 z-10 px-12 md:px-20 pt-14 md:pt-20 pb-20 md:pb-28 flex flex-col gap-6 md:gap-8">
-          <h2
-            className="text-brand-black font-normal"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 4rem)", lineHeight: 1.05, letterSpacing: "0.04em", textTransform: "uppercase" }}
-          >
-            Begin with a conversation.
-          </h2>
-          <div className="w-16 h-px bg-neutral-400" />
-          <p
-            className="text-neutral-400 font-light leading-relaxed"
-            style={{ fontSize: "clamp(14px, 1.5vw, 16px)", fontFamily: "var(--font-lato)", maxWidth: "52ch" }}
-          >
-            Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
-          </p>
-          <a
-            href="/appointments"
-            className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
-            style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
-          >
-            Book a consultation
-          </a>
-        </div>
-
       </section>
     </main>
   );
