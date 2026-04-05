@@ -51,7 +51,7 @@ export default function ParallaxQuote() {
           data-aos-duration="1000"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
-          className="w-8 h-8"
+          className="w-10 h-10"
           fill="#EEEDE7"
           aria-hidden="true"
         >
