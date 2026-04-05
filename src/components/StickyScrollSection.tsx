@@ -13,7 +13,7 @@ const items = [
     title: "Cosmetic Doctor",
     description:
       "Placeholder — a short line about her clinical expertise and commitment to natural results.",
-    image: "/assets/IMG_0012.avif",
+    image: "/assets/profile-image.avif",
   },
   {
     title: "Educator",

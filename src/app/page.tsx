@@ -22,7 +22,7 @@ export default function Home() {
           <h2
             data-aos="fade"
             data-aos-delay="120"
-            className="text-neutral-700"
+            className="text-brand-black"
             style={{ fontSize: "clamp(1.75rem, 3vw, 3.75rem)", maxWidth: "22ch", lineHeight: "0.95", letterSpacing: "0" }}
           >
             A doctor who listens first, treats with precision, and always puts your natural beauty above everything else.
@@ -83,6 +83,27 @@ export default function Home() {
               >
                 At the heart of my practice is a commitment to ethical, evidence-based care that prioritises your well-being. I focus on delivering safe, effective results tailored to your needs, guided by the latest medical research. With honesty and transparency, I aim to enhance your natural beauty and boost your confidence. Let's work together to bring out the best version of you.
               </p>
+
+              <svg
+                viewBox="0 0 220 68"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ width: "150px", height: "auto", opacity: 0.6 }}
+                aria-hidden="true"
+              >
+                {/* Y — left arm and tail */}
+                <path d="M 14,8 C 17,18 21,30 22,42 C 22,50 20,58 17,64" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
+                {/* Y — right arm */}
+                <path d="M 38,6 C 32,16 27,28 22,42" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
+                {/* alda */}
+                <path d="M 22,42 C 30,34 40,32 46,37 C 52,42 50,54 44,56 C 38,58 34,50 38,44 C 42,38 52,36 60,38 C 66,28 68,16 72,6" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
+                {/* J */}
+                <path d="M 94,6 C 96,20 96,38 92,52 C 88,62 82,66 76,66" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
+                {/* amali */}
+                <path d="M 94,40 C 102,32 114,30 120,35 C 126,40 124,52 118,54 C 112,58 106,50 110,44 C 114,38 124,36 132,38 L 134,54 C 144,42 156,38 164,42 C 170,46 168,56 162,58" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
+                {/* underline flourish */}
+                <path d="M 76,66 C 104,70 172,64 210,60" stroke="#2D2C2A" strokeWidth="0.9" strokeLinecap="round"/>
+              </svg>
 
               <a
                 href="/about"
