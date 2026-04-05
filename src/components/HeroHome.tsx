@@ -28,7 +28,7 @@ export default function HeroHome() {
   return (
     <>
       {/* ── MOBILE ── */}
-      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: "100vh", maxHeight: "100vh", marginTop: "-80px", animationDelay: "0.1s" }}>
+      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: "100dvh", maxHeight: "100dvh", marginTop: "-80px", animationDelay: "0.1s" }}>
 
         {/* Photo */}
         <img
@@ -52,10 +52,10 @@ export default function HeroHome() {
           <img
             src="/assets/dr-yalda-logo-long.svg"
             alt="Dr. Yalda Jamali"
-            style={{ width: "clamp(220px, 65vw, 360px)", height: "auto", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
+            style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
           />
           <p style={{ fontSize: "15px", fontFamily: "var(--font-hanken)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8 }}>
-            Cosmetic doctor, speaker, and brand collaborator based in Sydney—combining medical expertise with industry innovation to educate, inspire, and elevate aesthetics.
+            Cosmetic doctor, speaker, and brand collaborator based in Sydney—combining medical expertise with industry innovation
           </p>
         </div>
 
@@ -65,9 +65,7 @@ export default function HeroHome() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
           style={{ zIndex: 5, animationDelay: "1.5s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
         >
-          <div style={{ width: "24px", height: "38px", border: "1px solid rgba(244,241,238,0.25)", borderRadius: "12px", display: "flex", justifyContent: "center" }}>
-            <div style={{ width: "1.5px", height: "8px", background: "rgba(244,241,238,0.5)", borderRadius: "1px", marginTop: "6px" }} />
-          </div>
+          <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
           <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-hanken)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
         </button>
 
@@ -139,9 +137,7 @@ export default function HeroHome() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
           style={{ zIndex: 5, animationDelay: "1.8s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
         >
-          <div style={{ width: "24px", height: "38px", border: "1px solid rgba(244,241,238,0.25)", borderRadius: "12px", display: "flex", justifyContent: "center" }}>
-            <div style={{ width: "1.5px", height: "8px", background: "rgba(244,241,238,0.5)", borderRadius: "1px", marginTop: "6px" }} />
-          </div>
+          <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
           <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-hanken)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
         </button>
 

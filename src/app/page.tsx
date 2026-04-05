@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy section — parchment-backed image left, text right */}
-      <section className="bg-cream overflow-hidden relative py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
+      <section className="bg-cream overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Parchment strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
@@ -77,10 +77,10 @@ export default function Home() {
 
               <a
                 href="/about"
-                className="flex items-center gap-3 text-brand-black font-normal uppercase transition-opacity duration-300 hover:opacity-60 mt-2"
-                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "sans-serif" }}
+                className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
+                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-hanken)" }}
               >
-                Meet Dr. Yalda <span aria-hidden="true" style={{ letterSpacing: 0 }}>→</span>
+                Meet Dr. Yalda
               </a>
 
             </div>
@@ -130,11 +130,11 @@ export default function Home() {
               </p>
 
               <a
-                href="/about"
-                className="flex items-center gap-3 text-brand-black font-normal uppercase transition-opacity duration-300 hover:opacity-60 mt-2"
-                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "sans-serif" }}
+                href="/services"
+                className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
+                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-hanken)" }}
               >
-                Meet Dr. Yalda <span aria-hidden="true" style={{ letterSpacing: 0 }}>→</span>
+                Our Services
               </a>
 
             </div>

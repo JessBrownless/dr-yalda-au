@@ -9,7 +9,7 @@ const logos = [
 
 export default function LogoStripDark() {
   return (
-    <section className="bg-cream pt-12 pb-0 overflow-hidden">
+    <section className="bg-cream py-12 overflow-hidden">
 
       <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-10 text-center">
         As seen in &amp; partnered with

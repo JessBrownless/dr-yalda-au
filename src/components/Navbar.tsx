@@ -71,10 +71,10 @@ export default function Navbar() {
             <Image
               src="/assets/dr-yalda-logo-icon.svg"
               alt="Dr. Yalda Jamali"
-              width={40}
-              height={40}
+              width={20}
+              height={20}
               style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)" }}
-              className="h-6 md:h-4 w-auto transition-all duration-500"
+              className="w-auto transition-all duration-500" style={{ height: "20px" }}
             />
           </Link>
 
