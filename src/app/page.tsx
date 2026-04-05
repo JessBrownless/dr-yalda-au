@@ -200,7 +200,7 @@ export default function Home() {
                 <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 30%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
               </div>
               {/* Stamp emblem — bleeds into text column */}
-              <img src="/assets/logo-stacked-dark.svg" alt="" aria-hidden="true" className="absolute hidden md:block" style={{ top: "1.5rem", right: "-3.5rem", width: "80px", height: "auto", opacity: 0.5, zIndex: 10 }} />
+              <img src="/assets/logo-stacked-white.svg" alt="" aria-hidden="true" className="absolute hidden md:block" style={{ top: "-1rem", right: "-4rem", width: "120px", height: "auto", filter: "brightness(0)", opacity: 0.85, zIndex: 10 }} />
             </div>
 
             {/* Text */}
