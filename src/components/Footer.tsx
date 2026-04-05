@@ -18,8 +18,8 @@ const clinics = [
 const socials = [
   { icon: FaInstagram,  platform: "Instagram", handle: "@dryaldajamali",  href: "https://instagram.com/dryaldajamali" },
   { icon: FaTiktok,     platform: "TikTok",    handle: "@dryaldajamali",  href: "https://tiktok.com/@dryaldajamali" },
-  { icon: FaFacebookF,  platform: "Facebook",  handle: "Dr. Yalda Jamali", href: "https://facebook.com" },
   { icon: FaLinkedinIn, platform: "LinkedIn",  handle: "Dr. Yalda Jamali", href: "https://linkedin.com" },
+  { icon: FaFacebookF,  platform: "Facebook",  handle: "Dr. Yalda Jamali", href: "https://facebook.com" },
 ];
 
 export default function Footer() {
