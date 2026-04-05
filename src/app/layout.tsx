@@ -44,8 +44,8 @@ export default function RootLayout({
       <body>
         <SmoothScroll />
         <AOSInit />
-<div className="sticky top-0 z-[60]">
-          <AnnouncementBar />
+        <AnnouncementBar />
+        <div className="sticky top-0 z-[60]">
           <Navbar />
         </div>
         {children}
