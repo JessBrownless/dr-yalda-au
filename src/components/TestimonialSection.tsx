@@ -48,15 +48,15 @@ export default function TestimonialSection() {
 
         <div className="grid grid-cols-12 gap-6 md:gap-8">
 
-          {/* Label — cols 1–3 */}
-          <div className="hidden md:block col-span-3 pt-1">
+          {/* Label — cols 1–2 */}
+          <div className="hidden md:block col-span-2 pt-1">
             <p className="text-neutral-400 font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>
               Partner testimonial
             </p>
           </div>
 
-          {/* Quote — cols 5–11 */}
-          <div className="col-span-12 md:col-span-6 md:col-start-5 flex flex-col gap-8 md:gap-10">
+          {/* Quote — cols 3–10 */}
+          <div className="col-span-12 md:col-span-8 md:col-start-3 flex flex-col gap-8 md:gap-10">
 
             {/* Nav buttons — mobile only */}
             <div className="flex justify-end md:hidden">

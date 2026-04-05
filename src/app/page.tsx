@@ -53,7 +53,7 @@ export default function Home() {
                 className="text-brand-muted font-normal uppercase"
                 style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}
               >
-                About the doctor
+                The doctor
               </p>
 
               <div className="flex flex-col gap-2">
@@ -110,7 +110,7 @@ export default function Home() {
                 className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
                 style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
               >
-                Meet Dr. Yalda
+                About Dr Yalda
               </a>
 
             </div>
@@ -150,7 +150,7 @@ export default function Home() {
                   textTransform: "uppercase",
                 }}
               >
-                Consultation-led care across Sydney clinics
+                Consultation-led care across Sydney
               </p>
 
               <p
