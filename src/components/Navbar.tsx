@@ -86,6 +86,20 @@ export default function Navbar() {
         className="relative z-[60] transition-colors duration-500"
         style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#121110" } : {}}
       >
+        {/* Progressive blur layer */}
+        {scrolled && dark && !open && (
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "rgba(238,237,231,0.5)",
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+              maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+            }}
+          />
+        )}
+
         <div className="h-20 md:h-18 py-5 md:py-4 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
 
           {/* Left nav links */}
