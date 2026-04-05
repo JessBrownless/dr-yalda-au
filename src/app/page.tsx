@@ -41,8 +41,8 @@ export default function Home() {
           src="/assets/logo-stacked-white.svg"
           alt=""
           aria-hidden="true"
-          className="absolute hidden md:block"
-          style={{ top: "clamp(1.5rem, 3vw, 2rem)", right: "clamp(1.5rem, 4vw, 2.5rem)", width: "72px", height: "auto", filter: "brightness(0)", opacity: 0.35, zIndex: 10 }}
+          className="absolute"
+          style={{ top: "clamp(1.5rem, 3vw, 2rem)", right: "clamp(1.5rem, 4vw, 2.5rem)", width: "72px", height: "auto", filter: "brightness(0)", opacity: 1, zIndex: 10 }}
         />
 
         <div className="pg-container relative">
