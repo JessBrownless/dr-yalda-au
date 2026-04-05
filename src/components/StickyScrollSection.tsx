@@ -73,7 +73,7 @@ export default function StickyScrollSection() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-brand-black/50" />
+              <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
 
               {/* Text */}
               <div className="absolute inset-0 flex items-center px-12 z-10">

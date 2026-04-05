@@ -25,7 +25,7 @@ export default function ParallaxQuote() {
 
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center overflow-hidden py-32 md:py-48"
       style={{ minHeight: "clamp(360px, 50vw, 680px)" }}
     >
       {/* Parallax image */}
@@ -42,7 +42,7 @@ export default function ParallaxQuote() {
         }}
       />
 
-      <div className="absolute inset-0 bg-brand-black/50" />
+      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
 
       <blockquote className="relative z-10 pg-container w-full flex flex-col gap-8">
         <svg

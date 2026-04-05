@@ -154,9 +154,27 @@ export default function Home() {
 
       <TestimonialSection />
 
-      <LogoQuilt />
-
       <ParallaxQuote />
+
+      {/* CTA */}
+      <section className="bg-parchment py-32 md:py-48 flex flex-col items-center justify-center text-center gap-10">
+        <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase">
+          Begin your journey
+        </p>
+        <h2
+          className="text-brand-black font-normal"
+          style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 6vw, 6rem)", lineHeight: 1, letterSpacing: "0.04em" }}
+        >
+          Book Now
+        </h2>
+        <a
+          href="/appointments"
+          className="text-brand-black text-[11px] font-light tracking-[0.3em] uppercase border-b border-brand-black pb-1 hover:opacity-50 transition-opacity duration-300"
+          style={{ fontFamily: "var(--font-hanken)" }}
+        >
+          Book a consultation
+        </a>
+      </section>
     </main>
   );
 }
