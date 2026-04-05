@@ -42,7 +42,7 @@ export default function Home() {
             {/* Left — image over parchment */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
               <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]">
-                <img src="/assets/profile-image.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
+                <img src="/assets/IMG_004.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
               </div>
             </div>
 
