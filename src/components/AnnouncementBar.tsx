@@ -9,12 +9,12 @@ export default function AnnouncementBar() {
 
   return (
     <div className="relative z-[60] text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center" style={{ backgroundColor: "#141312" }}>
-      <span style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-hanken)" }} className="font-light uppercase">
+      <span style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-lato)" }} className="font-light uppercase">
         Limited phone consultations.
       </span>
       <a
         href="/appointments"
-        style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-hanken)", position: "relative", top: "0px" }}
+        style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-lato)", position: "relative", top: "0px" }}
         className="font-light uppercase whitespace-nowrap border-b border-white/30 hover:border-white hover:text-white transition-all duration-700"
       >
         Book Now

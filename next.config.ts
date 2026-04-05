@@ -1,14 +1,9 @@
 import type { NextConfig } from "next";
+import os from "os";
 import path from "path";
 
 const nextConfig: NextConfig = {
-  outputFileTracingRoot: path.resolve(__dirname),
-  webpack: (config, { dev }) => {
-    if (dev) {
-      config.cache = false;
-    }
-    return config;
-  },
+  distDir: path.join(os.tmpdir(), "dr-yalda-next"),
 };
 
 export default nextConfig;

@@ -32,7 +32,7 @@ export default function TestimonialSection() {
   const next = () => setIndex((i) => (i + 1) % testimonials.length);
 
   return (
-    <section className="bg-cream py-16 md:py-28">
+    <section className="bg-parchment flex items-center" style={{ minHeight: "50vh" }}>
       <div className="pg-container">
 
         <div className="grid grid-cols-12 gap-6 md:gap-8">

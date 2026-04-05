@@ -9,7 +9,7 @@ const logos = [
 
 export default function LogoStripDark() {
   return (
-    <section className="bg-cream pt-4" style={{ overflowX: "clip", paddingBottom: "96px" }}>
+    <section className="bg-parchment pt-4" style={{ overflowX: "clip", paddingBottom: "96px" }}>
       <div className="border-t border-neutral-200 mx-8" style={{ marginBottom: "80px" }} />
 
       <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-10 text-center">

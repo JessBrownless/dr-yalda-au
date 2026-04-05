@@ -25,8 +25,8 @@ export default function ParallaxQuote() {
 
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden py-32 md:py-48"
-      style={{ minHeight: "clamp(360px, 50vw, 680px)" }}
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{ minHeight: "50vh" }}
     >
       {/* Parallax image */}
       <div
@@ -68,7 +68,7 @@ export default function ParallaxQuote() {
           data-aos-delay="400"
           data-aos-duration="1000"
           className="not-italic font-normal uppercase"
-          style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-hanken)", color: "rgba(244,241,238,0.5)" }}
+          style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.5)" }}
         >
           Dr. Yalda Jamali
         </cite>

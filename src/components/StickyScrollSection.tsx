@@ -77,17 +77,17 @@ export default function StickyScrollSection() {
               className={`absolute inset-0 w-full h-full object-cover ${i === 1 ? "object-top" : "object-center"}`}
             />
 
-            <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
+            <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.5)" }} />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 40%)" }} />
 
             <div className="absolute inset-0 flex items-center px-12 z-10">
               <div className="flex flex-col gap-5 max-w-lg">
-                <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase">
+                <p className="text-[10px] font-light tracking-[0.45em] uppercase" style={{ color: "rgba(244,241,238,0.4)" }}>
                   0{i + 1}
                 </p>
                 <h2
-                  className="text-white leading-none"
-                  style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+                  className="text-white leading-none uppercase"
+                  style={{ fontSize: "clamp(2rem, 3.5vw, 4rem)", letterSpacing: "0.04em" }}
                 >
                   {item.title}
                 </h2>
