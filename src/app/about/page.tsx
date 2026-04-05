@@ -4,27 +4,6 @@ import HeroExperiment from "@/components/HeroExperiment";
 export default function AboutPage() {
   return (
     <main>
-      <HeroExperiment />
-
-      <div className="bg-parchment pt-24 pb-12 overflow-hidden">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {[...Array(6)].map((_, i) => (
-            <span
-              key={i}
-              className="text-brand-black font-normal leading-[1.1] flex-shrink-0 inline-flex items-center gap-6"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.04em", textTransform: "uppercase" }}
-            >
-              Cosmetic Doctor
-              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
-              Brand Collaborator
-              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
-              Educator
-              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
-            </span>
-          ))}
-        </div>
-      </div>
-
       {/* Editorial intro */}
       <section className="bg-brand-white pt-20 pb-20 md:pt-36 md:pb-44">
         <div className="pg-container flex flex-col gap-10 md:gap-14 items-start text-left">
@@ -142,8 +121,8 @@ export default function AboutPage() {
                 { num: "03", title: "Evidence", body: "Every recommendation is backed by clinical evidence and ongoing education. No hype, no shortcuts — just what the science supports." },
                 { num: "04", title: "Trust", body: "Long-term relationships built on consistent, honest care. The goal is always to earn your confidence through results that feel like you." },
               ].map(({ num, title, body }) => (
-                <div key={num} className="flex items-start gap-5 py-8 border-b border-neutral-300 first:border-t first:border-neutral-300">
-                  <span className="text-neutral-400 font-light flex-shrink-0 pt-1" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-300 first:border-t first:border-neutral-300">
+                  <span className="text-neutral-400 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
                   <div className="flex flex-col gap-3">
                     <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)", letterSpacing: "0" }}>
                       {title}

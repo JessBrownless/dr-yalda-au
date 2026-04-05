@@ -11,6 +11,112 @@ export default function UnusedComponentsPage() {
   return (
     <main>
 
+      {/* ─── ABOUT HERO (moved from about/page.tsx) ────────────────────────── */}
+      <HeroExperiment />
+
+      {/* ─── MEDIA HERO (moved from media/page.tsx) ────────────────────────── */}
+      <section className="relative overflow-hidden" style={{ minHeight: "100vh", backgroundColor: "#EEEDE7" }}>
+        <div className="hidden md:block absolute inset-0">
+          <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#E0DED8" }} />
+          <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ left: "48px", top: "48px", width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", bottom: "8%", zIndex: 1, animationDelay: "0.1s" }}>
+            <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+          </div>
+          <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ right: "32px", top: "32%", width: "calc((100% - 11 * 16px) / 6 + 16px)", height: "calc(((100vw - 11 * 16px) / 6 + 16px) * 4 / 3)", animationDelay: "0.4s" }}>
+            <img src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
+          </div>
+          <div className="absolute flex flex-col justify-center gap-4 opacity-0 animate-fade-in-up" style={{ left: "calc(5 * (100% - 11 * 16px) / 12 + 5 * 16px)", right: "calc(3 * (100% - 11 * 16px) / 12 + 3 * 16px)", top: 0, bottom: 0, padding: "24px", animationDelay: "0.7s" }}>
+            <p className="text-neutral-400 font-light tracking-[0.5em] uppercase" style={{ fontSize: "10px" }}>In the</p>
+            <h1 className="text-brand-black font-normal leading-[1.0]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 6vw, 8rem)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: "0.85" }}>
+              MEDIA<br />&amp; PRESS
+            </h1>
+            <div className="flex flex-col gap-6">
+              <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif" }}>
+                Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
+              </p>
+              <a href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry" className="self-start px-8 py-4 border border-brand-black text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-brand-black hover:text-white transition-colors duration-300" style={{ fontFamily: "sans-serif" }}>Work Together</a>
+            </div>
+          </div>
+        </div>
+        <div className="md:hidden relative" style={{ backgroundColor: "#121110" }}>
+          <div className="overflow-hidden opacity-0 animate-fade-in ml-auto" style={{ width: "90%", aspectRatio: "3/4", animationDelay: "0.1s" }}>
+            <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+          </div>
+          <div className="relative px-8 pb-12 flex flex-col opacity-0 animate-fade-in-up" style={{ marginTop: "-48px", zIndex: 10, animationDelay: "0.4s" }}>
+            <span className="font-light uppercase" style={{ fontSize: "12px", letterSpacing: "0.2em", marginBottom: "16px", color: "#F4F1EE", fontFamily: "sans-serif", opacity: 0.6 }}>In the</span>
+            <h1 className="font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(40px, 10vw, 56px)", lineHeight: "0.95", letterSpacing: "-0.03em", textTransform: "uppercase", color: "#F4F1EE" }}>MEDIA<br />&amp; PRESS</h1>
+            <p className="font-light leading-relaxed mt-6" style={{ fontSize: "16px", fontFamily: "'Heading', serif", color: "#F4F1EE", opacity: 0.6 }}>Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.</p>
+            <a href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry" className="self-start mt-8 px-8 py-4 text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-300" style={{ fontFamily: "sans-serif", border: "1px solid #F4F1EE", color: "#F4F1EE" }}>Work Together</a>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SERVICES HERO (moved from services/page.tsx) ──────────────────── */}
+
+      {/* Desktop — editorial stagger */}
+      <section
+        className="hidden md:block bg-cream overflow-hidden"
+        style={{ height: "100svh" }}
+      >
+        <div style={{ height: "96px" }} />
+        <div className="relative" style={{ height: "calc(100svh - 96px)" }}>
+          <div className="absolute" style={{ top: "calc(14% + 32px)", left: "5.5%", zIndex: 20 }}>
+            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "400ms" }}>
+              Services
+            </p>
+            <h1
+              className="text-brand-black font-normal leading-[0.88] opacity-0 animate-fade-in-up"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.75rem, 8.5vw, 10.5rem)", letterSpacing: "0.04em", animationDelay: "600ms" }}
+            >
+              <span className="block">Evidence</span>
+              <span className="block" style={{ paddingLeft: "calc(6vw - 18px)" }}><em style={{ letterSpacing: "-0.01em" }}>led</em> practice</span>
+            </h1>
+          </div>
+          <div
+            className="absolute overflow-hidden opacity-0 animate-fade-in"
+            style={{ right: 0, top: 0, width: "43%", height: "95%", zIndex: 10, animationDelay: "0ms" }}
+          >
+            <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+            <div className="hero-noise" />
+          </div>
+          <div
+            className="absolute overflow-hidden opacity-0 animate-fade-in"
+            style={{ left: "clamp(1.25rem, 4vw, 2.5rem)", bottom: "5%", width: "17%", aspectRatio: "1/1", zIndex: 5, animationDelay: "1100ms" }}
+          >
+            <img src="/assets/IMG_00372.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
+            <div className="hero-noise" />
+          </div>
+          <div className="absolute flex gap-4 opacity-0 animate-fade-in" style={{ left: "calc(17% + clamp(2.5rem, 8vw, 5rem))", bottom: "8%", maxWidth: "300px", zIndex: 5, animationDelay: "900ms" }}>
+            <div className="w-px bg-neutral-300 self-stretch flex-shrink-0" />
+            <p className="text-neutral-600 font-light leading-relaxed" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>
+              Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile — stacked */}
+      <section className="md:hidden bg-cream pt-24 pb-0">
+        <div className="px-8 mb-20">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">Services</p>
+          <h1
+            className="text-brand-black font-normal leading-[0.95]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 11vw, 5rem)", letterSpacing: "0.02em" }}
+          >
+            Evidence <em>led</em> practice
+          </h1>
+        </div>
+        <div className="relative overflow-hidden aspect-square">
+          <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-center md:object-top" />
+          <div className="hero-noise" />
+          <div className="absolute bottom-0 left-0 right-0 flex gap-4 px-6 py-5 backdrop-blur-md bg-white/10">
+            <div className="w-px bg-white/50 flex-shrink-0" />
+            <p className="text-white text-[0.8rem] font-light leading-relaxed">
+              Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ─── PODCAST SECTION (cropped phone variant) ─────────────────────── */}
       <section className="bg-[#232121] overflow-hidden" style={{ paddingTop: "clamp(4rem, 8vw, 9rem)" }}>
         <div className="pg-container">

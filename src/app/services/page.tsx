@@ -1,107 +1,8 @@
-import DrQuote from "@/components/DrQuote";
-import TwoPanelHero from "@/components/TwoPanelHero";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export default function ServicesPage() {
   return (
     <main>
-      {/* ─── 1. HERO ──────────────────────────────────────────────────────── */}
-
-      {/* Desktop — editorial stagger */}
-      <section
-        className="hidden md:block bg-cream overflow-hidden"
-        style={{ height: "100svh" }}
-      >
-        <div style={{ height: "96px" }} />
-
-        <div className="relative" style={{ height: "calc(100svh - 96px)" }}>
-
-          {/* Staggered heading — on top of the image */}
-          <div className="absolute" style={{ top: "calc(14% + 32px)", left: "5.5%", zIndex: 20 }}>
-            <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "400ms" }}>
-              Services
-            </p>
-            <h1
-              className="text-brand-black font-normal leading-[0.88] opacity-0 animate-fade-in-up"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.75rem, 8.5vw, 10.5rem)", letterSpacing: "0.04em", animationDelay: "600ms" }}
-            >
-              <span className="block">Evidence</span>
-              <span className="block" style={{ paddingLeft: "calc(6vw - 18px)" }}><em style={{ letterSpacing: "-0.01em" }}>led</em> practice</span>
-            </h1>
-          </div>
-
-          {/* Right image */}
-          <div
-            className="absolute overflow-hidden opacity-0 animate-fade-in"
-            style={{ right: 0, top: 0, width: "43%", height: "95%", zIndex: 10, animationDelay: "0ms" }}
-          >
-            <img
-              src="/assets/dr-yalda-treatment.avif"
-              alt="Dr. Yalda Jamali"
-              className="w-full h-full object-cover object-top"
-            />
-            <div className="hero-noise" />
-          </div>
-
-          {/* Bottom-left — small secondary image */}
-          <div
-            className="absolute overflow-hidden opacity-0 animate-fade-in"
-            style={{ left: "clamp(1.25rem, 4vw, 2.5rem)", bottom: "5%", width: "17%", aspectRatio: "1/1", zIndex: 5, animationDelay: "1100ms" }}
-          >
-            <img
-              src="/assets/IMG_00372.avif"
-              alt=""
-              aria-hidden="true"
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="hero-noise" />
-          </div>
-
-          {/* Bottom — descriptor text with left rule */}
-          <div className="absolute flex gap-4 opacity-0 animate-fade-in" style={{ left: "calc(17% + clamp(2.5rem, 8vw, 5rem))", bottom: "8%", maxWidth: "300px", zIndex: 5, animationDelay: "900ms" }}>
-            <div className="w-px bg-neutral-300 self-stretch flex-shrink-0" />
-            <p className="text-neutral-600 font-light leading-relaxed" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>
-              Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Mobile — stacked */}
-      <section className="md:hidden bg-cream pt-24 pb-0">
-        <div className="px-8 mb-20">
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
-            Services
-          </p>
-          <h1
-            className="text-brand-black font-normal leading-[0.95]"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 11vw, 5rem)", letterSpacing: "0.02em" }}
-          >
-            Evidence <em>led</em> practice
-          </h1>
-        </div>
-        <div className="relative overflow-hidden aspect-square">
-          <img
-            src="/assets/dr-yalda-treatment.avif"
-            alt="Dr. Yalda Jamali"
-            className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
-          />
-          <div className="hero-noise" />
-          <div className="absolute bottom-0 left-0 right-0 flex gap-4 px-6 py-5 backdrop-blur-md bg-white/10">
-            <div className="w-px bg-white/50 flex-shrink-0" />
-            <p className="text-white text-[0.8rem] font-light leading-relaxed">
-              Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
-            </p>
-          </div>
-        </div>
-      </section>
-
-
-      {/* ─── CONNECTOR ────────────────────────────────────────────────────── */}
-      <div className="bg-cream hidden md:flex justify-center">
-        <div className="w-px bg-neutral-200" style={{ height: "100px" }} />
-      </div>
-
       {/* ─── INTRO STATEMENT ─────────────────────────────────────────────── */}
       <section className="bg-cream py-28 md:py-44 flex items-center justify-center">
         <div className="max-w-[640px] mx-auto px-8 flex flex-col items-center gap-8 text-center">
@@ -124,7 +25,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ─── 3. CONSULTATION APPROACH ─────────────────────────────────────── */}
-      <section className="bg-cream overflow-hidden relative flex items-center" style={{ minHeight: "100vh" }}>
+      <section className="bg-cream overflow-hidden relative py-24 md:flex md:items-center" style={{ minHeight: "100vh" }}>
         {/* Cream box — left page edge to col-4 boundary (~⅔ behind the image) */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
 
@@ -182,7 +83,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Device row */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 pb-0">
                 <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
                   Advanced Modalities
                 </p>
@@ -253,49 +154,71 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <TwoPanelHero />
 
       {/* FAQ */}
-      <section className="bg-cream py-24 md:py-40">
+      <section className="bg-brand-black py-24 md:py-40">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 
             <div className="col-span-12 md:col-span-4">
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
+              <p className="text-neutral-600 text-[9px] font-light tracking-[0.5em] uppercase mb-6">
                 FAQs
               </p>
               <h2
-                className="text-brand-black font-normal leading-tight"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+                className="text-white font-normal"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.4vw, 3rem)", lineHeight: 1.05, letterSpacing: "0.04em", textTransform: "uppercase" }}
               >
-                COMMON<br /><em>questions.</em>
+                Common questions
               </h2>
             </div>
 
-            <div className="col-span-12 md:col-span-7 md:col-start-6 flex flex-col divide-y divide-neutral-200">
-              {[
-                { q: "Do I need a referral?", a: "No referral is needed. You can book directly through any of the clinic links above." },
-                { q: "How long is a consultation?", a: "Initial consultations are typically 30–45 minutes. Dr. Yalda takes the time needed — she won't rush you." },
-                { q: "Can treatment happen on the same day?", a: "In some cases yes, but Dr. Yalda always recommends a separate consultation first so you can make an informed, unhurried decision." },
-                { q: "What should I bring?", a: "Just yourself. If you have any previous treatment records or skincare you're currently using, feel free to bring those along." },
-              ].map(({ q, a }) => (
-                <div key={q} className="py-8 flex flex-col gap-3">
-                  <h3
-                    className="text-brand-black font-normal"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)", letterSpacing: "0.02em" }}
-                  >
-                    {q.toUpperCase()}
-                  </h3>
-                  <p className="text-neutral-600 font-light leading-relaxed max-w-lg" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>{a}</p>
-                </div>
-              ))}
+            <div className="col-span-12 md:col-span-7 md:col-start-6">
+              <FaqAccordion />
             </div>
 
           </div>
         </div>
       </section>
 
-      <DrQuote />
+      {/* CTA */}
+      <div className="bg-parchment py-16 md:py-24">
+      <section className="relative overflow-hidden bg-parchment" style={{ minHeight: "clamp(500px, 68vh, 820px)" }}>
+        <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "54%", height: "54vw" }}>
+          <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" />
+        </div>
+        <div className="absolute right-0 bottom-0 hidden md:block overflow-hidden" style={{ width: "34%", top: "18%" }}>
+          <img src="/assets/dr-yalda-treatment.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
+        </div>
+        <div className="absolute z-10 hidden md:flex flex-col gap-7 justify-center" style={{ left: "29%", top: "50%", transform: "translateY(-50%)", width: "38%", background: "#F6F2EF", padding: "clamp(2rem, 3.5vw, 4rem)" }}>
+          <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Book a consultation</p>
+          <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.8vw, 3.25rem)", letterSpacing: "0" }}>
+            Let's begin with a conversation
+          </h2>
+          <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
+            Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
+          </p>
+          <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
+            Book a consultation
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+        </div>
+        <div className="md:hidden flex flex-col">
+          <div className="aspect-[4/3] overflow-hidden">
+            <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
+          </div>
+          <div className="flex flex-col gap-6 p-8" style={{ background: "#F6F2EF", color: "#2D2C2A" }}>
+            <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Book a consultation</p>
+            <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 6vw, 2.5rem)", letterSpacing: "0" }}>Let's begin with a conversation</h2>
+            <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.</p>
+            <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
+              Book a consultation
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      </div>
+
     </main>
   );
 }

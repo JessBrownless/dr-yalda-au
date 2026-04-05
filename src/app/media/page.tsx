@@ -1,7 +1,7 @@
-import DrQuote from "@/components/DrQuote";
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import TwoPanelHero from "@/components/TwoPanelHero";
+import FeaturesList from "@/components/FeaturesList";
 
 const socials = [
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
@@ -10,150 +10,9 @@ const socials = [
   { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
 ];
 
-const features = [
-  {
-    outlet: "Vogue Australia",
-    type: "Feature",
-    title: "The doctor redefining natural beauty in Sydney",
-    year: "2024",
-    href: "#",
-  },
-  {
-    outlet: "Body + Soul",
-    type: "Interview",
-    title: "Why less is always more in cosmetic medicine",
-    year: "2024",
-    href: "#",
-  },
-  {
-    outlet: "The Sydney Morning Herald",
-    type: "Expert Opinion",
-    title: "What to know before your first cosmetic appointment",
-    year: "2023",
-    href: "#",
-  },
-  {
-    outlet: "Gritty Pretty",
-    type: "Feature",
-    title: "Honest answers to your biggest filler questions",
-    year: "2023",
-    href: "#",
-  },
-  {
-    outlet: "Marie Claire",
-    type: "Roundtable",
-    title: "The future of ethical aesthetics",
-    year: "2023",
-    href: "#",
-  },
-  {
-    outlet: "Clinique",
-    type: "Brand Partnership",
-    title: "Science-backed skincare with Dr. Yalda Jamali",
-    year: "2024",
-    href: "#",
-  },
-];
-
 export default function MediaPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: "100vh", backgroundColor: "#EEEDE7" }}>
-
-{/* ── Desktop ── */}
-        <div className="hidden md:block absolute inset-0">
-
-          {/* Texture — behind portrait, peeks out top-left */}
-          <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#E0DED8" }} />
-
-          {/* Left — portrait */}
-          <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ left: "48px", top: "48px", width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", bottom: "8%", zIndex: 1, animationDelay: "0.1s" }}>
-            <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
-          </div>
-
-          {/* Right — portrait */}
-          <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ right: "32px", top: "32%", width: "calc((100% - 11 * 16px) / 6 + 16px)", height: "calc(((100vw - 11 * 16px) / 6 + 16px) * 4 / 3)", animationDelay: "0.4s" }}>
-            <img src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "40% center" }} />
-          </div>
-
-          {/* Centre — text */}
-          <div className="absolute flex flex-col justify-center gap-4 opacity-0 animate-fade-in-up" style={{ left: "calc(5 * (100% - 11 * 16px) / 12 + 5 * 16px)", right: "calc(3 * (100% - 11 * 16px) / 12 + 3 * 16px)", top: 0, bottom: 0, padding: "24px", animationDelay: "0.7s" }}>
-
-            {/* Eyebrow */}
-            <p className="text-neutral-400 font-light tracking-[0.5em] uppercase" style={{ fontSize: "10px" }}>
-              In the
-            </p>
-
-            {/* Heading */}
-            <h1
-              className="text-brand-black font-normal leading-[1.0]"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 6vw, 8rem)", letterSpacing: "0.06em", textTransform: "uppercase", lineHeight: "0.85" }}
-            >
-              MEDIA<br />&amp; PRESS
-            </h1>
-
-            {/* Body + CTA */}
-            <div className="flex flex-col gap-6">
-              <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif" }}>
-                Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
-              </p>
-              <a
-                href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
-                className="self-start px-8 py-4 border border-brand-black text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-brand-black hover:text-white transition-colors duration-300"
-                style={{ fontFamily: "sans-serif" }}
-              >
-                Work Together
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        {/* ── Mobile ── */}
-        <div className="md:hidden relative" style={{ backgroundColor: "#121110" }}>
-
-          {/* Image — 90% wide, pinned to right edge */}
-          <div
-            className="overflow-hidden opacity-0 animate-fade-in ml-auto"
-            style={{ width: "90%", aspectRatio: "3/4", animationDelay: "0.1s" }}
-          >
-            <img src="/assets/IMG_0038.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
-          </div>
-
-          {/* Text block — overlaps image by exactly 48px */}
-          <div
-            className="relative px-8 pb-12 flex flex-col opacity-0 animate-fade-in-up"
-            style={{ marginTop: "-48px", zIndex: 10, animationDelay: "0.4s" }}
-          >
-            <span
-              className="font-light uppercase"
-              style={{ fontSize: "12px", letterSpacing: "0.2em", marginBottom: "16px", color: "#F4F1EE", fontFamily: "sans-serif", opacity: 0.6 }}
-            >
-              In the
-            </span>
-            <h1
-              className="font-normal"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(40px, 10vw, 56px)", lineHeight: "0.95", letterSpacing: "-0.03em", textTransform: "uppercase", color: "#F4F1EE" }}
-            >
-              MEDIA<br />&amp; PRESS
-            </h1>
-            <p className="font-light leading-relaxed mt-6" style={{ fontSize: "16px", fontFamily: "'Heading', serif", color: "#F4F1EE", opacity: 0.6 }}>
-              Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
-            </p>
-            <a
-              href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry"
-              className="self-start mt-8 px-8 py-4 text-[10px] font-bold tracking-[0.3em] uppercase transition-colors duration-300"
-              style={{ fontFamily: "sans-serif", border: "1px solid #F4F1EE", color: "#F4F1EE" }}
-            >
-              Work Together
-            </a>
-          </div>
-
-        </div>
-
-      </section>
-
       {/* Intro section */}
       <section className="bg-cream py-24 md:py-36 relative">
 
@@ -225,48 +84,25 @@ export default function MediaPage() {
       </section>
 
       {/* How we can work together */}
-      <section className="bg-parchment pt-0 pb-16 md:pb-28">
-        <div className="pg-container">
-          <div className="grid grid-cols-12 gap-2 md:gap-16 items-center">
+      <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
-            {/* Left — layered image composition (desktop) / single image (mobile) */}
-            <div className="col-span-12 md:col-span-5 md:relative md:[aspect-ratio:3/4] relative z-10 md:-mt-40">
-              {/* Mobile: square crop via reusable class */}
-              <div className="site-portrait md:hidden">
-                <img
-                  src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif"
-                  alt="Dr. Yalda Jamali"
-                />
-              </div>
-              {/* Desktop: layered composition */}
-              <div className="hidden md:block absolute inset-0">
-                <img
-                  src="/assets/IMG_0031.avif"
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{ objectPosition: "65% top" }}
-                />
-                <div
-                  className="absolute"
-                  style={{ width: "72%", top: "8%", left: "14%", bottom: "6%" }}
-                >
-                  <img
-                    src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif"
-                    alt="Dr. Yalda Jamali"
-                    className="w-full h-full object-cover object-top"
-                    style={{
-                      boxShadow: "0 24px 80px rgba(0,0,0,0.4)",
-                    }}
-                  />
-                </div>
+        {/* Coloured strip — left edge, behind the image */}
+        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
+
+        <div className="pg-container relative">
+          <div className="grid grid-cols-12 gap-8 items-center">
+
+            {/* Left — image */}
+            <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
+              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]">
+                <img src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </div>
             </div>
 
             {/* Right — numbered list */}
-            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col pt-6 md:pt-0">
+            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col pt-4 md:pt-0" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
 
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-0 md:mb-12">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
                 How we can work together
               </p>
 
@@ -278,7 +114,7 @@ export default function MediaPage() {
                 },
                 {
                   num: "02",
-                  title: "Podcast & Broadcast",
+                  title: "Podcast",
                   description: "Guest appearances on podcasts, TV segments, and digital media platforms.",
                 },
                 {
@@ -287,19 +123,18 @@ export default function MediaPage() {
                   description: "Collaborative campaigns with brands aligned with evidence-based, ethical aesthetics.",
                 },
               ].map(({ num, title, description }) => (
-                <div key={num} className="flex flex-col gap-4 py-8 border-b border-neutral-200 first:border-t first:border-neutral-200">
-                  <p
-                    className="text-brand-black font-normal leading-none"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)" }}
-                  >
-                    <span className="text-neutral-400 font-light" style={{ fontSize: "0.55em", letterSpacing: "0.05em", marginRight: "0.4em" }}>
-                      {num} /
-                    </span>
-                    {title.toUpperCase()}
-                  </p>
-                  <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[38ch]" style={{ fontFamily: "'Heading', serif" }}>
-                    {description}
-                  </p>
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-200 first:border-t first:border-neutral-200">
+                  <span className="text-neutral-400 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>
+                    {num} /
+                  </span>
+                  <div className="flex flex-col gap-3">
+                    <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)", letterSpacing: "0" }}>
+                      {title}
+                    </p>
+                    <p className="text-neutral-600 font-light leading-relaxed text-base md:text-sm" style={{ fontFamily: "'Heading', serif" }}>
+                      {description}
+                    </p>
+                  </div>
                 </div>
               ))}
 
@@ -317,37 +152,7 @@ export default function MediaPage() {
             Features &amp; Appearances
           </p>
 
-          <div className="flex flex-col divide-y divide-neutral-800">
-            {features.map(({ outlet, type, title, year, href }) => (
-              <a
-                key={title}
-                href={href}
-                className="group py-8 grid grid-cols-12 gap-4 md:gap-8 items-center hover:bg-white/5 transition-colors duration-300 -mx-4 px-4"
-              >
-                <div className="col-span-12 md:col-span-3 flex flex-col gap-1">
-                  <p className="text-white text-sm font-normal" style={{ fontFamily: "'Heading', serif" }}>
-                    {outlet}
-                  </p>
-                  <p className="text-neutral-600 text-[9px] font-light tracking-[0.3em] uppercase">
-                    {type}
-                  </p>
-                </div>
-                <div className="col-span-10 md:col-span-7">
-                  <p className="text-neutral-400 text-base font-light leading-snug group-hover:text-white transition-colors duration-300">
-                    {title}
-                  </p>
-                </div>
-                <div className="col-span-2 flex items-center justify-end gap-4">
-                  <span className="text-neutral-600 text-[10px] font-light tracking-[0.2em]">
-                    {year}
-                  </span>
-                  <span className="text-neutral-700 text-sm group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
+          <FeaturesList />
 
         </div>
       </section>
@@ -459,57 +264,6 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Instagram feed */}
-      <section className="bg-parchment py-16 md:py-20">
-        <div className="pg-container">
-
-          <div className="flex items-center justify-between mb-10">
-            <div className="flex items-center gap-4">
-              <FaInstagram size={16} className="text-neutral-400" />
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
-                @dryaldajamali
-              </p>
-            </div>
-            <a
-              href="https://instagram.com/dryaldajamali"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-200 pb-1 hover:border-neutral-400 hover:text-neutral-500 transition-colors duration-300"
-            >
-              Follow
-            </a>
-          </div>
-
-          {/* 6-col grid of square images */}
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-            {[
-              { src: "/assets/IMG_0028.avif", pos: "object-center" },
-              { src: "/assets/IMG_0031.avif", pos: "object-top" },
-              { src: "/assets/IMG_0012.avif", pos: "object-top" },
-              { src: "/assets/IMG_0038.avif", pos: "object-center" },
-              { src: "/assets/IMG_0041.avif", pos: "object-top" },
-              { src: "/assets/IMG_0030.avif", pos: "object-top" },
-            ].map(({ src, pos }, i) => (
-              <a
-                key={i}
-                href="https://instagram.com/dryaldajamali"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block aspect-square overflow-hidden group"
-              >
-                <img
-                  src={src}
-                  alt=""
-                  aria-hidden="true"
-                  className={`w-full h-full object-cover ${pos} transition-transform duration-700 group-hover:scale-105`}
-                />
-                <div className="absolute inset-0 bg-brand-black/0 group-hover:bg-brand-black/20 transition-colors duration-300" />
-              </a>
-            ))}
-          </div>
-
-        </div>
-      </section>
 
       {/* Brand logo quilt */}
       <section className="border-t border-neutral-800 py-10 md:py-12" style={{ backgroundColor: "#1C1B1A" }}>
@@ -550,7 +304,6 @@ export default function MediaPage() {
         </div>
       </section>
 
-      <DrQuote />
     </main>
   );
 }
