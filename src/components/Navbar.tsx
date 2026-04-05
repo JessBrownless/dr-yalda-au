@@ -42,7 +42,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (pathname !== "/") return;
+    if (!darkHeroPages.includes(pathname)) return;
     const sentinel = document.getElementById("hero-end");
     if (!sentinel) return;
     const observer = new IntersectionObserver(
@@ -78,7 +78,7 @@ export default function Navbar() {
   }, [pathname]);
 
   // White text on dark-hero pages (home + media); dark text on all other pages
-  const darkHeroPages = ["/", "/media"];
+  const darkHeroPages = ["/", "/media", "/appointments"];
   const dark = !open && !overStickyScroll && !overParallaxQuote && (darkHeroPages.includes(pathname) ? !overDark : true);
 
   const isAbout = pathname === "/about";

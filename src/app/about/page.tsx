@@ -163,12 +163,12 @@ export default function AboutPage() {
 
         {/* Left image — square, anchored to top */}
         <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "54%", height: "54vw" }}>
-          <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-center" />
+          <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" />
         </div>
 
         {/* Right image — rectangle, starts lower, bleeds past bottom */}
         <div className="absolute right-0 bottom-0 hidden md:block overflow-hidden" style={{ width: "34%", top: "18%" }}>
-          <img src="/assets/IMG_0031.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+          <img src="/assets/dr-yalda-treatment.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
         </div>
 
         {/* Centre card — overlaps both images */}

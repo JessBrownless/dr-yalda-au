@@ -25,36 +25,36 @@ export default function AppointmentsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-parchment relative flex items-center justify-center py-48 md:py-64">
+      <section className="relative overflow-hidden -mt-20" style={{ height: "30vh" }}>
 
-        {/* BOOK | image | NOW — centred flex row, words pinned to image edges */}
-        <div className="relative flex items-center justify-center">
+        {/* Full-bleed background image */}
+        <img
+          src="/assets/big-scroll-03.avif"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)", zIndex: 1 }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)", zIndex: 2 }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)", zIndex: 2 }} />
 
-          <span
-            className="relative z-0 text-brand-black font-normal leading-none opacity-0 animate-fade-in"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em", marginRight: "-10px", alignSelf: "flex-start", marginTop: "-8%", animationDelay: "0.1s" }}
-          >
-            BOOK
-          </span>
-
-          <div className="relative z-10 flex-shrink-0 overflow-hidden opacity-0 animate-fade-in" style={{ width: "clamp(160px, 30vw, 300px)", aspectRatio: "3/4", animationDelay: "0.35s" }}>
-            <img
-              src="/assets/dr-yalda-treatment-03.avif"
-              alt="Dr. Yalda Jamali"
-              className="w-full h-full object-cover object-center"
-            />
+        {/* Overlay panel */}
+        <div className="absolute bottom-0 left-0 right-0 pg-container pb-10 md:pb-16" style={{ zIndex: 10 }}>
+          <div data-aos="fade" data-aos-delay="100" className="flex flex-col gap-3">
+            <p className="text-white/50 text-[9px] font-light tracking-[0.5em] uppercase">
+              Appointments
+            </p>
+            <h1
+              className="text-white font-normal leading-[0.95]"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 6vw, 7rem)", letterSpacing: "0.02em", textTransform: "uppercase" }}
+            >
+              Book a<br />Consultation
+            </h1>
           </div>
-
-          <span
-            className="relative z-20 text-brand-black font-normal leading-none opacity-0 animate-fade-in"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 11vw, 12rem)", letterSpacing: "0.05em", marginLeft: "-10px", alignSelf: "flex-end", marginBottom: "-8%", animationDelay: "0.1s" }}
-          >
-            NOW
-          </span>
-
         </div>
 
       </section>
+      <div id="hero-end" />
 
       {/* Clinic locations */}
       <section className="bg-parchment py-24 md:py-32">
@@ -71,7 +71,7 @@ export default function AppointmentsPage() {
                 </p>
                 <h2
                   className="text-brand-black font-normal leading-[1.0] -mt-2"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 2.8vw, 2.8rem)", letterSpacing: "0" }}
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 2.8vw, 2.8rem)", letterSpacing: "0" }}
                 >
                   IN-PERSON<br /><em>consultation.</em>
                 </h2>
@@ -90,7 +90,7 @@ export default function AppointmentsPage() {
 
                   <h3
                     className="text-brand-black font-normal leading-tight"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.2vw, 1.25rem)", letterSpacing: "0.08em", maxWidth: "60%" }}
+                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.15rem, 1.2vw, 1.25rem)", letterSpacing: "0.08em", maxWidth: "60%" }}
                   >
                     {name.toUpperCase()}
                   </h3>
@@ -140,7 +140,7 @@ export default function AppointmentsPage() {
                 </p>
                 <h2
                   className="text-white font-normal leading-[1.0]"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.75rem, 3.5vw, 3.5rem)", letterSpacing: "0" }}
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.25rem, 3.5vw, 3.5rem)", letterSpacing: "0" }}
                 >
                   ONLINE<br /><em>consultation.</em>
                 </h2>
