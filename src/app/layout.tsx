@@ -41,7 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lato.variable} ${marcellus.variable} ${hankenGrotesk.variable}`}>
-      <body className="overflow-x-hidden">
+      <body>
         <SmoothScroll />
         <AOSInit />
 <div className="sticky top-0 z-[60]">

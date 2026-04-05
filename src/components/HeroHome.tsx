@@ -28,7 +28,7 @@ export default function HeroHome() {
   return (
     <>
       {/* ── MOBILE ── */}
-      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: "100dvh", maxHeight: "100dvh", marginTop: "-80px", animationDelay: "0.1s" }}>
+      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: "90dvh", maxHeight: "90dvh", marginTop: "-80px", animationDelay: "0.1s" }}>
 
         {/* Photo */}
         <img
@@ -76,7 +76,7 @@ export default function HeroHome() {
       {/* ── DESKTOP ── */}
       <section
         className="hidden md:block relative overflow-hidden"
-        style={{ height: "100vh", marginTop: "-72px" }}
+        style={{ height: "90vh", marginTop: "-72px" }}
       >
         {/* Photo — oversized so parallax doesn't show gaps */}
         <img
