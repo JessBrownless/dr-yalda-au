@@ -128,7 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values — quote layout */}
-      <section className="bg-brand-white py-24 md:py-48">
+      <section className="bg-parchment py-24 md:py-48">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
             <div className="hidden md:block col-span-3 pt-9">
