@@ -86,18 +86,27 @@ export default function Navbar() {
         className="relative z-[60] transition-colors duration-500"
         style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#121110" } : {}}
       >
-        {/* Progressive blur layer */}
+        {/* Progressive blur — stacked layers, each blurring a slice */}
         {scrolled && dark && !open && (
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: "rgba(238,237,231,0.5)",
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-              maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
-            }}
-          />
+          <>
+            {[
+              { blur: 12, start: 0,   end: 40  },
+              { blur: 8,  start: 20,  end: 60  },
+              { blur: 5,  start: 40,  end: 80  },
+              { blur: 2,  start: 60,  end: 100 },
+            ].map(({ blur, start, end }) => (
+              <div
+                key={blur}
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backdropFilter: `blur(${blur}px)`,
+                  WebkitBackdropFilter: `blur(${blur}px)`,
+                  maskImage: `linear-gradient(to bottom, transparent ${start}%, black ${Math.min(start + 15, end - 15)}%, black ${Math.max(end - 15, start + 15)}%, transparent ${end}%)`,
+                  WebkitMaskImage: `linear-gradient(to bottom, transparent ${start}%, black ${Math.min(start + 15, end - 15)}%, black ${Math.max(end - 15, start + 15)}%, transparent ${end}%)`,
+                }}
+              />
+            ))}
+          </>
         )}
 
         <div className="h-20 md:h-18 py-5 md:py-4 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
