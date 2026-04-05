@@ -17,6 +17,8 @@ const config: Config = {
         "brand-white":  "#F6F2EF",
         // Brand — secondary
         "brand-grey":       "#B6B4B2",
+        "brand-muted":      "#8F8E8B",
+        "brand-line":       "#C2C1BE",
         "brand-warm-light": "#E5DCD7",
         "brand-blue":       "#9BB9CB",
         "brand-blue-light": "#B9D3DF",

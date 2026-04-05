@@ -96,8 +96,8 @@ export default function Footer() {
       {/* Main footer body */}
       <div className="border-t border-neutral-700">
         {/* Logo — full bleed, mobile only */}
-        <div className="md:hidden px-0 pt-8 pb-0 border-b border-neutral-800">
-          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={800} height={80} className="w-full h-auto" style={{ opacity: 0.9 }} />
+        <div className="md:hidden pt-8 pb-0 border-b border-neutral-800" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
+          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "200px", opacity: 0.9 }} />
         </div>
         <div className="pg-container pt-8 pb-12 md:pt-16 md:pb-20">
           <div className="grid grid-cols-12 gap-8">

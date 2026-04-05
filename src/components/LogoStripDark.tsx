@@ -12,7 +12,7 @@ export default function LogoStripDark() {
     <section className="bg-parchment pt-4 md:py-40" style={{ overflowX: "clip", paddingBottom: "96px" }}>
       <div className="border-t border-neutral-200 mx-8 md:hidden" style={{ marginBottom: "80px" }} />
 
-      <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-10 text-center">
+      <p className="text-[10px] font-light tracking-[0.45em] uppercase mb-10 text-center" style={{ color: "#8F8E8B" }}>
         As seen in &amp; partnered with
       </p>
 

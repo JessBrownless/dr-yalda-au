@@ -26,6 +26,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [overDark, setOverDark] = useState(true);
+  const [overStickyScroll, setOverStickyScroll] = useState(false);
+  const [overParallaxQuote, setOverParallaxQuote] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -52,9 +54,31 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [pathname]);
 
+  useEffect(() => {
+    const el = document.getElementById("sticky-scroll");
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setOverStickyScroll(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  useEffect(() => {
+    const el = document.getElementById("parallax-quote");
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setOverParallaxQuote(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [pathname]);
+
   // White text on dark-hero pages (home + media); dark text on all other pages
   const darkHeroPages = ["/", "/media"];
-  const dark = !open && (darkHeroPages.includes(pathname) ? !overDark : true);
+  const dark = !open && !overStickyScroll && !overParallaxQuote && (darkHeroPages.includes(pathname) ? !overDark : true);
 
   return (
     <>

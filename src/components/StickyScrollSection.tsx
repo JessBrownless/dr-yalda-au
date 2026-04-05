@@ -56,6 +56,7 @@ export default function StickyScrollSection() {
   return (
     <section
       ref={sectionRef}
+      id="sticky-scroll"
       className="relative"
       style={{ height: `${items.length * 100}vh` }}
     >

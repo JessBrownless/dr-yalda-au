@@ -82,7 +82,7 @@ export default function TestimonialCarousel() {
           </div>
         </div>
 
-        <div className="w-full h-px bg-neutral-200 mb-16" />
+        <div className="w-full h-px bg-brand-line mb-16" />
 
         {/* Main grid — quote + image */}
         <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
@@ -101,7 +101,7 @@ export default function TestimonialCarousel() {
             </blockquote>
 
             <div className="flex flex-col gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
+              <div className="w-8 h-px bg-brand-line" />
               <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
                 {t.attribution}
               </p>
