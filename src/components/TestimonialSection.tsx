@@ -48,15 +48,25 @@ export default function TestimonialSection() {
 
         <div className="grid grid-cols-12 gap-6 md:gap-8">
 
-          {/* Label — cols 1–2 */}
-          <div className="hidden md:block col-span-2 pt-1">
+          {/* Label — cols 1–3 */}
+          <div className="hidden md:block col-span-3 pt-1">
             <p className="text-neutral-400 font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>
               Partner testimonial
             </p>
           </div>
 
-          {/* Quote — cols 3–10 */}
-          <div className="col-span-12 md:col-span-8 md:col-start-3 flex flex-col gap-8 md:gap-10">
+          {/* Quote — cols 4–12 */}
+          <div className="col-span-12 md:col-span-9 md:col-start-4 flex flex-col gap-8 md:gap-10">
+
+            {/* Nav buttons — desktop top-right, mobile bottom */}
+            <div className="hidden md:flex justify-end gap-3">
+              <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-7 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
+              </button>
+              <button onClick={next} aria-label="Next testimonial" className="w-9 h-7 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
+              </button>
+            </div>
 
             {/* Nav buttons — mobile only */}
             <div className="flex justify-end md:hidden">
@@ -91,15 +101,6 @@ export default function TestimonialSection() {
 
           </div>
 
-          {/* Nav buttons — desktop right column */}
-          <div className="hidden md:flex col-span-2 col-start-11 flex-row items-start justify-end gap-3 pt-1">
-            <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
-            </button>
-            <button onClick={next} aria-label="Next testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
-            </button>
-          </div>
 
         </div>
 
