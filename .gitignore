@@ -19,6 +19,9 @@ build/
 # Netlify
 .netlify/
 
+# TypeScript build cache — Next.js rewrites this with local temp paths
+tsconfig.tsbuildinfo
+
 # misc
 .DS_Store
 *.pem
