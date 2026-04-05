@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 
 const links = [
   { label: "Home", href: "/" },
@@ -16,9 +16,10 @@ const clinics = [
 ];
 
 const socials = [
-  { icon: FaInstagram, platform: "Instagram", handle: "@dryaldajamali", href: "https://instagram.com/dryaldajamali" },
-  { icon: FaTiktok,    platform: "TikTok",    handle: "@dryaldajamali", href: "https://tiktok.com/@dryaldajamali" },
-  { icon: FaLinkedinIn, platform: "LinkedIn", handle: "Dr. Yalda Jamali", href: "https://linkedin.com" },
+  { icon: FaInstagram,  platform: "Instagram", handle: "@dryaldajamali",  href: "https://instagram.com/dryaldajamali" },
+  { icon: FaTiktok,     platform: "TikTok",    handle: "@dryaldajamali",  href: "https://tiktok.com/@dryaldajamali" },
+  { icon: FaFacebookF,  platform: "Facebook",  handle: "Dr. Yalda Jamali", href: "https://facebook.com" },
+  { icon: FaLinkedinIn, platform: "LinkedIn",  handle: "Dr. Yalda Jamali", href: "https://linkedin.com" },
 ];
 
 export default function Footer() {
@@ -75,7 +76,17 @@ export default function Footer() {
       {/* Social strip */}
       <div className="border-b border-neutral-800">
         <div className="pg-container">
-          <div className="grid grid-cols-3 divide-x divide-neutral-800">
+          {/* Mobile — icons only */}
+          <div className="flex md:hidden divide-x divide-neutral-800">
+            {socials.map(({ icon: Icon, platform, href }) => (
+              <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
+                className="flex-1 flex items-center justify-center py-6 group transition-colors duration-300">
+                <Icon size={14} className="text-neutral-500 group-hover:text-white transition-colors duration-300" />
+              </a>
+            ))}
+          </div>
+          {/* Desktop — icon + text */}
+          <div className="hidden md:grid grid-cols-4 divide-x divide-neutral-800">
             {socials.map(({ icon: Icon, platform, handle, href }) => (
               <a key={platform} href={href} target="_blank" rel="noopener noreferrer" className="group flex flex-row items-center justify-start gap-4 py-8 px-4 transition-colors duration-300">
                 <div className="w-9 h-9 flex-shrink-0 border border-neutral-700 flex items-center justify-center group-hover:border-neutral-500 transition-colors duration-300">
