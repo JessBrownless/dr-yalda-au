@@ -28,7 +28,7 @@ export default function HeroHome() {
   return (
     <>
       {/* ── MOBILE ── */}
-      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: "100svh", marginTop: "-80px", animationDelay: "0.1s" }}>
+      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: "100vh", maxHeight: "100vh", marginTop: "-80px", animationDelay: "0.1s" }}>
 
         {/* Photo */}
         <img
@@ -42,7 +42,7 @@ export default function HeroHome() {
         <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)", zIndex: 1 }} />
 
         {/* Top vignette */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(20,19,18,0.7) 0%, rgba(20,19,18,0.3) 18%, transparent 45%)", zIndex: 2 }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 25%, transparent 50%)", zIndex: 2 }} />
 
         {/* Bottom vignette */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)", zIndex: 2 }} />
@@ -102,7 +102,7 @@ export default function HeroHome() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(20,19,18,0.7) 0%, rgba(20,19,18,0.3) 18%, transparent 45%)",
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 25%, transparent 50%)",
             zIndex: 2,
           }}
         />

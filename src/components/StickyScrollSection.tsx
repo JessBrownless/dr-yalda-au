@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 const items = [
   {
@@ -28,17 +28,33 @@ function clamp(val: number, min: number, max: number) {
 }
 
 export default function StickyScrollSection() {
-  const [scrolled, setScrolled] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
+    let raf: number;
+
     const handleScroll = () => {
-      const section = sectionRef.current;
-      if (!section) return;
-      setScrolled(Math.max(0, -section.getBoundingClientRect().top));
+      raf = requestAnimationFrame(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+        const scrolled = Math.max(0, -section.getBoundingClientRect().top);
+        const vh = window.innerHeight;
+
+        panelRefs.current.forEach((panel, i) => {
+          if (!panel || i === 0) return;
+          const progress = clamp((scrolled - (i - 1) * vh) / vh, 0, 1);
+          const translateY = (1 - progress) * 100;
+          panel.style.transform = `translateY(${translateY}%)`;
+        });
+      });
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
@@ -48,54 +64,45 @@ export default function StickyScrollSection() {
       style={{ height: `${items.length * 100}vh` }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-        {items.map((item, i) => {
-          const vh = typeof window !== "undefined" ? window.innerHeight : 800;
+        {items.map((item, i) => (
+          <div
+            key={item.title}
+            ref={el => { panelRefs.current[i] = el; }}
+            className="absolute inset-0"
+            style={{
+              zIndex: i + 1,
+              transform: i === 0 ? "translateY(0%)" : "translateY(100%)",
+              willChange: "transform",
+            }}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className={`absolute inset-0 w-full h-full object-cover ${i === 1 ? "object-top" : "object-center"}`}
+            />
 
-          // Each panel (i > 0) slides in over one viewport-height of scroll
-          const progress = i === 0 ? 1 : clamp((scrolled - (i - 1) * vh) / vh, 0, 1);
-          const translateY = i === 0 ? 0 : (1 - progress) * 100;
+            <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 40%)" }} />
 
-          return (
-            <div
-              key={item.title}
-              className="absolute inset-0"
-              style={{
-                zIndex: i + 1,
-                transform: `translateY(${translateY}%)`,
-                willChange: "transform",
-              }}
-            >
-              {/* Background image */}
-              <img
-                src={item.image}
-                alt={item.title}
-                className={`absolute inset-0 w-full h-full object-cover ${i === 1 ? "object-top" : "object-center"}`}
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
-
-              {/* Text */}
-              <div className="absolute inset-0 flex items-center px-12 z-10">
-                <div className="flex flex-col gap-5 max-w-lg">
-                  <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase">
-                    0{i + 1}
-                  </p>
-                  <h2
-                    className="text-white leading-none"
-                    style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
-                  >
-                    {item.title}
-                  </h2>
-                  <div className="w-8 h-px bg-neutral-500" />
-                  <p className="text-neutral-300 text-sm font-light leading-relaxed max-w-sm">
-                    {item.description}
-                  </p>
-                </div>
+            <div className="absolute inset-0 flex items-center px-12 z-10">
+              <div className="flex flex-col gap-5 max-w-lg">
+                <p className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase">
+                  0{i + 1}
+                </p>
+                <h2
+                  className="text-white leading-none"
+                  style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}
+                >
+                  {item.title}
+                </h2>
+                <div className="w-8 h-px bg-neutral-500" />
+                <p className="text-neutral-300 text-sm font-light leading-relaxed max-w-sm">
+                  {item.description}
+                </p>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </section>
   );

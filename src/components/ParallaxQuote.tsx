@@ -43,6 +43,7 @@ export default function ParallaxQuote() {
       />
 
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 40%)" }} />
 
       <blockquote className="relative z-10 pg-container w-full flex flex-col gap-8">
         <svg
