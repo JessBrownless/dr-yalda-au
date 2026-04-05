@@ -39,7 +39,7 @@ export default function HeroHome() {
         />
 
         {/* Base darkening */}
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.35)", zIndex: 1 }} />
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.52)", zIndex: 1 }} />
 
         {/* Top vignette */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(20,19,18,0.7) 0%, rgba(20,19,18,0.3) 18%, transparent 45%)", zIndex: 2 }} />
@@ -48,19 +48,28 @@ export default function HeroHome() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)", zIndex: 2 }} />
 
         {/* Centred content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ zIndex: 5 }}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8" style={{ zIndex: 5 }}>
           <img
             src="/assets/dr-yalda-logo-long.svg"
             alt="Dr. Yalda Jamali"
             style={{ width: "clamp(220px, 65vw, 360px)", height: "auto", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
           />
+          <p style={{ fontSize: "15px", fontFamily: "var(--font-hanken)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8 }}>
+            Cosmetic doctor, speaker, and brand collaborator based in Sydney—combining medical expertise with industry innovation to educate, inspire, and elevate aesthetics.
+          </p>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in" style={{ zIndex: 5, animationDelay: "1.5s", animationDuration: "1s" }}>
+        <button
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
+          style={{ zIndex: 5, animationDelay: "1.5s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
+        >
+          <div style={{ width: "24px", height: "38px", border: "1px solid rgba(244,241,238,0.25)", borderRadius: "12px", display: "flex", justifyContent: "center" }}>
+            <div style={{ width: "1.5px", height: "8px", background: "rgba(244,241,238,0.5)", borderRadius: "1px", marginTop: "6px" }} />
+          </div>
           <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-hanken)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
-          <div style={{ width: "1px", height: "40px", background: "linear-gradient(to bottom, rgba(244,241,238,0.3), transparent)" }} />
-        </div>
+        </button>
 
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
@@ -125,10 +134,16 @@ export default function HeroHome() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in" style={{ zIndex: 5, animationDelay: "1.8s", animationDuration: "1s" }}>
+        <button
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
+          style={{ zIndex: 5, animationDelay: "1.8s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
+        >
+          <div style={{ width: "24px", height: "38px", border: "1px solid rgba(244,241,238,0.25)", borderRadius: "12px", display: "flex", justifyContent: "center" }}>
+            <div style={{ width: "1.5px", height: "8px", background: "rgba(244,241,238,0.5)", borderRadius: "1px", marginTop: "6px" }} />
+          </div>
           <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-hanken)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
-          <div style={{ width: "1px", height: "48px", background: "linear-gradient(to bottom, rgba(244,241,238,0.3), transparent)" }} />
-        </div>
+        </button>
 
         {/* Social box — right edge */}
         <div

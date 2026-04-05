@@ -36,11 +36,11 @@ export default function Home() {
         <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-12 gap-y-12 md:gap-y-8 gap-x-8 items-center">
 
             {/* Left — image over parchment */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]" style={{ transform: "scale(1.05)", transformOrigin: "center center" }}>
+              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4] md:[transform:scale(1.05)] md:[transform-origin:center_center]">
                 <img src="/assets/Yalda-17.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function Home() {
 
             {/* Right — image over parchment */}
             <div className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]" style={{ transform: "scale(1.05)", transformOrigin: "center center" }}>
+              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4] md:[transform:scale(1.05)] md:[transform-origin:center_center]">
                 <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 20%" }} />
               </div>
             </div>
@@ -189,9 +189,9 @@ export default function Home() {
         </blockquote>
       </section>
 
-      <TestimonialSection />
-
       <LogoQuilt />
+
+      <TestimonialSection />
     </main>
   );
 }
