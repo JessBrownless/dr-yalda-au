@@ -16,13 +16,10 @@ export default function LogoStripDark() {
       </p>
 
       <div
-        className="logo-strip flex items-center gap-10 md:gap-16 overflow-x-auto select-none"
+        className="logo-strip flex items-center justify-center gap-10 md:gap-16 select-none"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
-          paddingLeft: "clamp(2rem, 6vw, 6rem)",
-          paddingRight: "clamp(2rem, 6vw, 6rem)",
-          WebkitOverflowScrolling: "touch",
         }}
       >
         {logos.map(({ src, alt }) => (
