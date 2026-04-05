@@ -395,6 +395,9 @@
   }
 }
 
+/* ─── Logo strip — hide scrollbar ───────────────────────────────────────── */
+.logo-strip::-webkit-scrollbar { display: none; }
+
 /* ─── Reusable portrait image block ─────────────────────────────────────── */
 /*
   Mobile: square crop with bottom margin.

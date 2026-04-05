@@ -39,7 +39,7 @@ export default function HeroHome() {
         />
 
         {/* Base darkening */}
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.52)", zIndex: 1 }} />
+        <div className="absolute inset-0 bg-brand-black/50" style={{ zIndex: 1 }} />
 
         {/* Top vignette */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(20,19,18,0.7) 0%, rgba(20,19,18,0.3) 18%, transparent 45%)", zIndex: 2 }} />
@@ -96,7 +96,7 @@ export default function HeroHome() {
         />
 
         {/* Base darkening */}
-        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.35)", zIndex: 1 }} />
+        <div className="absolute inset-0 bg-brand-black/50" style={{ zIndex: 1 }} />
 
         {/* Top vignette */}
         <div

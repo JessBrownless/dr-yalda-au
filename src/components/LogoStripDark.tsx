@@ -10,7 +10,7 @@ const logos = [
   { src: "/assets/logo-brand.svg", alt: "Medik-9" },
 ];
 
-export default function LogoQuilt() {
+export default function LogoStripDark() {
   const trackRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -37,13 +37,12 @@ export default function LogoQuilt() {
   };
 
   return (
-    <section className="bg-parchment py-16 overflow-hidden">
+    <section className="bg-cream pt-12 pb-0 overflow-hidden">
 
-      <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-12 text-center">
+      <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-10 text-center">
         As seen in &amp; partnered with
       </p>
 
-      {/* Drag-scrollable row, bleeds to edges */}
       <div
         ref={trackRef}
         className="logo-strip flex items-center gap-16 overflow-x-auto select-none"
@@ -67,7 +66,8 @@ export default function LogoQuilt() {
               width={120}
               height={48}
               draggable={false}
-              className="h-7 w-auto object-contain opacity-40 hover:opacity-70 transition-opacity duration-300"
+              className="h-7 w-auto object-contain opacity-30 hover:opacity-60 transition-opacity duration-300"
+              style={{ filter: "brightness(0)" }}
             />
           </div>
         ))}

@@ -1,5 +1,6 @@
 import TestimonialSection from "@/components/TestimonialSection";
 import LogoQuilt from "@/components/LogoQuilt";
+import LogoStripDark from "@/components/LogoStripDark";
 import HeroHome from "@/components/HeroHome";
 import ParallaxQuote from "@/components/ParallaxQuote";
 import StickyScrollSection from "@/components/StickyScrollSection";
@@ -8,6 +9,8 @@ export default function Home() {
   return (
     <main>
       <HeroHome />
+
+      <LogoStripDark />
 
       {/* Her Story — statement block */}
       <section className="bg-cream py-32 md:py-52 flex flex-col items-center justify-center text-center">
@@ -149,9 +152,9 @@ export default function Home() {
 
       <StickyScrollSection />
 
-      <LogoQuilt />
-
       <TestimonialSection />
+
+      <LogoQuilt />
 
       <ParallaxQuote />
     </main>
