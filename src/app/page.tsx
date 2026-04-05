@@ -36,16 +36,15 @@ export default function Home() {
         {/* Parchment strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
 
-        {/* Circular emblem — desktop top right */}
-        <img
-          src="/assets/logo-stacked-white.svg"
-          alt=""
-          aria-hidden="true"
-          className="absolute"
-          style={{ top: "clamp(1.5rem, 3vw, 2rem)", right: "clamp(1.5rem, 4vw, 2.5rem)", width: "72px", height: "auto", filter: "brightness(0)", opacity: 1, zIndex: 10 }}
-        />
-
         <div className="pg-container relative">
+          {/* Circular emblem — desktop top right */}
+          <img
+            src="/assets/logo-stacked-white.svg"
+            alt=""
+            aria-hidden="true"
+            className="absolute hidden md:block"
+            style={{ top: "2rem", right: "clamp(1.5rem, 4vw, 2.5rem)", width: "72px", height: "auto", filter: "brightness(0)", opacity: 0.4, zIndex: 10 }}
+          />
           <div className="grid grid-cols-12 gap-8 items-center">
 
             {/* Left — image over parchment */}
