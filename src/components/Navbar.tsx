@@ -31,38 +31,17 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  const [overDark, setOverDark] = useState(true);
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    if (pathname !== "/") return;
-    const sentinel = document.getElementById("hero-end");
-    if (!sentinel) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // overDark = true while sentinel is visible or below viewport (still in hero zone)
-        setOverDark(entry.isIntersecting || entry.boundingClientRect.top > 0);
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, [pathname]);
-
-  // White text on dark-hero pages (home + media); dark text on all other pages
-  const darkHeroPages = ["/", "/media"];
-  const dark = !open && (darkHeroPages.includes(pathname) ? !overDark : true);
-
   return (
     <>
       <nav
-        className={`relative z-[60] transition-colors duration-500`}
-        style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#121110" } : {}}
+        className="relative z-[60] transition-all duration-500"
+        style={scrolled && !open ? { background: "linear-gradient(to bottom, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0) 100%)" } : {}}
       >
         <div className="h-20 md:h-18 py-5 md:py-4 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
 
@@ -73,9 +52,7 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 className={`text-[12px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
-                  pathname === href
-                    ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
+                  pathname === href ? "text-brand-black" : "text-brand-black hover:text-neutral-400"
                 }`}
               >
                 {label}
@@ -91,7 +68,7 @@ export default function Navbar() {
               width={20}
               height={20}
               className="w-auto transition-all duration-500"
-              style={{ height: "20px", filter: dark ? "brightness(0)" : "brightness(0) invert(1)" }}
+              style={{ height: "20px", filter: "brightness(0)" }}
             />
           </Link>
 
@@ -103,9 +80,7 @@ export default function Navbar() {
                   key={href}
                   href={href}
                   className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
-                    pathname === href
-                      ? dark ? "text-brand-black" : "text-white"
-                      : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
+                    pathname === href ? "text-brand-black" : "text-brand-black hover:text-neutral-400"
                   }`}
                 >
                   {label}
@@ -114,9 +89,7 @@ export default function Navbar() {
               <Link
                 href="/appointments"
                 className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
-                  pathname === "/appointments"
-                    ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
+                  pathname === "/appointments" ? "text-brand-black" : "text-brand-black hover:text-neutral-400"
                 }`}
               >
                 Book Now
@@ -128,9 +101,9 @@ export default function Navbar() {
               aria-label="Toggle menu"
               className="flex flex-col gap-[7px] p-2 group"
             >
-              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-white" : "w-6"}`} />
-              <span className={`block h-px transition-all duration-300 ${dark ? "bg-brand-black" : "bg-white"} ${open ? "opacity-0 w-6 !bg-white" : "w-4 group-hover:w-6"}`} />
-              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-white" : "w-6"}`} />
+              <span className={`block h-px transition-all duration-500 ease-in-out origin-center bg-brand-black ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-white" : "w-6"}`} />
+              <span className={`block h-px transition-all duration-300 bg-brand-black ${open ? "opacity-0 w-6 !bg-white" : "w-4 group-hover:w-6"}`} />
+              <span className={`block h-px transition-all duration-500 ease-in-out origin-center bg-brand-black ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-white" : "w-6"}`} />
             </button>
           </div>
 

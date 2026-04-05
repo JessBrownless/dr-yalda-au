@@ -173,8 +173,8 @@ export default function Home() {
 
             {/* Image */}
             <div className="md:col-span-5">
-              <div className="aspect-[4/5] overflow-hidden">
-                <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 50%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
+              <div className="aspect-square md:aspect-[4/5] overflow-hidden">
+                <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 30%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
               </div>
             </div>
 
