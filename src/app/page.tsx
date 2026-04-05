@@ -10,8 +10,6 @@ export default function Home() {
     <main>
       <HeroHome />
 
-      <LogoStripDark />
-
       {/* Her Story — statement block */}
       <section className="bg-cream py-32 md:py-52 flex flex-col items-center justify-center text-center">
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
@@ -90,6 +88,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <LogoStripDark />
 
       {/* Reversed section — parchment-backed image right, text left */}
       <section className="bg-cream overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>

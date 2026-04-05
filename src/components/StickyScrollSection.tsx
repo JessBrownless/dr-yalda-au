@@ -34,27 +34,23 @@ export default function StickyScrollSection() {
   useEffect(() => {
     let raf: number;
 
-    const handleScroll = () => {
-      raf = requestAnimationFrame(() => {
-        const section = sectionRef.current;
-        if (!section) return;
+    const loop = () => {
+      const section = sectionRef.current;
+      if (section) {
         const scrolled = Math.max(0, -section.getBoundingClientRect().top);
         const vh = window.innerHeight;
 
         panelRefs.current.forEach((panel, i) => {
           if (!panel || i === 0) return;
           const progress = clamp((scrolled - (i - 1) * vh) / vh, 0, 1);
-          const translateY = (1 - progress) * 100;
-          panel.style.transform = `translateY(${translateY}%)`;
+          panel.style.transform = `translateY(${(1 - progress) * 100}%)`;
         });
-      });
+      }
+      raf = requestAnimationFrame(loop);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      cancelAnimationFrame(raf);
-    };
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
