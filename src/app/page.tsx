@@ -11,7 +11,7 @@ export default function Home() {
 
       {/* Her Story — statement block */}
       <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px bg-brand-line h-20 md:h-28" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px bg-brand-line h-20 md:h-28 opacity-40" />
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <p
             data-aos="fade"
@@ -150,7 +150,7 @@ export default function Home() {
                   textTransform: "uppercase",
                 }}
               >
-                Consultation-led care at two Sydney clinics
+                Consultation-led care across Sydney clinics
               </p>
 
               <p
@@ -200,11 +200,10 @@ export default function Home() {
             </div>
 
             {/* Text */}
-            <div className="md:col-span-6 md:col-start-7 flex flex-col gap-8">
+            <div className="md:col-span-5 md:col-start-8 flex flex-col gap-8">
               <h2 className="text-brand-black font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.4vw, 3rem)", lineHeight: 1.05, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-                Begin with a conversation.
+                Let's begin with a conversation
               </h2>
-              <div className="w-8 h-px bg-brand-line" />
               <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
                 Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
               </p>

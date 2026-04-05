@@ -32,7 +32,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "/var/folders/pn/glgch6wd367_0y4dt5z43pv80000gn/T/dr-yalda-next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

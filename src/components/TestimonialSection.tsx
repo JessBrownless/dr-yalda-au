@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const testimonials = [
   {
@@ -27,12 +27,23 @@ const testimonials = [
 export default function TestimonialSection() {
   const [index, setIndex] = useState(0);
   const { quote, logo, brand } = testimonials[index];
+  const touchStartX = useRef<number | null>(null);
 
   const prev = () => setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
   const next = () => setIndex((i) => (i + 1) % testimonials.length);
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    touchStartX.current = null;
+  };
+
   return (
-    <section className="bg-parchment py-24 md:py-52">
+    <section className="bg-parchment py-24 md:py-52" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <div className="pg-container">
 
         <div className="grid grid-cols-12 gap-6 md:gap-8">
@@ -45,7 +56,7 @@ export default function TestimonialSection() {
           </div>
 
           {/* Quote — cols 5–11 */}
-          <div className="col-span-12 md:col-span-7 md:col-start-5 flex flex-col gap-8 md:gap-10">
+          <div className="col-span-12 md:col-span-6 md:col-start-5 flex flex-col gap-8 md:gap-10">
 
             {/* Nav buttons — mobile only */}
             <div className="flex justify-end md:hidden">
@@ -72,7 +83,7 @@ export default function TestimonialSection() {
               <div className="flex items-center gap-2">
                 {testimonials.map((_, i) => (
                   <button key={i} onClick={() => setIndex(i)} aria-label={`Go to testimonial ${i + 1}`} className="transition-all duration-300"
-                    style={{ width: i === index ? "28px" : "12px", height: "1px", background: i === index ? "var(--brand-black)" : "#d4d0cc" }}
+                    style={{ width: "20px", height: "1px", background: i === index ? "var(--brand-black)" : "#d4d0cc" }}
                   />
                 ))}
               </div>
@@ -81,7 +92,7 @@ export default function TestimonialSection() {
           </div>
 
           {/* Nav buttons — desktop right column */}
-          <div className="hidden md:flex col-span-1 col-start-12 flex-row items-start justify-end gap-3 pt-1">
+          <div className="hidden md:flex col-span-2 col-start-11 flex-row items-start justify-end gap-3 pt-1">
             <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
             </button>

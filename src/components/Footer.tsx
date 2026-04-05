@@ -52,7 +52,7 @@ export default function Footer() {
 
         {/* Desktop — full 8-image row */}
         <div className="hidden md:block" style={{ paddingTop: "24px" }}>
-          <div className="grid grid-cols-8 gap-1">
+          <div className="grid grid-cols-8" style={{ gap: "2px" }}>
             {[
               "/assets/IMG_0005.avif",
               "/assets/IMG_0005.avif",
@@ -77,14 +77,12 @@ export default function Footer() {
         <div className="pg-container">
           <div className="grid grid-cols-3 divide-x divide-neutral-800">
             {socials.map(({ icon: Icon, platform, handle, href }) => (
-              <a key={platform} href={href} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center justify-center gap-3 py-8 px-4 transition-colors duration-300">
-                <div className="w-9 h-9 border border-neutral-700 flex items-center justify-center group-hover:border-neutral-500 transition-colors duration-300">
+              <a key={platform} href={href} target="_blank" rel="noopener noreferrer" className="group flex flex-row items-center justify-start gap-4 py-8 px-4 transition-colors duration-300">
+                <div className="w-9 h-9 flex-shrink-0 border border-neutral-700 flex items-center justify-center group-hover:border-neutral-500 transition-colors duration-300">
                   <Icon size={13} className="text-neutral-500 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <div className="flex flex-col items-center gap-1 text-center">
-                  {/* High emphasis — platform name */}
+                <div className="flex flex-col gap-1">
                   <p className="text-neutral-300 text-[9px] font-light tracking-[0.3em] uppercase group-hover:text-white transition-colors duration-300">{platform}</p>
-                  {/* Medium emphasis — handle */}
                   <p className="text-neutral-500 text-[9px] font-light tracking-[0.15em] group-hover:text-neutral-300 transition-colors duration-300">{handle}</p>
                 </div>
               </a>
