@@ -1,3 +1,4 @@
+import { FaInstagram } from "react-icons/fa";
 import HeroExperiment from "@/components/HeroExperiment";
 import HeroExperimentSaved from "@/components/HeroExperimentSaved";
 import HeroSplit from "@/components/HeroSplit";
@@ -762,6 +763,57 @@ export default function UnusedComponentsPage() {
               Dr. Yalda Jamali
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Instagram feed */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="pg-container">
+
+          <div className="flex items-center justify-between mb-10">
+            <div className="flex items-center gap-4">
+              <FaInstagram size={16} className="text-neutral-400" />
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
+                @dryaldajamali
+              </p>
+            </div>
+            <a
+              href="https://instagram.com/dryaldajamali"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-200 pb-1 hover:border-neutral-400 transition-colors duration-300"
+            >
+              Follow
+            </a>
+          </div>
+
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+            {[
+              { src: "/assets/IMG_0028.avif", pos: "object-center" },
+              { src: "/assets/IMG_0031.avif", pos: "object-top" },
+              { src: "/assets/IMG_0012.avif", pos: "object-top" },
+              { src: "/assets/IMG_0038.avif", pos: "object-center" },
+              { src: "/assets/IMG_0041.avif", pos: "object-top" },
+              { src: "/assets/IMG_0030.avif", pos: "object-top" },
+            ].map(({ src, pos }, i) => (
+              <a
+                key={i}
+                href="https://instagram.com/dryaldajamali"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block aspect-square overflow-hidden group"
+              >
+                <img
+                  src={src}
+                  alt=""
+                  aria-hidden="true"
+                  className={`w-full h-full object-cover ${pos} transition-transform duration-700 group-hover:scale-105`}
+                />
+                <div className="absolute inset-0 bg-brand-black/0 group-hover:bg-brand-black/20 transition-colors duration-300" />
+              </a>
+            ))}
+          </div>
+
         </div>
       </section>
 

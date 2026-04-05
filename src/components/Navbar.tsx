@@ -28,6 +28,7 @@ export default function Navbar() {
   const [overDark, setOverDark] = useState(true);
   const [overStickyScroll, setOverStickyScroll] = useState(false);
   const [overParallaxQuote, setOverParallaxQuote] = useState(false);
+  const [navHovered, setNavHovered] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -80,11 +81,21 @@ export default function Navbar() {
   const darkHeroPages = ["/", "/media"];
   const dark = !open && !overStickyScroll && !overParallaxQuote && (darkHeroPages.includes(pathname) ? !overDark : true);
 
+  const isAbout = pathname === "/about";
+
   return (
     <>
       <nav
         className="relative z-[60] transition-colors duration-500"
-        style={!open && !scrolled && pathname === "/media" ? { backgroundColor: "#121110" } : {}}
+        style={
+          isAbout
+            ? { backgroundColor: navHovered ? "transparent" : "#EEEDE7" }
+            : !open && !scrolled && pathname === "/media"
+            ? { backgroundColor: "#121110" }
+            : {}
+        }
+        onMouseEnter={() => setNavHovered(true)}
+        onMouseLeave={() => setNavHovered(false)}
       >
         {/* Progressive blur — stacked layers, each blurring a slice */}
         {scrolled && dark && !open && (

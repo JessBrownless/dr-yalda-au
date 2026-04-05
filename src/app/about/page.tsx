@@ -1,13 +1,12 @@
 import TwoPanelHero from "@/components/TwoPanelHero";
 import HeroExperiment from "@/components/HeroExperiment";
-import { FaInstagram } from "react-icons/fa";
 
 export default function AboutPage() {
   return (
     <main>
       <HeroExperiment />
 
-      <div className="bg-parchment pt-24 overflow-hidden">
+      <div className="bg-parchment pt-24 pb-12 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(6)].map((_, i) => (
             <span
@@ -16,19 +15,19 @@ export default function AboutPage() {
               style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.04em", textTransform: "uppercase" }}
             >
               Cosmetic Doctor
-              <img src="/assets/key-visual-sky.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
+              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
               Brand Collaborator
-              <img src="/assets/key-visual-sky.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
+              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
               Educator
-              <img src="/assets/key-visual-sky.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
+              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
             </span>
           ))}
         </div>
       </div>
 
       {/* Editorial intro */}
-      <section className="bg-parchment pt-20 pb-20 md:pt-36 md:pb-44">
-        <div className="pg-container flex flex-col gap-10 md:gap-14 items-start text-left md:items-center md:text-center">
+      <section className="bg-white pt-20 pb-20 md:pt-36 md:pb-44">
+        <div className="pg-container flex flex-col gap-10 md:gap-14 items-start text-left">
 
           <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
             The story so far
@@ -36,12 +35,12 @@ export default function AboutPage() {
 
           <h2
             className="text-brand-black font-normal leading-[1.1]"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0", maxWidth: "28ch" }}
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0", maxWidth: "22ch" }}
           >
-            Over a decade of experience<br />in aesthetic medicine.
+            My journey began in London, working alongside world-renowned specialists.
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
               With 8 years of experience as a cosmetic doctor, my journey began in London, where I spent the first four years working alongside world-renowned specialists. I hold a master's degree in dermatology, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term well-being of your skin.
             </p>
@@ -60,7 +59,7 @@ export default function AboutPage() {
         <div className="aspect-square overflow-hidden">
           <img src="/assets/Yalda-1.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 20%" }} />
         </div>
-        <div className="flex items-baseline justify-between pt-3 pb-1">
+        <div className="flex flex-col pt-3 pb-1 gap-1">
           <p className="text-brand-black font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 4vw, 1.2rem)", letterSpacing: "0.05em" }}>
             Dr. Yalda Jamali
           </p>
@@ -73,36 +72,18 @@ export default function AboutPage() {
       {/* Stats */}
       <section className="bg-parchment py-16 md:py-24">
         <div className="pg-container">
-          {/* Mobile: full-width rows / Desktop: 4 columns */}
-          <div className="hidden md:grid md:grid-cols-4 md:divide-x md:divide-neutral-200">
+          <div className="grid grid-cols-4 divide-x divide-neutral-200">
             {[
               { stat: "8+", label: "Years in aesthetic medicine" },
               { stat: "MSc", label: "Masters in Dermatology" },
               { stat: "2", label: "Cities — London & Sydney" },
               { stat: "5+", label: "Global brand collaborations" },
             ].map(({ stat, label }, i) => (
-              <div key={i} className="flex flex-col gap-3 px-8 first:pl-0 last:pr-0">
-                <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 3.5vw, 4rem)", letterSpacing: "0.02em" }}>
+              <div key={i} className="flex flex-col gap-2 md:gap-3 px-4 md:px-8 first:pl-0 last:pr-0">
+                <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3.5vw, 4rem)", letterSpacing: "0.02em" }}>
                   {stat}
                 </p>
-                <p className="text-neutral-500 font-light" style={{ fontSize: "12px", letterSpacing: "0.08em", fontFamily: "'Heading', serif" }}>
-                  {label}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="md:hidden">
-            {[
-              { stat: "8+", label: "Years in aesthetic medicine" },
-              { stat: "MSc", label: "Masters in Dermatology" },
-              { stat: "2", label: "Cities — London & Sydney" },
-              { stat: "5+", label: "Global brand collaborations" },
-            ].map(({ stat, label }, i) => (
-              <div key={i} className="flex items-center justify-between gap-8 py-6 border-t border-neutral-200 last:border-b">
-                <p className="text-brand-black font-normal leading-none flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", letterSpacing: "0.02em" }}>
-                  {stat}
-                </p>
-                <p className="text-neutral-500 font-light text-right" style={{ fontSize: "13px", letterSpacing: "0.1em", fontFamily: "'Heading', serif" }}>
+                <p className="text-neutral-500 font-light leading-snug" style={{ fontSize: "clamp(9px, 1.2vw, 12px)", letterSpacing: "0.08em", fontFamily: "'Heading', serif" }}>
                   {label}
                 </p>
               </div>
@@ -176,110 +157,69 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ backgroundColor: "#D5D2CB" }} className="overflow-hidden">
-        <div className="flex items-stretch" style={{ minHeight: "clamp(380px, 52vh, 680px)" }}>
+      {/* CTA — collage layout */}
+      <div className="bg-brand-black py-16 md:py-24">
+      <section className="relative overflow-hidden bg-brand-black" style={{ minHeight: "clamp(500px, 68vh, 820px)" }}>
 
-          {/* Left — narrow image, bleeds off edge */}
-          <div className="hidden md:block relative overflow-hidden flex-shrink-0" style={{ width: "clamp(120px, 18vw, 240px)" }}>
-            <img src="/assets/IMG_0031.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
-          </div>
-
-          {/* Centre — text, asymmetrically weighted left */}
-          <div className="flex-1 flex flex-col justify-between py-14 md:py-16 px-8 md:pl-16 md:pr-12">
-            <p className="text-[#2D2C2A]/40 text-[9px] font-light tracking-[0.5em] uppercase self-end">
-              Book a consultation
-            </p>
-            <div className="flex flex-col gap-8">
-              <h2
-                className="text-[#2D2C2A] font-normal leading-[0.95]"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6rem)", letterSpacing: "0", maxWidth: "14ch" }}
-              >
-                Ready to start <em>your journey?</em>
-              </h2>
-              <div className="flex flex-col gap-5">
-                <p className="text-[#2D2C2A]/55 font-light leading-[1.8]" style={{ fontSize: "14px", fontFamily: "'Heading', serif", maxWidth: "32ch" }}>
-                  Every great result begins with an honest conversation.
-                </p>
-                <div className="flex items-center gap-8">
-                  <a
-                    href="/appointments"
-                    className="text-[#2D2C2A] text-[10px] font-normal tracking-[0.35em] uppercase border-b border-[#2D2C2A]/50 pb-px hover:border-[#2D2C2A] transition-colors duration-300"
-                    style={{ fontFamily: "sans-serif" }}
-                  >
-                    Book Now
-                  </a>
-                  <span className="text-[#2D2C2A]/25 text-xs">—</span>
-                  <a
-                    href="/services"
-                    className="text-[#2D2C2A]/50 text-[10px] font-normal tracking-[0.35em] uppercase border-b border-[#2D2C2A]/20 pb-px hover:text-[#2D2C2A] hover:border-[#2D2C2A]/50 transition-colors duration-300"
-                    style={{ fontFamily: "sans-serif" }}
-                  >
-                    View Services
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right — wider image, bleeds off edge */}
-          <div className="relative overflow-hidden flex-shrink-0" style={{ width: "clamp(120px, 28vw, 400px)" }}>
-            <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-center" />
-          </div>
-
+        {/* Left image — bleeds off left edge */}
+        <div className="absolute left-0 top-0 bottom-0 hidden md:block" style={{ width: "44%" }}>
+          <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-center" />
         </div>
-      </section>
 
-      {/* Instagram feed */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="pg-container">
+        {/* Right image — bleeds off right edge */}
+        <div className="absolute right-0 top-0 bottom-0 hidden md:block" style={{ width: "34%" }}>
+          <img src="/assets/IMG_0031.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+        </div>
 
-          <div className="flex items-center justify-between mb-10">
-            <div className="flex items-center gap-4">
-              <FaInstagram size={16} className="text-neutral-400" />
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
-                @dryaldajamali
-              </p>
-            </div>
-            <a
-              href="https://instagram.com/dryaldajamali"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase border-b border-neutral-200 pb-1 hover:border-neutral-400 transition-colors duration-300"
-            >
-              Follow
+        {/* Centre card — overlaps both images */}
+        <div
+          className="absolute z-10 hidden md:flex flex-col gap-7 justify-center"
+          style={{
+            left: "29%",
+            top: "50%",
+            transform: "translateY(-50%)",
+            width: "38%",
+            background: "#E8E4DF",
+            padding: "clamp(2rem, 3.5vw, 4rem)",
+          }}
+        >
+          <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>
+            Book a consultation
+          </p>
+          <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.8vw, 3.25rem)", letterSpacing: "0" }}>
+            Let's begin with a conversation
+          </h2>
+          <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
+            Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
+          </p>
+          <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
+            Book a consultation
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+        </div>
+
+        {/* Mobile fallback — stacked */}
+        <div className="md:hidden flex flex-col">
+          <div className="aspect-[4/3] overflow-hidden">
+            <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
+          </div>
+          <div className="flex flex-col gap-6 p-8" style={{ background: "#E8E4DF", color: "#2D2C2A" }}>
+            <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Book a consultation</p>
+            <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 6vw, 2.5rem)", letterSpacing: "0" }}>
+              Let's begin with a conversation
+            </h2>
+            <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
+              Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
+            </p>
+            <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
+              Book a consultation
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>
           </div>
-
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-            {[
-              { src: "/assets/IMG_0028.avif", pos: "object-center" },
-              { src: "/assets/IMG_0031.avif", pos: "object-top" },
-              { src: "/assets/IMG_0012.avif", pos: "object-top" },
-              { src: "/assets/IMG_0038.avif", pos: "object-center" },
-              { src: "/assets/IMG_0041.avif", pos: "object-top" },
-              { src: "/assets/IMG_0030.avif", pos: "object-top" },
-            ].map(({ src, pos }, i) => (
-              <a
-                key={i}
-                href="https://instagram.com/dryaldajamali"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block aspect-square overflow-hidden group"
-              >
-                <img
-                  src={src}
-                  alt=""
-                  aria-hidden="true"
-                  className={`w-full h-full object-cover ${pos} transition-transform duration-700 group-hover:scale-105`}
-                />
-                <div className="absolute inset-0 bg-brand-black/0 group-hover:bg-brand-black/20 transition-colors duration-300" />
-              </a>
-            ))}
-          </div>
-
         </div>
+
       </section>
+      </div>
 
     </main>
   );
