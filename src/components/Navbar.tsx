@@ -73,8 +73,8 @@ export default function Navbar() {
               alt="Dr. Yalda Jamali"
               width={20}
               height={20}
-              style={{ filter: dark ? "brightness(0)" : "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)" }}
-              className="w-auto transition-all duration-500" style={{ height: "20px" }}
+              className="w-auto transition-all duration-500"
+              style={{ height: "20px", filter: dark ? "brightness(0)" : "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)" }}
             />
           </Link>
 
