@@ -1,10 +1,23 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 
+const heroImages = [
+  { src: "/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif", position: "65% 10%" },
+  { src: "/assets/IMG_0028.avif", position: "50% 20%" },
+];
+
 export default function HeroHome() {
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex(i => (i + 1) % heroImages.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     let raf: number;
@@ -30,13 +43,16 @@ export default function HeroHome() {
       {/* ── MOBILE ── */}
       <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: "90dvh", maxHeight: "90dvh", marginTop: "-80px", animationDelay: "0.1s" }}>
 
-        {/* Photo */}
-        <img
-          src="/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif"
-          alt="Dr. Yalda Jamali"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "65% 10%", zIndex: 0 }}
-        />
+        {/* Photos — crossfade */}
+        {heroImages.map((img, i) => (
+          <img
+            key={img.src}
+            src={img.src}
+            alt={i === 0 ? "Dr. Yalda Jamali" : ""}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
+            style={{ objectPosition: img.position, zIndex: 0, opacity: activeIndex === i ? 1 : 0 }}
+          />
+        ))}
 
         {/* Base darkening */}
         <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)", zIndex: 1 }} />
@@ -78,20 +94,18 @@ export default function HeroHome() {
         className="hidden md:block relative overflow-hidden opacity-0 animate-fade-in"
         style={{ height: "90vh", marginTop: "-72px", animationDelay: "0.1s", animationDuration: "1s" }}
       >
-        {/* Photo — oversized so parallax doesn't show gaps */}
-        <img
-          ref={imgRef}
-          src="/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif"
-          alt="Dr. Yalda Jamali"
-          className="absolute left-0 right-0 w-full object-cover"
-          style={{
-            top: "-10%",
-            height: "120%",
-            objectPosition: "65% 10%",
-            zIndex: 0,
-            willChange: "transform",
-          }}
-        />
+        {/* Photos — crossfade, oversized so parallax doesn't show gaps */}
+        <div ref={imgRef} className="absolute left-0 right-0" style={{ top: "-10%", height: "120%", zIndex: 0, willChange: "transform" }}>
+          {heroImages.map((img, i) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={i === 0 ? "Dr. Yalda Jamali" : ""}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
+              style={{ objectPosition: img.position, opacity: activeIndex === i ? 1 : 0 }}
+            />
+          ))}
+        </div>
 
         {/* Base darkening */}
         <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)", zIndex: 1 }} />
