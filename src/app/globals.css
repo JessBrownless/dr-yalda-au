@@ -372,6 +372,7 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overscroll-behavior-x: none;
     width: 100%;
   }
 
@@ -379,6 +380,7 @@
     font-family: var(--font-lato), sans-serif;
     background-color: #141312;
     width: 100%;
+    overscroll-behavior-x: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
