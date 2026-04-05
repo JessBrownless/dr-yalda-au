@@ -9,14 +9,14 @@ const logos = [
 
 export default function LogoStripDark() {
   return (
-    <section className="bg-cream py-12 overflow-hidden">
+    <section className="bg-cream py-12" style={{ overflowX: "clip" }}>
 
       <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-10 text-center">
         As seen in &amp; partnered with
       </p>
 
       <div
-        className="logo-strip flex items-center gap-16 overflow-x-auto select-none"
+        className="logo-strip flex items-center gap-10 md:gap-16 overflow-x-auto select-none"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
