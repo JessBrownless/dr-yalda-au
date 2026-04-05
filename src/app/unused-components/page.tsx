@@ -271,7 +271,24 @@ export default function UnusedComponentsPage() {
 
       {/* ─── FULL-WIDTH CTA — Let's begin ────────────────────────────────── */}
       <section className="bg-cream overflow-hidden">
-        <div className="grid grid-cols-[1fr_auto_1fr] items-stretch" style={{ minHeight: "60vh" }}>
+        {/* Mobile layout — images pinned to sides, text centred */}
+        <div className="relative md:hidden flex items-center justify-center py-20" style={{ minHeight: "60vh" }}>
+          <div className="absolute left-0 top-0 bottom-0 overflow-hidden" style={{ width: "28vw" }}>
+            <img src="/assets/dr-yalda-treatment-03.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+          </div>
+          <div className="relative z-10 flex flex-col items-center justify-center text-center gap-6 px-4" style={{ width: "44vw" }}>
+            <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">Book a consultation</p>
+            <h2 className="text-brand-black font-normal leading-[0.95]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 10vw, 4rem)", letterSpacing: "0.02em" }}>
+              Let's<br /><em>begin.</em>
+            </h2>
+            <a href="/appointments" className="mt-2 px-8 py-4 bg-brand-black text-white text-[9px] font-normal tracking-[0.4em] uppercase">Book Now</a>
+          </div>
+          <div className="absolute right-0 top-0 bottom-0 overflow-hidden" style={{ width: "28vw" }}>
+            <img src="/assets/Yalda-1.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+          </div>
+        </div>
+        {/* Desktop layout — grid */}
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-stretch" style={{ minHeight: "60vh" }}>
           <div className="relative overflow-hidden">
             <img src="/assets/dr-yalda-treatment-03.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
           </div>
