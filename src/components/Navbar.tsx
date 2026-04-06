@@ -86,7 +86,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="relative z-[60] transition-colors duration-500"
+        className="sticky top-0 z-[60] transition-colors duration-500"
         style={
           isAbout
             ? { backgroundColor: navHovered ? "transparent" : "#EEEDE7" }
@@ -209,7 +209,7 @@ export default function Navbar() {
 
         {/* Right — nav panel */}
         <div
-          className="flex-1 bg-brand-black flex flex-col"
+          className="flex-1 bg-brand-black flex flex-col relative"
           style={{ padding: "clamp(3rem, 6vw, 5rem)" }}
         >
 

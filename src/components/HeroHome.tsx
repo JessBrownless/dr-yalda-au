@@ -71,7 +71,7 @@ export default function HeroHome() {
             style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
           />
           <p style={{ fontSize: "14px", fontFamily: "var(--font-lato)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8 }}>
-            Cosmetic doctor, speaker, and brand collaborator based in Sydney—combining medical expertise with industry innovation
+            Cosmetic doctor, educator, and brand collaborator based in Sydney — combining medical expertise with industry innovation
           </p>
         </div>
 
