@@ -194,7 +194,7 @@ export default function Navbar() {
       </nav>
 
       {/* Full-screen overlay menu */}
-      <div className={`fixed inset-0 z-[50] flex transition-opacity duration-400 ease-in-out ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+      <div className={`fixed inset-0 z-[45] flex transition-opacity duration-400 ease-in-out ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
 
         {/* Left — image panel */}
         <div className="w-[32%] relative overflow-hidden">
