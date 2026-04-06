@@ -11,6 +11,26 @@ export default function UnusedComponentsPage() {
   return (
     <main>
 
+      {/* ─── MARQUEE (moved from homepage) ─────────────────────────────────── */}
+      <div className="bg-parchment pt-24 pb-12 overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[...Array(6)].map((_, i) => (
+            <span
+              key={i}
+              className="text-brand-black font-normal leading-[1.1] flex-shrink-0 inline-flex items-center gap-6"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0.04em", textTransform: "uppercase" }}
+            >
+              Cosmetic Doctor
+              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
+              Brand Collaborator
+              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
+              Educator
+              <img src="/assets/key-visual-dark.svg" aria-hidden="true" style={{ height: "0.7em", width: "auto", opacity: 0.6, flexShrink: 0 }} />
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* ─── ABOUT HERO (moved from about/page.tsx) ────────────────────────── */}
       <HeroExperiment />
 

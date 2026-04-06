@@ -194,26 +194,23 @@ export default function Navbar() {
       </nav>
 
       {/* Full-screen overlay menu */}
-      <div className={`fixed inset-0 z-[50] flex ${open ? "pointer-events-auto" : "pointer-events-none"}`}>
+      <div className={`fixed inset-0 z-[50] flex transition-opacity duration-400 ease-in-out ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
 
-        {/* Left — image panel, reveals from bottom */}
-        <div
-          className="w-[32%] relative overflow-hidden transition-all duration-700 ease-in-out"
-          style={{ clipPath: open ? "inset(0 0 0 0)" : "inset(100% 0 0 0)" }}
-        >
+        {/* Left — image panel */}
+        <div className="w-[32%] relative overflow-hidden">
           <Image
             src="/assets/IMG_0017.avif"
             alt=""
             fill
             className="object-cover md:object-center"
-            style={{ objectPosition: "calc(50% + 48px) center" }}
+            style={{ objectPosition: "calc(50% + 30px) center" }}
           />
         </div>
 
-        {/* Right — nav panel, slides in from top */}
+        {/* Right — nav panel */}
         <div
-          className="flex-1 bg-brand-black flex flex-col transition-all duration-700 ease-in-out"
-          style={{ clipPath: open ? "inset(0 0 0 0)" : "inset(0 0 100% 0)", padding: "clamp(1.5rem, 4vw, 2.5rem)" }}
+          className="flex-1 bg-brand-black flex flex-col"
+          style={{ padding: "clamp(3rem, 6vw, 5rem)" }}
         >
 
           {/* Nav links */}
@@ -224,10 +221,8 @@ export default function Navbar() {
                 <Link
                   href={href}
                   onClick={() => setOpen(false)}
-                  className={`block py-5 text-white text-sm tracking-[0.15em] uppercase transition-all duration-500 hover:text-neutral-400 ${
-                    open ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-3"
-                  }`}
-                  style={{ transitionDelay: open ? `${i * 60 + 200}ms` : "0ms", fontFamily: "'Heading', serif" }}
+                  className="block py-5 text-white text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-neutral-400"
+                  style={{ fontFamily: "'Heading', serif" }}
                 >
                   {label}
                 </Link>
