@@ -25,7 +25,7 @@ export default function Home() {
             className="text-brand-black"
             style={{ fontSize: "clamp(1.75rem, 3vw, 3.75rem)", maxWidth: "22ch", lineHeight: "0.95", letterSpacing: "0" }}
           >
-            A doctor who listens first, treats with precision, and always puts your natural beauty above everything else.
+            A doctor who listens first, treats with precision, and focuses on achieving natural, balanced, and long-term results.
           </h2>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function Home() {
                 className="text-brand-muted font-light leading-relaxed"
                 style={{ fontSize: "14px", fontFamily: "var(--font-lato)", letterSpacing: "0.01em" }}
               >
-                At the heart of my practice is a commitment to ethical, evidence-based care that prioritises your well-being. I focus on delivering safe, effective results tailored to your needs, guided by the latest medical research. With honesty and transparency, I aim to enhance your natural beauty and boost your confidence. Let's work together to bring out the best version of you.
+                At the heart of my practice is a commitment to ethical, evidence-based care that prioritises your wellbeing. I focus on delivering safe, considered results tailored to you, guided by current medical evidence. With honesty and transparency, I aim to improve skin health while maintaining results that feel balanced, subtle, and true to you.
               </p>
 
               <svg
@@ -158,7 +158,7 @@ export default function Home() {
                 className="text-brand-muted font-light leading-relaxed"
                 style={{ fontSize: "14px", fontFamily: "var(--font-lato)", letterSpacing: "0.01em" }}
               >
-                Dr. Yalda Jamali combines rigorous medical training with a bespoke approach to aesthetics. Each treatment is a collaboration, designed to enhance your natural architecture.
+                Dr Yalda Jamali combines medical expertise with a personalised approach to cosmetic medicine. Each treatment is consultation-led, focused on skin quality and long-term results.
               </p>
 
               <a

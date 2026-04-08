@@ -4,21 +4,21 @@ import { useRef, useEffect } from "react";
 
 const items = [
   {
-    title: "Collaborator",
-    description:
-      "Placeholder, a short line about Dr. Yalda's collaborative approach with patients and peers.",
-    image: "/assets/big-scroll-01.avif",
-  },
-  {
     title: "Cosmetic Doctor",
     description:
-      "Placeholder, a short line about her clinical expertise and commitment to natural results.",
+      "Sydney-based cosmetic doctor with a decade of experience, focused on skin quality and balance.",
     image: "/assets/profile-image.avif",
+  },
+  {
+    title: "Collaborator",
+    description:
+      "Collaborating with global skin brands to create content, host events, and showcase new innovations.",
+    image: "/assets/big-scroll-01.avif",
   },
   {
     title: "Educator",
     description:
-      "Placeholder, a short line about her role in training and advancing the field.",
+      "Educating on skin and cosmetic medicine through media contributions, articles, and expert insights.",
     image: "/assets/big-scroll-03.avif",
   },
 ];

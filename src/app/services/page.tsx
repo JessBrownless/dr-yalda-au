@@ -12,13 +12,13 @@ export default function ServicesPage() {
             className="text-brand-black font-normal leading-[1.05]"
             style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)", letterSpacing: "-0.01em" }}
           >
-            Over a decade of clinical expertise in aesthetic medicine.
+            Over a decade of clinical expertise in cosmetic medicine.
           </p>
 
 
           {/* Disciplined paragraph */}
           <p className="text-neutral-500 font-light leading-[1.85] tracking-[0.03em]" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>
-            In accordance with Australian guidelines, specific treatments are discussed only during a clinical consultation. Our evidence-based practice prioritises your skin quality, facial harmony, and long-term health.
+            In accordance with Australian guidelines, cosmetic treatments are discussed during a clinical consultation. My approach is evidence-based, with a focus on skin quality, facial harmony, and long-term skin health.
           </p>
 
         </div>
@@ -69,6 +69,7 @@ export default function ServicesPage() {
                   "Uneven skin tone",
                   "Facial balancing & contouring",
                   "Volume & collagen loss",
+                  "Preventative skin health",
                 ].map((item, i) => (
                   <div key={item} className="flex items-baseline gap-4 py-3 border-t border-neutral-200 last:border-b">
                     <span

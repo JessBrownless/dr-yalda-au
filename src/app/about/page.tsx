@@ -21,10 +21,10 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
-              With 8 years of experience as a cosmetic doctor, my journey began in London, where I spent the first four years working alongside world-renowned specialists. I hold a master's degree in dermatology, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term well-being of your skin.
+              With 10 years of experience as a cosmetic doctor, my journey began in London, where I spent the first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin.
             </p>
             <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
-              I'm recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to enhance and harmonise features with natural, refined results. My aim is always to boost your confidence and deliver outcomes that reflect your unique beauty.
+              I am also a Fellow of the Australasian College of Cosmetic Surgery and Medicine (ACCSM), have contributed to publications within the field, and continue to be involved in practitioner education as part of the Merz Aesthetics faculty. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
             </p>
           </div>
 
@@ -53,10 +53,10 @@ export default function AboutPage() {
         <div className="pg-container">
           <div className="grid grid-cols-4 divide-x divide-neutral-200">
             {[
-              { stat: "8+", label: "Years in aesthetic medicine" },
+              { stat: "10+", label: "Years in cosmetic medicine" },
               { stat: "MSc", label: "Masters in Dermatology" },
-              { stat: "2", label: "Cities — London & Sydney" },
-              { stat: "5+", label: "Global brand collaborations" },
+              { stat: "ACCSM", label: "College member" },
+              { stat: "2", label: "Locations — Paddington & Balgowlah" },
             ].map(({ stat, label }, i) => (
               <div key={i} className="flex flex-col gap-2 md:gap-3 px-4 md:px-8 first:pl-0 last:pr-0">
                 <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3.5vw, 4rem)", letterSpacing: "0.02em" }}>
@@ -163,13 +163,13 @@ export default function AboutPage() {
           }}
         >
           <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>
-            Book a consultation
+            Feeling overwhelmed?
           </p>
           <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.8vw, 3.25rem)", letterSpacing: "0" }}>
-            Let's begin with a conversation
+            Complimentary 15-minute online consultation
           </h2>
           <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
-            Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
+            Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
           </p>
           <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
             Book a consultation
@@ -183,12 +183,12 @@ export default function AboutPage() {
             <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
           </div>
           <div className="flex flex-col gap-6 p-8" style={{ background: "#F6F2EF", color: "#2D2C2A" }}>
-            <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Book a consultation</p>
+            <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Feeling overwhelmed?</p>
             <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 6vw, 2.5rem)", letterSpacing: "0" }}>
-              Let's begin with a conversation
+              Complimentary 15-minute online consultation
             </h2>
             <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
-              Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
+              Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
             </p>
             <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
               Book a consultation

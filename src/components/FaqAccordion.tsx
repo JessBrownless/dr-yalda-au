@@ -3,11 +3,12 @@
 import { useState } from "react";
 
 const faqs = [
-  { q: "Do I need a referral?", a: "No referral is needed. You can book directly through any of the clinic links above." },
-  { q: "How long is a consultation?", a: "Initial consultations are typically 30–45 minutes. Dr. Yalda takes the time needed — she won't rush you." },
-  { q: "Can treatment happen on the same day?", a: "In some cases yes, but Dr. Yalda always recommends a separate consultation first so you can make an informed, unhurried decision." },
-  { q: "What should I bring?", a: "Just yourself. If you have any previous treatment records or skincare you're currently using, feel free to bring those along." },
-  { q: "Is there a cancellation policy?", a: "We ask for at least 24 hours notice for any cancellations or rescheduling. This allows us to offer the appointment to other patients." },
+  { q: "Do I need a referral?", a: "No referral is required, as cosmetic medicine is a private service. Treatments are generally not covered by Medicare or private health insurance." },
+  { q: "How long is a consultation?", a: "I offer complimentary 15-minute online consultations to help you understand whether I\u2019m the right fit for you, and to discuss potential treatment options and approximate costs. This does not replace a full consultation. In-clinic consultations are 30 minutes and allow for a more detailed, personalised assessment." },
+  { q: "Can treatment happen on the same day?", a: "Yes, if appropriate. Some treatments require planning, including downtime and pre-treatment preparation such as numbing. In many cases, I encourage patients to take time to consider their options rather than rush into treatment." },
+  { q: "What should I bring?", a: "Just yourself. If you have any previous treatment records or are currently using skincare, feel free to bring these along. It can also be helpful to come makeup-free where possible." },
+  { q: "Is there a cancellation policy?", a: "Please provide at least 48 hours\u2019 notice for cancellations or rescheduling. Late cancellations or missed appointments may result in the loss of your deposit." },
+  { q: "What\u2019s available at each clinic location?", a: "I offer the same services across both my Paddington and Balgowlah clinics. Morpheus8 and hair rejuvenation treatments are available at Paddington only." },
 ];
 
 export default function FaqAccordion() {
@@ -36,7 +37,7 @@ export default function FaqAccordion() {
           </button>
           <div
             className="overflow-hidden transition-all duration-300"
-            style={{ maxHeight: open === i ? "200px" : "0px", opacity: open === i ? 1 : 0 }}
+            style={{ maxHeight: open === i ? "400px" : "0px", opacity: open === i ? 1 : 0 }}
           >
             <p className="text-neutral-400 font-light leading-relaxed pb-7 max-w-lg" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>
               {a}

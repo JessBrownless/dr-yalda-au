@@ -1,5 +1,4 @@
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import TestimonialCarousel from "@/components/TestimonialCarousel";
 import TwoPanelHero from "@/components/TwoPanelHero";
 import FeaturesList from "@/components/FeaturesList";
 
@@ -120,7 +119,7 @@ export default function MediaPage() {
                 {
                   num: "03",
                   title: "Brand Partnerships",
-                  description: "Collaborative campaigns with brands aligned with evidence-based, ethical aesthetics.",
+                  description: "Collaborative campaigns with skincare brands backed by science and ethical practice.",
                 },
               ].map(({ num, title, description }) => (
                 <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-200 first:border-t first:border-neutral-200">
@@ -159,7 +158,7 @@ export default function MediaPage() {
 
 
 
-      <TestimonialCarousel />
+      {/* TestimonialCarousel removed */}
 
       {/* Podcast section */}
       <section className="bg-[#232121] overflow-hidden" style={{ paddingTop: "120px" }}>

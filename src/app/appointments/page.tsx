@@ -4,7 +4,7 @@ const clinics = [
     name: "Epios Cosmetic Clinic",
     suburb: "Paddington",
     address: "18 William St, Paddington, 2021",
-    hours: "Wednesday – Friday",
+    hours: null,
     href: "#",
     logo: "/assets/clinic-logo-epios.png",
     maps: "https://www.google.com/maps/dir/?api=1&destination=18+William+St+Paddington+NSW+2021",
@@ -13,7 +13,7 @@ const clinics = [
     name: "Austin Clinic",
     suburb: "Balgowlah",
     address: "5/67 Wanganella St, Balgowlah, 2093",
-    hours: "Tuesdays",
+    hours: null,
     href: "#",
     logo: null,
     maps: "https://www.google.com/maps/dir/?api=1&destination=5%2F67+Wanganella+St+Balgowlah+NSW+2093",
@@ -53,7 +53,7 @@ export default function AppointmentsPage() {
               </h1>
             </div>
             <p className="text-white/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", paddingBottom: "0.35em" }}>
-              Dr. Yalda receives patients by appointment across two Sydney clinics — Balgowlah on Tuesdays, and Paddington Wednesday through Friday.
+              Dr Yalda receives patients by appointment across two Sydney clinics — Paddington and Balgowlah.
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function AppointmentsPage() {
                       </svg>
                       <p style={{ fontSize: "14px", fontFamily: "sans-serif", fontWeight: 300, color: "#666", letterSpacing: "0.05em" }}>{address}</p>
                     </div>
-                    <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 300, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>{hours}</p>
+                    {hours && <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 300, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>{hours}</p>}
                   </div>
 
                   {/* Right — book button */}

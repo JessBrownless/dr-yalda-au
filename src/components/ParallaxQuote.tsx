@@ -61,7 +61,7 @@ export default function ParallaxQuote() {
           className="font-normal leading-[1.3]"
           style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.25rem, 4vw, 4.5rem)", fontStyle: "italic", letterSpacing: "0", color: "#F4F1EE", maxWidth: "22ch" }}
         >
-          Medicine is an art. Every face tells a story — my role is simply to help it shine.
+          Every face is different. The aim is not to alter, but to treat with care, balance, and intention.
         </p>
         <cite
           data-aos="fade"
