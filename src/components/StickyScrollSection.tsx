@@ -75,7 +75,8 @@ export default function StickyScrollSection() {
             <img
               src={item.image}
               alt={item.title}
-              className={`absolute inset-0 w-full h-full object-cover ${i === 1 ? "object-top" : "object-center"}`}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: i === 0 ? "center 15%" : "center" }}
             />
 
             <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.5)" }} />
