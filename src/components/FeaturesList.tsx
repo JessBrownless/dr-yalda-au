@@ -53,31 +53,31 @@ export default function FeaturesList() {
 
   return (
     <>
-      <div className="flex flex-col divide-y divide-neutral-800">
+      <div className="flex flex-col divide-y divide-neutral-200">
         {visible.map(({ outlet, type, title, year, href }) => (
           <a
             key={title}
             href={href}
-            className="group py-8 grid grid-cols-12 gap-4 md:gap-8 items-center hover:bg-white/5 transition-colors duration-300 -mx-4 px-4"
+            className="group py-8 grid grid-cols-12 gap-4 md:gap-8 items-center hover:bg-black/[0.03] transition-colors duration-300 -mx-4 px-4"
           >
             <div className="col-span-12 md:col-span-3 flex flex-col gap-1">
-              <p className="text-white text-sm font-normal" style={{ fontFamily: "'Heading', serif" }}>
+              <p className="text-brand-black text-sm font-normal" style={{ fontFamily: "'Heading', serif" }}>
                 {outlet}
               </p>
-              <p className="text-neutral-600 text-[9px] font-light tracking-[0.3em] uppercase">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase">
                 {type}
               </p>
             </div>
             <div className="col-span-10 md:col-span-7">
-              <p className="text-neutral-400 text-base font-light leading-snug group-hover:text-white transition-colors duration-300">
+              <p className="text-neutral-600 text-base font-light leading-snug group-hover:text-brand-black transition-colors duration-300">
                 {title}
               </p>
             </div>
             <div className="col-span-2 flex items-center justify-end gap-4">
-              <span className="text-neutral-600 text-[10px] font-light tracking-[0.2em]">
+              <span className="text-neutral-500 text-[10px] font-light tracking-[0.2em]">
                 {year}
               </span>
-              <span className="text-neutral-700 text-sm group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+              <span className="text-neutral-400 text-sm group-hover:text-brand-black group-hover:translate-x-1 transition-all duration-300">
                 →
               </span>
             </div>
@@ -88,7 +88,7 @@ export default function FeaturesList() {
       <div className="mt-10">
         <button
           onClick={() => setExpanded(!expanded)}
-          className="px-10 py-3 border border-neutral-700 text-neutral-400 text-[9px] font-light tracking-[0.4em] uppercase hover:border-white hover:text-white transition-colors duration-300"
+          className="px-10 py-3 border border-neutral-300 text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase hover:border-brand-black hover:text-brand-black transition-colors duration-300"
         >
           {expanded ? "See Less" : "See All"}
         </button>

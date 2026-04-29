@@ -1,5 +1,6 @@
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
+import MediaTabs from "@/components/MediaTabs";
 
 const socials = [
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
@@ -14,14 +15,9 @@ export default function MediaPage() {
       {/* ─── HERO — 50/50 image background with centered text ──── */}
       <section className="relative overflow-hidden" style={{ marginTop: "-72px" }}>
 
-        {/* 50/50 image background — side-by-side on desktop, stacked on mobile */}
-        <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2">
-          <div className="relative overflow-hidden">
-            <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
-          </div>
-          <div className="relative overflow-hidden">
-            <img src="/assets/big-scroll-01.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
-          </div>
+        {/* Full-width image background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
         </div>
 
         {/* Dark overlays — base dim + strong top fade-in + softer top fade for nav legibility + bottom fade for transition */}
@@ -30,8 +26,8 @@ export default function MediaPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)" }} />
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)" }} />
 
-        {/* Centered text */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6" style={{ minHeight: "90vh", paddingTop: "120px", paddingBottom: "80px" }}>
+        {/* Bottom-left text — aligned like services hero */}
+        <div className="relative z-10 flex flex-col justify-end items-start text-left pg-container" style={{ minHeight: "90vh", paddingTop: "120px", paddingBottom: "80px" }}>
           <p className="text-white/80 font-light uppercase mb-7" style={{ fontSize: "10px", letterSpacing: "0.5em" }}>
             Media
           </p>
@@ -44,14 +40,16 @@ export default function MediaPage() {
           <p className="text-white/85 font-light leading-[1.9] text-base mt-7 max-w-[42ch]" style={{ fontFamily: "'Heading', serif" }}>
             Expert commentary, brand collaborations, and broadcast features — grounded in honest, evidence-based care.
           </p>
-          <a
-            href="#features"
-            className="border border-white/80 text-white/90 font-normal uppercase mt-9 px-7 py-3.5 transition-all duration-300 hover:bg-white hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
-            style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
-          >
-            View features
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </a>
+          {/* Brand logos — overlaid on hero, white. Run off the right edge on mobile */}
+          <div className="flex items-center gap-x-7 md:gap-x-10 mt-14 md:mt-16 flex-nowrap md:flex-wrap md:gap-y-4 -mr-[clamp(2rem,4vw,2.5rem)] md:mr-0">
+            <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
+            <img src="/assets/logo-no7.svg" alt="No7" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
+            <span className="text-white/75 font-light flex-shrink-0 whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 0.95rem)", letterSpacing: "0.2em" }}>
+              MEDIK8
+            </span>
+            <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
+            <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
+          </div>
         </div>
 
         <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />
@@ -71,7 +69,7 @@ export default function MediaPage() {
                 </p>
                 <h2
                   className="text-brand-black font-normal leading-[1.05]"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", textTransform: "uppercase" }}
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3.5vw, 3rem)", textTransform: "uppercase" }}
                 >
                   A Trusted Voice<br />In Cosmetic<br /><em>medicine.</em>
                 </h2>
@@ -93,22 +91,28 @@ export default function MediaPage() {
 
             </div>
 
-            {/* Right — Collaborations */}
-            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-8 md:pt-1" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            {/* Right — Media contact */}
+            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-6 md:pt-1" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
-                Collaborations
+                Media enquiries
               </p>
-              <div className="flex flex-col gap-7 items-start">
-                <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-5 opacity-70" style={{ filter: "brightness(0)" }} />
-                <img src="/assets/logo-no7.svg" alt="No7" className="h-5 opacity-70" style={{ filter: "brightness(0)" }} />
-                <span
-                  className="text-brand-black font-light opacity-70 leading-none"
-                  style={{ fontFamily: "sans-serif", fontSize: "clamp(0.95rem, 1.3vw, 1.1rem)", letterSpacing: "0.2em" }}
+              <p className="text-neutral-600 text-base font-light leading-relaxed" style={{ fontFamily: "'Heading', serif" }}>
+                For interviews, features, and brand collaborations, please reach out to Dr. Yalda&apos;s PR manager.
+              </p>
+              <div className="flex flex-col gap-1.5">
+                <p className="text-brand-black font-normal leading-tight" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.3vw, 1.15rem)" }}>
+                  [PR Manager Name]
+                </p>
+                <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase">
+                  Public Relations
+                </p>
+                <a
+                  href="mailto:press@dryalda.com.au"
+                  className="text-brand-black font-light underline-offset-4 hover:underline mt-2"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "0.95rem" }}
                 >
-                  MEDIK8
-                </span>
-                <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-5 opacity-70" style={{ filter: "brightness(0)" }} />
-                <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-5 opacity-70" style={{ filter: "brightness(0)" }} />
+                  press@dryalda.com.au
+                </a>
               </div>
             </div>
 
@@ -128,7 +132,7 @@ export default function MediaPage() {
             {/* Left — image */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
               <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]">
-                <img src="/assets/IMG_4905.JPG" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+                <img src="/assets/IMG_0016.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </div>
             </div>
 
@@ -177,126 +181,44 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Press features list */}
-      <section className="bg-[#232121] py-24 md:py-32" id="features">
+      {/* Latest appearances gallery */}
+      <section className="bg-cream py-24 md:py-32">
         <div className="pg-container">
-
-          <p className="text-neutral-600 text-[9px] font-light tracking-[0.5em] uppercase mb-16">
-            Features &amp; Appearances
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10 md:mb-14">
+            Latest appearances
           </p>
 
-          <FeaturesList />
-
-        </div>
-      </section>
-
-
-
-      {/* TestimonialCarousel removed */}
-
-      {/* Podcast section */}
-      <section className="bg-[#232121] overflow-hidden" style={{ paddingTop: "120px" }}>
-        <div className="pg-container">
-          <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
-
-            {/* Left — text */}
-            <div className="col-span-12 md:col-span-6 flex flex-col gap-8 pt-4">
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
-                Podcast appearances
-              </p>
-              <h2
-                className="text-white font-normal leading-tight"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", textTransform: "uppercase" }}
-              >
-                Listen To<br /><em>dr. yalda.</em>
-              </h2>
-              <div className="flex flex-col divide-y divide-neutral-800">
-                {[
-                  { show: "The Glow Up Podcast", episode: "The truth about filler — what no one tells you", duration: "42 min" },
-                  { show: "Skin Deep with Sarah", episode: "Evidence-based aesthetics and why it matters", duration: "35 min" },
-                  { show: "The Beauty Edit", episode: "Natural results: redefining cosmetic medicine", duration: "28 min" },
-                ].map(({ show, episode, duration }, i) => (
-                  <div key={i} className="group flex items-start justify-between gap-6 py-5 cursor-pointer">
-                    <div className="flex items-start gap-4">
-                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center group-hover:border-white transition-colors duration-300">
-                        <span className="text-neutral-500 group-hover:text-white transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
-                      </button>
-                      <div className="flex flex-col gap-1">
-                        <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase">{show}</p>
-                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-white transition-colors duration-300" style={{ fontFamily: "'Heading', serif" }}>{episode}</p>
-                      </div>
-                    </div>
-                    <span className="flex-shrink-0 text-neutral-600 text-[10px] font-light tracking-[0.2em] mt-1">{duration}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — phone mockup, crops at bottom */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 flex justify-center">
+          <div className="grid grid-cols-12 gap-6 md:gap-8">
+            {[
+              { src: "/assets/IMG_4902.JPG", caption: "Caudalie launch panel, Sydney", year: "2024", aspect: "16/10", colSpan: "md:col-span-7" },
+              { src: "/assets/IMG_4905.JPG", caption: "Body + Soul magazine feature", year: "2024", aspect: "3/4", colSpan: "md:col-span-5" },
+              { src: "/assets/IMG_4905.JPG", caption: "No7 brand campaign shoot", year: "2023", aspect: "3/4", colSpan: "md:col-span-5" },
+              { src: "/assets/IMG_4902.JPG", caption: "Mamamia podcast appearance", year: "2023", aspect: "16/10", colSpan: "md:col-span-7" },
+            ].map(({ src, caption, year, aspect, colSpan }, i) => (
               <div
-                className="phone-mockup-height"
-                style={{
-                  width: 300,
-                  background: "#111",
-                  borderRadius: 48,
-                  padding: 12,
-                  boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04)",
-                  position: "relative",
-                  marginBottom: "-120px",
-                }}
+                key={i}
+                className={`col-span-12 ${colSpan} flex flex-col gap-4`}
+                data-aos="fade"
+                data-aos-delay={i * 100}
+                data-aos-duration="1000"
               >
-                {/* Notch */}
-                <div style={{ width: 110, height: 28, background: "#111", borderRadius: "0 0 18px 18px", position: "absolute", top: 12, left: "50%", transform: "translateX(-50%)", zIndex: 2 }} />
-
-                {/* Screen */}
-                <div style={{ background: "#1C1B1A", borderRadius: 32, overflow: "hidden", paddingBottom: 24 }}>
-
-                  {/* Artwork */}
-                  <div className="phone-artwork-ratio" style={{ position: "relative", width: "100%" }}>
-                    <img
-                      src="/assets/IMG_0028.avif"
-                      alt="Podcast episode"
-                      style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
-                    />
-                    {/* Gradient over artwork */}
-                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, #1C1B1A 100%)" }} />
-                  </div>
-
-                  {/* Player UI */}
-                  <div style={{ padding: "0 20px" }}>
-                    {/* Show + episode */}
-                    <p style={{ color: "#525252", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>The Glow Up Podcast</p>
-                    <p style={{ color: "#fff", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>The truth about filler — what no one tells you</p>
-
-                    {/* Progress bar */}
-                    <div style={{ height: 2, background: "#333", borderRadius: 2, marginBottom: 6, position: "relative" }}>
-                      <div style={{ height: "100%", width: "38%", background: "#fff", borderRadius: 2 }} />
-                      <div style={{ width: 8, height: 8, background: "#fff", borderRadius: "50%", position: "absolute", top: -3, left: "38%", transform: "translateX(-50%)" }} />
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
-                      <span style={{ color: "#525252", fontSize: 9 }}>16:04</span>
-                      <span style={{ color: "#525252", fontSize: 9 }}>42:18</span>
-                    </div>
-
-                    {/* Controls */}
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 28 }}>
-                      <span style={{ color: "#525252", fontSize: 16 }}>⏮</span>
-                      <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ color: "#111", fontSize: 14, paddingLeft: 3 }}>▶</span>
-                      </div>
-                      <span style={{ color: "#525252", fontSize: 16 }}>⏭</span>
-                    </div>
-                  </div>
-
+                <div className="overflow-hidden" style={{ aspectRatio: aspect }}>
+                  <img src={src} alt={caption} className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]" />
                 </div>
+                <p className="text-brand-black text-base font-normal leading-snug" style={{ fontFamily: "'Heading', serif" }}>
+                  {caption}
+                </p>
+                <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase -mt-1">
+                  {year}
+                </p>
               </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Media tabs — Listen / Read */}
+      <MediaTabs />
 
     </main>
   );
