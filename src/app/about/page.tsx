@@ -29,7 +29,7 @@ export default function AboutPage() {
             <div className="hidden md:block" style={{ width: "47%" }}>
               <div className="overflow-hidden" style={{ aspectRatio: "2/3" }}>
                 <img
-                  src="/assets/yalda-1.avif"
+                  src="/assets/Yalda-1.avif"
                   alt="Dr. Yalda Jamali"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "50% 30%" }}
@@ -41,7 +41,7 @@ export default function AboutPage() {
             <div className="md:hidden">
               <div className="overflow-hidden" style={{ aspectRatio: "1/1" }}>
                 <img
-                  src="/assets/yalda-1.avif"
+                  src="/assets/Yalda-1.avif"
                   alt="Dr. Yalda Jamali"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "50% 30%" }}
