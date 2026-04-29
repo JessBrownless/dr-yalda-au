@@ -1,3 +1,4 @@
+import ParallaxQuote from "@/components/ParallaxQuote";
 
 export default function AboutPage() {
   return (
@@ -6,7 +7,7 @@ export default function AboutPage() {
       <section className="relative" style={{ marginTop: "-72px" }}>
 
         {/* Layer 1: Background image — full bleed behind nav */}
-        <div className="relative overflow-hidden h-[20vh] md:h-[50vh]">
+        <div className="relative overflow-hidden h-[28vh] md:h-[50vh]">
           <img src="/assets/chairs-hands.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
           {/* Base darkening */}
           <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.65)", zIndex: 1 }} />
@@ -18,7 +19,7 @@ export default function AboutPage() {
         </div>
 
         {/* Parchment background for content below hero */}
-        <div className="absolute left-0 right-0 bottom-0 bg-parchment top-[20vh] md:top-[50vh]" />
+        <div className="absolute left-0 right-0 bottom-0 bg-parchment top-[28vh] md:top-[50vh]" />
 
         {/* Layer 2: Overlayed portrait + text container, pulls up over the bg image */}
         <div className="pg-container relative z-10 -mt-[10vh] md:-mt-[35vh]" style={{ maxWidth: "1280px" }}>
@@ -28,10 +29,10 @@ export default function AboutPage() {
             <div className="hidden md:block" style={{ width: "47%" }}>
               <div className="overflow-hidden" style={{ aspectRatio: "2/3" }}>
                 <img
-                  src="/assets/IMG_0008.avif"
+                  src="/assets/yalda-1.avif"
                   alt="Dr. Yalda Jamali"
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: "50% 10%", transform: "scale(1.3) translateY(-20%)" }}
+                  style={{ objectPosition: "50% 30%" }}
                 />
               </div>
             </div>
@@ -40,10 +41,10 @@ export default function AboutPage() {
             <div className="md:hidden">
               <div className="overflow-hidden" style={{ aspectRatio: "1/1" }}>
                 <img
-                  src="/assets/IMG_0008.avif"
+                  src="/assets/yalda-1.avif"
                   alt="Dr. Yalda Jamali"
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: "50% 65%", transform: "scale(1.3)" }}
+                  style={{ objectPosition: "50% 30%" }}
                 />
               </div>
             </div>
@@ -62,7 +63,7 @@ export default function AboutPage() {
                   className="text-brand-black font-normal leading-[1.05]"
                   style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 4rem)", letterSpacing: "0" }}
                 >
-                  My journey began in London.
+                  My journey began over 10 years ago, in London.
                 </h2>
 
                 <p className="text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif" }}>
@@ -72,17 +73,17 @@ export default function AboutPage() {
             </div>
 
             {/* Mobile text */}
-            <div className="md:hidden flex flex-col gap-8 pt-8 pb-0">
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+            <div className="md:hidden flex flex-col pt-16 pb-0">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-5">
                 The story so far
               </p>
               <h2
                 className="text-brand-black font-normal leading-[1.05]"
                 style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.875rem, 6vw, 3rem)", letterSpacing: "0" }}
               >
-                My journey began in London.
+                My journey began over 10 years ago, in London.
               </h2>
-              <p className="text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif" }}>
+              <p className="text-neutral-700 font-light leading-[1.9] text-sm md:text-base mt-5" style={{ fontFamily: "'Heading', serif" }}>
                 With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
               </p>
             </div>
@@ -93,7 +94,7 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials — stylised on desktop, flows like next paragraph on mobile */}
-      <section className="bg-parchment pt-0 pb-12 md:py-32">
+      <section className="bg-parchment pt-6 pb-12 md:py-32">
         <div className="pg-container md:max-w-[820px] md:mx-auto md:text-center">
           <p
             className="text-neutral-700 font-light leading-[1.9] text-sm md:text-brand-black md:leading-[1.35] md:text-2xl lg:text-[1.75rem]"
@@ -104,8 +105,14 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Full-width parallax quote */}
+      <ParallaxQuote
+        image="/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif"
+        quote={"“Medicine is an art. Every face tells a story — my role is simply to help it shine.”"}
+      />
+
       {/* Stats */}
-      <section className="bg-parchment pb-16 md:pb-24">
+      <section className="bg-parchment py-16 md:py-24">
         <div className="pg-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8">
             {[
@@ -127,63 +134,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Full-width parallax quote */}
-      <section
-        className="relative flex items-center justify-center py-24 md:py-32 xl:py-52"
-        style={{
-          minHeight: "clamp(320px, 45vw, 620px)",
-          backgroundImage: "url('/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif')",
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-brand-black/40" />
-        <blockquote className="relative z-10 pg-container w-full flex flex-col items-start gap-6">
-          <span
-            className="text-white/50 font-normal leading-none select-none"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(5rem, 10vw, 9rem)", lineHeight: 1 }}
-            aria-hidden="true"
-          >
-            &ldquo;
-          </span>
-          <p
-            className="text-white font-normal leading-[1.3]"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.25rem, 4vw, 4.5rem)", fontStyle: "italic", letterSpacing: "0" }}
-          >
-            &ldquo;Medicine is an art. Every face tells a story — my role is simply to help it shine.&rdquo;
-          </p>
-          <cite
-            className="text-white/60 font-normal not-italic uppercase"
-            style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "sans-serif" }}
-          >
-            Dr. Yalda Jamali
-          </cite>
-        </blockquote>
-      </section>
-
       {/* Values — quote layout */}
-      <section className="bg-parchment py-24 md:py-48">
+      <section className="bg-brand-black py-16 md:py-32">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
             <div className="hidden md:block col-span-3 pt-9">
-              <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase">Values</p>
+              <p className="text-neutral-300 text-[10px] font-light tracking-[0.45em] uppercase">Values</p>
             </div>
             <div className="col-span-12 md:col-span-8 md:col-start-5 flex flex-col">
-              <p className="md:hidden text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-6">Values</p>
+              <p className="md:hidden text-neutral-300 text-[10px] font-light tracking-[0.45em] uppercase mb-6">Values</p>
               {[
                 { num: "01", title: "Honesty", body: "Every consultation is grounded in transparency. Dr. Yalda will always tell you what is and isn't right for you — even if that means recommending nothing at all." },
                 { num: "02", title: "Precision", body: "A meticulous, considered approach to every treatment. Results are refined, never overdone — shaped by anatomy, not trend." },
                 { num: "03", title: "Evidence", body: "Every recommendation is backed by clinical evidence and ongoing education. No hype, no shortcuts — just what the science supports." },
                 { num: "04", title: "Trust", body: "Long-term relationships built on consistent, honest care. The goal is always to earn your confidence through results that feel like you." },
               ].map(({ num, title, body }) => (
-                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-300 last:border-b-0 first:border-t first:border-neutral-300">
-                  <span className="text-neutral-400 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-700 last:border-b-0 first:border-t first:border-neutral-700">
+                  <span className="text-neutral-300 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
                   <div className="flex flex-col gap-3">
-                    <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)", letterSpacing: "0" }}>
+                    <p className="text-brand-white font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)", letterSpacing: "0" }}>
                       {title}
                     </p>
-                    <p className="text-neutral-600 font-light leading-relaxed text-base md:text-sm" style={{ fontFamily: "'Heading', serif" }}>{body}</p>
+                    <p className="text-neutral-400 font-light leading-relaxed text-base md:text-sm" style={{ fontFamily: "'Heading', serif" }}>{body}</p>
                   </div>
                 </div>
               ))}
@@ -197,8 +169,8 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-parchment md:min-h-[clamp(500px,68vh,820px)]">
 
         {/* Left image — square, anchored to top */}
-        <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "54%", height: "54vw" }}>
-          <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" />
+        <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "46%", height: "62vw" }}>
+          <img src="/assets/dr-yalda-treatment-02.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
         </div>
 
         {/* Right image — rectangle, starts lower, bleeds past bottom */}
@@ -238,7 +210,7 @@ export default function AboutPage() {
           <div className="aspect-square overflow-hidden">
             <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
           </div>
-          <div className="flex flex-col gap-6 px-8 py-14" style={{ background: "#E5DCD7", color: "#2D2C2A" }}>
+          <div className="flex flex-col gap-6 px-8 py-14" style={{ background: "#F6F6F3", color: "#2D2C2A" }}>
             <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Feeling overwhelmed?</p>
             <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 6vw, 2.5rem)", letterSpacing: "0" }}>
               Complimentary 15-minute online consultation

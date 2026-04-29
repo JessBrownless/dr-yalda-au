@@ -2,7 +2,19 @@
 
 import { useEffect, useRef } from "react";
 
-export default function ParallaxQuote() {
+interface ParallaxQuoteProps {
+  image?: string;
+  imagePosition?: string;
+  quote?: string;
+  citation?: string;
+}
+
+export default function ParallaxQuote({
+  image = "/assets/IMG_0028.avif",
+  imagePosition = "center 20%",
+  quote = "Every face is different. The aim is not to alter, but to treat with care, balance, and intention.",
+  citation = "Dr. Yalda Jamali",
+}: ParallaxQuoteProps = {}) {
   const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,9 +46,9 @@ export default function ParallaxQuote() {
         ref={imgRef}
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/assets/IMG_0028.avif')",
+          backgroundImage: `url('${image}')`,
           backgroundSize: "cover",
-          backgroundPosition: "center 20%",
+          backgroundPosition: imagePosition,
           top: "-15%",
           bottom: "-15%",
           willChange: "transform",
@@ -61,7 +73,7 @@ export default function ParallaxQuote() {
           className="font-normal leading-[1.3]"
           style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.25rem, 4vw, 4.5rem)", fontStyle: "italic", letterSpacing: "0", color: "#F4F1EE", maxWidth: "22ch" }}
         >
-          Every face is different. The aim is not to alter, but to treat with care, balance, and intention.
+          {quote}
         </p>
         <cite
           data-aos="fade"
@@ -70,7 +82,7 @@ export default function ParallaxQuote() {
           className="not-italic font-normal uppercase"
           style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.6)" }}
         >
-          Dr. Yalda Jamali
+          {citation}
         </cite>
       </blockquote>
     </section>
