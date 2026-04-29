@@ -1,6 +1,6 @@
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
-import MediaTabs from "@/components/MediaTabs";
+import WorkTogetherSlideshow from "@/components/WorkTogetherSlideshow";
 
 const socials = [
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
@@ -56,7 +56,7 @@ export default function MediaPage() {
       </section>
 
       {/* Beyond the clinic */}
-      <section className="bg-cream py-24 md:py-36 relative">
+      <section className="bg-cream py-24 md:py-32 relative">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 
@@ -121,7 +121,7 @@ export default function MediaPage() {
       </section>
 
       {/* How we can work together */}
-      <section className="bg-cream overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
+      <section className="bg-cream overflow-hidden relative py-24 md:py-32 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Coloured strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
@@ -129,11 +129,9 @@ export default function MediaPage() {
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-8 items-center">
 
-            {/* Left — image */}
+            {/* Left — image slideshow */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]">
-                <img src="/assets/IMG_0016.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
-              </div>
+              <WorkTogetherSlideshow />
             </div>
 
             {/* Right — numbered list */}
@@ -217,8 +215,126 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Media tabs — Listen / Read */}
-      <MediaTabs />
+      {/* Press features list */}
+      <section className="bg-parchment py-24 md:py-32" id="features">
+        <div className="pg-container">
+
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-16">
+            Media features
+          </p>
+
+          <FeaturesList />
+
+        </div>
+      </section>
+
+
+
+      {/* TestimonialCarousel removed */}
+
+      {/* Podcast section */}
+      <section className="bg-[#2D2925] overflow-hidden" style={{ paddingTop: "120px" }}>
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
+
+            {/* Left — text */}
+            <div className="col-span-12 md:col-span-6 flex flex-col gap-8 pt-4">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+                Podcast appearances
+              </p>
+              <h2
+                className="text-white font-normal leading-tight"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", textTransform: "uppercase" }}
+              >
+                Listen To<br /><em>dr. yalda.</em>
+              </h2>
+              <div className="flex flex-col divide-y divide-neutral-800">
+                {[
+                  { show: "The Glow Up Podcast", episode: "The truth about filler — what no one tells you", duration: "42 min" },
+                  { show: "Skin Deep with Sarah", episode: "Evidence-based aesthetics and why it matters", duration: "35 min" },
+                  { show: "The Beauty Edit", episode: "Natural results: redefining cosmetic medicine", duration: "28 min" },
+                ].map(({ show, episode, duration }, i) => (
+                  <div key={i} className="group flex items-start justify-between gap-6 py-5 cursor-pointer">
+                    <div className="flex items-start gap-4">
+                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center group-hover:border-white transition-colors duration-300">
+                        <span className="text-neutral-500 group-hover:text-white transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
+                      </button>
+                      <div className="flex flex-col gap-1">
+                        <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase">{show}</p>
+                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-white transition-colors duration-300" style={{ fontFamily: "'Heading', serif" }}>{episode}</p>
+                      </div>
+                    </div>
+                    <span className="flex-shrink-0 text-neutral-600 text-[10px] font-light tracking-[0.2em] mt-1">{duration}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — phone mockup, crops at bottom */}
+            <div className="col-span-12 md:col-span-5 md:col-start-8 flex justify-center">
+              <div
+                className="phone-mockup-height"
+                style={{
+                  width: 300,
+                  background: "#111",
+                  borderRadius: 48,
+                  padding: 12,
+                  boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04)",
+                  position: "relative",
+                  marginBottom: "-120px",
+                }}
+              >
+                {/* Notch */}
+                <div style={{ width: 110, height: 28, background: "#111", borderRadius: "0 0 18px 18px", position: "absolute", top: 12, left: "50%", transform: "translateX(-50%)", zIndex: 2 }} />
+
+                {/* Screen */}
+                <div style={{ background: "#1C1B1A", borderRadius: 32, overflow: "hidden", paddingBottom: 24 }}>
+
+                  {/* Artwork */}
+                  <div className="phone-artwork-ratio" style={{ position: "relative", width: "100%" }}>
+                    <img
+                      src="/assets/IMG_0028.avif"
+                      alt="Podcast episode"
+                      style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+                    />
+                    {/* Gradient over artwork */}
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, #1C1B1A 100%)" }} />
+                  </div>
+
+                  {/* Player UI */}
+                  <div style={{ padding: "0 20px" }}>
+                    {/* Show + episode */}
+                    <p style={{ color: "#525252", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>The Glow Up Podcast</p>
+                    <p style={{ color: "#fff", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>The truth about filler — what no one tells you</p>
+
+                    {/* Progress bar */}
+                    <div style={{ height: 2, background: "#333", borderRadius: 2, marginBottom: 6, position: "relative" }}>
+                      <div style={{ height: "100%", width: "38%", background: "#fff", borderRadius: 2 }} />
+                      <div style={{ width: 8, height: 8, background: "#fff", borderRadius: "50%", position: "absolute", top: -3, left: "38%", transform: "translateX(-50%)" }} />
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
+                      <span style={{ color: "#525252", fontSize: 9 }}>16:04</span>
+                      <span style={{ color: "#525252", fontSize: 9 }}>42:18</span>
+                    </div>
+
+                    {/* Controls */}
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 28 }}>
+                      <span style={{ color: "#525252", fontSize: 16 }}>⏮</span>
+                      <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <span style={{ color: "#111", fontSize: 14, paddingLeft: 3 }}>▶</span>
+                      </div>
+                      <span style={{ color: "#525252", fontSize: 16 }}>⏭</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
 
     </main>
   );
