@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   title: "Dr. Yalda",
   description: "",
   themeColor: "#EEEDE7",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

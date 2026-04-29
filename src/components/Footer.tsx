@@ -8,7 +8,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Media", href: "/media" },
-  { label: "Appointments", href: "/appointments" },
+  { label: "Book now", href: "/appointments" },
 ];
 
 const clinics = [
@@ -98,19 +98,19 @@ export default function Footer() {
       {/* Main footer body */}
       <div className="border-t border-neutral-700">
         {/* Logo — full bleed, mobile only */}
-        <div className="md:hidden pt-8 pb-0 border-b border-neutral-800" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
-          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "200px", opacity: 0.9 }} />
+        <div className="md:hidden pt-8 pb-2 pg-container">
+          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "200px", opacity: 0.9, marginLeft: "-28px" }} />
         </div>
-        <div className="pg-container pt-8 pb-12 md:pt-16 md:pb-20">
+        <div className="pg-container pt-6 pb-12 md:pt-16 md:pb-20">
           <div className="grid grid-cols-12 gap-8">
 
             {/* Logo — desktop first column */}
-            <div className="hidden md:flex col-span-4 flex-col justify-start items-start">
+            <div className="hidden md:flex col-span-4 flex-col justify-start items-start" style={{ marginLeft: "-32px" }}>
               <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={64} className="w-auto" style={{ height: "64px", opacity: 0.9 }} />
             </div>
 
             {/* Nav links */}
-            <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4">
+            <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4 border-t border-neutral-800 pt-8">
               <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-1">Navigate</p>
               {links.map(({ label, href }) => (
                 <Link key={href} href={href} className="text-neutral-300 text-sm font-light hover:text-white transition-colors duration-300">{label}</Link>
@@ -118,7 +118,7 @@ export default function Footer() {
             </div>
 
             {/* Clinics */}
-            <div className="col-span-6 md:col-span-4 md:col-start-9 flex flex-col gap-5">
+            <div className="col-span-6 md:col-span-4 md:col-start-9 flex flex-col gap-5 border-t md:border-l border-neutral-800 md:pl-8 pt-8">
               <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-1">Clinic Locations</p>
               {clinics.map(({ name, address }) => (
                 <div key={name} className="flex flex-col gap-1">

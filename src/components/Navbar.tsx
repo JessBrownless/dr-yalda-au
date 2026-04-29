@@ -78,19 +78,15 @@ export default function Navbar() {
   }, [pathname]);
 
   // White text on dark-hero pages (home + media); dark text on all other pages
-  const darkHeroPages = ["/", "/media", "/appointments"];
+  const darkHeroPages = ["/", "/about", "/media", "/appointments"];
   const dark = !open && !overStickyScroll && !overParallaxQuote && (darkHeroPages.includes(pathname) ? !overDark : true);
-
-  const isAbout = pathname === "/about";
 
   return (
     <>
       <nav
         className="sticky top-0 z-[60] transition-colors duration-500"
         style={
-          isAbout
-            ? { backgroundColor: navHovered ? "transparent" : "#EEEDE7" }
-            : !open && !scrolled && pathname === "/media"
+          !open && !scrolled && pathname === "/media"
             ? { backgroundColor: "#121110" }
             : {}
         }

@@ -11,6 +11,74 @@ export default function UnusedComponentsPage() {
   return (
     <main>
 
+      {/* ─── ABOUT HERO + OVERLAY (duplicate for layout experiments) ─────── */}
+      <div className="relative overflow-hidden" style={{ height: "30vh", marginTop: "-72px" }}>
+        <img src="/assets/chairs-hands.jpg" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" style={{ filter: "grayscale(100%)" }} />
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)" }} />
+      </div>
+
+      <section className="relative bg-parchment">
+        <div className="pg-container" style={{ maxWidth: "1280px" }}>
+          <div className="grid grid-cols-12 gap-6 md:gap-8">
+
+            <div className="col-span-12 md:col-span-6" style={{ marginTop: "-14vh" }}>
+              <div className="overflow-hidden relative z-10" style={{ aspectRatio: "3/4" }}>
+                <img
+                  src="/assets/IMG_0008.avif"
+                  alt="Dr. Yalda Jamali"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "50% 10%", transform: "scale(1.3) translateY(-20%)" }}
+                />
+              </div>
+            </div>
+
+            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8 pt-8 md:pt-32 pb-20 md:pb-36">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+                The story so far
+              </p>
+
+              <h2
+                className="text-brand-black font-normal leading-[1.1]"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.2vw, 2.25rem)", letterSpacing: "0", maxWidth: "22ch" }}
+              >
+                My journey began in London, working alongside world-renowned specialists.
+              </h2>
+
+              <p className="text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif" }}>
+                With 10 years of experience as a cosmetic doctor, my journey began in London, where I spent the first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin.
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── EDITORIAL INTRO (moved from about page) ──────────────────────── */}
+      <section className="bg-brand-white pt-20 pb-20 md:pt-36 md:pb-44">
+        <div className="pg-container flex flex-col gap-10 md:gap-14 items-start text-left">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+            The story so far
+          </p>
+          <h2
+            className="text-brand-black font-normal leading-[1.1]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0", maxWidth: "22ch" }}
+          >
+            My journey began in London, working alongside world-renowned specialists.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
+              With 10 years of experience as a cosmetic doctor, my journey began in London, where I spent the first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin.
+            </p>
+            <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
+              I am also a Fellow of the Australasian College of Cosmetic Surgery and Medicine (ACCSM), have contributed to publications within the field, and continue to be involved in practitioner education as part of the Merz Aesthetics faculty. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ─── MARQUEE (moved from homepage) ─────────────────────────────────── */}
       <div className="bg-parchment pt-24 pb-12 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">

@@ -1,64 +1,120 @@
-import TwoPanelHero from "@/components/TwoPanelHero";
-import HeroExperiment from "@/components/HeroExperiment";
 
 export default function AboutPage() {
   return (
-    <main>
-      {/* Editorial intro */}
-      <section className="bg-brand-white pt-20 pb-20 md:pt-36 md:pb-44">
-        <div className="pg-container flex flex-col gap-10 md:gap-14 items-start text-left">
+    <main className="bg-parchment">
+      {/* Florence-style hero — full-width bg, overlayed portrait, overlayed text */}
+      <section className="relative" style={{ marginTop: "-72px" }}>
 
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
-            The story so far
-          </p>
+        {/* Layer 1: Background image — full bleed behind nav */}
+        <div className="relative overflow-hidden h-[20vh] md:h-[50vh]">
+          <img src="/assets/chairs-hands.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
+          {/* Base darkening */}
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.65)", zIndex: 1 }} />
+          {/* Top vignette */}
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)", zIndex: 2 }} />
+          {/* Bottom vignette */}
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)", zIndex: 2 }} />
+          <div id="hero-end" aria-hidden="true" style={{ position: "absolute", bottom: 0, height: 0, pointerEvents: "none" }} />
+        </div>
 
-          <h2
-            className="text-brand-black font-normal leading-[1.1]"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.5rem)", letterSpacing: "0", maxWidth: "22ch" }}
-          >
-            My journey began in London, working alongside world-renowned specialists.
-          </h2>
+        {/* Parchment background for content below hero */}
+        <div className="absolute left-0 right-0 bottom-0 bg-parchment top-[20vh] md:top-[50vh]" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
-              With 10 years of experience as a cosmetic doctor, my journey began in London, where I spent the first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin.
-            </p>
-            <p className="text-neutral-700 font-light leading-[1.9] text-base md:text-lg" style={{ fontFamily: "'Heading', serif" }}>
-              I am also a Fellow of the Australasian College of Cosmetic Surgery and Medicine (ACCSM), have contributed to publications within the field, and continue to be involved in practitioner education as part of the Merz Aesthetics faculty. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
-            </p>
+        {/* Layer 2: Overlayed portrait + text container, pulls up over the bg image */}
+        <div className="pg-container relative z-10 -mt-[10vh] md:-mt-[35vh]" style={{ maxWidth: "1280px" }}>
+          <div className="relative">
+
+            {/* Portrait image */}
+            <div className="hidden md:block" style={{ width: "47%" }}>
+              <div className="overflow-hidden" style={{ aspectRatio: "2/3" }}>
+                <img
+                  src="/assets/IMG_0008.avif"
+                  alt="Dr. Yalda Jamali"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "50% 10%", transform: "scale(1.3) translateY(-20%)" }}
+                />
+              </div>
+            </div>
+
+            {/* Mobile image */}
+            <div className="md:hidden">
+              <div className="overflow-hidden" style={{ aspectRatio: "1/1" }}>
+                <img
+                  src="/assets/IMG_0008.avif"
+                  alt="Dr. Yalda Jamali"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "50% 65%", transform: "scale(1.3)" }}
+                />
+              </div>
+            </div>
+
+            {/* Text card — overlaps portrait image */}
+            <div
+              className="hidden md:block absolute z-20"
+              style={{ top: "20%", right: 0, width: "55%" }}
+            >
+              <div className="bg-parchment flex flex-col gap-8 p-12 lg:p-16">
+                <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+                  The story so far
+                </p>
+
+                <h2
+                  className="text-brand-black font-normal leading-[1.05]"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 4rem)", letterSpacing: "0" }}
+                >
+                  My journey began in London.
+                </h2>
+
+                <p className="text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif" }}>
+                  With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
+                </p>
+              </div>
+            </div>
+
+            {/* Mobile text */}
+            <div className="md:hidden flex flex-col gap-8 pt-8 pb-0">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+                The story so far
+              </p>
+              <h2
+                className="text-brand-black font-normal leading-[1.05]"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.875rem, 6vw, 3rem)", letterSpacing: "0" }}
+              >
+                My journey began in London.
+              </h2>
+              <p className="text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif" }}>
+                With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
+              </p>
+            </div>
+
           </div>
+        </div>
 
+      </section>
+
+      {/* Credentials — stylised on desktop, flows like next paragraph on mobile */}
+      <section className="bg-parchment pt-0 pb-12 md:py-32">
+        <div className="pg-container md:max-w-[820px] md:mx-auto md:text-center">
+          <p
+            className="text-neutral-700 font-light leading-[1.9] text-sm md:text-brand-black md:leading-[1.35] md:text-2xl lg:text-[1.75rem]"
+            style={{ fontFamily: "'Heading', serif" }}
+          >
+            I am also a Fellow of the Australasian College of Cosmetic Surgery and Medicine (ACCSM), have contributed to publications within the field, and continue to be involved in practitioner education as part of the Merz Aesthetics faculty.
+          </p>
         </div>
       </section>
 
-      <TwoPanelHero />
-
-      {/* Mobile-only square portrait */}
-      <div className="md:hidden bg-parchment px-8">
-        <div className="aspect-square overflow-hidden">
-          <img src="/assets/Yalda-1.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 20%" }} />
-        </div>
-        <div className="flex flex-col pt-3 pb-1 gap-1">
-          <p className="text-brand-black font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 4vw, 1.2rem)", letterSpacing: "0.05em" }}>
-            Dr. Yalda Jamali
-          </p>
-          <p className="text-neutral-400 font-light" style={{ fontSize: "10px", letterSpacing: "0.2em", fontFamily: "'Heading', serif" }}>
-            MBChB &middot; MSc Derm
-          </p>
-        </div>
-      </div>
-
       {/* Stats */}
-      <section className="bg-parchment py-16 md:py-24">
+      <section className="bg-parchment pb-16 md:pb-24">
         <div className="pg-container">
-          <div className="grid grid-cols-4 divide-x divide-neutral-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8">
             {[
               { stat: "10+", label: "Years in cosmetic medicine" },
               { stat: "MSc", label: "Masters in Dermatology" },
               { stat: "ACCSM", label: "College member" },
               { stat: "2", label: "Locations — Paddington & Balgowlah" },
             ].map(({ stat, label }, i) => (
-              <div key={i} className="flex flex-col gap-2 md:gap-3 px-4 md:px-8 first:pl-0 last:pr-0">
+              <div key={i} className="flex flex-col gap-2 md:gap-3 px-0 md:px-8 md:first:pl-0 md:last:pr-0 py-5 md:py-0">
                 <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3.5vw, 4rem)", letterSpacing: "0.02em" }}>
                   {stat}
                 </p>
@@ -95,7 +151,7 @@ export default function AboutPage() {
             className="text-white font-normal leading-[1.3]"
             style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.25rem, 4vw, 4.5rem)", fontStyle: "italic", letterSpacing: "0" }}
           >
-            "Medicine is an art. Every face tells a story — my role is simply to help it shine."
+            &ldquo;Medicine is an art. Every face tells a story — my role is simply to help it shine.&rdquo;
           </p>
           <cite
             className="text-white/60 font-normal not-italic uppercase"
@@ -121,7 +177,7 @@ export default function AboutPage() {
                 { num: "03", title: "Evidence", body: "Every recommendation is backed by clinical evidence and ongoing education. No hype, no shortcuts — just what the science supports." },
                 { num: "04", title: "Trust", body: "Long-term relationships built on consistent, honest care. The goal is always to earn your confidence through results that feel like you." },
               ].map(({ num, title, body }) => (
-                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-300 first:border-t first:border-neutral-300">
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-300 last:border-b-0 first:border-t first:border-neutral-300">
                   <span className="text-neutral-400 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
                   <div className="flex flex-col gap-3">
                     <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)", letterSpacing: "0" }}>
@@ -137,8 +193,8 @@ export default function AboutPage() {
       </section>
 
       {/* CTA — collage layout */}
-      <div className="bg-parchment py-16 md:py-24">
-      <section className="relative overflow-hidden bg-parchment" style={{ minHeight: "clamp(500px, 68vh, 820px)" }}>
+      <div className="bg-parchment pt-0 pb-0 md:py-24">
+      <section className="relative overflow-hidden bg-parchment md:min-h-[clamp(500px,68vh,820px)]">
 
         {/* Left image — square, anchored to top */}
         <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "54%", height: "54vw" }}>
@@ -166,7 +222,7 @@ export default function AboutPage() {
             Feeling overwhelmed?
           </p>
           <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.8vw, 3.25rem)", letterSpacing: "0" }}>
-            Complimentary 15-minute online consultation
+            Complimentary 15-minute online consultation.
           </h2>
           <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
             Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
@@ -179,10 +235,10 @@ export default function AboutPage() {
 
         {/* Mobile fallback — stacked */}
         <div className="md:hidden flex flex-col">
-          <div className="aspect-[4/3] overflow-hidden">
+          <div className="aspect-square overflow-hidden">
             <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
           </div>
-          <div className="flex flex-col gap-6 p-8" style={{ background: "#F6F2EF", color: "#2D2C2A" }}>
+          <div className="flex flex-col gap-6 px-8 py-14" style={{ background: "#E5DCD7", color: "#2D2C2A" }}>
             <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Feeling overwhelmed?</p>
             <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 6vw, 2.5rem)", letterSpacing: "0" }}>
               Complimentary 15-minute online consultation

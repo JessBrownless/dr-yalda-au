@@ -3,12 +3,22 @@
 import { useEffect, useRef, useState } from "react";
 import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 
-const heroImages = [
+const defaultImages = [
   { src: "/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif", position: "65% 10%" },
   { src: "/assets/IMG_0028.avif", position: "50% 20%" },
 ];
 
-export default function HeroHome() {
+interface HeroHomeProps {
+  images?: { src: string; position: string }[];
+  height?: string;
+  showContent?: boolean;
+  zoom?: number;
+}
+
+export default function HeroHome({ images, height, showContent = true, zoom = 1 }: HeroHomeProps) {
+  const heroImages = images ?? defaultImages;
+  const mobileHeight = height ?? "90dvh";
+  const desktopHeight = height ?? "90vh";
   const imgRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -41,7 +51,7 @@ export default function HeroHome() {
   return (
     <>
       {/* ── MOBILE ── */}
-      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: "90dvh", maxHeight: "90dvh", marginTop: "-80px", animationDelay: "0.1s" }}>
+      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0.1s" }}>
 
         {/* Photos — crossfade */}
         {heroImages.map((img, i) => (
@@ -50,7 +60,7 @@ export default function HeroHome() {
             src={img.src}
             alt={i === 0 ? "Dr. Yalda Jamali" : ""}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
-            style={{ objectPosition: img.position, zIndex: 0, opacity: activeIndex === i ? 1 : 0 }}
+            style={{ objectPosition: img.position, zIndex: 0, opacity: activeIndex === i ? 1 : 0, transform: `scale(${zoom})` }}
           />
         ))}
 
@@ -64,26 +74,30 @@ export default function HeroHome() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)", zIndex: 2 }} />
 
         {/* Centred content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8" style={{ zIndex: 5 }}>
-          <img
-            src="/assets/dr-yalda-logo-long.svg"
-            alt="Dr. Yalda Jamali"
-            style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
-          />
-          <p style={{ fontSize: "14px", fontFamily: "var(--font-lato)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8 }}>
-            Cosmetic doctor, educator, and brand collaborator based in Sydney — combining medical expertise with industry innovation
-          </p>
-        </div>
+        {showContent && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8" style={{ zIndex: 5 }}>
+            <img
+              src="/assets/dr-yalda-logo-long.svg"
+              alt="Dr. Yalda Jamali"
+              style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
+            />
+            <p style={{ fontSize: "14px", fontFamily: "var(--font-lato)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8 }}>
+              Cosmetic doctor, educator, and brand collaborator based in Sydney — combining medical expertise with industry innovation
+            </p>
+          </div>
+        )}
 
         {/* Scroll indicator */}
-        <button
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
-          style={{ zIndex: 5, animationDelay: "1.5s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
-        >
-          <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
-          <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
-        </button>
+        {showContent && (
+          <button
+            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
+            style={{ zIndex: 5, animationDelay: "1.5s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
+          >
+            <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
+            <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
+          </button>
+        )}
 
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
@@ -92,7 +106,7 @@ export default function HeroHome() {
       {/* ── DESKTOP ── */}
       <section
         className="hidden md:block relative overflow-hidden opacity-0 animate-fade-in"
-        style={{ height: "90vh", marginTop: "-72px", animationDelay: "0.1s", animationDuration: "1s" }}
+        style={{ height: desktopHeight, marginTop: "-72px", animationDelay: "0.1s", animationDuration: "1s" }}
       >
         {/* Photos — crossfade, oversized so parallax doesn't show gaps */}
         <div ref={imgRef} className="absolute left-0 right-0" style={{ top: "-10%", height: "120%", zIndex: 0, willChange: "transform" }}>
@@ -102,7 +116,7 @@ export default function HeroHome() {
               src={img.src}
               alt={i === 0 ? "Dr. Yalda Jamali" : ""}
               className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
-              style={{ objectPosition: img.position, opacity: activeIndex === i ? 1 : 0 }}
+              style={{ objectPosition: img.position, opacity: activeIndex === i ? 1 : 0, transform: `scale(${zoom})` }}
             />
           ))}
         </div>
@@ -129,74 +143,80 @@ export default function HeroHome() {
         />
 
         {/* Centred content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-6" style={{ zIndex: 5 }}>
-          <img
-            className="opacity-0 animate-fade-in"
-            src="/assets/dr-yalda-logo-long.svg"
-            alt="Dr. Yalda Jamali"
-            style={{
-              height: "64px",
-              width: "auto",
-              maxWidth: "420px",
-              filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)",
-              opacity: 0,
-              animationDelay: "1s",
-              animationDuration: "1.4s",
-            }}
-          />
-          <p className="opacity-0 animate-fade-in" style={{ fontSize: "17px", fontFamily: "var(--font-lato)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8, maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
-            Cosmetic doctor, speaker, and brand collaborator based in Sydney — combining medical expertise with industry innovation
-          </p>
-        </div>
+        {showContent && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6" style={{ zIndex: 5 }}>
+            <img
+              className="opacity-0 animate-fade-in"
+              src="/assets/dr-yalda-logo-long.svg"
+              alt="Dr. Yalda Jamali"
+              style={{
+                height: "64px",
+                width: "auto",
+                maxWidth: "420px",
+                filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)",
+                opacity: 0,
+                animationDelay: "1s",
+                animationDuration: "1.4s",
+              }}
+            />
+            <p className="opacity-0 animate-fade-in" style={{ fontSize: "17px", fontFamily: "var(--font-lato)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8, maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
+              Cosmetic doctor, speaker, and brand collaborator based in Sydney — combining medical expertise with industry innovation
+            </p>
+          </div>
+        )}
 
         {/* Scroll indicator */}
-        <button
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
-          style={{ zIndex: 5, animationDelay: "1.8s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
-        >
-          <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
-          <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
-        </button>
+        {showContent && (
+          <button
+            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
+            style={{ zIndex: 5, animationDelay: "1.8s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
+          >
+            <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
+            <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
+          </button>
+        )}
 
         {/* Social box — right edge */}
-        <div
-          className="opacity-0 animate-fade-in absolute flex flex-col"
-          style={{
-            right: "clamp(1.5rem, 3vw, 2.5rem)",
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 5,
-            border: "1px solid rgba(244,241,238,0.22)",
-            animationDelay: "1.6s",
-            animationDuration: "1s",
-          }}
-        >
-          {[
-            { icon: FaInstagram, href: "https://instagram.com/dryaldajamali", label: "Instagram" },
-            { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
-            { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
-          ].map(({ icon: Icon, href, label }, i) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="flex items-center justify-center transition-all duration-300"
-              style={{
-                width: "40px",
-                height: "40px",
-                color: "rgba(244,241,238,0.4)",
-                borderTop: i > 0 ? "1px solid rgba(244,241,238,0.22)" : "none",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = "rgba(244,241,238,0.9)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "rgba(244,241,238,0.4)")}
-            >
-              <Icon size={11} />
-            </a>
-          ))}
-        </div>
+        {showContent && (
+          <div
+            className="opacity-0 animate-fade-in absolute flex flex-col"
+            style={{
+              right: "clamp(1.5rem, 3vw, 2.5rem)",
+              top: "50%",
+              transform: "translateY(-50%)",
+              zIndex: 5,
+              border: "1px solid rgba(244,241,238,0.22)",
+              animationDelay: "1.6s",
+              animationDuration: "1s",
+            }}
+          >
+            {[
+              { icon: FaInstagram, href: "https://instagram.com/dryaldajamali", label: "Instagram" },
+              { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
+              { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
+            ].map(({ icon: Icon, href, label }, i) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex items-center justify-center transition-all duration-300"
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  color: "rgba(244,241,238,0.4)",
+                  borderTop: i > 0 ? "1px solid rgba(244,241,238,0.22)" : "none",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "rgba(244,241,238,0.9)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(244,241,238,0.4)")}
+              >
+                <Icon size={11} />
+              </a>
+            ))}
+          </div>
+        )}
 
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
