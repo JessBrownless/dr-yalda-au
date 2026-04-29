@@ -1011,6 +1011,154 @@ export default function UnusedComponentsPage() {
         </div>
       </section>
 
+      {/* Beyond the clinic — moved from media page */}
+      <section className="bg-cream py-24 md:py-36 relative">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-8">
+
+            {/* Left — heading + body */}
+            <div className="col-span-12 md:col-span-8 flex flex-col gap-12">
+
+              <div className="flex flex-col gap-3">
+                <p className="text-neutral-400 text-[10px] font-light tracking-[0.5em] uppercase">
+                  Beyond the clinic
+                </p>
+                <h2
+                  className="text-brand-black font-normal leading-[1.05]"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", textTransform: "uppercase" }}
+                >
+                  A Trusted Voice<br />In Cosmetic<br /><em>medicine.</em>
+                </h2>
+              </div>
+
+              <div className="flex gap-6 md:gap-10">
+                <div className="hidden md:block w-px bg-neutral-300 flex-shrink-0 self-stretch" />
+                <div className="flex flex-col gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                    <p className="text-neutral-600 text-base font-light leading-relaxed" style={{ fontFamily: "'Heading', serif" }}>
+                      Beyond the clinic, Dr. Yalda contributes expert commentary to leading publications, appears across broadcast and digital media, and partners with brands aligned with honest, evidence-based care.
+                    </p>
+                    <p className="text-neutral-600 text-base font-light leading-relaxed" style={{ fontFamily: "'Heading', serif" }}>
+                      Her approach is always the same — whether speaking to a journalist or a patient: honest, considered, and grounded in science. No hype. No hyperbole.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right — Collaborations */}
+            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-8 md:pt-1">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+                Collaborations
+              </p>
+              <div className="flex flex-col gap-5">
+                {["Caudalie", "No7", "Medik8", "Clinique", "Mammamia"].map((name) => (
+                  <p
+                    key={name}
+                    className="text-brand-black font-normal leading-none"
+                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.95rem, 1.4vw, 1.15rem)", letterSpacing: "0.02em" }}
+                  >
+                    {name}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MEDIA HERO — Healer-style (two offset images + centered card on cream) — saved from media page ─── */}
+      <section className="relative overflow-hidden bg-cream" style={{ marginTop: "-72px" }}>
+
+        {/* Desktop layout — full-bleed images flush to viewport edges */}
+        <div className="hidden md:block relative" style={{ paddingBottom: "80px" }}>
+
+          <div className="relative overflow-hidden" style={{ width: "48%", aspectRatio: "4/5" }}>
+            <img
+              src="/assets/IMG_0031.avif"
+              alt="Dr. Yalda Jamali"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)" }} />
+          </div>
+
+          <div className="absolute right-0 overflow-hidden" style={{ width: "36%", aspectRatio: "3/4", top: "14%" }}>
+            <img
+              src="/assets/big-scroll-01.avif"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 25%, transparent 50%)" }} />
+          </div>
+
+          <div
+            className="absolute z-20 flex"
+            style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)", width: "min(44%, 560px)" }}
+          >
+            <div className="bg-cream flex flex-col items-center text-center gap-7 px-10 py-14 lg:px-14 lg:py-16 w-full">
+              <p className="eyebrow text-neutral-500">Media</p>
+              <h1
+                className="text-brand-black font-normal leading-[1.05] uppercase"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 3.75rem)", letterSpacing: "0.02em" }}
+              >
+                Press &amp; Features
+              </h1>
+              <p className="text-neutral-700 font-light leading-[1.9] text-base max-w-[40ch]" style={{ fontFamily: "'Heading', serif" }}>
+                Expert commentary, brand collaborations, and broadcast features — grounded in honest, evidence-based care.
+              </p>
+              <a
+                href="#features"
+                className="border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
+                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
+              >
+                View features
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Mobile layout — stacked, full-bleed images */}
+        <div className="md:hidden flex flex-col">
+          <div className="grid grid-cols-2 gap-2">
+            <div className="relative overflow-hidden aspect-[3/4]">
+              <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
+              <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 25%, transparent 50%)" }} />
+            </div>
+            <div className="relative overflow-hidden aspect-[3/4] mt-8">
+              <img src="/assets/big-scroll-01.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
+              <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 25%, transparent 50%)" }} />
+            </div>
+          </div>
+
+          <div className="bg-cream flex flex-col items-center text-center gap-6 px-7 py-10 -mt-12 mx-4 relative z-10 mb-16">
+            <p className="eyebrow text-neutral-500">Media</p>
+            <h1
+              className="text-brand-black font-normal leading-[1.05] uppercase"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.875rem, 6vw, 2.5rem)", letterSpacing: "0.02em" }}
+            >
+              Press &amp; Features
+            </h1>
+            <p className="text-neutral-700 font-light leading-[1.85] text-base" style={{ fontFamily: "'Heading', serif" }}>
+              Expert commentary, brand collaborations, and broadcast features — grounded in honest, evidence-based care.
+            </p>
+            <a
+              href="#features"
+              className="border border-brand-black text-brand-black font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
+              style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
+            >
+              View features
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </section>
+
     </main>
   );
 }

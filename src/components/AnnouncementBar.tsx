@@ -8,7 +8,7 @@ export default function AnnouncementBar() {
   if (dismissed) return null;
 
   return (
-    <div className="relative z-[60] text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center" style={{ backgroundColor: "#141312" }}>
+    <div className="relative z-[60] text-white/80 flex items-center justify-center gap-2 px-6 py-2.5 text-center" style={{ backgroundColor: "#2D2C2A" }}>
       <span style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-lato)" }} className="font-light uppercase">
         Limited phone consultations.
       </span>

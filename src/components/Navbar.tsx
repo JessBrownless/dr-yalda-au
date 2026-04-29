@@ -28,8 +28,6 @@ export default function Navbar() {
   const [overDark, setOverDark] = useState(true);
   const [overStickyScroll, setOverStickyScroll] = useState(false);
   const [overParallaxQuote, setOverParallaxQuote] = useState(false);
-  const [navHovered, setNavHovered] = useState(false);
-
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -42,9 +40,12 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!darkHeroPages.includes(pathname)) return;
     const sentinel = document.getElementById("hero-end");
-    if (!sentinel) return;
+    if (!sentinel) {
+      setOverDark(false);
+      return;
+    }
+    setOverDark(true);
     const observer = new IntersectionObserver(
       ([entry]) => {
         setOverDark(entry.isIntersecting || entry.boundingClientRect.top > 0);
@@ -77,22 +78,13 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  // White text on dark-hero pages (home + media); dark text on all other pages
-  const darkHeroPages = ["/", "/about", "/media", "/appointments"];
-  const dark = !open && !overStickyScroll && !overParallaxQuote && (darkHeroPages.includes(pathname) ? !overDark : true);
+  // Light text over the dark hero; dark text once scrolled past it.
+  // Dark sections (sticky scroll, parallax quote) flip back to light text.
+  const dark = !open && !overStickyScroll && !overParallaxQuote && !overDark;
 
   return (
     <>
-      <nav
-        className="sticky top-0 z-[60] transition-colors duration-500"
-        style={
-          !open && !scrolled && pathname === "/media"
-            ? { backgroundColor: "#121110" }
-            : {}
-        }
-        onMouseEnter={() => setNavHovered(true)}
-        onMouseLeave={() => setNavHovered(false)}
-      >
+      <nav className="sticky top-0 z-[60] transition-colors duration-500">
         {/* Progressive blur — stacked layers, each blurring a slice */}
         {scrolled && dark && !open && (
           <>
@@ -127,7 +119,7 @@ export default function Navbar() {
                 className={`text-[12px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                   pathname === href
                     ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
+                    : dark ? "text-neutral-400 hover:text-brand-black" : "text-white/40 hover:text-white"
                 }`}
               >
                 {label}
@@ -168,7 +160,7 @@ export default function Navbar() {
                 className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                   pathname === "/appointments"
                     ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
+                    : dark ? "text-neutral-400 hover:text-brand-black" : "text-white/40 hover:text-white"
                 }`}
               >
                 Book Now

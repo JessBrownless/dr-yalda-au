@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 
 
@@ -24,10 +27,14 @@ const socials = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const showInstagramFeed = pathname !== "/services";
+
   return (
-    <footer style={{ backgroundColor: "#232121" }}>
+    <footer style={{ backgroundColor: "#2D2C2A" }}>
 
       {/* Instagram feed */}
+      {showInstagramFeed && (
       <div className="border-b border-neutral-200 py-12 md:py-16 bg-brand-white">
         <div className="pg-container">
 
@@ -65,6 +72,7 @@ export default function Footer() {
 
         </div>
       </div>
+      )}
 
       {/* Social strip */}
       <div className="border-b border-neutral-800">

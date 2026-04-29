@@ -25,7 +25,7 @@ export default function AppointmentsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative -mt-20" style={{ minHeight: "clamp(420px, 65vh, 780px)" }}>
+      <section className="relative -mt-20" style={{ minHeight: "clamp(480px, 80vh, 920px)" }}>
 
         {/* Full-bleed background image */}
         <img

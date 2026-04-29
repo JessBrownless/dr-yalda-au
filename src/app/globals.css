@@ -378,7 +378,7 @@
 
   body {
     font-family: var(--font-lato), sans-serif;
-    background-color: #141312;
+    background-color: #2D2C2A;
     width: 100%;
     overscroll-behavior-x: none;
   }
@@ -402,6 +402,28 @@
 
 /* ─── Logo strip — hide scrollbar ───────────────────────────────────────── */
 .logo-strip::-webkit-scrollbar { display: none; }
+
+/* ─── FAQ accordion (native details/summary) ──────────────────────────── */
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary::marker { content: ""; }
+.faq-item[open] .faq-icon { transform: rotate(45deg); }
+
+/* ─── Section eyebrow (small uppercase tracked label) ──────────────────── */
+/*
+  One size, one weight, one tracking — applied across desktop and mobile.
+  Color is set per element to suit the section background.
+  Note: do NOT name this `overline` — that's a Tailwind utility that adds
+  text-decoration: overline (a line above the text).
+*/
+.eyebrow {
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  text-decoration: none;
+}
 
 /* ─── Reusable portrait image block ─────────────────────────────────────── */
 /*

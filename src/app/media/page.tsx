@@ -1,5 +1,4 @@
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import TwoPanelHero from "@/components/TwoPanelHero";
 import FeaturesList from "@/components/FeaturesList";
 
 const socials = [
@@ -12,24 +11,60 @@ const socials = [
 export default function MediaPage() {
   return (
     <main>
-      {/* Intro section */}
-      <section className="bg-cream py-24 md:py-36 relative">
+      {/* ─── HERO — 50/50 image background with centered text ──── */}
+      <section className="relative overflow-hidden" style={{ marginTop: "-72px" }}>
 
-        {/* Bridging image — desktop only, bleeds up into hero */}
-        <div
-          className="absolute hidden md:block overflow-hidden"
-          style={{ left: "62%", top: "-90px", width: "clamp(160px, 16vw, 240px)", aspectRatio: "4/3", zIndex: 10 }}
-        >
-          <img src="/assets/IMG_0041.avif" alt="" aria-hidden="true" className="w-full h-full object-cover object-top" />
+        {/* 50/50 image background — side-by-side on desktop, stacked on mobile */}
+        <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2">
+          <div className="relative overflow-hidden">
+            <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
+          </div>
+          <div className="relative overflow-hidden">
+            <img src="/assets/big-scroll-01.avif" alt="" aria-hidden="true" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
+          </div>
         </div>
 
+        {/* Dark overlays — base dim + strong top fade-in + softer top fade for nav legibility + bottom fade for transition */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(0,0,0,0.4)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 12%, transparent 35%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)" }} />
+
+        {/* Centered text */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6" style={{ minHeight: "90vh", paddingTop: "120px", paddingBottom: "80px" }}>
+          <p className="text-white/80 font-light uppercase mb-7" style={{ fontSize: "10px", letterSpacing: "0.5em" }}>
+            Media
+          </p>
+          <h1
+            className="text-white font-normal leading-[1.05] uppercase max-w-[14ch]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", letterSpacing: "0.02em" }}
+          >
+            Press &amp; Features
+          </h1>
+          <p className="text-white/85 font-light leading-[1.9] text-base mt-7 max-w-[42ch]" style={{ fontFamily: "'Heading', serif" }}>
+            Expert commentary, brand collaborations, and broadcast features — grounded in honest, evidence-based care.
+          </p>
+          <a
+            href="#features"
+            className="border border-white/80 text-white/90 font-normal uppercase mt-9 px-7 py-3.5 transition-all duration-300 hover:bg-white hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+            style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
+          >
+            View features
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />
+      </section>
+
+      {/* Beyond the clinic */}
+      <section className="bg-cream py-24 md:py-36 relative">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 
             {/* Left — heading + body */}
-            <div className="col-span-12 md:col-span-8 flex flex-col gap-12">
+            <div className="col-span-12 md:col-span-8 flex flex-col gap-12" data-aos="fade" data-aos-duration="1000">
 
-              {/* Heading block */}
               <div className="flex flex-col gap-3">
                 <p className="text-neutral-400 text-[10px] font-light tracking-[0.5em] uppercase">
                   Beyond the clinic
@@ -42,7 +77,6 @@ export default function MediaPage() {
                 </h2>
               </div>
 
-              {/* Body text with left rule */}
               <div className="flex gap-6 md:gap-10">
                 <div className="hidden md:block w-px bg-neutral-300 flex-shrink-0 self-stretch" />
                 <div className="flex flex-col gap-8">
@@ -54,27 +88,27 @@ export default function MediaPage() {
                       Her approach is always the same — whether speaking to a journalist or a patient: honest, considered, and grounded in science. No hype. No hyperbole.
                     </p>
                   </div>
-
                 </div>
               </div>
 
             </div>
 
-            {/* Right — As featured in */}
-            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-8 md:pt-1">
+            {/* Right — Collaborations */}
+            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-8 md:pt-1" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
                 Collaborations
               </p>
-              <div className="flex flex-col gap-5">
-                {["Caudalie", "No7", "Medik8", "Clinique", "Mammamia"].map((name) => (
-                  <p
-                    key={name}
-                    className="text-brand-black font-normal leading-none"
-                    style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.95rem, 1.4vw, 1.15rem)", letterSpacing: "0.02em" }}
-                  >
-                    {name}
-                  </p>
-                ))}
+              <div className="flex flex-col gap-7 items-start">
+                <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-5 opacity-70" style={{ filter: "brightness(0)" }} />
+                <img src="/assets/logo-no7.svg" alt="No7" className="h-5 opacity-70" style={{ filter: "brightness(0)" }} />
+                <span
+                  className="text-brand-black font-light opacity-70 leading-none"
+                  style={{ fontFamily: "sans-serif", fontSize: "clamp(0.95rem, 1.3vw, 1.1rem)", letterSpacing: "0.2em" }}
+                >
+                  MEDIK8
+                </span>
+                <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-5 opacity-70" style={{ filter: "brightness(0)" }} />
+                <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-5 opacity-70" style={{ filter: "brightness(0)" }} />
               </div>
             </div>
 
@@ -83,10 +117,10 @@ export default function MediaPage() {
       </section>
 
       {/* How we can work together */}
-      <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
+      <section className="bg-cream overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Coloured strip — left edge, behind the image */}
-        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
+        <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
 
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-8 items-center">
@@ -94,7 +128,7 @@ export default function MediaPage() {
             {/* Left — image */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
               <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]">
-                <img src="/assets/dr-yalda-Caudalie-speaking-caudalie.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+                <img src="/assets/IMG_4905.JPG" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </div>
             </div>
 
@@ -263,45 +297,6 @@ export default function MediaPage() {
         </div>
       </section>
 
-
-      {/* Brand logo quilt */}
-      <section className="border-t border-neutral-800 py-10 md:py-12" style={{ backgroundColor: "#1C1B1A" }}>
-        <div className="pg-container">
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16">
-
-            <span className="text-neutral-400 font-light" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1.4vw, 1.1rem)", letterSpacing: "0.25em" }}>
-              CAUDALIE
-            </span>
-
-            <span className="text-neutral-300 hidden md:block select-none">·</span>
-
-            <span className="text-neutral-400 font-light" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 1rem)", letterSpacing: "0.2em" }}>
-              N<sup style={{ fontSize: "0.6em", verticalAlign: "super" }}>o</sup>7
-            </span>
-
-            <span className="text-neutral-300 hidden md:block select-none">·</span>
-
-            <span className="text-neutral-400 font-light" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 1rem)", letterSpacing: "0.2em" }}>
-              MEDIK8
-            </span>
-
-            <span className="text-neutral-300 hidden md:block select-none">·</span>
-
-            <img
-              src="/assets/logo-clinique.svg"
-              alt="Clinique"
-              className="h-4 opacity-35"
-            />
-
-            <span className="text-neutral-300 hidden md:block select-none">·</span>
-
-            <span className="text-neutral-400 font-light" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.85rem, 1.4vw, 1.1rem)", letterSpacing: "0.15em" }}>
-              MAMMA MIA
-            </span>
-
-          </div>
-        </div>
-      </section>
 
     </main>
   );

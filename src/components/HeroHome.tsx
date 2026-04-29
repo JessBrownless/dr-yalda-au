@@ -13,9 +13,32 @@ interface HeroHomeProps {
   height?: string;
   showContent?: boolean;
   zoom?: number;
+  title?: string;
+  tagline?: string;
+  showScroll?: boolean;
+  showSocials?: boolean;
+  parallax?: boolean;
+  align?: "left" | "center";
+  verticalAlign?: "center" | "bottom";
+  cta?: { label: string; href: string };
 }
 
-export default function HeroHome({ images, height, showContent = true, zoom = 1 }: HeroHomeProps) {
+export default function HeroHome({
+  images,
+  height,
+  showContent = true,
+  zoom = 1,
+  title,
+  tagline = "Cosmetic doctor, educator, and brand collaborator based in Sydney — combining medical expertise with industry innovation",
+  showScroll = true,
+  showSocials = true,
+  parallax = true,
+  align = "center",
+  verticalAlign = "center",
+  cta,
+}: HeroHomeProps) {
+  const isLeft = align === "left";
+  const isBottom = verticalAlign === "bottom";
   const heroImages = images ?? defaultImages;
   const mobileHeight = height ?? "90dvh";
   const desktopHeight = height ?? "90vh";
@@ -30,6 +53,7 @@ export default function HeroHome({ images, height, showContent = true, zoom = 1 
   }, []);
 
   useEffect(() => {
+    if (!parallax) return;
     let raf: number;
 
     const onScroll = () => {
@@ -46,7 +70,7 @@ export default function HeroHome({ images, height, showContent = true, zoom = 1 
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [parallax]);
 
   return (
     <>
@@ -75,20 +99,38 @@ export default function HeroHome({ images, height, showContent = true, zoom = 1 
 
         {/* Centred content */}
         {showContent && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-8" style={{ zIndex: 5 }}>
-            <img
-              src="/assets/dr-yalda-logo-long.svg"
-              alt="Dr. Yalda Jamali"
-              style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
-            />
-            <p style={{ fontSize: "14px", fontFamily: "var(--font-lato)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8 }}>
-              Cosmetic doctor, educator, and brand collaborator based in Sydney — combining medical expertise with industry innovation
-            </p>
+          <div className={`absolute inset-0 flex flex-col gap-6 px-8 ${isLeft ? "items-start" : "items-center"} ${isBottom ? "justify-end pb-12" : "justify-center"}`} style={{ zIndex: 5 }}>
+            {title ? (
+              <h1 className="text-cream font-normal leading-[0.95] uppercase" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.01em", margin: 0 }}>
+                {title}
+              </h1>
+            ) : (
+              <img
+                src="/assets/dr-yalda-logo-long.svg"
+                alt="Dr. Yalda Jamali"
+                style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
+              />
+            )}
+            {tagline && (
+              <p className="text-white/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch" }}>
+                {tagline}
+              </p>
+            )}
+            {cta && (
+              <a
+                href={cta.href}
+                className="self-start border border-white text-white font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-white hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
+              >
+                {cta.label}
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+            )}
           </div>
         )}
 
         {/* Scroll indicator */}
-        {showContent && (
+        {showContent && showScroll && (
           <button
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
             className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
@@ -144,29 +186,57 @@ export default function HeroHome({ images, height, showContent = true, zoom = 1 
 
         {/* Centred content */}
         {showContent && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6" style={{ zIndex: 5 }}>
-            <img
-              className="opacity-0 animate-fade-in"
-              src="/assets/dr-yalda-logo-long.svg"
-              alt="Dr. Yalda Jamali"
-              style={{
-                height: "64px",
-                width: "auto",
-                maxWidth: "420px",
-                filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)",
-                opacity: 0,
-                animationDelay: "1s",
-                animationDuration: "1.4s",
-              }}
-            />
-            <p className="opacity-0 animate-fade-in" style={{ fontSize: "17px", fontFamily: "var(--font-lato)", fontWeight: 300, color: "rgba(244,241,238,0.45)", textAlign: "center", lineHeight: 1.8, maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
-              Cosmetic doctor, speaker, and brand collaborator based in Sydney — combining medical expertise with industry innovation
-            </p>
+          <div className={`absolute inset-0 flex flex-col gap-6 ${isLeft ? "items-start pg-container" : "items-center"} ${isBottom ? "justify-end pb-16" : "justify-center"}`} style={{ zIndex: 5 }}>
+            {title ? (
+              <h1
+                className="opacity-0 animate-fade-in text-cream font-normal leading-[0.95] uppercase"
+                style={{
+                  fontFamily: "'Heading', serif",
+                  fontSize: "clamp(3.5rem, 5.5vw, 6.5rem)",
+                  letterSpacing: "0.01em",
+                  margin: 0,
+                  animationDelay: "1s",
+                  animationDuration: "1.4s",
+                }}
+              >
+                {title}
+              </h1>
+            ) : (
+              <img
+                className="opacity-0 animate-fade-in"
+                src="/assets/dr-yalda-logo-long.svg"
+                alt="Dr. Yalda Jamali"
+                style={{
+                  height: "64px",
+                  width: "auto",
+                  maxWidth: "420px",
+                  filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)",
+                  opacity: 0,
+                  animationDelay: "1s",
+                  animationDuration: "1.4s",
+                }}
+              />
+            )}
+            {tagline && (
+              <p className="opacity-0 animate-fade-in text-white/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
+                {tagline}
+              </p>
+            )}
+            {cta && (
+              <a
+                href={cta.href}
+                className="opacity-0 animate-fade-in self-start border border-white text-white font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-white hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", animationDelay: "1.7s", animationDuration: "1.2s" }}
+              >
+                {cta.label}
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+            )}
           </div>
         )}
 
         {/* Scroll indicator */}
-        {showContent && (
+        {showContent && showScroll && (
           <button
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
             className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
@@ -178,7 +248,7 @@ export default function HeroHome({ images, height, showContent = true, zoom = 1 
         )}
 
         {/* Social box — right edge */}
-        {showContent && (
+        {showContent && showSocials && (
           <div
             className="opacity-0 animate-fade-in absolute flex flex-col"
             style={{
