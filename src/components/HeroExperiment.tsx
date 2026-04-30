@@ -132,7 +132,7 @@ export default function HeroExperiment() {
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-4 h-px transition-all duration-300 ${i === current ? "bg-white/70" : "bg-white/20"}`}
+                className={`w-4 h-px transition-all duration-300 ${i === current ? "bg-cream/70" : "bg-cream/20"}`}
                 aria-label={`Image ${i + 1}`}
               />
             ))}

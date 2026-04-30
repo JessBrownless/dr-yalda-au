@@ -16,7 +16,7 @@ export default function FaqAccordion() {
         <details key={q} className="faq-item group">
           <summary className="flex items-center justify-between gap-6 py-6 md:py-7 cursor-pointer list-none">
             <h3
-              className="text-white font-normal"
+              className="text-cream font-normal"
               style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)", letterSpacing: "0" }}
             >
               {q}

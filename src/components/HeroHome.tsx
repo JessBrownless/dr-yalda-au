@@ -14,6 +14,7 @@ interface HeroHomeProps {
   showContent?: boolean;
   zoom?: number;
   title?: string;
+  titleUppercase?: boolean;
   tagline?: string;
   showScroll?: boolean;
   showSocials?: boolean;
@@ -21,6 +22,7 @@ interface HeroHomeProps {
   align?: "left" | "center";
   verticalAlign?: "center" | "bottom";
   cta?: { label: string; href: string };
+  bottomRight?: { label: string; href: string };
 }
 
 export default function HeroHome({
@@ -29,6 +31,7 @@ export default function HeroHome({
   showContent = true,
   zoom = 1,
   title,
+  titleUppercase = true,
   tagline = "Cosmetic doctor, educator, and brand collaborator based in Sydney — combining medical expertise with industry innovation",
   showScroll = true,
   showSocials = true,
@@ -36,6 +39,7 @@ export default function HeroHome({
   align = "center",
   verticalAlign = "center",
   cta,
+  bottomRight,
 }: HeroHomeProps) {
   const isLeft = align === "left";
   const isBottom = verticalAlign === "bottom";
@@ -101,7 +105,7 @@ export default function HeroHome({
         {showContent && (
           <div className={`absolute inset-0 flex flex-col gap-6 px-8 ${isLeft ? "items-start" : "items-center"} ${isBottom ? "justify-end pb-12" : "justify-center"}`} style={{ zIndex: 5 }}>
             {title ? (
-              <h1 className="text-cream font-normal leading-[0.95] uppercase" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.01em", margin: 0 }}>
+              <h1 className={`text-cream font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`} style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.01em", margin: 0 }}>
                 {title}
               </h1>
             ) : (
@@ -112,14 +116,14 @@ export default function HeroHome({
               />
             )}
             {tagline && (
-              <p className="text-white/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch" }}>
+              <p className="text-cream/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch" }}>
                 {tagline}
               </p>
             )}
             {cta && (
               <a
                 href={cta.href}
-                className="self-start border border-white text-white font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-white hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+                className="self-start border border-cream text-cream font-normal uppercase mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
                 style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
               >
                 {cta.label}
@@ -141,6 +145,22 @@ export default function HeroHome({
           </button>
         )}
 
+        {/* Bottom-right anchor link (mobile) — aligned to content max-width */}
+        {showContent && bottomRight && (
+          <div className="absolute bottom-8 left-0 right-0 px-8 flex justify-end pointer-events-none" style={{ zIndex: 5 }}>
+            <a
+              href={bottomRight.href}
+              className="pointer-events-auto flex items-center gap-3 text-cream/70 hover:text-cream opacity-0 animate-fade-in transition-colors duration-300"
+              style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.8s", animationDuration: "1s" }}
+            >
+              {bottomRight.label}
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
+                <path d="M6 1v12M1 8l5 5 5-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
+        )}
+
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
       </section>
@@ -151,7 +171,7 @@ export default function HeroHome({
         style={{ height: desktopHeight, marginTop: "-72px", animationDelay: "0.1s", animationDuration: "1s" }}
       >
         {/* Photos — crossfade, oversized so parallax doesn't show gaps */}
-        <div ref={imgRef} className="absolute left-0 right-0" style={{ top: "-10%", height: "120%", zIndex: 0, willChange: "transform" }}>
+        <div ref={imgRef} className="absolute left-0 right-0" style={{ top: "-10%", height: "120%", zIndex: 0 }}>
           {heroImages.map((img, i) => (
             <img
               key={img.src}
@@ -189,7 +209,7 @@ export default function HeroHome({
           <div className={`absolute inset-0 flex flex-col gap-6 ${isLeft ? "items-start pg-container" : "items-center"} ${isBottom ? "justify-end pb-16" : "justify-center"}`} style={{ zIndex: 5 }}>
             {title ? (
               <h1
-                className="opacity-0 animate-fade-in text-cream font-normal leading-[0.95] uppercase"
+                className={`opacity-0 animate-fade-in text-cream font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`}
                 style={{
                   fontFamily: "'Heading', serif",
                   fontSize: "clamp(3.5rem, 5.5vw, 6.5rem)",
@@ -218,14 +238,14 @@ export default function HeroHome({
               />
             )}
             {tagline && (
-              <p className="opacity-0 animate-fade-in text-white/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
+              <p className="opacity-0 animate-fade-in text-cream/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
                 {tagline}
               </p>
             )}
             {cta && (
               <a
                 href={cta.href}
-                className="opacity-0 animate-fade-in self-start border border-white text-white font-normal uppercase mt-2 px-7 py-3.5 text-center transition-all duration-300 hover:bg-white hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+                className="opacity-0 animate-fade-in self-start border border-cream text-cream font-normal uppercase mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
                 style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", animationDelay: "1.7s", animationDuration: "1.2s" }}
               >
                 {cta.label}
@@ -285,6 +305,22 @@ export default function HeroHome({
                 <Icon size={11} />
               </a>
             ))}
+          </div>
+        )}
+
+        {/* Bottom-right anchor link (desktop) — aligned to content max-width */}
+        {showContent && bottomRight && (
+          <div className="absolute bottom-12 left-0 right-0 pg-container flex justify-end pointer-events-none" style={{ zIndex: 5 }}>
+            <a
+              href={bottomRight.href}
+              className="pointer-events-auto flex items-center gap-4 text-cream/70 hover:text-cream opacity-0 animate-fade-in transition-colors duration-300"
+              style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.8s", animationDuration: "1s" }}
+            >
+              {bottomRight.label}
+              <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
         )}
 

@@ -82,7 +82,7 @@ export default function Footer() {
             {socials.map(({ icon: Icon, platform, href }) => (
               <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
                 className="flex-1 flex items-center justify-center py-6 group transition-colors duration-300">
-                <Icon size={14} className="text-neutral-500 group-hover:text-white transition-colors duration-300" />
+                <Icon size={14} className="text-neutral-500 group-hover:text-cream transition-colors duration-300" />
               </a>
             ))}
           </div>
@@ -91,10 +91,10 @@ export default function Footer() {
             {socials.map(({ icon: Icon, platform, handle, href }) => (
               <a key={platform} href={href} target="_blank" rel="noopener noreferrer" className="group flex flex-row items-center justify-start gap-4 py-8 px-4 transition-colors duration-300">
                 <div className="w-9 h-9 flex-shrink-0 border border-neutral-700 flex items-center justify-center group-hover:border-neutral-500 transition-colors duration-300">
-                  <Icon size={13} className="text-neutral-500 group-hover:text-white transition-colors duration-300" />
+                  <Icon size={13} className="text-neutral-500 group-hover:text-cream transition-colors duration-300" />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <p className="text-neutral-300 text-[9px] font-light tracking-[0.3em] uppercase group-hover:text-white transition-colors duration-300">{platform}</p>
+                  <p className="text-neutral-300 text-[9px] font-light tracking-[0.3em] uppercase group-hover:text-cream transition-colors duration-300">{platform}</p>
                   <p className="text-neutral-500 text-[9px] font-light tracking-[0.15em] group-hover:text-neutral-300 transition-colors duration-300">{handle}</p>
                 </div>
               </a>
@@ -121,7 +121,7 @@ export default function Footer() {
             <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4 border-t border-neutral-800 pt-8">
               <p className="text-neutral-600 text-[9px] font-light tracking-[0.45em] uppercase mb-1">Navigate</p>
               {links.map(({ label, href }) => (
-                <Link key={href} href={href} className="text-neutral-300 text-sm font-light hover:text-white transition-colors duration-300">{label}</Link>
+                <Link key={href} href={href} className="text-neutral-300 text-sm font-light hover:text-cream transition-colors duration-300">{label}</Link>
               ))}
             </div>
 

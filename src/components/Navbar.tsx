@@ -78,48 +78,66 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  // Light text over the dark hero; dark text once scrolled past it.
-  // Dark sections (sticky scroll, parallax quote) flip back to light text.
-  const dark = !open && !overStickyScroll && !overParallaxQuote && !overDark;
+  // Glassy pill once the user starts scrolling — same across every page.
+  // Menu open keeps the nav transparent so the dark overlay reads cleanly.
+  const solid = scrolled && !open;
+  // Text/elements flip based on the section behind the nav.
+  const overDarkSection = overDark || overStickyScroll || overParallaxQuote;
+  const dark = !open && !overDarkSection;
 
   return (
     <>
-      <nav className="sticky top-0 z-[60] transition-colors duration-500">
-        {/* Progressive blur — stacked layers, each blurring a slice */}
-        {scrolled && dark && !open && (
-          <>
-            {[
-              { blur: 12, start: 0,   end: 40  },
-              { blur: 8,  start: 20,  end: 60  },
-              { blur: 5,  start: 40,  end: 80  },
-              { blur: 2,  start: 60,  end: 100 },
-            ].map(({ blur, start, end }) => (
-              <div
-                key={blur}
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  backdropFilter: `blur(${blur}px)`,
-                  WebkitBackdropFilter: `blur(${blur}px)`,
-                  maskImage: `linear-gradient(to bottom, transparent ${start}%, black ${Math.min(start + 15, end - 15)}%, black ${Math.max(end - 15, start + 15)}%, transparent ${end}%)`,
-                  WebkitMaskImage: `linear-gradient(to bottom, transparent ${start}%, black ${Math.min(start + 15, end - 15)}%, black ${Math.max(end - 15, start + 15)}%, transparent ${end}%)`,
-                }}
-              />
-            ))}
-          </>
-        )}
+      <nav className="sticky top-0 z-[60]">
+        {/* Outer wrapper — adds gutter around the pill when scrolled */}
+        <div
+          className="transition-all duration-[800ms] ease-out"
+          style={{
+            paddingTop: solid ? "16px" : "0px",
+            paddingLeft: solid ? "16px" : "0px",
+            paddingRight: solid ? "16px" : "0px",
+          }}
+        >
+          {/* Inner container — shrinks into pg-container width and gains the blur pill on scroll */}
+          <div
+            className="mx-auto relative transition-all duration-[800ms] ease-out"
+            style={{
+              maxWidth: solid ? "800px" : "100vw",
+            }}
+          >
+            {/* Dedicated glass layer — backdrop-filter renders more reliably on its own element */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 transition-all duration-[800ms] ease-out pointer-events-none"
+              style={{
+                borderRadius: solid ? "9999px" : "0px",
+                backgroundColor: solid
+                  ? overDarkSection
+                    ? "rgba(246,246,243,0.10)"   // over dark — keep the subtle glass look
+                    : "rgba(246,246,243,0.50)"   // over light — semi-translucent white
+                  : "rgba(246,246,243,0)",
+                backdropFilter: solid ? "blur(28px) saturate(180%)" : "blur(0px)",
+                WebkitBackdropFilter: solid ? "blur(28px) saturate(180%)" : "blur(0px)",
+              }}
+            />
+            <div
+              className="grid grid-cols-3 items-center relative transition-all duration-[800ms] ease-out"
+              style={{
+                height: solid ? "60px" : "80px",
+                paddingLeft: solid ? "40px" : "clamp(1.5rem, 4vw, 2.5rem)",
+                paddingRight: solid ? "40px" : "clamp(1.5rem, 4vw, 2.5rem)",
+              }}
+            >
 
-        <div className="h-20 md:h-18 py-5 md:py-4 flex items-center justify-between relative" style={{ paddingLeft: "clamp(1.5rem, 4vw, 2.5rem)", paddingRight: "clamp(1.5rem, 4vw, 2.5rem)" }}>
-
-          {/* Left nav links */}
-          <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+          {/* Left column — nav links */}
+          <div className={`hidden md:flex items-center gap-8 justify-start transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             {[{ label: "Home", href: "/" }, { label: "About", href: "/about" }, { label: "Services", href: "/services" }].map(({ label, href }) => (
               <Link
                 key={href}
                 href={href}
-                className={`text-[12px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
+                className={`text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                   pathname === href
-                    ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-neutral-400 hover:text-brand-black" : "text-white/40 hover:text-white"
+                    ? dark ? "font-medium text-brand-black" : "font-medium text-cream"
+                    : dark ? "font-extralight text-brand-black/40 hover:text-brand-black" : "font-extralight text-cream/50 hover:text-cream"
                 }`}
               >
                 {label}
@@ -127,8 +145,11 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Logo — centered */}
-          <Link href="/" className={`absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-90 hover:opacity-100"}`}>
+          {/* Spacer for mobile so logo sits in the middle column */}
+          <div className="md:hidden" />
+
+          {/* Center column — logo */}
+          <Link href="/" className={`flex justify-center transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-90 hover:opacity-100"}`}>
             <Image
               src="/assets/dr-yalda-logo-icon.svg"
               alt="Dr. Yalda Jamali"
@@ -139,8 +160,8 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Right — links + hamburger */}
-          <div className="flex items-center gap-8 ml-auto md:ml-0">
+          {/* Right column — links + hamburger */}
+          <div className="flex items-center gap-8 justify-end">
             <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
               {[{ label: "Media", href: "/media" }].map(({ label, href }) => (
                 <Link
@@ -148,8 +169,8 @@ export default function Navbar() {
                   href={href}
                   className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                     pathname === href
-                      ? dark ? "text-brand-black" : "text-white"
-                      : dark ? "text-brand-black hover:text-neutral-400" : "text-white/30 hover:text-white"
+                      ? dark ? "text-brand-black" : "text-cream"
+                      : dark ? "text-brand-black/50 hover:text-brand-black" : "text-cream/50 hover:text-cream"
                   }`}
                 >
                   {label}
@@ -157,10 +178,10 @@ export default function Navbar() {
               ))}
               <Link
                 href="/appointments"
-                className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
+                className={`text-[11px] tracking-[0.25em] uppercase font-medium font-hanken rounded-full px-5 py-2 border transition-all duration-300 ${
                   pathname === "/appointments"
-                    ? dark ? "text-brand-black" : "text-white"
-                    : dark ? "text-neutral-400 hover:text-brand-black" : "text-white/40 hover:text-white"
+                    ? dark ? "bg-brand-black text-cream border-brand-black" : "bg-cream text-brand-black border-cream"
+                    : dark ? "border-brand-black/40 text-brand-black/40 hover:border-brand-black hover:bg-brand-black hover:text-cream" : "border-cream/50 text-cream/50 hover:border-cream hover:bg-cream hover:text-brand-black"
                 }`}
               >
                 Book Now
@@ -170,14 +191,16 @@ export default function Navbar() {
             <button
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
-              className="flex flex-col gap-[7px] p-2 group"
+              className="flex md:hidden flex-col gap-[7px] p-2 group"
             >
-              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-white" : "w-6"}`} />
-              <span className={`block h-px transition-all duration-300 ${dark ? "bg-brand-black" : "bg-white"} ${open ? "opacity-0 w-6 !bg-white" : "w-4 group-hover:w-6"}`} />
-              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-white"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-white" : "w-6"}`} />
+              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-cream" : "w-6"}`} />
+              <span className={`block h-px transition-all duration-300 ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "opacity-0 w-6 !bg-cream" : "w-4 group-hover:w-6"}`} />
+              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-cream" : "w-6"}`} />
             </button>
           </div>
 
+            </div>
+          </div>
         </div>
       </nav>
 
@@ -205,18 +228,18 @@ export default function Navbar() {
           <div className="flex flex-col justify-center flex-1 mt-6">
             {[...links, { label: "Book Now", href: "/appointments" }].map(({ label, href }, i) => (
               <div key={href}>
-                {i > 0 && <div className="w-full h-px bg-white/20" />}
+                {i > 0 && <div className="w-full h-px bg-cream/20" />}
                 <Link
                   href={href}
                   onClick={() => setOpen(false)}
-                  className="block py-5 text-white text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-neutral-400"
+                  className="block py-5 text-cream text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-neutral-400"
                   style={{ fontFamily: "'Heading', serif" }}
                 >
                   {label}
                 </Link>
               </div>
             ))}
-            <div className="w-full h-px bg-white/20" />
+            <div className="w-full h-px bg-cream/20" />
           </div>
 
           {/* Socials */}
@@ -228,7 +251,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-neutral-400 hover:text-white transition-colors duration-300"
+                className="text-neutral-400 hover:text-cream transition-colors duration-300"
               >
                 <Icon size={13} />
               </a>

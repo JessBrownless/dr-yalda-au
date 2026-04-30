@@ -40,7 +40,7 @@ export default function HeroSplit() {
         {/* Bottom — location + dots */}
         <div className="relative flex-1" />
         <div className="relative z-10 flex items-end justify-between">
-          <p className="text-white/35 text-[8px] font-light tracking-[0.5em] uppercase">
+          <p className="text-cream/35 text-[8px] font-light tracking-[0.5em] uppercase">
             Doctor &nbsp;·&nbsp; Collaborator &nbsp;·&nbsp; Educator
           </p>
           <div className="flex gap-2">
@@ -48,7 +48,7 @@ export default function HeroSplit() {
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-4 h-px transition-all duration-300 ${i === current ? "bg-white/70" : "bg-white/20"}`}
+                className={`w-4 h-px transition-all duration-300 ${i === current ? "bg-cream/70" : "bg-cream/20"}`}
                 aria-label={`Image ${i + 1}`}
               />
             ))}
@@ -79,7 +79,7 @@ export default function HeroSplit() {
         style={{ zIndex: 20 }}
       >
         <h1
-          className="text-white font-normal leading-[0.9] opacity-0 animate-fade-in-up w-full"
+          className="text-cream font-normal leading-[0.9] opacity-0 animate-fade-in-up w-full"
           style={{
             fontSize: "clamp(3rem, 7.5vw, 9rem)",
             letterSpacing: "0.06em",

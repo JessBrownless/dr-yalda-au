@@ -121,7 +121,7 @@ export default function UnusedComponentsPage() {
               <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "20px", fontFamily: "'Heading', serif" }}>
                 Features, interviews, expert commentary and brand collaborations for global publications and leading cosmetic brands.
               </p>
-              <a href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry" className="self-start px-8 py-4 border border-brand-black text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-brand-black hover:text-white transition-colors duration-300" style={{ fontFamily: "sans-serif" }}>Work Together</a>
+              <a href="mailto:hello@dryalda.com.au?subject=Work%20Together%20Enquiry" className="self-start px-8 py-4 border border-brand-black text-brand-black text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-brand-black hover:text-cream transition-colors duration-300" style={{ fontFamily: "sans-serif" }}>Work Together</a>
             </div>
           </div>
         </div>
@@ -196,9 +196,9 @@ export default function UnusedComponentsPage() {
         <div className="relative overflow-hidden aspect-square">
           <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-center md:object-top" />
           <div className="hero-noise" />
-          <div className="absolute bottom-0 left-0 right-0 flex gap-4 px-6 py-5 backdrop-blur-md bg-white/10">
-            <div className="w-px bg-white/50 flex-shrink-0" />
-            <p className="text-white text-[0.8rem] font-light leading-relaxed">
+          <div className="absolute bottom-0 left-0 right-0 flex gap-4 px-6 py-5 backdrop-blur-md bg-cream/10">
+            <div className="w-px bg-cream/50 flex-shrink-0" />
+            <p className="text-cream text-[0.8rem] font-light leading-relaxed">
               Dr Yalda Jamali. A private, consultation-led clinical practice based in Sydney.
             </p>
           </div>
@@ -217,7 +217,7 @@ export default function UnusedComponentsPage() {
                   Podcast appearances
                 </p>
                 <h2
-                  className="text-white font-normal leading-tight"
+                  className="text-cream font-normal leading-tight"
                   style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", textTransform: "uppercase" }}
                 >
                   Listen To<br /><em>dr. yalda.</em>
@@ -232,12 +232,12 @@ export default function UnusedComponentsPage() {
                 ].map(({ show, episode, duration }, i) => (
                   <div key={i} className="group flex items-start justify-between gap-6 py-6 cursor-pointer">
                     <div className="flex items-start gap-4">
-                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center group-hover:border-white transition-colors duration-300">
-                        <span className="text-neutral-500 group-hover:text-white transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
+                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center group-hover:border-cream transition-colors duration-300">
+                        <span className="text-neutral-500 group-hover:text-cream transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
                       </button>
                       <div className="flex flex-col gap-1">
                         <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase">{show}</p>
-                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-white transition-colors duration-300" style={{ fontFamily: "'Heading', serif" }}>{episode}</p>
+                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-cream transition-colors duration-300" style={{ fontFamily: "'Heading', serif" }}>{episode}</p>
                       </div>
                     </div>
                     <span className="flex-shrink-0 text-neutral-600 text-[10px] font-light tracking-[0.2em] mt-1">{duration}</span>
@@ -261,7 +261,7 @@ export default function UnusedComponentsPage() {
                   background: "#111",
                   borderRadius: 40,
                   padding: 10,
-                  boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04)",
+                  boxShadow: "0 0 0 1px rgba(246,246,243,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(246,246,243,0.04)",
                   position: "relative",
                   marginBottom: "-160px",
                 }}
@@ -308,14 +308,14 @@ export default function UnusedComponentsPage() {
           >
             THE PRACTICE
           </h2>
-          <div className="grid grid-cols-12 gap-px border-t border-white/10">
+          <div className="grid grid-cols-12 gap-px border-t border-cream/10">
             {[
               { num: "01", title: "Cosmetic Doctor",  body: "Over a decade of clinical experience in aesthetic medicine across London and Sydney. Specialising in facial balancing, contouring, and skin health." },
               { num: "02", title: "Educator",          body: "Committed to advancing the field through education — sharing evidence-based technique and clinical knowledge with fellow practitioners." },
               { num: "03", title: "Collaborator",      body: "Partnering with global brands whose values align with a science-led, integrity-first approach to beauty and skin care." },
             ].map(({ num, title, body }) => (
-              <div key={num} className="col-span-12 md:col-span-4 border-b md:border-b-0 md:border-r border-white/10 last:border-r-0 flex flex-col gap-8 px-0 md:px-8 py-12 first:pl-0 last:pr-0">
-                <span className="font-normal leading-none text-white/20 select-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.04em" }}>{num}</span>
+              <div key={num} className="col-span-12 md:col-span-4 border-b md:border-b-0 md:border-r border-cream/10 last:border-r-0 flex flex-col gap-8 px-0 md:px-8 py-12 first:pl-0 last:pr-0">
+                <span className="font-normal leading-none text-cream/20 select-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.04em" }}>{num}</span>
                 <div className="flex flex-col gap-4">
                   <p className="font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.2rem, 1.8vw, 1.8rem)", color: "#F4F1EE", lineHeight: "1.1" }}>{title}</p>
                   <p className="font-light leading-relaxed" style={{ fontSize: "13px", fontFamily: "var(--font-hanken)", color: "rgba(244,241,238,0.5)" }}>{body}</p>
@@ -375,7 +375,7 @@ export default function UnusedComponentsPage() {
         </div>
 
         <h1
-          className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-normal leading-none pointer-events-none"
+          className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-cream font-normal leading-none pointer-events-none"
           style={{ fontFamily: "'Heading', serif", fontSize: "clamp(4rem, 8vw, 8rem)", letterSpacing: "0.15em" }}
         >
           About
@@ -421,7 +421,7 @@ export default function UnusedComponentsPage() {
             AS SEEN<br /><em>in press.</em>
           </h1>
           <p className="text-neutral-600 text-sm font-light leading-relaxed max-w-[28ch]">Features, interviews, and brand collaborations with some of Australia&rsquo;s most trusted publications.</p>
-          <a href="#features" className="mt-2 px-10 py-4 border border-brand-black/30 text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-brand-black hover:text-white transition-all duration-300">View Features</a>
+          <a href="#features" className="mt-2 px-10 py-4 border border-brand-black/30 text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-brand-black hover:text-cream transition-all duration-300">View Features</a>
         </div>
         <div className="hidden md:flex col-span-4 flex-col justify-center pr-10 pl-4 py-24">
           <div className="relative">
@@ -476,7 +476,7 @@ export default function UnusedComponentsPage() {
             <h2 className="text-brand-black font-normal leading-[0.95]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 10vw, 4rem)", letterSpacing: "0.02em" }}>
               Let's<br /><em>begin.</em>
             </h2>
-            <a href="/appointments" className="mt-2 px-8 py-4 bg-brand-black text-white text-[9px] font-normal tracking-[0.4em] uppercase">Book Now</a>
+            <a href="/appointments" className="mt-2 px-8 py-4 bg-brand-black text-cream text-[9px] font-normal tracking-[0.4em] uppercase">Book Now</a>
           </div>
           <div className="absolute right-0 top-0 bottom-0 overflow-hidden" style={{ width: "28vw" }}>
             <img src="/assets/Yalda-1.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
@@ -493,7 +493,7 @@ export default function UnusedComponentsPage() {
               Let's<br /><em>begin.</em>
             </h2>
             <p className="text-neutral-500 text-sm font-light leading-relaxed max-w-[26ch]">Your consultation is the first step. No pressure, no commitment — just an honest conversation.</p>
-            <a href="/appointments" className="mt-2 px-10 py-4 bg-brand-black text-white text-[9px] font-normal tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300">Book Now</a>
+            <a href="/appointments" className="mt-2 px-10 py-4 bg-brand-black text-cream text-[9px] font-normal tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300">Book Now</a>
           </div>
           <div className="relative overflow-hidden">
             <img src="/assets/Yalda-1.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
@@ -633,7 +633,7 @@ export default function UnusedComponentsPage() {
 
               <a
                 href="/appointments"
-                className="self-start px-8 py-4 bg-brand-black text-white text-[9px] font-normal tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
+                className="self-start px-8 py-4 bg-brand-black text-cream text-[9px] font-normal tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
               >
                 Book a Consultation
               </a>
@@ -678,7 +678,7 @@ export default function UnusedComponentsPage() {
 
               <a
                 href="/appointments"
-                className="self-start px-8 py-4 bg-brand-black text-white text-[9px] font-normal tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
+                className="self-start px-8 py-4 bg-brand-black text-cream text-[9px] font-normal tracking-[0.4em] uppercase hover:bg-neutral-800 transition-colors duration-300"
               >
                 Book a Consultation
               </a>
@@ -834,7 +834,7 @@ export default function UnusedComponentsPage() {
           <div className="flex flex-col items-center gap-4 text-center">
             <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">The approach</p>
             <h2
-              className="text-white font-normal leading-[1.1]"
+              className="text-cream font-normal leading-[1.1]"
               style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "0.02em" }}
             >
               The Dr. Yalda <em>approach</em>
@@ -850,12 +850,12 @@ export default function UnusedComponentsPage() {
               <div key={num} className="relative px-0 md:px-10 first:md:pl-0 last:md:pr-0 py-10 md:py-0 flex flex-col gap-4 overflow-hidden">
                 <span
                   className="absolute top-0 right-2 md:right-4 font-normal leading-none select-none pointer-events-none"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(5rem, 10vw, 9rem)", color: "rgba(255,255,255,0.06)", letterSpacing: "0.02em" }}
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(5rem, 10vw, 9rem)", color: "rgba(246,246,243,0.06)", letterSpacing: "0.02em" }}
                   aria-hidden="true"
                 >
                   {num}
                 </span>
-                <p className="text-white font-normal leading-tight relative z-10" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.3vw, 1.2rem)", letterSpacing: "0.03em" }}>{label}</p>
+                <p className="text-cream font-normal leading-tight relative z-10" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1rem, 1.3vw, 1.2rem)", letterSpacing: "0.03em" }}>{label}</p>
                 <p className="text-neutral-400 text-sm font-light leading-relaxed relative z-10">{body}</p>
               </div>
             ))}
@@ -863,7 +863,7 @@ export default function UnusedComponentsPage() {
 
           <a
             href="/appointments"
-            className="px-10 py-4 border border-neutral-700 text-white text-[9px] font-normal tracking-[0.4em] uppercase hover:border-white transition-colors duration-300"
+            className="px-10 py-4 border border-neutral-700 text-cream text-[9px] font-normal tracking-[0.4em] uppercase hover:border-cream transition-colors duration-300"
           >
             Book a Consultation
           </a>

@@ -89,7 +89,7 @@ export default function StickyScrollSection() {
                   0{i + 1}
                 </p>
                 <h2
-                  className="text-white leading-none uppercase"
+                  className="text-cream leading-none uppercase"
                   style={{ fontSize: "clamp(2rem, 3.5vw, 4rem)", letterSpacing: "0.04em" }}
                 >
                   {item.title}

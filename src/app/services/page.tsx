@@ -6,11 +6,12 @@ export default function ServicesPage() {
     <main>
       <HeroHome
         title="Services"
+        titleUppercase={false}
         tagline="Dr Yalda offers evidence-based cosmetic services across Sydney, focusing on skin health, facial harmony, and natural-looking results delivered through consultation-led care."
         height="clamp(480px, 80vh, 920px)"
         align="left"
         verticalAlign="bottom"
-        cta={{ label: "Book a consultation", href: "/appointments" }}
+        bottomRight={{ label: "How I can help", href: "#intro" }}
         showScroll={false}
         showSocials={false}
         parallax={false}
@@ -18,7 +19,7 @@ export default function ServicesPage() {
       />
 
       {/* ─── INTRO STATEMENT ─────────────────────────────────────────────── */}
-      <section className="bg-cream pt-24 md:pt-40 pb-12 md:pb-40 relative">
+      <section id="intro" className="bg-cream pt-24 md:pt-40 pb-12 md:pb-40 relative scroll-mt-20">
         <div className="pg-container">
           {/* Eyebrow */}
           <p className="eyebrow text-neutral-500 mb-8 md:mb-10">
@@ -198,7 +199,7 @@ export default function ServicesPage() {
 
             <div className="col-span-12 md:col-span-4">
               <h2
-                className="text-white font-normal uppercase"
+                className="text-cream font-normal uppercase"
                 style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.875rem, 2.8vw, 2.875rem)", lineHeight: 1.15, letterSpacing: "0.02em" }}
               >
                 Common questions
@@ -230,7 +231,7 @@ export default function ServicesPage() {
           <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
             Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
           </p>
-          <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
+          <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
             Book a consultation
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
@@ -243,7 +244,7 @@ export default function ServicesPage() {
             <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Book a consultation</p>
             <h2 className="text-brand-black font-normal leading-[1.15] uppercase" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.875rem, 6vw, 2.875rem)", letterSpacing: "0.02em" }}>Let's begin with a conversation</h2>
             <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.</p>
-            <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
+            <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
               Book a consultation
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>

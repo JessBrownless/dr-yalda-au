@@ -27,23 +27,26 @@ export default function MediaPage() {
 
         {/* Bottom-left text — aligned like services hero */}
         <div className="relative z-10 flex flex-col justify-end items-start text-left pg-container" style={{ minHeight: "90vh", paddingTop: "120px", paddingBottom: "80px" }}>
-          <p className="text-white/80 font-light uppercase mb-8 md:mb-10" style={{ fontSize: "10px", letterSpacing: "0.5em" }}>
+          <p className="opacity-0 animate-fade-in text-cream/80 font-light uppercase mb-8 md:mb-10" style={{ fontSize: "10px", letterSpacing: "0.5em", animationDelay: "0.8s", animationDuration: "1.2s" }}>
             Media
           </p>
           <h1
-            className="text-white font-normal leading-[1.05] uppercase max-w-[14ch]"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", letterSpacing: "0.02em" }}
+            className="opacity-0 animate-fade-in text-cream font-normal leading-[1.05] uppercase max-w-[14ch]"
+            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", letterSpacing: "0.02em", animationDelay: "1s", animationDuration: "1.4s" }}
           >
             Press &amp; Features
           </h1>
-          <p className="text-white/85 font-light leading-[1.9] text-base mt-7 max-w-[42ch]" style={{ fontFamily: "'Heading', serif" }}>
+          <p className="opacity-0 animate-fade-in text-cream/85 font-light leading-[1.9] text-base mt-7 max-w-[42ch]" style={{ fontFamily: "'Heading', serif", animationDelay: "1.4s", animationDuration: "1.2s" }}>
             Expert commentary, brand collaborations, and broadcast features — grounded in honest, evidence-based care.
           </p>
           {/* Brand logos — overlaid on hero, white. Run off the right edge on mobile */}
-          <div className="flex items-center gap-x-7 md:gap-x-10 mt-14 md:mt-16 flex-nowrap md:flex-wrap md:gap-y-4 -mr-[clamp(2rem,4vw,2.5rem)] md:mr-0">
+          <div
+            className="opacity-0 animate-fade-in flex items-center gap-x-7 md:gap-x-10 mt-14 md:mt-16 flex-nowrap md:flex-wrap md:gap-y-4 -mr-[clamp(2rem,4vw,2.5rem)] md:mr-0"
+            style={{ animationDelay: "1.7s", animationDuration: "1.2s" }}
+          >
             <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
             <img src="/assets/logo-no7.svg" alt="No7" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
-            <span className="text-white/75 font-light flex-shrink-0 whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 0.95rem)", letterSpacing: "0.2em" }}>
+            <span className="text-cream/75 font-light flex-shrink-0 whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 0.95rem)", letterSpacing: "0.2em" }}>
               MEDIK8
             </span>
             <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
@@ -244,7 +247,7 @@ export default function MediaPage() {
                 Podcast appearances
               </p>
               <h2
-                className="text-white font-normal leading-tight"
+                className="text-cream font-normal leading-tight"
                 style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3vw, 2.75rem)", textTransform: "uppercase" }}
               >
                 Listen To<br /><em>dr. yalda.</em>
@@ -257,12 +260,12 @@ export default function MediaPage() {
                 ].map(({ show, episode, duration }, i) => (
                   <div key={i} className="group flex items-start justify-between gap-6 py-5 cursor-pointer">
                     <div className="flex items-start gap-4">
-                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center group-hover:border-white transition-colors duration-300">
-                        <span className="text-neutral-500 group-hover:text-white transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
+                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center group-hover:border-cream transition-colors duration-300">
+                        <span className="text-neutral-500 group-hover:text-cream transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
                       </button>
                       <div className="flex flex-col gap-1">
                         <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase">{show}</p>
-                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-white transition-colors duration-300" style={{ fontFamily: "'Heading', serif" }}>{episode}</p>
+                        <p className="text-neutral-300 text-sm font-light leading-snug group-hover:text-cream transition-colors duration-300" style={{ fontFamily: "'Heading', serif" }}>{episode}</p>
                       </div>
                     </div>
                     <span className="flex-shrink-0 text-neutral-600 text-[10px] font-light tracking-[0.2em] mt-1">{duration}</span>
@@ -280,7 +283,7 @@ export default function MediaPage() {
                   background: "#111",
                   borderRadius: 48,
                   padding: 12,
-                  boxShadow: "0 0 0 1px rgba(255,255,255,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04)",
+                  boxShadow: "0 0 0 1px rgba(246,246,243,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(246,246,243,0.04)",
                   position: "relative",
                   marginBottom: "-120px",
                 }}
