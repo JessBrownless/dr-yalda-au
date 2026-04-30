@@ -15,7 +15,7 @@ interface HeroHomeProps {
   zoom?: number;
   title?: string;
   titleUppercase?: boolean;
-  tagline?: string;
+  tagline?: React.ReactNode;
   showScroll?: boolean;
   showSocials?: boolean;
   parallax?: boolean;
@@ -79,18 +79,20 @@ export default function HeroHome({
   return (
     <>
       {/* ── MOBILE ── */}
-      <section className="md:hidden relative overflow-hidden opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0.1s" }}>
+      <section className="md:hidden relative overflow-hidden bg-brand-black opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}>
 
-        {/* Photos — crossfade */}
-        {heroImages.map((img, i) => (
-          <img
-            key={img.src}
-            src={img.src}
-            alt={i === 0 ? "Dr. Yalda Jamali" : ""}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
-            style={{ objectPosition: img.position, zIndex: 0, opacity: activeIndex === i ? 1 : 0, transform: `scale(${zoom})` }}
-          />
-        ))}
+        {/* Photos — crossfade, wrapped so the image layer fades in last */}
+        <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ zIndex: 0, animationDelay: "1.8s", animationDuration: "2.5s" }}>
+          {heroImages.map((img, i) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={i === 0 ? "Dr. Yalda Jamali" : ""}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
+              style={{ objectPosition: img.position, opacity: activeIndex === i ? 1 : 0, transform: `scale(${zoom})` }}
+            />
+          ))}
+        </div>
 
         {/* Base darkening */}
         <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)", zIndex: 1 }} />
@@ -106,18 +108,20 @@ export default function HeroHome({
           <div className={`absolute inset-0 flex px-8 pb-10 ${isBottom ? "items-end" : "items-center"} ${isLeft ? "justify-start" : "justify-center"}`} style={{ zIndex: 5 }}>
             <div className={`flex flex-col ${isLeft ? "items-start" : "items-center"}`}>
             {title ? (
-              <h1 className={`text-brand-white font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`} style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em", margin: 0, textAlign: isLeft ? "left" : "center" }}>
+              <h1 className={`opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`} style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.75rem, 6vw, 7.25rem)", letterSpacing: "0.04em", margin: 0, textAlign: isLeft ? "left" : "center", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 {title}
               </h1>
             ) : (
-              <img
-                src="/assets/dr-yalda-logo-long.svg"
-                alt="Dr. Yalda Jamali"
-                style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
-              />
+              <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}>
+                <img
+                  src="/assets/dr-yalda-logo-long.svg"
+                  alt="Dr. Yalda Jamali"
+                  style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
+                />
+              </div>
             )}
             {tagline && (
-              <p className="text-brand-white/75 font-light leading-relaxed mt-6" style={{ fontSize: "17px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch" }}>
+              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-3" style={{ fontSize: "17px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 {tagline}
               </p>
             )}
@@ -135,10 +139,10 @@ export default function HeroHome({
               <a
                 href={bottomRight.href}
                 className="opacity-0 animate-fade-in self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
-                style={{ marginTop: "40px", fontFamily: "var(--font-lato)", fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.7s", animationDuration: "1.2s" }}
+                style={{ marginTop: "20px", fontFamily: "var(--font-lato)", fontSize: "9px", letterSpacing: "0.55em", textTransform: "uppercase", fontWeight: 300, animationDelay: "0.7s", animationDuration: "1.0s" }}
               >
                 {bottomRight.label}
-                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
                   <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
@@ -149,14 +153,16 @@ export default function HeroHome({
 
         {/* Scroll indicator */}
         {showContent && showScroll && (
-          <button
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-            className="absolute bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
-            style={{ zIndex: 5, animationDelay: "1.5s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
-          >
-            <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
-            <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
-          </button>
+          <div className="absolute bottom-14 left-1/2 -translate-x-1/2" style={{ zIndex: 5 }}>
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+              className="flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
+              style={{ animationDelay: "0.7s", animationDuration: "1.0s", background: "none", border: "none", padding: 0 }}
+            >
+              <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
+              <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
+            </button>
+          </div>
         )}
 
         {/* Noise grain */}
@@ -165,11 +171,11 @@ export default function HeroHome({
 
       {/* ── DESKTOP ── */}
       <section
-        className="hidden md:block relative overflow-hidden opacity-0 animate-fade-in"
-        style={{ height: desktopHeight, marginTop: "-72px", animationDelay: "0.1s", animationDuration: "1s" }}
+        className="hidden md:block relative overflow-hidden bg-brand-black opacity-0 animate-fade-in"
+        style={{ height: desktopHeight, marginTop: "-72px", animationDelay: "0s", animationDuration: "0.4s" }}
       >
-        {/* Photos — crossfade, oversized so parallax doesn't show gaps */}
-        <div ref={imgRef} className="absolute left-0 right-0" style={{ top: "-10%", height: "120%", zIndex: 0 }}>
+        {/* Photos — crossfade, oversized so parallax doesn't show gaps. Image layer fades in last. */}
+        <div ref={imgRef} className="absolute left-0 right-0 opacity-0 animate-fade-in" style={{ top: "-10%", height: "120%", zIndex: 0, animationDelay: "1.8s", animationDuration: "2.5s" }}>
           {heroImages.map((img, i) => (
             <img
               key={img.src}
@@ -204,77 +210,83 @@ export default function HeroHome({
 
         {/* Centred content */}
         {showContent && (
-          <div className={`absolute inset-0 flex flex-col ${isLeft ? "items-start pg-container" : "items-center"} ${isBottom ? "justify-end pb-10" : "justify-center"}`} style={{ zIndex: 5 }}>
-            {title ? (
-              <h1
-                className={`opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`}
-                style={{
-                  fontFamily: "'Heading', serif",
-                  fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)",
-                  letterSpacing: "0.04em",
-                  margin: 0,
-                  animationDelay: "1s",
-                  animationDuration: "1.4s",
-                }}
-              >
-                {title}
-              </h1>
-            ) : (
-              <img
-                className="opacity-0 animate-fade-in"
-                src="/assets/dr-yalda-logo-long.svg"
-                alt="Dr. Yalda Jamali"
-                style={{
-                  height: "64px",
-                  width: "auto",
-                  maxWidth: "420px",
-                  filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)",
-                  opacity: 0,
-                  animationDelay: "1s",
-                  animationDuration: "1.4s",
-                }}
-              />
-            )}
-            {tagline && (
-              <p className="opacity-0 animate-fade-in text-brand-white/75 font-light leading-relaxed mt-6" style={{ fontSize: "17px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
-                {tagline}
-              </p>
-            )}
-            {cta && (
-              <a
-                href={cta.href}
-                className="opacity-0 animate-fade-in self-start border border-cream text-cream font-normal uppercase mt-8 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
-                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", animationDelay: "1.7s", animationDuration: "1.2s" }}
-              >
-                {cta.label}
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-            )}
-            {bottomRight && (
-              <a
-                href={bottomRight.href}
-                className="opacity-0 animate-fade-in self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
-                style={{ marginTop: "40px", fontFamily: "var(--font-lato)", fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.7s", animationDuration: "1.2s" }}
-              >
-                {bottomRight.label}
-                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
-                  <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
-            )}
+          <div className={`absolute inset-0 flex flex-col ${isLeft ? "pg-container" : "items-center"} ${isBottom ? "justify-end pb-14" : "justify-center"}`} style={{ zIndex: 5 }}>
+            <div className={isLeft ? "flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end" : "contents"}>
+              <div className={isLeft ? "md:col-span-6 flex flex-col items-start" : "contents"}>
+                {title ? (
+                  <h1
+                    className={`opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`}
+                    style={{
+                      fontFamily: "'Heading', serif",
+                      fontSize: "clamp(2.75rem, 6vw, 7.25rem)",
+                      letterSpacing: "0.04em",
+                      margin: 0,
+                      animationDelay: "0.7s",
+                      animationDuration: "1.0s",
+                    }}
+                  >
+                    {title}
+                  </h1>
+                ) : (
+                  <img
+                    className="opacity-0 animate-fade-in"
+                    src="/assets/dr-yalda-logo-long.svg"
+                    alt="Dr. Yalda Jamali"
+                    style={{
+                      height: "64px",
+                      width: "auto",
+                      maxWidth: "420px",
+                      filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)",
+                      opacity: 0,
+                      animationDelay: "0.7s",
+                      animationDuration: "1.0s",
+                    }}
+                  />
+                )}
+                {tagline && (
+                  <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-3" style={{ fontSize: "17px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: isLeft ? "60ch" : "42ch", textWrap: "balance", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+                    {tagline}
+                  </p>
+                )}
+                {cta && (
+                  <a
+                    href={cta.href}
+                    className="opacity-0 animate-fade-in self-start border border-cream text-cream font-normal uppercase mt-8 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+                    style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", animationDelay: "0.7s", animationDuration: "1.0s" }}
+                  >
+                    {cta.label}
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </a>
+                )}
+              </div>
+              {bottomRight && (
+                <a
+                  href={bottomRight.href}
+                  className={`opacity-0 animate-fade-in text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap ${isLeft ? "self-start md:col-span-6 md:justify-self-end md:self-end" : "self-start"}`}
+                  style={{ marginTop: isLeft ? 0 : "20px", fontFamily: "var(--font-lato)", fontSize: "9px", letterSpacing: "0.55em", textTransform: "uppercase", fontWeight: 300, animationDelay: "0.7s", animationDuration: "1.0s" }}
+                >
+                  {bottomRight.label}
+                  <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
+                    <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              )}
+            </div>
           </div>
         )}
 
         {/* Scroll indicator */}
         {showContent && showScroll && (
-          <button
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-            className="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
-            style={{ zIndex: 5, animationDelay: "1.8s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
-          >
-            <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
-            <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
-          </button>
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2" style={{ zIndex: 5 }}>
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+              className="flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
+              style={{ animationDelay: "0.7s", animationDuration: "1.0s", background: "none", border: "none", padding: 0 }}
+            >
+              <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
+              <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
+            </button>
+          </div>
         )}
 
         {/* Social box — right edge */}
@@ -287,8 +299,8 @@ export default function HeroHome({
               transform: "translateY(-50%)",
               zIndex: 5,
               border: "1px solid rgba(244,241,238,0.22)",
-              animationDelay: "1.6s",
-              animationDuration: "1s",
+              animationDelay: "0.7s",
+              animationDuration: "1.0s",
             }}
           >
             {[

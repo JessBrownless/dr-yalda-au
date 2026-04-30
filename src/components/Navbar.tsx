@@ -107,7 +107,7 @@ export default function Navbar() {
             paddingRight: solid ? "16px" : "0px",
           }}
         >
-          {/* Inner container — shrinks into pg-container width and gains the blur pill on scroll */}
+          {/* Inner container — matches pg-container width on desktop so nav items align with the content grid; shrinks into a pill on scroll */}
           <div
             className="mx-auto relative transition-all duration-[800ms] ease-out"
             style={{
@@ -133,8 +133,8 @@ export default function Navbar() {
               className="grid grid-cols-3 items-center relative transition-all duration-[800ms] ease-out"
               style={{
                 height: solid ? "60px" : "80px",
-                paddingLeft: solid ? "40px" : "clamp(1.5rem, 4vw, 2.5rem)",
-                paddingRight: solid ? "40px" : "clamp(1.5rem, 4vw, 2.5rem)",
+                paddingLeft: solid ? "40px" : isDesktop ? "64px" : "clamp(2rem, 4vw, 2.5rem)",
+                paddingRight: solid ? "40px" : isDesktop ? "64px" : "clamp(2rem, 4vw, 2.5rem)",
               }}
             >
 

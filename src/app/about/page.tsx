@@ -6,9 +6,11 @@ export default function AboutPage() {
       {/* Florence-style hero — full-width bg, overlayed portrait, overlayed text */}
       <section className="relative" style={{ marginTop: "-80px" }}>
 
-        {/* Layer 1: Background image — full bleed behind nav */}
-        <div className="relative overflow-hidden h-[28vh] md:h-[50vh]">
-          <img src="/assets/chairs-hands.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
+        {/* Layer 1: Background image — full bleed behind nav, fades in last over black */}
+        <div className="relative overflow-hidden h-[28vh] md:h-[50vh] bg-brand-black">
+          <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
+            <img src="/assets/chairs-hands.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
+          </div>
           {/* Base darkening */}
           <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.65)", zIndex: 1 }} />
           {/* Top vignette */}
@@ -22,11 +24,11 @@ export default function AboutPage() {
         <div className="absolute left-0 right-0 bottom-0 bg-parchment top-[28vh] md:top-[50vh]" />
 
         {/* Layer 2: Overlayed portrait + text container, pulls up over the bg image */}
-        <div className="pg-container relative z-10 -mt-[10vh] md:-mt-[35vh]" style={{ maxWidth: "1280px" }}>
+        <div className="pg-container relative z-10 -mt-[18vh] md:-mt-[35vh]" style={{ maxWidth: "1280px" }}>
           <div className="relative">
 
             {/* Portrait image */}
-            <div className="hidden md:block opacity-0 animate-fade-in" style={{ width: "47%", animationDelay: "0.4s", animationDuration: "1.2s" }}>
+            <div className="hidden md:block opacity-0 animate-fade-in" style={{ width: "47%", animationDelay: "0s", animationDuration: "1.0s" }}>
               <div className="overflow-hidden" style={{ aspectRatio: "2/3" }}>
                 <img
                   src="/assets/Yalda-1.avif"
@@ -38,8 +40,8 @@ export default function AboutPage() {
             </div>
 
             {/* Mobile image */}
-            <div className="md:hidden opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationDuration: "1.2s" }}>
-              <div className="overflow-hidden" style={{ aspectRatio: "1/1" }}>
+            <div className="md:hidden opacity-0 animate-fade-in" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
+              <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
                 <img
                   src="/assets/Yalda-1.avif"
                   alt="Dr. Yalda Jamali"
@@ -54,36 +56,36 @@ export default function AboutPage() {
               className="hidden md:block absolute z-20"
               style={{ top: "20%", right: 0, width: "55%" }}
             >
-              <div className="bg-parchment flex flex-col gap-8 md:gap-10 p-12 lg:p-16">
-                <p className="opacity-0 animate-fade-in text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase" style={{ animationDelay: "0.8s", animationDuration: "1.2s" }}>
+              <div className="opacity-0 animate-fade-in bg-parchment flex flex-col gap-8 md:gap-10 p-12 lg:p-16" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
+                <p className="opacity-0 animate-fade-in text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
                   The story so far
                 </p>
                 <h1
                   className="opacity-0 animate-fade-in text-brand-black font-normal leading-[0.95] uppercase"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em", animationDelay: "1s", animationDuration: "1.4s" }}
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 5.5rem)", letterSpacing: "0.04em", animationDelay: "0.4s", animationDuration: "1.0s" }}
                 >
                   About Dr Yalda Jamali
                 </h1>
 
-                <p className="opacity-0 animate-fade-in text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif", animationDelay: "1.4s", animationDuration: "1.2s" }}>
-                  With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
+                <p className="opacity-0 animate-fade-in text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif", animationDelay: "0.4s", animationDuration: "1.0s" }}>
+                  With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
                 </p>
               </div>
             </div>
 
             {/* Mobile text */}
             <div className="md:hidden flex flex-col pt-16 pb-0">
-              <p className="opacity-0 animate-fade-in text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-6" style={{ animationDelay: "0.8s", animationDuration: "1.2s" }}>
+              <p className="opacity-0 animate-fade-in text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-6" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
                 The story so far
               </p>
               <h1
                 className="opacity-0 animate-fade-in text-brand-black font-normal leading-[0.95] uppercase"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em", animationDelay: "1s", animationDuration: "1.4s" }}
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 5.5rem)", letterSpacing: "0.04em", animationDelay: "0.4s", animationDuration: "1.0s" }}
               >
                 About Dr Yalda Jamali
               </h1>
-              <p className="opacity-0 animate-fade-in text-neutral-700 font-light leading-[1.9] text-sm md:text-base mt-5" style={{ fontFamily: "'Heading', serif", animationDelay: "1.4s", animationDuration: "1.2s" }}>
-                With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
+              <p className="opacity-0 animate-fade-in text-neutral-700 font-light leading-[1.9] text-sm md:text-base mt-5" style={{ fontFamily: "'Heading', serif", animationDelay: "0.4s", animationDuration: "1.0s" }}>
+                With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
               </p>
             </div>
 

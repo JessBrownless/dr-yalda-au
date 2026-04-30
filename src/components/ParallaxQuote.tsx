@@ -38,8 +38,7 @@ export default function ParallaxQuote({
   return (
     <section
       id="parallax-quote"
-      className="relative flex items-center justify-center overflow-hidden py-24 md:py-32 xl:py-52"
-      style={{ minHeight: "clamp(320px, 45vw, 620px)" }}
+      className="relative flex items-center justify-center overflow-hidden py-24 md:py-32 xl:py-52 min-h-[100vh] md:min-h-[clamp(320px,45vw,620px)]"
     >
       {/* Parallax image */}
       <div

@@ -6,7 +6,7 @@ export default function ServicesPage() {
     <main>
       <HeroHome
         title="Services"
-        tagline="Evidence-based cosmetic services across Sydney, delivered through consultation-led care."
+        tagline={<>Evidence-based cosmetic services across Sydney, delivered through <em>consultation-led</em> care.</>}
         height="90dvh"
         align="left"
         verticalAlign="bottom"

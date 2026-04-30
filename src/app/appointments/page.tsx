@@ -25,44 +25,46 @@ export default function AppointmentsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative -mt-20 min-h-[50dvh] md:min-h-[90dvh]">
+      <section className="relative -mt-20 min-h-[90dvh] overflow-hidden bg-brand-black">
 
-        {/* Full-bleed background image */}
-        <img
-          src="/assets/big-scroll-03.avif"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
+        {/* Full-bleed background image — fades in last over black */}
+        <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: "1.8s", animationDuration: "2.5s" }}>
+          <img
+            src="/assets/big-scroll-03.avif"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </div>
         <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)", zIndex: 1 }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)", zIndex: 2 }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)", zIndex: 2 }} />
 
-        {/* Overlay panel — centered on mobile, anchored to bottom on desktop */}
-        <div className="absolute inset-0 pg-container flex flex-col justify-end text-left" style={{ paddingBottom: "40px", zIndex: 10 }}>
-          <div data-aos="fade" data-aos-delay="100" className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 items-end">
-            <div className="flex flex-col">
+        {/* Overlay panel — H1+sub left (max 4 cols), jumplink right of container, baseline aligned */}
+        <div className="absolute inset-0 pg-container flex flex-col justify-end text-left pb-10 md:pb-14" style={{ zIndex: 10 }}>
+          <div className="flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end">
+            <div className="md:col-span-6 flex flex-col items-start">
               <h1
-                className="text-brand-white font-normal leading-[0.95] uppercase"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em" }}
+                className="opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] uppercase"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.75rem, 6vw, 7.25rem)", letterSpacing: "0.04em", animationDelay: "0.7s", animationDuration: "1.0s" }}
               >
-                Book Now
+                Book
               </h1>
+              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-3" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+                Dr Yalda receives patients by appointment across two Sydney clinics — <em>Paddington and Balgowlah</em>.
+              </p>
             </div>
-            <p className="text-brand-white/75 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif", paddingBottom: "0.35em" }}>
-              Dr Yalda receives patients by appointment across two Sydney clinics — Paddington and Balgowlah.
-            </p>
+            <a
+              href="#intro"
+              className="opacity-0 animate-fade-in self-start md:col-span-6 md:justify-self-end md:self-end text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
+              style={{ fontFamily: "var(--font-lato)", fontSize: "9px", letterSpacing: "0.55em", textTransform: "uppercase", fontWeight: 300, animationDelay: "0.7s", animationDuration: "1.0s" }}
+            >
+              Book a consultation
+              <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
+                <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
-          <a
-            href="#intro"
-            className="self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
-            style={{ marginTop: "40px", fontFamily: "var(--font-lato)", fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 300 }}
-          >
-            Book a consultation
-            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
-              <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
         </div>
       </section>
       <div id="hero-end" />

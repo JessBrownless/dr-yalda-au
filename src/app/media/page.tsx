@@ -12,10 +12,10 @@ export default function MediaPage() {
   return (
     <main>
       {/* ─── HERO — 50/50 image background with centered text ──── */}
-      <section className="relative overflow-hidden" style={{ marginTop: "-80px" }}>
+      <section className="relative overflow-hidden bg-brand-black" style={{ marginTop: "-80px" }}>
 
-        {/* Full-width image background */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* Full-width image background — fades in last over black */}
+        <div className="absolute inset-0 overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: "1.8s", animationDuration: "2.5s" }}>
           <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
         </div>
 
@@ -24,25 +24,27 @@ export default function MediaPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)" }} />
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)" }} />
 
-        {/* Bottom-left text — aligned like services hero */}
-        <div className="relative z-10 flex flex-col justify-end pg-container" style={{ minHeight: "90dvh", paddingTop: "120px", paddingBottom: "40px" }}>
-          <div className="flex flex-col items-start text-left">
-            <h1
-              className="opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] uppercase"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em", animationDelay: "1s", animationDuration: "1.4s" }}
-            >
-              Media
-            </h1>
-            <p className="opacity-0 animate-fade-in text-brand-white/75 font-light leading-relaxed mt-7 max-w-[42ch]" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "1.4s", animationDuration: "1.2s" }}>
-              Expert commentary, brand collaborations, and features — grounded in evidence-based care.
-            </p>
+        {/* Bottom text — H1+sub left (max 4 cols), jumplink right of container, baseline aligned */}
+        <div className="relative z-10 flex flex-col justify-end pg-container pb-10 md:pb-14" style={{ minHeight: "90dvh", paddingTop: "120px" }}>
+          <div className="flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end">
+            <div className="md:col-span-6 flex flex-col items-start text-left">
+              <h1
+                className="opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] uppercase"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.75rem, 6vw, 7.25rem)", letterSpacing: "0.04em", animationDelay: "0.7s", animationDuration: "1.0s" }}
+              >
+                Media
+              </h1>
+              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-3 max-w-[42ch]" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+                Expert commentary, brand collaborations, and features — grounded in <em>evidence-based</em> care.
+              </p>
+            </div>
             <a
               href="#intro"
-              className="opacity-0 animate-fade-in self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
-              style={{ marginTop: "40px", fontFamily: "var(--font-lato)", fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.7s", animationDuration: "1.2s" }}
+              className="opacity-0 animate-fade-in self-start md:col-span-6 md:justify-self-end md:self-end text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
+              style={{ fontFamily: "var(--font-lato)", fontSize: "9px", letterSpacing: "0.55em", textTransform: "uppercase", fontWeight: 300, animationDelay: "0.7s", animationDuration: "1.0s" }}
             >
               See media features
-              <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+              <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
                 <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
