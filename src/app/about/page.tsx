@@ -54,7 +54,7 @@ export default function AboutPage() {
               className="hidden md:block absolute z-20"
               style={{ top: "20%", right: 0, width: "55%" }}
             >
-              <div className="bg-parchment flex flex-col gap-8 p-12 lg:p-16">
+              <div className="bg-parchment flex flex-col gap-8 md:gap-10 p-12 lg:p-16">
                 <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
                   The story so far
                 </p>
@@ -74,7 +74,7 @@ export default function AboutPage() {
 
             {/* Mobile text */}
             <div className="md:hidden flex flex-col pt-16 pb-0">
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-5">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
                 The story so far
               </p>
               <h2

@@ -1,6 +1,5 @@
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
-import WorkTogetherSlideshow from "@/components/WorkTogetherSlideshow";
 
 const socials = [
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
@@ -28,7 +27,7 @@ export default function MediaPage() {
 
         {/* Bottom-left text — aligned like services hero */}
         <div className="relative z-10 flex flex-col justify-end items-start text-left pg-container" style={{ minHeight: "90vh", paddingTop: "120px", paddingBottom: "80px" }}>
-          <p className="text-white/80 font-light uppercase mb-7" style={{ fontSize: "10px", letterSpacing: "0.5em" }}>
+          <p className="text-white/80 font-light uppercase mb-8 md:mb-10" style={{ fontSize: "10px", letterSpacing: "0.5em" }}>
             Media
           </p>
           <h1
@@ -63,7 +62,7 @@ export default function MediaPage() {
             {/* Left — heading + body */}
             <div className="col-span-12 md:col-span-8 flex flex-col gap-12" data-aos="fade" data-aos-duration="1000">
 
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-8 md:gap-10">
                 <p className="text-neutral-400 text-[10px] font-light tracking-[0.5em] uppercase">
                   Beyond the clinic
                 </p>
@@ -129,15 +128,17 @@ export default function MediaPage() {
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-8 items-center">
 
-            {/* Left — image slideshow */}
+            {/* Left — image */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
-              <WorkTogetherSlideshow />
+              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]">
+                <img src="/assets/IMG_0040.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+              </div>
             </div>
 
             {/* Right — numbered list */}
             <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col pt-4 md:pt-0" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
 
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10">
+              <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
                 How we can work together
               </p>
 
@@ -182,7 +183,7 @@ export default function MediaPage() {
       {/* Latest appearances gallery */}
       <section className="bg-cream py-24 md:py-32">
         <div className="pg-container">
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-10 md:mb-14">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
             Latest appearances
           </p>
 
@@ -219,7 +220,7 @@ export default function MediaPage() {
       <section className="bg-parchment py-24 md:py-32" id="features">
         <div className="pg-container">
 
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-16">
+          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
             Media features
           </p>
 
@@ -238,7 +239,7 @@ export default function MediaPage() {
           <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
 
             {/* Left — text */}
-            <div className="col-span-12 md:col-span-6 flex flex-col gap-8 pt-4">
+            <div className="col-span-12 md:col-span-6 flex flex-col gap-8 md:gap-10 pt-4">
               <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
                 Podcast appearances
               </p>

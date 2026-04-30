@@ -80,19 +80,21 @@ export default function AppointmentsPage() {
             <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col opacity-0 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
 
               {/* Heading */}
-              <div className="flex flex-col gap-3 mb-4">
-                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+              <div className="mb-4">
+                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
                   Book Consultation
                 </p>
-                <h2
-                  className="text-brand-black font-normal leading-[0.95] text-[2.5rem] lg:text-[3.25rem]"
-                  style={{ fontFamily: "'Heading', serif", letterSpacing: "0.04em", textTransform: "uppercase" }}
-                >
-                  In-person
-                </h2>
-                <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif" }}>
-                  In-clinic consultations are the only setting where prescriptions and treatments can take place.
-                </p>
+                <div className="flex flex-col gap-3">
+                  <h2
+                    className="text-brand-black font-normal leading-[0.95] text-[2rem] lg:text-[2.75rem]"
+                    style={{ fontFamily: "'Heading', serif", letterSpacing: "0.04em", textTransform: "uppercase" }}
+                  >
+                    In-person
+                  </h2>
+                  <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif" }}>
+                    In-clinic consultations are the only setting where prescriptions and treatments can take place.
+                  </p>
+                </div>
               </div>
 
               <div className="flex flex-col divide-y divide-neutral-300 mt-2">
@@ -182,19 +184,21 @@ export default function AppointmentsPage() {
             {/* Left — text */}
             <div className="col-span-12 md:col-span-7 flex flex-col gap-8 order-2 md:order-1">
 
-              <div className="flex flex-col gap-3">
-                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase">
+              <div>
+                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
                   Book Consultation
                 </p>
-                <h2
-                  className="text-white font-normal leading-[0.95] text-[2.5rem] lg:text-[3.25rem]"
-                  style={{ fontFamily: "'Heading', serif", letterSpacing: "0.04em", textTransform: "uppercase" }}
-                >
-                  Via Phone
-                </h2>
-                <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif" }}>
-                  Each session runs for 15 minutes via online video and is not a replacement for your in-clinic consultation.
-                </p>
+                <div className="flex flex-col gap-3">
+                  <h2
+                    className="text-white font-normal leading-[0.95] text-[2rem] lg:text-[2.75rem]"
+                    style={{ fontFamily: "'Heading', serif", letterSpacing: "0.04em", textTransform: "uppercase" }}
+                  >
+                    Via Phone
+                  </h2>
+                  <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif" }}>
+                    Each session runs for 15 minutes via online video and is not a replacement for your in-clinic consultation.
+                  </p>
+                </div>
               </div>
 
               <div className="flex flex-col divide-y divide-neutral-500">
