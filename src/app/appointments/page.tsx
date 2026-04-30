@@ -25,7 +25,7 @@ export default function AppointmentsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative -mt-20" style={{ minHeight: "clamp(480px, 80vh, 920px)" }}>
+      <section className="relative -mt-20 min-h-[50dvh] md:min-h-[90dvh]">
 
         {/* Full-bleed background image */}
         <img
@@ -38,31 +38,37 @@ export default function AppointmentsPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)", zIndex: 2 }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)", zIndex: 2 }} />
 
-        {/* Overlay panel */}
-        <div className="absolute left-0 right-0 pg-container" style={{ bottom: "clamp(2rem, 5vh, 4rem)", zIndex: 10 }}>
+        {/* Overlay panel — centered on mobile, anchored to bottom on desktop */}
+        <div className="absolute inset-0 pg-container flex flex-col justify-end text-left" style={{ paddingBottom: "40px", zIndex: 10 }}>
           <div data-aos="fade" data-aos-delay="100" className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 items-end">
-            <div className="flex flex-col gap-3">
-              <p className="text-cream/50 text-[9px] font-light tracking-[0.5em] uppercase">
-                Appointments
-              </p>
+            <div className="flex flex-col">
               <h1
-                className="text-cream font-normal leading-[0.95]"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.01em", textTransform: "none" }}
+                className="text-brand-white font-normal leading-[0.95] uppercase"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em" }}
               >
                 Book Now
               </h1>
             </div>
-            <p className="text-cream/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", paddingBottom: "0.35em" }}>
+            <p className="text-brand-white/75 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif", paddingBottom: "0.35em" }}>
               Dr Yalda receives patients by appointment across two Sydney clinics — Paddington and Balgowlah.
             </p>
           </div>
+          <a
+            href="#intro"
+            className="self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
+            style={{ marginTop: "40px", fontFamily: "var(--font-lato)", fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 300 }}
+          >
+            Book a consultation
+            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+              <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </div>
-
       </section>
       <div id="hero-end" />
 
       {/* Clinic locations */}
-      <section className="bg-parchment py-24 md:py-32">
+      <section id="intro" className="bg-brand-white py-24 md:py-32 scroll-mt-20">
 
         <div className="pg-container">
 
@@ -82,7 +88,7 @@ export default function AppointmentsPage() {
               {/* Heading */}
               <div className="mb-4">
                 <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
-                  Book Consultation
+                  Appointments
                 </p>
                 <div className="flex flex-col gap-3">
                   <h2

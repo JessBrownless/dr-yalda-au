@@ -10,14 +10,14 @@ export default function Home() {
       <HeroHome />
 
       {/* Her Story — statement block */}
-      <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
+      <section className="bg-brand-white py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px bg-brand-line h-20 md:h-28 opacity-40" />
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <p
             data-aos="fade"
             className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-12"
           >
-            DR. YALDA JAMALI
+            Home
           </p>
           <h2
             data-aos="fade"

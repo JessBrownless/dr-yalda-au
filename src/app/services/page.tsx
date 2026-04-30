@@ -6,12 +6,11 @@ export default function ServicesPage() {
     <main>
       <HeroHome
         title="Services"
-        titleUppercase={false}
-        tagline="Dr Yalda offers evidence-based cosmetic services across Sydney, focusing on skin health, facial harmony, and natural-looking results delivered through consultation-led care."
-        height="clamp(480px, 80vh, 920px)"
+        tagline="Evidence-based cosmetic services across Sydney, delivered through consultation-led care."
+        height="90dvh"
         align="left"
         verticalAlign="bottom"
-        bottomRight={{ label: "How I can help", href: "#intro" }}
+        bottomRight={{ label: "See services", href: "#intro" }}
         showScroll={false}
         showSocials={false}
         parallax={false}
@@ -19,11 +18,11 @@ export default function ServicesPage() {
       />
 
       {/* ─── INTRO STATEMENT ─────────────────────────────────────────────── */}
-      <section id="intro" className="bg-cream pt-24 md:pt-40 pb-12 md:pb-40 relative scroll-mt-20">
+      <section id="intro" className="bg-brand-white pt-24 md:pt-40 pb-12 md:pb-40 relative scroll-mt-20">
         <div className="pg-container">
           {/* Eyebrow */}
           <p className="eyebrow text-neutral-500 mb-8 md:mb-10">
-            How I Can Help
+            How Dr Yalda can help
           </p>
 
           <div className="grid grid-cols-12 gap-8 md:gap-16 items-baseline">

@@ -32,7 +32,7 @@ export default function HeroHome({
   zoom = 1,
   title,
   titleUppercase = true,
-  tagline = "Cosmetic doctor, educator, and brand collaborator based in Sydney — combining medical expertise with industry innovation",
+  tagline = "Cosmetic doctor, educator, and brand collaborator in Sydney — combining medical expertise with innovation",
   showScroll = true,
   showSocials = true,
   parallax = true,
@@ -44,8 +44,8 @@ export default function HeroHome({
   const isLeft = align === "left";
   const isBottom = verticalAlign === "bottom";
   const heroImages = images ?? defaultImages;
-  const mobileHeight = height ?? "90dvh";
-  const desktopHeight = height ?? "90vh";
+  const mobileHeight = height ?? "100dvh";
+  const desktopHeight = height ?? "100dvh";
   const imgRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -103,9 +103,10 @@ export default function HeroHome({
 
         {/* Centred content */}
         {showContent && (
-          <div className={`absolute inset-0 flex flex-col gap-6 px-8 ${isLeft ? "items-start" : "items-center"} ${isBottom ? "justify-end pb-12" : "justify-center"}`} style={{ zIndex: 5 }}>
+          <div className={`absolute inset-0 flex px-8 pb-10 ${isBottom ? "items-end" : "items-center"} ${isLeft ? "justify-start" : "justify-center"}`} style={{ zIndex: 5 }}>
+            <div className={`flex flex-col ${isLeft ? "items-start" : "items-center"}`}>
             {title ? (
-              <h1 className={`text-cream font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`} style={{ fontFamily: "'Heading', serif", fontSize: "clamp(3.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.01em", margin: 0 }}>
+              <h1 className={`text-brand-white font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`} style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em", margin: 0, textAlign: isLeft ? "left" : "center" }}>
                 {title}
               </h1>
             ) : (
@@ -116,20 +117,33 @@ export default function HeroHome({
               />
             )}
             {tagline && (
-              <p className="text-cream/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch" }}>
+              <p className="text-brand-white/75 font-light leading-relaxed mt-6" style={{ fontSize: "17px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch" }}>
                 {tagline}
               </p>
             )}
             {cta && (
               <a
                 href={cta.href}
-                className="self-start border border-cream text-cream font-normal uppercase mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+                className="self-start border border-cream text-cream font-normal uppercase mt-8 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
                 style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
               >
                 {cta.label}
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </a>
             )}
+            {bottomRight && (
+              <a
+                href={bottomRight.href}
+                className="opacity-0 animate-fade-in self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
+                style={{ marginTop: "40px", fontFamily: "var(--font-lato)", fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.7s", animationDuration: "1.2s" }}
+              >
+                {bottomRight.label}
+                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                  <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            )}
+            </div>
           </div>
         )}
 
@@ -137,28 +151,12 @@ export default function HeroHome({
         {showContent && showScroll && (
           <button
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
+            className="absolute bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
             style={{ zIndex: 5, animationDelay: "1.5s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
           >
             <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
             <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
           </button>
-        )}
-
-        {/* Bottom-right anchor link (mobile) — aligned to content max-width */}
-        {showContent && bottomRight && (
-          <div className="absolute bottom-8 left-0 right-0 px-8 flex justify-end pointer-events-none" style={{ zIndex: 5 }}>
-            <a
-              href={bottomRight.href}
-              className="pointer-events-auto flex items-center gap-3 text-cream/70 hover:text-cream opacity-0 animate-fade-in transition-colors duration-300"
-              style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.8s", animationDuration: "1s" }}
-            >
-              {bottomRight.label}
-              <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
-                <path d="M6 1v12M1 8l5 5 5-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-          </div>
         )}
 
         {/* Noise grain */}
@@ -206,14 +204,14 @@ export default function HeroHome({
 
         {/* Centred content */}
         {showContent && (
-          <div className={`absolute inset-0 flex flex-col gap-6 ${isLeft ? "items-start pg-container" : "items-center"} ${isBottom ? "justify-end pb-16" : "justify-center"}`} style={{ zIndex: 5 }}>
+          <div className={`absolute inset-0 flex flex-col ${isLeft ? "items-start pg-container" : "items-center"} ${isBottom ? "justify-end pb-10" : "justify-center"}`} style={{ zIndex: 5 }}>
             {title ? (
               <h1
-                className={`opacity-0 animate-fade-in text-cream font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`}
+                className={`opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`}
                 style={{
                   fontFamily: "'Heading', serif",
-                  fontSize: "clamp(3.5rem, 5.5vw, 6.5rem)",
-                  letterSpacing: "0.01em",
+                  fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)",
+                  letterSpacing: "0.04em",
                   margin: 0,
                   animationDelay: "1s",
                   animationDuration: "1.4s",
@@ -238,18 +236,30 @@ export default function HeroHome({
               />
             )}
             {tagline && (
-              <p className="opacity-0 animate-fade-in text-cream/60 font-light leading-relaxed" style={{ fontSize: "15px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
+              <p className="opacity-0 animate-fade-in text-brand-white/75 font-light leading-relaxed mt-6" style={{ fontSize: "17px", fontFamily: "'Heading', serif", textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "1.4s", animationDuration: "1.2s" }}>
                 {tagline}
               </p>
             )}
             {cta && (
               <a
                 href={cta.href}
-                className="opacity-0 animate-fade-in self-start border border-cream text-cream font-normal uppercase mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+                className="opacity-0 animate-fade-in self-start border border-cream text-cream font-normal uppercase mt-8 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
                 style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", animationDelay: "1.7s", animationDuration: "1.2s" }}
               >
                 {cta.label}
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+            )}
+            {bottomRight && (
+              <a
+                href={bottomRight.href}
+                className="opacity-0 animate-fade-in self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
+                style={{ marginTop: "40px", fontFamily: "var(--font-lato)", fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.7s", animationDuration: "1.2s" }}
+              >
+                {bottomRight.label}
+                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                  <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </a>
             )}
           </div>
@@ -259,7 +269,7 @@ export default function HeroHome({
         {showContent && showScroll && (
           <button
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
+            className="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
             style={{ zIndex: 5, animationDelay: "1.8s", animationDuration: "1s", background: "none", border: "none", padding: 0 }}
           >
             <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
@@ -305,22 +315,6 @@ export default function HeroHome({
                 <Icon size={11} />
               </a>
             ))}
-          </div>
-        )}
-
-        {/* Bottom-right anchor link (desktop) — aligned to content max-width */}
-        {showContent && bottomRight && (
-          <div className="absolute bottom-12 left-0 right-0 pg-container flex justify-end pointer-events-none" style={{ zIndex: 5 }}>
-            <a
-              href={bottomRight.href}
-              className="pointer-events-auto flex items-center gap-4 text-cream/70 hover:text-cream opacity-0 animate-fade-in transition-colors duration-300"
-              style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.8s", animationDuration: "1s" }}
-            >
-              {bottomRight.label}
-              <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
-                <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
           </div>
         )}
 

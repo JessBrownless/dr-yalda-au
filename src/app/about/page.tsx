@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <main className="bg-parchment">
       {/* Florence-style hero — full-width bg, overlayed portrait, overlayed text */}
-      <section className="relative" style={{ marginTop: "-72px" }}>
+      <section className="relative" style={{ marginTop: "-80px" }}>
 
         {/* Layer 1: Background image — full bleed behind nav */}
         <div className="relative overflow-hidden h-[28vh] md:h-[50vh]">
@@ -55,16 +55,15 @@ export default function AboutPage() {
               style={{ top: "20%", right: 0, width: "55%" }}
             >
               <div className="bg-parchment flex flex-col gap-8 md:gap-10 p-12 lg:p-16">
-                <p className="opacity-0 animate-fade-in text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase" style={{ animationDelay: "0.8s", animationDuration: "1.2s" }}>
+                <p className="opacity-0 animate-fade-in text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase" style={{ animationDelay: "0.8s", animationDuration: "1.2s" }}>
                   The story so far
                 </p>
-
-                <h2
-                  className="opacity-0 animate-fade-in text-brand-black font-normal leading-[1.05]"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2rem, 3.5vw, 4rem)", letterSpacing: "0", animationDelay: "1s", animationDuration: "1.4s" }}
+                <h1
+                  className="opacity-0 animate-fade-in text-brand-black font-normal leading-[0.95] uppercase"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em", animationDelay: "1s", animationDuration: "1.4s" }}
                 >
-                  My journey began over 10 years ago, in London.
-                </h2>
+                  About Dr Yalda Jamali
+                </h1>
 
                 <p className="opacity-0 animate-fade-in text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif", animationDelay: "1.4s", animationDuration: "1.2s" }}>
                   With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
@@ -74,15 +73,15 @@ export default function AboutPage() {
 
             {/* Mobile text */}
             <div className="md:hidden flex flex-col pt-16 pb-0">
-              <p className="opacity-0 animate-fade-in text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10" style={{ animationDelay: "0.8s", animationDuration: "1.2s" }}>
+              <p className="opacity-0 animate-fade-in text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-6" style={{ animationDelay: "0.8s", animationDuration: "1.2s" }}>
                 The story so far
               </p>
-              <h2
-                className="opacity-0 animate-fade-in text-brand-black font-normal leading-[1.05]"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.875rem, 6vw, 3rem)", letterSpacing: "0", animationDelay: "1s", animationDuration: "1.4s" }}
+              <h1
+                className="opacity-0 animate-fade-in text-brand-black font-normal leading-[0.95] uppercase"
+                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em", animationDelay: "1s", animationDuration: "1.4s" }}
               >
-                My journey began over 10 years ago, in London.
-              </h2>
+                About Dr Yalda Jamali
+              </h1>
               <p className="opacity-0 animate-fade-in text-neutral-700 font-light leading-[1.9] text-sm md:text-base mt-5" style={{ fontFamily: "'Heading', serif", animationDelay: "1.4s", animationDuration: "1.2s" }}>
                 With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, natural-looking results.
               </p>
@@ -94,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials — stylised on desktop, flows like next paragraph on mobile */}
-      <section className="bg-parchment pt-6 pb-12 md:py-32">
+      <section className="bg-brand-white pt-6 pb-12 md:py-32">
         <div className="pg-container md:max-w-[820px] md:mx-auto md:text-center">
           <p
             className="text-neutral-700 font-light leading-[1.9] text-sm md:text-brand-black md:leading-[1.35] md:text-2xl lg:text-[1.75rem]"

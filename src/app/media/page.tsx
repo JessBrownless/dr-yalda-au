@@ -12,53 +12,63 @@ export default function MediaPage() {
   return (
     <main>
       {/* ─── HERO — 50/50 image background with centered text ──── */}
-      <section className="relative overflow-hidden" style={{ marginTop: "-72px" }}>
+      <section className="relative overflow-hidden" style={{ marginTop: "-80px" }}>
 
         {/* Full-width image background */}
         <div className="absolute inset-0 overflow-hidden">
           <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
         </div>
 
-        {/* Dark overlays — base dim + strong top fade-in + softer top fade for nav legibility + bottom fade for transition */}
+        {/* Dark overlays — base dim + top fade for nav legibility + bottom fade for transition */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: "rgba(0,0,0,0.4)" }} />
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 12%, transparent 35%)" }} />
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)" }} />
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)" }} />
 
         {/* Bottom-left text — aligned like services hero */}
-        <div className="relative z-10 flex flex-col justify-end items-start text-left pg-container" style={{ minHeight: "90vh", paddingTop: "120px", paddingBottom: "80px" }}>
-          <p className="opacity-0 animate-fade-in text-cream/80 font-light uppercase mb-8 md:mb-10" style={{ fontSize: "10px", letterSpacing: "0.5em", animationDelay: "0.8s", animationDuration: "1.2s" }}>
-            Media
-          </p>
-          <h1
-            className="opacity-0 animate-fade-in text-cream font-normal leading-[1.05] uppercase max-w-[14ch]"
-            style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", letterSpacing: "0.02em", animationDelay: "1s", animationDuration: "1.4s" }}
-          >
-            Press &amp; Features
-          </h1>
-          <p className="opacity-0 animate-fade-in text-cream/85 font-light leading-[1.9] text-base mt-7 max-w-[42ch]" style={{ fontFamily: "'Heading', serif", animationDelay: "1.4s", animationDuration: "1.2s" }}>
-            Expert commentary, brand collaborations, and broadcast features — grounded in honest, evidence-based care.
-          </p>
-          {/* Brand logos — overlaid on hero, white. Run off the right edge on mobile */}
-          <div
-            className="opacity-0 animate-fade-in flex items-center gap-x-7 md:gap-x-10 mt-14 md:mt-16 flex-nowrap md:flex-wrap md:gap-y-4 -mr-[clamp(2rem,4vw,2.5rem)] md:mr-0"
-            style={{ animationDelay: "1.7s", animationDuration: "1.2s" }}
-          >
-            <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
-            <img src="/assets/logo-no7.svg" alt="No7" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
-            <span className="text-cream/75 font-light flex-shrink-0 whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.8rem, 1.2vw, 0.95rem)", letterSpacing: "0.2em" }}>
-              MEDIK8
-            </span>
-            <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
-            <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-4 md:h-5 opacity-75 flex-shrink-0" style={{ filter: "brightness(0) invert(1)" }} />
+        <div className="relative z-10 flex flex-col justify-end pg-container" style={{ minHeight: "90dvh", paddingTop: "120px", paddingBottom: "40px" }}>
+          <div className="flex flex-col items-start text-left">
+            <h1
+              className="opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] uppercase"
+              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5.5vw, 6.5rem)", letterSpacing: "0.04em", animationDelay: "1s", animationDuration: "1.4s" }}
+            >
+              Media
+            </h1>
+            <p className="opacity-0 animate-fade-in text-brand-white/75 font-light leading-relaxed mt-7 max-w-[42ch]" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "1.4s", animationDuration: "1.2s" }}>
+              Expert commentary, brand collaborations, and features — grounded in evidence-based care.
+            </p>
+            <a
+              href="#intro"
+              className="opacity-0 animate-fade-in self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
+              style={{ marginTop: "40px", fontFamily: "var(--font-lato)", fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", fontWeight: 300, animationDelay: "1.7s", animationDuration: "1.2s" }}
+            >
+              See media features
+              <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                <path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
         </div>
 
         <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />
       </section>
 
+      {/* Brand logo strip — directly under the hero */}
+      <section className="bg-parchment py-10 md:py-12">
+        <div className="pg-container">
+          <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-6 md:gap-x-16">
+            <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+            <img src="/assets/logo-no7.svg" alt="No7" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+            <span className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.85rem, 1.3vw, 1.05rem)", letterSpacing: "0.2em" }}>
+              MEDIK8
+            </span>
+            <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+            <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+          </div>
+        </div>
+      </section>
+
       {/* Beyond the clinic */}
-      <section className="bg-cream py-24 md:py-32 relative">
+      <section id="intro" className="bg-brand-white py-24 md:py-32 relative scroll-mt-20">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 

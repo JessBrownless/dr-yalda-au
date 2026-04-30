@@ -28,10 +28,20 @@ export default function Navbar() {
   const [overDark, setOverDark] = useState(true);
   const [overStickyScroll, setOverStickyScroll] = useState(false);
   const [overParallaxQuote, setOverParallaxQuote] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -78,9 +88,9 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  // Glassy pill once the user starts scrolling — same across every page.
+  // Glassy pill once the user starts scrolling — desktop only, never on mobile.
   // Menu open keeps the nav transparent so the dark overlay reads cleanly.
-  const solid = scrolled && !open;
+  const solid = scrolled && !open && isDesktop;
   // Text/elements flip based on the section behind the nav.
   const overDarkSection = overDark || overStickyScroll || overParallaxQuote;
   const dark = !open && !overDarkSection;
@@ -128,25 +138,35 @@ export default function Navbar() {
               }}
             >
 
-          {/* Left column — nav links */}
-          <div className={`hidden md:flex items-center gap-8 justify-start transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-            {[{ label: "Home", href: "/" }, { label: "About", href: "/about" }, { label: "Services", href: "/services" }].map(({ label, href }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
-                  pathname === href
-                    ? dark ? "font-medium text-brand-black" : "font-medium text-cream"
-                    : dark ? "font-extralight text-brand-black/40 hover:text-brand-black" : "font-extralight text-cream/50 hover:text-cream"
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
+          {/* Left column — desktop nav links / mobile hamburger */}
+          <div className="flex items-center justify-start gap-8">
+            {/* Mobile hamburger */}
+            <button
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+              className="flex md:hidden flex-col gap-[7px] p-2 group"
+            >
+              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-cream" : "w-6"}`} />
+              <span className={`block h-px transition-all duration-300 ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "opacity-0 w-6 !bg-cream" : "w-4 group-hover:w-6"}`} />
+              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-cream" : "w-6"}`} />
+            </button>
+            {/* Desktop links */}
+            <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+              {[{ label: "Home", href: "/" }, { label: "About", href: "/about" }, { label: "Services", href: "/services" }].map(({ label, href }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
+                    pathname === href
+                      ? dark ? "font-medium text-brand-black" : "font-medium text-cream"
+                      : dark ? "font-extralight text-brand-black/40 hover:text-brand-black" : "font-extralight text-cream/50 hover:text-cream"
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
-
-          {/* Spacer for mobile so logo sits in the middle column */}
-          <div className="md:hidden" />
 
           {/* Center column — logo */}
           <Link href="/" className={`flex justify-center transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-90 hover:opacity-100"}`}>
@@ -160,8 +180,19 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Right column — links + hamburger */}
+          {/* Right column — desktop links / mobile Book Now text link */}
           <div className="flex items-center gap-8 justify-end">
+            {/* Mobile Book Now plain text link */}
+            <Link
+              href="/appointments"
+              className={`md:hidden text-[11px] tracking-[0.25em] uppercase font-medium font-hanken transition-colors duration-300 ${
+                pathname === "/appointments"
+                  ? dark ? "text-brand-black" : "text-cream"
+                  : dark ? "text-brand-black/50 hover:text-brand-black" : "text-cream/50 hover:text-cream"
+              }`}
+            >
+              Book Now
+            </Link>
             <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
               {[{ label: "Media", href: "/media" }].map(({ label, href }) => (
                 <Link
@@ -187,16 +218,6 @@ export default function Navbar() {
                 Book Now
               </Link>
             </div>
-
-            <button
-              onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
-              className="flex md:hidden flex-col gap-[7px] p-2 group"
-            >
-              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "w-6 rotate-45 translate-y-[7.5px] !bg-cream" : "w-6"}`} />
-              <span className={`block h-px transition-all duration-300 ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "opacity-0 w-6 !bg-cream" : "w-4 group-hover:w-6"}`} />
-              <span className={`block h-px transition-all duration-500 ease-in-out origin-center ${dark ? "bg-brand-black" : "bg-cream"} ${open ? "w-6 -rotate-45 -translate-y-[7.5px] !bg-cream" : "w-6"}`} />
-            </button>
           </div>
 
             </div>

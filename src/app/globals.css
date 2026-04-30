@@ -389,13 +389,7 @@
     letter-spacing: 0.04em;
   }
 
-  /* H1s are always uppercase; italic spans inside opt out */
-  h1 {
-    text-transform: uppercase;
-  }
-
   h1 em {
-    text-transform: none;
     font-style: italic;
   }
 }
