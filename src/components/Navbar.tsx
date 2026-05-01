@@ -150,7 +150,7 @@ export default function Navbar() {
               maxWidth: solid ? "800px" : "100vw",
             }}
           >
-            {/* Dedicated glass layer — backdrop-filter renders more reliably on its own element */}
+            {/* Pill background layer */}
             <div
               aria-hidden="true"
               className={`absolute inset-0 pointer-events-none ${mounted ? "transition-all duration-[800ms] ease-out" : ""}`}
@@ -158,11 +158,9 @@ export default function Navbar() {
                 borderRadius: solid ? "9999px" : "0px",
                 backgroundColor: solid
                   ? overDarkSection
-                    ? "rgba(246,246,243,0.10)"   // over dark — keep the subtle glass look
-                    : "rgba(246,246,243,0.50)"   // over light — semi-translucent white
+                    ? "rgba(45,44,42,0.85)"      // over dark — solid darker pill
+                    : "rgba(246,246,243,0.95)"   // over light — near-opaque cream
                   : "rgba(246,246,243,0)",
-                backdropFilter: solid ? "blur(28px) saturate(180%)" : "blur(0px)",
-                WebkitBackdropFilter: solid ? "blur(28px) saturate(180%)" : "blur(0px)",
               }}
             />
             <div
