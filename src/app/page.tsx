@@ -42,7 +42,7 @@ export default function Home() {
 
             {/* Left — image over parchment */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4]">
+              <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img src="/assets/IMG_004.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function Home() {
 
             {/* Right — image over parchment */}
             <div className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:[aspect-ratio:3/4] md:[transform:scale(1.05)] md:[transform-origin:center_center]">
+              <div className="overflow-hidden aspect-square md:aspect-[3/4] md:scale-105 md:origin-center">
                 <img src="/assets/IMG_0037_color.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 40%" }} />
               </div>
             </div>
