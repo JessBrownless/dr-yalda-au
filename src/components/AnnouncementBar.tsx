@@ -9,7 +9,7 @@ export default function AnnouncementBar() {
 
   return (
     <div
-      className="relative z-[60] grid grid-cols-[1fr_auto_1fr] items-center gap-4 text-cream/80 px-6"
+      className="relative z-[60] grid grid-cols-[1fr_auto_1fr] items-center gap-4 text-cream/80"
       style={{ backgroundColor: "#2D2C2A", height: "32px" }}
     >
       {/* Left spacer — keeps the centre column mathematically centred */}
@@ -17,16 +17,12 @@ export default function AnnouncementBar() {
 
       {/* Centred content */}
       <div className="flex items-center justify-center gap-3 text-center whitespace-nowrap">
-        <span
-          style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-lato)" }}
-          className="font-light uppercase"
-        >
+        <span className="body-xs-caps">
           Limited phone consultations.
         </span>
         <a
           href="/appointments"
-          style={{ fontSize: "9px", letterSpacing: "0.35em", fontFamily: "var(--font-lato)" }}
-          className="font-light uppercase whitespace-nowrap border-b border-cream/30 hover:border-cream hover:text-cream transition-all duration-700"
+          className="body-xs-caps whitespace-nowrap border-b border-cream/30 hover:border-cream hover:text-cream transition-all duration-700"
         >
           Book Now
         </a>

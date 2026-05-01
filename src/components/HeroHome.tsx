@@ -78,12 +78,11 @@ export default function HeroHome({
 
   return (
     <>
-      <header>
       {/* Single semantic H1 — visually rendered per breakpoint below as a styled paragraph */}
       {title && <h1 className="sr-only">{title}</h1>}
 
       {/* ── MOBILE ── */}
-      <div className="md:hidden relative overflow-hidden bg-brand-black opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}>
+      <section className="md:hidden relative overflow-hidden bg-brand-black opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}>
 
         {/* Photos — crossfade, wrapped so the image layer fades in last */}
         <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ zIndex: 0, animationDelay: "1.8s", animationDuration: "2.5s" }}>
@@ -142,8 +141,8 @@ export default function HeroHome({
             {bottomRight && (
               <a
                 href={bottomRight.href}
-                className="opacity-0 animate-fade-in self-start text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
-                style={{ marginTop: "20px", fontFamily: "var(--font-lato)", fontSize: "9px", letterSpacing: "0.55em", textTransform: "uppercase", fontWeight: 300, animationDelay: "0.7s", animationDuration: "1.0s" }}
+                className="body-xs-caps opacity-0 animate-fade-in self-start hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
+                style={{ marginTop: "20px", animationDelay: "0.7s", animationDuration: "1.0s" }}
               >
                 {bottomRight.label}
                 <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
@@ -164,17 +163,17 @@ export default function HeroHome({
               style={{ animationDelay: "0.7s", animationDuration: "1.0s", background: "none", border: "none", padding: 0 }}
             >
               <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
-              <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
+              <span className="body-xs-caps">Scroll</span>
             </button>
           </div>
         )}
 
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
-      </div>
+      </section>
 
       {/* ── DESKTOP ── */}
-      <div
+      <section
         className="hidden md:block relative overflow-hidden bg-brand-black opacity-0 animate-fade-in"
         style={{ height: desktopHeight, marginTop: "-72px", animationDelay: "0s", animationDuration: "0.4s" }}
       >
@@ -260,8 +259,8 @@ export default function HeroHome({
               {bottomRight && (
                 <a
                   href={bottomRight.href}
-                  className={`opacity-0 animate-fade-in text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap ${isLeft ? "self-start md:col-span-6 md:justify-self-end md:self-end" : "self-start"}`}
-                  style={{ marginTop: isLeft ? 0 : "20px", fontFamily: "var(--font-lato)", fontSize: "9px", letterSpacing: "0.55em", textTransform: "uppercase", fontWeight: 300, animationDelay: "0.7s", animationDuration: "1.0s" }}
+                  className={`body-xs-caps opacity-0 animate-fade-in hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap ${isLeft ? "self-start md:col-span-6 md:justify-self-end md:self-end" : "self-start"}`}
+                  style={{ marginTop: isLeft ? 0 : "20px", animationDelay: "0.7s", animationDuration: "1.0s" }}
                 >
                   {bottomRight.label}
                   <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
@@ -282,7 +281,7 @@ export default function HeroHome({
               style={{ animationDelay: "0.7s", animationDuration: "1.0s", background: "none", border: "none", padding: 0 }}
             >
               <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
-              <span style={{ fontSize: "8px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.3)", textTransform: "uppercase", fontWeight: 300 }}>Scroll</span>
+              <span className="body-xs-caps">Scroll</span>
             </button>
           </div>
         )}
@@ -330,8 +329,7 @@ export default function HeroHome({
 
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
-      </div>
-      </header>
+      </section>
 
       {/* Sentinel — Navbar watches this to switch logo colour */}
       <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />

@@ -133,8 +133,8 @@ export default function Navbar() {
               className="grid grid-cols-3 items-center relative transition-all duration-[800ms] ease-out"
               style={{
                 height: solid ? "60px" : "80px",
-                paddingLeft: solid ? "40px" : isDesktop ? "64px" : "clamp(2rem, 4vw, 2.5rem)",
-                paddingRight: solid ? "40px" : isDesktop ? "64px" : "clamp(2rem, 4vw, 2.5rem)",
+                paddingLeft: solid ? "40px" : isDesktop ? "64px" : "1rem",
+                paddingRight: solid ? "40px" : isDesktop ? "64px" : "1rem",
               }}
             >
 

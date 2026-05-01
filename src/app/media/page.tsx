@@ -40,8 +40,8 @@ export default function MediaPage() {
             </div>
             <a
               href="#intro"
-              className="opacity-0 animate-fade-in self-start md:col-span-6 md:justify-self-end md:self-end text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
-              style={{ fontFamily: "var(--font-lato)", fontSize: "9px", letterSpacing: "0.55em", textTransform: "uppercase", fontWeight: 300, animationDelay: "0.7s", animationDuration: "1.0s" }}
+              className="body-xs-caps opacity-0 animate-fade-in self-start md:col-span-6 md:justify-self-end md:self-end hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
+              style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
             >
               See media features
               <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
