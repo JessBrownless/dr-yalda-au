@@ -56,16 +56,18 @@ export default function AboutPage() {
               className="hidden md:block absolute z-20"
               style={{ top: "20%", right: 0, width: "55%" }}
             >
-              <div className="opacity-0 animate-fade-in bg-parchment flex flex-col gap-8 md:gap-10 p-12 lg:p-16" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
-                <p className="opacity-0 animate-fade-in overline" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
-                  The story so far
-                </p>
-                <h1
-                  className="heading-xl opacity-0 animate-fade-in"
-                  style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
-                >
-                  About Dr Yalda Jamali
-                </h1>
+              <div className="opacity-0 animate-fade-in bg-parchment flex flex-col gap-8 p-12 lg:p-16" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
+                <div className="flex flex-col gap-6">
+                  <p className="opacity-0 animate-fade-in overline" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
+                    The story so far
+                  </p>
+                  <h1
+                    className="heading-xl opacity-0 animate-fade-in"
+                    style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
+                  >
+                    About Dr Yalda Jamali
+                  </h1>
+                </div>
 
                 <p className="opacity-0 animate-fade-in body-serif" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
                   With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
@@ -84,7 +86,7 @@ export default function AboutPage() {
               >
                 About Dr Yalda Jamali
               </h1>
-              <p className="opacity-0 animate-fade-in body-serif mt-5" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
+              <p className="opacity-0 animate-fade-in body-serif mt-8" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
                 With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
               </p>
             </div>
@@ -180,7 +182,7 @@ export default function AboutPage() {
 
         {/* Centre card — overlaps both images */}
         <div
-          className="absolute z-10 hidden md:flex flex-col gap-7 justify-center"
+          className="absolute z-10 hidden md:flex flex-col gap-8 justify-center"
           style={{
             left: "29%",
             top: "50%",
@@ -190,12 +192,14 @@ export default function AboutPage() {
             padding: "clamp(2rem, 3.5vw, 4rem)",
           }}
         >
-          <p className="overline">
-            Feeling overwhelmed?
-          </p>
-          <h3 className="heading-lg">
-            Complimentary 15-minute online consultation.
-          </h3>
+          <div className="flex flex-col gap-6">
+            <p className="overline">
+              Feeling overwhelmed?
+            </p>
+            <h3 className="heading-lg">
+              Complimentary 15-minute online consultation.
+            </h3>
+          </div>
           <p className="body-serif">
             Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
           </p>
@@ -210,11 +214,13 @@ export default function AboutPage() {
           <div className="aspect-square overflow-hidden">
             <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
           </div>
-          <div className="flex flex-col gap-6 px-8 py-14" style={{ background: "#F6F6F3", color: "#2D2C2A" }}>
-            <p className="overline">Feeling overwhelmed?</p>
-            <h3 className="heading-lg">
-              Complimentary 15-minute online consultation
-            </h3>
+          <div className="flex flex-col gap-8 px-8 py-14" style={{ background: "#F6F6F3", color: "#2D2C2A" }}>
+            <div className="flex flex-col gap-6">
+              <p className="overline">Feeling overwhelmed?</p>
+              <h3 className="heading-lg">
+                Complimentary 15-minute online consultation
+              </h3>
+            </div>
             <p className="body-serif">
               Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
             </p>

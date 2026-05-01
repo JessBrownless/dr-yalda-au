@@ -21,7 +21,7 @@ export default function ServicesPage() {
       <section id="intro" className="bg-parchment py-32 md:py-52 relative scroll-mt-20">
         <div className="pg-container">
           {/* Eyebrow */}
-          <h2 className="overline mb-8 md:mb-10">
+          <h2 className="overline mb-6">
             How Dr Yalda can help
           </h2>
 
@@ -46,10 +46,10 @@ export default function ServicesPage() {
       </section>
 
       {/* ─── 3. CONSULTATION APPROACH ─────────────────────────────────────── */}
-      <section className="bg-parchment overflow-hidden relative pt-12 md:pt-16 pb-12 md:pb-16 md:flex md:items-center" style={{ minHeight: "100vh" }}>
+      <section className="bg-parchment overflow-hidden relative pb-12 md:pb-16 md:flex md:items-start">
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-y-14 gap-x-8 items-center">
+          <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image */}
             <div className="col-span-12 md:col-span-5 relative">
@@ -70,7 +70,7 @@ export default function ServicesPage() {
 
               {/* Eyebrow + heading */}
               <div>
-                <h2 className="overline mb-8 md:mb-10">
+                <h2 className="overline mb-6">
                   Specialism
                 </h2>
                 <h3 className="heading-lg">
@@ -99,17 +99,17 @@ export default function ServicesPage() {
                     >
                       <path d="M2 7l3.5 3.5L12 4" stroke="#a3a3a3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <p className="heading-md">{item}</p>
+                    <p className="body-serif">{item}</p>
                   </div>
                 ))}
               </div>
 
               {/* Device row */}
               <div>
-                <p className="overline mb-8 md:mb-10">
+                <p className="overline mb-6">
                   Advanced Modalities
                 </p>
-                <p className="heading-md">
+                <p className="body-serif">
                   BBL &nbsp;·&nbsp; MOXI &nbsp;·&nbsp; Morpheus8
                 </p>
               </div>
@@ -127,10 +127,10 @@ export default function ServicesPage() {
 
             {/* Left — numbered list */}
             <div className="col-span-12 md:col-span-6 flex flex-col order-2 md:order-1">
-              <h2 className="overline mb-8 md:mb-10">
+              <h2 className="overline mb-6">
                 Methodology
               </h2>
-              <h3 className="heading-lg mb-8 md:mb-10">
+              <h3 className="heading-lg mb-8">
                 The Dr. Yalda approach
               </h3>
               {[
@@ -148,7 +148,7 @@ export default function ServicesPage() {
                     >
                       {num}
                     </span>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-8">
                       <h3 className="heading-md">
                         {label}
                       </h3>
@@ -179,7 +179,7 @@ export default function ServicesPage() {
       {/* FAQ */}
       <section className="bg-brand-black py-24 md:py-32">
         <div className="pg-container">
-          <h2 className="overline mb-8 md:mb-10">
+          <h2 className="overline mb-6">
             FAQs
           </h2>
           <div className="grid grid-cols-12 gap-6 md:gap-12 md:items-baseline">
@@ -207,11 +207,13 @@ export default function ServicesPage() {
         <div className="absolute right-0 bottom-0 hidden md:block overflow-hidden" style={{ width: "34%", top: "18%" }}>
           <img src="/assets/dr-yalda-treatment.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
         </div>
-        <div className="absolute z-10 hidden md:flex flex-col gap-7 justify-center" style={{ left: "29%", top: "50%", transform: "translateY(-50%)", width: "38%", background: "#F6F2EF", padding: "clamp(2rem, 3.5vw, 4rem)" }}>
-          <p className="overline">Book a consultation</p>
-          <h3 className="heading-lg">
-            Let's begin with a conversation
-          </h3>
+        <div className="absolute z-10 hidden md:flex flex-col gap-8 justify-center" style={{ left: "29%", top: "50%", transform: "translateY(-50%)", width: "38%", background: "#F6F2EF", padding: "clamp(2rem, 3.5vw, 4rem)" }}>
+          <div className="flex flex-col gap-6">
+            <p className="overline">Book a consultation</p>
+            <h3 className="heading-lg">
+              Let's begin with a conversation
+            </h3>
+          </div>
           <p className="body-serif">
             Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
           </p>
@@ -224,9 +226,11 @@ export default function ServicesPage() {
           <div className="aspect-[4/3] overflow-hidden">
             <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
           </div>
-          <div className="flex flex-col gap-6 p-8" style={{ background: "#F6F2EF", color: "#2D2C2A" }}>
-            <p className="overline">Book a consultation</p>
-            <h3 className="heading-lg">Let's begin with a conversation</h3>
+          <div className="flex flex-col gap-8 p-8" style={{ background: "#F6F2EF", color: "#2D2C2A" }}>
+            <div className="flex flex-col gap-6">
+              <p className="overline">Book a consultation</p>
+              <h3 className="heading-lg">Let's begin with a conversation</h3>
+            </div>
             <p className="body-serif">Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.</p>
             <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
               Book a consultation

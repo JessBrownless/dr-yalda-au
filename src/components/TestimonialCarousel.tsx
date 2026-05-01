@@ -116,7 +116,7 @@ export default function TestimonialCarousel() {
                 className="w-full h-full object-cover object-top"
               />
             </div>
-            <p className="overline mt-4">
+            <p className="overline mt-10 md:mt-12">
               {t.imageCaption}
             </p>
           </div>

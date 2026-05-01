@@ -50,7 +50,7 @@ export default function AppointmentsPage() {
               >
                 Book
               </h1>
-              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-3" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-8" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 Dr Yalda receives patients by appointment across two Sydney clinics — <em>Paddington and Balgowlah</em>.
               </p>
             </div>
@@ -89,10 +89,10 @@ export default function AppointmentsPage() {
 
               {/* Heading */}
               <div className="mb-4">
-                <h2 className="overline mb-8 md:mb-10">
+                <h2 className="overline mb-6">
                   Appointments
                 </h2>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-8">
                   <h3 className="heading-lg">
                     In-person
                   </h3>
@@ -107,7 +107,7 @@ export default function AppointmentsPage() {
                 <div key={name} className="flex items-center justify-between gap-6 py-7 first:pt-0">
 
                   {/* Left — clinic name + address */}
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-8">
                     <h3 className="heading-md">
                       {name}
                     </h3>
@@ -187,10 +187,10 @@ export default function AppointmentsPage() {
             <div className="col-span-12 md:col-span-7 flex flex-col gap-8 order-2 md:order-1">
 
               <div>
-                <h2 className="overline mb-8 md:mb-10">
+                <h2 className="overline mb-6">
                   Book Consultation
                 </h2>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-8">
                   <h3 className="heading-lg">
                     Via Phone
                   </h3>

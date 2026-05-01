@@ -34,7 +34,7 @@ export default function MediaPage() {
               >
                 Media
               </h1>
-              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-3 max-w-[42ch]" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-8 max-w-[42ch]" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 Expert commentary, brand collaborations, and features — grounded in <em>evidence-based</em> care.
               </p>
             </div>
@@ -60,9 +60,9 @@ export default function MediaPage() {
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 
             {/* Left — heading + body */}
-            <div className="col-span-12 md:col-span-8 flex flex-col gap-12" data-aos="fade" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
 
-              <div className="flex flex-col gap-8 md:gap-10">
+              <div className="flex flex-col gap-6">
                 <p className="overline">
                   Beyond the clinic
                 </p>
@@ -138,7 +138,7 @@ export default function MediaPage() {
         <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
@@ -148,9 +148,9 @@ export default function MediaPage() {
             </div>
 
             {/* Right — numbered list */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col pt-4 md:pt-0" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
 
-              <h2 className="overline mb-8 md:mb-10">
+              <h2 className="overline mb-6">
                 How we can work together
               </h2>
 
@@ -175,7 +175,7 @@ export default function MediaPage() {
                   <span className="stat-lg text-neutral-400 flex-shrink-0">
                     {num}
                   </span>
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-8">
                     <h3 className="heading-md">
                       {title}
                     </h3>
@@ -195,7 +195,7 @@ export default function MediaPage() {
       {/* Latest appearances gallery */}
       <section className="bg-cream py-24 md:py-32">
         <div className="pg-container">
-          <h2 className="overline mb-8 md:mb-10">
+          <h2 className="overline mb-6">
             Latest appearances
           </h2>
 
@@ -208,7 +208,7 @@ export default function MediaPage() {
             ].map(({ src, caption, year, aspect, colSpan }, i) => (
               <div
                 key={i}
-                className={`col-span-12 ${colSpan} flex flex-col gap-4`}
+                className={`col-span-12 ${colSpan} flex flex-col gap-10 md:gap-12`}
                 data-aos="fade"
                 data-aos-delay={i * 100}
                 data-aos-duration="1000"
@@ -216,12 +216,14 @@ export default function MediaPage() {
                 <div className="overflow-hidden" style={{ aspectRatio: aspect }}>
                   <img src={src} alt={caption} className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]" />
                 </div>
-                <h3 className="heading-md">
-                  {caption}
-                </h3>
-                <p className="overline -mt-1">
-                  {year}
-                </p>
+                <div>
+                  <h3 className="heading-md">
+                    {caption}
+                  </h3>
+                  <p className="overline mt-1">
+                    {year}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -232,7 +234,7 @@ export default function MediaPage() {
       <section className="bg-parchment py-24 md:py-32" id="features">
         <div className="pg-container">
 
-          <h2 className="overline mb-8 md:mb-10">
+          <h2 className="overline mb-6">
             Media features
           </h2>
 
@@ -251,13 +253,15 @@ export default function MediaPage() {
           <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
 
             {/* Left — text */}
-            <div className="col-span-12 md:col-span-6 flex flex-col gap-8 md:gap-10 pt-4">
-              <h2 className="overline">
-                Podcast appearances
-              </h2>
-              <h3 className="heading-lg">
-                Listen To<br /><em>dr. yalda.</em>
-              </h3>
+            <div className="col-span-12 md:col-span-6 flex flex-col gap-8 pt-4">
+              <div className="flex flex-col gap-6">
+                <h2 className="overline">
+                  Podcast appearances
+                </h2>
+                <h3 className="heading-lg">
+                  Listen To<br /><em>dr. yalda.</em>
+                </h3>
+              </div>
               <div className="flex flex-col divide-y divide-neutral-800">
                 {[
                   { show: "The Glow Up Podcast", episode: "The truth about filler — what no one tells you", duration: "42 min" },

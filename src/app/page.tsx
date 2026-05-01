@@ -14,11 +14,10 @@ export default function Home() {
 
       {/* Her Story — statement block */}
       <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px bg-brand-line h-20 md:h-28 opacity-40" />
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <h2
             data-aos="fade"
-            className="overline mb-12"
+            className="overline mb-6"
           >
             Sydney based cosmetic doctor
           </h2>
@@ -39,7 +38,7 @@ export default function Home() {
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image over parchment */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
@@ -49,11 +48,11 @@ export default function Home() {
             </div>
 
             {/* Right — introduction text */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8 pt-4 md:pt-0" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
 
               <h2 className="flex flex-col">
                 <span className="overline">About </span>
-                <span className="heading-lg mt-8">Dr Yalda Jamali </span>
+                <span className="heading-lg mt-4 md:mt-5">Dr Yalda Jamali </span>
                 <span className="overline mt-2">MBChB · MSc Dermatology · FACCSM</span>
               </h2>
 
@@ -108,18 +107,20 @@ export default function Home() {
         <div className="absolute hidden md:block right-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — text */}
-            <div className="col-span-12 md:col-span-5 flex flex-col gap-8 order-2 md:order-1 pt-4 md:pt-0" data-aos="fade" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-5 flex flex-col gap-8 order-2 md:order-1" data-aos="fade" data-aos-duration="1000">
 
-              <h2 className="overline">
-                Cosmetic Services
-              </h2>
+              <div className="flex flex-col gap-6">
+                <h2 className="overline">
+                  Cosmetic Services
+                </h2>
 
-              <h3 className="heading-lg">
-                Consultation-led care across Sydney
-              </h3>
+                <h3 className="heading-lg">
+                  Consultation-led care across Sydney
+                </h3>
+              </div>
 
               <p
                 className="body-serif"
@@ -171,10 +172,12 @@ export default function Home() {
 
             {/* Text */}
             <div className="md:col-span-5 md:col-start-7 flex flex-col gap-8">
-              <h2 className="overline">Book now</h2>
-              <h3 className="heading-lg">
-                Let's begin with a conversation
-              </h3>
+              <div className="flex flex-col gap-6">
+                <h2 className="overline">Book now</h2>
+                <h3 className="heading-lg">
+                  Let's begin with a conversation
+                </h3>
+              </div>
               <p className="body-serif">
                 Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
               </p>
