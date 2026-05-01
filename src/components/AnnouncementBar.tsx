@@ -9,6 +9,7 @@ export default function AnnouncementBar() {
 
   return (
     <div
+      id="announcement-bar"
       className="relative z-[60] grid grid-cols-[1fr_auto_1fr] items-center gap-4 text-cream/80"
       style={{ backgroundColor: "#2D2C2A", height: "32px" }}
     >

@@ -29,16 +29,48 @@ export default function Navbar() {
   const [overStickyScroll, setOverStickyScroll] = useState(false);
   const [overParallaxQuote, setOverParallaxQuote] = useState(false);
   const [isDesktop, setIsDesktop] = useState(true);
+  const [announcementOffset, setAnnouncementOffset] = useState(32);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (!open) return;
+    const bar = document.getElementById("announcement-bar");
+    setAnnouncementOffset(bar ? bar.offsetHeight : 0);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) {
+      const scrollY = window.scrollY;
+      document.body.dataset.scrollY = String(scrollY);
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.overflow = "hidden";
+    } else {
+      const scrollY = parseInt(document.body.dataset.scrollY || "0", 10);
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+      delete document.body.dataset.scrollY;
+      if (scrollY) window.scrollTo(0, scrollY);
+    }
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
     const update = () => setIsDesktop(mq.matches);
     update();
+    setMounted(true);
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
   }, []);
@@ -97,10 +129,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav aria-label="Main navigation" className="sticky top-0 z-[60]">
+      <nav
+        aria-label="Main navigation"
+        className={`${open ? "fixed inset-x-0 z-[80]" : "sticky top-0 z-[60]"}`}
+        style={open ? { top: `${announcementOffset}px` } : undefined}
+      >
         {/* Outer wrapper — adds gutter around the pill when scrolled */}
         <div
-          className="transition-all duration-[800ms] ease-out"
+          className={mounted ? "transition-all duration-[800ms] ease-out" : ""}
           style={{
             paddingTop: solid ? "16px" : "0px",
             paddingLeft: solid ? "16px" : "0px",
@@ -109,7 +145,7 @@ export default function Navbar() {
         >
           {/* Inner container — matches pg-container width on desktop so nav items align with the content grid; shrinks into a pill on scroll */}
           <div
-            className="mx-auto relative transition-all duration-[800ms] ease-out"
+            className={`mx-auto relative ${mounted ? "transition-all duration-[800ms] ease-out" : ""}`}
             style={{
               maxWidth: solid ? "800px" : "100vw",
             }}
@@ -117,7 +153,7 @@ export default function Navbar() {
             {/* Dedicated glass layer — backdrop-filter renders more reliably on its own element */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 transition-all duration-[800ms] ease-out pointer-events-none"
+              className={`absolute inset-0 pointer-events-none ${mounted ? "transition-all duration-[800ms] ease-out" : ""}`}
               style={{
                 borderRadius: solid ? "9999px" : "0px",
                 backgroundColor: solid
@@ -130,11 +166,9 @@ export default function Navbar() {
               }}
             />
             <div
-              className="grid grid-cols-3 items-center relative transition-all duration-[800ms] ease-out"
+              className={`grid grid-cols-3 items-center relative ${mounted ? "transition-all duration-[800ms] ease-out" : ""} ${solid ? "px-10" : "px-4 md:px-16"}`}
               style={{
                 height: solid ? "60px" : "80px",
-                paddingLeft: solid ? "40px" : isDesktop ? "64px" : "1rem",
-                paddingRight: solid ? "40px" : isDesktop ? "64px" : "1rem",
               }}
             >
 
@@ -185,7 +219,9 @@ export default function Navbar() {
             {/* Mobile Book Now plain text link */}
             <Link
               href="/appointments"
-              className={`md:hidden text-[11px] tracking-[0.25em] uppercase font-medium font-hanken transition-colors duration-300 ${
+              className={`md:hidden text-[11px] tracking-[0.25em] uppercase font-medium font-hanken transition-opacity duration-300 ${
+                open ? "opacity-0 pointer-events-none" : "opacity-100"
+              } ${
                 pathname === "/appointments"
                   ? dark ? "text-brand-black" : "text-cream"
                   : dark ? "text-brand-black/50 hover:text-brand-black" : "text-cream/50 hover:text-cream"
@@ -226,16 +262,16 @@ export default function Navbar() {
       </nav>
 
       {/* Full-screen overlay menu */}
-      <div className={`fixed inset-0 z-[45] flex transition-opacity duration-400 ease-in-out ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+      <div className={`fixed inset-0 z-[70] flex flex-row-reverse ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
 
         {/* Left — image panel */}
-        <div className="w-[32%] relative overflow-hidden">
+        <div className="w-2/5 relative overflow-hidden">
           <Image
             src="/assets/IMG_0017.avif"
             alt=""
             fill
             className="object-cover md:object-center"
-            style={{ objectPosition: "calc(50% + 30px) center" }}
+            style={{ objectPosition: "calc(50% + 10px) center" }}
           />
         </div>
 
