@@ -419,6 +419,129 @@
   text-decoration: none;
 }
 
+/* Hero / page-title display style. TEMP yellow for audit. */
+.heading-xl {
+  margin: 0;
+  color: yellow;
+  font-family: "Heading", serif;
+  font-size: clamp(2.75rem, 6vw, 7.25rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Visual heading helper — section-level display style. TEMP red for audit. */
+.heading-lg {
+  color: red;
+  font-family: "Heading", serif;
+  font-size: clamp(1.875rem, 2.8vw, 2.875rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Small uppercase body-caps — like overline but less letter-spacing. TEMP teal for audit. */
+.body-xs-caps {
+  color: teal;
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Overline / kicker helper — small caps label. TEMP green for audit. */
+.overline {
+  color: green;
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+/* Sub-heading helper — small uppercase title for cards / list items. TEMP blue for audit. */
+.heading-md {
+  color: blue;
+  font-family: "Heading", serif;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Stat / big-label helper — responsive display number or short label. Colour set per-instance (inherits). */
+.stat-lg {
+  font-family: "Heading", serif;
+  font-size: clamp(1.75rem, 3.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* Small quote helper — testimonial-scale italic quote. TEMP purple for audit. */
+.quotesmall {
+  margin: 0;
+  color: purple;
+  font-family: "Heading", serif;
+  font-size: clamp(1.2rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* Pull-quote helper — large italic display quote */
+.blockquote {
+  margin: 0;
+  font-family: "Heading", serif;
+  font-size: clamp(2.25rem, 4vw, 4.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #F4F1EE;
+  max-width: 22ch;
+}
+
+/* Body copy helper (serif) — uniform across the site. TEMP orange for audit. */
+.body-serif {
+  color: orange;
+  font-family: "Heading", serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 768px) {
+  .body-serif {
+    font-size: 16px;
+  }
+}
+
+/* Body copy helper (sans) — same sizing as body-serif. TEMP pink for audit. */
+.body-sans {
+  color: deeppink;
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 768px) {
+  .body-sans {
+    font-size: 16px;
+  }
+}
+
 /* ─── Reusable portrait image block ─────────────────────────────────────── */
 /*
   Mobile: square crop with bottom margin.

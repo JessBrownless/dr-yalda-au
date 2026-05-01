@@ -58,7 +58,12 @@ export default function ParallaxQuote({
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 40%)" }} />
 
-      <blockquote className="relative z-10 pg-container w-full flex flex-col items-start gap-6">
+      {/* ETHOS — pinned to top of section */}
+      <div className="absolute top-0 left-0 right-0 z-10 pg-container pt-12 md:pt-20">
+        <h2 className="overline">Ethos</h2>
+      </div>
+
+      <figure className="relative z-10 pg-container w-full flex flex-col items-start gap-6 m-0">
         <span
           className="font-normal leading-none select-none"
           style={{ fontFamily: "'Heading', serif", fontSize: "clamp(5rem, 10vw, 9rem)", lineHeight: 1, color: "rgba(244,241,238,0.5)" }}
@@ -66,24 +71,24 @@ export default function ParallaxQuote({
         >
           &ldquo;
         </span>
-        <p
+        <blockquote
           data-aos="fade"
           data-aos-duration="1200"
-          className="font-normal leading-[1.3]"
-          style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.25rem, 4vw, 4.5rem)", fontStyle: "italic", letterSpacing: "0", color: "#F4F1EE", maxWidth: "22ch" }}
+          className="blockquote"
         >
           {quote}
-        </p>
-        <cite
-          data-aos="fade"
-          data-aos-delay="400"
-          data-aos-duration="1000"
-          className="not-italic font-normal uppercase"
-          style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)", color: "rgba(244,241,238,0.6)" }}
-        >
-          {citation}
-        </cite>
-      </blockquote>
+        </blockquote>
+        <figcaption>
+          <cite
+            data-aos="fade"
+            data-aos-delay="400"
+            data-aos-duration="1000"
+            className="overline not-italic"
+          >
+            {citation}
+          </cite>
+        </figcaption>
+      </figure>
     </section>
   );
 }

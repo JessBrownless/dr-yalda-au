@@ -97,7 +97,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-[60]">
+      <nav aria-label="Main navigation" className="sticky top-0 z-[60]">
         {/* Outer wrapper — adds gutter around the pill when scrolled */}
         <div
           className="transition-all duration-[800ms] ease-out"

@@ -14,9 +14,9 @@ export default function LogoStripDark() {
       <div className="border-t border-neutral-200 mx-8 md:hidden" style={{ marginBottom: "80px" }} />
 
       <div className="flex flex-col items-center gap-10">
-        <p className="text-[10px] font-light tracking-[0.45em] uppercase" style={{ color: "#8F8E8B" }}>
-          As seen in &amp; partnered with
-        </p>
+        <h2 className="overline">
+          Brand partnerships
+        </h2>
 
         {/* Mobile — scrollable */}
         <div className="md:hidden w-full overflow-x-auto" style={{ scrollbarWidth: "none" }}>

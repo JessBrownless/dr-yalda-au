@@ -50,7 +50,7 @@ export default function TestimonialSection() {
 
           {/* Label — cols 1–3 */}
           <div className="hidden md:block col-span-3 pt-1">
-            <p className="text-neutral-400 font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>
+            <p className="overline">
               Partner testimonial
             </p>
           </div>
@@ -59,7 +59,8 @@ export default function TestimonialSection() {
           <div className="col-span-12 md:col-span-7 md:col-start-4 flex flex-col gap-8 md:gap-10">
 
             {/* Nav buttons — mobile only */}
-            <div className="flex justify-end md:hidden">
+            <div className="flex items-center justify-between md:hidden">
+              <h2 className="overline">Testimonials</h2>
               <div className="flex items-center gap-3">
                 <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
@@ -70,11 +71,8 @@ export default function TestimonialSection() {
               </div>
             </div>
 
-            <blockquote
-              className="text-neutral-800 font-normal leading-relaxed [font-family:'Heading',serif]"
-              style={{ fontSize: "clamp(1.2rem, 1.4vw, 1.35rem)" }}
-            >
-              &ldquo;{quote}&rdquo;
+            <blockquote className="quotesmall">
+              {quote}
             </blockquote>
 
             {/* Logo + progress dots */}

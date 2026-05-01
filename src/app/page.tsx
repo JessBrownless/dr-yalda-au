@@ -7,26 +7,28 @@ import StickyScrollSection from "@/components/StickyScrollSection";
 export default function Home() {
   return (
     <main>
-      <HeroHome />
+      <HeroHome
+        title="Dr Yalda Jamali"
+        tagline="Cosmetic doctor, educator, and brand collaborator in Sydney — combining medical expertise with innovation"
+      />
 
       {/* Her Story — statement block */}
-      <section className="bg-brand-white py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
+      <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px bg-brand-line h-20 md:h-28 opacity-40" />
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
-          <p
-            data-aos="fade"
-            className="text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-12"
-          >
-            Home
-          </p>
           <h2
             data-aos="fade"
+            className="overline mb-12"
+          >
+            Sydney based cosmetic doctor
+          </h2>
+          <p
+            data-aos="fade"
             data-aos-delay="120"
-            className="text-brand-black"
-            style={{ fontSize: "clamp(1.75rem, 3vw, 3.75rem)", maxWidth: "22ch", lineHeight: "0.95", letterSpacing: "0" }}
+            className="heading-lg"
           >
             A doctor who listens first, treats with precision, and focuses on achieving natural, balanced, and long-term results.
-          </h2>
+          </p>
         </div>
       </section>
 
@@ -49,37 +51,14 @@ export default function Home() {
             {/* Right — introduction text */}
             <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8 pt-4 md:pt-0" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
 
-              <p
-                className="text-brand-muted font-normal uppercase"
-                style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}
-              >
-                The doctor
-              </p>
-
-              <div className="flex flex-col gap-2">
-                <p
-                  className="text-brand-black font-normal"
-                  style={{
-                    fontFamily: "'Heading', serif",
-                    fontSize: "clamp(1.75rem, 2.4vw, 3rem)",
-                    lineHeight: "1.2",
-                    letterSpacing: "0.04em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Dr Yalda Jamali
-                </p>
-                <p
-                  className="text-brand-muted font-light"
-                  style={{ fontSize: "11px", letterSpacing: "0.2em", fontFamily: "var(--font-lato)" }}
-                >
-                  MBChB · MSc Dermatology · FACCSM
-                </p>
-              </div>
+              <h2 className="flex flex-col">
+                <span className="overline">About </span>
+                <span className="heading-lg mt-8">Dr Yalda Jamali </span>
+                <span className="overline mt-2">MBChB · MSc Dermatology · FACCSM</span>
+              </h2>
 
               <p
-                className="text-brand-muted font-light leading-relaxed"
-                style={{ fontSize: "14px", fontFamily: "var(--font-lato)", letterSpacing: "0.01em" }}
+                className="body-serif"
               >
                 At the heart of my practice is a commitment to ethical, evidence-based care that prioritises your wellbeing. I focus on delivering safe, considered results tailored to you, guided by current medical evidence. With honesty and transparency, I aim to improve skin health while maintaining results that feel balanced, subtle, and true to you.
               </p>
@@ -134,29 +113,16 @@ export default function Home() {
             {/* Left — text */}
             <div className="col-span-12 md:col-span-5 flex flex-col gap-8 order-2 md:order-1 pt-4 md:pt-0" data-aos="fade" data-aos-duration="1000">
 
-              <p
-                className="text-brand-muted font-normal uppercase"
-                style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}
-              >
-                Services
-              </p>
+              <h2 className="overline">
+                Cosmetic Services
+              </h2>
 
-              <p
-                className="text-brand-black font-normal"
-                style={{
-                  fontFamily: "'Heading', serif",
-                  fontSize: "clamp(1.75rem, 2.4vw, 3rem)",
-                  lineHeight: "1.2",
-                  letterSpacing: "0.04em",
-                  textTransform: "uppercase",
-                }}
-              >
+              <h3 className="heading-lg">
                 Consultation-led care across Sydney
-              </p>
+              </h3>
 
               <p
-                className="text-brand-muted font-light leading-relaxed"
-                style={{ fontSize: "14px", fontFamily: "var(--font-lato)", letterSpacing: "0.01em" }}
+                className="body-serif"
               >
                 Dr Yalda Jamali combines medical expertise with a personalised approach to cosmetic medicine. Each treatment is consultation-led, focused on skin quality and long-term results.
               </p>
@@ -205,10 +171,11 @@ export default function Home() {
 
             {/* Text */}
             <div className="md:col-span-5 md:col-start-7 flex flex-col gap-8">
-              <h2 className="text-brand-black font-normal" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.4vw, 3rem)", lineHeight: 1.05, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+              <h2 className="overline">Book now</h2>
+              <h3 className="heading-lg">
                 Let's begin with a conversation
-              </h2>
-              <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
+              </h3>
+              <p className="body-serif">
                 Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
               </p>
               <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>

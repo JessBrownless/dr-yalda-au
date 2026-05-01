@@ -57,17 +57,17 @@ export default function AboutPage() {
               style={{ top: "20%", right: 0, width: "55%" }}
             >
               <div className="opacity-0 animate-fade-in bg-parchment flex flex-col gap-8 md:gap-10 p-12 lg:p-16" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
-                <p className="opacity-0 animate-fade-in text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
+                <p className="opacity-0 animate-fade-in overline" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
                   The story so far
                 </p>
                 <h1
-                  className="opacity-0 animate-fade-in text-brand-black font-normal leading-[0.95] uppercase"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 5.5rem)", letterSpacing: "0.04em", animationDelay: "0.4s", animationDuration: "1.0s" }}
+                  className="heading-xl opacity-0 animate-fade-in"
+                  style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
                 >
                   About Dr Yalda Jamali
                 </h1>
 
-                <p className="opacity-0 animate-fade-in text-neutral-700 font-light leading-[1.9] text-sm md:text-base" style={{ fontFamily: "'Heading', serif", animationDelay: "0.4s", animationDuration: "1.0s" }}>
+                <p className="opacity-0 animate-fade-in body-serif" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
                   With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
                 </p>
               </div>
@@ -75,16 +75,16 @@ export default function AboutPage() {
 
             {/* Mobile text */}
             <div className="md:hidden flex flex-col pt-16 pb-0">
-              <p className="opacity-0 animate-fade-in text-neutral-500 text-[10px] font-light tracking-[0.45em] uppercase mb-6" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
+              <p className="opacity-0 animate-fade-in overline mb-6" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
                 The story so far
               </p>
               <h1
-                className="opacity-0 animate-fade-in text-brand-black font-normal leading-[0.95] uppercase"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.5rem, 5vw, 5.5rem)", letterSpacing: "0.04em", animationDelay: "0.4s", animationDuration: "1.0s" }}
+                className="heading-xl opacity-0 animate-fade-in"
+                style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
               >
                 About Dr Yalda Jamali
               </h1>
-              <p className="opacity-0 animate-fade-in text-neutral-700 font-light leading-[1.9] text-sm md:text-base mt-5" style={{ fontFamily: "'Heading', serif", animationDelay: "0.4s", animationDuration: "1.0s" }}>
+              <p className="opacity-0 animate-fade-in body-serif mt-5" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
                 With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
               </p>
             </div>
@@ -95,11 +95,10 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials — stylised on desktop, flows like next paragraph on mobile */}
-      <section className="bg-brand-white pt-6 pb-12 md:py-32">
+      <section className="bg-parchment py-32 md:py-52">
         <div className="pg-container md:max-w-[820px] md:mx-auto md:text-center">
           <p
-            className="text-neutral-700 font-light leading-[1.9] text-sm md:text-brand-black md:leading-[1.35] md:text-2xl lg:text-[1.75rem]"
-            style={{ fontFamily: "'Heading', serif" }}
+            className="body-serif"
           >
             I am also a Fellow of the Australasian College of Cosmetic Surgery and Medicine (ACCSM), have contributed to publications within the field, and continue to be involved in practitioner education as part of the Merz Aesthetics faculty.
           </p>
@@ -109,7 +108,7 @@ export default function AboutPage() {
       {/* Full-width parallax quote */}
       <ParallaxQuote
         image="/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif"
-        quote={"“Medicine is an art. Every face tells a story — my role is simply to help it shine.”"}
+        quote="Medicine is an art. Every face tells a story — my role is simply to help it shine."
       />
 
       {/* Stats */}
@@ -123,12 +122,12 @@ export default function AboutPage() {
               { stat: "2", label: "Locations — Paddington & Balgowlah" },
             ].map(({ stat, label }, i) => (
               <div key={i} className="flex flex-col gap-2 md:gap-3 px-0 md:px-8 md:first:pl-0 md:last:pr-0 py-5 md:py-0">
-                <p className="text-brand-black font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 3.5vw, 4rem)", letterSpacing: "0.02em" }}>
+                <p className="stat-lg text-brand-black">
                   {stat}
                 </p>
-                <p className="text-neutral-500 font-light leading-snug" style={{ fontSize: "clamp(9px, 1.2vw, 12px)", letterSpacing: "0.08em", fontFamily: "'Heading', serif" }}>
+                <span className="overline">
                   {label}
-                </p>
+                </span>
               </div>
             ))}
           </div>
@@ -136,27 +135,27 @@ export default function AboutPage() {
       </section>
 
       {/* Values — quote layout */}
-      <section className="bg-brand-black py-16 md:py-32">
+      <section className="bg-parchment py-16 md:py-32">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
             <div className="hidden md:block col-span-3 pt-9">
-              <p className="text-neutral-300 text-[10px] font-light tracking-[0.45em] uppercase">Values</p>
+              <h2 className="overline">Values</h2>
             </div>
             <div className="col-span-12 md:col-span-8 md:col-start-5 flex flex-col">
-              <p className="md:hidden text-neutral-300 text-[10px] font-light tracking-[0.45em] uppercase mb-6">Values</p>
+              <h2 className="md:hidden overline mb-6">Values</h2>
               {[
                 { num: "01", title: "Honesty", body: "Every consultation is grounded in transparency. Dr. Yalda will always tell you what is and isn't right for you — even if that means recommending nothing at all." },
                 { num: "02", title: "Precision", body: "A meticulous, considered approach to every treatment. Results are refined, never overdone — shaped by anatomy, not trend." },
                 { num: "03", title: "Evidence", body: "Every recommendation is backed by clinical evidence and ongoing education. No hype, no shortcuts — just what the science supports." },
                 { num: "04", title: "Trust", body: "Long-term relationships built on consistent, honest care. The goal is always to earn your confidence through results that feel like you." },
               ].map(({ num, title, body }) => (
-                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-700 last:border-b-0 first:border-t first:border-neutral-700">
-                  <span className="text-neutral-300 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-300 last:border-b-0 first:border-t first:border-neutral-300">
+                  <span className="text-neutral-500 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
                   <div className="flex flex-col gap-3">
-                    <p className="text-brand-white font-normal leading-none" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.5rem, 2.8vw, 2.5rem)", letterSpacing: "0" }}>
+                    <h3 className="heading-lg">
                       {title}
-                    </p>
-                    <p className="text-neutral-400 font-light leading-relaxed text-base md:text-sm" style={{ fontFamily: "'Heading', serif" }}>{body}</p>
+                    </h3>
+                    <p className="body-serif">{body}</p>
                   </div>
                 </div>
               ))}
@@ -191,13 +190,13 @@ export default function AboutPage() {
             padding: "clamp(2rem, 3.5vw, 4rem)",
           }}
         >
-          <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>
+          <p className="overline">
             Feeling overwhelmed?
           </p>
-          <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 2.8vw, 3.25rem)", letterSpacing: "0" }}>
+          <h3 className="heading-lg">
             Complimentary 15-minute online consultation.
-          </h2>
-          <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
+          </h3>
+          <p className="body-serif">
             Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
           </p>
           <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
@@ -212,11 +211,11 @@ export default function AboutPage() {
             <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
           </div>
           <div className="flex flex-col gap-6 px-8 py-14" style={{ background: "#F6F6F3", color: "#2D2C2A" }}>
-            <p className="text-brand-muted font-normal uppercase" style={{ fontSize: "10px", letterSpacing: "0.55em", fontFamily: "sans-serif" }}>Feeling overwhelmed?</p>
-            <h2 className="text-brand-black font-normal leading-[1.05]" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.75rem, 6vw, 2.5rem)", letterSpacing: "0" }}>
+            <p className="overline">Feeling overwhelmed?</p>
+            <h3 className="heading-lg">
               Complimentary 15-minute online consultation
-            </h2>
-            <p className="text-brand-muted font-light leading-relaxed" style={{ fontSize: "14px", fontFamily: "var(--font-lato)" }}>
+            </h3>
+            <p className="body-serif">
               Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
             </p>
             <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>

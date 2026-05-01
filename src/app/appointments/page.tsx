@@ -45,8 +45,8 @@ export default function AppointmentsPage() {
           <div className="flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end">
             <div className="md:col-span-6 flex flex-col items-start">
               <h1
-                className="opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] uppercase"
-                style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.75rem, 6vw, 7.25rem)", letterSpacing: "0.04em", animationDelay: "0.7s", animationDuration: "1.0s" }}
+                className="heading-xl opacity-0 animate-fade-in"
+                style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
               >
                 Book
               </h1>
@@ -70,7 +70,7 @@ export default function AppointmentsPage() {
       <div id="hero-end" />
 
       {/* Clinic locations */}
-      <section id="intro" className="bg-brand-white py-24 md:py-32 scroll-mt-20">
+      <section id="intro" className="bg-parchment py-32 md:py-52 scroll-mt-20">
 
         <div className="pg-container">
 
@@ -89,17 +89,14 @@ export default function AppointmentsPage() {
 
               {/* Heading */}
               <div className="mb-4">
-                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
+                <h2 className="overline mb-8 md:mb-10">
                   Appointments
-                </p>
+                </h2>
                 <div className="flex flex-col gap-3">
-                  <h2
-                    className="text-brand-black font-normal leading-[0.95] text-[2rem] lg:text-[2.75rem]"
-                    style={{ fontFamily: "'Heading', serif", letterSpacing: "0.04em", textTransform: "uppercase" }}
-                  >
+                  <h3 className="heading-lg">
                     In-person
-                  </h2>
-                  <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif" }}>
+                  </h3>
+                  <p className="body-serif">
                     In-clinic consultations are the only setting where prescriptions and treatments can take place.
                   </p>
                 </div>
@@ -111,17 +108,14 @@ export default function AppointmentsPage() {
 
                   {/* Left — clinic name + address */}
                   <div className="flex flex-col gap-2">
-                    <h3
-                      className="text-brand-black font-normal leading-tight text-[1.25rem] lg:text-[1.5rem]"
-                      style={{ fontFamily: "'Heading', serif", letterSpacing: "0.04em", textTransform: "uppercase" }}
-                    >
+                    <h3 className="heading-md">
                       {name}
                     </h3>
                     <div className="flex items-center gap-1.5">
                       <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.5 0C2.015 0 0 2.015 0 4.5c0 3.375 4.5 6.5 4.5 6.5S9 7.875 9 4.5C9 2.015 6.985 0 4.5 0zm0 6.125A1.625 1.625 0 1 1 4.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="#aaa"/>
                       </svg>
-                      <p style={{ fontSize: "14px", fontFamily: "sans-serif", fontWeight: 300, color: "#666", letterSpacing: "0.05em" }}>{address}</p>
+                      <p className="body-xs-caps">{address}</p>
                     </div>
                     {hours && <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 300, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>{hours}</p>}
                   </div>
@@ -193,17 +187,14 @@ export default function AppointmentsPage() {
             <div className="col-span-12 md:col-span-7 flex flex-col gap-8 order-2 md:order-1">
 
               <div>
-                <p className="text-neutral-400 text-[9px] font-light tracking-[0.5em] uppercase mb-8 md:mb-10">
+                <h2 className="overline mb-8 md:mb-10">
                   Book Consultation
-                </p>
+                </h2>
                 <div className="flex flex-col gap-3">
-                  <h2
-                    className="text-cream font-normal leading-[0.95] text-[2rem] lg:text-[2.75rem]"
-                    style={{ fontFamily: "'Heading', serif", letterSpacing: "0.04em", textTransform: "uppercase" }}
-                  >
+                  <h3 className="heading-lg">
                     Via Phone
-                  </h2>
-                  <p className="text-neutral-500 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif" }}>
+                  </h3>
+                  <p className="body-serif">
                     Each session runs for 15 minutes via online video and is not a replacement for your in-clinic consultation.
                   </p>
                 </div>
@@ -225,7 +216,7 @@ export default function AppointmentsPage() {
                         <path d="M3 3l8 8M11 3l-8 8" stroke="#525252" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     )}
-                    <p className="text-neutral-300 font-light leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Heading', serif" }}>{text}</p>
+                    <p className="body-serif">{text}</p>
                   </div>
                 ))}
               </div>

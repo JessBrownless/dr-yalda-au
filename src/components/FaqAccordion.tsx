@@ -15,10 +15,7 @@ export default function FaqAccordion() {
       {faqs.map(({ q, a }) => (
         <details key={q} className="faq-item group">
           <summary className="flex items-center justify-between gap-6 py-6 md:py-7 cursor-pointer list-none">
-            <h3
-              className="text-cream font-normal"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)", letterSpacing: "0" }}
-            >
+            <h3 className="heading-md">
               {q}
             </h3>
             <span
@@ -28,7 +25,7 @@ export default function FaqAccordion() {
               +
             </span>
           </summary>
-          <p className="text-neutral-300 font-light leading-relaxed pb-7 max-w-lg" style={{ fontSize: "16px", fontFamily: "'Heading', serif" }}>
+          <p className="body-serif pb-7 max-w-lg">
             {a}
           </p>
         </details>

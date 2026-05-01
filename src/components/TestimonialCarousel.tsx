@@ -43,7 +43,7 @@ export default function TestimonialCarousel() {
 
         {/* Top row — eyebrow + logo + arrows */}
         <div className="flex items-center justify-between mb-10">
-          <p className="text-neutral-500 text-[9px] font-light tracking-[0.5em] uppercase">
+          <p className="overline">
             Partner testimonial
           </p>
           <div className="flex items-center gap-6">
@@ -94,15 +94,14 @@ export default function TestimonialCarousel() {
             </svg>
             <blockquote
               key={current}
-              className="text-brand-black font-normal leading-relaxed animate-fade-in"
-              style={{ fontFamily: "'Heading', serif", fontSize: "clamp(1.2rem, 2vw, 1.65rem)" }}
+              className="quotesmall animate-fade-in"
             >
-              &ldquo;{t.quote}&rdquo;
+              {t.quote}
             </blockquote>
 
             <div className="flex flex-col gap-3">
               <div className="w-8 h-px bg-brand-line" />
-              <p className="text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase">
+              <p className="overline">
                 {t.attribution}
               </p>
             </div>
@@ -117,7 +116,7 @@ export default function TestimonialCarousel() {
                 className="w-full h-full object-cover object-top"
               />
             </div>
-            <p className="text-neutral-500 text-[9px] font-light tracking-[0.3em] uppercase mt-4">
+            <p className="overline mt-4">
               {t.imageCaption}
             </p>
           </div>

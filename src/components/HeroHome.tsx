@@ -78,8 +78,12 @@ export default function HeroHome({
 
   return (
     <>
+      <header>
+      {/* Single semantic H1 — visually rendered per breakpoint below as a styled paragraph */}
+      {title && <h1 className="sr-only">{title}</h1>}
+
       {/* ── MOBILE ── */}
-      <section className="md:hidden relative overflow-hidden bg-brand-black opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}>
+      <div className="md:hidden relative overflow-hidden bg-brand-black opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}>
 
         {/* Photos — crossfade, wrapped so the image layer fades in last */}
         <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ zIndex: 0, animationDelay: "1.8s", animationDuration: "2.5s" }}>
@@ -108,9 +112,9 @@ export default function HeroHome({
           <div className={`absolute inset-0 flex px-8 pb-10 ${isBottom ? "items-end" : "items-center"} ${isLeft ? "justify-start" : "justify-center"}`} style={{ zIndex: 5 }}>
             <div className={`flex flex-col ${isLeft ? "items-start" : "items-center"}`}>
             {title ? (
-              <h1 className={`opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`} style={{ fontFamily: "'Heading', serif", fontSize: "clamp(2.75rem, 6vw, 7.25rem)", letterSpacing: "0.04em", margin: 0, textAlign: isLeft ? "left" : "center", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p aria-hidden="true" className="heading-xl opacity-0 animate-fade-in" style={{ textAlign: isLeft ? "left" : "center", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 {title}
-              </h1>
+              </p>
             ) : (
               <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 <img
@@ -167,10 +171,10 @@ export default function HeroHome({
 
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
-      </section>
+      </div>
 
       {/* ── DESKTOP ── */}
-      <section
+      <div
         className="hidden md:block relative overflow-hidden bg-brand-black opacity-0 animate-fade-in"
         style={{ height: desktopHeight, marginTop: "-72px", animationDelay: "0s", animationDuration: "0.4s" }}
       >
@@ -214,19 +218,13 @@ export default function HeroHome({
             <div className={isLeft ? "flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end" : "contents"}>
               <div className={isLeft ? "md:col-span-6 flex flex-col items-start" : "contents"}>
                 {title ? (
-                  <h1
-                    className={`opacity-0 animate-fade-in text-brand-white font-normal leading-[0.95] ${titleUppercase ? "uppercase" : ""}`}
-                    style={{
-                      fontFamily: "'Heading', serif",
-                      fontSize: "clamp(2.75rem, 6vw, 7.25rem)",
-                      letterSpacing: "0.04em",
-                      margin: 0,
-                      animationDelay: "0.7s",
-                      animationDuration: "1.0s",
-                    }}
+                  <p
+                    aria-hidden="true"
+                    className="heading-xl opacity-0 animate-fade-in"
+                    style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
                   >
                     {title}
-                  </h1>
+                  </p>
                 ) : (
                   <img
                     className="opacity-0 animate-fade-in"
@@ -332,7 +330,8 @@ export default function HeroHome({
 
         {/* Noise grain */}
         <div className="hero-noise absolute inset-0" style={{ zIndex: 6, opacity: 0.08 }} />
-      </section>
+      </div>
+      </header>
 
       {/* Sentinel — Navbar watches this to switch logo colour */}
       <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />

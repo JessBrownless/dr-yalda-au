@@ -85,16 +85,13 @@ export default function StickyScrollSection() {
             <div className="absolute inset-0 flex items-center z-10">
               <div className="pg-container w-full">
               <div className="flex flex-col gap-5 max-w-lg">
-                <p className="text-[10px] font-light tracking-[0.45em] uppercase" style={{ color: "rgba(244,241,238,0.4)" }}>
+                <p className="overline">
                   0{i + 1}
                 </p>
-                <h2
-                  className="text-cream leading-none uppercase"
-                  style={{ fontSize: "clamp(2rem, 3.5vw, 4rem)", letterSpacing: "0.04em" }}
-                >
+                <h3 className="heading-lg">
                   {item.title}
-                </h2>
-                <p className="text-neutral-300 text-sm font-light leading-relaxed max-w-sm">
+                </h3>
+                <p className="body-serif max-w-sm">
                   {item.description}
                 </p>
               </div>

@@ -29,7 +29,7 @@ const hankenGrotesk = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Yalda",
+  title: "Dr Yalda Jamali — Cosmetic Doctor, Sydney",
   description: "",
   themeColor: "#EEEDE7",
   icons: {
@@ -44,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lato.variable} ${marcellus.variable} ${hankenGrotesk.variable}`}>
-      <body>
+      <body aria-label="Dr Yalda Jamali — Cosmetic Doctor, Sydney">
         <SmoothScroll />
         <AOSInit />
         <AnnouncementBar />
