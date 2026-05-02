@@ -51,10 +51,10 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Text card — overlaps portrait image */}
+            {/* Text card — overlaps portrait image, vertically centered along image height */}
             <div
               className="hidden md:block absolute z-20"
-              style={{ top: "20%", right: 0, width: "55%" }}
+              style={{ top: "50%", right: 0, width: "55%", transform: "translateY(-50%)" }}
             >
               <div className="opacity-0 animate-fade-in bg-parchment flex flex-col gap-8 p-12 lg:p-16" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
                 <div className="flex flex-col gap-6">
@@ -96,11 +96,12 @@ export default function AboutPage() {
 
       </section>
 
-      {/* Credentials — stylised on desktop, flows like next paragraph on mobile */}
-      <section className="bg-parchment py-32 md:py-52">
-        <div className="pg-container md:max-w-[820px] md:mx-auto md:text-center">
+      {/* Credentials — statement block, matches homepage "Sydney based cosmetic doctor" */}
+      <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
+        <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <p
-            className="body-serif"
+            data-aos="fade"
+            className="heading-lg"
           >
             I am also a Fellow of the Australasian College of Cosmetic Surgery and Medicine (ACCSM), have contributed to publications within the field, and continue to be involved in practitioner education as part of the Merz Aesthetics faculty.
           </p>
@@ -127,7 +128,7 @@ export default function AboutPage() {
                 <p className="stat-lg text-brand-black">
                   {stat}
                 </p>
-                <span className="overline">
+                <span className="body-xs">
                   {label}
                 </span>
               </div>

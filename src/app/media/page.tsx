@@ -54,8 +54,8 @@ export default function MediaPage() {
         <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />
       </section>
 
-      {/* Beyond the clinic */}
-      <section id="intro" className="bg-parchment py-32 md:py-52 relative scroll-mt-20">
+      {/* Beyond the clinic — bottom padding removed on desktop so it flows into the logo strip */}
+      <section id="intro" className="bg-parchment py-32 md:pt-52 md:pb-0 relative scroll-mt-20">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8">
 
@@ -117,25 +117,41 @@ export default function MediaPage() {
       </section>
 
       {/* Brand logo strip — sits below "Beyond the clinic" */}
-      <section className="bg-parchment py-10 md:py-12">
+      <section className="bg-parchment pb-16 md:pb-24">
         <div className="pg-container">
-          <div className="flex items-center justify-center flex-wrap gap-x-10 gap-y-6 md:gap-x-16">
-            <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-            <img src="/assets/logo-no7.svg" alt="No7" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-            <span className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.85rem, 1.3vw, 1.05rem)", letterSpacing: "0.2em" }}>
-              MEDIK8
-            </span>
-            <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-            <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+          <div className="flex flex-col items-center gap-10">
+            <h2 className="overline">
+              Proudly partnering and featured in
+            </h2>
+            {/* Mobile — wrapped, centered */}
+            <div className="md:hidden flex items-center justify-center flex-wrap gap-x-10 gap-y-6">
+              <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+              <img src="/assets/logo-no7.svg" alt="No7" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+              <span className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.85rem, 1.3vw, 1.05rem)", letterSpacing: "0.2em" }}>
+                MEDIK8
+              </span>
+              <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+              <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+            </div>
+            {/* Desktop — justified across grid width */}
+            <div className="hidden md:flex items-center justify-between w-full">
+              <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+              <img src="/assets/logo-no7.svg" alt="No7" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+              <span className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.85rem, 1.3vw, 1.05rem)", letterSpacing: "0.2em" }}>
+                MEDIK8
+              </span>
+              <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+              <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+            </div>
           </div>
         </div>
       </section>
 
       {/* How we can work together */}
-      <section className="bg-cream overflow-hidden relative py-24 md:py-32 md:flex md:items-center" style={{ minHeight: "80vh" }}>
+      <section className="bg-parchment overflow-hidden relative py-24 md:py-32 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
-        {/* Coloured strip — left edge, behind the image */}
-        <div className="absolute hidden md:block left-0 top-0 bottom-0 bg-parchment" style={{ width: "36%" }} />
+        {/* Coloured strip — left edge, behind the image (a shade darker than the section) */}
+        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
 
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
@@ -175,7 +191,7 @@ export default function MediaPage() {
                   <span className="stat-lg text-neutral-400 flex-shrink-0">
                     {num}
                   </span>
-                  <div className="flex flex-col gap-8">
+                  <div className="flex flex-col gap-4">
                     <h3 className="heading-md">
                       {title}
                     </h3>
@@ -216,11 +232,11 @@ export default function MediaPage() {
                 <div className="overflow-hidden" style={{ aspectRatio: aspect }}>
                   <img src={src} alt={caption} className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]" />
                 </div>
-                <div>
+                <div className="flex items-baseline justify-between gap-3">
                   <h3 className="heading-md">
                     {caption}
                   </h3>
-                  <p className="overline mt-1">
+                  <p className="overline">
                     {year}
                   </p>
                 </div>
@@ -259,7 +275,7 @@ export default function MediaPage() {
                   Podcast appearances
                 </h2>
                 <h3 className="heading-lg">
-                  Listen To<br /><em>dr. yalda.</em>
+                  Listen To<br />dr. yalda
                 </h3>
               </div>
               <div className="flex flex-col divide-y divide-neutral-800">

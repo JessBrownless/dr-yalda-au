@@ -465,7 +465,7 @@
   text-decoration: none;
 }
 
-/* Sub-heading helper — small uppercase title for cards / list items. TEMP blue for audit. */
+/* Sub-heading helper — small title for cards / list items. TEMP blue for audit. */
 .heading-md {
   color: blue;
   font-family: "Heading", serif;
@@ -473,7 +473,6 @@
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 /* Stat / big-label helper — responsive display number or short label. Colour set per-instance (inherits). */
@@ -524,6 +523,16 @@
   .body-serif {
     font-size: 16px;
   }
+}
+
+/* Extra-small body — captions, fine print. Lowercase, no tracking. TEMP brown for audit. */
+.body-xs {
+  color: saddlebrown;
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 /* Body copy helper (sans) — same sizing as body-serif. TEMP pink for audit. */

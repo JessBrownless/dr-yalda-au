@@ -63,7 +63,7 @@ export default function TestimonialCarousel() {
               <button
                 onClick={prev}
                 aria-label="Previous testimonial"
-                className="group w-10 h-10 border border-neutral-200 flex items-center justify-center hover:border-brand-black transition-colors duration-300"
+                className="group aspect-square w-10 border border-neutral-200 flex items-center justify-center hover:border-brand-black transition-colors duration-300"
               >
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-neutral-400 group-hover:text-brand-black transition-colors duration-300">
                   <path d="M4.5 1L1 5M1 5L4.5 9M1 5H13" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/>
@@ -72,7 +72,7 @@ export default function TestimonialCarousel() {
               <button
                 onClick={next}
                 aria-label="Next testimonial"
-                className="group w-10 h-10 border border-neutral-200 flex items-center justify-center hover:border-brand-black transition-colors duration-300"
+                className="group aspect-square w-10 border border-neutral-200 flex items-center justify-center hover:border-brand-black transition-colors duration-300"
               >
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-neutral-400 group-hover:text-brand-black transition-colors duration-300">
                   <path d="M9.5 1L13 5M13 5L9.5 9M13 5H1" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/>
@@ -84,8 +84,9 @@ export default function TestimonialCarousel() {
 
         <div className="w-full h-px bg-brand-line mb-16" />
 
-        {/* Main grid — quote + image */}
-        <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
+        {/* Main grid — quote + image. Min-height locks the section so changing
+            testimonials doesn't shift the page. */}
+        <div className="grid grid-cols-12 gap-6 md:gap-8 items-start min-h-[520px] md:min-h-[600px]">
 
           {/* Quote — left */}
           <div className="col-span-12 md:col-span-7 flex flex-col gap-12">

@@ -148,7 +148,7 @@ export default function ServicesPage() {
                     >
                       {num}
                     </span>
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-4">
                       <h3 className="heading-md">
                         {label}
                       </h3>
@@ -185,7 +185,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-12 gap-6 md:gap-12 md:items-baseline">
 
             <div className="col-span-12 md:col-span-4">
-              <p className="heading-md">
+              <p className="heading-lg">
                 Common questions
               </p>
             </div>

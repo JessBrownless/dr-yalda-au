@@ -150,19 +150,6 @@ export default function Navbar() {
               maxWidth: solid ? "800px" : "100vw",
             }}
           >
-            {/* Pill background layer */}
-            <div
-              aria-hidden="true"
-              className={`absolute inset-0 pointer-events-none ${mounted ? "transition-all duration-[800ms] ease-out" : ""}`}
-              style={{
-                borderRadius: solid ? "9999px" : "0px",
-                backgroundColor: solid
-                  ? overDarkSection
-                    ? "rgba(45,44,42,0.85)"      // over dark — solid darker pill
-                    : "rgba(246,246,243,0.95)"   // over light — near-opaque cream
-                  : "rgba(246,246,243,0)",
-              }}
-            />
             <div
               className={`grid grid-cols-3 items-center relative ${mounted ? "transition-all duration-[800ms] ease-out" : ""} ${solid ? "px-10" : "px-4 md:px-16"}`}
               style={{
@@ -286,7 +273,11 @@ export default function Navbar() {
                 {i > 0 && <div className="w-full h-px bg-cream/20" />}
                 <Link
                   href={href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    // Clear stored scroll so close handler restores to top, not to where we were
+                    document.body.dataset.scrollY = "0";
+                    setOpen(false);
+                  }}
                   className="block py-5 text-cream text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-neutral-400"
                   style={{ fontFamily: "'Heading', serif" }}
                 >
