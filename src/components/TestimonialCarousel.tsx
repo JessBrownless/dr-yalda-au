@@ -55,7 +55,7 @@ export default function TestimonialCarousel() {
               />
             )}
             {/* Counter */}
-            <span className="text-neutral-500 text-[9px] font-light tracking-[0.3em]">
+            <span className="text-brand-black/60 text-[9px] font-light tracking-[0.3em]">
               {String(current + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
             </span>
             {/* Arrows */}
@@ -63,18 +63,18 @@ export default function TestimonialCarousel() {
               <button
                 onClick={prev}
                 aria-label="Previous testimonial"
-                className="group aspect-square w-10 border border-neutral-200 flex items-center justify-center hover:border-brand-black transition-colors duration-300"
+                className="group aspect-square w-10 border border-brand-black/10 flex items-center justify-center hover:border-brand-black transition-colors duration-300"
               >
-                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-neutral-400 group-hover:text-brand-black transition-colors duration-300">
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-brand-black/50 group-hover:text-brand-black transition-colors duration-300">
                   <path d="M4.5 1L1 5M1 5L4.5 9M1 5H13" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               <button
                 onClick={next}
                 aria-label="Next testimonial"
-                className="group aspect-square w-10 border border-neutral-200 flex items-center justify-center hover:border-brand-black transition-colors duration-300"
+                className="group aspect-square w-10 border border-brand-black/10 flex items-center justify-center hover:border-brand-black transition-colors duration-300"
               >
-                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-neutral-400 group-hover:text-brand-black transition-colors duration-300">
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-brand-black/50 group-hover:text-brand-black transition-colors duration-300">
                   <path d="M9.5 1L13 5M13 5L9.5 9M13 5H1" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
@@ -90,7 +90,7 @@ export default function TestimonialCarousel() {
 
           {/* Quote — left */}
           <div className="col-span-12 md:col-span-7 flex flex-col gap-12">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-10 h-10 text-neutral-400" fill="currentColor" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-10 h-10 text-brand-black/50" fill="currentColor" aria-hidden="true">
               <path d="M220.59,105.05Q156.8,149,136.25,188T115.7,259.54v17a30.9,30.9,0,0,0,1.42,9.92q11.32-9.9,24.09-12.75a106.6,106.6,0,0,1,22.68-2.84q31.16,0,53.86,20.55t22.68,53.16q0,38.27-25.51,60.94t-56.7,22.68a100.94,100.94,0,0,1-72.29-31.89Q70.33,380,60.42,355.93T50.5,297.81q0-35.42,12.76-65.91a245.53,245.53,0,0,1,34-57.4,324.89,324.89,0,0,1,48.9-49.61A470.25,470.25,0,0,1,205,83.79Zm221.07,0Q377.88,149,357.32,188t-20.55,71.57v17a30.9,30.9,0,0,0,1.42,9.92q11.32-9.9,24.09-12.75A106.6,106.6,0,0,1,385,270.88q31.16,0,53.86,20.55t22.68,53.16q0,38.27-25.51,60.94t-56.7,22.68A100.94,100.94,0,0,1,307,396.32Q291.4,380,281.49,355.93t-9.92-58.12q0-35.42,12.76-65.91a245.53,245.53,0,0,1,34-57.4,324.89,324.89,0,0,1,48.9-49.61,469.62,469.62,0,0,1,58.83-41.1Z"/>
             </svg>
             <blockquote

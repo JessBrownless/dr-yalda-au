@@ -2,7 +2,7 @@ export default function DrQuote() {
   return (
     <section className="bg-cream py-24 md:py-48">
       <div className="pg-container">
-        <div className="w-6 h-px bg-neutral-300 mb-12 md:mb-16" />
+        <div className="w-6 h-px bg-brand-black/20 mb-12 md:mb-16" />
         <div className="grid grid-cols-12 gap-6 md:gap-8">
           <div className="hidden md:block col-span-3 pt-1">
             <p className="overline">Her Approach</p>
@@ -14,7 +14,7 @@ export default function DrQuote() {
             <p className="overline">Dr. Yalda Jamali</p>
           </div>
         </div>
-        <div className="w-6 h-px bg-neutral-300 mt-12 md:mt-16" />
+        <div className="w-6 h-px bg-brand-black/20 mt-12 md:mt-16" />
       </div>
     </section>
   );

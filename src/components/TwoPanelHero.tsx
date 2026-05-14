@@ -4,7 +4,7 @@ export default function TwoPanelHero() {
     <section className="hidden md:grid md:grid-cols-2 relative" style={{ minHeight: "80vh" }}>
 
       {/* Left — parchment with centred portrait */}
-      <div className="hidden md:flex relative items-center justify-center opacity-0 animate-fade-in" style={{ background: "#E0DDD5", animationDelay: "0.1s" }}>
+      <div className="hidden md:flex relative items-center justify-center opacity-0 animate-fade-in" style={{ background: "#E9E3D8", animationDelay: "0.1s" }}>
         <div className="relative" style={{ width: "50%", aspectRatio: "3/4" }}>
           <div className="overflow-hidden w-full h-full">
             <img src="/assets/Yalda-1.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />

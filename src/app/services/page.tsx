@@ -3,7 +3,7 @@ import HeroHome from "@/components/HeroHome";
 
 export default function ServicesPage() {
   return (
-    <main>
+    <main className="text-brand-black">
       <HeroHome
         title="Services"
         tagline={<>Evidence-based cosmetic services across Sydney, delivered through <em>consultation-led</em> care.</>}
@@ -88,7 +88,7 @@ export default function ServicesPage() {
                   "Volume & collagen loss",
                   "Preventative skin health",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-4 py-3 border-t border-neutral-200 first:border-t-0">
+                  <div key={item} className="flex items-center gap-4 py-3 border-t border-brand-black/10 first:border-t-0">
                     <svg
                       className="flex-shrink-0"
                       width="14"
@@ -139,7 +139,7 @@ export default function ServicesPage() {
                 { num: "03", label: "Individualised Care", body: "Every treatment plan is considered and individualised, shaped by the understanding that no two faces—or ageing patterns—are the same." },
               ].map(({ num, label, body }, i) => (
                 <div key={num}>
-                  {i > 0 && <div className="w-full h-px bg-neutral-200 my-8" />}
+                  {i > 0 && <div className="w-full h-px bg-brand-black/10 my-8" />}
                   <div className="flex items-baseline gap-5">
                     <span
                       className="stat-lg flex-shrink-0 select-none"
@@ -177,7 +177,7 @@ export default function ServicesPage() {
 
 
       {/* FAQ */}
-      <section className="bg-brand-black py-24 md:py-32">
+      <section className="bg-brand-black text-on-dark-high py-24 md:py-32">
         <div className="pg-container">
           <h2 className="overline mb-6">
             FAQs
@@ -207,7 +207,7 @@ export default function ServicesPage() {
         <div className="absolute right-0 bottom-0 hidden md:block overflow-hidden" style={{ width: "34%", top: "18%" }}>
           <img src="/assets/dr-yalda-treatment.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
         </div>
-        <div className="absolute z-10 hidden md:flex flex-col gap-8 justify-center" style={{ left: "29%", top: "50%", transform: "translateY(-50%)", width: "38%", background: "#F6F2EF", padding: "clamp(2rem, 3.5vw, 4rem)" }}>
+        <div className="absolute z-10 hidden md:flex flex-col gap-8 justify-center" style={{ left: "29%", top: "50%", transform: "translateY(-50%)", width: "38%", background: "#E9E3D8", padding: "clamp(2rem, 3.5vw, 4rem)" }}>
           <div className="flex flex-col gap-6">
             <p className="overline">Book a consultation</p>
             <h3 className="heading-lg">
@@ -226,7 +226,7 @@ export default function ServicesPage() {
           <div className="aspect-[4/3] overflow-hidden">
             <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
           </div>
-          <div className="flex flex-col gap-8 p-8" style={{ background: "#F6F2EF", color: "#2D2C2A" }}>
+          <div className="flex flex-col gap-8 p-8" style={{ background: "#E9E3D8", color: "#2D2C2A" }}>
             <div className="flex flex-col gap-6">
               <p className="overline">Book a consultation</p>
               <h3 className="heading-lg">Let's begin with a conversation</h3>

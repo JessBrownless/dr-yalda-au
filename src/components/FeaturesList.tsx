@@ -47,12 +47,12 @@ export default function FeaturesList() {
 
   return (
     <>
-      <div className="flex flex-col divide-y divide-neutral-200">
+      <div className="flex flex-col divide-y divide-brand-black/10">
         {visible.map(({ outlet, title, year, href }) => (
           <a
             key={title}
             href={href}
-            className="group py-8 grid grid-cols-12 gap-4 md:gap-8 items-center hover:bg-black/[0.03] transition-colors duration-300 -mx-4 px-4"
+            className="group py-8 grid grid-cols-12 gap-4 md:gap-8 items-center hover:bg-brand-black/[0.03] transition-colors duration-300 -mx-4 px-4"
           >
             <div className="col-span-12 md:col-span-3">
               <h3 className="heading-md">
@@ -68,7 +68,7 @@ export default function FeaturesList() {
               <span className="overline">
                 {year}
               </span>
-              <span className="text-neutral-400 text-sm group-hover:text-brand-black group-hover:translate-x-1 transition-all duration-300">
+              <span className="text-brand-black/50 text-sm group-hover:text-brand-black group-hover:translate-x-1 transition-all duration-300">
                 →
               </span>
             </div>
@@ -79,7 +79,7 @@ export default function FeaturesList() {
       <div className="mt-10">
         <button
           onClick={() => setExpanded(!expanded)}
-          className="rounded-full px-10 py-3 border border-neutral-300 text-neutral-500 text-[9px] font-light tracking-[0.4em] uppercase hover:border-brand-black hover:text-brand-black transition-colors duration-300"
+          className="rounded-full px-10 py-3 border border-brand-black/20 text-brand-black/60 text-[9px] font-light tracking-[0.4em] uppercase hover:border-brand-black hover:text-brand-black transition-colors duration-300"
         >
           {expanded ? "See Less" : "See All"}
         </button>

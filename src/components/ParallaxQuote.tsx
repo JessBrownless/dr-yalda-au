@@ -38,7 +38,7 @@ export default function ParallaxQuote({
   return (
     <section
       id="parallax-quote"
-      className="relative flex items-center justify-center overflow-hidden py-24 md:py-32 xl:py-52 min-h-[100vh] md:min-h-[clamp(320px,45vw,620px)]"
+      className="relative flex items-center justify-center overflow-hidden py-24 md:py-32 xl:py-52 min-h-[100vh] md:min-h-[clamp(320px,45vw,620px)] text-parchment"
     >
       {/* Parallax image */}
       <div
@@ -66,7 +66,7 @@ export default function ParallaxQuote({
       <figure className="relative z-10 pg-container w-full flex flex-col items-start gap-6 m-0">
         <span
           className="font-normal leading-none select-none"
-          style={{ fontFamily: "'Heading', serif", fontSize: "clamp(5rem, 10vw, 9rem)", lineHeight: 1, color: "rgba(244,241,238,0.5)" }}
+          style={{ fontFamily: "'Heading', serif", fontSize: "clamp(5rem, 10vw, 9rem)", lineHeight: 1, color: "rgba(245,242,236,0.5)" }}
           aria-hidden="true"
         >
           &ldquo;

@@ -32,8 +32,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "/var/folders/pn/glgch6wd367_0y4dt5z43pv80000gn/T/dr-yalda-next/types/**/*.ts",
     "next-env.d.ts",
-    "/var/folders/pn/glgch6wd367_0y4dt5z43pv80000gn/T/dr-yalda-next/types/**/*.ts"
+    "/var/folders/hw/p3fcg7sx58l7rqjjytm8nnmc0000gn/T/dr-yalda-next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

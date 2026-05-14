@@ -11,7 +11,7 @@ const faqs = [
 
 export default function FaqAccordion() {
   return (
-    <div className="flex flex-col divide-y divide-neutral-700/60">
+    <div className="flex flex-col divide-y divide-current/15">
       {faqs.map(({ q, a }) => (
         <details key={q} className="faq-item group">
           <summary className="flex items-center justify-between gap-6 py-6 md:py-7 cursor-pointer list-none">
@@ -19,7 +19,7 @@ export default function FaqAccordion() {
               {q}
             </h3>
             <span
-              className="faq-icon flex-shrink-0 text-neutral-400 transition-transform duration-300"
+              className="faq-icon flex-shrink-0 text-current/50 transition-transform duration-300"
               style={{ fontSize: "20px", lineHeight: 1 }}
             >
               +

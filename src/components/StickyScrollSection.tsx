@@ -65,7 +65,7 @@ export default function StickyScrollSection() {
           <div
             key={item.title}
             ref={el => { panelRefs.current[i] = el; }}
-            className="absolute inset-0"
+            className="absolute inset-0 text-on-dark-high"
             style={{
               zIndex: i + 1,
               transform: i === 0 ? "translateY(0%)" : "translateY(100%)",

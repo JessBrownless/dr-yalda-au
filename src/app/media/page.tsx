@@ -10,9 +10,9 @@ const socials = [
 
 export default function MediaPage() {
   return (
-    <main>
+    <main className="text-brand-black">
       {/* ─── HERO — 50/50 image background with centered text ──── */}
-      <section className="relative overflow-hidden bg-brand-black" style={{ marginTop: "-80px" }}>
+      <section className="relative overflow-hidden bg-brand-black text-on-dark-high" style={{ marginTop: "-80px" }}>
 
         {/* Full-width image background — fades in last over black */}
         <div className="absolute inset-0 overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: "1.8s", animationDuration: "2.5s" }}>
@@ -72,7 +72,7 @@ export default function MediaPage() {
               </div>
 
               <div className="flex gap-6 md:gap-10">
-                <div className="hidden md:block w-px bg-neutral-300 flex-shrink-0 self-stretch" />
+                <div className="hidden md:block w-px bg-brand-black/20 flex-shrink-0 self-stretch" />
                 <div className="flex flex-col gap-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                     <p className="body-serif">
@@ -151,7 +151,7 @@ export default function MediaPage() {
       <section className="bg-parchment overflow-hidden relative py-24 md:py-32 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Coloured strip — left edge, behind the image (a shade darker than the section) */}
-        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
+        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
 
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
@@ -187,8 +187,8 @@ export default function MediaPage() {
                   description: "Collaborative campaigns with skincare brands backed by science and ethical practice.",
                 },
               ].map(({ num, title, description }) => (
-                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-200 first:border-t first:border-neutral-200">
-                  <span className="stat-lg text-neutral-400 flex-shrink-0">
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/10 first:border-t first:border-brand-black/10">
+                  <span className="stat-lg text-brand-black/50 flex-shrink-0">
                     {num}
                   </span>
                   <div className="flex flex-col gap-4">
@@ -264,7 +264,7 @@ export default function MediaPage() {
       {/* TestimonialCarousel removed */}
 
       {/* Podcast section */}
-      <section className="bg-[#2D2925] overflow-hidden" style={{ paddingTop: "120px" }}>
+      <section className="bg-brand-black text-on-dark-high overflow-hidden" style={{ paddingTop: "120px" }}>
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
 
@@ -278,7 +278,7 @@ export default function MediaPage() {
                   Listen To<br />dr. yalda
                 </h3>
               </div>
-              <div className="flex flex-col divide-y divide-neutral-800">
+              <div className="flex flex-col divide-y divide-brand-white/10">
                 {[
                   { show: "The Glow Up Podcast", episode: "The truth about filler — what no one tells you", duration: "42 min" },
                   { show: "Skin Deep with Sarah", episode: "Evidence-based aesthetics and why it matters", duration: "35 min" },
@@ -286,8 +286,8 @@ export default function MediaPage() {
                 ].map(({ show, episode, duration }, i) => (
                   <div key={i} className="group flex items-start justify-between gap-6 py-5 cursor-pointer">
                     <div className="flex items-start gap-4">
-                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center group-hover:border-cream transition-colors duration-300">
-                        <span className="text-neutral-500 group-hover:text-cream transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
+                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-brand-white/20 flex items-center justify-center group-hover:border-cream transition-colors duration-300">
+                        <span className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
                       </button>
                       <div className="flex flex-col gap-1">
                         <p className="overline">{show}</p>

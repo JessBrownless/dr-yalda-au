@@ -125,7 +125,7 @@ export default function Navbar() {
   const solid = scrolled && !open && isDesktop;
   // Text/elements flip based on the section behind the nav.
   const overDarkSection = overDark || overStickyScroll || overParallaxQuote;
-  const dark = !open && !overDarkSection;
+  const dark = !open && !overDark;
 
   return (
     <>
@@ -139,15 +139,16 @@ export default function Navbar() {
           className={mounted ? "transition-all duration-[800ms] ease-out" : ""}
           style={{
             paddingTop: solid ? "16px" : "0px",
+            paddingBottom: solid ? "16px" : "0px",
             paddingLeft: solid ? "16px" : "0px",
             paddingRight: solid ? "16px" : "0px",
           }}
         >
-          {/* Inner container — matches pg-container width on desktop so nav items align with the content grid; shrinks into a pill on scroll */}
+          {/* Inner container — matches pg-container width on desktop so nav items align with the content grid; shrinks into a glassy pill once past the hero */}
           <div
-            className={`mx-auto relative ${mounted ? "transition-all duration-[800ms] ease-out" : ""}`}
+            className={`mx-auto relative ${mounted ? "transition-all duration-[800ms] ease-out" : ""} ${!overDark && !open ? "bg-parchment/40 backdrop-blur-md rounded-full" : ""}`}
             style={{
-              maxWidth: solid ? "800px" : "100vw",
+              maxWidth: !overDark && !open ? "800px" : "100vw",
             }}
           >
             <div
@@ -178,7 +179,7 @@ export default function Navbar() {
                   className={`text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                     pathname === href
                       ? dark ? "font-medium text-brand-black" : "font-medium text-cream"
-                      : dark ? "font-extralight text-brand-black/40 hover:text-brand-black" : "font-extralight text-cream/50 hover:text-cream"
+                      : dark ? "font-extralight text-brand-black hover:text-brand-black" : "font-extralight text-cream/50 hover:text-cream"
                   }`}
                 >
                   {label}
@@ -209,7 +210,7 @@ export default function Navbar() {
               } ${
                 pathname === "/appointments"
                   ? dark ? "text-brand-black" : "text-cream"
-                  : dark ? "text-brand-black/50 hover:text-brand-black" : "text-cream/50 hover:text-cream"
+                  : dark ? "text-brand-black hover:text-brand-black" : "text-cream/50 hover:text-cream"
               }`}
             >
               Book Now
@@ -222,7 +223,7 @@ export default function Navbar() {
                   className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
                     pathname === href
                       ? dark ? "text-brand-black" : "text-cream"
-                      : dark ? "text-brand-black/50 hover:text-brand-black" : "text-cream/50 hover:text-cream"
+                      : dark ? "text-brand-black hover:text-brand-black" : "text-cream/50 hover:text-cream"
                   }`}
                 >
                   {label}
@@ -233,7 +234,7 @@ export default function Navbar() {
                 className={`text-[11px] tracking-[0.25em] uppercase font-medium font-hanken rounded-full px-5 py-2 border transition-all duration-300 ${
                   pathname === "/appointments"
                     ? dark ? "bg-brand-black text-cream border-brand-black" : "bg-cream text-brand-black border-cream"
-                    : dark ? "border-brand-black/40 text-brand-black/40 hover:border-brand-black hover:bg-brand-black hover:text-cream" : "border-cream/50 text-cream/50 hover:border-cream hover:bg-cream hover:text-brand-black"
+                    : dark ? "border-brand-black text-brand-black hover:border-brand-black hover:bg-brand-black hover:text-cream" : "border-cream/50 text-cream/50 hover:border-cream hover:bg-cream hover:text-brand-black"
                 }`}
               >
                 Book Now
@@ -278,7 +279,7 @@ export default function Navbar() {
                     document.body.dataset.scrollY = "0";
                     setOpen(false);
                   }}
-                  className="block py-5 text-cream text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-neutral-400"
+                  className="block py-5 text-cream text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-brand-white/50"
                   style={{ fontFamily: "'Heading', serif" }}
                 >
                   {label}
@@ -297,7 +298,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-neutral-400 hover:text-cream transition-colors duration-300"
+                className="text-brand-white/50 hover:text-cream transition-colors duration-300"
               >
                 <Icon size={13} />
               </a>

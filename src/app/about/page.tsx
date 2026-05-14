@@ -2,7 +2,7 @@ import ParallaxQuote from "@/components/ParallaxQuote";
 
 export default function AboutPage() {
   return (
-    <main className="bg-parchment">
+    <main className="bg-parchment text-brand-black">
       {/* Florence-style hero — full-width bg, overlayed portrait, overlayed text */}
       <section className="relative" style={{ marginTop: "-80px" }}>
 
@@ -152,8 +152,8 @@ export default function AboutPage() {
                 { num: "03", title: "Evidence", body: "Every recommendation is backed by clinical evidence and ongoing education. No hype, no shortcuts — just what the science supports." },
                 { num: "04", title: "Trust", body: "Long-term relationships built on consistent, honest care. The goal is always to earn your confidence through results that feel like you." },
               ].map(({ num, title, body }) => (
-                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-neutral-300 last:border-b-0 first:border-t first:border-neutral-300">
-                  <span className="text-neutral-500 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/20 last:border-b-0 first:border-t first:border-brand-black/20">
+                  <span className="text-brand-black/60 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
                   <div className="flex flex-col gap-3">
                     <h3 className="heading-lg">
                       {title}
@@ -189,7 +189,7 @@ export default function AboutPage() {
             top: "50%",
             transform: "translateY(-50%)",
             width: "38%",
-            background: "#F6F2EF",
+            background: "#E9E3D8",
             padding: "clamp(2rem, 3.5vw, 4rem)",
           }}
         >

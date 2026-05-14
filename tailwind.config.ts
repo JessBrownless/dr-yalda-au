@@ -10,16 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         // Legacy
-        cream: "#F6F2EF",
-        parchment: "#EEEDE7",
+        cream: "#E9E3D8",
+        parchment: "#F5F2EC",
         // Brand — primary
         "brand-black":  "#2D2C2A",
+        "brand-charcoal": "#222120",
         "brand-white":  "#F6F6F3",
         // Brand — secondary
-        "brand-grey":       "#B6B4B2",
-        "brand-muted":      "#8F8E8B",
         "brand-line":       "#C2C1BE",
-        "brand-warm-light": "#E5DCD7",
         "brand-blue":       "#9BB9CB",
         "brand-blue-light": "#B9D3DF",
       },

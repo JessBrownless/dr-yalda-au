@@ -23,9 +23,9 @@ const clinics = [
 
 export default function AppointmentsPage() {
   return (
-    <main>
+    <main className="text-brand-black">
       {/* Hero */}
-      <section className="relative -mt-20 min-h-[90dvh] overflow-hidden bg-brand-black">
+      <section className="relative -mt-20 min-h-[90dvh] overflow-hidden bg-brand-black text-on-dark-high">
 
         {/* Full-bleed background image — fades in last over black */}
         <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: "1.8s", animationDuration: "2.5s" }}>
@@ -102,7 +102,7 @@ export default function AppointmentsPage() {
                 </div>
               </div>
 
-              <div className="flex flex-col divide-y divide-neutral-300 mt-2">
+              <div className="flex flex-col divide-y divide-brand-black/20 mt-2">
               {clinics.map(({ name, hours, href, address }) => (
                 <div key={name} className="flex items-center justify-between gap-6 py-7 first:pt-0">
 
@@ -113,17 +113,17 @@ export default function AppointmentsPage() {
                     </h3>
                     <div className="flex items-center gap-1.5">
                       <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.5 0C2.015 0 0 2.015 0 4.5c0 3.375 4.5 6.5 4.5 6.5S9 7.875 9 4.5C9 2.015 6.985 0 4.5 0zm0 6.125A1.625 1.625 0 1 1 4.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="#aaa"/>
+                        <path d="M4.5 0C2.015 0 0 2.015 0 4.5c0 3.375 4.5 6.5 4.5 6.5S9 7.875 9 4.5C9 2.015 6.985 0 4.5 0zm0 6.125A1.625 1.625 0 1 1 4.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="rgba(45,44,42,0.4)"/>
                       </svg>
                       <p className="body-xs-caps">{address}</p>
                     </div>
-                    {hours && <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 300, color: "#888", letterSpacing: "0.08em", textTransform: "uppercase" }}>{hours}</p>}
+                    {hours && <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 300, color: "rgba(45,44,42,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{hours}</p>}
                   </div>
 
                   {/* Right — book button */}
                   <a
                     href={href}
-                    className="flex-shrink-0 px-7 py-2.5 bg-brand-black text-cream text-[9px] font-light tracking-[0.35em] uppercase hover:bg-neutral-800 transition-colors duration-300"
+                    className="flex-shrink-0 px-7 py-2.5 bg-brand-black text-cream text-[9px] font-light tracking-[0.35em] uppercase hover:bg-brand-charcoal transition-colors duration-300"
                   >
                     Book
                   </a>
@@ -179,7 +179,7 @@ export default function AppointmentsPage() {
       </section>
 
       {/* Telephone consultations */}
-      <section className="bg-brand-black pt-[320px] pb-24 md:py-40 overflow-hidden">
+      <section className="bg-brand-black text-on-dark-high pt-[320px] pb-24 md:py-40 overflow-hidden">
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-8 items-center">
 
@@ -200,7 +200,7 @@ export default function AppointmentsPage() {
                 </div>
               </div>
 
-              <div className="flex flex-col divide-y divide-neutral-500">
+              <div className="flex flex-col divide-y divide-brand-black/40">
                 {[
                   { text: "Overview of treatments, suitability and approximate costs", icon: "tick" },
                   { text: "Available to prospective Sydney patients only", icon: "tick" },
@@ -208,12 +208,12 @@ export default function AppointmentsPage() {
                 ].map(({ text, icon }) => (
                   <div key={text} className="flex items-start gap-4 py-4">
                     {icon === "tick" ? (
-                      <svg className="flex-shrink-0 mt-1" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path d="M2 7l3.5 3.5L12 4" stroke="#a3a3a3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <svg className="flex-shrink-0 mt-1 opacity-60" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 7l3.5 3.5L12 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     ) : (
-                      <svg className="flex-shrink-0 mt-1" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path d="M3 3l8 8M11 3l-8 8" stroke="#525252" strokeWidth="1.5" strokeLinecap="round"/>
+                      <svg className="flex-shrink-0 mt-1 opacity-60" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     )}
                     <p className="body-serif">{text}</p>
@@ -225,7 +225,7 @@ export default function AppointmentsPage() {
                 href="https://calendly.com/dryalda-epioscosmeticclinic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="self-start rounded-full px-10 py-3 bg-cream text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-neutral-200 transition-colors duration-300"
+                className="self-start rounded-full px-10 py-3 bg-cream text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-parchment transition-colors duration-300"
               >
                 Book
               </a>

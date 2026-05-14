@@ -62,10 +62,10 @@ export default function TestimonialSection() {
             <div className="flex items-center justify-between md:hidden">
               <h2 className="overline">Testimonials</h2>
               <div className="flex items-center gap-3">
-                <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+                <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 border border-brand-black/20 flex items-center justify-center text-brand-black/50 hover:border-brand-black hover:text-brand-black transition-all duration-300">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
                 </button>
-                <button onClick={next} aria-label="Next testimonial" className="w-9 h-9 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+                <button onClick={next} aria-label="Next testimonial" className="w-9 h-9 border border-brand-black/20 flex items-center justify-center text-brand-black/50 hover:border-brand-black hover:text-brand-black transition-all duration-300">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
                 </button>
               </div>
@@ -92,10 +92,10 @@ export default function TestimonialSection() {
 
           {/* Nav buttons — desktop, cols 11–12, baseline with label */}
           <div className="hidden md:flex col-span-2 col-start-11 flex-row items-start justify-end gap-3 pt-1">
-            <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-7 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+            <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-7 border border-brand-black/20 flex items-center justify-center text-brand-black/50 hover:border-brand-black hover:text-brand-black transition-all duration-300">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
             </button>
-            <button onClick={next} aria-label="Next testimonial" className="w-9 h-7 border border-neutral-300 flex items-center justify-center text-neutral-400 hover:border-brand-black hover:text-brand-black transition-all duration-300">
+            <button onClick={next} aria-label="Next testimonial" className="w-9 h-7 border border-brand-black/20 flex items-center justify-center text-brand-black/50 hover:border-brand-black hover:text-brand-black transition-all duration-300">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
             </button>
           </div>

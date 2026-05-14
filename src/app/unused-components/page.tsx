@@ -103,7 +103,7 @@ export default function UnusedComponentsPage() {
       <HeroExperiment />
 
       {/* ─── MEDIA HERO (moved from media/page.tsx) ────────────────────────── */}
-      <section className="relative overflow-hidden" style={{ minHeight: "100vh", backgroundColor: "#EEEDE7" }}>
+      <section className="relative overflow-hidden" style={{ minHeight: "100vh", backgroundColor: "#F5F2EC" }}>
         <div className="hidden md:block absolute inset-0">
           <div className="absolute" style={{ left: 0, top: 0, bottom: 0, width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", zIndex: 0, backgroundColor: "#E0DED8" }} />
           <div className="absolute overflow-hidden opacity-0 animate-fade-in" style={{ left: "48px", top: "48px", width: "calc(4 * (100% - 11 * 16px) / 12 + 3 * 16px)", bottom: "8%", zIndex: 1, animationDelay: "0.1s" }}>

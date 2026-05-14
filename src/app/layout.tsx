@@ -31,7 +31,7 @@ const hankenGrotesk = Hanken_Grotesk({
 export const metadata: Metadata = {
   title: "Dr Yalda Jamali — Cosmetic Doctor, Sydney",
   description: "",
-  themeColor: "#EEEDE7",
+  themeColor: "#F5F2EC",
   icons: {
     icon: "/favicon.svg",
   },

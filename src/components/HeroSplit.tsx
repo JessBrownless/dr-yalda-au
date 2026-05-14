@@ -22,7 +22,7 @@ export default function HeroSplit() {
     <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 relative">
 
       {/* Left — dark panel */}
-      <div className="relative flex flex-col justify-between px-12 md:px-16 pt-36 pb-10 min-h-[60vw] md:min-h-0" style={{ backgroundColor: "#232121", zIndex: 1 }}>
+      <div className="text-on-dark-high relative flex flex-col justify-between px-12 md:px-16 pt-36 pb-10 min-h-[60vw] md:min-h-0" style={{ backgroundColor: "#222120", zIndex: 1 }}>
 
         {/* Floating inset portrait */}
         <div
@@ -70,7 +70,7 @@ export default function HeroSplit() {
             style={{ opacity: i === current ? 1 : 0 }}
           />
         ))}
-        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-brand-black/10 pointer-events-none" />
       </div>
 
       {/* H1 — spans across both panels */}

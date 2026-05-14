@@ -11,13 +11,13 @@ export default function AnnouncementBar() {
     <div
       id="announcement-bar"
       className="relative z-[60] grid grid-cols-[1fr_auto_1fr] items-center gap-4 text-cream/80"
-      style={{ backgroundColor: "#2D2C2A", height: "32px" }}
+      style={{ backgroundColor: "#2D2C2A", height: "44px" }}
     >
       {/* Left spacer — keeps the centre column mathematically centred */}
       <div aria-hidden="true" />
 
       {/* Centred content */}
-      <div className="flex items-center justify-center gap-3 text-center whitespace-nowrap">
+      <div className="flex items-center justify-center gap-3 text-center whitespace-nowrap pt-[4px]">
         <span className="body-xs-caps">
           Limited phone consultations.
         </span>
@@ -30,7 +30,7 @@ export default function AnnouncementBar() {
       </div>
 
       {/* Dismiss — right column */}
-      <div className="flex justify-end">
+      <div className="flex justify-end pt-[4px]">
         <button
           onClick={() => setDismissed(true)}
           aria-label="Dismiss"

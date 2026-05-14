@@ -11,7 +11,7 @@ export default function LogoQuilt() {
   return (
     <section className="bg-parchment py-16 overflow-hidden">
 
-      <p className="text-neutral-400 text-[10px] font-light tracking-[0.45em] uppercase mb-12 text-center">
+      <p className="text-brand-black/50 text-[10px] font-light tracking-[0.45em] uppercase mb-12 text-center">
         As seen in &amp; partnered with
       </p>
 

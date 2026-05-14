@@ -82,7 +82,7 @@ export default function HeroHome({
       {title && <h1 className="sr-only">{title}</h1>}
 
       {/* ── MOBILE ── */}
-      <section className="md:hidden relative overflow-hidden bg-brand-black opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}>
+      <section className="md:hidden relative overflow-hidden bg-brand-charcoal text-on-dark-high opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}>
 
         {/* Photos — crossfade, wrapped so the image layer fades in last */}
         <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ zIndex: 0, animationDelay: "1.8s", animationDuration: "2.5s" }}>
@@ -119,7 +119,7 @@ export default function HeroHome({
                 <img
                   src="/assets/dr-yalda-logo-long.svg"
                   alt="Dr. Yalda Jamali"
-                  style={{ width: "auto", height: "32px", filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)", opacity: 0.9 }}
+                  style={{ width: "auto", height: "32px", filter: "none", opacity: 0.9 }}
                 />
               </div>
             )}
@@ -163,7 +163,7 @@ export default function HeroHome({
               style={{ animationDelay: "0.7s", animationDuration: "1.0s", background: "none", border: "none", padding: 0 }}
             >
               <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
-              <span className="body-xs-caps">Scroll</span>
+              <span className="body-xs-caps opacity-60">Scroll</span>
             </button>
           </div>
         )}
@@ -174,8 +174,8 @@ export default function HeroHome({
 
       {/* ── DESKTOP ── */}
       <section
-        className="hidden md:block relative overflow-hidden bg-brand-black opacity-0 animate-fade-in"
-        style={{ height: desktopHeight, marginTop: "-72px", animationDelay: "0s", animationDuration: "0.4s" }}
+        className="hidden md:block relative overflow-hidden bg-brand-charcoal text-on-dark-high opacity-0 animate-fade-in"
+        style={{ height: desktopHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}
       >
         {/* Photos — crossfade, oversized so parallax doesn't show gaps. Image layer fades in last. */}
         <div ref={imgRef} className="absolute left-0 right-0 opacity-0 animate-fade-in" style={{ top: "-10%", height: "120%", zIndex: 0, animationDelay: "1.8s", animationDuration: "2.5s" }}>
@@ -233,7 +233,7 @@ export default function HeroHome({
                       height: "64px",
                       width: "auto",
                       maxWidth: "420px",
-                      filter: "brightness(0) invert(1) sepia(0.15) saturate(1.2) brightness(0.96)",
+                      filter: "none",
                       opacity: 0,
                       animationDelay: "0.7s",
                       animationDuration: "1.0s",
@@ -281,7 +281,7 @@ export default function HeroHome({
               style={{ animationDelay: "0.7s", animationDuration: "1.0s", background: "none", border: "none", padding: 0 }}
             >
               <img src="/assets/key-visual-blush.svg" alt="" aria-hidden="true" style={{ width: "28px", height: "auto", opacity: 0.5 }} />
-              <span className="body-xs-caps">Scroll</span>
+              <span className="body-xs-caps opacity-60">Scroll</span>
             </button>
           </div>
         )}

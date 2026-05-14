@@ -6,7 +6,7 @@ import StickyScrollSection from "@/components/StickyScrollSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="text-brand-black">
       <HeroHome
         title="Dr Yalda Jamali"
         tagline="Cosmetic doctor, educator, and brand collaborator in Sydney — combining medical expertise with innovation"
@@ -35,7 +35,7 @@ export default function Home() {
       <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Parchment strip — left edge, behind the image */}
-        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
+        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
 
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
@@ -104,7 +104,7 @@ export default function Home() {
       <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Parchment strip — right edge, behind the image */}
-        <div className="absolute hidden md:block right-0 top-0 bottom-0" style={{ width: "36%", background: "#E0DDD6" }} />
+        <div className="absolute hidden md:block right-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
 
         <div className="pg-container relative">
           <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
