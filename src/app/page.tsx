@@ -41,7 +41,7 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image over parchment */}
-            <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-6" data-aos="fade" data-aos-duration="1000">
               <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img src="/assets/IMG_004.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
               </div>
@@ -140,7 +140,7 @@ export default function Home() {
             </div>
 
             {/* Right — image over parchment */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-6 md:col-start-7 order-1 md:order-2" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               <div className="overflow-hidden aspect-square md:aspect-[3/4] md:scale-105 md:origin-center">
                 <img src="/assets/IMG_0037_color.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 40%" }} />
               </div>
@@ -162,7 +162,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
 
             {/* Image */}
-            <div className="md:col-span-5 relative">
+            <div className="md:col-span-6 relative">
               <div className="aspect-square md:aspect-[4/5] overflow-hidden">
                 <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 30%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
               </div>
