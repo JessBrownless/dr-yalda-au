@@ -24,13 +24,10 @@ const socials = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [overDark, setOverDark] = useState(true);
   const [overStickyScroll, setOverStickyScroll] = useState(false);
   const [overParallaxQuote, setOverParallaxQuote] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(true);
   const [announcementOffset, setAnnouncementOffset] = useState(32);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     if (!open) return;
@@ -65,21 +62,6 @@ export default function Navbar() {
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
-    const update = () => setIsDesktop(mq.matches);
-    update();
-    setMounted(true);
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 0);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     const sentinel = document.getElementById("hero-end");
@@ -120,12 +102,9 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  // Glassy pill once the user starts scrolling — desktop only, never on mobile.
-  // Menu open keeps the nav transparent so the dark overlay reads cleanly.
-  const solid = scrolled && !open && isDesktop;
   // Text/elements flip based on the section behind the nav.
   const overDarkSection = overDark || overStickyScroll || overParallaxQuote;
-  const dark = !open && !overDark;
+  const dark = !open && !overDarkSection;
 
   return (
     <>
@@ -134,29 +113,11 @@ export default function Navbar() {
         className={`${open ? "fixed inset-x-0 z-[80]" : "sticky top-0 z-[60]"}`}
         style={open ? { top: `${announcementOffset}px` } : undefined}
       >
-        {/* Outer wrapper — adds gutter around the pill when scrolled */}
-        <div
-          className={mounted ? "transition-all duration-[800ms] ease-out" : ""}
-          style={{
-            paddingTop: solid ? "16px" : "0px",
-            paddingBottom: solid ? "16px" : "0px",
-            paddingLeft: solid ? "16px" : "0px",
-            paddingRight: solid ? "16px" : "0px",
-          }}
-        >
-          {/* Inner container — matches pg-container width on desktop so nav items align with the content grid; shrinks into a glassy pill once past the hero */}
+        <div className="relative">
           <div
-            className={`mx-auto relative ${mounted ? "transition-all duration-[800ms] ease-out" : ""} ${!overDark && !open ? "bg-parchment/40 backdrop-blur-md rounded-full" : ""}`}
-            style={{
-              maxWidth: !overDark && !open ? "800px" : "100vw",
-            }}
+            className="grid grid-cols-3 items-center relative px-4 md:px-16"
+            style={{ height: "80px" }}
           >
-            <div
-              className={`grid grid-cols-3 items-center relative ${mounted ? "transition-all duration-[800ms] ease-out" : ""} ${solid ? "px-10" : "px-4 md:px-16"}`}
-              style={{
-                height: solid ? "60px" : "80px",
-              }}
-            >
 
           {/* Left column — desktop nav links / mobile hamburger */}
           <div className="flex items-center justify-start gap-8">
@@ -242,7 +203,6 @@ export default function Navbar() {
             </div>
           </div>
 
-            </div>
           </div>
         </div>
       </nav>
