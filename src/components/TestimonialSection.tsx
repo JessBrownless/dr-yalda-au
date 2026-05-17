@@ -43,63 +43,54 @@ export default function TestimonialSection() {
   };
 
   return (
-    <section className="bg-parchment py-24 md:py-52" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+    <section className="bg-parchment py-32 md:py-64" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <div className="pg-container">
 
-        <div className="grid grid-cols-12 gap-6 md:gap-8">
+        {/* Overline (cols 1-2) + quote (cols 3-10) + nav buttons (cols 11-12) */}
+        <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
 
-          {/* Label — cols 1–3 */}
-          <div className="hidden md:block col-span-3 pt-1">
-            <p className="overline">
-              Partner testimonial
-            </p>
-          </div>
+          {/* Overline — left column label */}
+          <p className="overline col-span-12 md:col-span-2 md:pt-2">
+            Partner testimonial
+          </p>
 
-          {/* Quote — cols 4–10 */}
-          <div className="col-span-12 md:col-span-7 md:col-start-4 flex flex-col gap-8 md:gap-10">
-
-            {/* Nav buttons — mobile only */}
-            <div className="flex items-center justify-between md:hidden">
-              <h2 className="overline">Testimonials</h2>
-              <div className="flex items-center gap-3">
-                <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-9 border border-brand-black/20 flex items-center justify-center text-brand-black/50 hover:border-brand-black hover:text-brand-black transition-all duration-300">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
-                </button>
-                <button onClick={next} aria-label="Next testimonial" className="w-9 h-9 border border-brand-black/20 flex items-center justify-center text-brand-black/50 hover:border-brand-black hover:text-brand-black transition-all duration-300">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
-                </button>
-              </div>
-            </div>
-
-            <blockquote className="quotesmall">
-              {quote}
-            </blockquote>
-
-            {/* Logo + progress dots */}
-            <div className="flex items-center justify-between">
-              <Image src={logo} alt={brand} width={120} height={40} className="h-5 w-auto object-contain" />
-              <div className="flex items-center gap-2">
-                {testimonials.map((_, i) => (
-                  <button key={i} onClick={() => setIndex(i)} aria-label={`Go to testimonial ${i + 1}`} className="transition-all duration-300"
-                    style={{ width: "20px", height: "1px", background: i === index ? "var(--brand-black)" : "#d4d0cc" }}
-                  />
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-
-          {/* Nav buttons — desktop, cols 11–12, baseline with label */}
-          <div className="hidden md:flex col-span-2 col-start-11 flex-row items-start justify-end gap-3 pt-1">
-            <button onClick={prev} aria-label="Previous testimonial" className="w-9 h-7 border border-brand-black/20 flex items-center justify-center text-brand-black/50 hover:border-brand-black hover:text-brand-black transition-all duration-300">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
+          <blockquote className="col-span-12 md:col-span-8 quotesmall" style={{ fontSize: "clamp(1.25rem, 1.65vw, 1.7rem)", lineHeight: 1.5, fontStyle: "italic" }}>
+            &ldquo;{quote}&rdquo;
+          </blockquote>
+          <div className="col-span-12 md:col-span-2 flex items-center md:justify-end gap-4">
+            <button
+              onClick={prev}
+              aria-label="Previous testimonial"
+              className={`w-12 h-12 border flex items-center justify-center transition-all duration-300 ${
+                index === 0
+                  ? "border-brand-black/20 text-brand-black/50 hover:border-brand-black hover:text-brand-black"
+                  : "border-brand-black text-brand-black hover:bg-brand-black hover:text-cream"
+              }`}
+            >
+              <svg width="14" height="14" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
             </button>
-            <button onClick={next} aria-label="Next testimonial" className="w-9 h-7 border border-brand-black/20 flex items-center justify-center text-brand-black/50 hover:border-brand-black hover:text-brand-black transition-all duration-300">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
+            <button
+              onClick={next}
+              aria-label="Next testimonial"
+              className="w-12 h-12 border border-brand-black text-brand-black flex items-center justify-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
+            >
+              <svg width="14" height="14" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
             </button>
           </div>
+        </div>
 
+        {/* Logo + progress dots — aligned with the quote column (cols 3-10) */}
+        <div className="grid grid-cols-12 gap-6 md:gap-8 mt-8 md:mt-12">
+          <div className="col-span-12 md:col-span-8 md:col-start-3 flex items-center justify-between">
+            <Image src={logo} alt={brand} width={192} height={64} className="h-8 w-auto object-contain" />
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, i) => (
+                <button key={i} onClick={() => setIndex(i)} aria-label={`Go to testimonial ${i + 1}`} className="transition-all duration-300"
+                  style={{ width: "32px", height: "1px", background: i === index ? "var(--brand-black)" : "rgba(45, 44, 42, 0.2)" }}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
       </div>

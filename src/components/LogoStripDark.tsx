@@ -8,9 +8,20 @@ const logos = [
   { src: "/assets/logo-mamamia.svg", alt: "Mamamia", small: true },
 ];
 
+// TODO: swap this text fallback for a proper Harper's Bazaar SVG once supplied.
+const HarpersBazaarMark = ({ className }: { className: string }) => (
+  <span
+    aria-label="Harper's Bazaar"
+    className={`${className} whitespace-nowrap leading-none opacity-40 hover:opacity-70 transition-opacity duration-300 select-none text-brand-black`}
+    style={{ fontFamily: "'Heading', serif", letterSpacing: "0.02em" }}
+  >
+    Harper&rsquo;s BAZAAR
+  </span>
+);
+
 export default function LogoStripDark() {
   return (
-    <section className="bg-parchment py-24 md:py-32">
+    <section className="bg-parchment py-24 md:py-40">
       <div className="pg-container">
         <div className="flex flex-col items-center gap-10">
           <h2 className="overline">
@@ -27,6 +38,7 @@ export default function LogoStripDark() {
                 />
               </div>
             ))}
+            <HarpersBazaarMark className="text-base flex-shrink-0" />
           </div>
 
           {/* Desktop — centered, justified across grid width */}
@@ -44,6 +56,7 @@ export default function LogoStripDark() {
                 />
               </div>
             ))}
+            <HarpersBazaarMark className="text-lg flex-shrink-0" />
           </div>
         </div>
       </div>

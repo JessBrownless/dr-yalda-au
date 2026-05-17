@@ -1,8 +1,10 @@
 import TestimonialSection from "@/components/TestimonialSection";
 import LogoStripDark from "@/components/LogoStripDark";
 import HeroHome from "@/components/HeroHome";
-import ParallaxQuote from "@/components/ParallaxQuote";
 import StickyScrollSection from "@/components/StickyScrollSection";
+import BookingCTA from "@/components/BookingCTA";
+import InstagramFeed from "@/components/InstagramFeed";
+import ParallaxQuote from "@/components/ParallaxQuote";
 
 export default function Home() {
   return (
@@ -13,7 +15,7 @@ export default function Home() {
       />
 
       {/* Her Story — statement block */}
-      <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
+      <section className="bg-parchment py-40 md:py-64 flex flex-col items-center justify-center text-center relative">
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <h2
             data-aos="fade"
@@ -32,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy section — parchment-backed image left, text right */}
-      <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
+      <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "90vh" }}>
 
         {/* Parchment strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
@@ -42,7 +44,7 @@ export default function Home() {
 
             {/* Left — image over parchment */}
             <div className="col-span-12 md:col-span-6" data-aos="fade" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:aspect-[3/4]">
+              <div className="overflow-hidden aspect-square md:aspect-[2/3]">
                 <img src="/assets/IMG_004.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
               </div>
             </div>
@@ -156,40 +158,91 @@ export default function Home() {
 
       <ParallaxQuote />
 
-      {/* CTA */}
-      <section className="bg-parchment py-24 md:py-32">
+      {/* Three blog post cards */}
+      <section className="bg-parchment py-24 md:py-40">
         <div className="pg-container">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
 
-            {/* Image */}
-            <div className="md:col-span-6 relative">
-              <div className="aspect-square md:aspect-[4/5] overflow-hidden">
-                <img src="/assets/IMG_0012.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 30%", transform: "scale(1.15)", transformOrigin: "center bottom" }} />
-              </div>
-              {/* Stamp emblem — bleeds into text column */}
-              <img src="/assets/logo-stacked-white.svg" alt="" aria-hidden="true" className="absolute hidden" style={{ top: "-3.5rem", right: "-3.75rem", width: "120px", height: "auto", filter: "brightness(0)", opacity: 0.85, zIndex: 10 }} />
+          {/* Section header */}
+          <div className="flex items-end justify-between mb-12 md:mb-16" data-aos="fade" data-aos-duration="1000">
+            <div className="flex flex-col gap-4">
+              <p className="overline">Journal</p>
+              <h2 className="heading-lg">Notes from the practice</h2>
             </div>
-
-            {/* Text */}
-            <div className="md:col-span-5 md:col-start-7 flex flex-col gap-8">
-              <div className="flex flex-col gap-6">
-                <h2 className="overline">Book now</h2>
-                <h3 className="heading-lg">
-                  Let's begin with a conversation
-                </h3>
-              </div>
-              <p className="body-serif">
-                Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
-              </p>
-              <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
-                Book a consultation
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
-            </div>
-
+            <a
+              href="/journal"
+              className="hidden md:inline-flex body-xs-caps border-b border-brand-black/20 pb-1 hover:text-brand-black hover:border-brand-black/60 transition-colors duration-300 items-center gap-3 whitespace-nowrap"
+            >
+              View all
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
           </div>
+
+          {/* Card grid — aligned to the 12-col content grid (each card col-span-4) */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+            {[
+              {
+                image: "/assets/IMG_0036.avif",
+                category: "Skin",
+                readTime: "5 min read",
+                title: "The case for a slower approach to skin",
+                excerpt: "Why short-term fixes rarely deliver long-term skin health — and what to do instead.",
+                href: "/journal/slower-approach",
+              },
+              {
+                image: "/assets/IMG_004.avif",
+                category: "Consultation",
+                readTime: "3 min read",
+                title: "Questions to bring to your first consultation",
+                excerpt: "A short guide for anyone considering cosmetic medicine for the first time.",
+                href: "/journal/first-consultation",
+              },
+              {
+                image: "/assets/IMG_0025.jpg",
+                category: "Treatment",
+                readTime: "4 min read",
+                title: "What 'natural-looking' actually means",
+                excerpt: "The phrase is everywhere — but the work behind it is rarely talked about.",
+                href: "/journal/natural-looking",
+              },
+            ].map(({ image, category, readTime, title, excerpt, href }, i) => (
+              <a
+                key={title}
+                href={href}
+                className="group flex flex-col gap-5 col-span-12 md:col-span-4"
+                data-aos="fade"
+                data-aos-delay={i * 120}
+                data-aos-duration="1000"
+              >
+                <div className="overflow-hidden aspect-[4/5]">
+                  <img
+                    src={image}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <p className="overline">{category} · {readTime}</p>
+                  <h3 className="heading-md group-hover:opacity-70 transition-opacity duration-300">{title}</h3>
+                  <p className="body-serif">{excerpt}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile "view all" link */}
+          <a
+            href="/journal"
+            className="md:hidden mt-12 self-start body-xs-caps border-b border-brand-black/20 pb-1 hover:text-brand-black hover:border-brand-black/60 transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
+          >
+            View all
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
         </div>
       </section>
+
+      <BookingCTA />
+      <InstagramFeed />
     </main>
   );
 }

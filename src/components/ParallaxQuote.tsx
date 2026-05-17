@@ -38,7 +38,7 @@ export default function ParallaxQuote({
   return (
     <section
       id="parallax-quote"
-      className="relative flex items-center justify-center overflow-hidden py-24 md:py-32 xl:py-52 min-h-[100vh] md:min-h-[clamp(320px,45vw,620px)] text-parchment"
+      className="relative flex items-center justify-center overflow-hidden py-40 md:py-56 xl:py-72 text-parchment"
     >
       {/* Parallax image */}
       <div
@@ -57,11 +57,6 @@ export default function ParallaxQuote({
 
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 40%)" }} />
-
-      {/* ETHOS — pinned to top of section */}
-      <div className="absolute top-0 left-0 right-0 z-10 pg-container pt-12 md:pt-20">
-        <h2 className="overline">Ethos</h2>
-      </div>
 
       <figure className="relative z-10 pg-container w-full flex flex-col items-start gap-6 m-0">
         <span

@@ -89,11 +89,11 @@ export default function StickyScrollSection() {
                   <p className="overline">
                     0{i + 1}
                   </p>
-                  <h3 className="heading-lg">
+                  <h3 className="heading-lg" style={{ fontSize: "clamp(2.5rem, 4.5vw, 5rem)" }}>
                     {item.title}
                   </h3>
                 </div>
-                <p className="body-serif max-w-sm">
+                <p className="body-serif max-w-sm" style={{ color: "rgba(245, 242, 236, 0.65)" }}>
                   {item.description}
                 </p>
               </div>
