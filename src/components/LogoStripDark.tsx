@@ -21,7 +21,7 @@ const HarpersBazaarMark = ({ className }: { className: string }) => (
 
 export default function LogoStripDark() {
   return (
-    <section className="bg-parchment py-24 md:py-40">
+    <section className="bg-parchment py-[200px]">
       <div className="pg-container">
         <div className="flex flex-col items-center gap-10">
           <h2 className="overline">

@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy section — parchment-backed image left, text right */}
-      <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "90vh" }}>
+      <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Parchment strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
@@ -44,7 +44,7 @@ export default function Home() {
 
             {/* Left — image over parchment */}
             <div className="col-span-12 md:col-span-6" data-aos="fade" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:aspect-[2/3]">
+              <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img src="/assets/IMG_004.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
               </div>
             </div>

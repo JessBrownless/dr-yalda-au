@@ -38,7 +38,7 @@ export default function ParallaxQuote({
   return (
     <section
       id="parallax-quote"
-      className="relative flex items-center justify-center overflow-hidden py-40 md:py-56 xl:py-72 text-parchment"
+      className="relative flex items-center justify-center overflow-hidden py-40 md:py-64 text-parchment"
     >
       {/* Parallax image */}
       <div
