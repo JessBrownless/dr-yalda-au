@@ -189,7 +189,7 @@ export default function Home() {
                 href: "/journal/slower-approach",
               },
               {
-                image: "/assets/IMG_004.avif",
+                image: "/assets/IMG_0025.jpg",
                 category: "Consultation",
                 readTime: "3 min read",
                 title: "Questions to bring to your first consultation",
@@ -197,7 +197,7 @@ export default function Home() {
                 href: "/journal/first-consultation",
               },
               {
-                image: "/assets/IMG_0025.jpg",
+                image: "/assets/IMG_0003.jpg",
                 category: "Treatment",
                 readTime: "4 min read",
                 title: "What 'natural-looking' actually means",
