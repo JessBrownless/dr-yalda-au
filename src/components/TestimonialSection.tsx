@@ -43,7 +43,7 @@ export default function TestimonialSection() {
   };
 
   return (
-    <section className="bg-parchment py-32 md:py-64" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+    <section className="bg-parchment py-[200px]" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <div className="pg-container">
 
         {/* Overline (cols 1-2) + quote (cols 3-10) + nav buttons (cols 11-12) */}
