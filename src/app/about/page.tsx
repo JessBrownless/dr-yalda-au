@@ -26,7 +26,7 @@ export default function AboutPage() {
             <div className="w-full mx-auto" style={{ maxWidth: "920px" }}>
               <h1
                 className="heading-xl opacity-0 animate-fade-in"
-                style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)", lineHeight: 1.05, animationDelay: "0.4s", animationDuration: "1.0s" }}
+                style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
               >
                 Dr Yalda Jamali
               </h1>
@@ -59,12 +59,8 @@ export default function AboutPage() {
                 About Dr Yalda
               </p>
               <p
-                className="opacity-0 animate-fade-in mb-8 md:mb-12"
+                className="heading-lg opacity-0 animate-fade-in mb-8 md:mb-12"
                 style={{
-                  fontFamily: "'Heading', serif",
-                  fontSize: "clamp(1.625rem, 5vw, 3rem)",
-                  lineHeight: 1.2,
-                  letterSpacing: "-0.005em",
                   textWrap: "balance",
                   animationDelay: "0.4s",
                   animationDuration: "1.0s",
@@ -172,7 +168,7 @@ export default function AboutPage() {
                   { name: "Faculty member", detail: "Merz Aesthetics" },
                 ].map(({ name, detail }) => (
                   <div key={name} className="flex flex-col gap-1.5 py-4 border-b border-brand-black/20 last:border-b-0 first:border-t first:border-brand-black/20">
-                    <p className="heading-md" style={{ fontSize: "clamp(1.25rem, 1.6vw, 1.5rem)" }}>{name}</p>
+                    <p className="heading-md">{name}</p>
                     <p className="body-xs">{detail}</p>
                   </div>
                 ))}
@@ -205,7 +201,7 @@ export default function AboutPage() {
                 { num: "04", title: "Trust", body: "I build long-term relationships through consistent, honest care. The goal is always to earn your confidence with results that feel like you." },
               ].map(({ num, title, body }) => (
                 <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/20 last:border-b-0 first:border-t first:border-brand-black/20">
-                  <span className="text-brand-black/60 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
+                  <span className="list-index flex-shrink-0" style={{ minWidth: "2.5em" }}>{num} /</span>
                   <div className="flex flex-col gap-3">
                     <h3 className="heading-lg">
                       {title}
