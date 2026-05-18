@@ -1,110 +1,187 @@
 import ParallaxQuote from "@/components/ParallaxQuote";
+import BookingCTA from "@/components/BookingCTA";
+import InstagramFeed from "@/components/InstagramFeed";
 
 export default function AboutPage() {
   return (
     <main className="bg-parchment text-brand-black">
-      {/* Florence-style hero — full-width bg, overlayed portrait, overlayed text */}
+      {/* Lillet-style hero — full-bleed bg, centered title, portrait overlapping below */}
       <section className="relative" style={{ marginTop: "-80px" }}>
 
-        {/* Layer 1: Background image — full bleed behind nav, fades in last over black */}
-        <div className="relative overflow-hidden h-[28vh] md:h-[50vh] bg-brand-black">
+        {/* Background image — full bleed, tall (overflow-hidden clips the bg img) */}
+        <div className="relative overflow-hidden h-[55vh] md:h-[82vh] bg-brand-black">
           <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
             <img src="/assets/chairs-hands.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
           </div>
-          {/* Base darkening */}
-          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.65)", zIndex: 1 }} />
-          {/* Top vignette */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 30%, transparent 55%)", zIndex: 2 }} />
-          {/* Bottom vignette */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)", zIndex: 2 }} />
+          {/* Darkening overlay for legibility */}
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.55)", zIndex: 1 }} />
+          {/* Top vignette behind nav */}
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 25%, transparent 50%)", zIndex: 2 }} />
+
+          {/* Centered overline + heading */}
+          <div className="absolute inset-x-0 z-10 flex flex-col items-center text-parchment text-center px-6" style={{ top: "20%" }}>
+            <p className="opacity-0 animate-fade-in overline mb-8" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
+              The story so far
+            </p>
+            <div className="w-full mx-auto" style={{ maxWidth: "920px" }}>
+              <h1
+                className="heading-xl opacity-0 animate-fade-in"
+                style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)", lineHeight: 1.05, animationDelay: "0.4s", animationDuration: "1.0s" }}
+              >
+                Dr Yalda Jamali
+              </h1>
+            </div>
+          </div>
+
+          {/* Sentinel for nav dark/light state observer */}
           <div id="hero-end" aria-hidden="true" style={{ position: "absolute", bottom: 0, height: 0, pointerEvents: "none" }} />
         </div>
 
-        {/* Parchment background for content below hero */}
-        <div className="absolute left-0 right-0 bottom-0 bg-parchment top-[28vh] md:top-[50vh]" />
-
-        {/* Layer 2: Overlayed portrait + text container, pulls up over the bg image */}
-        <div className="pg-container relative z-10 -mt-[18vh] md:-mt-[35vh]" style={{ maxWidth: "1280px" }}>
-          <div className="relative">
-
-            {/* Portrait image */}
-            <div className="hidden md:block opacity-0 animate-fade-in" style={{ width: "47%", animationDelay: "0s", animationDuration: "1.0s" }}>
-              <div className="overflow-hidden" style={{ aspectRatio: "2/3" }}>
-                <img
-                  src="/assets/Yalda-1.avif"
-                  alt="Dr. Yalda Jamali"
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: "50% 30%" }}
-                />
-              </div>
+        {/* Portrait — sibling of hero, negative margin-top so it overlaps both regions */}
+        <div className="about-hero-portrait relative z-30 flex justify-center">
+          <div className="opacity-0 animate-fade-in w-[82%] md:w-[52%] max-w-[720px]" style={{ animationDelay: "0.2s", animationDuration: "1.0s" }}>
+            <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
+              <img
+                src="/assets/Yalda-1.avif"
+                alt="Dr. Yalda Jamali"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: "50% 30%" }}
+              />
             </div>
+          </div>
+        </div>
 
-            {/* Mobile image */}
-            <div className="md:hidden opacity-0 animate-fade-in" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
-              <div className="overflow-hidden" style={{ aspectRatio: "3/4" }}>
-                <img
-                  src="/assets/Yalda-1.avif"
-                  alt="Dr. Yalda Jamali"
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: "50% 30%" }}
-                />
-              </div>
-            </div>
-
-            {/* Text card — overlaps portrait image, vertically centered along image height */}
-            <div
-              className="hidden md:block absolute z-20"
-              style={{ top: "50%", right: 0, width: "55%", transform: "translateY(-50%)" }}
-            >
-              <div className="opacity-0 animate-fade-in bg-parchment flex flex-col gap-8 p-12 lg:p-16" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
-                <div className="flex flex-col gap-6">
-                  <p className="opacity-0 animate-fade-in overline" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
-                    The story so far
-                  </p>
-                  <h1
-                    className="heading-xl opacity-0 animate-fade-in"
-                    style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
-                  >
-                    About Dr Yalda Jamali
-                  </h1>
-                </div>
-
-                <p className="opacity-0 animate-fade-in body-serif" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
-                  With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
-                </p>
-              </div>
-            </div>
-
-            {/* Mobile text */}
-            <div className="md:hidden flex flex-col pt-16 pb-0">
-              <p className="opacity-0 animate-fade-in overline mb-6" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
-                The story so far
+        {/* Intro — centered overline, pull quote, body (10-col measure) */}
+        <div className="pg-container pt-28 md:pt-40 pb-20 md:pb-28">
+          <div className="grid grid-cols-12 gap-6 md:gap-10">
+            <div className="col-span-12 md:col-span-10 md:col-start-2 flex flex-col items-center text-center">
+              <p className="opacity-0 animate-fade-in overline mb-8 md:mb-10" style={{ animationDelay: "0.3s", animationDuration: "1.0s" }}>
+                About Dr Yalda
               </p>
-              <h1
-                className="heading-xl opacity-0 animate-fade-in"
-                style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
+              <p
+                className="opacity-0 animate-fade-in mb-8 md:mb-12"
+                style={{
+                  fontFamily: "'Heading', serif",
+                  fontSize: "clamp(2rem, 5vw, 3rem)",
+                  lineHeight: 1.2,
+                  letterSpacing: "-0.005em",
+                  textWrap: "balance",
+                  animationDelay: "0.4s",
+                  animationDuration: "1.0s",
+                }}
               >
-                About Dr Yalda Jamali
-              </h1>
-              <p className="opacity-0 animate-fade-in body-serif mt-8" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
-                With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists. I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
+                With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists.
+              </p>
+              <p
+                className="opacity-0 animate-fade-in body-serif"
+                style={{
+                  maxWidth: "820px",
+                  fontSize: "clamp(1.0625rem, 1.25vw, 1.1875rem)",
+                  lineHeight: 1.7,
+                  textWrap: "pretty",
+                  animationDelay: "0.5s",
+                  animationDuration: "1.0s",
+                }}
+              >
+                I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
               </p>
             </div>
-
           </div>
         </div>
 
       </section>
 
-      {/* Credentials — statement block, matches homepage "Sydney based cosmetic doctor" */}
-      <section className="bg-parchment py-32 md:py-52 flex flex-col items-center justify-center text-center relative">
-        <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
-          <p
-            data-aos="fade"
-            className="heading-lg"
-          >
-            I am also a Fellow of the Australasian College of Cosmetic Surgery and Medicine (ACCSM), have contributed to publications within the field, and continue to be involved in practitioner education as part of the Merz Aesthetics faculty.
-          </p>
+      {/* Two-image interlude — staggered on all breakpoints */}
+      <section className="bg-parchment pb-16 md:pb-16">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-x-3 md:gap-x-10">
+
+            {/* Left — portrait */}
+            <div className="col-span-7 col-start-1 md:col-span-6 row-start-1" data-aos="fade" data-aos-duration="1000">
+              <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
+                <img
+                  src="/assets/IMG_0019.avif"
+                  alt=""
+                  aria-hidden="true"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Right — offset down, with logo overlay */}
+            <div className="col-span-7 col-start-6 md:col-span-6 md:col-start-7 row-start-1 mt-[28vw] md:mt-32" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+              <div className="relative">
+                <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
+                  <img
+                    src="/assets/IMG_004.avif"
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <img
+                  src="/assets/logo-circle.svg"
+                  alt="Dr. Yalda Jamali"
+                  className="absolute z-10"
+                  style={{ width: "clamp(64px, 10vw, 140px)", bottom: "-1.5rem", left: "-1.5rem" }}
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials — trusted-voice layout, directly under hero */}
+      <section id="credentials" className="bg-parchment pt-12 md:pt-32 pb-16 md:pb-20 scroll-mt-20">
+        <div className="pg-container">
+          <div className="grid grid-cols-12 gap-6 md:gap-8">
+
+            {/* Left — heading + body */}
+            <div className="col-span-12 md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
+
+              <div className="flex flex-col gap-6">
+                <p className="overline">Credentials</p>
+                <h2 className="heading-lg">A foundation in medical dermatology.</h2>
+              </div>
+
+              <div className="flex gap-6 md:gap-10">
+                <div className="hidden md:block w-px bg-brand-black/20 flex-shrink-0 self-stretch" />
+                <div className="flex flex-col gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                    <p className="body-serif" style={{ fontSize: "clamp(1.0625rem, 1.25vw, 1.1875rem)", lineHeight: 1.7 }}>
+                      My training in medicine started long before injectables. I hold a Bachelor of Medicine and Bachelor of Surgery (MBChB) and a Master&apos;s degree in Dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables.
+                    </p>
+                    <p className="body-serif" style={{ fontSize: "clamp(1.0625rem, 1.25vw, 1.1875rem)", lineHeight: 1.7 }}>
+                      I&apos;m a Fellow of the Australasian College of Cosmetic Surgery and Medicine (FACCSM), have contributed to publications in the field, and continue to teach as part of the Merz Aesthetics faculty.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right — qualifications list */}
+            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+              {/* Invisible spacer — pushes Qualifications overline down to baseline-align with first line of the big heading */}
+              <p className="overline hidden md:block invisible" aria-hidden="true">spacer</p>
+              <h2 className="overline">Qualifications</h2>
+              <div className="flex flex-col">
+                {[
+                  { name: "MBChB", detail: "Bachelor of Medicine & Surgery" },
+                  { name: "MSc Dermatology", detail: "with distinction" },
+                  { name: "FACCSM", detail: "Fellow, ACCSM" },
+                  { name: "Faculty member", detail: "Merz Aesthetics" },
+                ].map(({ name, detail }) => (
+                  <div key={name} className="flex flex-col gap-1.5 py-4 border-b border-brand-black/20 last:border-b-0 first:border-t first:border-brand-black/20">
+                    <p className="heading-md" style={{ fontSize: "clamp(1.25rem, 1.6vw, 1.5rem)" }}>{name}</p>
+                    <p className="body-xs">{detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -113,29 +190,6 @@ export default function AboutPage() {
         image="/assets/dr-yalda-jamali-cosmetic-doctor-sydney.avif"
         quote="Medicine is an art. Every face tells a story — my role is simply to help it shine."
       />
-
-      {/* Stats */}
-      <section className="bg-parchment py-16 md:py-24">
-        <div className="pg-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8">
-            {[
-              { stat: "10+", label: "Years in cosmetic medicine" },
-              { stat: "MSc", label: "Masters in Dermatology" },
-              { stat: "ACCSM", label: "College member" },
-              { stat: "2", label: "Locations — Paddington & Balgowlah" },
-            ].map(({ stat, label }, i) => (
-              <div key={i} className="flex flex-col gap-2 md:gap-3 px-0 md:px-8 md:first:pl-0 md:last:pr-0 py-5 md:py-0">
-                <p className="stat-lg text-brand-black">
-                  {stat}
-                </p>
-                <span className="body-xs">
-                  {label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Values — quote layout */}
       <section className="bg-parchment py-16 md:py-32">
@@ -147,10 +201,10 @@ export default function AboutPage() {
             <div className="col-span-12 md:col-span-8 md:col-start-5 flex flex-col">
               <h2 className="md:hidden overline mb-6">Values</h2>
               {[
-                { num: "01", title: "Honesty", body: "Every consultation is grounded in transparency. Dr. Yalda will always tell you what is and isn't right for you — even if that means recommending nothing at all." },
-                { num: "02", title: "Precision", body: "A meticulous, considered approach to every treatment. Results are refined, never overdone — shaped by anatomy, not trend." },
+                { num: "01", title: "Honesty", body: "Every consultation is grounded in transparency. I'll always tell you what is — and isn't — right for you, even if that means recommending nothing at all." },
+                { num: "02", title: "Precision", body: "I take a meticulous, considered approach to every treatment. Results are refined, never overdone — shaped by anatomy, not trend." },
                 { num: "03", title: "Evidence", body: "Every recommendation is backed by clinical evidence and ongoing education. No hype, no shortcuts — just what the science supports." },
-                { num: "04", title: "Trust", body: "Long-term relationships built on consistent, honest care. The goal is always to earn your confidence through results that feel like you." },
+                { num: "04", title: "Trust", body: "I build long-term relationships through consistent, honest care. The goal is always to earn your confidence with results that feel like you." },
               ].map(({ num, title, body }) => (
                 <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/20 last:border-b-0 first:border-t first:border-brand-black/20">
                   <span className="text-brand-black/60 font-light flex-shrink-0" style={{ fontFamily: "'Heading', serif", fontSize: "clamp(0.7rem, 1vw, 0.85rem)", letterSpacing: "0.05em", minWidth: "2.5em" }}>{num} /</span>
@@ -158,7 +212,7 @@ export default function AboutPage() {
                     <h3 className="heading-lg">
                       {title}
                     </h3>
-                    <p className="body-serif">{body}</p>
+                    <p className="body-serif" style={{ fontSize: "clamp(1.0625rem, 1.25vw, 1.1875rem)", lineHeight: 1.7 }}>{body}</p>
                   </div>
                 </div>
               ))}
@@ -167,73 +221,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA — collage layout */}
-      <div className="bg-parchment pt-0 pb-0 md:py-24">
-      <section className="relative overflow-hidden bg-parchment md:min-h-[clamp(500px,68vh,820px)]">
-
-        {/* Left image — square, anchored to top */}
-        <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "46%", height: "62vw" }}>
-          <img src="/assets/dr-yalda-treatment-02.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
-        </div>
-
-        {/* Right image — rectangle, starts lower, bleeds past bottom */}
-        <div className="absolute right-0 bottom-0 hidden md:block overflow-hidden" style={{ width: "34%", top: "18%" }}>
-          <img src="/assets/dr-yalda-treatment.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
-        </div>
-
-        {/* Centre card — overlaps both images */}
-        <div
-          className="absolute z-10 hidden md:flex flex-col gap-8 justify-center"
-          style={{
-            left: "29%",
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "38%",
-            background: "#E9E3D8",
-            padding: "clamp(2rem, 3.5vw, 4rem)",
-          }}
-        >
-          <div className="flex flex-col gap-6">
-            <p className="overline">
-              Feeling overwhelmed?
-            </p>
-            <h3 className="heading-lg">
-              Complimentary 15-minute online consultation.
-            </h3>
-          </div>
-          <p className="body-serif">
-            Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
-          </p>
-          <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
-            Book a consultation
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </a>
-        </div>
-
-        {/* Mobile fallback — stacked */}
-        <div className="md:hidden flex flex-col">
-          <div className="aspect-square overflow-hidden">
-            <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
-          </div>
-          <div className="flex flex-col gap-8 px-8 py-14" style={{ background: "#F6F6F3", color: "#2D2C2A" }}>
-            <div className="flex flex-col gap-6">
-              <p className="overline">Feeling overwhelmed?</p>
-              <h3 className="heading-lg">
-                Complimentary 15-minute online consultation
-              </h3>
-            </div>
-            <p className="body-serif">
-              Dr Yalda offers a complimentary 15-minute online consultation to talk through your concerns and explore your options.
-            </p>
-            <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
-              Book a consultation
-              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-
-      </section>
-      </div>
+      <BookingCTA />
+      <InstagramFeed />
 
     </main>
   );

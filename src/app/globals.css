@@ -44,8 +44,18 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(2rem, 4vw, 2.5rem);
-  padding-right: clamp(2rem, 4vw, 2.5rem);
+  padding-left: clamp(1.75rem, 5vw, 5rem);
+  padding-right: clamp(1.75rem, 5vw, 5rem);
+}
+
+/* About page hero portrait — pulls 55% of its height up into the hero */
+.about-hero-portrait {
+  margin-top: calc(-1 * 82vw * 5 / 4 * 0.55);
+}
+@media (min-width: 768px) {
+  .about-hero-portrait {
+    margin-top: calc(-1 * min(52vw, 720px) * 5 / 4 * 0.55);
+  }
 }
 
 /* ─── Media Teaser ───────────────────────────────────────────────────── */
