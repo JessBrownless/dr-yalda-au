@@ -62,7 +62,7 @@ export default function AboutPage() {
                 className="opacity-0 animate-fade-in mb-8 md:mb-12"
                 style={{
                   fontFamily: "'Heading', serif",
-                  fontSize: "clamp(2rem, 5vw, 3rem)",
+                  fontSize: "clamp(1.625rem, 5vw, 3rem)",
                   lineHeight: 1.2,
                   letterSpacing: "-0.005em",
                   textWrap: "balance",
