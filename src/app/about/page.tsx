@@ -167,7 +167,7 @@ export default function AboutPage() {
                   { name: "FACCSM", detail: "Fellow, ACCSM" },
                   { name: "Faculty member", detail: "Merz Aesthetics" },
                 ].map(({ name, detail }) => (
-                  <div key={name} className="flex flex-col gap-1.5 py-4 border-b border-brand-black/20 last:border-b-0 first:border-t first:border-brand-black/20">
+                  <div key={name} className="flex flex-col gap-1.5 py-4 border-b border-brand-black/10 last:border-b-0 first:border-t first:border-brand-black/10">
                     <p className="heading-md">{name}</p>
                     <p className="body-xs">{detail}</p>
                   </div>
@@ -200,7 +200,7 @@ export default function AboutPage() {
                 { num: "03", title: "Evidence", body: "Every recommendation is backed by clinical evidence and ongoing education. No hype, no shortcuts — just what the science supports." },
                 { num: "04", title: "Trust", body: "I build long-term relationships through consistent, honest care. The goal is always to earn your confidence with results that feel like you." },
               ].map(({ num, title, body }) => (
-                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/20 last:border-b-0 first:border-t first:border-brand-black/20">
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/10 last:border-b-0 first:border-t first:border-brand-black/10">
                   <span className="list-index flex-shrink-0" style={{ minWidth: "2.5em" }}>{num} /</span>
                   <div className="flex flex-col gap-3">
                     <h3 className="heading-lg">
