@@ -76,8 +76,6 @@ export default function AboutPage() {
                 className="opacity-0 animate-fade-in body-serif"
                 style={{
                   maxWidth: "820px",
-                  fontSize: "clamp(1.0625rem, 1.25vw, 1.1875rem)",
-                  lineHeight: 1.7,
                   textWrap: "pretty",
                   animationDelay: "0.5s",
                   animationDuration: "1.0s",
@@ -149,10 +147,10 @@ export default function AboutPage() {
                 <div className="hidden md:block w-px bg-brand-black/20 flex-shrink-0 self-stretch" />
                 <div className="flex flex-col gap-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-                    <p className="body-serif" style={{ fontSize: "clamp(1.0625rem, 1.25vw, 1.1875rem)", lineHeight: 1.7 }}>
+                    <p className="body-serif">
                       My training in medicine started long before injectables. I hold a Bachelor of Medicine and Bachelor of Surgery (MBChB) and a Master&apos;s degree in Dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables.
                     </p>
-                    <p className="body-serif" style={{ fontSize: "clamp(1.0625rem, 1.25vw, 1.1875rem)", lineHeight: 1.7 }}>
+                    <p className="body-serif">
                       I&apos;m a Fellow of the Australasian College of Cosmetic Surgery and Medicine (FACCSM), have contributed to publications in the field, and continue to teach as part of the Merz Aesthetics faculty.
                     </p>
                   </div>
@@ -212,7 +210,7 @@ export default function AboutPage() {
                     <h3 className="heading-lg">
                       {title}
                     </h3>
-                    <p className="body-serif" style={{ fontSize: "clamp(1.0625rem, 1.25vw, 1.1875rem)", lineHeight: 1.7 }}>{body}</p>
+                    <p className="body-serif">{body}</p>
                   </div>
                 </div>
               ))}
