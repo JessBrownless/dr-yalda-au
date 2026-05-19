@@ -444,6 +444,31 @@ body {
   text-decoration: none;
 }
 
+/* ─── Modular type scale (√2 ratio from 14px body) ─────────────────────────
+   14 · 19.8 · 28 · 39.6 · 56 · 79.1 · 112 px                                  */
+
+/* heading-display — top of the scale, hero billboards
+   size: 56→112px · leading 1 · +0.02em */
+.heading-display {
+  margin: 0;
+  font-family: "Heading", serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* heading-2xl — between heading-xl and heading-display
+   size: 40→80px · leading 1.05 · +0.02em */
+.heading-2xl {
+  margin: 0;
+  font-family: "Heading", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
 /* Hero / page-title display style. */
 .heading-xl {
   margin: 0;

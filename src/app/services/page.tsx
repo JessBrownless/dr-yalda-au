@@ -1,5 +1,7 @@
 import FaqAccordion from "@/components/FaqAccordion";
 import HeroHome from "@/components/HeroHome";
+import BookingCTA from "@/components/BookingCTA";
+import InstagramFeed from "@/components/InstagramFeed";
 
 export default function ServicesPage() {
   return (
@@ -198,48 +200,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <div className="bg-parchment md:py-24">
-      <section className="relative overflow-hidden bg-parchment" style={{ minHeight: "clamp(500px, 68vh, 820px)" }}>
-        <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "54%", height: "54vw" }}>
-          <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="absolute inset-0 w-full h-full object-cover object-top" />
-        </div>
-        <div className="absolute right-0 bottom-0 hidden md:block overflow-hidden" style={{ width: "34%", top: "18%" }}>
-          <img src="/assets/dr-yalda-treatment.avif" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
-        </div>
-        <div className="absolute z-10 hidden md:flex flex-col gap-8 justify-center" style={{ left: "29%", top: "50%", transform: "translateY(-50%)", width: "38%", background: "#E9E3D8", padding: "clamp(2rem, 3.5vw, 4rem)" }}>
-          <div className="flex flex-col gap-6">
-            <p className="overline">Book a consultation</p>
-            <h3 className="heading-lg">
-              Let's begin with a conversation
-            </h3>
-          </div>
-          <p className="body-serif">
-            Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.
-          </p>
-          <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
-            Book a consultation
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </a>
-        </div>
-        <div className="md:hidden flex flex-col">
-          <div className="aspect-[4/3] overflow-hidden">
-            <img src="/assets/dr-yalda-treatment.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-center" />
-          </div>
-          <div className="flex flex-col gap-8 p-8" style={{ background: "#E9E3D8", color: "#2D2C2A" }}>
-            <div className="flex flex-col gap-6">
-              <p className="overline">Book a consultation</p>
-              <h3 className="heading-lg">Let's begin with a conversation</h3>
-            </div>
-            <p className="body-serif">Dr. Yalda's consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.</p>
-            <a href="/appointments" className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap" style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}>
-              Book a consultation
-              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </section>
+      <div className="mt-32 md:mt-52">
+        <BookingCTA />
       </div>
+      <InstagramFeed />
 
     </main>
   );

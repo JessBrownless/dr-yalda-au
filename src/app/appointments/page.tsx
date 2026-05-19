@@ -1,3 +1,4 @@
+import InstagramFeed from "@/components/InstagramFeed";
 
 const clinics = [
   {
@@ -289,6 +290,8 @@ export default function AppointmentsPage() {
           </div>
         </div>
       </section>
+
+      <InstagramFeed />
 
     </main>
   );

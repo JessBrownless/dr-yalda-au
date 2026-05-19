@@ -16,19 +16,21 @@ const swatches: Swatch[] = [
   { name: "brand-blue",       hex: "#9BB9CB", group: "Brand" },
 ];
 
-const typeStyles: { className: string; label: string; sample: string }[] = [
-  { className: "heading-xl",   label: ".heading-xl — hero / page title",            sample: "Beauty meets artistry" },
-  { className: "heading-lg",   label: ".heading-lg — section heading",              sample: "A considered approach" },
-  { className: "heading-md",   label: ".heading-md — card / list sub-heading",      sample: "Consultation process" },
-  { className: "stat-lg",      label: ".stat-lg — stat / big label",                sample: "15+" },
-  { className: "blockquote",   label: ".blockquote — large italic pull-quote",      sample: "Restraint is the point." },
-  { className: "quotesmall",   label: ".quotesmall — testimonial-scale italic",     sample: "She listens before she suggests." },
-  { className: "body-serif",   label: ".body-serif — serif body copy",              sample: "Every face is read on its own terms — proportion, movement, light. Treatment is restrained, evidence-led, and built to age with you." },
-  { className: "body-sans",    label: ".body-sans — sans body copy",                sample: "Every face is read on its own terms — proportion, movement, light. Treatment is restrained, evidence-led, and built to age with you." },
-  { className: "body-xs",      label: ".body-xs — caption / fine print",            sample: "Results vary. Consultation required prior to any treatment." },
-  { className: "body-xs-caps", label: ".body-xs-caps — small caps body label",      sample: "Bookings now open" },
-  { className: "eyebrow",      label: ".eyebrow — small tracked uppercase label",   sample: "Sydney · By appointment" },
-  { className: "overline",     label: ".overline — kicker / overline",              sample: "Chapter 01" },
+const typeStyles: { className: string; label: string; specs: string; breakpoints: string; sample: string }[] = [
+  { className: "heading-display", label: ".heading-display — billboard hero",       specs: "56→112px · leading 1 · +0.02em",                breakpoints: "sm 56 · md 61 · lg 82 · xl 102 · 2xl 112", sample: "The quick brown fox" },
+  { className: "heading-2xl",     label: ".heading-2xl — large display heading",    specs: "40→80px · leading 1.05 · +0.02em",              breakpoints: "sm 40 · md 46 · lg 61 · xl 77 · 2xl 80",   sample: "The quick brown fox jumps" },
+  { className: "heading-xl",   label: ".heading-xl — hero / page title",            specs: "36→88px · leading 1.05 · +0.04em · uppercase", breakpoints: "sm 36 · md 38 · lg 51 · xl 64 · 2xl 77",  sample: "Beauty meets artistry" },
+  { className: "heading-lg",   label: ".heading-lg — section heading",              specs: "24→44px · leading 1.25 · 0",                    breakpoints: "sm 24 · md 24 · lg 31 · xl 38 · 2xl 44",  sample: "A considered approach" },
+  { className: "heading-md",   label: ".heading-md — card / list sub-heading",      specs: "16→20px · leading 1.3 · +0.02em",               breakpoints: "sm 16 · md 16 · lg 16 · xl 17 · 2xl 20",  sample: "Consultation process" },
+  { className: "stat-lg",      label: ".stat-lg — stat / big label",                specs: "28→64px · leading 1 · +0.02em",                 breakpoints: "sm 28 · md 28 · lg 36 · xl 45 · 2xl 54",  sample: "15+" },
+  { className: "blockquote",   label: ".blockquote — large italic pull-quote",      specs: "36→64px · leading 1.3 · italic",                breakpoints: "sm 36 · md 36 · lg 41 · xl 51 · 2xl 61",  sample: "Restraint is the point." },
+  { className: "quotesmall",   label: ".quotesmall — testimonial-scale italic",     specs: "19→22px · leading 1.6 · italic",                breakpoints: "sm 19 · md 19 · lg 19 · xl 19 · 2xl 22",  sample: "She listens before she suggests." },
+  { className: "body-serif",   label: ".body-serif — serif body copy",              specs: "14→16px · leading 1.7 · +0.01em",               breakpoints: "sm 14 · md 16 · lg 16 · xl 16 · 2xl 16",  sample: "Every face is read on its own terms — proportion, movement, light. Treatment is restrained, evidence-led, and built to age with you." },
+  { className: "body-sans",    label: ".body-sans — sans body copy",                specs: "14→16px · leading 1.7 · +0.01em",               breakpoints: "sm 14 · md 16 · lg 16 · xl 16 · 2xl 16",  sample: "Every face is read on its own terms — proportion, movement, light. Treatment is restrained, evidence-led, and built to age with you." },
+  { className: "body-xs",      label: ".body-xs — caption / fine print",            specs: "12px · leading 1.5 · +0.01em",                  breakpoints: "fixed 12px (all breakpoints)",            sample: "Results vary. Consultation required prior to any treatment." },
+  { className: "body-xs-caps", label: ".body-xs-caps — small caps body label",      specs: "10px · leading 1.4 · +0.15em · uppercase",      breakpoints: "fixed 10px (all breakpoints)",            sample: "Bookings now open" },
+  { className: "eyebrow",      label: ".eyebrow — small tracked uppercase label",   specs: "11px · +0.35em · uppercase",                    breakpoints: "fixed 11px (all breakpoints)",            sample: "Sydney · By appointment" },
+  { className: "overline",     label: ".overline — kicker / overline",              specs: "10px · leading 1.4 · +0.45em · uppercase",      breakpoints: "fixed 10px (all breakpoints)",            sample: "Chapter 01" },
 ];
 
 export const metadata = {
@@ -132,13 +134,21 @@ export default function StylesheetPage() {
             Helpers defined in <code>globals.css</code>.
           </p>
 
+          <p className="body-xs !text-brand-black/50 mb-6">
+            Tailwind breakpoints: sm 640px · md 768px · lg 1024px · xl 1280px · 2xl 1536px
+          </p>
+
           <div className="divide-y divide-brand-line">
-            {typeStyles.map(({ className, label, sample }) => (
+            {typeStyles.map(({ className, label, specs, breakpoints, sample }) => (
               <div
                 key={className}
-                className="py-8 grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6 items-start"
+                className="py-8 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-6 items-start"
               >
-                <p className="body-xs-caps !text-brand-black/60">{label}</p>
+                <div className="flex flex-col gap-1.5">
+                  <p className="body-xs-caps !text-brand-black/60">{label}</p>
+                  <p className="body-xs !text-brand-black/50">{specs}</p>
+                  <p className="body-xs !text-brand-black/40">{breakpoints}</p>
+                </div>
                 <p className={className}>{sample}</p>
               </div>
             ))}
