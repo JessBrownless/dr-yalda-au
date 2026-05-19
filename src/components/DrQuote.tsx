@@ -3,7 +3,7 @@ export default function DrQuote() {
     <section className="bg-cream py-24 md:py-48">
       <div className="pg-container">
         <div className="w-6 h-px bg-brand-black/20 mb-12 md:mb-16" />
-        <div className="grid grid-cols-12 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
           <div className="hidden md:block col-span-3 pt-1">
             <p className="overline">Her Approach</p>
           </div>

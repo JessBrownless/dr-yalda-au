@@ -47,7 +47,7 @@ export default function TestimonialSection() {
       <div className="pg-container">
 
         {/* Overline (cols 1-2) + quote (cols 3-10) + nav buttons (cols 11-12) */}
-        <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
           {/* Overline — left column label */}
           <p className="overline col-span-12 md:col-span-2 md:pt-2">
@@ -80,7 +80,7 @@ export default function TestimonialSection() {
         </div>
 
         {/* Logo + progress dots — aligned with the quote column (cols 3-10) */}
-        <div className="grid grid-cols-12 gap-6 md:gap-8 mt-8 md:mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mt-8 md:mt-12">
           <div className="col-span-12 md:col-span-8 md:col-start-3 flex items-center justify-between">
             <Image src={logo} alt={brand} width={192} height={64} className="h-8 w-auto object-contain" />
             <div className="flex items-center gap-2">

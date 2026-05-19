@@ -75,7 +75,7 @@ export default function AppointmentsPage() {
         <div className="pg-container">
 
           {/* Image + clinic list */}
-          <div className="grid grid-cols-12 gap-4 md:gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-16 items-center">
 
             {/* Left — image */}
             <div className="hidden md:block col-span-12 md:col-span-5 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
@@ -181,7 +181,7 @@ export default function AppointmentsPage() {
       {/* Telephone consultations */}
       <section className="bg-brand-black text-on-dark-high pt-[320px] pb-24 md:py-40 overflow-hidden">
         <div className="pg-container">
-          <div className="grid grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
 
             {/* Left — text */}
             <div className="col-span-12 md:col-span-7 flex flex-col gap-8 order-2 md:order-1">

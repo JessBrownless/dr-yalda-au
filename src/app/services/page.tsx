@@ -25,7 +25,7 @@ export default function ServicesPage() {
             How Dr Yalda can help
           </h2>
 
-          <div className="grid grid-cols-12 gap-8 md:gap-16 items-baseline">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-baseline">
 
             {/* Left — heading */}
             <div className="col-span-12 md:col-span-6">
@@ -49,7 +49,7 @@ export default function ServicesPage() {
       <section className="bg-parchment overflow-hidden relative pb-12 md:pb-16 md:flex md:items-start">
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image */}
             <div className="col-span-12 md:col-span-5 relative">
@@ -123,7 +123,7 @@ export default function ServicesPage() {
       {/* ─── APPROACH — numbered list + image ────────────────────────────── */}
       <section className="bg-parchment overflow-hidden relative pt-12 md:pt-16 pb-24 md:pb-32 flex items-center" style={{ minHeight: "100vh" }}>
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
             {/* Left — numbered list */}
             <div className="col-span-12 md:col-span-6 flex flex-col order-2 md:order-1">
@@ -182,7 +182,7 @@ export default function ServicesPage() {
           <h2 className="overline mb-6">
             FAQs
           </h2>
-          <div className="grid grid-cols-12 gap-6 md:gap-12 md:items-baseline">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 md:items-baseline">
 
             <div className="col-span-12 md:col-span-4">
               <p className="heading-lg">

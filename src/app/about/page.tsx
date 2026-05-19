@@ -53,7 +53,7 @@ export default function AboutPage() {
 
         {/* Intro — centered overline, pull quote, body (10-col measure) */}
         <div className="pg-container pt-28 md:pt-40 pb-20 md:pb-28">
-          <div className="grid grid-cols-12 gap-6 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
             <div className="col-span-12 md:col-span-10 md:col-start-2 flex flex-col items-center text-center">
               <p className="opacity-0 animate-fade-in overline mb-8 md:mb-10" style={{ animationDelay: "0.3s", animationDuration: "1.0s" }}>
                 About Dr Yalda
@@ -129,7 +129,7 @@ export default function AboutPage() {
       {/* Credentials — trusted-voice layout, directly under hero */}
       <section id="credentials" className="bg-parchment pt-12 md:pt-32 pb-16 md:pb-20 scroll-mt-20">
         <div className="pg-container">
-          <div className="grid grid-cols-12 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
             {/* Left — heading + body */}
             <div className="col-span-12 md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
@@ -188,7 +188,7 @@ export default function AboutPage() {
       {/* Values — quote layout */}
       <section className="bg-parchment py-16 md:py-32">
         <div className="pg-container">
-          <div className="grid grid-cols-12 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
             <div className="hidden md:block col-span-3 pt-9">
               <h2 className="overline">Values</h2>
             </div>

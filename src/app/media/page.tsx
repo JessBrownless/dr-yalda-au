@@ -57,7 +57,7 @@ export default function MediaPage() {
       {/* Beyond the clinic — bottom padding removed on desktop so it flows into the logo strip */}
       <section id="intro" className="bg-parchment py-32 md:pt-52 md:pb-0 relative scroll-mt-20">
         <div className="pg-container">
-          <div className="grid grid-cols-12 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
             {/* Left — heading + body */}
             <div className="col-span-12 md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
@@ -154,7 +154,7 @@ export default function MediaPage() {
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image */}
             <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
@@ -215,7 +215,7 @@ export default function MediaPage() {
             Latest appearances
           </h2>
 
-          <div className="grid grid-cols-12 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
             {[
               { src: "/assets/IMG_4902.JPG", caption: "Caudalie launch panel, Sydney", year: "2024", aspect: "16/10", colSpan: "md:col-span-7" },
               { src: "/assets/IMG_4905.JPG", caption: "Body + Soul magazine feature", year: "2024", aspect: "3/4", colSpan: "md:col-span-5" },
@@ -266,7 +266,7 @@ export default function MediaPage() {
       {/* Podcast section */}
       <section className="bg-brand-black text-on-dark-high overflow-hidden" style={{ paddingTop: "120px" }}>
         <div className="pg-container">
-          <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
             {/* Left — text */}
             <div className="col-span-12 md:col-span-6 flex flex-col gap-8 pt-4">

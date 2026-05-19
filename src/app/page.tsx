@@ -40,7 +40,7 @@ export default function Home() {
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image over parchment */}
             <div className="col-span-12 md:col-span-6" data-aos="fade" data-aos-duration="1000">
@@ -109,7 +109,7 @@ export default function Home() {
         <div className="absolute hidden md:block right-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-12 gap-10 md:gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — text */}
             <div className="col-span-12 md:col-span-5 flex flex-col gap-8 order-2 md:order-1" data-aos="fade" data-aos-duration="1000">
