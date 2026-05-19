@@ -1,5 +1,6 @@
-import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF, FaSpotify, FaApple, FaYoutube } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
+import InstagramFeed from "@/components/InstagramFeed";
 
 const socials = [
   { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
@@ -117,7 +118,7 @@ export default function MediaPage() {
       </section>
 
       {/* Brand logo strip — sits below "Beyond the clinic" */}
-      <section className="bg-parchment pb-16 md:pb-24">
+      <section className="bg-parchment py-32 md:py-48">
         <div className="pg-container">
           <div className="flex flex-col items-center gap-10">
             <h2 className="overline">
@@ -209,7 +210,7 @@ export default function MediaPage() {
       </section>
 
       {/* Latest appearances gallery */}
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-parchment py-24 md:py-32">
         <div className="pg-container">
           <h2 className="overline mb-6">
             Latest appearances
@@ -264,7 +265,7 @@ export default function MediaPage() {
       {/* TestimonialCarousel removed */}
 
       {/* Podcast section */}
-      <section className="bg-brand-black text-on-dark-high overflow-hidden" style={{ paddingTop: "120px" }}>
+      <section className="bg-brand-black text-on-dark-high overflow-hidden py-[192px]">
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
@@ -275,9 +276,10 @@ export default function MediaPage() {
                   Podcast appearances
                 </h2>
                 <h3 className="heading-lg">
-                  Listen To<br />dr. yalda
+                  Listen to Dr Yalda
                 </h3>
               </div>
+
               <div className="flex flex-col divide-y divide-brand-white/10">
                 {[
                   { show: "The Glow Up Podcast", episode: "The truth about filler — what no one tells you", duration: "42 min" },
@@ -298,6 +300,30 @@ export default function MediaPage() {
                   </div>
                 ))}
               </div>
+
+              {/* Listen on — platform links */}
+              <div className="flex flex-col gap-4 pt-4">
+                <p className="overline">Listen on</p>
+                <div className="flex items-center gap-6 md:gap-8 flex-wrap">
+                  {[
+                    { Icon: FaSpotify, label: "Spotify", href: "https://open.spotify.com/show/" },
+                    { Icon: FaApple, label: "Apple Podcasts", href: "https://podcasts.apple.com/" },
+                    { Icon: FaYoutube, label: "YouTube", href: "https://youtube.com/" },
+                  ].map(({ Icon, label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-white/50 hover:text-cream transition-colors duration-300 inline-flex items-center gap-2.5"
+                      aria-label={label}
+                    >
+                      <Icon size={18} />
+                      <span className="body-xs-caps">{label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Right — phone mockup, crops at bottom */}
@@ -305,27 +331,31 @@ export default function MediaPage() {
               <div
                 className="phone-mockup-height"
                 style={{
-                  width: 300,
+                  width: 320,
                   background: "#111",
-                  borderRadius: 48,
-                  padding: 12,
+                  borderRadius: 56,
+                  padding: 14,
                   boxShadow: "0 0 0 1px rgba(246,246,243,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(246,246,243,0.04)",
                   position: "relative",
-                  marginBottom: "-120px",
+                  marginTop: "-120px",
+                  marginBottom: "-280px",
+                  top: "0",
+                  transform: "scale(1.25)",
+                  transformOrigin: "center top",
                 }}
               >
                 {/* Notch */}
                 <div style={{ width: 110, height: 28, background: "#111", borderRadius: "0 0 18px 18px", position: "absolute", top: 12, left: "50%", transform: "translateX(-50%)", zIndex: 2 }} />
 
                 {/* Screen */}
-                <div style={{ background: "#1C1B1A", borderRadius: 32, overflow: "hidden", paddingBottom: 24 }}>
+                <div style={{ background: "#1C1B1A", borderRadius: 42, overflow: "hidden" }}>
 
                   {/* Artwork */}
-                  <div className="phone-artwork-ratio" style={{ position: "relative", width: "100%" }}>
+                  <div className="phone-artwork-ratio" style={{ position: "relative", width: "100%", overflow: "hidden" }}>
                     <img
                       src="/assets/IMG_0028.avif"
                       alt="Podcast episode"
-                      style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+                      style={{ position: "absolute", top: "-25%", left: 0, width: "100%", height: "130%", objectFit: "cover", objectPosition: "center top", display: "block" }}
                     />
                     {/* Gradient over artwork */}
                     <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, #1C1B1A 100%)" }} />
@@ -335,7 +365,7 @@ export default function MediaPage() {
                   <div style={{ padding: "0 20px" }}>
                     {/* Show + episode */}
                     <p style={{ color: "#525252", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>The Glow Up Podcast</p>
-                    <p style={{ color: "#fff", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>The truth about filler — what no one tells you</p>
+                    <p style={{ color: "#F5F2EC", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>The truth about filler — what no one tells you</p>
 
                     {/* Progress bar */}
                     <div style={{ height: 2, background: "#333", borderRadius: 2, marginBottom: 6, position: "relative" }}>
@@ -365,6 +395,7 @@ export default function MediaPage() {
         </div>
       </section>
 
+      <InstagramFeed />
 
     </main>
   );

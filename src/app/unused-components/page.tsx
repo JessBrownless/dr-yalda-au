@@ -961,7 +961,7 @@ export default function UnusedComponentsPage() {
       </section>
 
       {/* Instagram feed */}
-      <section className="bg-brand-white py-16 md:py-20">
+      <section className="bg-brand-white py-32">
         <div className="pg-container">
 
           <div className="flex items-center justify-between mb-10">
@@ -1157,6 +1157,85 @@ export default function UnusedComponentsPage() {
           </div>
         </div>
 
+      </section>
+
+      {/* ─── Career timeline — moved from /about ──────────────────────────── */}
+      <section className="bg-parchment py-24 md:py-40 overflow-hidden">
+        <div className="pg-container">
+
+          {(() => {
+            const milestones = [
+              { year: "2014", title: "MBChB", desc: "Bachelor of Medicine & Surgery." },
+              { year: "2016", title: "First years in cosmetic medicine", desc: "Practising alongside world-renowned specialists." },
+              { year: "2018", title: "MSc Dermatology", desc: "With distinction." },
+              { year: "2019", title: "Postgraduate, Facial Injectables", desc: "Formal training in injectable practice." },
+              { year: "2022", title: "FACCSM Fellow", desc: "Elected Fellow of the ACCSM." },
+              { year: "2024", title: "Merz Aesthetics faculty", desc: "Educator and trainer." },
+              { year: "Today", title: "Sydney practice", desc: "Paddington & Balgowlah, by appointment." },
+            ];
+            return (
+              <>
+                {/* Desktop horizontal — alternating above / below the line */}
+                <div className="hidden md:block relative">
+                  <div className="absolute left-0 right-0 h-px bg-brand-black/30" style={{ top: "164px" }} />
+                  <div className="relative grid grid-cols-7 gap-6">
+                    {milestones.map(({ year, title, desc }, i) => {
+                      const above = i % 2 === 1;
+                      const Content = (
+                        <div className="flex flex-col gap-2">
+                          <h3 className="heading-md leading-tight">{year}</h3>
+                          <p className="body-serif !text-brand-black/70">
+                            {title}. {desc}
+                          </p>
+                        </div>
+                      );
+                      return (
+                        <div
+                          key={year + title}
+                          data-aos="fade"
+                          data-aos-delay={i * 100}
+                          className="flex flex-col items-stretch"
+                        >
+                          <div className="h-[160px] flex flex-col justify-end pb-6">
+                            {above && Content}
+                          </div>
+                          <span className="block w-2 h-2 rounded-full bg-brand-black self-center relative z-10" />
+                          <div className="h-[160px] flex flex-col pt-6">
+                            {!above && Content}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Mobile vertical fallback */}
+                <ol className="md:hidden flex flex-col border-t border-brand-black/20">
+                  {milestones.map(({ year, title, desc }, i) => (
+                    <li
+                      key={year + title}
+                      data-aos="fade"
+                      data-aos-delay={i * 80}
+                      className="grid grid-cols-12 gap-4 items-baseline py-6 border-b border-brand-black/20"
+                    >
+                      <p
+                        className="col-span-3 text-brand-black/60 font-light"
+                        style={{ fontFamily: "'Heading', serif", fontSize: "0.95rem", letterSpacing: "0.08em" }}
+                      >
+                        {year}
+                      </p>
+                      <div className="col-span-9 flex flex-col gap-2">
+                        <h3 className="heading-md">{title}</h3>
+                        <p className="body-serif">{desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            );
+          })()}
+
+        </div>
       </section>
 
     </main>

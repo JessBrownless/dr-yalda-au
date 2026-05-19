@@ -357,18 +357,12 @@ body {
 }
 
 
-.phone-mockup-height {
-  height: 500px;
-}
 .phone-artwork-ratio {
-  aspect-ratio: 1/1;
+  aspect-ratio: 9/16;
 }
 @media (min-width: 768px) {
-  .phone-mockup-height {
-    height: 700px;
-  }
   .phone-artwork-ratio {
-    aspect-ratio: 3/4;
+    aspect-ratio: 9/16;
   }
 }
 
@@ -444,11 +438,16 @@ body {
   text-decoration: none;
 }
 
+/* Hero / page-title display style. */
 /* ─── Modular type scale (√2 ratio from 14px body) ─────────────────────────
-   14 · 19.8 · 28 · 39.6 · 56 · 79.1 · 112 px                                  */
+   14 · 19.8 · 28 · 39.6 · 56 · 79.1 · 112 px
+   Each heading clamps between two adjacent steps so it scales fluidly.        */
 
 /* heading-display — top of the scale, hero billboards
-   size: 56→112px · leading 1 · +0.02em */
+   size:    56px (mobile) → 112px (wide)     [clamp(3.5rem, 8vw, 7rem)]
+   leading: 1
+   tracking: +0.02em
+   weight:  400 */
 .heading-display {
   margin: 0;
   font-family: "Heading", serif;
@@ -459,7 +458,10 @@ body {
 }
 
 /* heading-2xl — between heading-xl and heading-display
-   size: 40→80px · leading 1.05 · +0.02em */
+   size:    40px (mobile) → 80px (desktop)   [clamp(2.5rem, 6vw, 5rem)]
+   leading: 1.05
+   tracking: +0.02em
+   weight:  400 */
 .heading-2xl {
   margin: 0;
   font-family: "Heading", serif;
@@ -469,18 +471,26 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* Hero / page-title display style. */
+/* heading-xl — H1 page titles (uppercase display)
+   size:    36px (mobile) → 88px (desktop)   [clamp(2.25rem, 5vw, 5.5rem)]
+   leading: 1.05
+   tracking: +0.04em
+   weight:  400 */
 .heading-xl {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(2.75rem, 6vw, 7.25rem);
+  font-size: clamp(2.25rem, 5vw, 5.5rem);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-/* Visual heading helper — section-level display style. */
+/* heading-lg — H2 section headings
+   size:    24px (mobile) → 44px (desktop)   [clamp(1.5rem, 3vw, 2.75rem)]
+   leading: 1.25
+   tracking: 0
+   weight:  400 */
 .heading-lg {
   font-family: "Heading", serif;
   font-size: clamp(1.5rem, 3vw, 2.75rem);
@@ -512,7 +522,11 @@ body {
   text-decoration: none;
 }
 
-/* Sub-heading helper — small title for cards / list items. */
+/* heading-md — H3 sub-headings (cards, list items)
+   size:    16px (mobile) → 20px (desktop)   [clamp(1rem, 1.3vw, 1.25rem)]
+   leading: 1.3
+   tracking: +0.02em
+   weight:  400 */
 .heading-md {
   font-family: "Heading", serif;
   font-size: clamp(1rem, 1.3vw, 1.25rem);
