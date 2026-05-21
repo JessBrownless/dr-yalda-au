@@ -219,11 +219,11 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
             {[
               { src: "/assets/IMG_4902.JPG", caption: "Caudalie launch panel, Sydney", year: "2024", aspect: "16/10", colSpan: "md:col-span-7" },
-              { src: "/assets/CliniqueEvenBetterEvent-050325-Session1--06476.avif", caption: "Clinique Even Better event, Sydney", year: "2025", aspect: "3/4", colSpan: "md:col-span-5" },
+              { src: "/assets/clinique-even-better-event.avif", caption: "Clinique Even Better event, Sydney", year: "2025", aspect: "3/4", colSpan: "md:col-span-5" },
               { src: "/assets/IMG_4905.JPG", caption: "Body + Soul magazine feature", year: "2024", aspect: "3/4", colSpan: "md:col-span-5" },
-              { src: "/assets/ELUCENT X CHEMIST WAREHOUSE EVENT (C)-63.avif", caption: "Elucent x Chemist Warehouse event", year: "2025", aspect: "16/10", colSpan: "md:col-span-7" },
-              { src: "/assets/240521 Caudalie 191_Original.avif", caption: "Caudalie event, Sydney", year: "2024", aspect: "16/10", colSpan: "md:col-span-7" },
-              { src: "/assets/No7-RenewEvent-070525-85mm--181_Original.avif", caption: "No7 Renew event, Sydney", year: "2025", aspect: "3/4", colSpan: "md:col-span-5" },
+              { src: "/assets/elucent-chemist-warehouse-event.avif", caption: "Elucent x Chemist Warehouse event", year: "2025", aspect: "16/10", colSpan: "md:col-span-7" },
+              { src: "/assets/caudalie-event.avif", caption: "Caudalie event, Sydney", year: "2024", aspect: "16/10", colSpan: "md:col-span-7" },
+              { src: "/assets/no7-renew-event.avif", caption: "No7 Renew event, Sydney", year: "2025", aspect: "3/4", colSpan: "md:col-span-5" },
             ].map(({ src, caption, year, aspect, colSpan }, i) => (
               <div
                 key={i}
