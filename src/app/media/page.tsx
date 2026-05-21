@@ -35,7 +35,7 @@ export default function MediaPage() {
               >
                 Media
               </h1>
-              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-8 max-w-[42ch]" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="body-serif opacity-0 animate-fade-in text-brand-white/50 font-light mt-8 max-w-[42ch]" style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 Expert commentary, brand collaborations, and features — grounded in <em>evidence-based</em> care.
               </p>
             </div>
@@ -219,9 +219,11 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
             {[
               { src: "/assets/IMG_4902.JPG", caption: "Caudalie launch panel, Sydney", year: "2024", aspect: "16/10", colSpan: "md:col-span-7" },
+              { src: "/assets/CliniqueEvenBetterEvent-050325-Session1--06476.avif", caption: "Clinique Even Better event, Sydney", year: "2025", aspect: "3/4", colSpan: "md:col-span-5" },
               { src: "/assets/IMG_4905.JPG", caption: "Body + Soul magazine feature", year: "2024", aspect: "3/4", colSpan: "md:col-span-5" },
-              { src: "/assets/IMG_4905.JPG", caption: "No7 brand campaign shoot", year: "2023", aspect: "3/4", colSpan: "md:col-span-5" },
-              { src: "/assets/IMG_4902.JPG", caption: "Mamamia podcast appearance", year: "2023", aspect: "16/10", colSpan: "md:col-span-7" },
+              { src: "/assets/ELUCENT X CHEMIST WAREHOUSE EVENT (C)-63.avif", caption: "Elucent x Chemist Warehouse event", year: "2025", aspect: "16/10", colSpan: "md:col-span-7" },
+              { src: "/assets/240521 Caudalie 191_Original.avif", caption: "Caudalie event, Sydney", year: "2024", aspect: "16/10", colSpan: "md:col-span-7" },
+              { src: "/assets/No7-RenewEvent-070525-85mm--181_Original.avif", caption: "No7 Renew event, Sydney", year: "2025", aspect: "3/4", colSpan: "md:col-span-5" },
             ].map(({ src, caption, year, aspect, colSpan }, i) => (
               <div
                 key={i}
@@ -234,7 +236,7 @@ export default function MediaPage() {
                   <img src={src} alt={caption} className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]" />
                 </div>
                 <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="heading-md">
+                  <h3 className="heading-sm">
                     {caption}
                   </h3>
                   <p className="overline">
@@ -265,7 +267,7 @@ export default function MediaPage() {
       {/* TestimonialCarousel removed */}
 
       {/* Podcast section */}
-      <section className="bg-brand-black text-on-dark-high overflow-hidden py-[192px]">
+      <section className="bg-brand-black text-on-dark-high overflow-hidden py-[128px]">
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
@@ -293,7 +295,7 @@ export default function MediaPage() {
                       </button>
                       <div className="flex flex-col gap-1">
                         <p className="overline">{show}</p>
-                        <h3 className="heading-md">{episode}</h3>
+                        <h3 className="heading-sm">{episode}</h3>
                       </div>
                     </div>
                     <span className="overline flex-shrink-0 mt-1">{duration}</span>
@@ -329,7 +331,7 @@ export default function MediaPage() {
             {/* Right — phone mockup, crops at bottom */}
             <div className="col-span-12 md:col-span-5 md:col-start-8 flex justify-center">
               <div
-                className="phone-mockup-height"
+                className="phone-mockup-height mt-4 md:mt-[-40px] mb-[-80px] md:mb-[-280px]"
                 style={{
                   width: 320,
                   background: "#111",
@@ -337,8 +339,6 @@ export default function MediaPage() {
                   padding: 14,
                   boxShadow: "0 0 0 1px rgba(246,246,243,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(246,246,243,0.04)",
                   position: "relative",
-                  marginTop: "-120px",
-                  marginBottom: "-280px",
                   top: "0",
                   transform: "scale(1.25)",
                   transformOrigin: "center top",
@@ -347,43 +347,41 @@ export default function MediaPage() {
                 {/* Notch */}
                 <div style={{ width: 110, height: 28, background: "#111", borderRadius: "0 0 18px 18px", position: "absolute", top: 12, left: "50%", transform: "translateX(-50%)", zIndex: 2 }} />
 
-                {/* Screen */}
-                <div style={{ background: "#1C1B1A", borderRadius: 42, overflow: "hidden" }}>
+                {/* Screen — artwork fills full screen, player UI overlaid on lower-middle */}
+                <div style={{ position: "relative", aspectRatio: "9 / 19.5", background: "#1C1B1A", borderRadius: 42, overflow: "hidden" }}>
 
-                  {/* Artwork */}
-                  <div className="phone-artwork-ratio" style={{ position: "relative", width: "100%", overflow: "hidden" }}>
-                    <img
-                      src="/assets/IMG_0028.avif"
-                      alt="Podcast episode"
-                      style={{ position: "absolute", top: "-25%", left: 0, width: "100%", height: "130%", objectFit: "cover", objectPosition: "center top", display: "block" }}
-                    />
-                    {/* Gradient over artwork */}
-                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, #1C1B1A 100%)" }} />
-                  </div>
+                  {/* Artwork — fills the whole screen */}
+                  <img
+                    src="/assets/IMG_0028.avif"
+                    alt="Podcast episode"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                  />
+                  {/* Gradient for legibility behind the overlaid controls */}
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 30%, rgba(28,27,26,0.55) 50%, rgba(28,27,26,0.9) 68%, rgba(28,27,26,0.6) 82%, transparent 100%)" }} />
 
-                  {/* Player UI */}
-                  <div style={{ padding: "0 20px" }}>
+                  {/* Player UI — overlaid, sitting above the croppable bottom of the phone */}
+                  <div style={{ position: "absolute", left: 0, right: 0, bottom: "26%", padding: "0 20px", zIndex: 2 }}>
                     {/* Show + episode */}
-                    <p style={{ color: "#525252", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>The Glow Up Podcast</p>
+                    <p style={{ color: "rgba(245,242,236,0.55)", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>The Glow Up Podcast</p>
                     <p style={{ color: "#F5F2EC", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>The truth about filler — what no one tells you</p>
 
                     {/* Progress bar */}
-                    <div style={{ height: 2, background: "#333", borderRadius: 2, marginBottom: 6, position: "relative" }}>
+                    <div style={{ height: 2, background: "rgba(255,255,255,0.25)", borderRadius: 2, marginBottom: 6, position: "relative" }}>
                       <div style={{ height: "100%", width: "38%", background: "#fff", borderRadius: 2 }} />
                       <div style={{ width: 8, height: 8, background: "#fff", borderRadius: "50%", position: "absolute", top: -3, left: "38%", transform: "translateX(-50%)" }} />
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
-                      <span style={{ color: "#525252", fontSize: 9 }}>16:04</span>
-                      <span style={{ color: "#525252", fontSize: 9 }}>42:18</span>
+                      <span style={{ color: "rgba(245,242,236,0.55)", fontSize: 9 }}>16:04</span>
+                      <span style={{ color: "rgba(245,242,236,0.55)", fontSize: 9 }}>42:18</span>
                     </div>
 
                     {/* Controls */}
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 28 }}>
-                      <span style={{ color: "#525252", fontSize: 16 }}>⏮</span>
+                      <span style={{ color: "rgba(245,242,236,0.7)", fontSize: 16 }}>⏮</span>
                       <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <span style={{ color: "#111", fontSize: 14, paddingLeft: 3 }}>▶</span>
                       </div>
-                      <span style={{ color: "#525252", fontSize: 16 }}>⏭</span>
+                      <span style={{ color: "rgba(245,242,236,0.7)", fontSize: 16 }}>⏭</span>
                     </div>
                   </div>
 
