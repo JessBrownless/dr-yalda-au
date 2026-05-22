@@ -7,8 +7,10 @@
 :root {
   /* Primary */
   --brand-black:      #2D2C2A;
+  --brand-charcoal:   #222120;
   --brand-white:      #F6F6F3;
   --parchment:        #F5F2EC;
+  --cream:            #E9E3D8;
   /* Secondary */
   --brand-blue:       #9BB9CB;
   --brand-blue-light: #B9D3DF;
@@ -48,13 +50,23 @@ body {
   padding-right: clamp(1.75rem, 5vw, 5rem);
 }
 
-/* About page hero portrait — pulls 55% of its height up into the hero */
-.about-hero-portrait {
-  margin-top: calc(-1 * 82vw * 5 / 4 * 0.55);
+/* About hero dark background — height = (space above portrait) + (½ portrait height),
+   so its bottom edge lands on the portrait's vertical centre at every breakpoint
+   (portrait is 82vw mobile / 64vw tablet / 52vw desktop capped at 720px, aspect
+   4/5 → ½ height = 51.25vw mobile / 40vw tablet / min(32.5vw, 450px) desktop).
+   The rem offset is the fixed space above the portrait (padding + overline + H1
+   + gap). */
+.about-hero-bg {
+  height: calc(51.25vw + 15rem);
 }
 @media (min-width: 768px) {
-  .about-hero-portrait {
-    margin-top: calc(-1 * min(52vw, 720px) * 5 / 4 * 0.55);
+  .about-hero-bg {
+    height: calc(40vw + 26rem);
+  }
+}
+@media (min-width: 1024px) {
+  .about-hero-bg {
+    height: calc(min(32.5vw, 450px) + 26rem);
   }
 }
 
@@ -438,64 +450,85 @@ body {
   text-decoration: none;
 }
 
-/* Hero / page-title display style. */
-/* ─── Modular type scale (√2 ratio from 14px body) ─────────────────────────
-   14 · 19.8 · 28 · 39.6 · 56 · 79.1 · 112 px
-   Each heading clamps between two adjacent steps so it scales fluidly.        */
+/* ─── Heading scale ─────────────────────────────────────────────────────────
+   Six fluid steps anchored to a √2 modular scale (14 · 19.8 · 28 · 39.6 · 56 · 79 · 112 px).
+   Each heading uses a single clamp() — no media queries. Calibrated so every
+   heading hits its max at viewport ≈1280px and its min at ≈640px, so the whole
+   hierarchy scales in sync.
 
-/* heading-display — top of the scale, hero billboards
-   size:    56px (mobile) → 112px (wide)     [clamp(3.5rem, 8vw, 7rem)]
-   leading: 1
-   tracking: +0.02em
-   weight:  400 */
+   Two registers:
+   • heading-mega                  — uppercase serif, billboard brand-mark scale (hero name lockup)
+   • heading-display / heading-2xl — sentence-case serif, negative tracking (editorial expressive)
+   • heading-xl                    — uppercase serif, positive tracking (brand mark)
+   • heading-lg / md / sm          — sentence-case section + card headings                          */
+
+/* heading-mega — uppercase brand-mark at billboard scale (hero name lockup only).
+   One √2 step above heading-display. 56 → 158px · leading 0.95 · +0.03em · uppercase */
+.heading-mega {
+  margin: 0;
+  font-family: "Heading", serif;
+  font-size: clamp(3.5rem, 12.34vw, 9.875rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* heading-display — billboard / hero
+   56 → 112px · leading 1 · −0.015em · sentence */
 .heading-display {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-size: clamp(3.5rem, 8.75vw, 7rem);
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.015em;
 }
 
-/* heading-2xl — between heading-xl and heading-display
-   size:    40px (mobile) → 80px (desktop)   [clamp(2.5rem, 6vw, 5rem)]
-   leading: 1.05
-   tracking: +0.02em
-   weight:  400 */
+/* heading-hero — dedicated hero H1 lockup (uppercase, wide tracking).
+   Decoupled from the modular scale so it can be tuned without affecting it.
+   size: 40px (mobile) → 104px (desktop) · uppercase · +0.25em tracking */
+.heading-hero {
+  margin: 0;
+  font-family: "Heading", serif;
+  font-size: clamp(2.5rem, 8.75vw, 5.75rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* heading-2xl — large display heading
+   40 → 79px · leading 1.05 · −0.01em · sentence */
 .heading-2xl {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 6.1vw, 4.94rem);
   font-weight: 400;
   line-height: 1.05;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
 }
 
-/* heading-xl — H1 page titles (uppercase display)
-   size:    36px (mobile) → 88px (desktop)   [clamp(2.25rem, 5vw, 5.5rem)]
-   leading: 1.05
-   tracking: +0.04em
-   weight:  400 */
+/* heading-xl — H1 page titles (uppercase brand mark)
+   28 → 56px · leading 1.1 · +0.04em · uppercase */
 .heading-xl {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(2.25rem, 5vw, 5.5rem);
+  font-size: clamp(1.75rem, 4.375vw, 3.5rem);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 /* heading-lg — H2 section headings
-   size:    24px (mobile) → 44px (desktop)   [clamp(1.5rem, 3vw, 2.75rem)]
-   leading: 1.25
-   tracking: 0
-   weight:  400 */
+   20 → 40px · leading 1.2 · 0 tracking · sentence */
 .heading-lg {
+  margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(1.5rem, 3vw, 2.75rem);
+  font-size: clamp(1.25rem, 3.125vw, 2.5rem);
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.2;
   letter-spacing: 0;
 }
 
@@ -523,15 +556,24 @@ body {
 }
 
 /* heading-md — H3 sub-headings (cards, list items)
-   size:    16px (mobile) → 20px (desktop)   [clamp(1rem, 1.3vw, 1.25rem)]
-   leading: 1.3
-   tracking: +0.02em
-   weight:  400 */
+   16 → 28px · leading 1.3 · +0.02em · sentence */
 .heading-md {
+  margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-size: clamp(1rem, 1.875vw, 1.75rem);
   font-weight: 400;
   line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+/* heading-sm — smallest serif heading (H4, table headers, small UI)
+   14 → 20px · leading 1.4 · +0.02em · sentence */
+.heading-sm {
+  margin: 0;
+  font-family: "Heading", serif;
+  font-size: clamp(0.875rem, 0.94vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
   letter-spacing: 0.02em;
 }
 
@@ -559,7 +601,7 @@ body {
 .blockquote {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(2.25rem, 4vw, 4rem);
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
   font-weight: 400;
   font-style: italic;
   line-height: 1.3;
@@ -567,19 +609,13 @@ body {
   max-width: 22ch;
 }
 
-/* Body copy helper (serif) — uniform across the site. */
+/* Body copy helper (serif) — uniform across the site. 16px fixed. */
 .body-serif {
   font-family: "Heading", serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.7;
   letter-spacing: 0.01em;
-}
-
-@media (min-width: 768px) {
-  .body-serif {
-    font-size: 16px;
-  }
 }
 
 /* List index — small serif number/label for itemised lists (e.g. "01 /"). */
@@ -602,19 +638,169 @@ body {
   letter-spacing: 0.01em;
 }
 
-/* Body copy helper (sans) — same sizing as body-serif. */
+/* Body copy helper (sans) — editorial-tall sans, same sizing as body-serif. 16px fixed. */
 .body-sans {
   font-family: var(--font-lato), system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.7;
   letter-spacing: 0.01em;
 }
 
-@media (min-width: 768px) {
-  .body-sans {
-    font-size: 16px;
-  }
+/* ─── Carbon-inspired functional sans utilities ─────────────────────────────
+   Sans body utilities for non-editorial contexts (forms, buttons, captions).
+   Sit alongside .body-sans, which is the editorial-tall variant (leading 1.7).  */
+
+/* body-02 — long paragraphs in expressive layouts. Always left-aligned. */
+.body-02 {
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* body-compact-02 — short paragraphs (≤4 lines), button text, dense card text. */
+.body-compact-02 {
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375;
+  letter-spacing: 0;
+}
+
+/* label-02 — image captions, stat labels, form labels, helper text. */
+.label-02 {
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.286;
+  letter-spacing: 0.011em;
+}
+
+/* ─── Site-specific button & nav utilities ──────────────────────────────────
+   Define recurring inline patterns so pages reference utilities, not magic
+   numbers. cta-label is the canonical "Book a consultation" pill microtype.  */
+
+/* cta-label — standard CTA pill microtype */
+.cta-label {
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* cta-label-sm — smaller button microtype (Appointments page, FeaturesList pills) */
+.cta-label-sm {
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* nav-link — desktop navbar links. Override font-weight for active state. */
+.nav-link {
+  font-family: var(--font-hanken), system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 200;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* nav-link-drawer — mobile Navbar full-screen menu links. */
+.nav-link-drawer {
+  font-family: "Heading", serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────────
+   Pill CTA system. Two variants × two themes, plus a compact size.
+   • Primary   = solid fill (highest emphasis — the key action per page/section)
+   • Secondary = outline pill that fills on hover (the brand signature CTA)
+   Compose: .btn + one variant-theme class (+ optional .btn-sm). The cta-label
+   text style is baked in, so no separate .cta-label class is needed.
+   "light" / "dark" refers to the BACKGROUND the button sits on.                 */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 9999px;
+  padding: 0.875rem 1.75rem;          /* ≈ py-3.5 px-7 */
+  border: 1px solid transparent;
+  font-family: var(--font-lato), system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 3px;
+}
+
+/* Compact size — dense contexts (clinic rows, "view all", inline actions). */
+.btn-sm {
+  padding: 0.75rem 2.5rem;            /* ≈ py-3 px-10 */
+  font-size: 9px;
+  font-weight: 300;
+}
+
+/* ── Primary — solid fill ── */
+.btn-primary-light {
+  background-color: var(--brand-black);
+  color: var(--cream);
+  border-color: var(--brand-black);
+}
+.btn-primary-light:hover {
+  background-color: var(--brand-charcoal);
+  border-color: var(--brand-charcoal);
+}
+
+.btn-primary-dark {
+  background-color: var(--cream);
+  color: var(--brand-black);
+  border-color: var(--cream);
+}
+.btn-primary-dark:hover {
+  background-color: var(--brand-white);
+  border-color: var(--brand-white);
+}
+
+/* ── Secondary — outline that fills on hover (brand signature) ── */
+.btn-secondary-light {
+  background-color: transparent;
+  color: var(--brand-black);
+  border-color: var(--brand-black);
+}
+.btn-secondary-light:hover {
+  background-color: var(--brand-black);
+  color: var(--cream);
+}
+
+.btn-secondary-dark {
+  background-color: transparent;
+  color: var(--cream);
+  border-color: var(--cream);
+}
+.btn-secondary-dark:hover {
+  background-color: var(--cream);
+  color: var(--brand-black);
 }
 
 /* ─── Reusable portrait image block ─────────────────────────────────────── */

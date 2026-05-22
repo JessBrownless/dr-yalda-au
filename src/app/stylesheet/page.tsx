@@ -17,20 +17,30 @@ const swatches: Swatch[] = [
 ];
 
 const typeStyles: { className: string; label: string; specs: string; breakpoints: string; sample: string }[] = [
-  { className: "heading-display", label: ".heading-display — billboard hero",       specs: "56→112px · leading 1 · +0.02em",                breakpoints: "sm 56 · md 61 · lg 82 · xl 102 · 2xl 112", sample: "The quick brown fox" },
-  { className: "heading-2xl",     label: ".heading-2xl — large display heading",    specs: "40→80px · leading 1.05 · +0.02em",              breakpoints: "sm 40 · md 46 · lg 61 · xl 77 · 2xl 80",   sample: "The quick brown fox jumps" },
-  { className: "heading-xl",   label: ".heading-xl — hero / page title",            specs: "36→88px · leading 1.05 · +0.04em · uppercase", breakpoints: "sm 36 · md 38 · lg 51 · xl 64 · 2xl 77",  sample: "Beauty meets artistry" },
-  { className: "heading-lg",   label: ".heading-lg — section heading",              specs: "24→44px · leading 1.25 · 0",                    breakpoints: "sm 24 · md 24 · lg 31 · xl 38 · 2xl 44",  sample: "A considered approach" },
-  { className: "heading-md",   label: ".heading-md — card / list sub-heading",      specs: "16→20px · leading 1.3 · +0.02em",               breakpoints: "sm 16 · md 16 · lg 16 · xl 17 · 2xl 20",  sample: "Consultation process" },
-  { className: "stat-lg",      label: ".stat-lg — stat / big label",                specs: "28→64px · leading 1 · +0.02em",                 breakpoints: "sm 28 · md 28 · lg 36 · xl 45 · 2xl 54",  sample: "15+" },
-  { className: "blockquote",   label: ".blockquote — large italic pull-quote",      specs: "36→64px · leading 1.3 · italic",                breakpoints: "sm 36 · md 36 · lg 41 · xl 51 · 2xl 61",  sample: "Restraint is the point." },
-  { className: "quotesmall",   label: ".quotesmall — testimonial-scale italic",     specs: "19→22px · leading 1.6 · italic",                breakpoints: "sm 19 · md 19 · lg 19 · xl 19 · 2xl 22",  sample: "She listens before she suggests." },
-  { className: "body-serif",   label: ".body-serif — serif body copy",              specs: "14→16px · leading 1.7 · +0.01em",               breakpoints: "sm 14 · md 16 · lg 16 · xl 16 · 2xl 16",  sample: "Every face is read on its own terms — proportion, movement, light. Treatment is restrained, evidence-led, and built to age with you." },
-  { className: "body-sans",    label: ".body-sans — sans body copy",                specs: "14→16px · leading 1.7 · +0.01em",               breakpoints: "sm 14 · md 16 · lg 16 · xl 16 · 2xl 16",  sample: "Every face is read on its own terms — proportion, movement, light. Treatment is restrained, evidence-led, and built to age with you." },
-  { className: "body-xs",      label: ".body-xs — caption / fine print",            specs: "12px · leading 1.5 · +0.01em",                  breakpoints: "fixed 12px (all breakpoints)",            sample: "Results vary. Consultation required prior to any treatment." },
-  { className: "body-xs-caps", label: ".body-xs-caps — small caps body label",      specs: "10px · leading 1.4 · +0.15em · uppercase",      breakpoints: "fixed 10px (all breakpoints)",            sample: "Bookings now open" },
-  { className: "eyebrow",      label: ".eyebrow — small tracked uppercase label",   specs: "11px · +0.35em · uppercase",                    breakpoints: "fixed 11px (all breakpoints)",            sample: "Sydney · By appointment" },
-  { className: "overline",     label: ".overline — kicker / overline",              specs: "10px · leading 1.4 · +0.45em · uppercase",      breakpoints: "fixed 10px (all breakpoints)",            sample: "Chapter 01" },
+  { className: "heading-mega",     label: ".heading-mega — uppercase hero brand mark",  specs: "56→158px · leading 0.95 · +0.03em · uppercase",     breakpoints: "Fluid · 56–158px (max @ 1280px)",  sample: "Dr Yalda Jamali" },
+  { className: "heading-hero",     label: ".heading-hero — hero H1 lockup (uppercase)", specs: "40→92px · leading 1 · +0.06em · uppercase",     breakpoints: "Fluid · 40–92px (max @ 1280px)",  sample: "Dr Yalda Jamali" },
+  { className: "heading-display",  label: ".heading-display — billboard hero",          specs: "56→112px · leading 1 · −0.015em · sentence",        breakpoints: "Fluid · 56–112px (max @ 1280px)",  sample: "The quick brown fox" },
+  { className: "heading-2xl",      label: ".heading-2xl — large display heading",       specs: "40→79px · leading 1.05 · −0.01em · sentence",       breakpoints: "Fluid · 40–79px (max @ 1280px)",   sample: "The quick brown fox jumps" },
+  { className: "heading-xl",       label: ".heading-xl — H1 page title (brand mark)",   specs: "28→56px · leading 1.1 · +0.04em · uppercase",       breakpoints: "Fluid · 28–56px (max @ 1280px)",   sample: "Beauty meets artistry" },
+  { className: "heading-lg",       label: ".heading-lg — H2 section heading",           specs: "20→40px · leading 1.2 · 0 tracking",                breakpoints: "Fluid · 20–40px (max @ 1280px)",   sample: "A considered approach" },
+  { className: "heading-md",       label: ".heading-md — H3 card / list sub-heading",   specs: "16→28px · leading 1.3 · +0.02em",                   breakpoints: "Fluid · 16–28px (max @ 1280px)",   sample: "Consultation process" },
+  { className: "heading-sm",       label: ".heading-sm — smallest serif heading",       specs: "14→20px · leading 1.4 · +0.02em",                   breakpoints: "Fluid · 14–20px (max @ 1280px)",   sample: "Practitioner details" },
+  { className: "stat-lg",          label: ".stat-lg — stat / big label",                specs: "28→64px · leading 1 · +0.02em",                     breakpoints: "sm 28 · md 28 · lg 36 · xl 45 · 2xl 54", sample: "15+" },
+  { className: "blockquote",       label: ".blockquote — large italic pull-quote",      specs: "36→64px · leading 1.3 · italic",                    breakpoints: "sm 36 · md 42 · lg 56 · xl 64 · 2xl 64", sample: "Restraint is the point." },
+  { className: "quotesmall",       label: ".quotesmall — testimonial-scale italic",     specs: "19→22px · leading 1.6 · italic",                    breakpoints: "sm 19 · md 19 · lg 19 · xl 19 · 2xl 22", sample: "She listens before she suggests." },
+  { className: "body-serif",       label: ".body-serif — serif body copy",              specs: "16px · leading 1.7 · +0.01em · serif",              breakpoints: "Fixed 16px (all breakpoints)",     sample: "Every face is read on its own terms — proportion, movement, light. Treatment is restrained, evidence-led, and built to age with you." },
+  { className: "body-sans",        label: ".body-sans — sans body copy (editorial)",    specs: "16px · leading 1.7 · +0.01em · Lato light",         breakpoints: "Fixed 16px (all breakpoints)",     sample: "Every face is read on its own terms — proportion, movement, light. Treatment is restrained, evidence-led, and built to age with you." },
+  { className: "body-02",          label: ".body-02 — sans long paragraph",             specs: "16px · leading 1.5 · 0 tracking · Lato regular",    breakpoints: "Fixed 16px (all breakpoints)",     sample: "A consultation begins with conversation. We sit together for thirty minutes and talk about what's brought you in, what you'd like to change, and what you'd rather leave alone." },
+  { className: "body-compact-02",  label: ".body-compact-02 — sans short paragraph",    specs: "16px · leading 1.375 · 0 tracking · Lato regular",  breakpoints: "Fixed 16px (all breakpoints)",     sample: "Available by appointment. Online consultations on request." },
+  { className: "body-xs",          label: ".body-xs — caption / fine print",            specs: "12px · leading 1.5 · +0.01em",                      breakpoints: "Fixed 12px (all breakpoints)",     sample: "Results vary. Consultation required prior to any treatment." },
+  { className: "body-xs-caps",     label: ".body-xs-caps — small caps body label",      specs: "10px · leading 1.4 · +0.15em · uppercase",          breakpoints: "Fixed 10px (all breakpoints)",     sample: "Bookings now open" },
+  { className: "eyebrow",          label: ".eyebrow — small tracked uppercase label",   specs: "10px · leading 1.4 · +0.45em · uppercase",          breakpoints: "Fixed 10px (all breakpoints)",     sample: "Sydney · By appointment" },
+  { className: "overline",         label: ".overline — kicker / overline",              specs: "10px · leading 1.4 · +0.45em · uppercase",          breakpoints: "Fixed 10px (all breakpoints)",     sample: "Chapter 01" },
+  { className: "label-02",         label: ".label-02 — small functional label",         specs: "14px · leading 1.286 · +0.011em · Lato regular",    breakpoints: "Fixed 14px (all breakpoints)",     sample: "Years in cosmetic medicine" },
+  { className: "cta-label",        label: ".cta-label — standard CTA pill microtype",   specs: "10px · +0.4em · uppercase · Lato",                  breakpoints: "Fixed 10px (all breakpoints)",     sample: "Book a consultation" },
+  { className: "cta-label-sm",     label: ".cta-label-sm — smaller button microtype",   specs: "9px · +0.4em · uppercase · Lato light",             breakpoints: "Fixed 9px (all breakpoints)",      sample: "Book now" },
+  { className: "nav-link",         label: ".nav-link — desktop navbar links",           specs: "11px · +0.25em · uppercase · Hanken extralight",    breakpoints: "Fixed 11px (all breakpoints)",     sample: "About" },
+  { className: "nav-link-drawer",  label: ".nav-link-drawer — mobile drawer links",     specs: "14px · +0.15em · uppercase · Heading serif",        breakpoints: "Fixed 14px (all breakpoints)",     sample: "Services" },
 ];
 
 export const metadata = {
@@ -44,7 +54,7 @@ export default function StylesheetPage() {
 
         <header className="mb-16">
           <p className="eyebrow text-brand-black/60 mb-4">Internal</p>
-          <h1 className="heading-xl !text-brand-black">Stylesheet</h1>
+          <h1 className="heading-display !text-brand-black">Stylesheet</h1>
           <p className="body-sans !text-brand-black/60 mt-4 max-w-[60ch]">
             Brand colour tokens and typographic helpers.
           </p>
@@ -152,6 +162,90 @@ export default function StylesheetPage() {
                 <p className={className}>{sample}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ─── Buttons ─────────────────────────────────────────────────── */}
+        <section className="mt-20">
+          <h2 className="heading-lg !text-brand-black mb-2">Buttons</h2>
+          <p className="body-sans !text-brand-black/60 mb-8">
+            Two variants &times; two themes, plus a compact size. Compose <code>.btn</code> with one
+            variant-theme class (and optional <code>.btn-sm</code>). Primary is a solid fill for the key
+            action; secondary is the outline pill that fills on hover. Hover each to see its state.
+          </p>
+
+          {/* On light */}
+          <div className="bg-parchment p-8 md:p-12 mb-6">
+            <p className="body-xs-caps text-on-light-low mb-10">On light backgrounds (parchment / cream)</p>
+            <div className="flex flex-wrap items-start gap-x-12 gap-y-12">
+
+              {/* Primary — light */}
+              <div className="flex flex-col gap-3">
+                <a href="#" className="btn btn-primary-light">
+                  Book a consultation
+                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+                <p className="body-xs !text-brand-black/60">Primary — solid fill</p>
+                <p className="body-xs !text-brand-black/40">.btn .btn-primary-light</p>
+              </div>
+
+              {/* Secondary — light */}
+              <div className="flex flex-col gap-3">
+                <a href="#" className="btn btn-secondary-light">
+                  Book a consultation
+                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+                <p className="body-xs !text-brand-black/60">Secondary — outline, fills on hover</p>
+                <p className="body-xs !text-brand-black/40">.btn .btn-secondary-light</p>
+              </div>
+
+              {/* Compact size — light */}
+              <div className="flex flex-col gap-3">
+                <a href="#" className="btn btn-sm btn-secondary-light">
+                  View all
+                </a>
+                <p className="body-xs !text-brand-black/60">Compact (secondary)</p>
+                <p className="body-xs !text-brand-black/40">.btn .btn-sm .btn-secondary-light</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* On dark */}
+          <div className="bg-brand-black p-8 md:p-12">
+            <p className="body-xs-caps text-on-dark-low mb-10">On dark backgrounds (brand-black / charcoal)</p>
+            <div className="flex flex-wrap items-start gap-x-12 gap-y-12">
+
+              {/* Primary — dark */}
+              <div className="flex flex-col gap-3">
+                <a href="#" className="btn btn-primary-dark">
+                  Book a consultation
+                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+                <p className="body-xs text-on-dark-low">Primary — solid fill</p>
+                <p className="body-xs text-on-dark-low">.btn .btn-primary-dark</p>
+              </div>
+
+              {/* Secondary — dark */}
+              <div className="flex flex-col gap-3">
+                <a href="#" className="btn btn-secondary-dark">
+                  Book a consultation
+                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+                <p className="body-xs text-on-dark-low">Secondary — outline, fills on hover</p>
+                <p className="body-xs text-on-dark-low">.btn .btn-secondary-dark</p>
+              </div>
+
+              {/* Compact size — dark */}
+              <div className="flex flex-col gap-3">
+                <a href="#" className="btn btn-sm btn-secondary-dark">
+                  View all
+                </a>
+                <p className="body-xs text-on-dark-low">Compact (secondary)</p>
+                <p className="body-xs text-on-dark-low">.btn .btn-sm .btn-secondary-dark</p>
+              </div>
+
+            </div>
           </div>
         </section>
 

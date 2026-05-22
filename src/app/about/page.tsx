@@ -5,11 +5,11 @@ import InstagramFeed from "@/components/InstagramFeed";
 export default function AboutPage() {
   return (
     <main className="bg-parchment text-brand-black">
-      {/* Lillet-style hero — full-bleed bg, centered title, portrait overlapping below */}
-      <section className="relative" style={{ marginTop: "-80px" }}>
+      {/* Hero — dark bg as an absolute layer; content flows with FIXED spacing */}
+      <section className="relative bg-parchment" style={{ marginTop: "-80px" }}>
 
-        {/* Background image — full bleed, tall (overflow-hidden clips the bg img) */}
-        <div className="relative overflow-hidden h-[55vh] md:h-[82vh] bg-brand-black">
+        {/* Background image — absolute layer behind content, capped height (tablet-safe) */}
+        <div className="about-hero-bg absolute top-0 inset-x-0 overflow-hidden bg-brand-black">
           <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: "0s", animationDuration: "1.0s" }}>
             <img src="/assets/chairs-hands.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center" />
           </div>
@@ -17,29 +17,40 @@ export default function AboutPage() {
           <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.55)", zIndex: 1 }} />
           {/* Top vignette behind nav */}
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 25%, transparent 50%)", zIndex: 2 }} />
-
-          {/* Centered overline + heading */}
-          <div className="absolute inset-x-0 z-10 flex flex-col items-center text-parchment text-center px-6" style={{ top: "20%" }}>
-            <p className="opacity-0 animate-fade-in overline mb-8" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
-              The story so far
-            </p>
-            <div className="w-full mx-auto" style={{ maxWidth: "920px" }}>
-              <h1
-                className="heading-xl opacity-0 animate-fade-in"
-                style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
-              >
-                Dr Yalda Jamali
-              </h1>
-            </div>
-          </div>
-
-          {/* Sentinel for nav dark/light state observer */}
+          {/* Sentinel for nav dark/light state observer — bottom of the dark layer */}
           <div id="hero-end" aria-hidden="true" style={{ position: "absolute", bottom: 0, height: 0, pointerEvents: "none" }} />
         </div>
 
-        {/* Portrait — sibling of hero, negative margin-top so it overlaps both regions */}
-        <div className="about-hero-portrait relative z-30 flex justify-center">
-          <div className="opacity-0 animate-fade-in w-[82%] md:w-[52%] max-w-[720px]" style={{ animationDelay: "0.2s", animationDuration: "1.0s" }}>
+        {/* Hero content — natural flow, fixed luxury padding above overline + fixed gap to portrait */}
+        <div
+          className="relative z-10 flex flex-col items-center text-center text-parchment"
+          style={{ paddingTop: "clamp(8rem, 5rem + 9vw, 14rem)" }}
+        >
+          {/* Overline — standard page gutter (matches pg-container) */}
+          <div
+            className="w-full flex flex-col items-center"
+            style={{ paddingLeft: "clamp(1.75rem, 5vw, 5rem)", paddingRight: "clamp(1.75rem, 5vw, 5rem)" }}
+          >
+            <p className="opacity-0 animate-fade-in overline mb-8" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
+              The story so far
+            </p>
+          </div>
+
+          {/* H1 — capped to the portrait's width below it; wraps if it must */}
+          <div className="w-[82%] md:w-[64%] lg:w-[52%] max-w-[720px] mx-auto">
+            <h1
+              className="heading-hero opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
+            >
+              Dr Yalda <br className="md:hidden" />Jamali
+            </h1>
+          </div>
+
+          {/* Portrait — FIXED distance below the H1 (matches the space above the overline) */}
+          <div
+            className="opacity-0 animate-fade-in w-[82%] md:w-[64%] lg:w-[52%] max-w-[720px]"
+            style={{ marginTop: "clamp(3rem, 1.5rem + 5vw, 8rem)", animationDelay: "0.2s", animationDuration: "1.0s" }}
+          >
             <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
               <img
                 src="/assets/Yalda-1.avif"
@@ -52,22 +63,23 @@ export default function AboutPage() {
         </div>
 
         {/* Intro — centered overline, pull quote, body (10-col measure) */}
-        <div className="pg-container pt-28 md:pt-40 pb-20 md:pb-28">
+        <div className="pg-container" style={{ paddingTop: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)", paddingBottom: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)" }}>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
             <div className="col-span-12 md:col-span-10 md:col-start-2 flex flex-col items-center text-center">
-              <p className="opacity-0 animate-fade-in overline mb-8 md:mb-10" style={{ animationDelay: "0.3s", animationDuration: "1.0s" }}>
+              <p className="opacity-0 animate-fade-in overline" style={{ marginBottom: "clamp(2.25rem, 1.75rem + 2vw, 2.75rem)", animationDelay: "0.3s", animationDuration: "1.0s" }}>
                 About Dr Yalda
               </p>
-              <p
-                className="heading-lg opacity-0 animate-fade-in mb-8 md:mb-12"
+              <h2
+                className="heading-lg opacity-0 animate-fade-in"
                 style={{
                   textWrap: "balance",
+                  marginBottom: "clamp(2.25rem, 1.75rem + 2vw, 2.75rem)",
                   animationDelay: "0.4s",
                   animationDuration: "1.0s",
                 }}
               >
                 With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists.
-              </p>
+              </h2>
               <p
                 className="opacity-0 animate-fade-in body-serif"
                 style={{
@@ -94,7 +106,7 @@ export default function AboutPage() {
             <div className="col-span-7 col-start-1 md:col-span-6 row-start-1" data-aos="fade" data-aos-duration="1000">
               <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                 <img
-                  src="/assets/IMG_0019.avif"
+                  src="/assets/Yalda-17.avif"
                   alt=""
                   aria-hidden="true"
                   className="w-full h-full object-cover"
@@ -107,7 +119,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                   <img
-                    src="/assets/IMG_004.avif"
+                    src="/assets/IMG_0028.avif"
                     alt=""
                     aria-hidden="true"
                     className="w-full h-full object-cover"
@@ -199,8 +211,8 @@ export default function AboutPage() {
                 { num: "02", title: "Precision", body: "I take a meticulous, considered approach to every treatment. Results are refined, never overdone — shaped by anatomy, not trend." },
                 { num: "03", title: "Evidence", body: "Every recommendation is backed by clinical evidence and ongoing education. No hype, no shortcuts — just what the science supports." },
                 { num: "04", title: "Trust", body: "I build long-term relationships through consistent, honest care. The goal is always to earn your confidence with results that feel like you." },
-              ].map(({ num, title, body }) => (
-                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/10 last:border-b-0 first:border-t first:border-brand-black/10">
+              ].map(({ num, title, body }, i) => (
+                <div key={num} data-aos="fade" data-aos-delay={i * 250} className="flex items-baseline gap-5 py-8 border-b border-brand-black/10 last:border-b-0 first:border-t first:border-brand-black/10">
                   <span className="list-index flex-shrink-0" style={{ minWidth: "2.5em" }}>{num} /</span>
                   <div className="flex flex-col gap-3">
                     <h3 className="heading-lg">
