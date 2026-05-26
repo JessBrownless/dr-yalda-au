@@ -23,17 +23,17 @@ export default function ServicesPage() {
       <section id="intro" className="bg-parchment py-32 md:py-52 relative scroll-mt-20">
         <div className="pg-container">
           {/* Eyebrow */}
-          <h2 className="overline mb-6">
+          <p className="overline mb-6">
             How Dr Yalda can help
-          </h2>
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-baseline">
 
             {/* Left — heading */}
             <div className="col-span-12 md:col-span-6">
-              <h3 className="heading-lg">
+              <h2 className="heading-lg">
                 Natural-looking results, built on a decade of clinical practice.
-              </h3>
+              </h2>
             </div>
 
             {/* Right — body */}
@@ -144,8 +144,7 @@ export default function ServicesPage() {
                   {i > 0 && <div className="w-full h-px bg-brand-black/10 my-8" />}
                   <div className="flex items-baseline gap-5">
                     <span
-                      className="stat-lg flex-shrink-0 select-none"
-                      style={{ color: "rgba(45,44,42,0.06)" }}
+                      className="stat-lg text-brand-black/10 flex-shrink-0 select-none"
                       aria-hidden="true"
                     >
                       {num}

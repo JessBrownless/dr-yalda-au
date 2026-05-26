@@ -46,19 +46,19 @@ export default function AppointmentsPage() {
           <div className="flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end">
             <div className="md:col-span-6 flex flex-col items-start">
               <h1
-                className="heading-xl opacity-0 animate-fade-in"
+                className="heading-hero text-parchment opacity-0 animate-fade-in"
                 style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
               >
                 Book
               </h1>
-              <p className="opacity-0 animate-fade-in text-brand-white/50 font-light leading-relaxed mt-8" style={{ fontSize: "17px", fontFamily: "'Heading', serif", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="body-serif opacity-0 animate-fade-in text-parchment/50 font-light mt-8" style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 Dr Yalda receives patients by appointment across two Sydney clinics — <em>Paddington and Balgowlah</em>.
               </p>
             </div>
             <a
               href="#intro"
-              className="opacity-0 animate-fade-in self-start md:col-span-6 md:justify-self-end md:self-end text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
-              style={{ fontFamily: "var(--font-lato)", fontSize: "9px", letterSpacing: "0.55em", textTransform: "uppercase", fontWeight: 300, animationDelay: "0.7s", animationDuration: "1.0s" }}
+              className="cta-label-sm opacity-0 animate-fade-in self-start md:col-span-6 md:justify-self-end md:self-end text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
+              style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
             >
               Book a consultation
               <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
@@ -90,13 +90,13 @@ export default function AppointmentsPage() {
 
               {/* Heading */}
               <div className="mb-4">
-                <h2 className="overline mb-6">
+                <p className="overline mb-6">
                   Appointments
-                </h2>
+                </p>
                 <div className="flex flex-col gap-8">
-                  <h3 className="heading-lg">
+                  <h2 className="heading-lg">
                     In-person
-                  </h3>
+                  </h2>
                   <p className="body-serif">
                     In-clinic consultations are the only setting where prescriptions and treatments can take place.
                   </p>
@@ -124,7 +124,7 @@ export default function AppointmentsPage() {
                   {/* Right — book button */}
                   <a
                     href={href}
-                    className="flex-shrink-0 px-7 py-2.5 bg-brand-black text-cream text-[9px] font-light tracking-[0.35em] uppercase hover:bg-brand-charcoal transition-colors duration-300"
+                    className="cta-label-sm flex-shrink-0 px-7 py-2.5 bg-brand-black text-cream hover:bg-brand-charcoal transition-colors duration-300"
                   >
                     Book
                   </a>
@@ -226,7 +226,7 @@ export default function AppointmentsPage() {
                 href="https://calendly.com/dryalda-epioscosmeticclinic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="self-start rounded-full px-10 py-3 bg-cream text-brand-black text-[9px] font-light tracking-[0.4em] uppercase hover:bg-parchment transition-colors duration-300"
+                className="cta-label-sm self-start rounded-full px-10 py-3 bg-cream text-brand-black hover:bg-parchment transition-colors duration-300"
               >
                 Book
               </a>

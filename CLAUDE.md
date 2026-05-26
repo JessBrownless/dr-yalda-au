@@ -49,23 +49,41 @@ These wrap `color-mix(...)` so opacity tracks the inherited colour:
 
 All defined in `globals.css`. **Always use these instead of writing raw `clamp()` font-size or inline `fontFamily` styles.**
 
+Headings use a fluid √2 modular scale (`heading-mega` through `heading-sm`), implemented via a single `clamp()` per class. All headings hit their max size at viewport ≈1280px and their min at ≈640px, scaling smoothly in between. `heading-mega` (56→158px, uppercase) sits one step above `heading-display` and is reserved for the hero name lockup. Body copy is 16px fixed across all breakpoints. The naming hybrid (`mega`/`display` for billboard, then `-2xl` through `-sm`) matches the convention in `/stylesheet`.
+
 | Class | Purpose | Notes |
 | --- | --- | --- |
-| `.heading-xl` | Hero / page-title display | All caps, large, 0.04em tracking |
-| `.heading-lg` | Section-level heading | Default for section h2/h3 |
-| `.heading-md` | Card / list-item sub-heading | |
+| `.heading-mega` | Uppercase hero brand mark (name lockup) | **Uppercase**, 56→158px, leading 0.95, +0.03em tracking. One √2 step above `.heading-display`. Reserve for the hero name lockup in `HeroHome`; don't use for editorial titles (use `.heading-display` for those) |
+| `.heading-hero` | **Hero H1 lockup** — every page's hero title | **Uppercase**, 40→92px, leading 1, +0.06em tracking. Dedicated to hero H1s and decoupled from the modular scale, so tune it freely without affecting the scale. Colour is set per-use (`text-parchment`). |
+| `.heading-display` | Billboard / hero display | Sentence case, 56→112px, leading 1, −0.015em tracking |
+| `.heading-2xl` | Large display heading | Sentence case, 40→79px, leading 1.05, −0.01em tracking |
+| `.heading-xl` | H1 page titles (brand mark) | **Uppercase**, 28→56px, +0.04em tracking. Smaller than before — hero text that needs bigger should upgrade to `.heading-2xl` or `.heading-display`. |
+| `.heading-lg` | H2 section headings | Sentence case, 20→40px, leading 1.2 |
+| `.heading-md` | H3 card / list sub-headings | Sentence case, 16→28px, +0.02em tracking |
+| `.heading-sm` | Smallest serif heading (H4) | Sentence case, 14→20px, +0.02em tracking |
 | `.stat-lg` | Big numbers and short stat labels | |
 | `.eyebrow` | Small uppercase tracked label (kicker) | Use this OR `.overline` — same styling |
 | `.overline` | Alias for `.eyebrow` | Both exist; prefer `.overline` (more common in current code). Despite the name, this is NOT the Tailwind `overline` text-decoration utility — the custom class overrides it |
-| `.body-serif` | Default body copy (serif Heading font) | 14px mobile / 16px desktop |
-| `.body-sans` | Body copy in Lato | Same sizing as body-serif |
+| `.body-serif` | Default body copy (serif Heading font) | **16px fixed across all breakpoints**, leading 1.7 |
+| `.body-sans` | Editorial-tall body copy in Lato | 16px fixed, leading 1.7 (matches `.body-serif`) |
+| `.body-02` | Sans long paragraphs (4+ lines) | 16px, leading 1.5, Lato regular. Always left-aligned |
+| `.body-compact-02` | Sans short paragraphs, button text, dense card text | 16px, leading 1.375, Lato regular |
+| `.label-02` | Image captions, stat labels, form/helper labels | 14px, leading 1.286, +0.011em, Lato regular |
 | `.body-xs` | Captions, fine print | 12px, lowercase, no tracking |
 | `.body-xs-caps` | Small uppercase caps (less tracking than overline) | |
 | `.blockquote` | Large italic pull-quote | Used in ParallaxQuote |
 | `.quotesmall` | Small italic testimonial-scale quote | |
 | `.list-index` | "01 /" style serif numbering | For itemised lists (Values, What to expect) |
+| `.cta-label` | Standard CTA pill microtype | 10px, +0.4em, uppercase, Lato. Used 5+ times across BookingCTA, HeroHome, page.tsx |
+| `.cta-label-sm` | Smaller button microtype | 9px, +0.4em, uppercase, Lato light. Appointments page + FeaturesList pills |
+| `.nav-link` | Desktop navbar links | 11px, +0.25em, uppercase, Hanken extralight (200). Override `font-weight` for active state |
+| `.nav-link-drawer` | Mobile Navbar full-screen menu links | 14px, +0.15em, uppercase, Heading serif |
 
 H1–H6 automatically get the "Heading" serif font, normal weight, 0.04em letter-spacing — **don't override these defaults without reason.**
+
+### Stylesheet canon
+
+`src/app/stylesheet/page.tsx` renders every typography utility with a label, specs, and live sample at `/stylesheet`. **Treat it as the visual source of truth** — if you add a utility to `globals.css`, add a row to the `typeStyles` array in the same commit. Live page makes it impossible for documented specs and rendered reality to drift apart.
 
 ### Layout helpers
 
@@ -196,16 +214,14 @@ This is intentional — Tailwind responsive utilities can't easily express asymm
 - Use `object-position` to control crop — most existing portraits use `objectPosition: "50% 15%"` or similar to favour the upper part of the face
 - Image fade-in: wrap the `<img>` in a `div` with `opacity-0 animate-fade-in` and a longer delay than the surrounding text (~1.8s), so the image is the last thing to resolve
 
-### Buttons / CTA pill
+### Buttons / CTA system
 
-The standard CTA is a thin-outline pill with letter-spaced uppercase microtype. Copy this pattern exactly when adding new CTAs:
+**Always use the `.btn` utility classes for buttons and CTAs. Never hand-roll a button with inline `fontSize`/`letterSpacing`/`fontFamily` or ad-hoc border/padding/hover Tailwind.** The full system is defined in `globals.css` and rendered live at `/stylesheet`.
+
+Compose `.btn` + one variant-theme class, plus optional `.btn-sm`:
 
 ```tsx
-<a
-  href="/appointments"
-  className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
-  style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
->
+<a href="/appointments" className="btn btn-primary-light">
   Book a consultation
   <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
     <path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/>
@@ -213,7 +229,21 @@ The standard CTA is a thin-outline pill with letter-spaced uppercase microtype. 
 </a>
 ```
 
-For dark backgrounds: swap `border-brand-black`/`text-brand-black` → `border-cream`/`text-cream`, and the hover state to `hover:bg-cream hover:text-brand-black`.
+| Class | Use |
+| --- | --- |
+| `.btn` | Base — pill shape, padding, `cta-label` text style, transitions, focus ring. Always include it. |
+| `.btn-primary-light` | Solid fill on a **light** background. Highest emphasis — the key action per page/section. |
+| `.btn-secondary-light` | Outline pill on a **light** background, fills brand-black on hover. The brand signature CTA. |
+| `.btn-primary-dark` | Solid cream fill on a **dark** background. |
+| `.btn-secondary-dark` | Outline pill on a **dark** background, fills cream on hover. |
+| `.btn-sm` | Compact size modifier (9px text, tighter padding) for dense contexts. Combine with a variant-theme class. |
+
+Rules:
+- `light` / `dark` refers to the **background the button sits on**, not the button's own colour.
+- Primary = solid fill (one key action); secondary = outline (everything else). Don't put two primaries in the same view.
+- The arrow `<svg>` is optional child markup — include it on the main page CTAs, omit on compact/secondary actions. Don't restyle it.
+- All colours come from CSS variables (`--brand-black`, `--cream`, `--brand-charcoal`, `--brand-white`). Don't introduce new button colours without adding a token.
+- If you need a button shape the system doesn't cover, **ask the user before hand-rolling one** — extending the system beats a one-off.
 
 ## Drift patterns to avoid
 
@@ -228,6 +258,8 @@ These are the recurring mistakes past Claude sessions have made in this codebase
 7. **Custom scroll listeners** in new components when AOS or the existing scroll observers in `Navbar.tsx` would work.
 8. **Empty `metadata.description`** when adding new pages. Always populate the description and Open Graph fields — this site is SEO-critical for the practice.
 9. **Hardcoded keyword soup like `"text-[11px] tracking-[0.25em] uppercase"`** scattered throughout when `.eyebrow` or `.overline` already encapsulates the same.
+10. **Inline `fontSize` / `letterSpacing` / `fontFamily` styles on text elements when a utility exists.** The `/stylesheet` page documents every available class — check it before introducing new inline styling. If a pattern recurs (CTA microtype, nav link, image caption), it belongs in `globals.css` as a utility, not duplicated inline.
+11. **Hand-rolling buttons** with ad-hoc `border`/`rounded-full`/`px-*`/`hover:*` Tailwind and inline microtype instead of the `.btn` system (`.btn .btn-primary-light` etc.). See the Buttons / CTA system section. Every pill CTA on the site should be `.btn` + a variant-theme class.
 
 ## Voice and copy
 

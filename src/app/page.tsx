@@ -17,19 +17,19 @@ export default function Home() {
       {/* Her Story — statement block */}
       <section className="bg-parchment py-40 md:py-64 flex flex-col items-center justify-center text-center relative">
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
-          <h2
+          <p
             data-aos="fade"
             className="overline mb-6"
           >
             Sydney based cosmetic doctor
-          </h2>
-          <p
+          </p>
+          <h2
             data-aos="fade"
             data-aos-delay="120"
             className="heading-lg"
           >
             A doctor who listens first, treats with precision, and focuses on achieving natural, balanced, and long-term results.
-          </p>
+          </h2>
         </div>
       </section>
 
@@ -87,8 +87,7 @@ export default function Home() {
 
               <a
                 href="/about"
-                className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
-                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
+                className="cta-label self-start border border-brand-black text-brand-black mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
               >
                 About Dr Yalda
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -132,8 +131,7 @@ export default function Home() {
 
               <a
                 href="/services"
-                className="self-start border border-brand-black text-brand-black font-normal uppercase mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
-                style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
+                className="cta-label self-start border border-brand-black text-brand-black mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
               >
                 Services
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>

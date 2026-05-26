@@ -137,10 +137,10 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
+                  className={`nav-link transition-colors duration-300 ${
                     pathname === href
                       ? dark ? "font-medium text-brand-black" : "font-medium text-cream"
-                      : dark ? "font-extralight text-brand-black hover:text-brand-black" : "font-extralight text-cream/50 hover:text-cream"
+                      : dark ? "text-brand-black hover:text-brand-black" : "text-cream/50 hover:text-cream"
                   }`}
                 >
                   {label}
@@ -166,7 +166,7 @@ export default function Navbar() {
             {/* Mobile Book Now plain text link */}
             <Link
               href="/appointments"
-              className={`md:hidden text-[11px] tracking-[0.25em] uppercase font-medium font-hanken transition-opacity duration-300 ${
+              className={`nav-link md:hidden font-medium transition-opacity duration-300 ${
                 open ? "opacity-0 pointer-events-none" : "opacity-100"
               } ${
                 pathname === "/appointments"
@@ -181,7 +181,7 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`text-[11px] font-extralight tracking-[0.25em] uppercase transition-colors duration-300 font-hanken ${
+                  className={`nav-link transition-colors duration-300 ${
                     pathname === href
                       ? dark ? "text-brand-black" : "text-cream"
                       : dark ? "text-brand-black hover:text-brand-black" : "text-cream/50 hover:text-cream"
@@ -192,7 +192,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="/appointments"
-                className={`text-[11px] tracking-[0.25em] uppercase font-medium font-hanken rounded-full px-5 py-2 border transition-all duration-300 ${
+                className={`nav-link font-medium rounded-full px-5 py-2 border transition-all duration-300 ${
                   pathname === "/appointments"
                     ? dark ? "bg-brand-black text-cream border-brand-black" : "bg-cream text-brand-black border-cream"
                     : dark ? "border-brand-black text-brand-black hover:border-brand-black hover:bg-brand-black hover:text-cream" : "border-cream/50 text-cream/50 hover:border-cream hover:bg-cream hover:text-brand-black"
@@ -239,8 +239,7 @@ export default function Navbar() {
                     document.body.dataset.scrollY = "0";
                     setOpen(false);
                   }}
-                  className="block py-5 text-cream text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:text-brand-white/50"
-                  style={{ fontFamily: "'Heading', serif" }}
+                  className="nav-link-drawer block py-5 text-cream transition-colors duration-300 hover:text-brand-white/50"
                 >
                   {label}
                 </Link>

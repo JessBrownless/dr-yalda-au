@@ -30,12 +30,12 @@ export default function MediaPage() {
           <div className="flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end">
             <div className="md:col-span-6 flex flex-col items-start text-left">
               <h1
-                className="heading-xl opacity-0 animate-fade-in"
+                className="heading-hero text-parchment opacity-0 animate-fade-in"
                 style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
               >
                 Media
               </h1>
-              <p className="body-serif opacity-0 animate-fade-in text-brand-white/50 font-light mt-8 max-w-[42ch]" style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="body-serif opacity-0 animate-fade-in text-parchment/50 font-light mt-8 max-w-[42ch]" style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 Expert commentary, brand collaborations, and features — grounded in <em>evidence-based</em> care.
               </p>
             </div>
@@ -67,9 +67,9 @@ export default function MediaPage() {
                 <p className="overline">
                   Beyond the clinic
                 </p>
-                <h3 className="heading-lg">
+                <h2 className="heading-lg">
                   A trusted voice in cosmetic medicine.
-                </h3>
+                </h2>
               </div>
 
               <div className="flex gap-6 md:gap-10">
@@ -189,7 +189,7 @@ export default function MediaPage() {
                 },
               ].map(({ num, title, description }) => (
                 <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/10 first:border-t first:border-brand-black/10">
-                  <span className="stat-lg text-brand-black/50 flex-shrink-0">
+                  <span className="stat-lg text-brand-black/10 flex-shrink-0">
                     {num}
                   </span>
                   <div className="flex flex-col gap-4">

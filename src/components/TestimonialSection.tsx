@@ -54,7 +54,7 @@ export default function TestimonialSection() {
             Partner testimonial
           </p>
 
-          <blockquote className="col-span-12 md:col-span-8 quotesmall" style={{ fontSize: "clamp(1.25rem, 1.65vw, 1.7rem)", lineHeight: 1.5, fontStyle: "italic" }}>
+          <blockquote className="col-span-12 md:col-span-8 quotesmall">
             &ldquo;{quote}&rdquo;
           </blockquote>
           <div className="col-span-12 md:col-span-2 flex items-center md:justify-end gap-4">

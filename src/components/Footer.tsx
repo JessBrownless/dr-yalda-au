@@ -46,7 +46,7 @@ export default function Footer() {
             {socials.map(({ icon: Icon, platform, handle, href }, i) => (
               <a key={platform} href={href} target="_blank" rel="noopener noreferrer" className={`group flex flex-row items-center justify-between gap-4 py-8 pr-6 transition-colors duration-300 ${i === 0 ? "pl-0" : "pl-6"}`}>
                 <div className="flex flex-col gap-1">
-                  <p className="text-brand-white/60 text-[9px] font-light tracking-[0.3em] uppercase group-hover:text-cream transition-colors duration-300">{platform}</p>
+                  <p className="cta-label-sm text-brand-white/60 group-hover:text-cream transition-colors duration-300">{platform}</p>
                   <p className="text-brand-white/40 text-[9px] font-light tracking-[0.15em] group-hover:text-brand-white/60 transition-colors duration-300">{handle}</p>
                 </div>
                 <div className="w-9 h-9 flex-shrink-0 border border-brand-white/20 flex items-center justify-center group-hover:border-brand-white/40 transition-colors duration-300">

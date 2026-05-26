@@ -54,8 +54,7 @@ export default function BookingCTA({
         <p className="body-serif">{body}</p>
         <a
           href={buttonHref}
-          className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
-          style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
+          className="cta-label self-start border border-brand-black text-brand-black rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
         >
           {buttonText}
           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
@@ -77,8 +76,7 @@ export default function BookingCTA({
           <p className="body-serif">{body}</p>
           <a
             href={buttonHref}
-            className="self-start border border-brand-black text-brand-black font-normal uppercase rounded-full px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
-            style={{ fontSize: "10px", letterSpacing: "0.4em", fontFamily: "var(--font-lato)" }}
+            className="cta-label self-start border border-brand-black text-brand-black rounded-full px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
           >
             {buttonText}
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
