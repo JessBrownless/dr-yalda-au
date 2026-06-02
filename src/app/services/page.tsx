@@ -54,7 +54,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image */}
-            <div className="col-span-12 md:col-span-5 relative">
+            <div className="col-span-12 md:col-span-6 relative">
               <div>
                 <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                   <img
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Right — text */}
-            <div className="col-span-12 md:col-span-5 md:col-start-7 flex flex-col gap-8">
+            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8">
 
               {/* Eyebrow + heading */}
               <div>
@@ -128,40 +128,31 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
             {/* Left — numbered list */}
-            <div className="col-span-12 md:col-span-6 flex flex-col order-2 md:order-1">
+            <div className="col-span-12 md:col-span-5 flex flex-col order-2 md:order-1">
               <h2 className="overline mb-6">
-                Methodology
+                The Dr Yalda approach
               </h2>
-              <h3 className="heading-lg mb-8">
-                The Dr. Yalda approach
-              </h3>
               {[
-                { num: "01", label: "Consultation-Led", body: "Suitability, risks, and alternatives are discussed in detail during a clinical consultation before any treatment is considered." },
-                { num: "02", label: "Identity Preservation", body: "The intention is not to create a different face, but to help patients look like the best version of themselves at their current stage." },
-                { num: "03", label: "Individualised Care", body: "Every treatment plan is considered and individualised, shaped by the understanding that no two faces—or ageing patterns—are the same." },
-              ].map(({ num, label, body }, i) => (
-                <div key={num}>
-                  {i > 0 && <div className="w-full h-px bg-brand-black/10 my-8" />}
-                  <div className="flex items-baseline gap-5">
-                    <span
-                      className="stat-lg text-brand-black/10 flex-shrink-0 select-none"
-                      aria-hidden="true"
-                    >
-                      {num}
-                    </span>
-                    <div className="flex flex-col gap-4">
-                      <h3 className="heading-md">
-                        {label}
-                      </h3>
-                      <p className="body-serif">{body}</p>
-                    </div>
+                { num: "01", label: "Consultation-Led", body: "Suitability, risks, and alternatives are discussed before any treatment begins." },
+                { num: "02", label: "Identity Preservation", body: "Not a different face, but the best version of your own at your current stage." },
+                { num: "03", label: "Individualised Care", body: "Every plan reflects that no two faces—or ageing patterns—are alike." },
+              ].map(({ num, label, body }) => (
+                <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/10 first:border-t first:border-brand-black/10">
+                  <span className="stat-lg text-brand-black/10 flex-shrink-0">
+                    {num}
+                  </span>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="heading-md">
+                      {label}
+                    </h3>
+                    <p className="body-serif">{body}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Right — portrait */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2">
+            <div className="col-span-12 md:col-span-6 md:col-start-7 order-1 md:order-2">
               <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img
                   src="/assets/Yalda-1.avif"
@@ -180,15 +171,27 @@ export default function ServicesPage() {
       {/* FAQ */}
       <section className="bg-brand-black text-on-dark-high py-24 md:py-32">
         <div className="pg-container">
-          <h2 className="overline mb-6">
-            FAQs
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 md:items-baseline">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 md:items-start">
 
-            <div className="col-span-12 md:col-span-4">
-              <p className="heading-lg">
+            <div className="col-span-12 md:col-span-4 flex flex-col gap-6">
+              <p className="overline">
                 Common questions
               </p>
+              <h2 className="heading-lg">
+                FAQs
+              </h2>
+              <p className="body-serif text-on-dark-low max-w-sm">
+                A few things patients often ask before booking. If your question isn&apos;t answered here, I&apos;m happy to talk it through in a consultation.
+              </p>
+              <a
+                href="/appointments"
+                className="btn btn-secondary-dark self-start mt-2"
+                data-aos="fade"
+                data-aos-delay="150"
+              >
+                Book a consultation
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
             </div>
 
             <div className="col-span-12 md:col-span-7 md:col-start-6">

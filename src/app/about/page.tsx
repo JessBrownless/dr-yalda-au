@@ -102,11 +102,11 @@ export default function AboutPage() {
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-x-3 md:gap-x-10">
 
-            {/* Left — portrait */}
+            {/* Left — treatment shot (top, no offset) */}
             <div className="col-span-7 col-start-1 md:col-span-6 row-start-1" data-aos="fade" data-aos-duration="1000">
               <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                 <img
-                  src="/assets/Yalda-17.avif"
+                  src="/assets/IMG_0028.avif"
                   alt=""
                   aria-hidden="true"
                   className="w-full h-full object-cover"
@@ -114,12 +114,12 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right — offset down, with logo overlay */}
-            <div className="col-span-7 col-start-6 md:col-span-6 md:col-start-7 row-start-1 mt-[28vw] md:mt-32" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            {/* Right — portrait, offset down, with logo overlay on its bottom-left corner */}
+            <div className="col-span-7 col-start-6 md:col-span-6 md:col-start-7 row-start-1 mt-[28vw] md:mt-32 relative z-10" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               <div className="relative">
                 <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                   <img
-                    src="/assets/IMG_0028.avif"
+                    src="/assets/Yalda-17.avif"
                     alt=""
                     aria-hidden="true"
                     className="w-full h-full object-cover"
@@ -128,8 +128,8 @@ export default function AboutPage() {
                 <img
                   src="/assets/logo-circle.svg"
                   alt="Dr. Yalda Jamali"
-                  className="absolute z-10"
-                  style={{ width: "clamp(64px, 10vw, 140px)", bottom: "-1.5rem", left: "-1.5rem" }}
+                  className="absolute z-10 left-0 bottom-0 -translate-x-1/2 translate-y-1/2"
+                  style={{ width: "clamp(64px, 10vw, 140px)" }}
                 />
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function AboutPage() {
                   { name: "Faculty member", detail: "Merz Aesthetics" },
                 ].map(({ name, detail }) => (
                   <div key={name} className="flex flex-col gap-1.5 py-4 border-b border-brand-black/10 last:border-b-0 first:border-t first:border-brand-black/10">
-                    <p className="heading-md">{name}</p>
+                    <p className="heading-sm">{name}</p>
                     <p className="body-xs">{detail}</p>
                   </div>
                 ))}

@@ -11,7 +11,7 @@ const images = [
 
 export default function InstagramFeed() {
   return (
-    <div className="border-b border-brand-black/10 pt-8 md:pt-12 pb-32 bg-parchment text-brand-black">
+    <div className="border-b border-brand-black/10 py-24 md:py-40 bg-parchment text-brand-black">
       <div className="pg-container">
 
         <div className="flex items-center justify-between mb-8">

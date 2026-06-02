@@ -9,6 +9,9 @@ var/
 # production build
 build/
 
+# local scratch / build dumps
+tmp/
+
 # env files
 .env
 .env.local
@@ -26,3 +29,6 @@ tsconfig.tsbuildinfo
 .DS_Store
 *.pem
 npm-debug.log*
+
+# local Claude tooling — design-system skill, settings, etc.
+.claude/

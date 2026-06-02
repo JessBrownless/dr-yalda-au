@@ -59,13 +59,13 @@ export default function Footer() {
       </div>
 
       {/* Main footer body */}
-      <div className="border-t border-brand-white/20">
+      <div>
         {/* Logo — full bleed, mobile only */}
         <div className="md:hidden pt-8 pb-2 pg-container">
           <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "220px", opacity: 0.9, marginLeft: "-14px" }} />
         </div>
-        <div className="pg-container pt-6 pb-12 md:pt-16 md:pb-20">
-          <div className="grid grid-cols-12 gap-8">
+        <div className="pg-container pt-20 pb-20 md:pt-40 md:pb-32">
+          <div className="grid grid-cols-12 gap-8 md:gap-12">
 
             {/* Logo — desktop first column */}
             <div className="hidden md:flex col-span-4 flex-col justify-start items-start" style={{ marginLeft: "-16px" }}>
@@ -73,7 +73,7 @@ export default function Footer() {
             </div>
 
             {/* Nav links */}
-            <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4 border-t border-brand-white/10 pt-8">
+            <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4">
               <p className="overline mb-1">Navigate</p>
               {links.map(({ label, href }) => (
                 <Link key={href} href={href} className="text-brand-white/60 text-sm font-light hover:text-cream transition-colors duration-300">{label}</Link>
@@ -81,7 +81,7 @@ export default function Footer() {
             </div>
 
             {/* Clinics */}
-            <div className="col-span-6 md:col-span-4 md:col-start-9 flex flex-col gap-5 border-t md:border-l border-brand-white/10 md:pl-8 pt-8">
+            <div className="col-span-6 md:col-span-4 md:col-start-9 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
               <p className="overline mb-1">Clinic Locations</p>
               {clinics.map(({ name, address }) => (
                 <div key={name} className="flex flex-col gap-1">
@@ -90,7 +90,7 @@ export default function Footer() {
                       <path d="M4 0C1.791 0 0 1.791 0 4C0 7 4 12 4 12C4 12 8 7 8 4C8 1.791 6.209 0 4 0Z" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                       <circle cx="4" cy="4" r="1.25" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                     </svg>
-                    <h2 className="heading-md">{name}</h2>
+                    <h2 className="heading-sm">{name}</h2>
                   </div>
                   <p className="body-xs-caps" style={{ paddingLeft: "17px" }}>{address}</p>
                 </div>
@@ -102,8 +102,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar — faint */}
-      <div className="border-t border-brand-white/10">
-        <div className="pg-container py-5 flex flex-col md:flex-row items-center justify-between gap-2">
+      <div>
+        <div className="pg-container pb-12 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="body-xs-caps">© {new Date().getFullYear()} Dr. Yalda Jamali. All rights reserved.</p>
           <p className="body-xs-caps">MBChB · MSc Dermatology · FACCSM</p>
         </div>

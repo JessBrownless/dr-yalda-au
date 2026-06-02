@@ -11,21 +11,20 @@ const faqs = [
 
 export default function FaqAccordion() {
   return (
-    <div className="flex flex-col divide-y divide-current/10">
+    <div className="flex flex-col">
       {faqs.map(({ q, a }) => (
-        <details key={q} className="faq-item group">
-          <summary className="flex items-center justify-between gap-6 py-6 md:py-7 cursor-pointer list-none">
-            <h3 className="heading-md">
+        <details key={q} className="faq-item group border-b border-brand-line/20 first:border-t first:border-brand-line/20">
+          <summary className="flex items-start justify-between gap-6 py-7 md:py-8 cursor-pointer list-none transition-colors duration-300 hover:bg-brand-white/5">
+            <h3 className="heading-sm text-on-dark-high">
               {q}
             </h3>
-            <span
-              className="faq-icon flex-shrink-0 text-current/50 transition-transform duration-300"
-              style={{ fontSize: "20px", lineHeight: 1 }}
-            >
-              +
+            <span className="faq-icon flex-shrink-0 mt-1.5 text-on-dark-low transition-all duration-300 group-hover:text-on-dark-high">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
+              </svg>
             </span>
           </summary>
-          <p className="body-serif pb-7 max-w-lg">
+          <p className="body-serif text-on-dark-low pb-8 max-w-lg">
             {a}
           </p>
         </details>

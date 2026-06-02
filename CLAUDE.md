@@ -54,20 +54,17 @@ Headings use a fluid √2 modular scale (`heading-mega` through `heading-sm`), i
 | Class | Purpose | Notes |
 | --- | --- | --- |
 | `.heading-mega` | Uppercase hero brand mark (name lockup) | **Uppercase**, 56→158px, leading 0.95, +0.03em tracking. One √2 step above `.heading-display`. Reserve for the hero name lockup in `HeroHome`; don't use for editorial titles (use `.heading-display` for those) |
-| `.heading-hero` | **Hero H1 lockup** — every page's hero title | **Uppercase**, 40→92px, leading 1, +0.06em tracking. Dedicated to hero H1s and decoupled from the modular scale, so tune it freely without affecting the scale. Colour is set per-use (`text-parchment`). |
+| `.heading-hero` | **Hero H1 lockup** — every page's hero title | **Uppercase**, 40→80px, leading 1, +0.1em tracking. Dedicated to hero H1s and decoupled from the modular scale, so tune it freely without affecting the scale. Colour is set per-use (`text-parchment`). |
 | `.heading-display` | Billboard / hero display | Sentence case, 56→112px, leading 1, −0.015em tracking |
 | `.heading-2xl` | Large display heading | Sentence case, 40→79px, leading 1.05, −0.01em tracking |
-| `.heading-xl` | H1 page titles (brand mark) | **Uppercase**, 28→56px, +0.04em tracking. Smaller than before — hero text that needs bigger should upgrade to `.heading-2xl` or `.heading-display`. |
+| `.heading-statement` | Centred editorial statements | Sentence case, 28→56px, leading 1.15, −0.005em. Fills the gap between `.heading-lg` and `.heading-2xl`. |
 | `.heading-lg` | H2 section headings | Sentence case, 20→40px, leading 1.2 |
 | `.heading-md` | H3 card / list sub-headings | Sentence case, 16→28px, +0.02em tracking |
 | `.heading-sm` | Smallest serif heading (H4) | Sentence case, 14→20px, +0.02em tracking |
 | `.stat-lg` | Big numbers and short stat labels | |
-| `.eyebrow` | Small uppercase tracked label (kicker) | Use this OR `.overline` — same styling |
-| `.overline` | Alias for `.eyebrow` | Both exist; prefer `.overline` (more common in current code). Despite the name, this is NOT the Tailwind `overline` text-decoration utility — the custom class overrides it |
+| `.overline` | Small uppercase tracked label (kicker) | 10px, +0.45em tracking, uppercase. Despite the name, this is NOT the Tailwind `overline` text-decoration utility — the custom class overrides it. (Previously duplicated as `.eyebrow`, now consolidated.) |
 | `.body-serif` | Default body copy (serif Heading font) | **16px fixed across all breakpoints**, leading 1.7 |
 | `.body-sans` | Editorial-tall body copy in Lato | 16px fixed, leading 1.7 (matches `.body-serif`) |
-| `.body-02` | Sans long paragraphs (4+ lines) | 16px, leading 1.5, Lato regular. Always left-aligned |
-| `.body-compact-02` | Sans short paragraphs, button text, dense card text | 16px, leading 1.375, Lato regular |
 | `.label-02` | Image captions, stat labels, form/helper labels | 14px, leading 1.286, +0.011em, Lato regular |
 | `.body-xs` | Captions, fine print | 12px, lowercase, no tracking |
 | `.body-xs-caps` | Small uppercase caps (less tracking than overline) | |
@@ -236,6 +233,7 @@ Compose `.btn` + one variant-theme class, plus optional `.btn-sm`:
 | `.btn-secondary-light` | Outline pill on a **light** background, fills brand-black on hover. The brand signature CTA. |
 | `.btn-primary-dark` | Solid cream fill on a **dark** background. |
 | `.btn-secondary-dark` | Outline pill on a **dark** background, fills cream on hover. |
+| `.btn-tertiary-light` / `.btn-tertiary-dark` | Lowest-emphasis outline — border muted to 50% (matches nav link / social opacity). Fills on hover. Used for the navbar CTA. |
 | `.btn-sm` | Compact size modifier (9px text, tighter padding) for dense contexts. Combine with a variant-theme class. |
 
 Rules:
@@ -257,7 +255,7 @@ These are the recurring mistakes past Claude sessions have made in this codebase
 6. **Hard-coded `8px` padding values** instead of Tailwind spacing utilities (`p-2`, `px-4`, etc.).
 7. **Custom scroll listeners** in new components when AOS or the existing scroll observers in `Navbar.tsx` would work.
 8. **Empty `metadata.description`** when adding new pages. Always populate the description and Open Graph fields — this site is SEO-critical for the practice.
-9. **Hardcoded keyword soup like `"text-[11px] tracking-[0.25em] uppercase"`** scattered throughout when `.eyebrow` or `.overline` already encapsulates the same.
+9. **Hardcoded keyword soup like `"text-[11px] tracking-[0.25em] uppercase"`** scattered throughout when `.overline` already encapsulates the same.
 10. **Inline `fontSize` / `letterSpacing` / `fontFamily` styles on text elements when a utility exists.** The `/stylesheet` page documents every available class — check it before introducing new inline styling. If a pattern recurs (CTA microtype, nav link, image caption), it belongs in `globals.css` as a utility, not duplicated inline.
 11. **Hand-rolling buttons** with ad-hoc `border`/`rounded-full`/`px-*`/`hover:*` Tailwind and inline microtype instead of the `.btn` system (`.btn .btn-primary-light` etc.). See the Buttons / CTA system section. Every pill CTA on the site should be `.btn` + a variant-theme class.
 

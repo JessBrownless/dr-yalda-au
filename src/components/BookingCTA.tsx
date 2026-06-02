@@ -13,7 +13,7 @@ interface BookingCTAProps {
 export default function BookingCTA({
   overline = "Start with a conversation",
   heading = "Book a consultation",
-  body = "Dr. Yalda’s consultations are a space to be heard, ask questions, and understand your options — with honesty and care at every step.",
+  body = "Be heard, ask questions, and understand your options — with honesty and care at every step.",
   buttonText = "Book now",
   buttonHref = "/appointments",
   leftImage = "/assets/IMG_0028.avif",
@@ -24,25 +24,28 @@ export default function BookingCTA({
   return (
     <section className="relative overflow-hidden bg-parchment" style={{ minHeight: "max(500px, calc(40.5vw + 121px))" }}>
 
-      {/* Left image — bleeds off left edge, anchored to top */}
-      <div className="absolute left-0 top-0 hidden md:block overflow-hidden" style={{ width: "48%", height: "calc(36vw + 105px)" }}>
+      {/* Left image — bleeds off left edge, anchored to top. Widens at large breakpoints to close the collage gap on big screens (the right image stays fixed, so they never overlap). */}
+      <div className="absolute -left-[2%] top-0 hidden md:block overflow-hidden w-[48%] min-[1440px]:w-[54%] min-[1700px]:w-[58%]" data-aos="fade" data-aos-duration="1100" data-aos-easing="ease-out-sine" style={{ height: "calc(36vw + 105px)" }}>
         <img src={leftImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: leftImagePosition }} />
       </div>
 
-      {/* Right image — same size, bleeds off right edge, larger downward offset */}
-      <div className="absolute right-0 hidden md:block overflow-hidden" style={{ width: "48%", height: "calc(36vw + 105px)", top: "calc(4.5vw + 16px)" }}>
+      {/* Right image — bleeds off right edge, larger downward offset. Fixed 38% (portrait) at all sizes; the left image closes the gap instead. */}
+      <div className="absolute right-0 hidden md:block overflow-hidden w-[40%]" data-aos="fade" data-aos-delay="100" data-aos-duration="1100" data-aos-easing="ease-out-sine" style={{ height: "calc(36vw + 105px)", top: "calc(4.5vw + 16px)" }}>
         <img src={rightImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} />
       </div>
 
       {/* Centre card — overlaps both images */}
       <div
-        className="absolute z-10 hidden md:flex flex-col gap-4 justify-center items-start text-left"
+        className="absolute z-10 hidden md:flex flex-col gap-4 justify-center items-start text-left bg-brand-white"
+        data-aos="fade"
+        data-aos-delay="200"
+        data-aos-duration="2200"
+        data-aos-easing="ease-out-sine"
         style={{
-          left: "34%",
+          left: "30%",
           top: "50%",
           transform: "translateY(-50%)",
-          width: "32%",
-          background: "#F6F6F3",
+          width: "40%",
           color: "rgba(45, 44, 42, 0.78)",
           padding: "clamp(3rem, 5vw, 6rem)",
         }}
@@ -54,7 +57,7 @@ export default function BookingCTA({
         <p className="body-serif">{body}</p>
         <a
           href={buttonHref}
-          className="cta-label self-start border border-brand-black text-brand-black rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
+          className="btn btn-primary-light self-start"
         >
           {buttonText}
           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
@@ -65,10 +68,10 @@ export default function BookingCTA({
 
       {/* Mobile fallback — stacked */}
       <div className="md:hidden flex flex-col">
-        <div className="aspect-square overflow-hidden">
+        <div className="aspect-square overflow-hidden" data-aos="fade" data-aos-duration="1100" data-aos-easing="ease-out-sine">
           <img src={rightImage} alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} />
         </div>
-        <div className="flex flex-col gap-4 px-8 py-14" style={{ background: "#F6F6F3", color: "rgba(45, 44, 42, 0.78)" }}>
+        <div className="flex flex-col gap-4 px-8 py-14 bg-brand-white" data-aos="fade" data-aos-delay="150" data-aos-duration="2200" data-aos-easing="ease-out-sine" style={{ color: "rgba(45, 44, 42, 0.78)" }}>
           <div className="flex flex-col gap-6">
             <p className="overline">{overline}</p>
             <h3 className="heading-lg">{heading}</h3>
@@ -76,7 +79,7 @@ export default function BookingCTA({
           <p className="body-serif">{body}</p>
           <a
             href={buttonHref}
-            className="cta-label self-start border border-brand-black text-brand-black rounded-full px-7 py-3.5 transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
+            className="btn btn-primary-light self-start"
           >
             {buttonText}
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">

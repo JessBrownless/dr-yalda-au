@@ -124,14 +124,15 @@ export default function HeroHome({
               </div>
             )}
             {tagline && (
-              <p className="body-serif opacity-0 animate-fade-in text-parchment/50 font-light mt-4" style={{ textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="heading-sm opacity-0 animate-fade-in text-parchment/50 font-light lede" style={{ textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 {tagline}
               </p>
             )}
             {cta && (
               <a
                 href={cta.href}
-                className="cta-label self-start border border-cream text-cream mt-8 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
+                className="btn btn-secondary-dark opacity-0 animate-fade-in self-start mt-8"
+                style={{ animationDelay: "1.0s", animationDuration: "1.0s" }}
               >
                 {cta.label}
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -141,7 +142,7 @@ export default function HeroHome({
               <a
                 href={bottomRight.href}
                 className="body-xs-caps opacity-0 animate-fade-in self-start hover:text-cream transition-colors duration-300 inline-flex items-center gap-3"
-                style={{ marginTop: "20px", animationDelay: "0.7s", animationDuration: "1.0s" }}
+                style={{ marginTop: "20px", animationDelay: "1.0s", animationDuration: "1.0s" }}
               >
                 {bottomRight.label}
                 <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
@@ -240,15 +241,15 @@ export default function HeroHome({
                   />
                 )}
                 {tagline && (
-                  <p className="body-serif opacity-0 animate-fade-in text-parchment/50 font-light mt-4" style={{ textAlign: isLeft ? "left" : "center", maxWidth: isLeft ? "60ch" : "42ch", textWrap: "balance", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+                  <p className="heading-sm opacity-0 animate-fade-in text-parchment/50 font-light lede" style={{ textAlign: isLeft ? "left" : "center", maxWidth: isLeft ? "60ch" : "42ch", textWrap: "balance", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                     {tagline}
                   </p>
                 )}
                 {cta && (
                   <a
                     href={cta.href}
-                    className="cta-label opacity-0 animate-fade-in self-start border border-cream text-cream mt-8 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-cream hover:text-brand-black inline-flex items-center gap-3 whitespace-nowrap"
-                    style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
+                    className="btn btn-secondary-dark opacity-0 animate-fade-in self-start mt-8"
+                    style={{ animationDelay: "1.0s", animationDuration: "1.0s" }}
                   >
                     {cta.label}
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -259,7 +260,7 @@ export default function HeroHome({
                 <a
                   href={bottomRight.href}
                   className={`body-xs-caps opacity-0 animate-fade-in hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap ${isLeft ? "self-start md:col-span-6 md:justify-self-end md:self-end" : "self-start"}`}
-                  style={{ marginTop: isLeft ? 0 : "20px", animationDelay: "0.7s", animationDuration: "1.0s" }}
+                  style={{ marginTop: isLeft ? 0 : "20px", animationDelay: "1.0s", animationDuration: "1.0s" }}
                 >
                   {bottomRight.label}
                   <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">

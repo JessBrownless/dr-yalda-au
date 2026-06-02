@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy section — parchment-backed image left, text right */}
-      <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
+      <section className="bg-parchment overflow-hidden relative py-24 md:py-40">
 
         {/* Parchment strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
@@ -54,8 +54,7 @@ export default function Home() {
 
               <h2 className="flex flex-col">
                 <span className="overline">About </span>
-                <span className="heading-lg mt-4 md:mt-5">Dr Yalda Jamali </span>
-                <span className="overline mt-2">MBChB · MSc Dermatology · FACCSM</span>
+                <span className="heading-lg mt-6">Meet the doctor</span>
               </h2>
 
               <p
@@ -64,30 +63,19 @@ export default function Home() {
                 At the heart of my practice is a commitment to ethical, evidence-based care that prioritises your wellbeing. I focus on delivering safe, considered results tailored to you, guided by current medical evidence. With honesty and transparency, I aim to improve skin health while maintaining results that feel balanced, subtle, and true to you.
               </p>
 
-              <svg
-                viewBox="0 0 220 68"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ width: "150px", height: "auto", opacity: 0.6 }}
-                aria-hidden="true"
-              >
-                {/* Y — left arm and tail */}
-                <path d="M 14,8 C 17,18 21,30 22,42 C 22,50 20,58 17,64" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
-                {/* Y — right arm */}
-                <path d="M 38,6 C 32,16 27,28 22,42" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
-                {/* alda */}
-                <path d="M 22,42 C 30,34 40,32 46,37 C 52,42 50,54 44,56 C 38,58 34,50 38,44 C 42,38 52,36 60,38 C 66,28 68,16 72,6" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
-                {/* J */}
-                <path d="M 94,6 C 96,20 96,38 92,52 C 88,62 82,66 76,66" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
-                {/* amali */}
-                <path d="M 94,40 C 102,32 114,30 120,35 C 126,40 124,52 118,54 C 112,58 106,50 110,44 C 114,38 124,36 132,38 L 134,54 C 144,42 156,38 164,42 C 170,46 168,56 162,58" stroke="#2D2C2A" strokeWidth="1.3" strokeLinecap="round"/>
-                {/* underline flourish */}
-                <path d="M 76,66 C 104,70 172,64 210,60" stroke="#2D2C2A" strokeWidth="0.9" strokeLinecap="round"/>
-              </svg>
+              {/* Signature — temporarily hidden
+              <img
+                src="/assets/signature-dr-yalda-jamali.svg"
+                alt="Dr Yalda Jamali signature"
+                className="self-start w-44 md:w-52 h-auto opacity-80"
+              />
+              */}
 
               <a
                 href="/about"
-                className="cta-label self-start border border-brand-black text-brand-black mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
+                className="link-arrow self-start mt-2"
+                data-aos="fade"
+                data-aos-delay="300"
               >
                 About Dr Yalda
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -102,7 +90,7 @@ export default function Home() {
       <LogoStripDark />
 
       {/* Reversed section — parchment-backed image right, text left */}
-      <section className="bg-parchment overflow-hidden relative pb-20 md:py-20 md:flex md:items-center" style={{ minHeight: "80vh" }}>
+      <section className="bg-parchment overflow-hidden relative py-24 md:py-40">
 
         {/* Parchment strip — right edge, behind the image */}
         <div className="absolute hidden md:block right-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
@@ -131,7 +119,9 @@ export default function Home() {
 
               <a
                 href="/services"
-                className="cta-label self-start border border-brand-black text-brand-black mt-2 rounded-full px-7 py-3.5 text-center transition-all duration-300 hover:bg-brand-black hover:text-cream inline-flex items-center gap-3 whitespace-nowrap"
+                className="link-arrow self-start mt-2"
+                data-aos="fade"
+                data-aos-delay="300"
               >
                 Services
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>

@@ -2,6 +2,9 @@
   "name": "dr-yalda-26",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "scripts": {
     "dev": "rm -rf .next && next dev",
     "build": "next build",

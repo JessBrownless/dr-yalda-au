@@ -58,7 +58,7 @@ export default function AppointmentsPage() {
             <a
               href="#intro"
               className="cta-label-sm opacity-0 animate-fade-in self-start md:col-span-6 md:justify-self-end md:self-end text-cream/70 hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
-              style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
+              style={{ animationDelay: "1.0s", animationDuration: "1.0s" }}
             >
               Book a consultation
               <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
@@ -108,7 +108,7 @@ export default function AppointmentsPage() {
                 <div key={name} className="flex items-center justify-between gap-6 py-7 first:pt-0">
 
                   {/* Left — clinic name + address */}
-                  <div className="flex flex-col gap-8">
+                  <div className="flex flex-col gap-3">
                     <h3 className="heading-md">
                       {name}
                     </h3>
@@ -124,7 +124,9 @@ export default function AppointmentsPage() {
                   {/* Right — book button */}
                   <a
                     href={href}
-                    className="cta-label-sm flex-shrink-0 px-7 py-2.5 bg-brand-black text-cream hover:bg-brand-charcoal transition-colors duration-300"
+                    className="btn btn-sm btn-primary-light flex-shrink-0"
+                    data-aos="fade"
+                    data-aos-delay="150"
                   >
                     Book
                   </a>
@@ -226,7 +228,9 @@ export default function AppointmentsPage() {
                 href="https://calendly.com/dryalda-epioscosmeticclinic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-label-sm self-start rounded-full px-10 py-3 bg-cream text-brand-black hover:bg-parchment transition-colors duration-300"
+                className="btn btn-sm btn-primary-dark self-start"
+                data-aos="fade"
+                data-aos-delay="150"
               >
                 Book
               </a>

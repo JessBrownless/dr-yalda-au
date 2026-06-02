@@ -42,7 +42,7 @@ export default function MediaPage() {
             <a
               href="#intro"
               className="body-xs-caps opacity-0 animate-fade-in self-start md:col-span-6 md:justify-self-end md:self-end hover:text-cream transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
-              style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}
+              style={{ animationDelay: "1.0s", animationDuration: "1.0s" }}
             >
               See media features
               <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="md:w-3.5 md:h-4">
@@ -60,8 +60,33 @@ export default function MediaPage() {
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
-            {/* Left — heading + body */}
-            <div className="col-span-12 md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
+            {/* Left — Media contact */}
+            <div className="col-span-12 md:col-span-3 flex flex-col gap-6 md:pt-1" data-aos="fade" data-aos-duration="1000">
+              <h2 className="overline">
+                Media enquiries
+              </h2>
+              <p className="body-serif">
+                For interviews, features, and brand collaborations, please reach out to Dr. Yalda&apos;s PR manager.
+              </p>
+              <div className="flex flex-col gap-1.5">
+                <h3 className="heading-md">
+                  [PR Manager Name]
+                </h3>
+                <h2 className="overline">
+                  Public Relations
+                </h2>
+                <a
+                  href="mailto:press@dryalda.com.au"
+                  className="text-brand-black font-light underline-offset-4 hover:underline mt-2"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "0.95rem" }}
+                >
+                  press@dryalda.com.au
+                </a>
+              </div>
+            </div>
+
+            {/* Right — heading + body */}
+            <div className="col-span-12 md:col-span-8 md:col-start-5 flex flex-col gap-8" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
 
               <div className="flex flex-col gap-6">
                 <p className="overline">
@@ -86,31 +111,6 @@ export default function MediaPage() {
                 </div>
               </div>
 
-            </div>
-
-            {/* Right — Media contact */}
-            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-6 md:pt-1" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
-              <h2 className="overline">
-                Media enquiries
-              </h2>
-              <p className="body-serif">
-                For interviews, features, and brand collaborations, please reach out to Dr. Yalda&apos;s PR manager.
-              </p>
-              <div className="flex flex-col gap-1.5">
-                <h3 className="heading-md">
-                  [PR Manager Name]
-                </h3>
-                <h2 className="overline">
-                  Public Relations
-                </h2>
-                <a
-                  href="mailto:press@dryalda.com.au"
-                  className="text-brand-black font-light underline-offset-4 hover:underline mt-2"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "0.95rem" }}
-                >
-                  press@dryalda.com.au
-                </a>
-              </div>
             </div>
 
           </div>
@@ -158,7 +158,7 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image */}
-            <div className="col-span-12 md:col-span-5" data-aos="fade" data-aos-duration="1000">
+            <div className="col-span-12 md:col-span-6" data-aos="fade" data-aos-duration="1000">
               <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img src="/assets/IMG_0040.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </div>

@@ -79,7 +79,7 @@ export default function FeaturesList() {
       <div className="mt-10">
         <button
           onClick={() => setExpanded(!expanded)}
-          className="cta-label-sm rounded-full px-10 py-3 border border-brand-black/20 text-brand-black/60 hover:border-brand-black hover:text-brand-black transition-colors duration-300"
+          className="btn btn-sm btn-secondary-light"
         >
           {expanded ? "See Less" : "See All"}
         </button>

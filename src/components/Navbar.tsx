@@ -192,10 +192,10 @@ export default function Navbar() {
               ))}
               <Link
                 href="/appointments"
-                className={`nav-link font-medium rounded-full px-5 py-2 border transition-all duration-300 ${
+                className={`btn btn-sm ${
                   pathname === "/appointments"
-                    ? dark ? "bg-brand-black text-cream border-brand-black" : "bg-cream text-brand-black border-cream"
-                    : dark ? "border-brand-black text-brand-black hover:border-brand-black hover:bg-brand-black hover:text-cream" : "border-cream/50 text-cream/50 hover:border-cream hover:bg-cream hover:text-brand-black"
+                    ? dark ? "btn-primary-light" : "btn-primary-dark"
+                    : dark ? "btn-tertiary-light" : "btn-tertiary-dark"
                 }`}
               >
                 Book Now
