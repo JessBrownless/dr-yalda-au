@@ -96,31 +96,6 @@ export default function MediaPage() {
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
-            {/* Right — Media contact */}
-            <div className="md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
-              <h2 className="overline">
-                Media enquiries
-              </h2>
-              <p className="body-serif">
-                For interviews, features, and brand collaborations, please reach out to Dr. Yalda&apos;s PR manager.
-              </p>
-              <div className="flex flex-col gap-1.5">
-                <h3 className="heading-md">
-                  [PR Manager Name]
-                </h3>
-                <h2 className="overline">
-                  Public Relations
-                </h2>
-                <a
-                  href="mailto:press@dryalda.com.au"
-                  className="text-brand-black font-light underline-offset-4 hover:underline mt-2"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "0.95rem" }}
-                >
-                  press@dryalda.com.au
-                </a>
-              </div>
-            </div>
-
             {/* Left — heading + body */}
             <div className="md:col-span-8 md:col-start-1 md:row-start-1 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
 
@@ -147,6 +122,31 @@ export default function MediaPage() {
                 </div>
               </div>
 
+            </div>
+
+            {/* Right — Media contact */}
+            <div className="md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+              <h2 className="overline">
+                Media enquiries
+              </h2>
+              <p className="body-serif">
+                For interviews, features, and brand collaborations, please reach out to Dr. Yalda&apos;s PR manager.
+              </p>
+              <div className="flex flex-col gap-1.5">
+                <h3 className="heading-md">
+                  [PR Manager Name]
+                </h3>
+                <h2 className="overline">
+                  Public Relations
+                </h2>
+                <a
+                  href="mailto:press@dryalda.com.au"
+                  className="text-brand-black font-light underline-offset-4 hover:underline mt-2"
+                  style={{ fontFamily: "'Heading', serif", fontSize: "0.95rem" }}
+                >
+                  press@dryalda.com.au
+                </a>
+              </div>
             </div>
 
           </div>
