@@ -27,49 +27,36 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#2D2C2A" }}>
-
-      {/* Social strip */}
-      <div className="border-b border-brand-white/10">
-        <div className="pg-container">
-          {/* Mobile — icons only */}
-          <div className="flex md:hidden divide-x divide-brand-white/10">
-            {socials.map(({ icon: Icon, platform, href }) => (
-              <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
-                className="flex-1 flex items-center justify-center py-6 group transition-colors duration-300">
-                <Icon size={14} className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" />
-              </a>
-            ))}
-          </div>
-          {/* Desktop — text + icon (icon pushed to right edge of each cell to balance the grid) */}
-          <div className="hidden md:grid grid-cols-4 divide-x divide-brand-white/10">
-            {socials.map(({ icon: Icon, platform, handle, href }, i) => (
-              <a key={platform} href={href} target="_blank" rel="noopener noreferrer" className={`group flex flex-row items-center justify-between gap-4 py-8 pr-6 transition-colors duration-300 ${i === 0 ? "pl-0" : "pl-6"}`}>
-                <div className="flex flex-col gap-1">
-                  <p className="cta-label-sm text-brand-white/60 group-hover:text-cream transition-colors duration-300">{platform}</p>
-                  <p className="text-brand-white/40 text-[9px] font-light tracking-[0.15em] group-hover:text-brand-white/60 transition-colors duration-300">{handle}</p>
-                </div>
-                <div className="w-9 h-9 flex-shrink-0 border border-brand-white/20 flex items-center justify-center group-hover:border-brand-white/40 transition-colors duration-300">
-                  <Icon size={13} className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+    <footer className="bg-brand-charcoal">
 
       {/* Main footer body */}
       <div>
         {/* Logo — full bleed, mobile only */}
-        <div className="md:hidden pt-8 pb-2 pg-container">
+        <div className="md:hidden pt-8 pb-2 pg-container flex flex-col gap-7">
           <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "220px", opacity: 0.9, marginLeft: "-14px" }} />
+          <div className="flex items-center gap-3">
+            {socials.map(({ icon: Icon, platform, href }) => (
+              <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
+                className="group w-9 h-9 border border-brand-white/20 flex items-center justify-center hover:border-brand-white/40 transition-colors duration-300">
+                <Icon size={13} className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" />
+              </a>
+            ))}
+          </div>
         </div>
         <div className="pg-container pt-20 pb-20 md:pt-40 md:pb-32">
           <div className="grid grid-cols-12 gap-8 md:gap-12">
 
             {/* Logo — desktop first column */}
-            <div className="hidden md:flex col-span-4 flex-col justify-start items-start" style={{ marginLeft: "-16px" }}>
+            <div className="hidden md:flex col-span-4 flex-col justify-start items-start gap-10" style={{ marginLeft: "-16px" }}>
               <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={72} className="w-auto" style={{ height: "72px", opacity: 0.9 }} />
+              <div className="flex items-center gap-3" style={{ marginLeft: "16px" }}>
+                {socials.map(({ icon: Icon, platform, href }) => (
+                  <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
+                    className="group w-9 h-9 border border-brand-white/20 flex items-center justify-center hover:border-brand-white/40 transition-colors duration-300">
+                    <Icon size={13} className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" />
+                  </a>
+                ))}
+              </div>
             </div>
 
             {/* Nav links */}

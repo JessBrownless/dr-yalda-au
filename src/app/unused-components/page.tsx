@@ -6,10 +6,18 @@ import SplitSection from "@/components/SplitSection";
 import StickyScrollSection from "@/components/StickyScrollSection";
 import ParallaxHero from "@/components/ParallaxHero";
 import TwoPanelHero from "@/components/TwoPanelHero";
+import LogoStripMarquee from "@/components/LogoStripMarquee";
+import LogoStripMarqueeMedia from "@/components/LogoStripMarqueeMedia";
 
 export default function UnusedComponentsPage() {
   return (
     <main>
+
+      {/* Rotating marquee logo strip — preserved experiment; homepage uses the static LogoStripDark */}
+      <LogoStripMarquee />
+
+      {/* Media-page partner marquee — preserved experiment; media page uses the static strip */}
+      <LogoStripMarqueeMedia />
 
       {/* ─── ABOUT HERO + OVERLAY (duplicate for layout experiments) ─────── */}
       <div className="relative overflow-hidden" style={{ height: "30vh", marginTop: "-72px" }}>

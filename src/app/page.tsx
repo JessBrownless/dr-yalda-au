@@ -19,14 +19,14 @@ export default function Home() {
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <p
             data-aos="fade"
-            className="overline mb-6"
+            className="overline"
           >
             Sydney based cosmetic doctor
           </p>
           <h2
             data-aos="fade"
             data-aos-delay="120"
-            className="heading-lg"
+            className="heading-lg from-overline"
           >
             A doctor who listens first, treats with precision, and focuses on achieving natural, balanced, and long-term results.
           </h2>
@@ -54,7 +54,7 @@ export default function Home() {
 
               <h2 className="flex flex-col">
                 <span className="overline">About </span>
-                <span className="heading-lg mt-6">Meet the doctor</span>
+                <span className="heading-lg from-overline">Meet the doctor</span>
               </h2>
 
               <p
@@ -101,12 +101,12 @@ export default function Home() {
             {/* Left — text */}
             <div className="col-span-12 md:col-span-5 flex flex-col gap-8 order-2 md:order-1" data-aos="fade" data-aos-duration="1000">
 
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col">
                 <h2 className="overline">
                   Cosmetic Services
                 </h2>
 
-                <h3 className="heading-lg">
+                <h3 className="heading-lg from-overline">
                   Consultation-led care across Sydney
                 </h3>
               </div>
@@ -151,10 +151,10 @@ export default function Home() {
         <div className="pg-container">
 
           {/* Section header */}
-          <div className="flex items-end justify-between mb-12 md:mb-16" data-aos="fade" data-aos-duration="1000">
-            <div className="flex flex-col gap-4">
+          <div className="flex items-end justify-between mb-16 md:mb-20" data-aos="fade" data-aos-duration="1000">
+            <div className="flex flex-col">
               <p className="overline">Journal</p>
-              <h2 className="heading-lg">Notes from the practice</h2>
+              <h2 className="heading-lg from-overline">Notes from the practice</h2>
             </div>
             <a
               href="/journal"

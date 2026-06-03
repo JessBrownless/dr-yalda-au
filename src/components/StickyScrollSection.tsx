@@ -85,11 +85,11 @@ export default function StickyScrollSection() {
             <div className="absolute inset-0 flex items-center z-10">
               <div className="pg-container w-full">
               <div className="flex flex-col gap-8">
-                <div className="flex flex-col gap-4 md:gap-5">
+                <div className="flex flex-col">
                   <p className="overline">
                     0{i + 1}
                   </p>
-                  <h3 className="heading-2xl tracking-normal md:whitespace-nowrap">
+                  <h3 className="heading-hero from-overline md:whitespace-nowrap">
                     {item.title}
                   </h3>
                 </div>

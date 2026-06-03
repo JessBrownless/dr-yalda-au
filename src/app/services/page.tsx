@@ -72,10 +72,10 @@ export default function ServicesPage() {
 
               {/* Eyebrow + heading */}
               <div>
-                <h2 className="overline mb-6">
+                <h2 className="overline">
                   Specialism
                 </h2>
-                <h3 className="heading-lg">
+                <h3 className="heading-lg from-overline">
                   Clinical focus
                 </h3>
               </div>
@@ -174,12 +174,14 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 md:items-start">
 
             <div className="col-span-12 md:col-span-4 flex flex-col gap-6">
-              <p className="overline">
-                Common questions
-              </p>
-              <h2 className="heading-lg">
-                FAQs
-              </h2>
+              <div className="flex flex-col">
+                <p className="overline">
+                  Common questions
+                </p>
+                <h2 className="heading-lg from-overline">
+                  FAQs
+                </h2>
+              </div>
               <p className="body-serif text-on-dark-low max-w-sm">
                 A few things patients often ask before booking. If your question isn&apos;t answered here, I&apos;m happy to talk it through in a consultation.
               </p>

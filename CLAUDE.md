@@ -78,6 +78,17 @@ Headings use a fluid √2 modular scale (`heading-mega` through `heading-sm`), i
 
 H1–H6 automatically get the "Heading" serif font, normal weight, 0.04em letter-spacing — **don't override these defaults without reason.**
 
+#### Heading-group spacing (overline → heading → lede)
+
+The vertical gaps around a heading are utilities — **never set them ad-hoc with `mb-*`/`mt-*`/`gap-*`**, or they drift (this is exactly what went wrong before they were standardised).
+
+| Relationship | Class | Applied to | Value |
+| --- | --- | --- | --- |
+| overline/kicker **→ heading** | `.from-overline` | the heading | `margin-top: 0.7em` — **scales with the heading** (0.7× its font-size), so a billboard heading gets proportionally more air above it than a small section heading, and it shrinks fluidly on mobile |
+| heading **→ lede/subtitle** | `.lede` | the subtitle | `margin-top: clamp(28→40px)` — fluid |
+
+Canonical structure: put the overline and heading as **direct siblings** (no `gap-*` between them) and add `.from-overline` to the heading. If they sit in a multi-child flex column, wrap just the overline+heading in a gap-less `<div className="flex flex-col">` so the parent's `gap-*` doesn't double up.
+
 ### Stylesheet canon
 
 `src/app/stylesheet/page.tsx` renders every typography utility with a label, specs, and live sample at `/stylesheet`. **Treat it as the visual source of truth** — if you add a utility to `globals.css`, add a row to the `typeStyles` array in the same commit. Live page makes it impossible for documented specs and rendered reality to drift apart.

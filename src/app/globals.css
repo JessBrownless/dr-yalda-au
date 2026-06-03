@@ -604,9 +604,20 @@ body {
 /* Lede spacing — the gap from a display/hero/statement heading down to its
    supporting subtitle. Fluid (28→40px) so it stays proportional from section
    headings up to the hero lockup. Pair with the lede's own type class.
-   (A heading's overline/kicker sits TIGHTER above it — ~24px — by contrast.) */
+   (For the gap on the OTHER side of the heading — kicker → heading — use
+   .from-overline below.) */
 .lede {
   margin-top: clamp(1.75rem, 2.5vw, 2.5rem);
+}
+
+/* Kicker spacing — the gap from an overline/kicker DOWN to the heading directly
+   beneath it. Apply to the heading. Uses em so the gap scales with the heading's
+   own size: a billboard heading gets proportionally more air above it than a
+   small section heading, and it shrinks fluidly on mobile as the heading does.
+   This is the single source of truth for overline→heading spacing — do NOT add
+   ad-hoc margin or gap utilities between an overline and its heading; use this. */
+.from-overline {
+  margin-top: 0.7em;
 }
 
 /* Body copy helper (serif) — uniform across the site. 16px fixed. */

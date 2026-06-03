@@ -39,6 +39,7 @@ const typeStyles: { className: string; label: string; specs: string; breakpoints
   { className: "cta-label-sm",     label: ".cta-label-sm — smaller button microtype",   specs: "9px · +0.4em · uppercase · Lato light",             breakpoints: "Fixed 9px (all breakpoints)",      sample: "Book now" },
   { className: "link-arrow",       label: ".link-arrow — editorial inline link (underline + arrow)", specs: "10px · +0.4em · uppercase · Lato · hairline underline", breakpoints: "Fixed 10px (all breakpoints)",     sample: "About Dr Yalda →" },
   { className: "lede",             label: ".lede — heading→subtitle spacing (margin-top)", specs: "margin-top clamp 28→40px · fluid",                 breakpoints: "Fluid · 28–40px (2.5vw)",          sample: "Supporting subtitle beneath a heading" },
+  { className: "from-overline",    label: ".from-overline — overline→heading spacing (on heading)", specs: "margin-top 0.7em · scales with heading size",   breakpoints: "Proportional · 0.7× heading font-size", sample: "Heading spaced below its kicker" },
   { className: "nav-link",         label: ".nav-link — desktop navbar links",           specs: "11px · +0.25em · uppercase · Hanken extralight",    breakpoints: "Fixed 11px (all breakpoints)",     sample: "About" },
   { className: "nav-link-drawer",  label: ".nav-link-drawer — mobile drawer links",     specs: "14px · +0.15em · uppercase · Heading serif",        breakpoints: "Fixed 14px (all breakpoints)",     sample: "Services" },
 ];

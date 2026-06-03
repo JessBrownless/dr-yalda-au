@@ -146,9 +146,9 @@ export default function AboutPage() {
             {/* Left — heading + body */}
             <div className="col-span-12 md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
 
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col">
                 <p className="overline">Credentials</p>
-                <h2 className="heading-lg">A foundation in medical dermatology.</h2>
+                <h2 className="heading-lg from-overline">A foundation in medical dermatology.</h2>
               </div>
 
               <div className="flex gap-6 md:gap-10">

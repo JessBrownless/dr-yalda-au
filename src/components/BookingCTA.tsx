@@ -36,7 +36,7 @@ export default function BookingCTA({
 
       {/* Centre card — overlaps both images */}
       <div
-        className="absolute z-10 hidden md:flex flex-col gap-4 justify-center items-start text-left bg-brand-white"
+        className="absolute z-10 hidden md:flex flex-col gap-4 justify-center items-center text-center bg-brand-white"
         data-aos="fade"
         data-aos-delay="200"
         data-aos-duration="2200"
@@ -50,14 +50,14 @@ export default function BookingCTA({
           padding: "clamp(3rem, 5vw, 6rem)",
         }}
       >
-        <div className="flex flex-col gap-6 items-start">
+        <div className="flex flex-col items-center">
           <p className="overline">{overline}</p>
-          <h3 className="heading-lg">{heading}</h3>
+          <h3 className="heading-lg from-overline">{heading}</h3>
         </div>
         <p className="body-serif">{body}</p>
         <a
           href={buttonHref}
-          className="btn btn-primary-light self-start"
+          className="btn btn-primary-light self-center"
         >
           {buttonText}
           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
@@ -71,15 +71,15 @@ export default function BookingCTA({
         <div className="aspect-square overflow-hidden" data-aos="fade" data-aos-duration="1100" data-aos-easing="ease-out-sine">
           <img src={rightImage} alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} />
         </div>
-        <div className="flex flex-col gap-4 px-8 py-14 bg-brand-white" data-aos="fade" data-aos-delay="150" data-aos-duration="2200" data-aos-easing="ease-out-sine" style={{ color: "rgba(45, 44, 42, 0.78)" }}>
-          <div className="flex flex-col gap-6">
+        <div className="flex flex-col items-center text-center gap-4 px-8 py-14 bg-brand-white" data-aos="fade" data-aos-delay="150" data-aos-duration="2200" data-aos-easing="ease-out-sine" style={{ color: "rgba(45, 44, 42, 0.78)" }}>
+          <div className="flex flex-col items-center">
             <p className="overline">{overline}</p>
-            <h3 className="heading-lg">{heading}</h3>
+            <h3 className="heading-lg from-overline">{heading}</h3>
           </div>
           <p className="body-serif">{body}</p>
           <a
             href={buttonHref}
-            className="btn btn-primary-light self-start"
+            className="btn btn-primary-light self-center"
           >
             {buttonText}
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">

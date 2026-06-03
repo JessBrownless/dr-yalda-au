@@ -9,6 +9,15 @@ const socials = [
   { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
 ];
 
+// Partner/press logos for the static strip. `text` items render as a wordmark.
+const partnerLogos = [
+  { src: "/assets/logo-caudalie.svg", alt: "Caudalie", text: "" },
+  { src: "/assets/logo-no7.svg", alt: "No7", text: "" },
+  { src: "", alt: "", text: "MEDIK8" },
+  { src: "/assets/logo-clinique.svg", alt: "Clinique", text: "" },
+  { src: "/assets/logo-mamamia.svg", alt: "Mamamia", text: "" },
+];
+
 export default function MediaPage() {
   return (
     <main className="text-brand-black">
@@ -55,13 +64,40 @@ export default function MediaPage() {
         <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />
       </section>
 
-      {/* Beyond the clinic — bottom padding removed on desktop so it flows into the logo strip */}
-      <section id="intro" className="bg-parchment py-32 md:pt-52 md:pb-0 relative scroll-mt-20">
+      {/* Proudly partnering — static logo strip, right under the hero */}
+      <section className="bg-parchment pt-32 md:pt-48 pb-24 md:pb-32">
+        <div className="pg-container">
+          <div className="flex flex-col items-center gap-10">
+            <h2 className="overline">
+              Proudly partnering and featured in
+            </h2>
+            {/* Mobile — wrapped, centered */}
+            <div className="md:hidden flex items-center justify-center flex-wrap gap-x-10 gap-y-6">
+              {partnerLogos.map((item, i) => item.text ? (
+                <span key={i} className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "1.05rem", letterSpacing: "0.2em" }}>{item.text}</span>
+              ) : (
+                <img key={i} src={item.src} alt={item.alt} className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+              ))}
+            </div>
+            {/* Desktop — justified across grid width */}
+            <div className="hidden md:flex items-center justify-between w-full">
+              {partnerLogos.map((item, i) => item.text ? (
+                <span key={i} className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "1.05rem", letterSpacing: "0.2em" }}>{item.text}</span>
+              ) : (
+                <img key={i} src={item.src} alt={item.alt} className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Beyond the clinic */}
+      <section id="intro" className="bg-parchment py-24 md:py-32 relative scroll-mt-20">
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
-            {/* Left — Media contact */}
-            <div className="col-span-12 md:col-span-3 flex flex-col gap-6 md:pt-1" data-aos="fade" data-aos-duration="1000">
+            {/* Right — Media contact */}
+            <div className="col-span-12 md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               <h2 className="overline">
                 Media enquiries
               </h2>
@@ -85,14 +121,14 @@ export default function MediaPage() {
               </div>
             </div>
 
-            {/* Right — heading + body */}
-            <div className="col-span-12 md:col-span-8 md:col-start-5 flex flex-col gap-8" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            {/* Left — heading + body */}
+            <div className="col-span-12 md:col-span-8 md:col-start-1 md:row-start-1 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
 
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col">
                 <p className="overline">
                   Beyond the clinic
                 </p>
-                <h2 className="heading-lg">
+                <h2 className="heading-lg from-overline">
                   A trusted voice in cosmetic medicine.
                 </h2>
               </div>
@@ -113,37 +149,6 @@ export default function MediaPage() {
 
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Brand logo strip — sits below "Beyond the clinic" */}
-      <section className="bg-parchment py-32 md:py-48">
-        <div className="pg-container">
-          <div className="flex flex-col items-center gap-10">
-            <h2 className="overline">
-              Proudly partnering and featured in
-            </h2>
-            {/* Mobile — wrapped, centered */}
-            <div className="md:hidden flex items-center justify-center flex-wrap gap-x-10 gap-y-6">
-              <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-              <img src="/assets/logo-no7.svg" alt="No7" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-              <span className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.85rem, 1.3vw, 1.05rem)", letterSpacing: "0.2em" }}>
-                MEDIK8
-              </span>
-              <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-              <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-            </div>
-            {/* Desktop — justified across grid width */}
-            <div className="hidden md:flex items-center justify-between w-full">
-              <img src="/assets/logo-caudalie.svg" alt="Caudalie" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-              <img src="/assets/logo-no7.svg" alt="No7" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-              <span className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "clamp(0.85rem, 1.3vw, 1.05rem)", letterSpacing: "0.2em" }}>
-                MEDIK8
-              </span>
-              <img src="/assets/logo-clinique.svg" alt="Clinique" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-              <img src="/assets/logo-mamamia.svg" alt="Mamamia" className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-            </div>
           </div>
         </div>
       </section>
@@ -227,7 +232,7 @@ export default function MediaPage() {
             ].map(({ src, caption, year, aspect, colSpan }, i) => (
               <div
                 key={i}
-                className={`col-span-12 ${colSpan} flex flex-col gap-10 md:gap-12`}
+                className={`col-span-12 ${colSpan} flex flex-col gap-4 md:gap-5`}
                 data-aos="fade"
                 data-aos-delay={i * 100}
                 data-aos-duration="1000"
@@ -236,7 +241,7 @@ export default function MediaPage() {
                   <img src={src} alt={caption} className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]" />
                 </div>
                 <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="heading-sm">
+                  <h3 className="heading-md">
                     {caption}
                   </h3>
                   <p className="overline">
@@ -273,11 +278,11 @@ export default function MediaPage() {
 
             {/* Left — text */}
             <div className="col-span-12 md:col-span-6 flex flex-col gap-8 pt-4">
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col">
                 <h2 className="overline">
                   Podcast appearances
                 </h2>
-                <h3 className="heading-lg">
+                <h3 className="heading-lg from-overline">
                   Listen to Dr Yalda
                 </h3>
               </div>
