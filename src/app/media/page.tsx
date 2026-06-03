@@ -134,17 +134,17 @@ export default function MediaPage() {
               </p>
               <div className="flex flex-col gap-1.5">
                 <h3 className="heading-md">
-                  [PR Manager Name]
+                  Hollie Smith
                 </h3>
                 <h2 className="overline">
-                  Public Relations
+                  Sarah Humphries PR Agency
                 </h2>
                 <a
-                  href="mailto:press@dryalda.com.au"
+                  href="mailto:hollie@shapr.com.au"
                   className="text-brand-black font-light underline-offset-4 hover:underline mt-2"
                   style={{ fontFamily: "'Heading', serif", fontSize: "0.95rem" }}
                 >
-                  press@dryalda.com.au
+                  hollie@shapr.com.au
                 </a>
               </div>
             </div>
