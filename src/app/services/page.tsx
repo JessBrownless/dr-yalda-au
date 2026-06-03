@@ -54,7 +54,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image */}
-            <div className="col-span-12 md:col-span-6 relative">
+            <div className="md:col-span-6 relative">
               <div>
                 <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                   <img
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Right — text */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col gap-8">
+            <div className="md:col-span-5 md:col-start-8 flex flex-col gap-8">
 
               {/* Eyebrow + heading */}
               <div>
@@ -128,7 +128,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
             {/* Left — numbered list */}
-            <div className="col-span-12 md:col-span-5 flex flex-col order-2 md:order-1">
+            <div className="md:col-span-5 flex flex-col order-2 md:order-1">
               <h2 className="overline mb-6">
                 The Dr Yalda approach
               </h2>
@@ -152,7 +152,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Right — portrait */}
-            <div className="col-span-12 md:col-span-6 md:col-start-7 order-1 md:order-2">
+            <div className="md:col-span-6 md:col-start-7 order-1 md:order-2">
               <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img
                   src="/assets/Yalda-1.avif"
