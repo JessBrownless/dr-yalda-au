@@ -12,15 +12,9 @@ const testimonials = [
   },
   {
     quote:
-      "Dr. Yalda brings a rare combination of medical credibility and genuine warmth to every collaboration. Her audience trusts her implicitly, and that trust translates directly into meaningful engagement with our brand. She has a unique ability to communicate complex skincare science in a way that feels accessible and inspiring.",
-    logo: "/assets/logo-caudalie.svg",
-    brand: "Caudalie",
-  },
-  {
-    quote:
-      "Partnering with Dr. Yalda has elevated the way we speak to our customers about ingredients and efficacy. Her integrity as a clinician shines through in everything she creates, and her thoughtful approach to content has been invaluable in building trust with a discerning audience.",
-    logo: "/assets/logo-no7.svg",
-    brand: "No.7",
+      "Dr Jamali is one of Mamamia's most trusted expert voices in cosmetic medicine. Her ability to break down complex topics into accessible, practical information has made her an invaluable resource for our audience. Whether discussing emerging aesthetic trends or sharing her professional insights on skincare and treatments, Dr Jamali consistently delivers evidence-based expertise with clarity and authenticity. Her knowledge and transparent approach perfectly aligns with our commitment to providing women with reliable, trustworthy information.",
+    logo: "/assets/logo-mamamia.svg",
+    brand: "Mamamia",
   },
 ];
 
