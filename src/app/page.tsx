@@ -165,8 +165,8 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Card grid — aligned to the 12-col content grid (each card col-span-4) */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+          {/* Cards — swipeable scroll-snap carousel on mobile; aligned to the 12-col content grid (each card col-span-4) on desktop */}
+          <div className="no-scrollbar flex snap-x snap-mandatory overflow-x-auto gap-6 md:grid md:grid-cols-12 md:gap-8 md:overflow-visible md:snap-none">
             {[
               {
                 image: "/assets/IMG_0036.avif",
@@ -196,7 +196,7 @@ export default function Home() {
               <a
                 key={title}
                 href={href}
-                className="group flex flex-col gap-5 md:col-span-4"
+                className="group flex flex-col gap-5 shrink-0 w-[80%] snap-start md:w-auto md:shrink md:col-span-4"
                 data-aos="fade"
                 data-aos-delay={i * 120}
                 data-aos-duration="1000"

@@ -417,6 +417,10 @@ body {
 /* ─── Logo strip — hide scrollbar ───────────────────────────────────────── */
 .logo-strip::-webkit-scrollbar { display: none; }
 
+/* ─── Hide scrollbar — horizontal scrollers / swipe carousels ───────────── */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 /* ─── FAQ accordion (native details/summary) ──────────────────────────── */
 .faq-item > summary::-webkit-details-marker { display: none; }
 .faq-item > summary::marker { content: ""; }
