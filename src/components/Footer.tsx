@@ -44,10 +44,10 @@ export default function Footer() {
           </div>
         </div>
         <div className="pg-container pt-20 pb-20 md:pt-40 md:pb-32">
-          <div className="grid grid-cols-12 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-12">
 
             {/* Logo — desktop first column */}
-            <div className="hidden md:flex col-span-4 flex-col justify-start items-start gap-10" style={{ marginLeft: "-16px" }}>
+            <div className="hidden md:flex md:col-span-4 flex-col justify-start items-start gap-10" style={{ marginLeft: "-16px" }}>
               <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={72} className="w-auto" style={{ height: "72px", opacity: 0.9 }} />
               <div className="flex items-center gap-3" style={{ marginLeft: "16px" }}>
                 {socials.map(({ icon: Icon, platform, href }) => (
@@ -60,7 +60,7 @@ export default function Footer() {
             </div>
 
             {/* Nav links */}
-            <div className="col-span-6 md:col-span-2 md:col-start-6 flex flex-col gap-4">
+            <div className="col-span-1 md:col-span-2 md:col-start-6 flex flex-col gap-4">
               <p className="overline mb-1">Navigate</p>
               {links.map(({ label, href }) => (
                 <Link key={href} href={href} className="text-brand-white/60 text-sm font-light hover:text-cream transition-colors duration-300">{label}</Link>
@@ -68,7 +68,7 @@ export default function Footer() {
             </div>
 
             {/* Clinics */}
-            <div className="col-span-6 md:col-span-4 md:col-start-9 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
+            <div className="col-span-1 md:col-span-4 md:col-start-9 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
               <p className="overline mb-1">Clinic Locations</p>
               {clinics.map(({ name, address }) => (
                 <div key={name} className="flex flex-col gap-1">

@@ -196,7 +196,7 @@ export default function Home() {
               <a
                 key={title}
                 href={href}
-                className="group flex flex-col gap-5 col-span-12 md:col-span-4"
+                className="group flex flex-col gap-5 md:col-span-4"
                 data-aos="fade"
                 data-aos-delay={i * 120}
                 data-aos-duration="1000"

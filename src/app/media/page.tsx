@@ -97,7 +97,7 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
             {/* Right — Media contact */}
-            <div className="col-span-12 md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               <h2 className="overline">
                 Media enquiries
               </h2>
@@ -122,7 +122,7 @@ export default function MediaPage() {
             </div>
 
             {/* Left — heading + body */}
-            <div className="col-span-12 md:col-span-8 md:col-start-1 md:row-start-1 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
+            <div className="md:col-span-8 md:col-start-1 md:row-start-1 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
 
               <div className="flex flex-col">
                 <p className="overline">
@@ -163,14 +163,14 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image */}
-            <div className="col-span-12 md:col-span-6" data-aos="fade" data-aos-duration="1000">
+            <div className="md:col-span-6" data-aos="fade" data-aos-duration="1000">
               <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img src="/assets/IMG_0040.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </div>
             </div>
 
             {/* Right — numbered list */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="md:col-span-5 md:col-start-8 flex flex-col" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
 
               <h2 className="overline mb-6">
                 How we can work together
@@ -232,7 +232,7 @@ export default function MediaPage() {
             ].map(({ src, caption, year, aspect, colSpan }, i) => (
               <div
                 key={i}
-                className={`col-span-12 ${colSpan} flex flex-col gap-4 md:gap-5`}
+                className={`${colSpan} flex flex-col gap-4 md:gap-5`}
                 data-aos="fade"
                 data-aos-delay={i * 100}
                 data-aos-duration="1000"
@@ -277,7 +277,7 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
             {/* Left — text */}
-            <div className="col-span-12 md:col-span-6 flex flex-col gap-8 pt-4">
+            <div className="md:col-span-6 flex flex-col gap-8 pt-4">
               <div className="flex flex-col">
                 <h2 className="overline">
                   Podcast appearances
@@ -334,7 +334,7 @@ export default function MediaPage() {
             </div>
 
             {/* Right — phone mockup, crops at bottom */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8 flex justify-center">
+            <div className="md:col-span-5 md:col-start-8 flex justify-center">
               <div
                 className="phone-mockup-height mt-4 md:mt-[-40px] mb-[-80px] md:mb-[-280px]"
                 style={{

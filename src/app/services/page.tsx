@@ -30,14 +30,14 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-baseline">
 
             {/* Left — heading */}
-            <div className="col-span-12 md:col-span-6">
+            <div className="md:col-span-6">
               <h2 className="heading-lg">
                 Natural-looking results, built on a decade of clinical practice.
               </h2>
             </div>
 
             {/* Right — body */}
-            <div className="col-span-12 md:col-span-5 md:col-start-8">
+            <div className="md:col-span-5 md:col-start-8">
               <p className="body-serif">
                 Dr. Yalda's practice centres on skin quality, facial harmony, and long-term skin health — but in accordance with Australian guidelines, specific cosmetic treatments are only discussed during a private clinical consultation.
               </p>
@@ -173,7 +173,7 @@ export default function ServicesPage() {
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 md:items-start">
 
-            <div className="col-span-12 md:col-span-4 flex flex-col gap-6">
+            <div className="md:col-span-4 flex flex-col gap-6">
               <div className="flex flex-col">
                 <p className="overline">
                   Common questions
@@ -196,7 +196,7 @@ export default function ServicesPage() {
               </a>
             </div>
 
-            <div className="col-span-12 md:col-span-7 md:col-start-6">
+            <div className="md:col-span-7 md:col-start-6">
               <FaqAccordion />
             </div>
 

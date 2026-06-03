@@ -79,14 +79,14 @@ export default function AppointmentsPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-16 items-center">
 
             {/* Left — image */}
-            <div className="hidden md:block col-span-12 md:col-span-5 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <div className="hidden md:block md:col-span-5 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                 <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </div>
             </div>
 
             {/* Right — heading + clinic list */}
-            <div className="col-span-12 md:col-span-6 md:col-start-7 flex flex-col opacity-0 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <div className="md:col-span-6 md:col-start-7 flex flex-col opacity-0 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
 
               {/* Heading */}
               <div className="mb-4">
@@ -187,7 +187,7 @@ export default function AppointmentsPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
 
             {/* Left — text */}
-            <div className="col-span-12 md:col-span-7 flex flex-col gap-8 order-2 md:order-1">
+            <div className="md:col-span-7 flex flex-col gap-8 order-2 md:order-1">
 
               <div>
                 <h2 className="overline mb-6">
@@ -238,7 +238,7 @@ export default function AppointmentsPage() {
             </div>
 
             {/* Right — phone mockup (desktop only) */}
-            <div className="hidden md:flex col-span-12 md:col-span-4 md:col-start-9 justify-end order-1 md:order-2">
+            <div className="hidden md:flex md:col-span-4 md:col-start-9 justify-end order-1 md:order-2">
               <div className="media-teaser__phone">
                 <div className="media-teaser__phone-notch" style={{ width: "70px", height: "20px" }} />
                 {/* FaceTime UI */}

@@ -65,7 +65,7 @@ export default function AboutPage() {
         {/* Intro — centered overline, pull quote, body (10-col measure) */}
         <div className="pg-container" style={{ paddingTop: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)", paddingBottom: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)" }}>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
-            <div className="col-span-12 md:col-span-10 md:col-start-2 flex flex-col items-center text-center">
+            <div className="md:col-span-10 md:col-start-2 flex flex-col items-center text-center">
               <p className="opacity-0 animate-fade-in overline" style={{ marginBottom: "clamp(2.25rem, 1.75rem + 2vw, 2.75rem)", animationDelay: "0.3s", animationDuration: "1.0s" }}>
                 About Dr Yalda
               </p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
             {/* Left — heading + body */}
-            <div className="col-span-12 md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
+            <div className="md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
 
               <div className="flex flex-col">
                 <p className="overline">Credentials</p>
@@ -168,7 +168,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right — qualifications list */}
-            <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="md:col-span-3 md:col-start-10 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               {/* Invisible spacer — pushes Qualifications overline down to baseline-align with first line of the big heading */}
               <p className="overline hidden md:block invisible" aria-hidden="true">spacer</p>
               <h2 className="overline">Qualifications</h2>
@@ -204,7 +204,7 @@ export default function AboutPage() {
             <div className="hidden md:block col-span-3 pt-9">
               <h2 className="overline">Values</h2>
             </div>
-            <div className="col-span-12 md:col-span-8 md:col-start-5 flex flex-col">
+            <div className="md:col-span-8 md:col-start-5 flex flex-col">
               <h2 className="md:hidden overline mb-6">Values</h2>
               {[
                 { num: "01", title: "Honesty", body: "Every consultation is grounded in transparency. I'll always tell you what is — and isn't — right for you, even if that means recommending nothing at all." },

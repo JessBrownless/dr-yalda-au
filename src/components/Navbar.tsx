@@ -216,16 +216,12 @@ export default function Navbar() {
             src="/assets/IMG_0017.avif"
             alt=""
             fill
-            className="object-cover md:object-center"
-            style={{ objectPosition: "calc(50% + 10px) center" }}
+            className="object-cover object-center"
           />
         </div>
 
         {/* Right — nav panel */}
-        <div
-          className="flex-1 bg-brand-black flex flex-col relative"
-          style={{ padding: "clamp(3rem, 6vw, 5rem)" }}
-        >
+        <div className="flex-1 bg-brand-black flex flex-col relative px-6 py-12 md:p-12 lg:p-16 xl:p-20">
 
           {/* Nav links */}
           <div className="flex flex-col justify-center flex-1 mt-6">
@@ -249,7 +245,7 @@ export default function Navbar() {
           </div>
 
           {/* Socials */}
-          <div className="flex items-center gap-6 mt-8">
+          <div className="flex items-center gap-3 mt-8">
             {socials.map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
@@ -257,9 +253,9 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-brand-white/50 hover:text-cream transition-colors duration-300"
+                className="group w-9 h-9 border border-brand-white/20 flex items-center justify-center hover:border-brand-white/40 transition-colors duration-300"
               >
-                <Icon size={13} />
+                <Icon size={13} className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" />
               </a>
             ))}
           </div>
