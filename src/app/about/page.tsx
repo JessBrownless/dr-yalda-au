@@ -178,6 +178,7 @@ export default function AboutPage() {
                   { name: "MSc Dermatology", detail: "with distinction" },
                   { name: "FACCSM", detail: "Fellow, ACCSM" },
                   { name: "Faculty member", detail: "Merz Aesthetics" },
+                  { name: "AHPRA registration", detail: "MED0002486778" },
                 ].map(({ name, detail }) => (
                   <div key={name} className="flex flex-col gap-1.5 py-4 border-b border-brand-black/10 last:border-b-0 first:border-t first:border-brand-black/10">
                     <p className="heading-sm">{name}</p>

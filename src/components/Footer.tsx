@@ -91,8 +91,8 @@ export default function Footer() {
       {/* Bottom bar — faint */}
       <div>
         <div className="pg-container pb-12 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-2">
-          <p className="body-xs-caps">© {new Date().getFullYear()} Dr. Yalda Jamali. All rights reserved.</p>
-          <p className="body-xs-caps">MBChB · MSc Dermatology · FACCSM</p>
+          <p className="body-xs-caps">Dr. Yalda Jamali · MBChB · MSc Dermatology · FACCSM</p>
+          <p className="body-xs-caps">AHPRA Reg. MED0002486778 · © {new Date().getFullYear()} All rights reserved</p>
         </div>
       </div>
 
