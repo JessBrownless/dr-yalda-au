@@ -9,7 +9,7 @@ const FADE_MS = 500;
 const testimonials = [
   {
     quote:
-      "Working with Dr. Yalda has been an absolute pleasure. As a brand, we value authenticity, and Dr. Yalda perfectly aligns with our mission to provide skincare solutions backed by science and expertise. Her content not only showcases her deep knowledge as a cosmetic doctor but also resonates with a wide audience who trusts her insights. She's been instrumental in highlighting the value of our products and we look forward to continuing to work with her.",
+      "Working with Dr. Yalda has been an absolute pleasure. As a brand, we value authenticity, and Dr. Yalda perfectly aligns with our mission to provide skincare solutions backed by science and expertise. Her content not only showcases her deep knowledge as a cosmetic doctor but also resonates with a wide audience who trusts her insights. Dr. Yalda has been a key partner in helping us reach the right audience, and breaking down more complex skincare concerns and ingredients. She's been instrumental in highlighting the value of our products. We look forward to continuing to work with her and to educate on all things healthy skin.",
     logo: "/assets/logo-clinique.svg",
     brand: "Clinique",
     logoW: 142,
