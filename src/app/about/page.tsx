@@ -63,7 +63,7 @@ export default function AboutPage() {
         </div>
 
         {/* Intro — centered overline, pull quote, body (10-col measure) */}
-        <div className="pg-container" style={{ paddingTop: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)", paddingBottom: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)" }}>
+        <div className="pg-container pt-10 md:pt-32" style={{ paddingBottom: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)" }}>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
             <div className="md:col-span-10 md:col-start-2 flex flex-col items-center text-center">
               <p className="opacity-0 animate-fade-in overline" style={{ marginBottom: "clamp(2.25rem, 1.75rem + 2vw, 2.75rem)", animationDelay: "0.3s", animationDuration: "1.0s" }}>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                   animationDuration: "1.0s",
                 }}
               >
-                With 10 years of experience as a cosmetic doctor, I spent my first five years working alongside world-renowned specialists.
+                With over 10 years of experience as a cosmetic doctor, I spent the initial part of my career working alongside world-renowned specialists.
               </h2>
               <p
                 className="opacity-0 animate-fade-in body-serif"

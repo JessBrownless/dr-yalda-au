@@ -14,7 +14,7 @@ export default function Home() {
         tagline="Cosmetic doctor, educator, and brand collaborator in Sydney — combining medical expertise with innovation"
       />
 
-      {/* Her Story — statement block */}
+      {/* Her Story — statement block. Billboard rhythm: 2× the standard section spacing (py-20 md:py-32). */}
       <section className="bg-parchment py-40 md:py-64 flex flex-col items-center justify-center text-center relative">
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <p
@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy section — parchment-backed image left, text right */}
-      <section className="bg-parchment overflow-hidden relative py-24 md:py-40">
+      <section className="bg-parchment overflow-hidden relative pt-0 pb-24 md:py-40">
 
         {/* Parchment strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
