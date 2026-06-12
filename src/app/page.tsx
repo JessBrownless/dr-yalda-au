@@ -170,27 +170,27 @@ export default function Home() {
             {[
               {
                 image: "/assets/IMG_0036.avif",
-                category: "Skin",
-                readTime: "5 min read",
-                title: "The case for a slower approach to skin",
-                excerpt: "Why short-term fixes rarely deliver long-term skin health — and what to do instead.",
-                href: "/blog/slower-approach",
+                category: "Philosophy",
+                readTime: "4 min read",
+                title: "What I Learnt About Skin from a Decade in Medicine",
+                excerpt: "Ten years and thousands of patients in — what I've come to believe about skin and ageing.",
+                href: "/blog/what-i-learnt-about-skin",
+              },
+              {
+                image: "/assets/IMG_0003.jpg",
+                category: "Philosophy",
+                readTime: "3 min read",
+                title: 'What "Natural-Looking" Actually Means to Me',
+                excerpt: "Natural doesn't mean untreated. It means looking like the best version of yourself.",
+                href: "/blog/natural-looking",
               },
               {
                 image: "/assets/IMG_0025.jpg",
                 category: "Consultation",
-                readTime: "3 min read",
-                title: "Questions to bring to your first consultation",
-                excerpt: "A short guide for anyone considering cosmetic medicine for the first time.",
-                href: "/blog/first-consultation",
-              },
-              {
-                image: "/assets/IMG_0003.jpg",
-                category: "Treatment",
                 readTime: "4 min read",
-                title: "What 'natural-looking' actually means",
-                excerpt: "The phrase is everywhere — but the work behind it is rarely talked about.",
-                href: "/blog/natural-looking",
+                title: "Five Things I'd Ask Before Booking with Any Cosmetic Doctor",
+                excerpt: "The practitioner matters more than the device — five questions worth asking first.",
+                href: "/blog/five-things-to-ask",
               },
             ].map(({ image, category, readTime, title, excerpt, href }, i) => (
               <a

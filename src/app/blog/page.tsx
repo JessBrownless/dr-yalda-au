@@ -107,13 +107,14 @@ export default function BlogIndexPage() {
             data-aos="fade"
           >
             {featured.frontmatter.featuredImage ? (
-              <div className="md:col-span-7 overflow-hidden aspect-[4/3]">
+              <div className="md:col-span-7 overflow-hidden">
+                {/* Natural proportions — no fixed-ratio crop on the featured image. */}
                 <img
                   src={featured.frontmatter.featuredImage}
                   alt=""
                   aria-hidden="true"
                   loading="lazy"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
               </div>
             ) : null}
