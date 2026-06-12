@@ -11,6 +11,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Media", href: "/media" },
+  { label: "Blog", href: "/blog" },
   { label: "Dev", href: "/unused-components" },
 ];
 
@@ -177,7 +178,7 @@ export default function Navbar() {
               Book Now
             </Link>
             <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-              {[{ label: "Media", href: "/media" }].map(({ label, href }) => (
+              {[{ label: "Media", href: "/media" }, { label: "Blog", href: "/blog" }].map(({ label, href }) => (
                 <Link
                   key={href}
                   href={href}

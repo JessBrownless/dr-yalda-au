@@ -153,11 +153,11 @@ export default function Home() {
           {/* Section header */}
           <div className="flex items-end justify-between mb-16 md:mb-20" data-aos="fade" data-aos-duration="1000">
             <div className="flex flex-col">
-              <p className="overline">Journal</p>
+              <p className="overline">Blog</p>
               <h2 className="heading-lg from-overline">Notes from the practice</h2>
             </div>
             <a
-              href="/journal"
+              href="/blog"
               className="hidden md:inline-flex body-xs-caps border-b border-brand-black/20 pb-1 hover:text-brand-black hover:border-brand-black/60 transition-colors duration-300 items-center gap-3 whitespace-nowrap"
             >
               View all
@@ -174,7 +174,7 @@ export default function Home() {
                 readTime: "5 min read",
                 title: "The case for a slower approach to skin",
                 excerpt: "Why short-term fixes rarely deliver long-term skin health — and what to do instead.",
-                href: "/journal/slower-approach",
+                href: "/blog/slower-approach",
               },
               {
                 image: "/assets/IMG_0025.jpg",
@@ -182,7 +182,7 @@ export default function Home() {
                 readTime: "3 min read",
                 title: "Questions to bring to your first consultation",
                 excerpt: "A short guide for anyone considering cosmetic medicine for the first time.",
-                href: "/journal/first-consultation",
+                href: "/blog/first-consultation",
               },
               {
                 image: "/assets/IMG_0003.jpg",
@@ -190,7 +190,7 @@ export default function Home() {
                 readTime: "4 min read",
                 title: "What 'natural-looking' actually means",
                 excerpt: "The phrase is everywhere — but the work behind it is rarely talked about.",
-                href: "/journal/natural-looking",
+                href: "/blog/natural-looking",
               },
             ].map(({ image, category, readTime, title, excerpt, href }, i) => (
               <a
@@ -220,7 +220,7 @@ export default function Home() {
 
           {/* Mobile "view all" link */}
           <a
-            href="/journal"
+            href="/blog"
             className="md:hidden mt-12 self-start body-xs-caps border-b border-brand-black/20 pb-1 hover:text-brand-black hover:border-brand-black/60 transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
           >
             View all

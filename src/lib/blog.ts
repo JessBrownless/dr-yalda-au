@@ -3,9 +3,9 @@ import path from "node:path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 
-// Journal posts live as MDX files in `content/journal/*.mdx`, read from disk at
+// Blog posts live as MDX files in `content/blog/*.mdx`, read from disk at
 // build time. No CMS — the repo is the source of truth.
-export const JOURNAL_DIR = path.join(process.cwd(), "content", "journal");
+export const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
 export const CATEGORIES = [
   "philosophy",
@@ -14,9 +14,9 @@ export const CATEGORIES = [
   "personal",
 ] as const;
 
-export type JournalCategory = (typeof CATEGORIES)[number];
+export type BlogCategory = (typeof CATEGORIES)[number];
 
-export interface JournalFrontmatter {
+export interface BlogFrontmatter {
   title: string;
   slug?: string;
   description: string;
@@ -25,16 +25,16 @@ export interface JournalFrontmatter {
   featuredImage?: string;
   featuredImageAlt?: string;
   featuredImageCaption?: string;
-  category: JournalCategory;
+  category: BlogCategory;
   readingTime?: number;
 }
 
-export interface JournalPost {
+export interface BlogPost {
   /** Resolved slug — frontmatter `slug` if present, else the filename. */
   slug: string;
   /** Raw MDX body with frontmatter stripped — compile this in the page. */
   content: string;
-  frontmatter: JournalFrontmatter;
+  frontmatter: BlogFrontmatter;
   /** Reading-time estimate in minutes (frontmatter override or auto-computed). */
   readingMinutes: number;
 }
@@ -85,7 +85,7 @@ export function validateFrontmatter(
 
   if (
     isNonEmptyString(data.category) &&
-    !CATEGORIES.includes(data.category as JournalCategory)
+    !CATEGORIES.includes(data.category as BlogCategory)
   ) {
     errors.push(
       `"category" must be one of: ${CATEGORIES.join(", ")} (got "${data.category}")`,
@@ -125,7 +125,7 @@ export function validateFrontmatter(
 
   if (errors.length > 0) {
     throw new Error(
-      `Invalid Journal post "${fileName}":\n${errors.map((e) => `  - ${e}`).join("\n")}`,
+      `Invalid Blog post "${fileName}":\n${errors.map((e) => `  - ${e}`).join("\n")}`,
     );
   }
 }
@@ -135,9 +135,9 @@ function fileToSlug(file: string): string {
 }
 
 /** Read + parse a single file by its on-disk filename (without extension). */
-function readPostFile(fileSlug: string): JournalPost | null {
-  const mdxPath = path.join(JOURNAL_DIR, `${fileSlug}.mdx`);
-  const mdPath = path.join(JOURNAL_DIR, `${fileSlug}.md`);
+function readPostFile(fileSlug: string): BlogPost | null {
+  const mdxPath = path.join(BLOG_DIR, `${fileSlug}.mdx`);
+  const mdPath = path.join(BLOG_DIR, `${fileSlug}.md`);
   const filePath = fs.existsSync(mdxPath)
     ? mdxPath
     : fs.existsSync(mdPath)
@@ -150,7 +150,7 @@ function readPostFile(fileSlug: string): JournalPost | null {
 
   // Gate: a post that fails validation throws here and stops the build.
   validateFrontmatter(path.basename(filePath), data);
-  const frontmatter = data as JournalFrontmatter;
+  const frontmatter = data as BlogFrontmatter;
 
   // Slug derives from filename when frontmatter omits it.
   const slug = frontmatter.slug?.trim() || fileSlug;
@@ -162,14 +162,14 @@ function readPostFile(fileSlug: string): JournalPost | null {
 }
 
 /** Every post, newest first. Used by the (future) index page and the sitemap. */
-export function getAllPosts(): JournalPost[] {
-  if (!fs.existsSync(JOURNAL_DIR)) return [];
+export function getAllPosts(): BlogPost[] {
+  if (!fs.existsSync(BLOG_DIR)) return [];
 
   return fs
-    .readdirSync(JOURNAL_DIR)
+    .readdirSync(BLOG_DIR)
     .filter(isPublishablePost)
     .map((file) => readPostFile(fileToSlug(file)))
-    .filter((post): post is JournalPost => post !== null)
+    .filter((post): post is BlogPost => post !== null)
     .sort(
       (a, b) =>
         new Date(b.frontmatter.publishedAt).getTime() -
@@ -183,6 +183,6 @@ export function getAllSlugs(): string[] {
 }
 
 /** Look up one post by its resolved slug (frontmatter slug or filename). */
-export function getPostBySlug(slug: string): JournalPost | null {
+export function getPostBySlug(slug: string): BlogPost | null {
   return getAllPosts().find((post) => post.slug === slug) ?? null;
 }

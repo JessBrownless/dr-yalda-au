@@ -7,8 +7,8 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 
 import BookingCTA from "@/components/BookingCTA";
-import { getAllSlugs, getPostBySlug, type JournalPost } from "@/lib/journal";
-import { journalMdxComponents } from "../../../../mdx-components";
+import { getAllSlugs, getPostBySlug, type BlogPost } from "@/lib/blog";
+import { blogMdxComponents } from "../../../../mdx-components";
 
 const SITE_URL = "https://dryalda.com.au";
 const AUTHOR = "Dr Yalda Jamali";
@@ -45,12 +45,12 @@ export async function generateMetadata({
   if (!post) return {};
 
   const { frontmatter } = post;
-  const canonical = `/journal/${post.slug}`;
+  const canonical = `/blog/${post.slug}`;
   const ogImage = absoluteUrl(frontmatter.featuredImage);
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: `${frontmatter.title} — Journal | ${AUTHOR}`,
+    title: `${frontmatter.title} — Blog | ${AUTHOR}`,
     description: frontmatter.description,
     alternates: { canonical },
     openGraph: {
@@ -74,7 +74,7 @@ export async function generateMetadata({
   };
 }
 
-function ArticleJsonLd({ post }: { post: JournalPost }) {
+function ArticleJsonLd({ post }: { post: BlogPost }) {
   const { frontmatter } = post;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -89,7 +89,7 @@ function ArticleJsonLd({ post }: { post: JournalPost }) {
     publisher: { "@type": "Person", name: AUTHOR },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/journal/${post.slug}`,
+      "@id": `${SITE_URL}/blog/${post.slug}`,
     },
   };
 
@@ -101,7 +101,7 @@ function ArticleJsonLd({ post }: { post: JournalPost }) {
   );
 }
 
-export default async function JournalPostPage({
+export default async function BlogPostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -114,7 +114,7 @@ export default async function JournalPostPage({
 
   const { content } = await compileMDX({
     source: post.content,
-    components: journalMdxComponents,
+    components: blogMdxComponents,
     options: { mdxOptions: { remarkPlugins: [remarkGfm] } },
   });
 
@@ -201,10 +201,10 @@ export default async function JournalPostPage({
         {/* 5 — Footer: back to index (not built yet) */}
         <div className="mx-auto max-w-[720px] px-6 md:px-8 mt-12 pt-8 border-t border-brand-line">
           <a
-            href="/journal"
+            href="/blog"
             className="overline text-brand-black transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-black/40 rounded-sm"
           >
-            More journal entries →
+            More blog entries →
           </a>
         </div>
       </article>

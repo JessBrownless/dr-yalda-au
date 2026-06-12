@@ -1,9 +1,9 @@
 import type { MDXComponents } from "mdx/types";
 
 /**
- * Brand-aware MDX element overrides for Journal posts.
+ * Brand-aware MDX element overrides for Blog posts.
  *
- * Rendering approach: `next-mdx-remote/rsc` (see app/journal/[slug]/page.tsx) —
+ * Rendering approach: `next-mdx-remote/rsc` (see app/blog/[slug]/page.tsx) —
  * these components are passed to `compileMDX` rather than picked up implicitly,
  * but the file lives at the project root per Next.js App Router convention and
  * also exports `useMDXComponents` so `@next/mdx` would resolve it too.
@@ -13,9 +13,9 @@ import type { MDXComponents } from "mdx/types";
  * utilities (markers + indent + rhythm) — that is layout, not a new type token.
  */
 
-export const journalMdxComponents: MDXComponents = {
+export const blogMdxComponents: MDXComponents = {
   // Top-margin rhythm for headings is set on the prose wrapper (see the body
-  // container in app/journal/[slug]/page.tsx) via `[&>h2]`/`[&>h3]` selectors.
+  // container in app/blog/[slug]/page.tsx) via `[&>h2]`/`[&>h3]` selectors.
   // That's deliberate: the .heading-* utilities declare `margin: 0` and, being
   // defined after Tailwind's utilities layer, would override an `mt-*` placed
   // here. The parent's child selector has higher specificity, so it wins.
@@ -84,5 +84,5 @@ export const journalMdxComponents: MDXComponents = {
 
 // @next/mdx convention hook — kept so either MDX integration resolves this file.
 export function useMDXComponents(components: MDXComponents): MDXComponents {
-  return { ...journalMdxComponents, ...components };
+  return { ...blogMdxComponents, ...components };
 }
