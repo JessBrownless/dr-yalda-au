@@ -35,7 +35,7 @@ export default function MediaPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)" }} />
 
         {/* Bottom text — H1+sub left (max 4 cols), jumplink right of container, baseline aligned */}
-        <div className="relative z-10 flex flex-col justify-end pg-container pb-10 md:pb-14" style={{ minHeight: "90dvh", paddingTop: "120px" }}>
+        <div className="relative z-10 flex flex-col justify-end pg-container pb-16 md:pb-24" style={{ minHeight: "90dvh", paddingTop: "120px" }}>
           <div className="flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end">
             <div className="md:col-span-6 flex flex-col items-start text-left">
               <h1
@@ -59,40 +59,37 @@ export default function MediaPage() {
               </svg>
             </a>
           </div>
+
+          {/* Partner logos — on the hero image, under the text. White via invert,
+              fading in after the heading copy. */}
+          <div
+            className="opacity-0 animate-fade-in mt-12 md:mt-16 pt-8 border-t border-brand-white/15"
+            style={{ animationDelay: "1.2s", animationDuration: "1.0s" }}
+          >
+            {/* Mobile — wrapped, centered */}
+            <div className="md:hidden flex items-center justify-center flex-wrap gap-x-10 gap-y-6">
+              {partnerLogos.map((item, i) => item.text ? (
+                <span key={i} className="text-parchment/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "1.05rem", letterSpacing: "0.2em" }}>{item.text}</span>
+              ) : (
+                <img key={i} src={item.src} alt={item.alt} className="h-5 opacity-60" style={{ filter: "brightness(0) invert(1)" }} />
+              ))}
+            </div>
+            {/* Desktop — justified across container width */}
+            <div className="hidden md:flex items-center justify-between w-full">
+              {partnerLogos.map((item, i) => item.text ? (
+                <span key={i} className="text-parchment/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "1.05rem", letterSpacing: "0.2em" }}>{item.text}</span>
+              ) : (
+                <img key={i} src={item.src} alt={item.alt} className="h-5 opacity-60" style={{ filter: "brightness(0) invert(1)" }} />
+              ))}
+            </div>
+          </div>
         </div>
 
         <div id="hero-end" aria-hidden="true" style={{ height: 0, pointerEvents: "none" }} />
       </section>
 
-      {/* Proudly partnering — static logo strip, right under the hero */}
-      <section className="bg-parchment pt-32 md:pt-48 pb-24 md:pb-32">
-        <div className="pg-container">
-          <div className="flex flex-col items-center gap-10">
-            <h2 className="overline">
-              Proudly partnering and featured in
-            </h2>
-            {/* Mobile — wrapped, centered */}
-            <div className="md:hidden flex items-center justify-center flex-wrap gap-x-10 gap-y-6">
-              {partnerLogos.map((item, i) => item.text ? (
-                <span key={i} className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "1.05rem", letterSpacing: "0.2em" }}>{item.text}</span>
-              ) : (
-                <img key={i} src={item.src} alt={item.alt} className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-              ))}
-            </div>
-            {/* Desktop — justified across grid width */}
-            <div className="hidden md:flex items-center justify-between w-full">
-              {partnerLogos.map((item, i) => item.text ? (
-                <span key={i} className="text-brand-black/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "1.05rem", letterSpacing: "0.2em" }}>{item.text}</span>
-              ) : (
-                <img key={i} src={item.src} alt={item.alt} className="h-5 opacity-60" style={{ filter: "brightness(0)" }} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Beyond the clinic */}
-      <section id="intro" className="bg-parchment py-24 md:py-32 relative scroll-mt-20">
+      <section id="intro" className="bg-parchment pt-32 md:pt-48 pb-32 md:pb-48 relative scroll-mt-20">
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
@@ -214,6 +211,19 @@ export default function MediaPage() {
         </div>
       </section>
 
+      {/* Press features list */}
+      <section className="bg-parchment py-24 md:py-32" id="features">
+        <div className="pg-container">
+
+          <h2 className="overline mb-6">
+            Media features
+          </h2>
+
+          <FeaturesList />
+
+        </div>
+      </section>
+
       {/* Latest appearances gallery */}
       <section className="bg-parchment py-24 md:py-32">
         <div className="pg-container">
@@ -253,21 +263,6 @@ export default function MediaPage() {
           </div>
         </div>
       </section>
-
-      {/* Press features list */}
-      <section className="bg-parchment py-24 md:py-32" id="features">
-        <div className="pg-container">
-
-          <h2 className="overline mb-6">
-            Media features
-          </h2>
-
-          <FeaturesList />
-
-        </div>
-      </section>
-
-
 
       {/* TestimonialCarousel removed */}
 
@@ -394,6 +389,27 @@ export default function MediaPage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Media contact CTA — plain centred block */}
+      <section className="bg-brand-charcoal text-on-dark-high py-24 md:py-32">
+        <div className="pg-container">
+          <div className="flex flex-col items-center text-center gap-5 max-w-[640px] mx-auto" data-aos="fade" data-aos-duration="1000">
+            <div className="flex flex-col items-center">
+              <p className="overline">Media enquiries</p>
+              <h2 className="heading-statement from-overline text-brand-white">Work with Dr. Yalda</h2>
+            </div>
+            <p className="body-serif text-on-dark-low max-w-[46ch]">
+              For interviews, features, and brand collaborations, reach out to Dr. Yalda&apos;s PR manager, Hollie Smith, at Sarah Humphries PR Agency.
+            </p>
+            <a href="mailto:hollie@shapr.com.au" className="btn btn-primary-dark mt-2">
+              Email Hollie Smith
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                <path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
