@@ -162,7 +162,7 @@ export default async function BlogPostPage({
         {/* 3 — MDX body. Heading rhythm (more space above than below, so a heading
             groups with the content that follows it) is set here with child selectors,
             which outrank the .heading-* utilities' `margin: 0`. First child sits flush. */}
-        <div className="mx-auto max-w-[720px] px-6 md:px-8 mt-12 md:mt-16 [&>h2]:mt-14 [&>h3]:mt-10 [&>*:first-child]:mt-0">
+        <div className="mx-auto max-w-[720px] px-6 md:px-8 mt-12 md:mt-16 [&>h2]:mt-16 [&>h2+*]:mt-4 [&>h3]:mt-10 [&>*:first-child]:mt-0">
           {content}
         </div>
 
