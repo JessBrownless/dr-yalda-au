@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/blobs": "^10.7.9",
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
     "gray-matter": "^4.0.3",

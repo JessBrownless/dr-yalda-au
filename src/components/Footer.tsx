@@ -19,7 +19,7 @@ const clinics = [
 ];
 
 const socials = [
-  { icon: FaInstagram,  platform: "Instagram", handle: "@dryaldajamali",  href: "https://instagram.com/dryaldajamali" },
+  { icon: FaInstagram,  platform: "Instagram", handle: "@dr.yalda",  href: "https://instagram.com/dr.yalda" },
   { icon: FaTiktok,     platform: "TikTok",    handle: "@dryaldajamali",  href: "https://tiktok.com/@dryaldajamali" },
   { icon: FaLinkedinIn, platform: "LinkedIn",  handle: "Dr. Yalda Jamali", href: "https://linkedin.com" },
   { icon: FaFacebookF,  platform: "Facebook",  handle: "Dr. Yalda Jamali", href: "https://facebook.com" },

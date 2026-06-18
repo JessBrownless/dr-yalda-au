@@ -6,11 +6,15 @@
 //   IG_ACCESS_TOKEN  — a long-lived Instagram user token (instagram_business_basic
 //                      scope). Resolves to her account via the `me` endpoint.
 //
-// Long-lived tokens last ~60 days and can be refreshed; see
-// refreshInstagramToken() and the scheduled Netlify function that calls it.
+// Long-lived tokens last ~60 days. The scheduled Netlify function
+// (netlify/functions/refresh-instagram-token.mts) refreshes the token weekly
+// and persists the fresh one to Netlify Blobs, so it never expires. The read
+// path below prefers the Blobs token and falls back to the env var.
 //
 // The fetch is cached for 30 minutes via Next's `revalidate`, so on Netlify
 // new posts appear without a redeploy while staying within API rate limits.
+
+import { getStore } from "@netlify/blobs";
 
 export type IgPost = {
   id: string;
@@ -23,8 +27,24 @@ const GRAPH_HOST = "https://graph.instagram.com";
 const GRAPH_VERSION = "v21.0";
 const REVALIDATE_SECONDS = 1800; // 30 minutes
 
+export const TOKEN_STORE = "instagram";
+export const TOKEN_KEY = "access_token";
+
+// Returns the active token: the refreshed value from Netlify Blobs if present,
+// otherwise the env var (local dev, or before the first scheduled refresh).
+export async function getActiveToken(): Promise<string | undefined> {
+  try {
+    const store = getStore(TOKEN_STORE);
+    const stored = await store.get(TOKEN_KEY, { type: "text" });
+    if (stored) return stored;
+  } catch {
+    // Blobs unavailable (e.g. local `next dev`) — fall back to env.
+  }
+  return process.env.IG_ACCESS_TOKEN;
+}
+
 export async function fetchInstagramPosts(limit = 6): Promise<IgPost[]> {
-  const token = process.env.IG_ACCESS_TOKEN;
+  const token = await getActiveToken();
 
   // No token configured (e.g. local dev without secrets) — the caller falls
   // back to static images so the section still renders.

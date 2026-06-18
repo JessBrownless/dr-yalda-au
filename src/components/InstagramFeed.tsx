@@ -1,7 +1,7 @@
 import { FaInstagram } from "react-icons/fa";
 import { fetchInstagramPosts } from "@/lib/instagram";
 
-const HANDLE = "dryaldajamali";
+const HANDLE = "dr.yalda";
 const PROFILE_URL = `https://instagram.com/${HANDLE}`;
 
 // Shown when no live feed is available (missing/expired token, API error, or
