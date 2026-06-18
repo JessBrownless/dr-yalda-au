@@ -301,7 +301,7 @@ export default function HeroHome({
             }}
           >
             {[
-              { icon: FaInstagram, href: "https://instagram.com/dryaldajamali", label: "Instagram" },
+              { icon: FaInstagram, href: "https://instagram.com/dr.yalda", label: "Instagram" },
               { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
               { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
             ].map(({ icon: Icon, href, label }, i) => (
