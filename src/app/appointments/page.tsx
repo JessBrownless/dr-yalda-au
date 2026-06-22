@@ -159,9 +159,15 @@ export default function AppointmentsPage() {
                 <span style={{ fontSize: "9px", color: "rgba(246,246,243,0.85)", fontFamily: "sans-serif", letterSpacing: "0.05em" }}>12:34</span>
               </div>
               <div className="absolute overflow-hidden" style={{ width: "48px", aspectRatio: "3/4", top: "12px", right: "8px", borderRadius: "6px", border: "1.5px solid rgba(246,246,243,0.3)", background: "#2c2c2e", zIndex: 3 }}>
-                <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, #3a3a3c 0%, #2c2c2e 100%)" }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#48484a" }} />
+                {/* caller self-view, camera off: avatar glyph on a dark tile */}
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, #3a3a3c 0%, #2c2c2e 100%)" }} />
+                <div className="absolute inset-0 flex items-center justify-center" style={{ filter: "blur(1.5px)" }}>
+                  <div className="flex items-center justify-center rounded-full" style={{ width: "22px", height: "22px", background: "rgba(246,246,243,0.12)" }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="rgba(246,246,243,0.6)" aria-hidden="true">
+                      <circle cx="12" cy="8" r="4" />
+                      <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-4 pb-4" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)", zIndex: 2, paddingTop: "24px" }}>
@@ -265,9 +271,15 @@ export default function AppointmentsPage() {
 
                   {/* PiP — your camera */}
                   <div className="absolute overflow-hidden" style={{ width: "48px", aspectRatio: "3/4", top: "12px", right: "8px", borderRadius: "6px", border: "1.5px solid rgba(246,246,243,0.3)", background: "#2c2c2e", zIndex: 3 }}>
-                    <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, #3a3a3c 0%, #2c2c2e 100%)" }} />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#48484a" }} />
+                    {/* caller self-view, camera off: avatar glyph on a dark tile */}
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, #3a3a3c 0%, #2c2c2e 100%)" }} />
+                    <div className="absolute inset-0 flex items-center justify-center" style={{ filter: "blur(1.5px)" }}>
+                      <div className="flex items-center justify-center rounded-full" style={{ width: "22px", height: "22px", background: "rgba(246,246,243,0.12)" }}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="rgba(246,246,243,0.6)" aria-hidden="true">
+                          <circle cx="12" cy="8" r="4" />
+                          <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
 
