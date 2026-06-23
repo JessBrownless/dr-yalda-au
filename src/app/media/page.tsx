@@ -283,23 +283,33 @@ export default function MediaPage() {
               </div>
 
               <div className="flex flex-col divide-y divide-brand-white/10">
+                {/* TODO: replace each `url` with the real Spotify episode link
+                    (open.spotify.com/episode/<id>). On mobile it opens the
+                    Spotify app if installed, otherwise the web player. */}
                 {[
-                  { show: "The Glow Up Podcast", episode: "The truth about filler — what no one tells you", duration: "42 min" },
-                  { show: "Skin Deep with Sarah", episode: "Evidence-based aesthetics and why it matters", duration: "35 min" },
-                  { show: "The Beauty Edit", episode: "Natural results: redefining cosmetic medicine", duration: "28 min" },
-                ].map(({ show, episode, duration }, i) => (
-                  <div key={i} className="group flex items-start justify-between gap-6 py-5 cursor-pointer">
+                  { show: "You Beauty", episode: "Filler Is Out. Do This Instead", duration: "42 min", url: "https://open.spotify.com/episode/3Nurqs29I3xi1oBaDKZwnU" },
+                  { show: "That Beauty Podcast", episode: "How Your Skin Routine Should Change When You’re Pregnant", duration: "35 min", url: "https://open.spotify.com/episode/5InP4QcRnJMW422L9jXEJG" },
+                  { show: "The Beauty Edit", episode: "Natural results: redefining cosmetic medicine", duration: "28 min", url: "https://open.spotify.com/" },
+                ].map(({ show, episode, duration, url }, i) => (
+                  <a
+                    key={i}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Listen to “${episode}” on ${show}`}
+                    className="group flex items-start justify-between gap-6 py-5"
+                  >
                     <div className="flex items-start gap-4">
-                      <button className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-brand-white/20 flex items-center justify-center group-hover:border-cream transition-colors duration-300">
+                      <span aria-hidden="true" className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-brand-white/20 flex items-center justify-center group-hover:border-cream transition-colors duration-300">
                         <span className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
-                      </button>
+                      </span>
                       <div className="flex flex-col gap-1">
                         <p className="overline">{show}</p>
                         <h3 className="heading-sm">{episode}</h3>
                       </div>
                     </div>
                     <span className="overline flex-shrink-0 mt-1">{duration}</span>
-                  </div>
+                  </a>
                 ))}
               </div>
 

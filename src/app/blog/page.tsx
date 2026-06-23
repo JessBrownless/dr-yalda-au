@@ -107,14 +107,15 @@ export default function BlogIndexPage() {
             data-aos="fade"
           >
             {featured.frontmatter.featuredImage ? (
-              <div className="md:col-span-7 overflow-hidden">
-                {/* Natural proportions — no fixed-ratio crop on the featured image. */}
+              <div className="md:col-span-7 overflow-hidden aspect-[3/2]">
+                {/* Landscape crop — favour the upper area so the face stays in frame. */}
                 <img
                   src={featured.frontmatter.featuredImage}
                   alt=""
                   aria-hidden="true"
                   loading="lazy"
-                  className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  style={{ objectPosition: "center 25%" }}
                 />
               </div>
             ) : null}
@@ -163,15 +164,20 @@ export default function BlogIndexPage() {
                   <p className="overline">
                     {post.frontmatter.category} · {post.readingMinutes} min read
                   </p>
-                  {/* Card titles use the uniform-length `cardTitle` (falling back
-                      to the full title) and balance their line split. Reserve 3
-                      lines only at md+, where cards sit in a row and need to line
-                      up — below that they're single-column, so reserving would
-                      just leave dead space under a short title. */}
+                  {/* Balance the title's line split and reserve 3 lines only at
+                      md+, where cards sit in a row and need to line up — below
+                      that they're single-column, so reserving would just leave
+                      dead space under a short title. */}
                   <h3 className="heading-md text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">
-                    {post.frontmatter.cardTitle ?? post.frontmatter.title}
+                    {post.frontmatter.title}
                   </h3>
-                  <p className="body-serif">{post.frontmatter.description}</p>
+                  {/* Clamp to 3 lines on the card; the full description stays in
+                      the markup for SEO. */}
+                  <p className="body-sans text-on-light-low line-clamp-3">{post.frontmatter.description}</p>
+                  <span className="mt-1 self-start inline-flex items-center gap-3 body-xs-caps border-b border-brand-black/20 pb-1 group-hover:border-brand-black/60 transition-colors duration-300">
+                    Read now
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </span>
                 </div>
               </a>
             ))}

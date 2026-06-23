@@ -5,8 +5,14 @@ import StickyScrollSection from "@/components/StickyScrollSection";
 import BookingCTA from "@/components/BookingCTA";
 import InstagramFeed from "@/components/InstagramFeed";
 import ParallaxQuote from "@/components/ParallaxQuote";
+import { getAllPosts } from "@/lib/blog";
 
 export default function Home() {
+  // Three latest posts, read from the same source as /blog so the teaser's
+  // images and titles can't drift from the blog (they previously did, because
+  // this section was hardcoded separately).
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <main className="text-brand-black">
       <HeroHome
@@ -167,35 +173,10 @@ export default function Home() {
 
           {/* Cards — swipeable scroll-snap carousel on mobile; aligned to the 12-col content grid (each card col-span-4) on desktop */}
           <div className="no-scrollbar flex snap-x snap-mandatory overflow-x-auto gap-6 md:grid md:grid-cols-12 md:gap-8 md:overflow-visible md:snap-none">
-            {[
-              {
-                image: "/assets/IMG_0036.avif",
-                category: "Philosophy",
-                readTime: "4 min read",
-                title: "What a Decade in Medicine Has Taught Me About Skin",
-                excerpt: "Ten years and thousands of patients in — what I've come to believe about skin and ageing.",
-                href: "/blog/what-i-learnt-about-skin",
-              },
-              {
-                image: "/assets/IMG_0003.jpg",
-                category: "Philosophy",
-                readTime: "3 min read",
-                title: 'What "Natural-Looking" Results Actually Mean to Me',
-                excerpt: "Natural doesn't mean untreated. It means looking like the best version of yourself.",
-                href: "/blog/natural-looking",
-              },
-              {
-                image: "/assets/IMG_0025.jpg",
-                category: "Consultation",
-                readTime: "4 min read",
-                title: "Five Things to Ask Any Practitioner Before Booking",
-                excerpt: "The practitioner matters more than the device — five questions worth asking first.",
-                href: "/blog/five-things-to-ask",
-              },
-            ].map(({ image, category, readTime, title, excerpt, href }, i) => (
+            {latestPosts.map((post, i) => (
               <a
-                key={title}
-                href={href}
+                key={post.slug}
+                href={`/blog/${post.slug}`}
                 className="group flex flex-col gap-5 shrink-0 w-[80%] snap-start md:w-auto md:shrink md:col-span-4"
                 data-aos="fade"
                 data-aos-delay={i * 120}
@@ -203,16 +184,19 @@ export default function Home() {
               >
                 <div className="overflow-hidden aspect-[4/5]">
                   <img
-                    src={image}
+                    src={post.frontmatter.featuredImage}
                     alt=""
                     aria-hidden="true"
                     className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <p className="overline">{category} · {readTime}</p>
-                  <h3 className="heading-md text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">{title}</h3>
-                  <p className="body-serif">{excerpt}</p>
+                  <p className="overline">{post.frontmatter.category} · {post.readingMinutes} min read</p>
+                  <h3 className="heading-md text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">{post.frontmatter.title}</h3>
+                  <span className="mt-1 self-start inline-flex items-center gap-3 body-xs-caps border-b border-brand-black/20 pb-1 group-hover:border-brand-black/60 transition-colors duration-300">
+                    Read now
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </span>
                 </div>
               </a>
             ))}
