@@ -7,8 +7,9 @@ function hexToRgb(hex: string): string {
 
 const swatches: Swatch[] = [
   { name: "brand-white",      hex: "#F6F6F3", group: "Brand" },
-  { name: "cream",            hex: "#E9E3D8", group: "Legacy" },
   { name: "parchment",        hex: "#F5F2EC", group: "Legacy" },
+  { name: "linen",            hex: "#EFEAE1", group: "Brand" },
+  { name: "cream",            hex: "#E9E3D8", group: "Legacy" },
   { name: "brand-black",      hex: "#2D2C2A", group: "Brand" },
   { name: "brand-charcoal",   hex: "#222120", group: "Brand" },
   { name: "brand-line",       hex: "#C2C1BE", group: "Brand" },

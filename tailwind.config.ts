@@ -12,6 +12,8 @@ const config: Config = {
         // Legacy
         cream: "#E9E3D8",
         parchment: "#F5F2EC",
+        // Surface tint — lighter than cream, for the section panel strips
+        linen: "#EFEAE1",
         // Brand — primary
         "brand-black":  "#2D2C2A",
         "brand-charcoal": "#222120",

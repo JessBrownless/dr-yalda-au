@@ -154,7 +154,7 @@ export default function MediaPage() {
       <section className="bg-parchment overflow-hidden relative py-24 md:py-32 md:flex md:items-center" style={{ minHeight: "80vh" }}>
 
         {/* Coloured strip — left edge, behind the image (a shade darker than the section) */}
-        <div className="absolute hidden md:block left-0 top-0 bottom-0" style={{ width: "36%", background: "#E9E3D8" }} />
+        <div className="absolute hidden md:block left-0 top-0 bottom-0 w-[36%] bg-linen" />
 
         <div className="pg-container relative">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
