@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
@@ -26,6 +27,13 @@ const socials = [
 ];
 
 export default function Footer() {
+  // The site is statically generated, so a year computed at build time would
+  // freeze until the next deploy. Seed with the build year (keeps SSR/first
+  // client render identical), then correct to the viewer's actual current year
+  // on mount — so it rolls over on New Year even without a rebuild.
+  const [year, setYear] = useState(() => new Date().getFullYear());
+  useEffect(() => setYear(new Date().getFullYear()), []);
+
   return (
     <footer className="bg-brand-charcoal">
 
@@ -92,7 +100,7 @@ export default function Footer() {
       <div>
         <div className="pg-container pb-12 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="body-xs-caps">Dr. Yalda Jamali · MBChB · MSc Dermatology · FACCSM</p>
-          <p className="body-xs-caps">AHPRA Reg. MED0002486778 · © {new Date().getFullYear()} All rights reserved</p>
+          <p className="body-xs-caps">AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved</p>
         </div>
       </div>
 

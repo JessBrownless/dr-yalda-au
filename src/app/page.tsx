@@ -211,7 +211,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-3">
                   <p className="overline">{category} · {readTime}</p>
-                  <h3 className="heading-md text-balance sm:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">{title}</h3>
+                  <h3 className="heading-md text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">{title}</h3>
                   <p className="body-serif">{excerpt}</p>
                 </div>
               </a>

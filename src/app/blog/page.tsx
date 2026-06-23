@@ -164,9 +164,11 @@ export default function BlogIndexPage() {
                     {post.frontmatter.category} · {post.readingMinutes} min read
                   </p>
                   {/* Card titles use the uniform-length `cardTitle` (falling back
-                      to the full title), balanced and reserving 3 lines so a row of
-                      cards lines up. text-balance evens the line split. */}
-                  <h3 className="heading-md text-balance sm:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">
+                      to the full title) and balance their line split. Reserve 3
+                      lines only at md+, where cards sit in a row and need to line
+                      up — below that they're single-column, so reserving would
+                      just leave dead space under a short title. */}
+                  <h3 className="heading-md text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">
                     {post.frontmatter.cardTitle ?? post.frontmatter.title}
                   </h3>
                   <p className="body-serif">{post.frontmatter.description}</p>

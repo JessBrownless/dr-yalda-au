@@ -89,7 +89,7 @@ export default function StickyScrollSection() {
                   <p className="overline">
                     0{i + 1}
                   </p>
-                  <h3 className="heading-hero from-overline md:whitespace-nowrap">
+                  <h3 className="heading-2xl from-overline md:whitespace-nowrap">
                     {item.title}
                   </h3>
                 </div>
