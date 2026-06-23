@@ -53,10 +53,10 @@ export default function AboutPage() {
           >
             <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
               <img
-                src="/assets/Yalda-1.avif"
+                src="/assets/IMG_0008.avif"
                 alt="Dr. Yalda Jamali"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: "50% 30%" }}
+                style={{ objectPosition: "50% 10%", transform: "scale(1.3) translateY(-20%)" }}
               />
             </div>
           </div>
