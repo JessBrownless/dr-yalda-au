@@ -11,6 +11,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Media", href: "/media" },
+  { label: "Blog", href: "/blog" },
   { label: "Book now", href: "/appointments" },
 ];
 
@@ -78,7 +79,9 @@ export default function Footer() {
             {/* Clinics */}
             <div className="col-span-1 md:col-span-4 md:col-start-9 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
               <p className="overline mb-1">Clinic Locations</p>
-              {clinics.map(({ name, address }) => (
+              {clinics.map(({ name, address }) => {
+                const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name}, ${address}, NSW, Australia`)}`;
+                return (
                 <div key={name} className="flex flex-col gap-1">
                   <div className="flex items-center gap-2">
                     <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 text-brand-white/40">
@@ -87,9 +90,19 @@ export default function Footer() {
                     </svg>
                     <h2 className="heading-sm">{name}</h2>
                   </div>
-                  <p className="body-xs-caps" style={{ paddingLeft: "17px" }}>{address}</p>
+                  <a
+                    href={mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${name}, ${address} in Google Maps`}
+                    className="body-xs-caps underline underline-offset-2 hover:text-cream transition-colors duration-300"
+                    style={{ paddingLeft: "17px" }}
+                  >
+                    {address}
+                  </a>
                 </div>
-              ))}
+                );
+              })}
             </div>
 
           </div>
