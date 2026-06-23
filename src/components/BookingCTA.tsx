@@ -34,9 +34,9 @@ export default function BookingCTA({
         <img src={rightImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} />
       </div>
 
-      {/* Centre card — overlaps both images */}
+      {/* Centre card — overlaps both images; frosted-glass (semi-transparent + blur) */}
       <div
-        className="absolute z-10 hidden md:flex flex-col gap-4 justify-center items-center text-center bg-brand-white"
+        className="absolute z-10 hidden md:flex flex-col gap-4 justify-center items-center text-center bg-brand-white/70 backdrop-blur-lg"
         data-aos="fade"
         data-aos-delay="200"
         data-aos-duration="2200"

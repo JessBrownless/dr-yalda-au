@@ -100,7 +100,18 @@ export default function Footer() {
       <div>
         <div className="pg-container pb-12 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="body-xs-caps">Dr. Yalda Jamali · MBChB · MSc Dermatology · FACCSM</p>
-          <p className="body-xs-caps">AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved</p>
+          <p className="body-xs-caps">
+            AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved ·{" "}
+            {/* Discreet designer credit */}
+            <a
+              href="https://www.instagram.com/jessicabrownless/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-cream transition-colors duration-300"
+            >
+              web designer
+            </a>
+          </p>
         </div>
       </div>
 

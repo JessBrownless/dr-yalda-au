@@ -15,8 +15,12 @@ const fallbackImages = [
   { src: "/assets/dr-yalda-treatment.avif", pos: "object-center" },
 ];
 
+// Number of posts shown. Keep in sync with the `md:grid-cols-*` below so the
+// row stays full (no trailing empty cell).
+const COUNT = 5;
+
 export default async function InstagramFeed() {
-  const posts = await fetchInstagramPosts(6);
+  const posts = await fetchInstagramPosts(COUNT);
   const isLive = posts.length > 0;
 
   return (
@@ -38,7 +42,7 @@ export default async function InstagramFeed() {
           </a>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
           {isLive
             ? posts.map((post) => (
                 <a
@@ -56,7 +60,7 @@ export default async function InstagramFeed() {
                   />
                 </a>
               ))
-            : fallbackImages.map(({ src, pos }, i) => (
+            : fallbackImages.slice(0, COUNT).map(({ src, pos }, i) => (
                 <a
                   key={i}
                   href={PROFILE_URL}
