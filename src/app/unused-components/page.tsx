@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { FaInstagram } from "react-icons/fa";
 import HeroExperiment from "@/components/HeroExperiment";
 import HeroExperimentSaved from "@/components/HeroExperimentSaved";
@@ -10,6 +11,10 @@ import LogoStripMarquee from "@/components/LogoStripMarquee";
 import LogoStripMarqueeMedia from "@/components/LogoStripMarqueeMedia";
 
 export default function UnusedComponentsPage() {
+  // Dev-only sandbox (orphaned component showcase). Return 404 in production so
+  // the route can't be reached on the live site; stays usable under `next dev`.
+  if (process.env.NODE_ENV === "production") notFound();
+
   return (
     <main>
 

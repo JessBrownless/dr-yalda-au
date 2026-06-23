@@ -12,7 +12,6 @@ const links = [
   { label: "Services", href: "/services" },
   { label: "Media", href: "/media" },
   { label: "Blog", href: "/blog" },
-  { label: "Dev", href: "/unused-components" },
 ];
 
 const socials = [
