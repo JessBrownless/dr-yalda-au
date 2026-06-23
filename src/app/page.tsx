@@ -147,7 +147,7 @@ export default function Home() {
       <ParallaxQuote />
 
       {/* Three blog post cards */}
-      <section className="bg-parchment py-24 md:py-40">
+      <section className="bg-parchment pt-24 md:pt-40 pb-36 md:pb-56">
         <div className="pg-container">
 
           {/* Section header */}
@@ -172,7 +172,7 @@ export default function Home() {
                 image: "/assets/IMG_0036.avif",
                 category: "Philosophy",
                 readTime: "4 min read",
-                title: "What I Learnt About Skin from a Decade in Medicine",
+                title: "What a Decade in Medicine Has Taught Me About Skin",
                 excerpt: "Ten years and thousands of patients in — what I've come to believe about skin and ageing.",
                 href: "/blog/what-i-learnt-about-skin",
               },
@@ -180,7 +180,7 @@ export default function Home() {
                 image: "/assets/IMG_0003.jpg",
                 category: "Philosophy",
                 readTime: "3 min read",
-                title: 'What "Natural-Looking" Actually Means to Me',
+                title: 'What "Natural-Looking" Results Actually Mean to Me',
                 excerpt: "Natural doesn't mean untreated. It means looking like the best version of yourself.",
                 href: "/blog/natural-looking",
               },
@@ -188,7 +188,7 @@ export default function Home() {
                 image: "/assets/IMG_0025.jpg",
                 category: "Consultation",
                 readTime: "4 min read",
-                title: "Five Things I'd Ask Before Booking with Any Cosmetic Doctor",
+                title: "Five Things to Ask Any Practitioner Before Booking",
                 excerpt: "The practitioner matters more than the device — five questions worth asking first.",
                 href: "/blog/five-things-to-ask",
               },
@@ -211,7 +211,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-3">
                   <p className="overline">{category} · {readTime}</p>
-                  <h3 className="heading-md group-hover:opacity-70 transition-opacity duration-300">{title}</h3>
+                  <h3 className="heading-md text-balance sm:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">{title}</h3>
                   <p className="body-serif">{excerpt}</p>
                 </div>
               </a>

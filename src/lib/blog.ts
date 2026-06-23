@@ -18,6 +18,10 @@ export type BlogCategory = (typeof CATEGORIES)[number];
 
 export interface BlogFrontmatter {
   title: string;
+  /** Optional shorter title for the index grid cards. Keeps the full `title`
+   *  as the post H1 / SEO headline while letting card titles be a uniform
+   *  length so a row of cards lines up. Falls back to `title` when unset. */
+  cardTitle?: string;
   slug?: string;
   description: string;
   publishedAt: string;

@@ -1,11 +1,16 @@
 import type { NextConfig } from "next";
-import os from "os";
-import path from "path";
 
+// Dev and build use SEPARATE build dirs so that running `next build` can't
+// overwrite a live `next dev` server's chunks/manifests mid-flight — that
+// collision made the running page 404 its CSS/JS. `next start` runs with
+// NODE_ENV=production, so it reads `.next`, the same dir `next build` writes.
+// Both dirs are gitignored.
+//
+// NOTE: Next.js resolves `distDir` relative to the project root and ignores a
+// leading slash, so an absolute path (e.g. os.tmpdir()) does NOT move output
+// outside the project — it just nests it under the repo. Keep these relative.
 const nextConfig: NextConfig = {
-  // Use a temp distDir locally to avoid iCloud Drive corrupting webpack builds.
-  // On Netlify (and CI), NETLIFY=true so we skip this and use the default .next dir.
-  ...(process.env.NETLIFY ? {} : { distDir: path.join(os.tmpdir(), "dr-yalda-next") }),
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
 };
 
 export default nextConfig;

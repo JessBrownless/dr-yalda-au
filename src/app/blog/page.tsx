@@ -163,8 +163,11 @@ export default function BlogIndexPage() {
                   <p className="overline">
                     {post.frontmatter.category} · {post.readingMinutes} min read
                   </p>
-                  <h3 className="heading-md group-hover:opacity-70 transition-opacity duration-300">
-                    {post.frontmatter.title}
+                  {/* Card titles use the uniform-length `cardTitle` (falling back
+                      to the full title), balanced and reserving 3 lines so a row of
+                      cards lines up. text-balance evens the line split. */}
+                  <h3 className="heading-md text-balance sm:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">
+                    {post.frontmatter.cardTitle ?? post.frontmatter.title}
                   </h3>
                   <p className="body-serif">{post.frontmatter.description}</p>
                 </div>
