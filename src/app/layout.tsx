@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Lato, Marcellus, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import AOSInit from "@/components/AOSInit";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import SiteSchema from "@/components/SiteSchema";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -28,13 +29,45 @@ const hankenGrotesk = Hanken_Grotesk({
   display: "swap",
 });
 
+const SITE_URL = "https://dryalda.com.au";
+const TITLE = "Dr Yalda Jamali — Cosmetic Doctor, Sydney";
+const DESCRIPTION =
+  "Dr Yalda Jamali is a Sydney cosmetic doctor focused on natural-looking results, skin health, and considered, evidence-based care across two clinics.";
+
 export const metadata: Metadata = {
-  title: "Dr Yalda Jamali — Cosmetic Doctor, Sydney",
-  description: "",
-  themeColor: "#F5F2EC",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
   icons: {
     icon: "/favicon.svg",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    url: "/",
+    siteName: "Dr Yalda Jamali",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: "/assets/og-dr-yalda.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr Yalda Jamali — Sydney cosmetic doctor",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/assets/og-dr-yalda.jpg"],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#F5F2EC",
 };
 
 export default function RootLayout({
@@ -45,6 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lato.variable} ${marcellus.variable} ${hankenGrotesk.variable}`}>
       <body aria-label="Dr Yalda Jamali — Cosmetic Doctor, Sydney">
+        <SiteSchema />
         <SmoothScroll />
         <AOSInit />
         <AnnouncementBar />
