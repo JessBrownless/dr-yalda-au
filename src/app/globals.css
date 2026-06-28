@@ -684,7 +684,7 @@ body {
 .cta-label {
   font-family: var(--font-lato), system-ui, sans-serif;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.4em;
   text-transform: uppercase;
   line-height: 1;
@@ -694,7 +694,7 @@ body {
 .cta-label-sm {
   font-family: var(--font-lato), system-ui, sans-serif;
   font-size: 9px;
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: 0.4em;
   text-transform: uppercase;
   line-height: 1;
@@ -765,7 +765,7 @@ body {
   border: 1px solid transparent;
   font-family: var(--font-lato), system-ui, sans-serif;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.4em;
   text-transform: uppercase;
   line-height: 1;
@@ -783,7 +783,7 @@ body {
 .btn-sm {
   padding: 0.9375rem 2.5rem;          /* 15px / 40px — roomier vertical */
   font-size: 9px;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 /* ── Primary — solid fill ── */
