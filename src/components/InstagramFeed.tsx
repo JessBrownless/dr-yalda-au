@@ -42,15 +42,16 @@ export default async function InstagramFeed() {
           </a>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
+        {/* Mobile: featured first post full-width, then pairs. Desktop: single 5-across row. */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {isLive
-            ? posts.map((post) => (
+            ? posts.map((post, i) => (
                 <a
                   key={post.id}
                   href={post.permalink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative block aspect-square overflow-hidden group"
+                  className={`relative block aspect-square overflow-hidden group ${i === 0 ? "col-span-2 md:col-span-1" : ""}`}
                 >
                   <img
                     src={post.imageUrl}
@@ -66,7 +67,7 @@ export default async function InstagramFeed() {
                   href={PROFILE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative block aspect-square overflow-hidden group"
+                  className={`relative block aspect-square overflow-hidden group ${i === 0 ? "col-span-2 md:col-span-1" : ""}`}
                 >
                   <img
                     src={src}
