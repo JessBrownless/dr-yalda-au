@@ -25,6 +25,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [overDark, setOverDark] = useState(true);
+  const [overSticky, setOverSticky] = useState(false);
   const [announcementOffset, setAnnouncementOffset] = useState(32);
 
   useEffect(() => {
@@ -78,10 +79,38 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  // Transparent with cream text over the hero; solid parchment with dark text
-  // once scrolled past it. Dark mid-page sections scroll beneath the filled bar,
-  // so no per-section tracking is needed.
-  const dark = !open && !overDark;
+  // Go transparent again over the sticky-scroll billboard panels. Unlike the
+  // old per-section observers (which fired on viewport entry), this measures
+  // whether the section actually covers the nav bar's midline.
+  useEffect(() => {
+    const el = document.getElementById("sticky-scroll");
+    if (!el) {
+      setOverSticky(false);
+      return;
+    }
+    let raf = 0;
+    const measure = () => {
+      raf = 0;
+      const r = el.getBoundingClientRect();
+      setOverSticky(r.top <= 40 && r.bottom >= 40);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(measure);
+    };
+    measure();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [pathname]);
+
+  // Transparent with cream text over the hero and the sticky billboard; solid
+  // parchment with dark text everywhere else. Other dark sections scroll
+  // beneath the filled bar.
+  const dark = !open && !overDark && !overSticky;
 
   return (
     <>
@@ -126,16 +155,20 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Center column — logo */}
+          {/* Center column — logo. Inlined (not <Image>) so the droplet path can
+              fade in after the hero resolves; the Y renders immediately. */}
           <Link href="/" className={`flex justify-center transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-90 hover:opacity-100"}`}>
-            <Image
-              src="/assets/dr-yalda-logo-icon.svg"
-              alt="Dr. Yalda Jamali"
-              width={20}
-              height={20}
-              className="w-auto transition-all duration-500"
-              style={{ height: "20px", filter: dark ? "brightness(0)" : "brightness(0) invert(1)" }}
-            />
+            <svg
+              viewBox="0 0 34 28"
+              role="img"
+              aria-label="Dr. Yalda Jamali"
+              fill="none"
+              className={`w-auto transition-colors duration-500 ${dark ? "text-brand-black" : "text-brand-white"}`}
+              style={{ height: "20px" }}
+            >
+              <path d="M9.47656 0H14.3832L23.1166 15.1067L31.8499 0H33.2832L23.6699 16.6267V27.5533H20.2032V16.6267C15.3632 8.2 12.6432 3.47333 12.0299 2.43333C11.2899 1.13333 10.4366 0.32 9.47656 0Z" fill="currentColor" />
+              <path className="logo-droplet" d="M10.7575 18.7667C10.9375 22.6467 8.07088 24.1601 5.39755 24.1667C4.91088 24.1667 4.41755 24.1201 3.93755 24.0134C3.66421 23.9534 3.39755 23.8801 3.13755 23.7867C2.27755 23.4734 1.49755 22.9667 0.93088 22.2201C0.297547 21.3867 -0.0691209 20.2601 0.0108791 18.7934C0.110879 17.0067 1.65755 14.6334 2.83755 12.5001C4.26421 9.92675 5.36421 7.72008 5.36421 7.64675C5.36421 7.60008 6.27755 9.74008 7.71088 12.3067C8.91755 14.4734 10.6709 16.9401 10.7575 18.7667Z" fill="currentColor" />
+            </svg>
           </Link>
 
           {/* Right column — desktop links / mobile Book Now text link */}

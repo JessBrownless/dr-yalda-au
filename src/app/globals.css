@@ -879,3 +879,19 @@ body {
     margin-bottom: 0;
   }
 }
+
+/* ─── Nav logo droplet ──────────────────────────────────────────────── */
+/*
+  The Y path of the inline nav logo renders immediately; the droplet path
+  follows with a long, quiet fade. Delay (3.2s) is timed to land after the
+  hero sequence: text at 0.7s, image layer fading from 1.8s.
+*/
+.logo-droplet {
+  opacity: 0;
+  animation: logoDropletFade 2.2s ease-out 3.2s forwards;
+}
+
+@keyframes logoDropletFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
