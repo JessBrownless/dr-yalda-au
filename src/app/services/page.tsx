@@ -68,7 +68,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Right — text */}
-            <div className="md:col-span-5 md:col-start-8 flex flex-col gap-8">
+            <div className="md:col-span-5 md:col-start-8 flex flex-col gap-6">
 
               {/* Eyebrow + heading */}
               <div>

@@ -510,11 +510,12 @@ body {
 }
 
 /* heading-lg — H2 section headings
-   20 → 40px · leading 1.2 · 0 tracking · sentence */
+   24 → 40px · leading 1.2 · 0 tracking · sentence
+   Floor raised 20→24px so mobile H2s clear the 16px body copy */
 .heading-lg {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(1.25rem, 3.125vw, 2.5rem);
+  font-size: clamp(1.5rem, 3.125vw, 2.5rem);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;

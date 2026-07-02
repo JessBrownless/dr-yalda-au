@@ -144,7 +144,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
             {/* Left — heading + body */}
-            <div className="md:col-span-8 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
+            <div className="md:col-span-8 flex flex-col gap-6" data-aos="fade" data-aos-duration="1000">
 
               <div className="flex flex-col">
                 <p className="overline">Credentials</p>
