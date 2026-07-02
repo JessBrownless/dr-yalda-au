@@ -94,7 +94,7 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
             {/* Left — heading + body */}
-            <div className="md:col-span-8 md:col-start-1 md:row-start-1 flex flex-col gap-8" data-aos="fade" data-aos-duration="1000">
+            <div className="md:col-span-8 md:col-start-1 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-duration="1000">
 
               <div className="flex flex-col">
                 <p className="overline">
@@ -272,7 +272,7 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
             {/* Left — text */}
-            <div className="md:col-span-6 flex flex-col gap-8 pt-4">
+            <div className="md:col-span-6 flex flex-col gap-6 pt-4">
               <div className="flex flex-col">
                 <h2 className="overline">
                   Podcast appearances
@@ -372,8 +372,8 @@ export default function MediaPage() {
                   {/* Player UI — overlaid, sitting above the croppable bottom of the phone */}
                   <div style={{ position: "absolute", left: 0, right: 0, bottom: "26%", padding: "0 20px", zIndex: 2 }}>
                     {/* Show + episode */}
-                    <p style={{ color: "rgba(245,242,236,0.55)", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>The Glow Up Podcast</p>
-                    <p style={{ color: "#F5F2EC", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>The truth about filler — what no one tells you</p>
+                    <p style={{ color: "rgba(245,242,236,0.55)", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: 6 }}>That Beauty Podcast</p>
+                    <p style={{ color: "#F5F2EC", fontSize: 13, fontWeight: 300, lineHeight: 1.4, marginBottom: 16 }}>How Your Skin Routine Should Change When You’re Pregnant</p>
 
                     {/* Progress bar */}
                     <div style={{ height: 2, background: "rgba(255,255,255,0.25)", borderRadius: 2, marginBottom: 6, position: "relative" }}>
@@ -381,8 +381,8 @@ export default function MediaPage() {
                       <div style={{ width: 8, height: 8, background: "#fff", borderRadius: "50%", position: "absolute", top: -3, left: "38%", transform: "translateX(-50%)" }} />
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
-                      <span style={{ color: "rgba(245,242,236,0.55)", fontSize: 9 }}>16:04</span>
-                      <span style={{ color: "rgba(245,242,236,0.55)", fontSize: 9 }}>42:18</span>
+                      <span style={{ color: "rgba(245,242,236,0.55)", fontSize: 9 }}>13:20</span>
+                      <span style={{ color: "rgba(245,242,236,0.55)", fontSize: 9 }}>35:06</span>
                     </div>
 
                     {/* Controls */}
