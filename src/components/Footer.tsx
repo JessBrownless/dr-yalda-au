@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 
 
 const links = [
@@ -21,10 +21,9 @@ const clinics = [
 ];
 
 const socials = [
-  { icon: FaInstagram,  platform: "Instagram", handle: "@dr.yalda",  href: "https://instagram.com/dr.yalda" },
-  { icon: FaTiktok,     platform: "TikTok",    handle: "@dryaldajamali",  href: "https://tiktok.com/@dryaldajamali" },
-  { icon: FaLinkedinIn, platform: "LinkedIn",  handle: "Dr. Yalda Jamali", href: "https://linkedin.com" },
-  { icon: FaFacebookF,  platform: "Facebook",  handle: "Dr. Yalda Jamali", href: "https://facebook.com" },
+  { icon: FaInstagram,  platform: "Instagram", handle: "@dr.yalda",  href: "https://www.instagram.com/dr.yalda/" },
+  { icon: FaTiktok,     platform: "TikTok",    handle: "@dr.yalda",  href: "https://www.tiktok.com/@dr.yalda" },
+  { icon: FaLinkedinIn, platform: "LinkedIn",  handle: "Dr. Yalda Jamali", href: "https://www.linkedin.com/in/yaldajamali/" },
 ];
 
 export default function Footer() {

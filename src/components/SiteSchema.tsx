@@ -38,8 +38,9 @@ const schema = {
         "Dermatology",
       ],
       sameAs: [
-        "https://instagram.com/dr.yalda",
-        "https://tiktok.com/@dryaldajamali",
+        "https://www.instagram.com/dr.yalda/",
+        "https://www.tiktok.com/@dr.yalda",
+        "https://www.linkedin.com/in/yaldajamali/",
       ],
       identifier: {
         "@type": "PropertyValue",

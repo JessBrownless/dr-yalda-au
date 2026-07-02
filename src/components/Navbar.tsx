@@ -15,9 +15,9 @@ const links = [
 ];
 
 const socials = [
-  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FaInstagram, href: "https://www.instagram.com/dr.yalda/", label: "Instagram" },
+  { icon: FaTiktok, href: "https://www.tiktok.com/@dr.yalda", label: "TikTok" },
+  { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/yaldajamali/", label: "LinkedIn" },
 ];
 
 
