@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 
 const defaultImages = [
-  { src: "/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif", position: "65% 10%" },
+  { src: "/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif", position: "50% 10%" },
   { src: "/assets/IMG_0028.avif", position: "50% 20%" },
 ];
 
