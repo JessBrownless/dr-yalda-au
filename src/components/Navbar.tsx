@@ -87,10 +87,10 @@ export default function Navbar() {
     <>
       <nav
         aria-label="Main navigation"
-        className={`${open ? "fixed inset-x-0 z-[80]" : "sticky top-0 z-[60] -mb-px"}`}
+        className={`${open ? "fixed inset-x-0 z-[80]" : "sticky top-0 z-[60]"}`}
         style={open ? { top: `${announcementOffset}px` } : undefined}
       >
-        <div className={`relative transition-colors duration-500 ${dark ? "bg-parchment border-b border-brand-line" : "bg-transparent border-b border-transparent"}`}>
+        <div className={`relative transition-colors duration-500 ${dark ? "bg-parchment border-b border-brand-line" : "bg-transparent"}`}>
           <div
             className="grid grid-cols-3 items-center relative px-4 md:px-16"
             style={{ height: "80px" }}
