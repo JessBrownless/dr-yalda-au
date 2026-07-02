@@ -21,7 +21,7 @@ const clinics = [
     suburb: "Paddington",
     address: "18 William St, Paddington, 2021",
     hours: null,
-    href: "https://www.epios.com.au",
+    href: "https://www.epioscosmeticclinic.com/book-now",
     logo: "/assets/clinic-logo-epios.png",
     maps: "https://www.google.com/maps/dir/?api=1&destination=18+William+St+Paddington+NSW+2021",
   },
@@ -30,7 +30,7 @@ const clinics = [
     suburb: "Balgowlah",
     address: "5/67 Wanganella St, Balgowlah, 2093",
     hours: null,
-    href: "#",
+    href: "https://www.austinclinic.com.au/book-online/",
     logo: null,
     maps: "https://www.google.com/maps/dir/?api=1&destination=5%2F67+Wanganella+St+Balgowlah+NSW+2093",
   },
@@ -139,6 +139,8 @@ export default function AppointmentsPage() {
                   {/* Right — book button */}
                   <a
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-sm btn-primary-light flex-shrink-0"
                     data-aos="fade"
                     data-aos-delay="150"
