@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import ParallaxQuote from "@/components/ParallaxQuote";
 import BookingCTA from "@/components/BookingCTA";
 import InstagramFeed from "@/components/InstagramFeed";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Meet Dr Yalda Jamali — Sydney cosmetic doctor with a Master's in Dermatology, offering ethical, consultation-led care focused on natural, balanced results.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About — Dr Yalda Jamali",
+    description:
+      "Meet Dr Yalda Jamali — Sydney cosmetic doctor with a Master's in Dermatology, offering ethical, consultation-led care focused on natural, balanced results.",
+    url: "/about",
+    images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
+  },
+};
 
 export default function AboutPage() {
   return (

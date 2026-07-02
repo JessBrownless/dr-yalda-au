@@ -1,12 +1,26 @@
-import { FaInstagram, FaTiktok, FaLinkedinIn, FaFacebookF, FaSpotify, FaApple, FaYoutube } from "react-icons/fa";
+import type { Metadata } from "next";
+import { FaInstagram, FaTiktok, FaLinkedinIn, FaSpotify, FaApple, FaYoutube } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
 import InstagramFeed from "@/components/InstagramFeed";
 
+export const metadata: Metadata = {
+  title: "Media & Press",
+  description:
+    "Dr Yalda Jamali in the media — expert commentary, podcast appearances and brand partnerships from a trusted Sydney cosmetic doctor and educator.",
+  alternates: { canonical: "/media" },
+  openGraph: {
+    title: "Media & Press — Dr Yalda Jamali",
+    description:
+      "Dr Yalda Jamali in the media — expert commentary, podcast appearances and brand partnerships from a trusted Sydney cosmetic doctor and educator.",
+    url: "/media",
+    images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
+  },
+};
+
 const socials = [
-  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
+  { icon: FaInstagram, href: "https://www.instagram.com/dr.yalda/", label: "Instagram" },
+  { icon: FaTiktok, href: "https://www.tiktok.com/@dr.yalda", label: "TikTok" },
+  { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/yaldajamali/", label: "LinkedIn" },
 ];
 
 // Partner/press logos for the static strip. `text` items render as a wordmark.

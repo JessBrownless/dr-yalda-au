@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Lato, Marcellus, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -36,7 +37,10 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: TITLE,
+  title: {
+    default: TITLE,
+    template: "%s — Dr Yalda Jamali",
+  },
   description: DESCRIPTION,
   alternates: { canonical: "/" },
   icons: {
@@ -85,6 +89,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        {/* GA4 — inert until NEXT_PUBLIC_GA_ID is set in the environment (Netlify) */}
+        {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
       </body>
     </html>
   );

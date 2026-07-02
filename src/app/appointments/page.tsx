@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import InstagramFeed from "@/components/InstagramFeed";
+
+export const metadata: Metadata = {
+  title: "Book a Consultation",
+  description:
+    "Book a consultation with Dr Yalda Jamali, Sydney cosmetic doctor — every treatment starts with an honest, unhurried conversation about your skin and goals.",
+  alternates: { canonical: "/appointments" },
+  openGraph: {
+    title: "Book a Consultation — Dr Yalda Jamali",
+    description:
+      "Book a consultation with Dr Yalda Jamali, Sydney cosmetic doctor — every treatment starts with an honest, unhurried conversation about your skin and goals.",
+    url: "/appointments",
+    images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
+  },
+};
 
 const clinics = [
   {

@@ -1,7 +1,22 @@
+import type { Metadata } from "next";
 import FaqAccordion from "@/components/FaqAccordion";
 import HeroHome from "@/components/HeroHome";
 import BookingCTA from "@/components/BookingCTA";
 import InstagramFeed from "@/components/InstagramFeed";
+
+export const metadata: Metadata = {
+  title: "Cosmetic Services, Sydney",
+  description:
+    "Consultation-led cosmetic services in Sydney with Dr Yalda Jamali — anti-wrinkle treatments, skin quality and facial balancing, guided by medical evidence.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Cosmetic Services, Sydney — Dr Yalda Jamali",
+    description:
+      "Consultation-led cosmetic services in Sydney with Dr Yalda Jamali — anti-wrinkle treatments, skin quality and facial balancing, guided by medical evidence.",
+    url: "/services",
+    images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
+  },
+};
 
 export default function ServicesPage() {
   return (
