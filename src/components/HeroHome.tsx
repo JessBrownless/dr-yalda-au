@@ -44,7 +44,9 @@ export default function HeroHome({
   const isLeft = align === "left";
   const isBottom = verticalAlign === "bottom";
   const heroImages = images ?? defaultImages;
-  const mobileHeight = height ?? "100dvh";
+  // Mobile uses svh, not dvh: dvh tracks the collapsing URL bar, so the hero
+  // resizes and the cover image re-crops ("zooms") mid-scroll. svh stays fixed.
+  const mobileHeight = (height ?? "100dvh").replace("dvh", "svh");
   const desktopHeight = height ?? "100dvh";
   const imgRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
