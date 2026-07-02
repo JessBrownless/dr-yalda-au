@@ -283,13 +283,12 @@ export default function MediaPage() {
               </div>
 
               <div className="flex flex-col divide-y divide-brand-white/10">
-                {/* TODO: replace each `url` with the real Spotify episode link
-                    (open.spotify.com/episode/<id>). On mobile it opens the
-                    Spotify app if installed, otherwise the web player. */}
+                {/* Episode links open the Spotify app on mobile if installed,
+                    otherwise the web player. */}
                 {[
                   { show: "You Beauty", episode: "Filler Is Out. Do This Instead", duration: "42 min", url: "https://open.spotify.com/episode/3Nurqs29I3xi1oBaDKZwnU" },
                   { show: "That Beauty Podcast", episode: "How Your Skin Routine Should Change When You’re Pregnant", duration: "35 min", url: "https://open.spotify.com/episode/5InP4QcRnJMW422L9jXEJG" },
-                  { show: "The Beauty Edit", episode: "Natural results: redefining cosmetic medicine", duration: "28 min", url: "https://open.spotify.com/" },
+                  { show: "The Beauty Edit", episode: "Natural results: redefining cosmetic medicine", duration: "28 min", url: "https://open.spotify.com/episode/77niQRyEiiKLUoFgHmPtRK" },
                 ].map(({ show, episode, duration, url }, i) => (
                   <a
                     key={i}
