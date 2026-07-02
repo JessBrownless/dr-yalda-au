@@ -25,8 +25,6 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [overDark, setOverDark] = useState(true);
-  const [overStickyScroll, setOverStickyScroll] = useState(false);
-  const [overParallaxQuote, setOverParallaxQuote] = useState(false);
   const [announcementOffset, setAnnouncementOffset] = useState(32);
 
   useEffect(() => {
@@ -80,31 +78,10 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  useEffect(() => {
-    const el = document.getElementById("sticky-scroll");
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setOverStickyScroll(entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [pathname]);
-
-  useEffect(() => {
-    const el = document.getElementById("parallax-quote");
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setOverParallaxQuote(entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [pathname]);
-
-  // Text/elements flip based on the section behind the nav.
-  const overDarkSection = overDark || overStickyScroll || overParallaxQuote;
-  const dark = !open && !overDarkSection;
+  // Transparent with cream text over the hero; solid parchment with dark text
+  // once scrolled past it. Dark mid-page sections scroll beneath the filled bar,
+  // so no per-section tracking is needed.
+  const dark = !open && !overDark;
 
   return (
     <>
@@ -113,7 +90,7 @@ export default function Navbar() {
         className={`${open ? "fixed inset-x-0 z-[80]" : "sticky top-0 z-[60]"}`}
         style={open ? { top: `${announcementOffset}px` } : undefined}
       >
-        <div className="relative">
+        <div className={`relative transition-colors duration-500 ${dark ? "bg-parchment border-b border-brand-line" : "bg-transparent border-b border-transparent"}`}>
           <div
             className="grid grid-cols-3 items-center relative px-4 md:px-16"
             style={{ height: "80px" }}
