@@ -21,7 +21,7 @@ const clinics = [
     suburb: "Paddington",
     address: "18 William St, Paddington, 2021",
     hours: null,
-    href: "#",
+    href: "https://www.epios.com.au",
     logo: "/assets/clinic-logo-epios.png",
     maps: "https://www.google.com/maps/dir/?api=1&destination=18+William+St+Paddington+NSW+2021",
   },
