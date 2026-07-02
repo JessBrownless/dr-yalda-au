@@ -49,6 +49,7 @@ export default function HeroHome({
   const mobileHeight = (height ?? "100dvh").replace("dvh", "svh");
   const desktopHeight = height ?? "100dvh";
   const imgRef = useRef<HTMLDivElement>(null);
+  const mobileImgRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -64,9 +65,13 @@ export default function HeroHome({
 
     const onScroll = () => {
       raf = requestAnimationFrame(() => {
+        const y = window.scrollY;
         if (imgRef.current) {
-          const y = window.scrollY * 0.35;
-          imgRef.current.style.transform = `translateY(${y}px)`;
+          imgRef.current.style.transform = `translateY(${y * 0.35}px)`;
+        }
+        // Mobile drifts at less than half the desktop rate — present, not showy
+        if (mobileImgRef.current) {
+          mobileImgRef.current.style.transform = `translateY(${y * 0.15}px)`;
         }
       });
     };
@@ -86,8 +91,9 @@ export default function HeroHome({
       {/* ── MOBILE ── */}
       <section className="md:hidden relative overflow-hidden bg-brand-charcoal text-on-dark-high opacity-0 animate-fade-in" style={{ height: mobileHeight, maxHeight: mobileHeight, marginTop: "-80px", animationDelay: "0s", animationDuration: "0.4s" }}>
 
-        {/* Photos — crossfade, wrapped so the image layer fades in last */}
-        <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ zIndex: 0, animationDelay: "1.8s", animationDuration: "2.5s" }}>
+        {/* Photos — crossfade, wrapped so the image layer fades in last.
+            Oversized (like desktop) so the subtle parallax drift never shows edges. */}
+        <div ref={mobileImgRef} className="absolute left-0 right-0 opacity-0 animate-fade-in" style={{ top: "-6%", height: "112%", zIndex: 0, willChange: "transform", animationDelay: "1.8s", animationDuration: "2.5s" }}>
           {heroImages.map((img, i) => (
             <img
               key={img.src}
