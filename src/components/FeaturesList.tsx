@@ -48,7 +48,8 @@ const features = [
     outlet: "BeautyCrew",
     title: "Expectation vs reality: what it's really like working in beauty",
     year: "2023",
-    href: "https://www.beautycrew.com.au/expectation-vs-reality-working-in-beauty",
+    // Original 404s — BeautyCrew archived it; Wayback snapshot keeps it reachable
+    href: "https://web.archive.org/web/20251211205244/https://www.beautycrew.com.au/expectation-vs-reality-working-in-beauty",
   },
   {
     outlet: "Daily Mail",
@@ -90,13 +91,8 @@ const features = [
     outlet: "Primer",
     title: "Forget fine lines. Pigmentation is the tell-tale ageing sign",
     year: "2023",
-    href: "https://primer.com.au/reduce-pigmentation/",
-  },
-  {
-    outlet: "Spell Magazine",
-    title: "Everything you need to know about ceramide",
-    year: "2023",
-    href: "https://spellmagazine.co.uk/everything-you-need-to-know-about-ceramide/",
+    // primer.com.au is down for maintenance — Wayback snapshot until it returns
+    href: "https://web.archive.org/web/20250422131827/https://primer.com.au/reduce-pigmentation/",
   },
   {
     outlet: "The Guardian",
@@ -115,7 +111,8 @@ const features = [
     outlet: "BeautyCrew",
     title: "This is how injectables could help prep your skin for winter",
     year: "2022",
-    href: "https://www.beautycrew.com.au/injectable-hyaluronic-acid",
+    // Original 404s — BeautyCrew archived it; Wayback snapshot keeps it reachable
+    href: "https://web.archive.org/web/20240908230042/https://www.beautycrew.com.au/injectable-hyaluronic-acid",
   },
   {
     outlet: "Daily Mail",
@@ -140,7 +137,8 @@ const features = [
     outlet: "Primer",
     title: "Do eye creams really work?",
     year: "2021",
-    href: "https://primer.com.au/do-eye-creams-work/",
+    // primer.com.au is down for maintenance — Wayback snapshot until it returns
+    href: "https://web.archive.org/web/20250522104204/https://primer.com.au/do-eye-creams-work/",
   },
 ];
 

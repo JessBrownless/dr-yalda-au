@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FaInstagram, FaTiktok, FaLinkedinIn, FaSpotify, FaApple, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
 import InstagramFeed from "@/components/InstagramFeed";
 
@@ -326,29 +326,9 @@ export default function MediaPage() {
                 ))}
               </div>
 
-              {/* Listen on — platform links */}
-              <div className="flex flex-col gap-4 pt-4">
-                <p className="overline">Listen on</p>
-                <div className="flex items-center gap-6 md:gap-8 flex-wrap">
-                  {[
-                    { Icon: FaSpotify, label: "Spotify", href: "https://open.spotify.com/show/" },
-                    { Icon: FaApple, label: "Apple Podcasts", href: "https://podcasts.apple.com/" },
-                    { Icon: FaYoutube, label: "YouTube", href: "https://youtube.com/" },
-                  ].map(({ Icon, label, href }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-brand-white/50 hover:text-cream transition-colors duration-300 inline-flex items-center gap-2.5"
-                      aria-label={label}
-                    >
-                      <Icon size={18} />
-                      <span className="body-xs-caps">{label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
+              {/* "Listen on" platform row removed pre-launch: the Spotify/Apple/
+                  YouTube hrefs were placeholders (no channel URLs yet). Restore
+                  from git history when real show/channel links exist. */}
             </div>
 
             {/* Right — phone mockup, crops at bottom */}
