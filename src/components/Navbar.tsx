@@ -87,7 +87,7 @@ export default function Navbar() {
     <>
       <nav
         aria-label="Main navigation"
-        className={`${open ? "fixed inset-x-0 z-[80]" : "sticky top-0 z-[60]"}`}
+        className={`${open ? "fixed inset-x-0 z-[80]" : "sticky top-0 z-[60] -mb-px"}`}
         style={open ? { top: `${announcementOffset}px` } : undefined}
       >
         <div className={`relative transition-colors duration-500 ${dark ? "bg-parchment border-b border-brand-line" : "bg-transparent border-b border-transparent"}`}>
