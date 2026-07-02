@@ -36,7 +36,7 @@ export default function LogoStripDark() {
             style={{ animationDuration: "60s" }}
           >
             {track.map(({ src, alt, small }, i) => (
-              <div key={i} className="flex-shrink-0 px-10 flex items-center">
+              <div key={i} className="flex-shrink-0 px-8 flex items-center">
                 <Image
                   src={src}
                   alt={i < logos.length ? alt : ""}
