@@ -58,7 +58,8 @@ export default function StylesheetPage() {
           <p className="overline text-brand-black/60 mb-4">Internal</p>
           <h1 className="heading-display !text-brand-black">Stylesheet</h1>
           <p className="body-sans !text-brand-black/60 mt-4 max-w-[60ch]">
-            Brand colour tokens and typographic helpers.
+            Brand colour tokens, typographic helpers, and the recurring patterns
+            (buttons, links, heading groups, layout) used across the site.
           </p>
         </header>
 
@@ -268,6 +269,108 @@ export default function StylesheetPage() {
               </div>
 
             </div>
+          </div>
+        </section>
+
+        {/* ─── Links ───────────────────────────────────────────────────── */}
+        <section className="mt-20">
+          <h2 className="heading-lg !text-brand-black mb-2">Links</h2>
+          <p className="body-sans !text-brand-black/60 mb-8">
+            The two in-content link patterns below the button system. Hover each to see its state.
+          </p>
+
+          <div className="bg-parchment p-8 md:p-12">
+            <div className="flex flex-wrap items-start gap-x-16 gap-y-12">
+
+              {/* Editorial arrow link */}
+              <div className="flex flex-col gap-3">
+                <a href="#" className="link-arrow self-start">
+                  About Dr Yalda
+                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+                <p className="body-xs !text-brand-black/60">Editorial inline link — hairline underline, arrow slides on hover. In-content alternative to a .btn pill.</p>
+                <p className="body-xs !text-brand-black/40">.link-arrow + arrow svg</p>
+              </div>
+
+              {/* Caps micro-link */}
+              <div className="flex flex-col gap-3">
+                <a href="#" className="self-start inline-flex body-xs-caps border-b border-brand-black/20 pb-1 hover:border-brand-black/60 transition-colors duration-300 items-center gap-3 whitespace-nowrap">
+                  View all
+                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+                <p className="body-xs !text-brand-black/60">Caps micro-link — &ldquo;View all&rdquo;, &ldquo;Follow&rdquo;, announcement bar. Border brightens on hover; arrow optional.</p>
+                <p className="body-xs !text-brand-black/40">.body-xs-caps + border-b border-brand-black/20 pb-1 (composition, not a utility)</p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Heading group ───────────────────────────────────────────── */}
+        <section className="mt-20">
+          <h2 className="heading-lg !text-brand-black mb-2">Heading group</h2>
+          <p className="body-sans !text-brand-black/60 mb-8">
+            The canonical overline &rarr; heading &rarr; lede stack. Vertical spacing comes from{" "}
+            <code>.from-overline</code> (on the heading, scales with its size) and <code>.lede</code>{" "}
+            (on the subtitle) — never ad-hoc margins. Overline and heading sit as direct siblings
+            in a gap-less column.
+          </p>
+
+          <div className="bg-parchment p-8 md:p-12">
+            <div className="flex flex-col">
+              <p className="overline">Cosmetic services</p>
+              <h3 className="heading-lg from-overline">Consultation-led care across Sydney</h3>
+              <p className="body-serif text-on-light-low lede" style={{ maxWidth: "60ch" }}>
+                Each treatment is consultation-led, focused on skin quality and long-term results.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Arrows ──────────────────────────────────────────────────── */}
+        <section className="mt-20">
+          <h2 className="heading-lg !text-brand-black mb-2">Arrows</h2>
+          <p className="body-sans !text-brand-black/60 mb-8">
+            One arrow, drawn once: 0.75 stroke, round caps, <code>currentColor</code>. The right
+            arrow (12&times;8) lives inside buttons and links; the down arrow (14&times;16) marks
+            scroll cues. Don&rsquo;t restyle, thicken, or redraw them.
+          </p>
+
+          <div className="bg-parchment p-8 md:p-12">
+            <div className="flex flex-wrap items-start gap-x-16 gap-y-10">
+              <div className="flex flex-col gap-4">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true" className="text-brand-black"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <p className="body-xs !text-brand-black/60">Right — 12&times;8 · buttons, links, list rows</p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="text-brand-black"><path d="M7 1v13M1 9l6 5 6-5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <p className="body-xs !text-brand-black/60">Down — 14&times;16 · scroll cues, &ldquo;explore&rdquo; links</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Layout ──────────────────────────────────────────────────── */}
+        <section className="mt-20">
+          <h2 className="heading-lg !text-brand-black mb-2">Layout</h2>
+          <p className="body-sans !text-brand-black/60 mb-8">
+            Structural helpers and rhythms that repeat across every page.
+          </p>
+
+          <div className="divide-y divide-brand-line">
+            {[
+              { name: ".pg-container", desc: "The standard container — max-width 1200px, fluid side padding clamp(1.75rem, 5vw, 5rem). Wrap any contained section; full-bleed sections intentionally skip it." },
+              { name: "Section rhythm", desc: "Contained sections: bg-parchment py-20 md:py-32. Billboard statements get double air: py-40 md:py-64." },
+              { name: ".site-portrait", desc: "Standalone portrait images — 1:1 on mobile, 3:4 from md, object-fit cover, crop favouring the top of frame." },
+              { name: ".hero-noise", desc: "Film-grain SVG overlay for dark hero sections (HeroHome, ParallaxQuote). Subtle — opacity ~0.08." },
+              { name: "Mobile / desktop split", desc: "Complex layered sections render twin markup: <section class=\"md:hidden\"> + <section class=\"hidden md:block\">. Used by the hero and about hero." },
+              { name: "12-column grid", desc: "Always gated: grid-cols-1 md:grid-cols-12. A bare grid-cols-12 overflows mobile viewports — this has shipped as a bug before." },
+            ].map(({ name, desc }) => (
+              <div key={name} className="py-6 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-3 md:gap-6 items-start">
+                <p className="body-xs-caps !text-brand-black/60">{name}</p>
+                <p className="body-xs !text-brand-black/50">{desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 

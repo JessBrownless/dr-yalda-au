@@ -152,8 +152,7 @@ export default function MediaPage() {
                 </h2>
                 <a
                   href="mailto:hollie@shapr.com.au"
-                  className="text-brand-black font-light underline-offset-4 hover:underline mt-2"
-                  style={{ fontFamily: "'Heading', serif", fontSize: "0.95rem" }}
+                  className="body-serif text-brand-black underline-offset-4 hover:underline mt-2"
                 >
                   hollie@shapr.com.au
                 </a>

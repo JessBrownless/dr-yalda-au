@@ -133,7 +133,7 @@ export default function AppointmentsPage() {
                       </svg>
                       <p className="body-xs-caps">{address}</p>
                     </div>
-                    {hours && <p style={{ fontSize: "11px", fontFamily: "sans-serif", fontWeight: 300, color: "rgba(45,44,42,0.5)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{hours}</p>}
+                    {hours && <p className="body-xs-caps text-brand-black/50">{hours}</p>}
                   </div>
 
                   {/* Right — book button */}
