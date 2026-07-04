@@ -55,6 +55,7 @@ Headings use a fluid √2 modular scale (`heading-mega` through `heading-sm`), i
 | --- | --- | --- |
 | `.heading-mega` | Uppercase hero brand mark (name lockup) | **Uppercase**, 56→158px, leading 0.95, +0.03em tracking. One √2 step above `.heading-display`. Reserve for the hero name lockup in `HeroHome`; don't use for editorial titles (use `.heading-display` for those) |
 | `.heading-hero` | **Hero H1 lockup** — every page's hero title | **Uppercase**, 40→80px, leading 1, +0.1em tracking. Dedicated to hero H1s and decoupled from the modular scale, so tune it freely without affecting the scale. Colour is set per-use (`text-parchment`). |
+| `.lede-hero` | Hero tagline/subtitle under the hero H1 | 17→20px, leading 1.5, +0.02em. Decoupled from the scale like `.heading-hero`. Floor deliberately sits **above** 16px body copy — hero taglines previously wore `.heading-sm`, whose 14px floor made them smaller than body text on phones. |
 | `.heading-display` | Billboard / hero display | Sentence case, 56→112px, leading 1, −0.015em tracking |
 | `.heading-2xl` | Large display heading | Sentence case, 40→79px, leading 1.05, −0.01em tracking |
 | `.heading-statement` | Centred editorial statements | Sentence case, 28→56px, leading 1.15, −0.005em. Fills the gap between `.heading-lg` and `.heading-2xl`. |

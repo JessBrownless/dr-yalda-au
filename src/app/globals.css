@@ -488,6 +488,20 @@ body {
   text-transform: uppercase;
 }
 
+/* lede-hero — hero tagline/subtitle under a hero H1.
+   Like heading-hero, decoupled from the modular scale. Previously hero
+   taglines wore .heading-sm, whose 14px floor rendered the subtitle SMALLER
+   than body copy on phones. Floor here stays above body (16px).
+   17 → 20px · leading 1.5 · +0.02em · sentence */
+.lede-hero {
+  margin: 0;
+  font-family: "Heading", serif;
+  font-size: clamp(1.0625rem, calc(0.875rem + 0.469vw), 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
 /* heading-2xl — large display heading
    40 → 79px · leading 1.05 · −0.01em · sentence */
 .heading-2xl {
