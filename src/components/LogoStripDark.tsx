@@ -15,7 +15,7 @@ const track = [...logos, ...logos];
 
 export default function LogoStripDark() {
   return (
-    <section className="bg-parchment py-32 md:py-44">
+    <section className="bg-parchment py-24 md:py-44">
 
       {/* Mobile — "Proudly featured in" + full-bleed continuous marquee */}
       <div className="md:hidden flex flex-col items-center gap-10">
@@ -33,7 +33,7 @@ export default function LogoStripDark() {
         >
           <div
             className="flex w-max items-center select-none animate-marquee motion-reduce:animate-none"
-            style={{ animationDuration: "60s" }}
+            style={{ animationDuration: "50s" }}
           >
             {track.map(({ src, alt, small }, i) => (
               <div key={i} className="flex-shrink-0 px-8 flex items-center">
