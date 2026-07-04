@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
 import InstagramFeed from "@/components/InstagramFeed";
+import ParallaxDrift from "@/components/ParallaxDrift";
 
 export const metadata: Metadata = {
   title: "Media & Press",
@@ -38,9 +39,12 @@ export default function MediaPage() {
       {/* ─── HERO — 50/50 image background with centered text ──── */}
       <section className="relative overflow-hidden bg-brand-black text-on-dark-high" style={{ marginTop: "-80px" }}>
 
-        {/* Full-width image background — fades in last over black */}
+        {/* Full-width image background — fades in last over black. Oversized and
+            wrapped in ParallaxDrift for the same subtle drift as the homepage hero. */}
         <div className="absolute inset-0 overflow-hidden opacity-0 animate-fade-in" style={{ animationDelay: "1.8s", animationDuration: "2.5s" }}>
-          <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
+          <ParallaxDrift rate={0.15} className="absolute left-0 right-0" style={{ top: "-6%", height: "112%" }}>
+            <img src="/assets/IMG_0031.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "center 15%" }} />
+          </ParallaxDrift>
         </div>
 
         {/* Dark overlays — base dim + top fade for nav legibility + bottom fade for transition */}
@@ -49,7 +53,10 @@ export default function MediaPage() {
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(8,6,4,0.9) 0%, rgba(8,6,4,0.35) 40%, transparent 70%)" }} />
 
         {/* Bottom text — H1+sub left (max 4 cols), jumplink right of container, baseline aligned */}
-        <div className="relative z-10 flex flex-col justify-end pg-container pb-16 md:pb-24" style={{ minHeight: "90dvh", paddingTop: "120px" }}>
+        {/* svh, not dvh: dvh tracks the phone's collapsing URL bar, so the hero
+            grew mid-scroll and the cover image re-cropped ("jumpy zoom"). Same
+            fix as the homepage hero. */}
+        <div className="relative z-10 flex flex-col justify-end pg-container pb-16 md:pb-24" style={{ minHeight: "90svh", paddingTop: "120px" }}>
           <div className="flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end">
             <div className="md:col-span-6 flex flex-col items-start text-left">
               <h1
@@ -58,7 +65,7 @@ export default function MediaPage() {
               >
                 Media
               </h1>
-              <p className="body-serif opacity-0 animate-fade-in text-parchment/50 font-light mt-8 max-w-[42ch]" style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="lede-hero opacity-0 animate-fade-in text-parchment/50 font-light mt-8 max-w-[42ch]" style={{ animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 Expert commentary, brand collaborations, and features — grounded in <em>evidence-based</em> care.
               </p>
             </div>
@@ -80,13 +87,29 @@ export default function MediaPage() {
             className="opacity-0 animate-fade-in mt-12 md:mt-16 pt-8 border-t border-brand-white/15"
             style={{ animationDelay: "1.2s", animationDuration: "1.0s" }}
           >
-            {/* Mobile — wrapped, centered */}
-            <div className="md:hidden flex items-center justify-center flex-wrap gap-x-10 gap-y-6">
-              {partnerLogos.map((item, i) => item.text ? (
-                <span key={i} className="text-parchment/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "1.05rem", letterSpacing: "0.2em" }}>{item.text}</span>
-              ) : (
-                <img key={i} src={item.src} alt={item.alt} className="h-5 opacity-60" style={{ filter: "brightness(0) invert(1)" }} />
-              ))}
+            {/* Mobile — continuous marquee (same pattern as LogoStripDark): the
+                stacked/wrapped rows read heavy on a phone. One duplicated set
+                so the -50% translate loops seamlessly. */}
+            <div
+              className="md:hidden w-full overflow-hidden"
+              style={{
+                WebkitMaskImage:
+                  "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+                maskImage:
+                  "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+              }}
+            >
+              <div className="flex w-max items-center select-none animate-marquee motion-reduce:animate-none" style={{ animationDuration: "40s" }}>
+                {[...partnerLogos, ...partnerLogos].map((item, i) => (
+                  <div key={i} className="flex-shrink-0 px-8 flex items-center" aria-hidden={i >= partnerLogos.length}>
+                    {item.text ? (
+                      <span className="text-parchment/60 font-light whitespace-nowrap" style={{ fontFamily: "sans-serif", fontSize: "1.05rem", letterSpacing: "0.2em" }}>{item.text}</span>
+                    ) : (
+                      <img src={item.src} alt={i < partnerLogos.length ? item.alt : ""} className="h-5 opacity-60" style={{ filter: "brightness(0) invert(1)" }} />
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
             {/* Desktop — justified across container width */}
             <div className="hidden md:flex items-center justify-between w-full">
