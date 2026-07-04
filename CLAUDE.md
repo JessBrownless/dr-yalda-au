@@ -93,6 +93,8 @@ Canonical structure: put the overline and heading as **direct siblings** (no `ga
 
 **Section header → content gap:** the air between a section's header block (overline + heading + optional lede) and the content below it should be **≈ half the section's top padding** (the padding above the overline). More than that reads as an awkward void — this shipped on the blog masthead once and Jessica called it out. When fixing this anywhere, check every page for the same pattern in the same pass.
 
+**Same-colour section boundaries:** when two adjacent sections share (or nearly share) a background, their meeting paddings stack into an invisible double-height void — Jessica called this out on the media page (320px of empty parchment). Keep the combined boundary ≈ **144–192px on desktop**: give one side its full `pb-24 md:pb-32` and drop the other side to `pt-12 md:pt-16`. This applies to dark-on-dark too (`bg-brand-black` next to `bg-brand-charcoal` reads as one colour). Boundaries with a real contrast change (dark ↔ parchment, or an image section between) keep full paddings.
+
 ### Stylesheet canon
 
 `src/app/stylesheet/page.tsx` renders every typography utility with a label, specs, and live sample at `/stylesheet`. **Treat it as the visual source of truth** — if you add a utility to `globals.css`, add a row to the `typeStyles` array in the same commit. Live page makes it impossible for documented specs and rendered reality to drift apart.

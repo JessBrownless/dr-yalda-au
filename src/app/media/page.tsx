@@ -126,7 +126,10 @@ export default function MediaPage() {
       </section>
 
       {/* Beyond the clinic */}
-      <section id="intro" className="bg-parchment pt-32 md:pt-48 pb-32 md:pb-48 relative scroll-mt-20">
+      {/* Bottom padding stays light: the section below shares the parchment bg, so the
+          combined boundary reads as one gap (site rule: no double-height voids where
+          same-coloured sections meet) */}
+      <section id="intro" className="bg-parchment pt-32 md:pt-48 pb-8 md:pb-16 relative scroll-mt-20">
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
@@ -248,7 +251,7 @@ export default function MediaPage() {
       </section>
 
       {/* Press features list */}
-      <section className="bg-parchment py-24 md:py-32" id="features">
+      <section className="bg-parchment pt-12 md:pt-16 pb-24 md:pb-32" id="features">
         <div className="pg-container">
 
           <h2 className="overline mb-6">
@@ -261,7 +264,7 @@ export default function MediaPage() {
       </section>
 
       {/* Latest appearances gallery */}
-      <section className="bg-parchment py-24 md:py-32">
+      <section className="bg-parchment pt-12 md:pt-16 pb-24 md:pb-32">
         <div className="pg-container">
           <h2 className="overline mb-6">
             Latest appearances
@@ -303,7 +306,7 @@ export default function MediaPage() {
       {/* TestimonialCarousel removed */}
 
       {/* Podcast section */}
-      <section className="bg-brand-black text-on-dark-high overflow-hidden py-[128px]">
+      <section className="bg-brand-black text-on-dark-high overflow-hidden py-24 md:py-32">
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
@@ -419,7 +422,9 @@ export default function MediaPage() {
       </section>
 
       {/* Media contact CTA — plain centred block */}
-      <section className="bg-brand-charcoal text-on-dark-high py-24 md:py-32">
+      {/* pt kept light — the podcast section above is near-identical dark, so the
+          boundary is invisible and the paddings would otherwise stack */}
+      <section className="bg-brand-charcoal text-on-dark-high pt-12 md:pt-16 pb-24 md:pb-32">
         <div className="pg-container">
           <div className="flex flex-col items-center text-center gap-5 max-w-[640px] mx-auto" data-aos="fade" data-aos-duration="1000">
             <div className="flex flex-col items-center">
