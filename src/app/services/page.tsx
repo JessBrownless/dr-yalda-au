@@ -219,9 +219,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <div className="mt-32 md:mt-52">
-        <BookingCTA />
-      </div>
+      <BookingCTA />
       <InstagramFeed />
 
     </main>
