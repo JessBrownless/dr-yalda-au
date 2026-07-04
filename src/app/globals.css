@@ -716,9 +716,10 @@ body {
   line-height: 1;
 }
 
-/* Editorial inline link — .cta-label microtype with a hairline underline + arrow.
-   The lower-emphasis, in-content alternative to a .btn pill. Colour is inherited,
-   so it works on light or dark. Pair with an arrow <svg> child (it slides on hover). */
+/* Editorial inline link — .cta-label microtype + arrow. The lower-emphasis,
+   in-content alternative to a .btn pill. No underline (site-wide rule: text
+   links are full-emphasis, never underlined). Colour is inherited, so it works
+   on light or dark. Hover dims the link and slides the arrow <svg> child. */
 .link-arrow {
   display: inline-flex;
   align-items: center;
@@ -729,17 +730,37 @@ body {
   letter-spacing: 0.4em;
   text-transform: uppercase;
   line-height: 1;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
-  transition: border-color 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .link-arrow svg {
   transition: transform 0.3s ease;
 }
 .link-arrow:hover {
-  border-bottom-color: color-mix(in srgb, currentColor 50%, transparent);
+  opacity: 0.65;
 }
 .link-arrow:hover svg {
+  transform: translateX(3px);
+}
+
+/* Caps micro-link — "View all", "Read now", "Follow", footer utility links.
+   Highest emphasis: inherits the title's colour via currentColor. No underline,
+   no border. Hover dims and slides the optional arrow; .group:hover mirrors the
+   hover for links nested inside card-links. Compose with .body-xs-caps and
+   inline-flex items-center gap-3 in markup (display stays in markup so
+   responsive hidden/md:inline-flex keeps working). */
+.link-caps {
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+.link-caps svg {
+  transition: transform 0.3s ease;
+}
+.link-caps:hover,
+.group:hover .link-caps {
+  opacity: 0.65;
+}
+.link-caps:hover svg,
+.group:hover .link-caps svg {
   transform: translateX(3px);
 }
 

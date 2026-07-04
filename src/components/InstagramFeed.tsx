@@ -36,7 +36,7 @@ export default async function InstagramFeed() {
             href={PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="body-xs-caps border-b border-brand-black/20 pb-1 hover:text-brand-black/80 hover:border-brand-black/50 transition-colors duration-300"
+            className="body-xs-caps link-caps inline-flex items-center gap-3"
           >
             Follow
           </a>

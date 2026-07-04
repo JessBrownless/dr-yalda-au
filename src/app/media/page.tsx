@@ -175,7 +175,7 @@ export default function MediaPage() {
                 </h2>
                 <a
                   href="mailto:hollie@shapr.com.au"
-                  className="body-serif text-brand-black underline-offset-4 hover:underline mt-2"
+                  className="body-serif text-brand-black mt-2 hover:opacity-70 transition-opacity duration-300"
                 >
                   hollie@shapr.com.au
                 </a>

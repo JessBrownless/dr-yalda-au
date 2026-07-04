@@ -128,7 +128,7 @@ export default function BlogIndexPage() {
                 {featured.frontmatter.title}
               </h2>
               <p className="lede body-sans text-on-light-low">{featured.frontmatter.description}</p>
-              <span className="mt-8 self-start inline-flex items-center gap-3 body-xs-caps border-b border-brand-black/20 pb-1 group-hover:border-brand-black/60 transition-colors duration-300">
+              <span className="mt-8 self-start inline-flex items-center gap-3 body-xs-caps link-caps">
                 Read entry
                 <ArrowGlyph />
               </span>
@@ -175,7 +175,7 @@ export default function BlogIndexPage() {
                   {/* Clamp to 3 lines on the card; the full description stays in
                       the markup for SEO. */}
                   <p className="body-sans text-on-light-low line-clamp-3">{post.frontmatter.description}</p>
-                  <span className="mt-1 self-start inline-flex items-center gap-3 body-xs-caps border-b border-brand-black/20 pb-1 group-hover:border-brand-black/60 transition-colors duration-300">
+                  <span className="mt-1 self-start inline-flex items-center gap-3 body-xs-caps link-caps">
                     Read now
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </span>

@@ -39,7 +39,7 @@ const typeStyles: { className: string; label: string; specs: string; breakpoints
   { className: "label-02",         label: ".label-02 — small functional label",         specs: "14px · leading 1.286 · +0.011em · Lato regular",    breakpoints: "Fixed 14px (all breakpoints)",     sample: "Years in cosmetic medicine" },
   { className: "cta-label",        label: ".cta-label — standard CTA pill microtype",   specs: "10px · +0.4em · uppercase · Lato semibold",         breakpoints: "Fixed 10px (all breakpoints)",     sample: "Book a consultation" },
   { className: "cta-label-sm",     label: ".cta-label-sm — smaller button microtype",   specs: "9px · +0.4em · uppercase · Lato semibold",          breakpoints: "Fixed 9px (all breakpoints)",      sample: "Book now" },
-  { className: "link-arrow",       label: ".link-arrow — editorial inline link (underline + arrow)", specs: "10px · +0.4em · uppercase · Lato · hairline underline", breakpoints: "Fixed 10px (all breakpoints)",     sample: "About Dr Yalda →" },
+  { className: "link-arrow",       label: ".link-arrow — editorial inline link (arrow)", specs: "10px · +0.4em · uppercase · Lato · no underline · dims on hover", breakpoints: "Fixed 10px (all breakpoints)",     sample: "About Dr Yalda →" },
   { className: "lede",             label: ".lede — heading→subtitle spacing (margin-top)", specs: "margin-top clamp 28→40px · fluid",                 breakpoints: "Fluid · 28–40px (2.5vw)",          sample: "Supporting subtitle beneath a heading" },
   { className: "from-overline",    label: ".from-overline — overline→heading spacing (on heading)", specs: "margin-top 0.7em · scales with heading size",   breakpoints: "Proportional · 0.7× heading font-size", sample: "Heading spaced below its kicker" },
   { className: "nav-link",         label: ".nav-link — desktop navbar links",           specs: "11px · +0.25em · uppercase · Hanken extralight",    breakpoints: "Fixed 11px (all breakpoints)",     sample: "About" },
@@ -289,18 +289,18 @@ export default function StylesheetPage() {
                   About Dr Yalda
                   <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </a>
-                <p className="body-xs !text-brand-black/60">Editorial inline link — hairline underline, arrow slides on hover. In-content alternative to a .btn pill.</p>
+                <p className="body-xs !text-brand-black/60">Editorial inline link — no underline; dims and slides the arrow on hover. In-content alternative to a .btn pill.</p>
                 <p className="body-xs !text-brand-black/40">.link-arrow + arrow svg</p>
               </div>
 
               {/* Caps micro-link */}
               <div className="flex flex-col gap-3">
-                <a href="#" className="self-start inline-flex body-xs-caps border-b border-brand-black/20 pb-1 hover:border-brand-black/60 transition-colors duration-300 items-center gap-3 whitespace-nowrap">
+                <a href="#" className="self-start inline-flex body-xs-caps link-caps items-center gap-3">
                   View all
                   <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </a>
-                <p className="body-xs !text-brand-black/60">Caps micro-link — &ldquo;View all&rdquo;, &ldquo;Follow&rdquo;, announcement bar. Border brightens on hover; arrow optional.</p>
-                <p className="body-xs !text-brand-black/40">.body-xs-caps + border-b border-brand-black/20 pb-1 (composition, not a utility)</p>
+                <p className="body-xs !text-brand-black/60">Caps micro-link — &ldquo;View all&rdquo;, &ldquo;Read now&rdquo;, &ldquo;Follow&rdquo;, footer links. Full emphasis (title colour), no underline; dims on hover, arrow optional.</p>
+                <p className="body-xs !text-brand-black/40">.body-xs-caps + .link-caps (+ inline-flex items-center gap-3)</p>
               </div>
 
             </div>

@@ -71,7 +71,7 @@ export default function Footer() {
             <div className="col-span-1 md:col-span-2 md:col-start-6 flex flex-col gap-4">
               <p className="overline mb-1">Navigate</p>
               {links.map(({ label, href }) => (
-                <Link key={href} href={href} className="text-brand-white/60 text-sm font-light hover:text-cream transition-colors duration-300">{label}</Link>
+                <Link key={href} href={href} className="text-brand-white text-sm font-light hover:opacity-70 transition-opacity duration-300">{label}</Link>
               ))}
             </div>
 
@@ -94,7 +94,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${name}, ${address} in Google Maps`}
-                    className="body-xs-caps underline underline-offset-2 hover:text-cream transition-colors duration-300"
+                    className="body-xs-caps link-caps text-brand-white"
                     style={{ paddingLeft: "17px" }}
                   >
                     {address}
@@ -114,14 +114,14 @@ export default function Footer() {
           <p className="body-xs-caps">Dr. Yalda Jamali · MBChB · MSc Dermatology · FACCSM</p>
           <p className="body-xs-caps">
             AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved ·{" "}
-            {/* Discreet designer credit */}
+            {/* Designer credit */}
             <a
               href="https://northandrefine.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-cream transition-colors duration-300"
+              className="link-caps text-brand-white"
             >
-              web designer
+              Made by North &amp; Refine
             </a>
           </p>
         </div>

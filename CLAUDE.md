@@ -73,6 +73,7 @@ Headings use a fluid √2 modular scale (`heading-mega` through `heading-sm`), i
 | `.quotesmall` | Small italic testimonial-scale quote | |
 | `.list-index` | "01 /" style serif numbering | For itemised lists (Values, What to expect) |
 | `.cta-label` | Standard CTA pill microtype | 10px, +0.4em, uppercase, Lato. Used 5+ times across BookingCTA, HeroHome, page.tsx |
+| `.link-caps` | Caps micro text-link ("View all", "Read now", "Follow", footer links) | Compose with `.body-xs-caps` + `inline-flex items-center gap-3`. **Site-wide link rule: text links are full emphasis (the title's colour via currentColor), never underlined, never grey.** Hover dims to 65% and slides the optional arrow; `.group:hover` mirrors it inside card-links. Jessica explicitly banned underlines and grey link text — don't reintroduce `border-b`/`underline` on text links. |
 | `.cta-label-sm` | Smaller button microtype | 9px, +0.4em, uppercase, Lato light. Appointments page + FeaturesList pills |
 | `.nav-link` | Desktop navbar links | 11px, +0.25em, uppercase, Hanken extralight (200). Override `font-weight` for active state |
 | `.nav-link-drawer` | Mobile Navbar full-screen menu links | 14px, +0.15em, uppercase, Heading serif |

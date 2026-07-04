@@ -162,7 +162,7 @@ export default function Home() {
             </div>
             <a
               href="/blog"
-              className="hidden md:inline-flex body-xs-caps border-b border-brand-black/20 pb-1 hover:text-brand-black hover:border-brand-black/60 transition-colors duration-300 items-center gap-3 whitespace-nowrap"
+              className="hidden md:inline-flex body-xs-caps link-caps items-center gap-3"
             >
               View all
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -191,7 +191,7 @@ export default function Home() {
                 <div className="flex flex-col gap-3">
                   <p className="overline">{post.frontmatter.category} · {post.readingMinutes} min read</p>
                   <h3 className="heading-md text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">{post.frontmatter.title}</h3>
-                  <span className="mt-1 self-start inline-flex items-center gap-3 body-xs-caps border-b border-brand-black/20 pb-1 group-hover:border-brand-black/60 transition-colors duration-300">
+                  <span className="mt-1 self-start inline-flex items-center gap-3 body-xs-caps link-caps">
                     Read now
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </span>
