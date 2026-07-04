@@ -3,13 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 
+// mobilePosition overrides `position` on the phone layout: a portrait screen
+// shows only a ~quarter-wide slice of these landscape frames, so a crop that
+// centres the subject on desktop can push her out of frame entirely on mobile.
 const defaultImages = [
-  { src: "/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif", position: "50% 10%" },
+  { src: "/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif", position: "50% 10%", mobilePosition: "70% 10%" },
   { src: "/assets/IMG_0028.avif", position: "50% 20%" },
 ];
 
 interface HeroHomeProps {
-  images?: { src: string; position: string }[];
+  images?: { src: string; position: string; mobilePosition?: string }[];
   height?: string;
   showContent?: boolean;
   zoom?: number;
@@ -100,7 +103,7 @@ export default function HeroHome({
               src={img.src}
               alt={i === 0 ? "Dr. Yalda Jamali" : ""}
               className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
-              style={{ objectPosition: img.position, opacity: activeIndex === i ? 1 : 0, transform: `scale(${zoom})` }}
+              style={{ objectPosition: img.mobilePosition ?? img.position, opacity: activeIndex === i ? 1 : 0, transform: `scale(${zoom})` }}
             />
           ))}
         </div>
