@@ -111,19 +111,18 @@ export default function Footer() {
       {/* Bottom bar — faint */}
       <div>
         <div className="pg-container pb-12 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-2">
-          <p className="body-xs-caps">Dr. Yalda Jamali · MBChB · MSc Dermatology · FACCSM</p>
           <p className="body-xs-caps">
-            AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved ·{" "}
-            {/* Designer credit */}
-            <a
-              href="https://northandrefine.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-caps text-brand-white"
-            >
-              Made by North &amp; Refine
-            </a>
+            Dr. Yalda Jamali · AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved
           </p>
+          {/* Designer credit */}
+          <a
+            href="https://northandrefine.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="body-xs-caps link-caps text-brand-white"
+          >
+            Made by North &amp; Refine
+          </a>
         </div>
       </div>
 
