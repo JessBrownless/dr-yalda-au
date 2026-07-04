@@ -116,7 +116,7 @@ export default function Footer() {
             AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved ·{" "}
             {/* Discreet designer credit */}
             <a
-              href="https://www.instagram.com/jessicabrownless/"
+              href="https://northandrefine.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2 hover:text-cream transition-colors duration-300"
