@@ -80,7 +80,7 @@ export default function AboutPage() {
         {/* Intro — centered overline, pull quote, body (10-col measure) */}
         <div className="pg-container pt-10 md:pt-32" style={{ paddingBottom: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)" }}>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
-            <div className="md:col-span-10 md:col-start-2 flex flex-col items-center text-center">
+            <div className="md:col-span-10 md:col-start-2 flex flex-col items-start text-left md:items-center md:text-center">
               <p className="opacity-0 animate-fade-in overline" style={{ marginBottom: "clamp(2.25rem, 1.75rem + 2vw, 2.75rem)", animationDelay: "0.3s", animationDuration: "1.0s" }}>
                 About Dr Yalda
               </p>
@@ -117,8 +117,9 @@ export default function AboutPage() {
         <div className="pg-container">
           <div className="grid grid-cols-12 gap-x-3 md:gap-x-10">
 
-            {/* Left — treatment shot (top, no offset) */}
-            <div className="col-span-7 col-start-1 md:col-span-6 row-start-1" data-aos="fade" data-aos-duration="1000">
+            {/* Left — treatment shot (top, no offset). Long, soft fades on the pair —
+                the default 900ms read as "appearing" rather than arriving */}
+            <div className="col-span-7 col-start-1 md:col-span-6 row-start-1" data-aos="fade" data-aos-duration="1800" data-aos-easing="ease-out-sine">
               <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                 <img
                   src="/assets/IMG_0028.avif"
@@ -130,7 +131,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right — portrait, offset down, with logo overlay on its bottom-left corner */}
-            <div className="col-span-7 col-start-6 md:col-span-6 md:col-start-7 row-start-1 mt-[28vw] md:mt-32 relative z-10" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="col-span-7 col-start-6 md:col-span-6 md:col-start-7 row-start-1 mt-[28vw] md:mt-32 relative z-10" data-aos="fade" data-aos-delay="250" data-aos-duration="1800" data-aos-easing="ease-out-sine">
               <div className="relative">
                 <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                   <img
@@ -140,11 +141,16 @@ export default function AboutPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+                {/* Logo resolves last, after both photos have settled */}
                 <img
                   src="/assets/logo-circle.svg"
                   alt="Dr. Yalda Jamali"
                   className="absolute z-10 left-0 bottom-0 -translate-x-1/2 translate-y-1/2"
                   style={{ width: "clamp(64px, 10vw, 140px)" }}
+                  data-aos="fade"
+                  data-aos-delay="700"
+                  data-aos-duration="1200"
+                  data-aos-easing="ease-out-sine"
                 />
               </div>
             </div>
