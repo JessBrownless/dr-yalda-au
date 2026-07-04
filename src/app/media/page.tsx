@@ -339,7 +339,10 @@ export default function MediaPage() {
                   >
                     <div className="flex items-start gap-4">
                       <span aria-hidden="true" className="flex-shrink-0 mt-0.5 w-8 h-8 rounded-full border border-brand-white/20 flex items-center justify-center group-hover:border-cream transition-colors duration-300">
-                        <span className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" style={{ fontSize: "8px", paddingLeft: "2px" }}>▶</span>
+                        {/* SVG, not the ▶ character — iOS renders that codepoint as colour emoji */}
+                        <svg width="8" height="10" viewBox="0 0 8 10" className="text-brand-white/40 group-hover:text-cream transition-colors duration-300" style={{ marginLeft: "2px" }} aria-hidden="true">
+                          <path d="M0 0l8 5-8 5z" fill="currentColor" />
+                        </svg>
                       </span>
                       <div className="flex flex-col gap-1">
                         <p className="overline">{show}</p>
@@ -358,8 +361,10 @@ export default function MediaPage() {
 
             {/* Right — phone mockup, crops at bottom */}
             <div className="md:col-span-5 md:col-start-8 flex justify-center">
+              {/* Scale-up is desktop-only: at 1.25x the 320px phone renders 400px wide,
+                  which bleeds past the container to the screen edges on mobile */}
               <div
-                className="phone-mockup-height mt-4 md:mt-[-40px] mb-[-80px] md:mb-[-280px]"
+                className="phone-mockup-height mt-4 md:mt-[-40px] mb-[-80px] md:mb-[-280px] origin-top md:scale-125"
                 style={{
                   width: 320,
                   background: "#111",
@@ -368,8 +373,6 @@ export default function MediaPage() {
                   boxShadow: "0 0 0 1px rgba(246,246,243,0.08), 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(246,246,243,0.04)",
                   position: "relative",
                   top: "0",
-                  transform: "scale(1.25)",
-                  transformOrigin: "center top",
                 }}
               >
                 {/* Notch */}
@@ -403,13 +406,19 @@ export default function MediaPage() {
                       <span style={{ color: "rgba(245,242,236,0.55)", fontSize: 9 }}>35:06</span>
                     </div>
 
-                    {/* Controls */}
+                    {/* Controls — SVGs, not ⏮/▶/⏭ characters, which iOS renders as colour emoji */}
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 28 }}>
-                      <span style={{ color: "rgba(245,242,236,0.7)", fontSize: 16 }}>⏮</span>
+                      <svg width="15" height="12" viewBox="0 0 15 12" aria-hidden="true" style={{ color: "rgba(245,242,236,0.7)" }}>
+                        <path d="M0 0h1.6v12H0zM15 0L3.6 6 15 12z" fill="currentColor" />
+                      </svg>
                       <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ color: "#111", fontSize: 14, paddingLeft: 3 }}>▶</span>
+                        <svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style={{ marginLeft: 3 }}>
+                          <path d="M0 0l12 7-12 7z" fill="#111" />
+                        </svg>
                       </div>
-                      <span style={{ color: "rgba(245,242,236,0.7)", fontSize: 16 }}>⏭</span>
+                      <svg width="15" height="12" viewBox="0 0 15 12" aria-hidden="true" style={{ color: "rgba(245,242,236,0.7)" }}>
+                        <path d="M0 0l11.4 6L0 12zM13.4 0H15v12h-1.6z" fill="currentColor" />
+                      </svg>
                     </div>
                   </div>
 
