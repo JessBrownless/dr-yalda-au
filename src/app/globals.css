@@ -425,9 +425,10 @@ body {
 /* ─── FAQ accordion (native details/summary) ──────────────────────────── */
 .faq-item > summary::-webkit-details-marker { display: none; }
 .faq-item > summary::marker { content: ""; }
-.faq-item[open] .faq-icon { transform: rotate(45deg); }
-/* Expanded state — a quiet, on-brand lift on the open row (smooth, no flash). */
-.faq-item[open] > summary { background-color: color-mix(in srgb, var(--brand-white) 4%, transparent); }
+/* Open state: the plus becomes a minus — the vertical stroke fades out.
+   No rotation, no background lift on the open row. */
+.faq-icon-v { transition: opacity 0.3s ease; }
+.faq-item[open] .faq-icon-v { opacity: 0; }
 
 /* ─── Text colour emphasis tokens ──────────────────────────────────────── */
 /*

@@ -20,7 +20,9 @@ export default function FaqAccordion() {
             </h3>
             <span className="faq-icon flex-shrink-0 mt-1.5 text-on-dark-low transition-all duration-300 group-hover:text-on-dark-high">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
+                {/* Vertical stroke fades out when open (plus -> minus, styled in globals.css) */}
+                <path className="faq-icon-v" d="M6 1v10" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
+                <path d="M1 6h10" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" />
               </svg>
             </span>
           </summary>
