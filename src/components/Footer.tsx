@@ -41,7 +41,9 @@ export default function Footer() {
       <div>
         {/* Logo — full bleed, mobile only */}
         <div className="md:hidden pt-8 pb-2 pg-container flex flex-col gap-7">
-          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "220px", opacity: 0.9, marginLeft: "-14px" }} />
+          {/* -29px cancels the whitespace baked into the SVG (content starts 233.8/1790.8
+              across the canvas -> 29px at 220px wide), so the mark sits optically flush left */}
+          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "220px", opacity: 0.9, marginLeft: "-29px" }} />
           <div className="flex items-center gap-3">
             {socials.map(({ icon: Icon, platform, href }) => (
               <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
@@ -55,9 +57,11 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-12">
 
             {/* Logo — desktop first column */}
-            <div className="hidden md:flex md:col-span-4 flex-col justify-start items-start gap-10" style={{ marginLeft: "-16px" }}>
-              <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={72} className="w-auto" style={{ height: "72px", opacity: 0.9 }} />
-              <div className="flex items-center gap-3" style={{ marginLeft: "16px" }}>
+            <div className="hidden md:flex md:col-span-4 flex-col justify-start items-start gap-10">
+              {/* -27px cancels the whitespace baked into the SVG (content starts 233.8/622.5
+                  down-scaled to 72px tall -> 27px), so the mark sits optically flush left */}
+              <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={72} className="w-auto" style={{ height: "72px", opacity: 0.9, marginLeft: "-27px" }} />
+              <div className="flex items-center gap-3">
                 {socials.map(({ icon: Icon, platform, href }) => (
                   <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
                     className="group w-9 h-9 border border-brand-white/20 flex items-center justify-center hover:border-brand-white/40 transition-colors duration-300">
