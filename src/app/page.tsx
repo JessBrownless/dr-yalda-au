@@ -2,6 +2,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import LogoStripDark from "@/components/LogoStripDark";
 import HeroHome from "@/components/HeroHome";
 import StickyScrollSection from "@/components/StickyScrollSection";
+import ScrollReveal from "@/components/ScrollReveal";
 import BookingCTA from "@/components/BookingCTA";
 import InstagramFeed from "@/components/InstagramFeed";
 import ParallaxQuote from "@/components/ParallaxQuote";
@@ -20,8 +21,9 @@ export default function Home() {
         tagline="Cosmetic doctor, educator, and brand collaborator in Sydney — combining medical expertise with innovation"
       />
 
-      {/* Her Story — statement block. Billboard rhythm: 2× the standard section spacing (py-20 md:py-32). */}
-      <section className="bg-parchment py-40 md:py-64 flex flex-col items-center justify-center text-center relative">
+      {/* Her Story — statement block. Generous top air below the hero, then a trimmed bottom so it
+          reads as the opening of a continuous parchment run (no coloured panels now to break it up). */}
+      <section className="bg-parchment pt-44 md:pt-64 pb-28 md:pb-36 flex flex-col items-center justify-center text-center relative">
         <div className="max-w-5xl mx-auto w-full px-8 md:px-16 flex flex-col items-center">
           <p
             data-aos="fade"
@@ -40,23 +42,23 @@ export default function Home() {
       </section>
 
       {/* Philosophy section — parchment-backed image left, text right */}
-      <section className="bg-parchment overflow-hidden relative pt-0 pb-24 md:py-40">
+      <section className="bg-parchment overflow-hidden relative pt-12 md:pt-20 pb-16 md:pb-20">
 
         {/* Parchment strip — left edge, behind the image */}
         <div className="absolute hidden md:block left-0 top-0 bottom-0 w-[36%] bg-linen" />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
+          <ScrollReveal className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — image over parchment */}
-            <div className="md:col-span-6" data-aos="fade" data-aos-duration="1000">
+            <div className="md:col-span-6">
               <div className="overflow-hidden aspect-square md:aspect-[3/4]">
                 <img src="/assets/IMG_004.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
               </div>
             </div>
 
             {/* Right — introduction text */}
-            <div className="md:col-span-5 md:col-start-8 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="md:col-span-5 md:col-start-8 flex flex-col gap-6">
 
               <h2 className="flex flex-col">
                 <span className="overline">About </span>
@@ -80,8 +82,6 @@ export default function Home() {
               <a
                 href="/about"
                 className="link-arrow self-start mt-2"
-                data-aos="fade"
-                data-aos-delay="300"
               >
                 About Dr Yalda
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -89,23 +89,23 @@ export default function Home() {
 
             </div>
 
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <LogoStripDark />
 
       {/* Reversed section — parchment-backed image right, text left */}
-      <section className="bg-parchment overflow-hidden relative py-24 md:py-40">
+      <section className="bg-parchment overflow-hidden relative py-16 md:py-20">
 
         {/* Parchment strip — right edge, behind the image */}
         <div className="absolute hidden md:block right-0 top-0 bottom-0 w-[36%] bg-linen" />
 
         <div className="pg-container relative">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
+          <ScrollReveal className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
 
             {/* Left — text */}
-            <div className="md:col-span-5 flex flex-col gap-6 order-2 md:order-1" data-aos="fade" data-aos-duration="1000">
+            <div className="md:col-span-5 flex flex-col gap-6 order-2 md:order-1">
 
               <div className="flex flex-col">
                 <h2 className="overline">
@@ -126,8 +126,6 @@ export default function Home() {
               <a
                 href="/services"
                 className="link-arrow self-start mt-2"
-                data-aos="fade"
-                data-aos-delay="300"
               >
                 Services
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -136,13 +134,13 @@ export default function Home() {
             </div>
 
             {/* Right — image over parchment */}
-            <div className="md:col-span-6 md:col-start-7 order-1 md:order-2" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            <div className="md:col-span-6 md:col-start-7 order-1 md:order-2">
               <div className="overflow-hidden aspect-square md:aspect-[3/4] md:scale-105 md:origin-center">
                 <img src="/assets/IMG_0037_color.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 40%" }} />
               </div>
             </div>
 
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -202,13 +200,10 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Mobile "view all" link */}
-          <a
-            href="/blog"
-            className="md:hidden mt-12 self-start body-xs-caps border-b border-brand-black/20 pb-1 hover:text-brand-black hover:border-brand-black/60 transition-colors duration-300 inline-flex items-center gap-3 whitespace-nowrap"
-          >
+          {/* Mobile "view all" — a button, so it reads as a distinct action rather
+              than blending in with the "Read now" card links beside it */}
+          <a href="/blog" className="btn btn-sm btn-secondary-light md:hidden mt-12">
             View all
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
         </div>
       </section>
