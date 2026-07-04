@@ -40,7 +40,9 @@ export default function Footer() {
       {/* Main footer body */}
       <div>
         {/* Logo — full bleed, mobile only */}
-        <div className="md:hidden pt-8 pb-2 pg-container flex flex-col gap-7">
+        {/* Mobile rhythm: generous air at the top, logo tight to its socials,
+            then a moderate step down to the link columns */}
+        <div className="md:hidden pt-16 pb-2 pg-container flex flex-col gap-4">
           {/* -29px cancels the whitespace baked into the SVG (content starts 233.8/1790.8
               across the canvas -> 29px at 220px wide), so the mark sits optically flush left */}
           <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "220px", opacity: 0.9, marginLeft: "-29px" }} />
@@ -53,7 +55,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="pg-container pt-20 pb-20 md:pt-40 md:pb-32">
+        <div className="pg-container pt-12 pb-20 md:pt-40 md:pb-32">
           <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-12">
 
             {/* Logo — desktop first column */}
@@ -114,19 +116,22 @@ export default function Footer() {
 
       {/* Bottom bar — faint */}
       <div>
-        <div className="pg-container pb-12 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-2">
+        <div className="pg-container pb-8 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-2">
+          {/* Designer credit — only the company name is the link */}
+          <p className="body-xs-caps">
+            Made by{" "}
+            <a
+              href="https://northandrefine.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-caps text-brand-white"
+            >
+              North &amp; Refine
+            </a>
+          </p>
           <p className="body-xs-caps">
             Dr. Yalda Jamali · AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved
           </p>
-          {/* Designer credit */}
-          <a
-            href="https://northandrefine.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="body-xs-caps link-caps text-brand-white"
-          >
-            Made by North &amp; Refine
-          </a>
         </div>
       </div>
 
