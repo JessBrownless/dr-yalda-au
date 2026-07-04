@@ -9,7 +9,7 @@ Editorial site for Dr Yalda Jamali, Sydney cosmetic doctor.
 - **Framework:** Next.js 15 (App Router) + React 19 + TypeScript
 - **Styling:** Tailwind 3 + custom utility classes in `src/app/globals.css`
 - **Animation:** AOS (scroll-triggered fade-ins) + Lenis (smooth scroll), both initialised globally in `src/components/AOSInit.tsx`
-- **Hosting:** Netlify
+- **Hosting:** Netlify (free plan — see Forms rule below; nothing on this site may incur Netlify usage charges)
 - **Fonts:** "Heading" (custom serif, self-hosted at `/fonts/font.woff2`), Lato (Next.js Google Fonts), Marcellus, Hanken Grotesk
 - **Source of truth for the brand:** `src/app/globals.css` — all design tokens live there
 
@@ -253,6 +253,12 @@ Rules:
 - The arrow `<svg>` is optional child markup — include it on the main page CTAs, omit on compact/secondary actions. Don't restyle it.
 - All colours come from CSS variables (`--brand-black`, `--cream`, `--brand-charcoal`, `--brand-white`). Don't introduce new button colours without adding a token.
 - If you need a button shape the system doesn't cover, **ask the user before hand-rolling one** — extending the system beats a one-off.
+
+### Forms (billing constraint — do not violate)
+
+**Never use Netlify Forms.** No `data-netlify="true"`, no `netlify` attribute on a `<form>`, and never enable form detection on the Netlify site. Netlify Forms bills the hosting account once submissions pass the free threshold, and the hosting account is not the client's.
+
+The site currently has no forms — booking goes to external links (clinic booking pages, Calendly). If a contact form is ever needed, POST it to an external form endpoint (e.g. Web3Forms or Formspree) registered under the **client's** email, so submissions forward to her inbox and any usage billing is hers. Ask the user before adding any form.
 
 ## Drift patterns to avoid
 
