@@ -90,6 +90,8 @@ The vertical gaps around a heading are utilities — **never set them ad-hoc wit
 
 Canonical structure: put the overline and heading as **direct siblings** (no `gap-*` between them) and add `.from-overline` to the heading. If they sit in a multi-child flex column, wrap just the overline+heading in a gap-less `<div className="flex flex-col">` so the parent's `gap-*` doesn't double up.
 
+**Section header → content gap:** the air between a section's header block (overline + heading + optional lede) and the content below it should be **≈ half the section's top padding** (the padding above the overline). More than that reads as an awkward void — this shipped on the blog masthead once and Jessica called it out. When fixing this anywhere, check every page for the same pattern in the same pass.
+
 ### Stylesheet canon
 
 `src/app/stylesheet/page.tsx` renders every typography utility with a label, specs, and live sample at `/stylesheet`. **Treat it as the visual source of truth** — if you add a utility to `globals.css`, add a row to the `typeStyles` array in the same commit. Live page makes it impossible for documented specs and rendered reality to drift apart.

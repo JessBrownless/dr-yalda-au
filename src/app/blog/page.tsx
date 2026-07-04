@@ -78,7 +78,8 @@ export default function BlogIndexPage() {
 
       {/* Editorial masthead — distinguished from the grid by extra air and a
           hairline index rule (a recognisable editorial device). */}
-      <section className="pg-container pt-28 md:pt-40 pb-12 md:pb-16">
+      {/* Header-to-content air is ~half the masthead's top padding (site rule) */}
+      <section className="pg-container pt-28 md:pt-40 pb-4 md:pb-6">
         <div className="flex flex-col" data-aos="fade">
           <p className="overline">Blog</p>
           <h1 className="heading-2xl from-overline">Notes from the practice</h1>
@@ -88,7 +89,7 @@ export default function BlogIndexPage() {
           thinking behind a considered approach to skin.
         </p>
         <div
-          className="mt-14 md:mt-20 pt-4 border-t border-brand-line flex items-baseline justify-between"
+          className="mt-6 md:mt-8 pt-4 border-t border-brand-line flex items-baseline justify-between"
           data-aos="fade"
         >
           <p className="body-xs-caps text-on-light-low">Latest entries</p>

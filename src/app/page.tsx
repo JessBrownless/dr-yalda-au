@@ -155,7 +155,7 @@ export default function Home() {
         <div className="pg-container">
 
           {/* Section header */}
-          <div className="flex items-end justify-between mb-16 md:mb-20" data-aos="fade" data-aos-duration="1000">
+          <div className="flex items-end justify-between mb-12 md:mb-20" data-aos="fade" data-aos-duration="1000">
             <div className="flex flex-col">
               <p className="overline">Blog</p>
               <h2 className="heading-lg from-overline">Notes from the practice</h2>
