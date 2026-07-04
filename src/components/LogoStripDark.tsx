@@ -15,7 +15,7 @@ const track = [...logos, ...logos];
 
 export default function LogoStripDark() {
   return (
-    <section className="bg-parchment py-24 md:py-40">
+    <section className="bg-parchment py-32 md:py-44">
 
       {/* Mobile — "Proudly featured in" + full-bleed continuous marquee */}
       <div className="md:hidden flex flex-col items-center gap-10">
@@ -53,22 +53,25 @@ export default function LogoStripDark() {
         </div>
       </div>
 
-      {/* Desktop — centered, justified across grid width */}
+      {/* Desktop — left-aligned label anchors the strip, logos justified across the rest */}
       <div className="hidden md:block pg-container">
-        <div className="flex items-center justify-between w-full select-none">
-          {logos.map(({ src, alt, small }) => (
-            <div key={alt} className="flex-shrink-0">
-              <Image
-                src={src}
-                alt={alt}
-                width={120}
-                height={48}
-                draggable={false}
-                className={`${small ? "h-5" : "h-7"} w-auto object-contain opacity-50 hover:opacity-80 transition-opacity duration-300`}
-                style={{ filter: "brightness(0)" }}
-              />
-            </div>
-          ))}
+        <div className="flex items-center gap-12 lg:gap-16 select-none">
+          <p className="overline shrink-0 w-32 leading-loose">Proudly featured in</p>
+          <div className="flex flex-1 items-center justify-between gap-8">
+            {logos.map(({ src, alt, small }) => (
+              <div key={alt} className="flex-shrink-0">
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={120}
+                  height={48}
+                  draggable={false}
+                  className={`${small ? "h-5" : "h-7"} w-auto object-contain opacity-50 hover:opacity-80 transition-opacity duration-300`}
+                  style={{ filter: "brightness(0)" }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
