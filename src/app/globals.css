@@ -747,9 +747,10 @@ body {
    no border. Hover dims and slides the optional arrow; .group:hover mirrors the
    hover for links nested inside card-links. Compose with .body-xs-caps and
    inline-flex items-center gap-3 in markup (display stays in markup so
-   responsive hidden/md:inline-flex keeps working). */
+   responsive hidden/md:inline-flex keeps working). No white-space: nowrap —
+   long link text (footer clinic addresses) must wrap on phones or the footer
+   grid overflows the viewport; inline-flex links never wrap internally anyway. */
 .link-caps {
-  white-space: nowrap;
   transition: opacity 0.3s ease;
 }
 .link-caps svg {
