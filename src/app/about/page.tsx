@@ -207,9 +207,9 @@ export default function AboutPage() {
                   { name: "AHPRA registration", detail: "MED0002486778" },
                 ].map(({ name, detail }) => (
                   <div key={name} className="flex flex-col gap-1.5 py-4 border-b border-brand-black/10 last:border-b-0 first:border-t first:border-brand-black/10">
-                    {/* heading-lg to match the Values titles (Honesty / Precision / …) —
-                        heading-sm's 14px floor made these smaller than body copy on phones */}
-                    <p className="heading-lg">{name}</p>
+                    {/* heading-list (28px flat): matches the section title on phones,
+                        but never rivals its 40px desktop size in this narrow sidebar */}
+                    <p className="heading-list">{name}</p>
                     <p className="body-xs">{detail}</p>
                   </div>
                 ))}
