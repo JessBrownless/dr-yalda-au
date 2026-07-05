@@ -159,9 +159,11 @@ export default function MediaPage() {
 
             </div>
 
-            {/* Right — Media contact. Extra mobile-only top margin: stacked under
-                the intro text, the grid's 24px gap read cramped */}
-            <div className="mt-10 md:mt-0 md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            {/* Right — Media contact. On mobile it's a linen panel (its own box —
+                stacked inline under the intro it read like a stray title cluster);
+                desktop keeps the open sidebar. Extra mobile top margin separates
+                it from the intro text above. */}
+            <div className="mt-10 md:mt-0 bg-linen md:bg-transparent p-8 md:p-0 md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               <h2 className="overline">
                 Media enquiries
               </h2>
