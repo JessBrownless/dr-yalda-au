@@ -191,8 +191,11 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <p className="overline">{post.frontmatter.category} · {post.readingMinutes} min read</p>
-                  <h3 className="heading-md text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">{post.frontmatter.title}</h3>
+                  {/* Gap-less wrapper so the kicker->title gap comes from from-overline, not the parent gap-3 */}
+                  <div className="flex flex-col">
+                    <p className="overline">{post.frontmatter.category} · {post.readingMinutes} min read</p>
+                    <h3 className="heading-md from-overline text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">{post.frontmatter.title}</h3>
+                  </div>
                   <span className="mt-1 self-start inline-flex items-center gap-3 body-xs-caps link-caps">
                     Read now
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 4h10M7 1l3 3-3 3" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/></svg>

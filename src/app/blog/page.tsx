@@ -162,16 +162,19 @@ export default function BlogIndexPage() {
                   ) : null}
                 </div>
                 <div className="flex flex-col gap-3">
-                  <p className="overline">
-                    {post.frontmatter.category} · {post.readingMinutes} min read
-                  </p>
-                  {/* Balance the title's line split and reserve 3 lines only at
-                      md+, where cards sit in a row and need to line up — below
-                      that they're single-column, so reserving would just leave
-                      dead space under a short title. */}
-                  <h3 className="heading-md text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">
-                    {post.frontmatter.title}
-                  </h3>
+                  {/* Gap-less wrapper so the kicker->title gap comes from from-overline, not the parent gap-3 */}
+                  <div className="flex flex-col">
+                    <p className="overline">
+                      {post.frontmatter.category} · {post.readingMinutes} min read
+                    </p>
+                    {/* Balance the title's line split and reserve 3 lines only at
+                        md+, where cards sit in a row and need to line up — below
+                        that they're single-column, so reserving would just leave
+                        dead space under a short title. */}
+                    <h3 className="heading-md from-overline text-balance md:min-h-[3.9em] group-hover:opacity-70 transition-opacity duration-300">
+                      {post.frontmatter.title}
+                    </h3>
+                  </div>
                   {/* Clamp to 3 lines on the card; the full description stays in
                       the markup for SEO. */}
                   <p className="body-sans text-on-light-low line-clamp-3">{post.frontmatter.description}</p>

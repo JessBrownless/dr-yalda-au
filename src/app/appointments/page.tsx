@@ -105,17 +105,15 @@ export default function AppointmentsPage() {
 
               {/* Heading */}
               <div className="mb-4">
-                <p className="overline mb-6">
+                <p className="overline">
                   Appointments
                 </p>
-                <div className="flex flex-col gap-8">
-                  <h2 className="heading-lg">
-                    In-person
-                  </h2>
-                  <p className="body-serif">
-                    In-clinic consultations are the only setting where prescriptions and treatments can take place.
-                  </p>
-                </div>
+                <h2 className="heading-lg from-overline">
+                  In-person
+                </h2>
+                <p className="body-serif mt-8">
+                  In-clinic consultations are the only setting where prescriptions and treatments can take place.
+                </p>
               </div>
 
               <div className="flex flex-col divide-y divide-brand-black/20 mt-2">
@@ -213,17 +211,15 @@ export default function AppointmentsPage() {
             <div className="md:col-span-7 flex flex-col gap-8 order-2 md:order-1">
 
               <div>
-                <h2 className="overline mb-6">
+                <h2 className="overline">
                   Book Consultation
                 </h2>
-                <div className="flex flex-col gap-8">
-                  <h3 className="heading-lg">
-                    Via Phone
-                  </h3>
-                  <p className="body-serif">
-                    Each session runs for 15 minutes via online video and is not a replacement for your in-clinic consultation.
-                  </p>
-                </div>
+                <h3 className="heading-lg from-overline">
+                  Via Phone
+                </h3>
+                <p className="body-serif mt-8">
+                  Each session runs for 15 minutes via online video and is not a replacement for your in-clinic consultation.
+                </p>
               </div>
 
               <div className="flex flex-col divide-y divide-brand-black/40">

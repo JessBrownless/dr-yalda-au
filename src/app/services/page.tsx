@@ -37,16 +37,14 @@ export default function ServicesPage() {
       {/* ─── INTRO STATEMENT ─────────────────────────────────────────────── */}
       <section id="intro" className="bg-parchment py-32 md:py-52 relative scroll-mt-20">
         <div className="pg-container">
-          {/* Eyebrow */}
-          <p className="overline mb-6">
-            How Dr Yalda can help
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-baseline">
-
-            {/* Left — heading */}
+            {/* Left — kicker + heading as direct siblings (canonical from-overline rhythm) */}
             <div className="md:col-span-6">
-              <h2 className="heading-lg">
+              <p className="overline">
+                How Dr Yalda can help
+              </p>
+              <h2 className="heading-lg from-overline">
                 Natural-looking results, built on a decade of clinical practice.
               </h2>
             </div>

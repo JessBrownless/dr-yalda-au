@@ -83,14 +83,15 @@ export default function AboutPage() {
         <div className="pg-container pt-10 md:pt-32" style={{ paddingBottom: "clamp(6.75rem, 5.25rem + 6vw, 8.25rem)" }}>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
             <div className="md:col-span-10 md:col-start-2 flex flex-col items-start text-left md:items-center md:text-center">
-              <p className="opacity-0 animate-fade-in overline" style={{ marginBottom: "clamp(2.25rem, 1.75rem + 2vw, 2.75rem)", animationDelay: "0.3s", animationDuration: "1.0s" }}>
+              {/* Canonical rhythm: from-overline under the kicker, .lede above the body —
+                  this block previously used ad-hoc inline clamp margins for both gaps */}
+              <p className="opacity-0 animate-fade-in overline" style={{ animationDelay: "0.3s", animationDuration: "1.0s" }}>
                 About Dr Yalda
               </p>
               <h2
-                className="heading-lg opacity-0 animate-fade-in"
+                className="heading-lg from-overline opacity-0 animate-fade-in"
                 style={{
                   textWrap: "balance",
-                  marginBottom: "clamp(2.25rem, 1.75rem + 2vw, 2.75rem)",
                   animationDelay: "0.4s",
                   animationDuration: "1.0s",
                 }}
@@ -98,7 +99,7 @@ export default function AboutPage() {
                 With over 10 years of experience as a cosmetic doctor, I spent the initial part of my career working alongside world-renowned specialists.
               </h2>
               <p
-                className="opacity-0 animate-fade-in body-serif"
+                className="opacity-0 animate-fade-in body-serif lede"
                 style={{
                   maxWidth: "820px",
                   textWrap: "pretty",

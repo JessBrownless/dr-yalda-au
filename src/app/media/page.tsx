@@ -344,9 +344,9 @@ export default function MediaPage() {
                           <path d="M0 0l8 5-8 5z" fill="currentColor" />
                         </svg>
                       </span>
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-col">
                         <p className="overline">{show}</p>
-                        <h3 className="heading-md">{episode}</h3>
+                        <h3 className="heading-md from-overline">{episode}</h3>
                       </div>
                     </div>
                     <span className="overline flex-shrink-0 mt-1">{duration}</span>

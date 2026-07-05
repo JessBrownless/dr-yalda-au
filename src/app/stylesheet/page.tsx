@@ -56,8 +56,8 @@ export default function StylesheetPage() {
       <div className="pg-container">
 
         <header className="mb-16">
-          <p className="overline text-brand-black/60 mb-4">Internal</p>
-          <h1 className="heading-display !text-brand-black">Stylesheet</h1>
+          <p className="overline text-brand-black/60">Internal</p>
+          <h1 className="heading-display from-overline !text-brand-black">Stylesheet</h1>
           <p className="body-sans !text-brand-black/60 mt-4 max-w-[60ch]">
             Brand colour tokens, typographic helpers, and the recurring patterns
             (buttons, links, heading groups, layout) used across the site.

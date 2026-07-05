@@ -182,16 +182,13 @@ export default function Navbar() {
           {/* Right column — desktop links / mobile Book Now text link */}
           <div className="flex items-center gap-8 justify-end">
             {/* Mobile nav CTA — same .btn treatment as desktop, but the one-word
-                label: "Book Now" at pill padding spanned nearly half a phone screen */}
+                label: "Book Now" at pill padding spanned nearly half a phone screen.
+                Always the outline variant — no filled "active" state on /appointments. */}
             <Link
               href="/appointments"
               className={`btn btn-sm md:hidden transition-opacity duration-300 ${
                 open ? "opacity-0 pointer-events-none" : "opacity-100"
-              } ${
-                pathname === "/appointments"
-                  ? dark ? "btn-primary-light" : "btn-primary-dark"
-                  : dark ? "btn-tertiary-light" : "btn-tertiary-dark"
-              }`}
+              } ${dark ? "btn-tertiary-light" : "btn-tertiary-dark"}`}
             >
               Book
             </Link>
@@ -209,13 +206,10 @@ export default function Navbar() {
                   {label}
                 </Link>
               ))}
+              {/* Always the outline variant — no filled "active" state on /appointments */}
               <Link
                 href="/appointments"
-                className={`btn btn-sm ${
-                  pathname === "/appointments"
-                    ? dark ? "btn-primary-light" : "btn-primary-dark"
-                    : dark ? "btn-tertiary-light" : "btn-tertiary-dark"
-                }`}
+                className={`btn btn-sm ${dark ? "btn-tertiary-light" : "btn-tertiary-dark"}`}
               >
                 Book Now
               </Link>
