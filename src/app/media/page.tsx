@@ -256,8 +256,10 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Latest appearances gallery */}
-      <section className="bg-parchment pt-12 md:pt-16 pb-24 md:pb-32">
+      {/* Latest appearances gallery — paddings rebalanced for its position after
+          the section swap: fuller top (entering from the tall image section),
+          light bottom (same-parchment Media features follows; boundary rule) */}
+      <section className="bg-parchment pt-16 md:pt-24 pb-12 md:pb-16">
         <div className="pg-container">
           <h2 className="overline mb-6">
             Latest appearances
