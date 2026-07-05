@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 const clinics = [
   {
     name: "Epios Cosmetic Clinic",
-    shortName: "Epios",
     suburb: "Paddington",
     address: "18 William St, Paddington, 2021",
     hours: null,
@@ -28,7 +27,6 @@ const clinics = [
   },
   {
     name: "Austin Clinic",
-    shortName: "Austin",
     suburb: "Balgowlah",
     address: "5/67 Wanganella St, Balgowlah, 2093",
     hours: null,
@@ -119,17 +117,17 @@ export default function AppointmentsPage() {
               </div>
 
               <div className="flex flex-col divide-y divide-brand-black/20 mt-2">
-              {/* Button sits UNDER the address — side-by-side was cramped even
-                  on an iPhone 14, and the named labels need the width */}
-              {clinics.map(({ name, shortName, hours, href, address }) => (
-                <div key={name} className="flex flex-col items-start gap-5 py-7 first:pt-0">
+              {/* Button right of the text; min-w-0 lets the name/address column
+                  wrap instead of shoving the pill, and gap-8 keeps a real gutter */}
+              {clinics.map(({ name, hours, href, address }) => (
+                <div key={name} className="flex items-center justify-between gap-8 py-7 first:pt-0">
 
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-3 min-w-0">
                     <h3 className="heading-md">
                       {name}
                     </h3>
                     <div className="flex items-center gap-1.5">
-                      <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
                         <path d="M4.5 0C2.015 0 0 2.015 0 4.5c0 3.375 4.5 6.5 4.5 6.5S9 7.875 9 4.5C9 2.015 6.985 0 4.5 0zm0 6.125A1.625 1.625 0 1 1 4.5 2.875a1.625 1.625 0 0 1 0 3.25z" fill="rgba(45,44,42,0.4)"/>
                       </svg>
                       <p className="body-xs-caps">{address}</p>
@@ -141,11 +139,11 @@ export default function AppointmentsPage() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-sm btn-primary-light"
+                    className="btn btn-sm btn-primary-light flex-shrink-0"
                     data-aos="fade"
                     data-aos-delay="150"
                   >
-                    Book at {shortName}
+                    Book
                   </a>
 
                 </div>

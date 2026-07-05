@@ -5,6 +5,8 @@ import { useState, useRef, useEffect } from "react";
 
 // Crossfade duration (ms) — keep in sync with the `duration-500` Tailwind class below.
 const FADE_MS = 500;
+// Auto-advance interval — matches the hero's 7s crossfade cadence.
+const AUTO_MS = 7000;
 
 const testimonials = [
   {
@@ -59,6 +61,17 @@ export default function TestimonialSection() {
   const prev = () => goTo((index - 1 + len) % len);
   const next = () => goTo((index + 1) % len);
 
+  // Auto-advance: one timer per slide, so any manual jump (swipe or dot click)
+  // naturally restarts the 7s wait. Skipped for reduced-motion users.
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setTimeout(() => {
+      goTo((index + 1) % testimonials.length);
+    }, AUTO_MS);
+    return () => clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
+
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -78,12 +91,12 @@ export default function TestimonialSection() {
           Partner testimonial
         </p>
 
-        {/* Quote (cols 1-10) + nav buttons (cols 11-12) */}
+        {/* Quote — no arrow buttons; navigation is swipe, the progress dashes, and auto-advance */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
           {/* All quotes stacked in one grid cell so the block is always as tall as the
-              longest quote — the height never changes between slides, so the nav arrows
-              below/beside it stay put. Only the active quote is visible; the rest fade out. */}
+              longest quote — the height never changes between slides, so the logo/dot
+              row below stays put. Only the active quote is visible; the rest fade out. */}
           <div className="col-span-12 md:col-span-10 grid">
             {testimonials.map((t, i) => (
               <blockquote
@@ -96,26 +109,6 @@ export default function TestimonialSection() {
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
             ))}
-          </div>
-          <div className="col-span-12 md:col-span-2 flex items-center md:justify-end gap-4">
-            <button
-              onClick={prev}
-              aria-label="Previous testimonial"
-              className={`w-10 h-10 border flex items-center justify-center transition-all duration-300 ${
-                index === 0
-                  ? "border-brand-black/20 text-brand-black/40 hover:border-brand-black/40 hover:text-brand-black"
-                  : "border-brand-black/30 text-brand-black hover:bg-brand-black hover:text-cream"
-              }`}
-            >
-              <svg width="14" height="14" viewBox="0 0 12 12" fill="none"><polyline points="8,1 3,6 8,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
-            </button>
-            <button
-              onClick={next}
-              aria-label="Next testimonial"
-              className="w-10 h-10 border border-brand-black/30 text-brand-black flex items-center justify-center transition-all duration-300 hover:bg-brand-black hover:text-cream"
-            >
-              <svg width="14" height="14" viewBox="0 0 12 12" fill="none"><polyline points="4,1 9,6 4,11" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" fill="none"/></svg>
-            </button>
           </div>
         </div>
 
@@ -139,11 +132,16 @@ export default function TestimonialSection() {
                 />
               ))}
             </div>
+            {/* Progress dashes — the visual stays a 1px hairline, but the button
+                itself is 24px tall so it's actually tappable */}
             <div className="flex items-center gap-2">
               {testimonials.map((_, i) => (
-                <button key={i} onClick={() => goTo(i)} aria-label={`Go to testimonial ${i + 1}`} className="transition-all duration-300"
-                  style={{ width: "32px", height: "1px", background: i === index ? "var(--brand-black)" : "rgba(45, 44, 42, 0.2)" }}
-                />
+                <button key={i} onClick={() => goTo(i)} aria-label={`Go to testimonial ${i + 1}`} className="h-6 flex items-center" style={{ width: "32px" }}>
+                  <span
+                    className="block w-full transition-colors duration-300"
+                    style={{ height: "1px", background: i === index ? "var(--brand-black)" : "rgba(45, 44, 42, 0.2)" }}
+                  />
+                </button>
               ))}
             </div>
           </div>
