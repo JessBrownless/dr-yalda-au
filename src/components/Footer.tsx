@@ -82,7 +82,7 @@ export default function Footer() {
             </div>
 
             {/* Clinics */}
-            <div className="col-span-1 md:col-span-4 md:col-start-9 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
+            <div className="col-span-1 md:col-span-3 md:col-start-8 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
               <p className="overline mb-1">Clinic Locations</p>
               {clinics.map(({ name, address }) => {
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name}, ${address}, NSW, Australia`)}`;
@@ -110,15 +110,22 @@ export default function Footer() {
               })}
             </div>
 
+            {/* AHPRA registration — its own column, same pattern as the others */}
+            <div className="col-span-1 md:col-span-2 md:col-start-11 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
+              <p className="overline mb-1">AHPRA</p>
+              <p className="body-xs-caps">Reg. MED0002486778</p>
+            </div>
+
           </div>
         </div>
       </div>
 
       {/* Bottom bar — faint */}
       <div>
-        <div className="pg-container pb-8 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-2">
+        {/* AHPRA lives in its own column above; the legal line fits one line on mobile */}
+        <div className="pg-container pb-8 md:pb-16 flex items-center justify-center md:justify-between gap-2">
           {/* Designer credit — only the company name is the link */}
-          <p className="body-xs-caps">
+          <p className="footer-legal whitespace-nowrap">
             Made by{" "}
             <a
               href="https://northandrefine.com/"
@@ -128,9 +135,10 @@ export default function Footer() {
             >
               North &amp; Refine
             </a>
+            <span className="md:hidden"> · Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved</span>
           </p>
-          <p className="body-xs-caps">
-            Dr. Yalda Jamali · AHPRA Reg. MED0002486778 · © <span suppressHydrationWarning>{year}</span> All rights reserved
+          <p className="body-xs-caps hidden md:block">
+            Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved
           </p>
         </div>
       </div>
