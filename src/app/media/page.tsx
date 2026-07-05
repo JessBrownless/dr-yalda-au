@@ -3,6 +3,7 @@ import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
 import ImageReveal from "@/components/ImageReveal";
 import InstagramFeed from "@/components/InstagramFeed";
+import Marquee from "@/components/Marquee";
 import ParallaxDrift from "@/components/ParallaxDrift";
 
 export const metadata: Metadata = {
@@ -90,17 +91,10 @@ export default function MediaPage() {
           >
             {/* Mobile — continuous marquee (same pattern as LogoStripDark): the
                 stacked/wrapped rows read heavy on a phone. One duplicated set
-                so the -50% translate loops seamlessly. */}
-            <div
-              className="md:hidden w-full overflow-hidden"
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-                maskImage:
-                  "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-              }}
-            >
-              <div className="flex w-max items-center select-none animate-marquee motion-reduce:animate-none" style={{ animationDuration: "40s" }}>
+                so the -50% translate loops seamlessly; parked at its start
+                until in view. */}
+            <div className="md:hidden">
+              <Marquee duration="40s">
                 {[...partnerLogos, ...partnerLogos].map((item, i) => (
                   <div key={i} className="flex-shrink-0 px-8 flex items-center" aria-hidden={i >= partnerLogos.length}>
                     {item.text ? (
@@ -110,7 +104,7 @@ export default function MediaPage() {
                     )}
                   </div>
                 ))}
-              </div>
+              </Marquee>
             </div>
             {/* Desktop — justified across container width */}
             <div className="hidden md:flex items-center justify-between w-full">

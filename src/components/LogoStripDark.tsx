@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Marquee from "@/components/Marquee";
 
 const logos = [
   { src: "/assets/logo-clinique.svg", alt: "Clinique", small: false },
@@ -21,36 +22,24 @@ export default function LogoStripDark() {
       <div className="md:hidden flex flex-col items-center gap-10">
         <p className="overline">Proudly featured in</p>
 
-        {/* Static masked viewport — logos fade in/out at the edges */}
-        <div
-          className="w-full overflow-hidden"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-            maskImage:
-              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-          }}
-        >
-          <div
-            className="flex w-max items-center select-none animate-marquee motion-reduce:animate-none"
-            style={{ animationDuration: "50s" }}
-          >
-            {track.map(({ src, alt, small }, i) => (
-              <div key={i} className="flex-shrink-0 px-8 flex items-center">
-                <Image
-                  src={src}
-                  alt={i < logos.length ? alt : ""}
-                  aria-hidden={i >= logos.length}
-                  width={120}
-                  height={48}
-                  draggable={false}
-                  className={`${small ? "h-5" : "h-7"} w-auto object-contain opacity-50`}
-                  style={{ filter: "brightness(0)" }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Masked marquee — parked at its start (first logo at the left edge)
+            until it scrolls into view, so it never arrives mid-cycle */}
+        <Marquee duration="50s">
+          {track.map(({ src, alt, small }, i) => (
+            <div key={i} className="flex-shrink-0 px-8 flex items-center">
+              <Image
+                src={src}
+                alt={i < logos.length ? alt : ""}
+                aria-hidden={i >= logos.length}
+                width={120}
+                height={48}
+                draggable={false}
+                className={`${small ? "h-5" : "h-7"} w-auto object-contain opacity-50`}
+                style={{ filter: "brightness(0)" }}
+              />
+            </div>
+          ))}
+        </Marquee>
       </div>
 
       {/* Desktop — left-aligned label anchors the strip, logos justified across the rest */}
