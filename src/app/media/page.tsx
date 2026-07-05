@@ -129,7 +129,10 @@ export default function MediaPage() {
       {/* Bottom padding stays light: the section below shares the parchment bg, so the
           combined boundary reads as one gap (site rule: no double-height voids where
           same-coloured sections meet) */}
-      <section id="intro" className="bg-parchment pt-32 md:pt-48 pb-8 md:pb-24 relative scroll-mt-20">
+      {/* Standalone section: symmetric air (192px top and bottom on desktop). Its own
+          pb must carry the whole visual gap — the next section's linen strip starts
+          at that section's very top edge, so shared-boundary maths doesn't apply. */}
+      <section id="intro" className="bg-parchment pt-32 md:pt-48 pb-12 md:pb-48 relative scroll-mt-20">
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
