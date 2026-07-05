@@ -5,6 +5,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Lenis from "lenis";
 
+// Lenis owns the page scroll every frame, so native window.scrollTo({behavior:
+// "smooth"}) calls fight it and lose. The instance is exposed here so buttons
+// (back-to-top, hero scroll indicator) can scroll through Lenis instead.
+declare global {
+  interface Window {
+    __lenis?: Lenis;
+  }
+}
+
 export default function AOSInit() {
   useEffect(() => {
     AOS.init({
@@ -21,6 +30,7 @@ export default function AOSInit() {
     });
 
     lenis.on("scroll", AOS.refresh);
+    window.__lenis = lenis;
 
     let rafId: number;
     function raf(time: number) {
@@ -33,6 +43,7 @@ export default function AOSInit() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      delete window.__lenis;
     };
   }, []);
 

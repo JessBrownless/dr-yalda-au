@@ -123,6 +123,20 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Back to top — quiet control in the socials' bordered-square idiom;
+          same smooth-scroll call the hero's scroll indicator uses (Lenis-safe) */}
+      <div className="pg-container pb-10 flex justify-center md:justify-end">
+        <button
+          onClick={() => window.__lenis ? window.__lenis.scrollTo(0) : window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+          className="group w-9 h-9 border border-brand-white/20 flex items-center justify-center hover:border-brand-white/40 transition-colors duration-300"
+        >
+          <svg width="10" height="12" viewBox="0 0 14 16" fill="none" aria-hidden="true" className="text-brand-white/40 group-hover:text-cream transition-all duration-300 group-hover:-translate-y-0.5">
+            <path d="M7 15V2M1 7l6-5 6 5" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
+
       {/* Bottom bar — faint */}
       <div>
         {/* Legal bar — mobile: both lines centred and dimmed (the staggered layout

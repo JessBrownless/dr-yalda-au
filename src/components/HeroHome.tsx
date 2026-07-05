@@ -171,7 +171,7 @@ export default function HeroHome({
         {showContent && showScroll && (
           <div className="absolute bottom-14 left-1/2 -translate-x-1/2" style={{ zIndex: 5 }}>
             <button
-              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+              onClick={() => window.__lenis ? window.__lenis.scrollTo(window.innerHeight) : window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
               className="flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
               style={{ animationDelay: "0.7s", animationDuration: "1.0s", background: "none", border: "none", padding: 0 }}
             >
@@ -289,7 +289,7 @@ export default function HeroHome({
         {showContent && showScroll && (
           <div className="absolute bottom-16 left-1/2 -translate-x-1/2" style={{ zIndex: 5 }}>
             <button
-              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+              onClick={() => window.__lenis ? window.__lenis.scrollTo(window.innerHeight) : window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
               className="flex flex-col items-center gap-2 opacity-0 animate-fade-in cursor-pointer"
               style={{ animationDelay: "0.7s", animationDuration: "1.0s", background: "none", border: "none", padding: 0 }}
             >
