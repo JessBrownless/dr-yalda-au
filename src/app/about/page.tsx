@@ -46,15 +46,17 @@ export default function AboutPage() {
             className="w-full flex flex-col items-center"
             style={{ paddingLeft: "clamp(1.75rem, 5vw, 5rem)", paddingRight: "clamp(1.75rem, 5vw, 5rem)" }}
           >
-            <p className="opacity-0 animate-fade-in overline mb-8" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
+            <p className="opacity-0 animate-fade-in overline" style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}>
               The story so far
             </p>
           </div>
 
           {/* H1 — capped to the portrait's width below it; wraps if it must */}
           <div className="w-[82%] md:w-[64%] lg:w-[52%] max-w-[720px] mx-auto">
+            {/* from-overline (0.7em), not an ad-hoc mb on the overline — this hero
+                was the only one off the canonical overline->heading rhythm */}
             <h1
-              className="heading-hero opacity-0 animate-fade-in"
+              className="heading-hero from-overline opacity-0 animate-fade-in"
               style={{ animationDelay: "0.4s", animationDuration: "1.0s" }}
             >
               Dr Yalda <br className="md:hidden" />Jamali

@@ -181,15 +181,15 @@ export default function Navbar() {
 
           {/* Right column — desktop links / mobile Book Now text link */}
           <div className="flex items-center gap-8 justify-end">
-            {/* Mobile Book Now plain text link */}
+            {/* Mobile Book Now — same .btn treatment as the desktop nav CTA */}
             <Link
               href="/appointments"
-              className={`nav-link md:hidden font-medium transition-opacity duration-300 ${
+              className={`btn btn-sm md:hidden transition-opacity duration-300 ${
                 open ? "opacity-0 pointer-events-none" : "opacity-100"
               } ${
                 pathname === "/appointments"
-                  ? dark ? "text-brand-black" : "text-cream"
-                  : dark ? "text-brand-black hover:text-brand-black" : "text-cream/50 hover:text-cream"
+                  ? dark ? "btn-primary-light" : "btn-primary-dark"
+                  : dark ? "btn-tertiary-light" : "btn-tertiary-dark"
               }`}
             >
               Book Now

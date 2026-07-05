@@ -95,8 +95,10 @@ export default function Home() {
 
       <LogoStripDark />
 
-      {/* Reversed section — parchment-backed image right, text left */}
-      <section className="bg-parchment overflow-hidden relative py-16 md:py-20">
+      {/* Reversed section — parchment-backed image right, text left.
+          Bottom padding is heavier than top: the sticky billboard below is a
+          hard visual cut, so the section needs more exit air. */}
+      <section className="bg-parchment overflow-hidden relative pt-16 md:pt-20 pb-24 md:pb-32">
 
         {/* Parchment strip — right edge, behind the image */}
         <div className="absolute hidden md:block right-0 top-0 bottom-0 w-[36%] bg-linen" />
