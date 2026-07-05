@@ -270,7 +270,9 @@ export default function MediaPage() {
             Latest appearances
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+          {/* Two-up on mobile (like the desktop rows) — single full-width images
+              one after another read as too much */}
+          <div className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-8">
             {[
               { src: "/assets/IMG_4902.JPG", caption: "W Cosmetics SKIN1004 launch", year: "2024", aspect: "16/10", colSpan: "md:col-span-7" },
               { src: "/assets/clinique-even-better-event.avif", caption: "Clinique Even Better event, Sydney", year: "2025", aspect: "3/4", colSpan: "md:col-span-5" },
@@ -346,7 +348,9 @@ export default function MediaPage() {
                       </span>
                       <div className="flex flex-col">
                         <p className="overline">{show}</p>
-                        <h3 className="heading-md from-overline">{episode}</h3>
+                        {/* heading-sm deliberately (media-page exception): at heading-md
+                            the episode titles overpowered the compact list rows */}
+                        <h3 className="heading-sm from-overline">{episode}</h3>
                       </div>
                     </div>
                     <span className="overline flex-shrink-0 mt-1">{duration}</span>
@@ -364,7 +368,7 @@ export default function MediaPage() {
               {/* Scale-up is desktop-only: at 1.25x the 320px phone renders 400px wide,
                   which bleeds past the container to the screen edges on mobile */}
               <div
-                className="phone-mockup-height mt-4 md:mt-[-40px] mb-[-80px] md:mb-[-280px] origin-top md:scale-125"
+                className="phone-mockup-height mt-4 md:mt-[-40px] mb-[-240px] md:mb-[-280px] origin-top md:scale-125"
                 style={{
                   width: 320,
                   background: "#111",
