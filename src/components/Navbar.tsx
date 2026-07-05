@@ -62,21 +62,29 @@ export default function Navbar() {
     };
   }, [open]);
 
+  // Measured directly on scroll, NOT an IntersectionObserver: the #hero-end
+  // sentinel is a zero-height element that some heroes (About) position at the
+  // clipped bottom edge of an overflow-hidden layer, where IO never reports it
+  // as intersecting — the observer fired once on mount and went silent, so the
+  // nav stayed transparent forever. Scroll events are frame-aligned already, so
+  // there's no rAF deferral; setOverDark with an unchanged value is a no-op.
   useEffect(() => {
     const sentinel = document.getElementById("hero-end");
     if (!sentinel) {
       setOverDark(false);
       return;
     }
-    setOverDark(true);
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setOverDark(entry.isIntersecting || entry.boundingClientRect.top > 0);
-      },
-      { threshold: 0 }
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
+    const measure = () => {
+      // Over the hero while its end is still below the nav bar's midline
+      setOverDark(sentinel.getBoundingClientRect().top > 40);
+    };
+    measure();
+    window.addEventListener("scroll", measure, { passive: true });
+    window.addEventListener("resize", measure, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", measure);
+      window.removeEventListener("resize", measure);
+    };
   }, [pathname]);
 
   // Go transparent again over the sticky-scroll billboard panels. Unlike the
