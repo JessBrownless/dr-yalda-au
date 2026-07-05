@@ -207,7 +207,8 @@ export default function MediaPage() {
             {/* Left — image */}
             <div className="md:col-span-6" data-aos="fade" data-aos-duration="1000">
               <ImageReveal className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
-                <img src="/assets/IMG_0040.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+                {/* Asset is pre-cropped to end at the skirt hem — keeps every aspect crop leg-free */}
+                <img src="/assets/dr-yalda-laptop.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </ImageReveal>
             </div>
 
@@ -316,7 +317,7 @@ export default function MediaPage() {
       {/* TestimonialCarousel removed */}
 
       {/* Podcast section */}
-      <section className="bg-brand-black text-on-dark-high overflow-hidden py-24 md:py-32">
+      <section className="bg-brand-black text-on-dark-high overflow-hidden pt-24 md:pt-32 pb-12 md:pb-16">
         <div className="pg-container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
 
@@ -443,9 +444,9 @@ export default function MediaPage() {
       </section>
 
       {/* Media contact CTA — plain centred block */}
-      {/* pt kept light — the podcast section above is near-identical dark, so the
-          boundary is invisible and the paddings would otherwise stack */}
-      <section className="bg-brand-charcoal text-on-dark-high pt-12 md:pt-16 pb-24 md:pb-32">
+      {/* Symmetric padding (the small dark-on-dark boundary share now lives on
+          the podcast section's pb instead — same combined gap) */}
+      <section className="bg-brand-charcoal text-on-dark-high py-24 md:py-32">
         <div className="pg-container">
           <div className="flex flex-col items-center text-center gap-5 max-w-[640px] mx-auto" data-aos="fade" data-aos-duration="1000">
             <div className="flex flex-col items-center">

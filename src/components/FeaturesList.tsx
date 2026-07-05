@@ -155,7 +155,7 @@ export default function FeaturesList() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group py-8 grid grid-cols-12 gap-4 md:gap-8 items-center hover:bg-brand-black/[0.03] transition-colors duration-300 -mx-4 px-4"
+            className="group py-8 grid grid-cols-12 gap-4 md:gap-8 items-center"
           >
             <div className="col-span-12 md:col-span-3">
               <h3 className="heading-md">
