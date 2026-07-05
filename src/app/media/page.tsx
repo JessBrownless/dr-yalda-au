@@ -161,8 +161,9 @@ export default function MediaPage() {
 
             </div>
 
-            {/* Right — Media contact */}
-            <div className="md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            {/* Right — Media contact. Extra mobile-only top margin: stacked under
+                the intro text, the grid's 24px gap read cramped */}
+            <div className="mt-10 md:mt-0 md:col-span-3 md:col-start-10 md:row-start-1 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               <h2 className="overline">
                 Media enquiries
               </h2>
