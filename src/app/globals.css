@@ -551,25 +551,6 @@ body {
   line-height: 1.4;
 }
 
-/* Footer legal line — credit + copyright on ONE line on mobile. At body-xs-caps
-   metrics the full string measures 469px (390px screens overflow), so mobile
-   drops to 8px/+0.08em; from md it matches body-xs-caps exactly. */
-.footer-legal {
-  color: color-mix(in srgb, currentColor 60%, transparent);
-  font-family: var(--font-lato), system-ui, sans-serif;
-  font-size: 8px;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
-@media (min-width: 768px) {
-  .footer-legal {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-  }
-}
-
 /* Overline / kicker helper — small caps label. */
 .overline {
   color: color-mix(in srgb, currentColor 60%, transparent);

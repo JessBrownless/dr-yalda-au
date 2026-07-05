@@ -88,12 +88,15 @@ export default function Footer() {
                 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name}, ${address}, NSW, Australia`)}`;
                 return (
                 <div key={name} className="flex flex-col gap-1">
+                  {/* Footer type is a strict 3-tier scheme: overline titles,
+                      14px light white primary lines, 10px caps details — clinic
+                      names wear the same voice as the Navigate links */}
                   <div className="flex items-center gap-2">
                     <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 text-brand-white/40">
                       <path d="M4 0C1.791 0 0 1.791 0 4C0 7 4 12 4 12C4 12 8 7 8 4C8 1.791 6.209 0 4 0Z" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                       <circle cx="4" cy="4" r="1.25" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                     </svg>
-                    <h2 className="heading-md">{name}</h2>
+                    <p className="text-brand-white text-sm font-light">{name}</p>
                   </div>
                   <a
                     href={mapsUrl}
@@ -113,7 +116,7 @@ export default function Footer() {
             {/* AHPRA registration — its own column, same pattern as the others */}
             <div className="col-span-1 md:col-span-2 md:col-start-11 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
               <p className="overline mb-1">AHPRA</p>
-              <p className="body-xs-caps">Reg. MED0002486778</p>
+              <p className="body-xs-caps text-brand-white">Reg. MED0002486778</p>
             </div>
 
           </div>
@@ -122,10 +125,11 @@ export default function Footer() {
 
       {/* Bottom bar — faint */}
       <div>
-        {/* AHPRA lives in its own column above; the legal line fits one line on mobile */}
+        {/* Legal line — full 10px caps for legibility; wraps to two centred
+            lines on mobile rather than shrinking below the type system */}
         <div className="pg-container pb-8 md:pb-16 flex items-center justify-center md:justify-between gap-2">
           {/* Designer credit — only the company name is the link */}
-          <p className="footer-legal whitespace-nowrap">
+          <p className="body-xs-caps text-center md:text-left">
             Made by{" "}
             <a
               href="https://northandrefine.com/"

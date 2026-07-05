@@ -61,7 +61,7 @@ Headings use a fluid √2 modular scale (`heading-mega` through `heading-sm`), i
 | `.heading-statement` | Centred editorial statements | Sentence case, 32→56px, leading 1.15, −0.005em. Fills the gap between `.heading-lg` and `.heading-2xl`. |
 | `.heading-lg` | H2 section headings | Sentence case, 28→40px, leading 1.2. **Mobile floors are deliberate**: the phone ladder is md 20 / lg 28 / statement 32 / 2xl 40 — don't lower a floor without checking the whole ladder (compressed floors made mobile titles read too small three times) |
 | `.heading-md` | H3 card / list sub-headings | Sentence case, 20→28px, +0.02em tracking. Floor deliberately sits well above 16px body copy — at the old 18px floor, card titles on phones read as body text |
-| `.heading-sm` | Smallest serif heading (H4) | Sentence case, 14→20px, +0.02em tracking. **Never for a title that sits over body copy** — its 14px floor renders below 16px body on phones (this inverted the hierarchy on FAQ questions, episode titles, clinic names before they moved to `.heading-md`). Reserve for genuinely small UI: table headers, tight sidebar labels |
+| `.heading-sm` | Smallest serif heading (H4) | Sentence case, 14→20px, +0.02em tracking. **Never for a title that sits over body copy** — its 14px floor renders below 16px body on phones (this inverted the hierarchy on FAQ questions and episode titles before they moved to `.heading-md`). Reserve for genuinely small UI: table headers, tight sidebar labels |
 | `.stat-lg` | Big numbers and short stat labels | |
 | `.overline` | Small uppercase tracked label (kicker) | 10px, +0.45em tracking, uppercase. Despite the name, this is NOT the Tailwind `overline` text-decoration utility — the custom class overrides it. (Previously duplicated as `.eyebrow`, now consolidated.) |
 | `.body-serif` | Default body copy (serif Heading font) | **16px fixed across all breakpoints**, leading 1.7 |
@@ -126,7 +126,7 @@ These are wired into pages and are the right thing to reuse or extend:
 | Component | Used in | Purpose |
 | --- | --- | --- |
 | `Navbar` | `layout.tsx` | Site nav with scroll-aware colour flipping |
-| `Footer` | `layout.tsx` | Site footer |
+| `Footer` | `layout.tsx` | Site footer. **Fixed 3-tier type scheme** — column titles: `.overline`; ALL primary lines (nav links, clinic names): `text-sm font-light text-brand-white`; ALL detail lines (addresses, reg number): `.body-xs-caps` (+`text-brand-white` where linked/emphasised); legal bar: `.body-xs-caps`, wraps centred on mobile. Don't introduce a fourth voice |
 | `AnnouncementBar` | `layout.tsx` | Top dismissible bar |
 | `AOSInit` | `layout.tsx` | Global AOS + Lenis setup — don't duplicate |
 | `SmoothScroll` | `layout.tsx` | Smooth-scroll provider |
