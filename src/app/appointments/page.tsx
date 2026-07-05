@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 const clinics = [
   {
     name: "Epios Cosmetic Clinic",
+    shortName: "Epios",
     suburb: "Paddington",
     address: "18 William St, Paddington, 2021",
     hours: null,
@@ -27,6 +28,7 @@ const clinics = [
   },
   {
     name: "Austin Clinic",
+    shortName: "Austin",
     suburb: "Balgowlah",
     address: "5/67 Wanganella St, Balgowlah, 2093",
     hours: null,
@@ -117,10 +119,11 @@ export default function AppointmentsPage() {
               </div>
 
               <div className="flex flex-col divide-y divide-brand-black/20 mt-2">
-              {clinics.map(({ name, hours, href, address }) => (
-                <div key={name} className="flex items-center justify-between gap-6 py-7 first:pt-0">
+              {/* Button sits UNDER the address — side-by-side was cramped even
+                  on an iPhone 14, and the named labels need the width */}
+              {clinics.map(({ name, shortName, hours, href, address }) => (
+                <div key={name} className="flex flex-col items-start gap-5 py-7 first:pt-0">
 
-                  {/* Left — clinic name + address */}
                   <div className="flex flex-col gap-3">
                     <h3 className="heading-md">
                       {name}
@@ -134,16 +137,15 @@ export default function AppointmentsPage() {
                     {hours && <p className="body-xs-caps text-brand-black/50">{hours}</p>}
                   </div>
 
-                  {/* Right — book button */}
                   <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-sm btn-primary-light flex-shrink-0"
+                    className="btn btn-sm btn-primary-light"
                     data-aos="fade"
                     data-aos-delay="150"
                   >
-                    Book
+                    Book at {shortName}
                   </a>
 
                 </div>
