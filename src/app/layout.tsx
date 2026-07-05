@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: "/assets/og-dr-yalda.jpg",
+        url: "/assets/og-dr-yalda-hero.jpg",
         width: 1200,
         height: 630,
         alt: "Dr Yalda Jamali — Sydney cosmetic doctor",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/assets/og-dr-yalda.jpg"],
+    images: ["/assets/og-dr-yalda-hero.jpg"],
   },
 };
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Meet Dr Yalda Jamali — Sydney cosmetic doctor with a Master's in Dermatology, offering ethical, consultation-led care focused on personalised, balanced results.",
     url: "/about",
-    images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
+    images: [{ url: "/assets/og-dr-yalda-hero.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
   },
 };
 

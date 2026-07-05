@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Dr Yalda Jamali in the media — expert commentary, podcast appearances and brand partnerships from a trusted Sydney cosmetic doctor and educator.",
     url: "/media",
-    images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
+    images: [{ url: "/assets/og-dr-yalda-hero.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
   },
 };
 

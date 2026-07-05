@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       "Book a consultation with Dr Yalda Jamali, Sydney cosmetic doctor — every treatment starts with an honest, unhurried conversation about your skin and goals.",
     url: "/appointments",
-    images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
+    images: [{ url: "/assets/og-dr-yalda-hero.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
   },
 };
 

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Consultation-led cosmetic services in Sydney with Dr Yalda Jamali — anti-wrinkle treatments, skin quality and facial balancing, guided by medical evidence.",
     url: "/services",
-    images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
+    images: [{ url: "/assets/og-dr-yalda-hero.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
   },
 };
 
