@@ -153,7 +153,7 @@ export default function AboutPage() {
                   src="/assets/logo-circle.svg"
                   alt="Dr. Yalda Jamali"
                   className="absolute z-10 left-0 bottom-0 -translate-x-1/2 translate-y-1/2"
-                  style={{ width: "clamp(64px, 10vw, 140px)" }}
+                  style={{ width: "clamp(76px, 12vw, 160px)" }}
                 />
               </div>
             </div>
@@ -191,8 +191,10 @@ export default function AboutPage() {
 
             </div>
 
-            {/* Right — qualifications list */}
-            <div className="md:col-span-3 md:col-start-10 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
+            {/* Right — qualifications list. Extra mobile-only top margin: stacked
+                under the Credentials copy, the grid's 24px gap read cramped
+                (same fix as the media-page enquiries block) */}
+            <div className="mt-10 md:mt-0 md:col-span-3 md:col-start-10 flex flex-col gap-6" data-aos="fade" data-aos-delay="150" data-aos-duration="1000">
               {/* Invisible spacer — pushes Qualifications overline down to baseline-align with first line of the big heading */}
               <p className="overline hidden md:block invisible" aria-hidden="true">spacer</p>
               <h2 className="overline">Qualifications</h2>
