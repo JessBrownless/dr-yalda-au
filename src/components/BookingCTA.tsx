@@ -68,7 +68,9 @@ export default function BookingCTA({
 
       {/* Mobile fallback — stacked */}
       <div className="md:hidden flex flex-col">
-        <div className="aspect-[4/5] overflow-hidden" data-aos="fade" data-aos-duration="1100" data-aos-easing="ease-out-sine">
+        {/* Square is deliberate here — the one approved square crop on mobile
+            (Jessica: editorial portraits are 4:5, but the CTA collage stays 1:1) */}
+        <div className="aspect-square overflow-hidden" data-aos="fade" data-aos-duration="1100" data-aos-easing="ease-out-sine">
           <img src={rightImage} alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} />
         </div>
         <div className="flex flex-col items-center text-center gap-4 px-8 py-24 bg-brand-white" data-aos="fade" data-aos-delay="150" data-aos-duration="2200" data-aos-easing="ease-out-sine" style={{ color: "rgba(45, 44, 42, 0.78)" }}>

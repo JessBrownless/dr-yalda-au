@@ -250,19 +250,6 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Press features list */}
-      <section className="bg-parchment pt-12 md:pt-16 pb-24 md:pb-32" id="features">
-        <div className="pg-container">
-
-          <h2 className="overline mb-6">
-            Media features
-          </h2>
-
-          <FeaturesList />
-
-        </div>
-      </section>
-
       {/* Latest appearances gallery */}
       <section className="bg-parchment pt-12 md:pt-16 pb-24 md:pb-32">
         <div className="pg-container">
@@ -302,6 +289,19 @@ export default function MediaPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Press features list — sits under Latest appearances */}
+      <section className="bg-parchment pt-12 md:pt-16 pb-24 md:pb-32" id="features">
+        <div className="pg-container">
+
+          <h2 className="overline mb-6">
+            Media features
+          </h2>
+
+          <FeaturesList />
+
         </div>
       </section>
 
