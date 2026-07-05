@@ -179,8 +179,13 @@ export default function MediaPage() {
                 </h2>
                 <a
                   href="mailto:hollie@shapr.com.au"
-                  className="body-serif text-brand-black mt-2 hover:opacity-70 transition-opacity duration-300"
+                  className="body-serif text-brand-black mt-2 hover:opacity-70 transition-opacity duration-300 inline-flex items-center gap-2"
                 >
+                  {/* Envelope matches the clinic map-pin idiom: 0.75 hairline, 40% ink */}
+                  <svg width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true" className="flex-shrink-0 text-brand-black/40">
+                    <rect x="0.5" y="0.5" width="12" height="9" rx="1" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M1 1.5l5.5 4 5.5-4" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                   hollie@shapr.com.au
                 </a>
               </div>
