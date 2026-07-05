@@ -207,8 +207,8 @@ export default function MediaPage() {
             {/* Left — image */}
             <div className="md:col-span-6" data-aos="fade" data-aos-duration="1000">
               <ImageReveal className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
-                {/* Asset is pre-cropped to end at the skirt hem — keeps every aspect crop leg-free */}
-                <img src="/assets/dr-yalda-laptop.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
+                {/* Anchored to the photo bottom — legs stay in frame; the crop takes the headroom */}
+                <img src="/assets/IMG_0040.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-bottom" />
               </ImageReveal>
             </div>
 
