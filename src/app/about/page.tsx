@@ -153,7 +153,7 @@ export default function AboutPage() {
                   src="/assets/logo-circle.svg"
                   alt="Dr. Yalda Jamali"
                   className="absolute z-10 left-0 bottom-0 -translate-x-1/2 translate-y-1/2"
-                  style={{ width: "clamp(76px, 12vw, 160px)" }}
+                  style={{ width: "clamp(80px, 12vw, 128px)" }}
                 />
               </div>
             </div>
