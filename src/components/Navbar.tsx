@@ -181,7 +181,8 @@ export default function Navbar() {
 
           {/* Right column — desktop links / mobile Book Now text link */}
           <div className="flex items-center gap-8 justify-end">
-            {/* Mobile Book Now — same .btn treatment as the desktop nav CTA */}
+            {/* Mobile nav CTA — same .btn treatment as desktop, but the one-word
+                label: "Book Now" at pill padding spanned nearly half a phone screen */}
             <Link
               href="/appointments"
               className={`btn btn-sm md:hidden transition-opacity duration-300 ${
@@ -192,7 +193,7 @@ export default function Navbar() {
                   : dark ? "btn-tertiary-light" : "btn-tertiary-dark"
               }`}
             >
-              Book Now
+              Book
             </Link>
             <div className={`hidden md:flex items-center gap-8 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
               {[{ label: "Media", href: "/media" }, { label: "Blog", href: "/blog" }].map(({ label, href }) => (
