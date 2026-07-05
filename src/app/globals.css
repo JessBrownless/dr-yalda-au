@@ -560,11 +560,14 @@ body {
 }
 
 /* heading-md — H3 sub-headings (cards, list items)
-   18 → 28px · leading 1.3 · +0.02em · sentence */
+   20 → 28px · leading 1.3 · +0.02em · sentence
+   Floor raised 18 -> 20px: at 18px a card title sat only 2px above 16px body
+   copy on phones and the hierarchy collapsed (blog cards were the tell).
+   Desktop is unchanged — the clamp still tops out at 28px. */
 .heading-md {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(1.125rem, 1.875vw, 1.75rem);
+  font-size: clamp(1.25rem, 1.875vw, 1.75rem);
   font-weight: 400;
   line-height: 1.3;
   letter-spacing: 0.02em;

@@ -346,7 +346,7 @@ export default function MediaPage() {
                       </span>
                       <div className="flex flex-col gap-1">
                         <p className="overline">{show}</p>
-                        <h3 className="heading-sm">{episode}</h3>
+                        <h3 className="heading-md">{episode}</h3>
                       </div>
                     </div>
                     <span className="overline flex-shrink-0 mt-1">{duration}</span>

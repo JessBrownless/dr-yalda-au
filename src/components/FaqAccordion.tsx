@@ -15,7 +15,9 @@ export default function FaqAccordion() {
       {faqs.map(({ q, a }) => (
         <details key={q} className="faq-item group border-b border-brand-line/20 first:border-t first:border-brand-line/20">
           <summary className="flex items-start justify-between gap-6 py-7 md:py-8 cursor-pointer list-none transition-colors duration-300 hover:bg-brand-white/5">
-            <h3 className="heading-sm text-on-dark-high">
+            {/* heading-md, not -sm: at heading-sm's 14px floor the question rendered
+                smaller than its 16px answer on phones */}
+            <h3 className="heading-md text-on-dark-high">
               {q}
             </h3>
             <span className="faq-icon flex-shrink-0 mt-1.5 text-on-dark-low transition-all duration-300 group-hover:text-on-dark-high">

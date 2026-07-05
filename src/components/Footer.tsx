@@ -93,7 +93,7 @@ export default function Footer() {
                       <path d="M4 0C1.791 0 0 1.791 0 4C0 7 4 12 4 12C4 12 8 7 8 4C8 1.791 6.209 0 4 0Z" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                       <circle cx="4" cy="4" r="1.25" stroke="currentColor" strokeWidth="0.75" fill="none"/>
                     </svg>
-                    <h2 className="heading-sm">{name}</h2>
+                    <h2 className="heading-md">{name}</h2>
                   </div>
                   <a
                     href={mapsUrl}

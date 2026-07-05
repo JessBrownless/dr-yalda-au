@@ -60,8 +60,8 @@ Headings use a fluid √2 modular scale (`heading-mega` through `heading-sm`), i
 | `.heading-2xl` | Large display heading | Sentence case, 40→79px, leading 1.05, −0.01em tracking |
 | `.heading-statement` | Centred editorial statements | Sentence case, 28→56px, leading 1.15, −0.005em. Fills the gap between `.heading-lg` and `.heading-2xl`. |
 | `.heading-lg` | H2 section headings | Sentence case, 24→40px, leading 1.2 |
-| `.heading-md` | H3 card / list sub-headings | Sentence case, 16→28px, +0.02em tracking |
-| `.heading-sm` | Smallest serif heading (H4) | Sentence case, 14→20px, +0.02em tracking |
+| `.heading-md` | H3 card / list sub-headings | Sentence case, 20→28px, +0.02em tracking. Floor deliberately sits well above 16px body copy — at the old 18px floor, card titles on phones read as body text |
+| `.heading-sm` | Smallest serif heading (H4) | Sentence case, 14→20px, +0.02em tracking. **Never for a title that sits over body copy** — its 14px floor renders below 16px body on phones (this inverted the hierarchy on FAQ questions, episode titles, clinic names before they moved to `.heading-md`). Reserve for genuinely small UI: table headers, tight sidebar labels |
 | `.stat-lg` | Big numbers and short stat labels | |
 | `.overline` | Small uppercase tracked label (kicker) | 10px, +0.45em tracking, uppercase. Despite the name, this is NOT the Tailwind `overline` text-decoration utility — the custom class overrides it. (Previously duplicated as `.eyebrow`, now consolidated.) |
 | `.body-serif` | Default body copy (serif Heading font) | **16px fixed across all breakpoints**, leading 1.7 |
