@@ -128,8 +128,12 @@ export default function Footer() {
         {/* Legal line — full 10px caps for legibility; wraps to two centred
             lines on mobile rather than shrinking below the type system */}
         <div className="pg-container pb-8 md:pb-16 flex items-center justify-center md:justify-between gap-2">
-          {/* Designer credit — only the company name is the link */}
-          <p className="body-xs-caps text-center md:text-left">
+          <p className="body-xs-caps hidden md:block">
+            Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved
+          </p>
+          {/* Designer credit — the very last thing on the site; only the company name is the link */}
+          <p className="body-xs-caps text-center md:text-right">
+            <span className="md:hidden">Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved · </span>
             Made by{" "}
             <a
               href="https://northandrefine.com/"
@@ -139,10 +143,6 @@ export default function Footer() {
             >
               North &amp; Refine
             </a>
-            <span className="md:hidden"> · Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved</span>
-          </p>
-          <p className="body-xs-caps hidden md:block">
-            Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved
           </p>
         </div>
       </div>
