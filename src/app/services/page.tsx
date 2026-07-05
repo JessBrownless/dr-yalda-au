@@ -74,7 +74,7 @@ export default function ServicesPage() {
             {/* Left — image */}
             <div className="md:col-span-6 relative">
               <div>
-                <div className="overflow-hidden aspect-square md:aspect-[3/4]">
+                <div className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
                   <img
                     src="/assets/dr-yalda-treatment-03.avif"
                     alt="Dr. Yalda Jamali"
@@ -171,7 +171,7 @@ export default function ServicesPage() {
 
             {/* Right — portrait */}
             <div className="md:col-span-6 md:col-start-7 order-1 md:order-2">
-              <div className="overflow-hidden aspect-square md:aspect-[3/4]">
+              <div className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
                 <img
                   src="/assets/Yalda-1.avif"
                   alt="Dr. Yalda Jamali"

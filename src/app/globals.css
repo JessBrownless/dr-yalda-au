@@ -899,13 +899,14 @@ body {
 
 /* ─── Reusable portrait image block ─────────────────────────────────────── */
 /*
-  Mobile: square crop with bottom margin.
-  Desktop (md+): portrait 3/4 ratio, no bottom margin.
+  Mobile: 4:5 portrait (NEVER square — Jessica vetoed square crops on mobile;
+  4:5 is the approved shorter-than-desktop portrait).
+  Desktop (md+): portrait 3/4 ratio.
   Use on any image wrapper that needs this responsive behaviour.
 */
 .site-portrait {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   margin-bottom: 0;
 }

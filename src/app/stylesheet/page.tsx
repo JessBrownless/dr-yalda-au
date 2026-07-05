@@ -362,7 +362,7 @@ export default function StylesheetPage() {
             {[
               { name: ".pg-container", desc: "The standard container — max-width 1200px, fluid side padding clamp(1.75rem, 5vw, 5rem). Wrap any contained section; full-bleed sections intentionally skip it." },
               { name: "Section rhythm", desc: "Contained sections: bg-parchment py-20 md:py-32. Billboard statements get double air: py-40 md:py-64." },
-              { name: ".site-portrait", desc: "Standalone portrait images — 1:1 on mobile, 3:4 from md, object-fit cover, crop favouring the top of frame." },
+              { name: ".site-portrait", desc: "Standalone portrait images — 4:5 on mobile (never square), 3:4 from md, object-fit cover, crop favouring the top of frame." },
               { name: ".hero-noise", desc: "Film-grain SVG overlay for dark hero sections (HeroHome, ParallaxQuote). Subtle — opacity ~0.08." },
               { name: "Mobile / desktop split", desc: "Complex layered sections render twin markup: <section class=\"md:hidden\"> + <section class=\"hidden md:block\">. Used by the hero and about hero." },
               { name: "12-column grid", desc: "Always gated: grid-cols-1 md:grid-cols-12. A bare grid-cols-12 overflows mobile viewports — this has shipped as a bug before." },

@@ -200,7 +200,7 @@ export default function MediaPage() {
 
             {/* Left — image */}
             <div className="md:col-span-6" data-aos="fade" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-square md:aspect-[3/4]">
+              <div className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
                 <img src="/assets/IMG_0040.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
               </div>
             </div>

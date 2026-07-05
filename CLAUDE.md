@@ -102,7 +102,7 @@ Canonical structure: put the overline and heading as **direct siblings** (no `ga
 ### Layout helpers
 
 - `.pg-container` — the standard max-width 1200px container with responsive padding (`clamp(1.75rem, 5vw, 5rem)`). Use this on any contained section.
-- `.site-portrait` — responsive portrait image wrapper: 1:1 mobile, 3:4 desktop, with `object-fit: cover` and `object-position: top`. Use this for any standalone portrait image.
+- `.site-portrait` — responsive portrait image wrapper: 4:5 mobile (never square), 3:4 desktop, with `object-fit: cover` and `object-position: top`. Use this for any standalone portrait image.
 - `.hero-noise` — film-grain SVG overlay. Use on dark hero sections (already in `HeroHome` and `ParallaxQuote`).
 - `.about-hero-portrait` — specific to the About page hero. Don't reuse elsewhere.
 
@@ -224,7 +224,7 @@ This is intentional — Tailwind responsive utilities can't easily express asymm
 ### Image handling
 
 - Format: AVIF preferred (`*.avif` files in `public/assets/`)
-- Aspect ratios: 1:1 mobile, 3:4 desktop is the standard portrait pattern (see `.site-portrait`)
+- Aspect ratios: **4:5 mobile, 3:4 desktop** is the standard portrait pattern (see `.site-portrait`). **Never crop editorial portraits square on mobile** — Jessica vetoed square crops site-wide (Instagram-grid tiles and tiny avatars are the only square exceptions)
 - Use `object-position` to control crop — most existing portraits use `objectPosition: "50% 15%"` or similar to favour the upper part of the face
 - Image fade-in: wrap the `<img>` in a `div` with `opacity-0 animate-fade-in` and a longer delay than the surrounding text (~1.8s), so the image is the last thing to resolve
 - **Scroll-triggered image reveals**: the AOS default (900ms) reads abrupt on large photos — Jessica asked for slower, softer fades. Use `data-aos="fade" data-aos-duration="1800" data-aos-easing="ease-out-sine"`; stagger overlapping/paired images by 250–300ms, and let a logo/badge overlay arrive last (~700ms delay, 1200ms duration). See the About-page two-image interlude for the canonical example.
