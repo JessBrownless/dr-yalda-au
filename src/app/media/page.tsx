@@ -58,7 +58,7 @@ export default function MediaPage() {
         {/* svh, not dvh: dvh tracks the phone's collapsing URL bar, so the hero
             grew mid-scroll and the cover image re-cropped ("jumpy zoom"). Same
             fix as the homepage hero. */}
-        <div className="relative z-10 flex flex-col justify-end pg-container pb-16 md:pb-24" style={{ minHeight: "90svh", paddingTop: "120px" }}>
+        <div className="relative z-10 flex flex-col justify-end pg-container pb-16 md:pb-24" style={{ minHeight: "100svh", paddingTop: "120px" }}>
           <div className="flex flex-col gap-5 md:grid md:grid-cols-12 md:gap-8 md:items-end">
             <div className="md:col-span-6 flex flex-col items-start text-left">
               <h1
@@ -345,7 +345,6 @@ export default function MediaPage() {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Listen to “${episode}” on ${show}`}
                     className="group flex items-start justify-between gap-6 py-5"
                   >
                     <div className="flex items-start gap-4">

@@ -41,7 +41,7 @@ export default function AppointmentsPage() {
   return (
     <main className="text-brand-black">
       {/* Hero */}
-      <section className="relative -mt-20 min-h-[90dvh] overflow-hidden bg-brand-black text-on-dark-high">
+      <section className="relative -mt-20 min-h-[100dvh] overflow-hidden bg-brand-black text-on-dark-high">
 
         {/* Full-bleed background image — fades in last over black */}
         <div className="absolute inset-0 opacity-0 animate-fade-in" style={{ animationDelay: "1.8s", animationDuration: "2.5s" }}>

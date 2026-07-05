@@ -128,7 +128,7 @@ export default function Footer() {
         {/* Legal bar — mobile: both lines centred and dimmed (the staggered layout
             read as misaligned); desktop: one spread row at full strength.
             The credit stays the last thing on the site on both. */}
-        <div className="pg-container pb-8 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-2 opacity-70 md:opacity-100">
+        <div className="pg-container pb-8 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-2 opacity-75 md:opacity-100">
           <p className="body-xs-caps text-center md:text-left">
             Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved
           </p>

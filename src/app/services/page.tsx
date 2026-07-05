@@ -25,7 +25,7 @@ export default function ServicesPage() {
       <HeroHome
         title="Services"
         tagline={<>Evidence-based cosmetic services across Sydney, delivered through <em>consultation-led</em> care.</>}
-        height="90dvh"
+        height="100dvh"
         align="left"
         verticalAlign="bottom"
         bottomRight={{ label: "See services", href: "#intro" }}
@@ -157,9 +157,7 @@ export default function ServicesPage() {
                 { num: "03", label: "Individualised Care", body: "Every plan reflects that no two faces—or ageing patterns—are alike." },
               ].map(({ num, label, body }) => (
                 <div key={num} className="flex items-baseline gap-5 py-8 border-b border-brand-black/10 first:border-t first:border-brand-black/10">
-                  <span className="stat-lg text-brand-black/10 flex-shrink-0">
-                    {num}
-                  </span>
+                  <span className="stat-lg stat-watermark text-brand-black/10 flex-shrink-0" data-num={num} aria-hidden="true" />
                   <div className="flex flex-col gap-4">
                     <h3 className="heading-md">
                       {label}

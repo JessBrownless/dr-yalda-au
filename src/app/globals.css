@@ -438,6 +438,14 @@ body {
 .body-short { line-height: 1.4; }
 .body-long  { line-height: 1.7; }
 
+/* ─── Decorative watermark numerals ─────────────────────────────────────
+   Rendered via ::before so the ghosted 01/02/03 figures (deliberately ~1.2:1)
+   are decoration, not document text — screen readers and the contrast audit
+   both correctly ignore them. */
+.stat-watermark::before {
+  content: attr(data-num);
+}
+
 /* ─── Text colour emphasis tokens ──────────────────────────────────────── */
 /*
   High = primary copy. Low = secondary/muted copy.
@@ -445,9 +453,9 @@ body {
   "on-light" = dark text for use on light backgrounds.
 */
 .text-on-dark-high  { color: var(--brand-white); }
-.text-on-dark-low   { color: color-mix(in srgb, var(--brand-white) 60%, transparent); }
+.text-on-dark-low   { color: color-mix(in srgb, var(--brand-white) 70%, transparent); } /* 70%: AA contrast at 16px */
 .text-on-light-high { color: var(--brand-black); }
-.text-on-light-low  { color: color-mix(in srgb, var(--brand-black) 60%, transparent); }
+.text-on-light-low  { color: color-mix(in srgb, var(--brand-black) 70%, transparent); } /* 70%: AA contrast at 16px */
 
 /* ─── Heading scale ─────────────────────────────────────────────────────────
    Six fluid steps anchored to a √2 modular scale (14 · 19.8 · 28 · 39.6 · 56 · 79 · 112 px).
@@ -554,7 +562,8 @@ body {
 
 /* Small uppercase body-caps — like overline but less letter-spacing. */
 .body-xs-caps {
-  color: color-mix(in srgb, currentColor 60%, transparent);
+  /* 70% (was 60%): 10px text needs 4.5:1 — 60% measured ~3.75 on both palettes */
+  color: color-mix(in srgb, currentColor 70%, transparent);
   font-family: var(--font-lato), system-ui, sans-serif;
   font-size: 10px;
   font-weight: 300;
@@ -565,7 +574,8 @@ body {
 
 /* Overline / kicker helper — small caps label. */
 .overline {
-  color: color-mix(in srgb, currentColor 60%, transparent);
+  /* 70% (was 60%): 10px text needs 4.5:1 */
+  color: color-mix(in srgb, currentColor 70%, transparent);
   font-family: var(--font-lato), system-ui, sans-serif;
   font-size: 10px;
   font-weight: 300;

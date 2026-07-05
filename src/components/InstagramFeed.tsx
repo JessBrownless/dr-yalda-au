@@ -67,6 +67,7 @@ export default async function InstagramFeed() {
                   href={PROFILE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Dr Yalda on Instagram"
                   className={`relative block aspect-square overflow-hidden group ${i === 0 ? "col-span-2 md:col-span-1" : ""}`}
                 >
                   <img
