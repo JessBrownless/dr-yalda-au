@@ -37,13 +37,18 @@ export default function ServicesPage() {
       {/* ─── INTRO STATEMENT ─────────────────────────────────────────────── */}
       <section id="intro" className="bg-parchment py-32 md:py-52 relative scroll-mt-20">
         <div className="pg-container">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
+          {/* Kicker sits above the grid so items-baseline can align the right-column
+              body to the HEADING's first line (with the kicker inside the column,
+              baseline alignment latched onto the kicker instead). The gap below it
+              still comes from the heading's from-overline margin. */}
+          <p className="overline">
+            How Dr Yalda can help
+          </p>
 
-            {/* Left — kicker + heading as direct siblings (canonical from-overline rhythm) */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-baseline">
+
+            {/* Left — heading */}
             <div className="md:col-span-6">
-              <p className="overline">
-                How Dr Yalda can help
-              </p>
               <h2 className="heading-lg from-overline">
                 Natural-looking results, built on a decade of clinical practice.
               </h2>
