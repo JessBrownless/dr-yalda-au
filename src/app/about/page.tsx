@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ParallaxQuote from "@/components/ParallaxQuote";
+import ImageReveal from "@/components/ImageReveal";
 import BookingCTA from "@/components/BookingCTA";
 import InstagramFeed from "@/components/InstagramFeed";
 
@@ -123,27 +124,27 @@ export default function AboutPage() {
             {/* Left — treatment shot (top, no offset). Long, soft fades on the pair —
                 the default 900ms read as "appearing" rather than arriving */}
             <div className="col-span-7 col-start-1 md:col-span-6 row-start-1" data-aos="fade" data-aos-duration="1800" data-aos-easing="ease-out-sine">
-              <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
+              <ImageReveal className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                 <img
                   src="/assets/IMG_0028.avif"
                   alt=""
                   aria-hidden="true"
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </ImageReveal>
             </div>
 
             {/* Right — portrait, offset down, with logo overlay on its bottom-left corner */}
             <div className="col-span-7 col-start-6 md:col-span-6 md:col-start-7 row-start-1 mt-[28vw] md:mt-32 relative z-10" data-aos="fade" data-aos-delay="250" data-aos-duration="1800" data-aos-easing="ease-out-sine">
               <div className="relative">
-                <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
+                <ImageReveal className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
                   <img
                     src="/assets/Yalda-17.avif"
                     alt=""
                     aria-hidden="true"
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </ImageReveal>
                 {/* Logo resolves last, after both photos have settled */}
                 <img
                   src="/assets/logo-circle.svg"

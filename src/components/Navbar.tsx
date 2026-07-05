@@ -223,14 +223,17 @@ export default function Navbar() {
       {/* Full-screen overlay menu */}
       <div className={`fixed inset-0 z-[70] flex flex-row-reverse ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
 
-        {/* Left — image panel */}
-        <div className="w-2/5 relative overflow-hidden">
-          <Image
-            src="/assets/IMG_0017.avif"
-            alt=""
-            fill
-            className="object-cover object-center"
-          />
+        {/* Left — image panel. Hero sequence: the panel opens dark, then the
+            image resolves slowly (fades back out on close so it replays) */}
+        <div className="w-2/5 relative overflow-hidden bg-brand-black">
+          <div className={`absolute inset-0 transition-opacity duration-[2000ms] ease-out ${open ? "opacity-100 delay-500" : "opacity-0 delay-0"}`}>
+            <Image
+              src="/assets/IMG_0017.avif"
+              alt=""
+              fill
+              className="object-cover object-center"
+            />
+          </div>
         </div>
 
         {/* Right — nav panel */}

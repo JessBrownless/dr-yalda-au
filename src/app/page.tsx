@@ -3,6 +3,7 @@ import LogoStripDark from "@/components/LogoStripDark";
 import HeroHome from "@/components/HeroHome";
 import StickyScrollSection from "@/components/StickyScrollSection";
 import ScrollReveal from "@/components/ScrollReveal";
+import ImageReveal from "@/components/ImageReveal";
 import BookingCTA from "@/components/BookingCTA";
 import InstagramFeed from "@/components/InstagramFeed";
 import ParallaxQuote from "@/components/ParallaxQuote";
@@ -52,9 +53,9 @@ export default function Home() {
 
             {/* Left — image over parchment */}
             <div className="md:col-span-6">
-              <div className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
+              <ImageReveal className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
                 <img src="/assets/IMG_004.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 15%" }} />
-              </div>
+              </ImageReveal>
             </div>
 
             {/* Right — introduction text */}
@@ -137,9 +138,9 @@ export default function Home() {
 
             {/* Right — image over parchment */}
             <div className="md:col-span-6 md:col-start-7 order-1 md:order-2">
-              <div className="overflow-hidden aspect-[4/5] md:aspect-[3/4] md:scale-105 md:origin-center">
+              <ImageReveal className="overflow-hidden aspect-[4/5] md:aspect-[3/4] md:scale-105 md:origin-center">
                 <img src="/assets/IMG_0037_color.avif" alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: "50% 40%" }} />
-              </div>
+              </ImageReveal>
             </div>
 
           </ScrollReveal>
@@ -182,14 +183,14 @@ export default function Home() {
                 data-aos-delay={i * 120}
                 data-aos-duration="1000"
               >
-                <div className="overflow-hidden aspect-[4/5]">
+                <ImageReveal className="overflow-hidden aspect-[4/5]">
                   <img
                     src={post.frontmatter.featuredImage}
                     alt=""
                     aria-hidden="true"
                     className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   />
-                </div>
+                </ImageReveal>
                 <div className="flex flex-col gap-3">
                   {/* Gap-less wrapper so the kicker->title gap comes from from-overline, not the parent gap-3 */}
                   <div className="flex flex-col">

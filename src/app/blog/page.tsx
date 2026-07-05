@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import BookingCTA from "@/components/BookingCTA";
+import ImageReveal from "@/components/ImageReveal";
 import InstagramFeed from "@/components/InstagramFeed";
 import { getAllPosts } from "@/lib/blog";
 
@@ -108,7 +109,7 @@ export default function BlogIndexPage() {
             data-aos="fade"
           >
             {featured.frontmatter.featuredImage ? (
-              <div className="md:col-span-7 overflow-hidden aspect-[3/2]">
+              <ImageReveal className="md:col-span-7 overflow-hidden aspect-[3/2]">
                 {/* Landscape crop — favour the upper area so the face stays in frame. */}
                 <img
                   src={featured.frontmatter.featuredImage}
@@ -118,7 +119,7 @@ export default function BlogIndexPage() {
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   style={{ objectPosition: "center 25%" }}
                 />
-              </div>
+              </ImageReveal>
             ) : null}
             <div className={featured.frontmatter.featuredImage ? "md:col-span-5" : "md:col-span-8"}>
               <p className="overline">
@@ -150,7 +151,7 @@ export default function BlogIndexPage() {
                 data-aos-delay={i * 120}
                 data-aos-duration="1000"
               >
-                <div className="overflow-hidden aspect-[4/5]">
+                <ImageReveal className="overflow-hidden aspect-[4/5]">
                   {post.frontmatter.featuredImage ? (
                     <img
                       src={post.frontmatter.featuredImage}
@@ -160,7 +161,7 @@ export default function BlogIndexPage() {
                       className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     />
                   ) : null}
-                </div>
+                </ImageReveal>
                 <div className="flex flex-col gap-3">
                   {/* Gap-less wrapper so the kicker->title gap comes from from-overline, not the parent gap-3 */}
                   <div className="flex flex-col">

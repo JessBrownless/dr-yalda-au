@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 import FeaturesList from "@/components/FeaturesList";
+import ImageReveal from "@/components/ImageReveal";
 import InstagramFeed from "@/components/InstagramFeed";
 import ParallaxDrift from "@/components/ParallaxDrift";
 
@@ -209,9 +210,9 @@ export default function MediaPage() {
 
             {/* Left — image */}
             <div className="md:col-span-6" data-aos="fade" data-aos-duration="1000">
-              <div className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
+              <ImageReveal className="overflow-hidden aspect-[4/5] md:aspect-[3/4]">
                 <img src="/assets/IMG_0040.jpg" alt="Dr. Yalda Jamali" className="w-full h-full object-cover object-top" />
-              </div>
+              </ImageReveal>
             </div>
 
             {/* Right — numbered list */}
@@ -286,9 +287,9 @@ export default function MediaPage() {
                 data-aos-delay={i * 100}
                 data-aos-duration="1000"
               >
-                <div className="overflow-hidden" style={{ aspectRatio: aspect }}>
+                <ImageReveal className="overflow-hidden" style={{ aspectRatio: aspect }}>
                   <img src={src} alt={caption} className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]" />
-                </div>
+                </ImageReveal>
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="heading-md">
                     {caption}

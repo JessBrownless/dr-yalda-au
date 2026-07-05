@@ -1,3 +1,5 @@
+import ImageReveal from "@/components/ImageReveal";
+
 interface BookingCTAProps {
   overline?: string;
   heading?: string;
@@ -26,12 +28,12 @@ export default function BookingCTA({
 
       {/* Left image — bleeds off left edge, anchored to top. Widens at large breakpoints to close the collage gap on big screens (the right image stays fixed, so they never overlap). */}
       <div className="absolute -left-[2%] top-0 hidden md:block overflow-hidden w-[48%] min-[1440px]:w-[54%] min-[1700px]:w-[58%]" data-aos="fade" data-aos-duration="1100" data-aos-easing="ease-out-sine" style={{ height: "calc(36vw + 105px)" }}>
-        <img src={leftImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: leftImagePosition }} />
+        <ImageReveal className="absolute inset-0"><img src={leftImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: leftImagePosition }} /></ImageReveal>
       </div>
 
       {/* Right image — bleeds off right edge, larger downward offset. Fixed 38% (portrait) at all sizes; the left image closes the gap instead. */}
       <div className="absolute right-0 hidden md:block overflow-hidden w-[40%]" data-aos="fade" data-aos-delay="100" data-aos-duration="1100" data-aos-easing="ease-out-sine" style={{ height: "calc(36vw + 105px)", top: "calc(4.5vw + 16px)" }}>
-        <img src={rightImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} />
+        <ImageReveal className="absolute inset-0"><img src={rightImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} /></ImageReveal>
       </div>
 
       {/* Centre card — overlaps both images; frosted-glass (semi-transparent + blur) */}
@@ -71,7 +73,7 @@ export default function BookingCTA({
         {/* Square is deliberate here — the one approved square crop on mobile
             (Jessica: editorial portraits are 4:5, but the CTA collage stays 1:1) */}
         <div className="aspect-square overflow-hidden" data-aos="fade" data-aos-duration="1100" data-aos-easing="ease-out-sine">
-          <img src={rightImage} alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} />
+          <ImageReveal className="w-full h-full"><img src={rightImage} alt="Dr. Yalda Jamali" className="w-full h-full object-cover" style={{ objectPosition: rightImagePosition }} /></ImageReveal>
         </div>
         <div className="flex flex-col items-center text-center gap-4 px-8 py-24 bg-brand-white" data-aos="fade" data-aos-delay="150" data-aos-duration="2200" data-aos-easing="ease-out-sine" style={{ color: "rgba(45, 44, 42, 0.78)" }}>
           <div className="flex flex-col items-center">

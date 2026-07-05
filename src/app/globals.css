@@ -897,6 +897,25 @@ body {
   border-color: var(--cream);
 }
 
+/* ─── Editorial image reveal (ImageReveal component) ────────────────────── */
+/*
+  Hero-style entrance for in-flow imagery: the wrapper shows a quiet dark-
+  tinted base, then the image resolves slowly once ~in view. Pure opacity —
+  no transform — so hover-zoom utilities on the inner img are untouched.
+*/
+.image-reveal {
+  background: color-mix(in srgb, var(--brand-black) 10%, var(--parchment));
+}
+.image-reveal__layer {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+.image-reveal.is-shown .image-reveal__layer {
+  opacity: 1;
+}
+
 /* ─── Reusable portrait image block ─────────────────────────────────────── */
 /*
   Mobile: 4:5 portrait (NEVER square — Jessica vetoed square crops on mobile;
