@@ -136,7 +136,7 @@ export default function Footer() {
           <p className="body-xs-caps self-start md:self-auto">
             Made by{" "}
             <a
-              href="https://northandrefine.com/"
+              href="https://northandrefine.com/coming-soon"
               target="_blank"
               rel="noopener noreferrer"
               className="link-caps text-brand-white"
