@@ -145,16 +145,15 @@ export default function AboutPage() {
                     className="w-full h-full object-cover"
                   />
                 </ImageReveal>
-                {/* Logo resolves last, after both photos have settled */}
+                {/* No data-aos here — AOS's [data-aos^=fade] rules out-specify
+                    Tailwind's translate utilities and strip the corner-straddling
+                    transform (the logo drifted inside the image). It fades with
+                    its parent instead. */}
                 <img
                   src="/assets/logo-circle.svg"
                   alt="Dr. Yalda Jamali"
                   className="absolute z-10 left-0 bottom-0 -translate-x-1/2 translate-y-1/2"
                   style={{ width: "clamp(64px, 10vw, 140px)" }}
-                  data-aos="fade"
-                  data-aos-delay="700"
-                  data-aos-duration="1200"
-                  data-aos-easing="ease-out-sine"
                 />
               </div>
             </div>
