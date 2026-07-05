@@ -518,19 +518,23 @@ body {
 .heading-statement {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(1.75rem, 4.375vw, 3.5rem);
+  /* Floor 28 -> 32px so statements keep a clear step above heading-lg's 28px
+     floor on phones (mobile ladder: md 20 / lg 28 / statement 32 / 2xl 40) */
+  font-size: clamp(2rem, 4.375vw, 3.5rem);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.005em;
 }
 
 /* heading-lg — H2 section headings
-   24 → 40px · leading 1.2 · 0 tracking · sentence
-   Floor raised 20→24px so mobile H2s clear the 16px body copy */
+   28 → 40px · leading 1.2 · 0 tracking · sentence
+   Floor raised 24 -> 28px: mobile H2s sat only 1.2x above the 20px card
+   titles below them and the whole phone hierarchy compressed — Jessica
+   flagged section H2s reading too small site-wide. Desktop max unchanged. */
 .heading-lg {
   margin: 0;
   font-family: "Heading", serif;
-  font-size: clamp(1.5rem, 3.125vw, 2.5rem);
+  font-size: clamp(1.75rem, 3.125vw, 2.5rem);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
