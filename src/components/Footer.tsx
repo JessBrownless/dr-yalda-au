@@ -125,15 +125,15 @@ export default function Footer() {
 
       {/* Bottom bar — faint */}
       <div>
-        {/* Legal line — full 10px caps for legibility; wraps to two centred
-            lines on mobile rather than shrinking below the type system */}
-        <div className="pg-container pb-8 md:pb-16 flex items-center justify-center md:justify-between gap-2">
-          <p className="body-xs-caps hidden md:block">
+        {/* Legal bar — mobile: two staggered rows (name right, credit left) so the
+            pieces aren't crammed into one wrapped blob; desktop: one spread row.
+            The credit stays the last thing on the site on both. */}
+        <div className="pg-container pb-8 md:pb-16 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-2">
+          <p className="body-xs-caps self-end md:self-auto text-right md:text-left">
             Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved
           </p>
-          {/* Designer credit — the very last thing on the site; only the company name is the link */}
-          <p className="body-xs-caps text-center md:text-right">
-            <span className="md:hidden">Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved · </span>
+          {/* Designer credit — only the company name is the link */}
+          <p className="body-xs-caps self-start md:self-auto">
             Made by{" "}
             <a
               href="https://northandrefine.com/"
