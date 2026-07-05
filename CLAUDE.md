@@ -66,6 +66,7 @@ Headings use a fluid √2 modular scale (`heading-mega` through `heading-sm`), i
 | `.stat-lg` | Big numbers and short stat labels | |
 | `.overline` | Small uppercase tracked label (kicker) | 10px, +0.45em tracking, uppercase. Despite the name, this is NOT the Tailwind `overline` text-decoration utility — the custom class overrides it. (Previously duplicated as `.eyebrow`, now consolidated.) |
 | `.body-serif` | Default body copy (serif Heading font) | **16px fixed across all breakpoints**, leading 1.7 |
+| `.body-short` / `.body-long` | Line-height registers (after Carbon's body-short/body-long) | Modifiers composed with `.body-serif`/`.body-sans`. **short = 1.4** for 1–3 line bursts (subtitles, card blurbs — reading-leading gapes there); **long = 1.7** for extended reading (the body classes' default). `.lede-hero` uses the short register internally |
 | `.body-sans` | Editorial-tall body copy in Lato | 16px fixed, leading 1.7 (matches `.body-serif`) |
 | `.label-02` | Image captions, stat labels, form/helper labels | 14px, leading 1.286, +0.011em, Lato regular |
 | `.body-xs` | Captions, fine print | 12px, lowercase, no tracking |

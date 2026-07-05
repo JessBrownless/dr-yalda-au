@@ -6,9 +6,11 @@ import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 // mobilePosition overrides `position` on the phone layout: a portrait screen
 // shows only a ~quarter-wide slice of these landscape frames, so a crop that
 // centres the subject on desktop can push her out of frame entirely on mobile.
+// Hands FIRST — the page must load on the hands and only crossfade to the
+// portrait after the first 7s interval (also matches the OG share card).
 const defaultImages = [
-  { src: "/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif", position: "50% 10%", mobilePosition: "70% 10%" },
   { src: "/assets/IMG_0028.avif", position: "50% 20%" },
+  { src: "/assets/dr-yalda-jamali-sydney-cosmetic-clinic-2.avif", position: "50% 10%", mobilePosition: "70% 10%" },
 ];
 
 interface HeroHomeProps {
@@ -135,7 +137,7 @@ export default function HeroHome({
               </div>
             )}
             {tagline && (
-              <p className="lede-hero opacity-0 animate-fade-in text-parchment/50 font-light mt-5 md:mt-7" style={{ textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="lede-hero opacity-0 animate-fade-in text-parchment/50 font-light mt-7" style={{ textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 {tagline}
               </p>
             )}
@@ -252,7 +254,7 @@ export default function HeroHome({
                   />
                 )}
                 {tagline && (
-                  <p className="lede-hero opacity-0 animate-fade-in text-parchment/70 font-light mt-5 md:mt-7" style={{ textAlign: isLeft ? "left" : "center", maxWidth: isLeft ? "60ch" : "42ch", textWrap: "balance", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+                  <p className="lede-hero opacity-0 animate-fade-in text-parchment/70 font-light mt-7" style={{ textAlign: isLeft ? "left" : "center", maxWidth: isLeft ? "60ch" : "42ch", textWrap: "balance", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                     {tagline}
                   </p>
                 )}
