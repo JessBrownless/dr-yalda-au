@@ -17,7 +17,7 @@ const schema = {
       url: `${SITE_URL}/`,
       name: "Dr Yalda Jamali",
       description:
-        "Dr Yalda Jamali is a Sydney cosmetic doctor focused on natural-looking results, skin health, and considered, evidence-based care.",
+        "Dr Yalda Jamali is a Sydney cosmetic doctor focused on personalised results, skin health, and considered, evidence-based care.",
       inLanguage: "en-AU",
       publisher: { "@id": `${SITE_URL}/#person` },
     },
@@ -29,7 +29,7 @@ const schema = {
       url: `${SITE_URL}/`,
       image: `${SITE_URL}/assets/Yalda-17.avif`,
       description:
-        "Sydney cosmetic doctor with a decade of experience, focused on natural-looking results, skin quality, and evidence-based care.",
+        "Sydney cosmetic doctor with a decade of experience, focused on personalised results, skin quality, and evidence-based care.",
       knowsAbout: [
         "Cosmetic medicine",
         "Skin health",

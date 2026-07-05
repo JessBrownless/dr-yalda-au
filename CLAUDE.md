@@ -293,6 +293,7 @@ When writing or editing user-facing copy:
 - **Restrained.** No exclamation marks, no superlatives, no "amazing/incredible/transform your life" language. The brand is editorial, considered, medical.
 - **Australian English.** "personalised", "specialise", "recognised", not American spellings.
 - **Regulatory caution.** This is Australian cosmetic medicine. **Don't reference Schedule 4 substances by name** (e.g. "Botox", brand-name fillers) in marketing copy — TGA rules. Use generic terms like "injectables" or "anti-wrinkle treatments". Testimonials must not mention therapeutic goods.
+- **The word "natural" is banned in copy** (Jessica, compliance direction, July 2026): no "natural", "natural-looking", "natural results" anywhere in marketing copy, metadata, alt text, or structured data. Preferred substitutes: "personalised", "refined", "balanced". The only tolerated occurrences: factual third-party titles (e.g. a real podcast episode name) and code comments.
 - **Compliance flag on testimonials.** If editing `TestimonialSection.tsx`, double-check that no quote references a specific procedure by name.
 
 ## SEO and meta

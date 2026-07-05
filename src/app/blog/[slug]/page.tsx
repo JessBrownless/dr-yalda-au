@@ -184,7 +184,7 @@ export default async function BlogPostPage({
               <p className="heading-md">Dr Yalda Jamali</p>
               <p className="body-serif mt-3 text-on-light-low">
                 I&rsquo;m a cosmetic doctor based in Sydney. I write here about the thinking behind
-                natural-looking care &mdash; what I tell my patients in consultation, and the reasoning
+                personalised care &mdash; what I tell my patients in consultation, and the reasoning
                 underneath it. My practice is built on honest conversations and considered,
                 patient-led care.
               </p>

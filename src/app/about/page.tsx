@@ -7,12 +7,12 @@ import InstagramFeed from "@/components/InstagramFeed";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Dr Yalda Jamali — Sydney cosmetic doctor with a Master's in Dermatology, offering ethical, consultation-led care focused on natural, balanced results.",
+    "Meet Dr Yalda Jamali — Sydney cosmetic doctor with a Master's in Dermatology, offering ethical, consultation-led care focused on personalised, balanced results.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About — Dr Yalda Jamali",
     description:
-      "Meet Dr Yalda Jamali — Sydney cosmetic doctor with a Master's in Dermatology, offering ethical, consultation-led care focused on natural, balanced results.",
+      "Meet Dr Yalda Jamali — Sydney cosmetic doctor with a Master's in Dermatology, offering ethical, consultation-led care focused on personalised, balanced results.",
     url: "/about",
     images: [{ url: "/assets/og-dr-yalda.jpg", width: 1200, height: 630, alt: "Dr Yalda Jamali — Sydney cosmetic doctor" }],
   },
@@ -108,7 +108,7 @@ export default function AboutPage() {
                   animationDuration: "1.0s",
                 }}
               >
-                I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined, <em>natural-looking</em> results.
+                I hold a master&apos;s degree in dermatology, graduating with distinction, alongside a postgraduate qualification in facial injectables, with a focus on cosmetic dermatology and skin health, allowing me to combine effective treatments with a deep understanding of the long-term wellbeing of your skin. I&apos;m recognised for my expertise in facial balancing and contouring, taking a personalised, meticulous approach to achieve refined results.
               </p>
             </div>
           </div>

@@ -51,7 +51,7 @@ export default function ServicesPage() {
             {/* Left — heading */}
             <div className="md:col-span-6">
               <h2 className="heading-lg from-overline">
-                Natural-looking results, built on a decade of clinical practice.
+                Personalised results, built on a decade of clinical practice.
               </h2>
             </div>
 

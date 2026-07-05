@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Blog — Notes from the practice | Dr Yalda Jamali",
   description:
-    "Essays and notes from Dr Yalda Jamali, a Sydney cosmetic doctor — on natural-looking results, the consultation, and a considered approach to skin.",
+    "Essays and notes from Dr Yalda Jamali, a Sydney cosmetic doctor — on personalised results, the consultation, and a considered approach to skin.",
   alternates: { canonical: "/blog" },
   openGraph: {
     type: "website",
     title: "Blog — Notes from the practice",
     description:
-      "Essays and notes from Dr Yalda Jamali, a Sydney cosmetic doctor — on natural-looking results, the consultation, and a considered approach to skin.",
+      "Essays and notes from Dr Yalda Jamali, a Sydney cosmetic doctor — on personalised results, the consultation, and a considered approach to skin.",
     url: "/blog",
     images: [{ url: "/assets/Yalda-17.avif", alt: "Dr Yalda Jamali" }],
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blog — Notes from the practice",
     description:
-      "Essays and notes from Dr Yalda Jamali, a Sydney cosmetic doctor — on natural-looking results, the consultation, and a considered approach to skin.",
+      "Essays and notes from Dr Yalda Jamali, a Sydney cosmetic doctor — on personalised results, the consultation, and a considered approach to skin.",
     images: ["/assets/Yalda-17.avif"],
   },
 };
@@ -86,7 +86,7 @@ export default function BlogIndexPage() {
           <h1 className="heading-2xl from-overline">Notes from the practice</h1>
         </div>
         <p className="lede body-sans max-w-[58ch] text-on-light-low" data-aos="fade">
-          Honest writing on natural-looking results, what to expect from a consultation, and the
+          Honest writing on personalised results, what to expect from a consultation, and the
           thinking behind a considered approach to skin.
         </p>
         <div

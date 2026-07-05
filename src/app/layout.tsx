@@ -33,7 +33,7 @@ const hankenGrotesk = Hanken_Grotesk({
 const SITE_URL = "https://dryalda.com.au";
 const TITLE = "Dr Yalda Jamali — Cosmetic Doctor, Sydney";
 const DESCRIPTION =
-  "Dr Yalda Jamali is a Sydney cosmetic doctor focused on natural-looking results, skin health, and considered, evidence-based care across two clinics.";
+  "Dr Yalda Jamali is a Sydney cosmetic doctor focused on personalised results, skin health, and considered, evidence-based care across two clinics.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

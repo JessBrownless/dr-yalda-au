@@ -37,7 +37,7 @@ export default function Home() {
             data-aos-delay="120"
             className="heading-lg from-overline"
           >
-            A doctor who listens first, treats with precision, and focuses on achieving natural, balanced, and long-term results.
+            A doctor who listens first, treats with precision, and focuses on achieving personalised, balanced, and long-term results.
           </h2>
         </div>
       </section>
