@@ -43,9 +43,9 @@ export default function Footer() {
         {/* Mobile rhythm: generous air at the top, logo tight to its socials,
             then a moderate step down to the link columns */}
         <div className="md:hidden pt-16 pb-2 pg-container flex flex-col gap-4">
-          {/* -29px cancels the whitespace baked into the SVG (content starts 233.8/1790.8
-              across the canvas -> 29px at 220px wide), so the mark sits optically flush left */}
-          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "220px", opacity: 0.9, marginLeft: "-29px" }} />
+          {/* -26px cancels the whitespace baked into the SVG (content starts 233.8/1790.8
+              across the canvas -> 26px at 200px wide), so the mark sits optically flush left */}
+          <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={48} className="h-auto" style={{ width: "200px", opacity: 0.9, marginLeft: "-26px" }} />
           <div className="flex items-center gap-3">
             {socials.map(({ icon: Icon, platform, href }) => (
               <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
@@ -60,9 +60,9 @@ export default function Footer() {
 
             {/* Logo — desktop first column */}
             <div className="hidden md:flex md:col-span-4 flex-col justify-start items-start gap-10">
-              {/* -27px cancels the whitespace baked into the SVG (content starts 233.8/622.5
-                  down-scaled to 72px tall -> 27px), so the mark sits optically flush left */}
-              <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={72} className="w-auto" style={{ height: "72px", opacity: 0.9, marginLeft: "-27px" }} />
+              {/* -24px cancels the whitespace baked into the SVG (content starts 233.8/622.5
+                  down-scaled to 64px tall -> 24px), so the mark sits optically flush left */}
+              <Image src="/assets/logo-lockup-white.svg" alt="Dr. Yalda Jamali" width={400} height={64} className="w-auto" style={{ height: "64px", opacity: 0.9, marginLeft: "-24px" }} />
               <div className="flex items-center gap-3">
                 {socials.map(({ icon: Icon, platform, href }) => (
                   <a key={platform} href={href} target="_blank" rel="noopener noreferrer" aria-label={platform}
@@ -116,7 +116,7 @@ export default function Footer() {
             {/* AHPRA registration — its own column, same pattern as the others */}
             <div className="col-span-1 md:col-span-2 md:col-start-11 flex flex-col gap-5 md:border-l border-brand-white/10 md:pl-8">
               <p className="overline mb-1">AHPRA</p>
-              <p className="body-xs-caps text-brand-white">Reg. MED0002486778</p>
+              <p className="text-brand-white text-sm font-light">Reg. MED0002486778</p>
             </div>
 
           </div>
@@ -125,15 +125,15 @@ export default function Footer() {
 
       {/* Bottom bar — faint */}
       <div>
-        {/* Legal bar — mobile: two staggered rows (name right, credit left) so the
-            pieces aren't crammed into one wrapped blob; desktop: one spread row.
+        {/* Legal bar — mobile: both lines centred and dimmed (the staggered layout
+            read as misaligned); desktop: one spread row at full strength.
             The credit stays the last thing on the site on both. */}
-        <div className="pg-container pb-8 md:pb-16 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-2">
-          <p className="body-xs-caps self-end md:self-auto text-right md:text-left">
+        <div className="pg-container pb-8 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-2 opacity-70 md:opacity-100">
+          <p className="body-xs-caps text-center md:text-left">
             Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved
           </p>
           {/* Designer credit — only the company name is the link */}
-          <p className="body-xs-caps self-start md:self-auto">
+          <p className="body-xs-caps text-center md:text-right">
             Made by{" "}
             <a
               href="https://northandrefine.com/coming-soon"
