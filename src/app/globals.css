@@ -502,7 +502,9 @@ body {
    than body copy on phones. Floor here stays above body (16px).
    17 → 20px · leading 1.5 · +0.02em · sentence */
 .lede-hero {
-  margin: 0;
+  /* NO margin reset here (unlike the heading utilities): the tagline's gap is
+     set per-use with Tailwind mt-*, and a margin:0 declared after the utilities
+     layer silently crushed those classes to a 0px gap for days. */
   font-family: "Heading", serif;
   font-size: clamp(1.0625rem, calc(0.875rem + 0.469vw), 1.25rem);
   font-weight: 400;

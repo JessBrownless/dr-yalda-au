@@ -137,7 +137,7 @@ export default function HeroHome({
               </div>
             )}
             {tagline && (
-              <p className="lede-hero opacity-0 animate-fade-in text-parchment/50 font-light mt-9" style={{ textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+              <p className="lede-hero opacity-0 animate-fade-in text-parchment/50 font-light mt-8" style={{ textAlign: isLeft ? "left" : "center", maxWidth: "60ch", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                 {tagline}
               </p>
             )}
@@ -254,7 +254,7 @@ export default function HeroHome({
                   />
                 )}
                 {tagline && (
-                  <p className="lede-hero opacity-0 animate-fade-in text-parchment/70 font-light mt-9" style={{ textAlign: isLeft ? "left" : "center", maxWidth: isLeft ? "60ch" : "42ch", textWrap: "balance", animationDelay: "0.7s", animationDuration: "1.0s" }}>
+                  <p className="lede-hero opacity-0 animate-fade-in text-parchment/70 font-light mt-8" style={{ textAlign: isLeft ? "left" : "center", maxWidth: isLeft ? "60ch" : "42ch", textWrap: "balance", animationDelay: "0.7s", animationDuration: "1.0s" }}>
                     {tagline}
                   </p>
                 )}
