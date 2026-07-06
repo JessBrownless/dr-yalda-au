@@ -4,6 +4,11 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # Google Analytics 4 measurement ID for the AU site (dryalda.com.au). Public
+  # by nature — it ships in every page's HTML — so it lives in config, not a
+  # secret. Inlined at build time via NEXT_PUBLIC_*; layout.tsx renders GA only
+  # when this is set. Property: "Dr Yalda Jamali (AU)".
+  NEXT_PUBLIC_GA_ID = "G-RWT4QNX57C"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
