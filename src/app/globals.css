@@ -15,6 +15,11 @@
   /* Secondary */
   --brand-blue:       #9BB9CB;
   --brand-blue-light: #B9D3DF;
+
+  /* Layout — height of the top announcement strip. Full-viewport heroes
+     subtract this so they fit exactly under it. AnnouncementBar sets it to 0
+     when dismissed; the 80px nav is handled separately by the hero's -mt-20. */
+  --announcement-height: 44px;
 }
 
 body {

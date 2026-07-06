@@ -25,7 +25,7 @@ export default function ServicesPage() {
       <HeroHome
         title="Services"
         tagline={<>Evidence-based cosmetic services across Sydney, delivered through <em>consultation-led</em> care.</>}
-        height="100dvh"
+        height="calc(100dvh - var(--announcement-height))"
         align="left"
         verticalAlign="bottom"
         bottomRight={{ label: "See services", href: "#intro" }}
