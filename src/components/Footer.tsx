@@ -144,7 +144,7 @@ export default function Footer() {
             The credit stays the last thing on the site on both. */}
         <div className="pg-container pb-8 md:pb-16 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-2 opacity-75 md:opacity-100">
           <p className="body-xs-caps text-center md:text-left">
-            Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved
+            Dr. Yalda Jamali · © <span suppressHydrationWarning>{year}</span> All rights reserved · <Link href="/privacy" className="link-caps text-brand-white">Privacy Policy</Link>
           </p>
           {/* Designer credit — only the company name is the link */}
           <p className="body-xs-caps text-center md:text-right">
