@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { FaInstagram, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 
@@ -27,39 +27,25 @@ export default function Navbar() {
   const [overDark, setOverDark] = useState(true);
   const [overSticky, setOverSticky] = useState(false);
   const [overQuote, setOverQuote] = useState(false);
-  const [announcementOffset, setAnnouncementOffset] = useState(32);
+  const navRef = useRef<HTMLElement>(null);
+  const [frozenTop, setFrozenTop] = useState(0);
 
   useEffect(() => {
-    if (!open) return;
-    const bar = document.getElementById("announcement-bar");
-    setAnnouncementOffset(bar ? bar.offsetHeight : 0);
-  }, [open]);
-
-  useEffect(() => {
+    // Lock scrolling with Lenis itself. A stopped Lenis holds the page exactly
+    // where it is and blocks native scrolling, so there's no position:fixed
+    // dance and nothing to restore on close — which is what made the page
+    // smooth-scroll back into place (the "re-scroll"). overflow:hidden on the
+    // root is a static fallback for the (pre-hydration) case Lenis isn't live.
     if (open) {
-      const scrollY = window.scrollY;
-      document.body.dataset.scrollY = String(scrollY);
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.overflow = "hidden";
+      window.__lenis?.stop();
+      document.documentElement.style.overflow = "hidden";
     } else {
-      const scrollY = parseInt(document.body.dataset.scrollY || "0", 10);
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
-      delete document.body.dataset.scrollY;
-      if (scrollY) window.scrollTo(0, scrollY);
+      window.__lenis?.start();
+      document.documentElement.style.overflow = "";
     }
     return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
+      window.__lenis?.start();
+      document.documentElement.style.overflow = "";
     };
   }, [open]);
 
@@ -153,11 +139,12 @@ export default function Navbar() {
   return (
     <>
       <nav
+        ref={navRef}
         aria-label="Main navigation"
         className={`${open ? "fixed inset-x-0 z-[80]" : "sticky top-0 z-[60]"}`}
-        style={open ? { top: `${announcementOffset}px` } : undefined}
+        style={open ? { top: `${frozenTop}px` } : undefined}
       >
-        <div className={`relative transition-colors duration-500 ${dark ? "bg-parchment border-b border-brand-line" : "bg-transparent"}`}>
+        <div className={`relative ${open ? "" : "transition-colors duration-500"} ${dark ? "bg-parchment border-b border-brand-line" : "bg-transparent"}`}>
           <div
             className="grid grid-cols-3 items-center relative px-4 md:px-16"
             style={{ height: "80px" }}
@@ -167,7 +154,16 @@ export default function Navbar() {
           <div className="flex items-center justify-start gap-8">
             {/* Mobile hamburger */}
             <button
-              onClick={() => setOpen(!open)}
+              onClick={() => {
+                // Freeze the bar at its current on-screen position before it
+                // switches to `fixed`, so opening never shifts the hamburger/X
+                // up or down (the old code forced it to the announcement-bar
+                // height, which jumped it down 44px whenever you'd scrolled).
+                if (!open && navRef.current) {
+                  setFrozenTop(Math.max(0, navRef.current.getBoundingClientRect().top));
+                }
+                setOpen(!open);
+              }}
               aria-label="Toggle menu"
               className="flex md:hidden flex-col gap-[7px] p-2 group"
             >
@@ -251,12 +247,13 @@ export default function Navbar() {
       </nav>
 
       {/* Full-screen overlay menu */}
-      <div className={`fixed inset-0 z-[70] flex flex-row-reverse ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+      <div className={`fixed inset-0 z-[70] flex flex-row-reverse transition-opacity duration-300 ease-out ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
 
-        {/* Left — image panel. Hero sequence: the panel opens dark, then the
-            image resolves slowly (fades back out on close so it replays) */}
+        {/* Left — image panel. Opens dark, then the image resolves with a
+            gentle reveal just behind the overlay fade (fades back out on close
+            so it replays). */}
         <div className="w-2/5 relative overflow-hidden bg-brand-black">
-          <div className={`absolute inset-0 transition-opacity duration-[2000ms] ease-out ${open ? "opacity-100 delay-500" : "opacity-0 delay-0"}`}>
+          <div className={`absolute inset-0 transition-opacity duration-700 ease-out ${open ? "opacity-100 delay-100" : "opacity-0 delay-0"}`}>
             <Image
               src="/assets/IMG_0017.avif"
               alt=""
@@ -277,9 +274,10 @@ export default function Navbar() {
                 <Link
                   href={href}
                   onClick={() => {
-                    // Clear stored scroll so close handler restores to top, not to where we were
-                    document.body.dataset.scrollY = "0";
+                    // Land the next page at the top, not wherever the menu was
+                    // opened from.
                     setOpen(false);
+                    window.__lenis?.scrollTo(0, { immediate: true });
                   }}
                   className="nav-link-drawer block py-5 text-cream transition-colors duration-300 hover:text-brand-white/50"
                 >
