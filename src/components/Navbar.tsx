@@ -26,6 +26,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [overDark, setOverDark] = useState(true);
   const [overSticky, setOverSticky] = useState(false);
+  const [overQuote, setOverQuote] = useState(false);
   const [announcementOffset, setAnnouncementOffset] = useState(32);
 
   useEffect(() => {
@@ -115,10 +116,39 @@ export default function Navbar() {
     };
   }, [pathname]);
 
-  // Transparent with cream text over the hero and the sticky billboard; solid
-  // parchment with dark text everywhere else. Other dark sections scroll
-  // beneath the filled bar.
-  const dark = !open && !overDark && !overSticky;
+  // Go transparent again over the full-bleed parallax quote ("Every face is
+  // different"). Same midline test as the sticky billboard: the #parallax-quote
+  // section carries the id, but nothing observed it after the nav refactor, so
+  // the bar stayed filled over it.
+  useEffect(() => {
+    const el = document.getElementById("parallax-quote");
+    if (!el) {
+      setOverQuote(false);
+      return;
+    }
+    let raf = 0;
+    const measure = () => {
+      raf = 0;
+      const r = el.getBoundingClientRect();
+      setOverQuote(r.top <= 40 && r.bottom >= 40);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(measure);
+    };
+    measure();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [pathname]);
+
+  // Transparent with cream text over the hero, the sticky billboard, and the
+  // parallax quote; solid parchment with dark text everywhere else. Other dark
+  // sections scroll beneath the filled bar.
+  const dark = !open && !overDark && !overSticky && !overQuote;
 
   return (
     <>
